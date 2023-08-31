@@ -1,6 +1,7 @@
 /* ================================== */
 /* Glass */
 @use "../0-base/color" as *;
+@use "../0-base/breakpoint" as bp;
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
@@ -58,9 +59,14 @@
     @include pseudo;
     overflow: hidden;
     z-index: -2;
-    -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
-    backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
-    background-color: rgba($shadow-color, 0.1);
+    -webkit-backdrop-filter:  blur(32px) brightness(0.95) saturate(1.1);
+    backdrop-filter: blur(32px) brightness(0.95) saturate(1.1);
+    background-color: rgba($shadow-color, 0.05);
+
+    @include bp.breakpoint(m) {
+      -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
+      backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
+    }
   }
 
   &::after {
@@ -69,6 +75,10 @@
     z-index: -1;
     box-shadow: $bevel-s;
     @include noise;
+
+    @include bp.breakpoint(m) {
+      box-shadow: $bevel-m;
+    }
   }
 }
 
