@@ -1,0 +1,42 @@
+/* ================================== */
+/* Cards */
+@use "../0-base" as *;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../3-material" as *;
+/* ================================== */
+
+.container {
+  // container: card / inline-size;
+  container-type: inline-size;
+}
+
+.card {
+  padding: var(--space-m);
+  width: 100%;
+  display: grid;
+  gap: var(--space-m);
+  border-radius: $radius-m;
+
+  @include breakpoint(m) {
+    border-radius: $radius-l;
+  }
+}
+
+// @container card (width >= 400px) {
+//   .card {
+
+//     // box-shadow:  $bevel-s;
+//   }
+// }
+
+// @container card (width >= 600px) {
+//   .card {
+//  
+//   }
+
+//   // .card::before {
+//   //   box-shadow: $ele-l;
+//   // }
+// }
+

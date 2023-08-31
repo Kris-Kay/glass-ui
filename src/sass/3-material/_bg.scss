@@ -1,0 +1,121 @@
+/* ================================== */
+/* Backgrounds */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/color" as *;
+@use "../1-layout/help" as *;
+@use "../1-layout/z-index" as z;
+@use "../2-visual" as *;
+@use "inset" as in;
+@use "glass";
+/* ================================== */
+
+/* Tinted glass */
+/* ================================== */
+
+// Used to add contrast to buttons and text
+@mixin tint-mild {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: brightness(0.9);
+  backdrop-filter: brightness(0.9);
+}
+
+.tint-mild {
+  @include tint-mild;
+}
+
+
+
+@mixin tint-reg {
+  background-color: rgba($shadow-color, 0.05);
+  -webkit-backdrop-filter: brightness(0.9);
+  backdrop-filter: brightness(0.9);
+}
+
+.tint-reg {
+  @include tint-reg;
+}
+
+@mixin blur-tint-reg {
+  background-color: rgba($shadow-color, 0.05);
+  -webkit-backdrop-filter: blur(32px) brightness(0.9);
+  backdrop-filter: blur(32px) brightness(0.9);
+}
+
+.blur-tint-reg {
+  @include blur-tint-reg;
+}
+
+@mixin tint-strong {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: brightness(0.6);
+  backdrop-filter: brightness(0.6);
+}
+
+.tint-strong {
+  @include tint-strong;
+}
+
+@mixin blur-tint-strong {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: blur(64px) brightness(0.15);
+  backdrop-filter: blur(64px) brightness(0.15);
+}
+
+.blur-tint-strong {
+  @include blur-tint-strong;
+}
+
+.tint-fullwidth-s-reg {
+  @include blur-tint-reg;
+
+  padding: var(--space-s) var(--space-m);
+  margin-left: calc((-1 * var(--space-m)) + 0.5px);
+  margin-right: calc(-1 * var(--space-m));
+  box-shadow: in.$straight-inset-m;
+}
+
+.dark-fullwidth {
+  background-color: rgba($shadow-color, 0.8);
+  padding: var(--space-s) var(--space-m);
+  margin-left: calc((-1 * var(--space-m)) + 0.5px);
+  margin-right: calc(-1 * var(--space-m));
+}
+
+.code-bg {
+  // width: 100%;
+  @include tint-strong;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  scrollbar-width: none;
+  
+  padding: var(--space-s) var(--space-m);
+  margin-left: calc(-1 * var(--space-m));
+  margin-right: calc(-1 * var(--space-m));
+
+  &:hover {
+    overflow-x: scroll;
+  }
+
+  @include bp.breakpoint(m) {
+    padding: var(--space-s);
+    border-radius: $radius-s;
+    margin: 0;
+  }
+}
+
+.dark-round-rect {
+  width: 100%;
+  @include glass.dark-mild;
+  padding: var(--space-s);
+  border-radius: $radius-s;
+}
+
+.diff {
+  color: white;
+  mix-blend-mode: difference;
+  // filter: grayscale(100%);
+}
+.gray {
+  filter: grayscale(100%);
+}
+

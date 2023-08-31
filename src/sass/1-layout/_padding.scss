@@ -1,0 +1,56 @@
+/* ================================== */
+/* Padding */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
+/* ================================== */
+
+$p-xs: size.$xs3;
+$p-s: size.$xs2;
+$p-m: size.$m;
+$p-l: size.$xl;
+$p-xl: size.$xl4;
+
+/* All around padding */
+/* ================================== */
+.p-xs {
+  padding: $p-xs;
+}
+
+.p-s {
+  margin: $p-s;
+}
+
+.p-m {
+  margin: $p-m;
+}
+
+.p-l {
+  margin: $p-l;
+}
+
+.p-xl {
+  margin: $p-xl;
+}
+
+/* Top/Bottom padding */
+/* ================================== */
+.p-y-xs {
+  margin: $p-xs auto;
+}
+
+.p-y-s {
+  margin: $p-s auto;
+}
+
+.p-y-m {
+  margin: $p-m auto;
+}
+
+.p-y-l {
+  margin: $p-l auto;
+}
+
+.p-y-xl {
+  margin: $p-xl auto;
+}
+

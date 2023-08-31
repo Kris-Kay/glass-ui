@@ -1,0 +1,58 @@
+/* ================================== */
+/* Flex-box */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
+/* ================================== */
+
+
+/* Flex box */
+/* ================================== */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.flex-left {
+  @include flex-left;
+}
+
+.flex-right {
+  @include flex-right;
+}
+
+.flex-sb {
+  @include flex-sb;
+}
+
+
+
+
+
+

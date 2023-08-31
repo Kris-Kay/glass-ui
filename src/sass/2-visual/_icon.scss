@@ -1,0 +1,20 @@
+/* ================================== */
+/* Icons */
+/* ================================== */
+@use "../0-base/breakpoint" as br;
+@use "../0-base/size";
+@use "../1-layout/fluid";
+@use "shadow";
+
+
+.icon-s {
+  height: size.$xs;
+  width: auto;
+  // filter: drop-shadow(0 0 0.8px rgba($shadow-color, 0.4));
+}
+
+.icon-m {
+  height: size.$s;
+  width: auto;
+  // filter: drop-shadow(0 0 0.8px rgba($shadow-color, 0.4));
+}

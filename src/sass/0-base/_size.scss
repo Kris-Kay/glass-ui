@@ -1,0 +1,35 @@
+/* ================================== */
+/* Size */
+/* ================================== */
+
+$base-size: 0.25rem; // <- customize this
+
+$s1: calc($base-size * 1);   /* 4px */
+$s2: calc($base-size * 2);   /* 8px */
+$s3: calc($base-size * 3);   /* 12px */
+$s4: calc($base-size * 4);   /* 16px */
+$s5: calc($base-size * 5);   /* 20px */
+$s6: calc($base-size * 6);   /* 24px */
+$s7: calc($base-size * 7);   /* 28px */
+$s8: calc($base-size * 8);   /* 32px */
+$s9: calc($base-size * 9);   /* 36px */
+$s10: calc($base-size * 10); /* 40px */
+$s12: calc($base-size * 12); /* 48px */
+$s14: calc($base-size * 14); /* 56px */
+$s16: calc($base-size * 16); /* 64px */
+$s20: calc($base-size * 20); /* 80px */
+
+
+$xs5: $s2;  /* 8px  0.5rem */
+$xs4: $s3;  /* 12px 0.75rem */
+$xs3: $s4;  /* 16px 1rem */
+$xs2: $s5;  /* 20px 1.25rem */
+$xs: $s6;   /* 24px 1.5rem */
+$s: $s7;    /* 28px 1.75rem */
+$m: $s8;    /* 32px 2rem */
+$l: $s9;    /* 36px 2.25rem */
+$xl: $s10;  /* 40px 2.5rem */
+$xl2: $s12; /* 48px 3rem */
+$xl3: $s14; /* 56px 3.5rem */
+$xl4: $s16; /* 64px 4rem */
+$xl5: $s20; /* 80px 4.5rem */

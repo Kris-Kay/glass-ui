@@ -1,0 +1,85 @@
+/* ================================== */
+/* Accordion */
+@use "../0-base" as *;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../3-material" as *;
+/* ================================== */
+
+
+.accordion {
+  width: 100%;
+  padding: 0 var(--space-s);
+
+  @include breakpoint(l) {
+    padding: 0;
+  }
+
+  &.is-open {
+    padding: 0;
+
+    .card {
+      border-radius: $radius-m $radius-m 0 0;
+    }
+  }
+}
+
+
+.accordion-toggle {
+  pointer-events: auto;
+  cursor: pointer;
+  width: 100%;
+  z-index: 10;
+
+  // &:hover {
+  //   background-color:darken(#38cc70, 10%);
+  // }
+
+  > * {
+    pointer-events: none;
+  }
+}
+
+.accordion-toggle.is-closed {
+
+  .see-more-btn {
+    width: 100%;
+    display: flex;
+    gap: $gap-xs;
+  }
+
+  .see-less-btn {
+    display: none;
+  }
+}
+
+.accordion-toggle.is-open {
+
+  .see-more-btn {
+    display: none;
+  }
+
+  .see-less-btn {
+    width: 100%;
+    display: flex;
+    gap: $gap-xs;
+  }
+}
+
+
+.accordion-content.is-open {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  transition: max-height 5000ms ease;
+  @include grid-gap($gap-m);
+  border-radius: 0 0 $radius-m $radius-m;
+
+  padding: var(--space-m);
+  @include blur-tint-strong;
+}
+
+.accordion-content.is-closed {
+  max-height: 0;
+  display: none;
+}

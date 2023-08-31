@@ -1,0 +1,48 @@
+/* ================================== */
+/* Grid */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
+@use "fluid" as *;
+/* ================================== */
+
+
+/* Grid */
+/* ================================== */
+
+.grid {
+  width: 100%;
+  display: grid;
+}
+
+@mixin grid-gap($gap) {
+  @extend .grid;
+  gap: $gap;
+
+}
+
+.grid-gap-xs {
+  @include grid-gap($gap-xs);
+}
+
+.grid-gap-s {
+  @include grid-gap($gap-s);
+}
+
+.grid-gap-m {
+  @include grid-gap($gap-m);
+}
+
+.grid-gap-l {
+  @include grid-gap($gap-l);
+}
+
+.grid-gap-xl {
+  @include grid-gap($gap-xl);
+}
+
+
+@mixin center-grid {
+  display: grid;
+  place-items: center;
+  justify-content: center;  
+}

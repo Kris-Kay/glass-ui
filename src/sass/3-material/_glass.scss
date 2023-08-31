@@ -1,0 +1,509 @@
+/* ================================== */
+/* Glass */
+@use "../0-base/color" as *;
+@use "../1-layout/help" as *;
+@use "../1-layout/z-index" as z;
+@use "../2-visual" as *;
+/* ================================== */
+
+/* Noise texture for frosted glass */
+@mixin noise {
+  background-image: url(/assets/textures/noise-texture-500x500.png); 
+  background-size: 100px;
+  background-repeat: repeat;
+}
+
+// Dark glass for insets and text backgrounds
+@mixin dark-very-mild {
+  -webkit-backdrop-filter: brightness(0.88) blur(10vw) saturate(1.2);
+  // backdrop-filter: brightness(1.1) blur(10vw);
+  backdrop-filter: blur(10vw) brightness(1.1) saturate(0.95);
+}
+
+@mixin dark-mild {
+  background-color: rgba($shadow-color, 0.04);
+  -webkit-backdrop-filter: brightness(0.9) blur(10vw) saturate(1.2);
+  backdrop-filter: brightness(0.9) blur(10vw) saturate(1.2);
+}
+
+@mixin dark-medium {
+  background-color: rgba($shadow-color, 0.08);
+  -webkit-backdrop-filter: brightness(0.8) blur(10vw) saturate(1.2);
+  backdrop-filter: brightness(0.8) blur(10vw) saturate(1.2);
+}
+
+@mixin dark-strong {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: brightness(0.65) blur(10vw) saturate(1.2);
+  backdrop-filter: brightness(0.65) blur(10vw) saturate(1.2);
+}
+
+.dark-mild {
+  @include dark-mild;
+}
+
+.dark-medium {
+  @include dark-medium;
+}
+
+.dark-strong {
+  @include dark-strong;
+}
+
+.glass-dark-very-mild {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include pseudo;
+    overflow: hidden;
+    z-index: -2;
+    -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
+    backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
+    background-color: rgba($shadow-color, 0.1);
+  }
+
+  &::after {
+    @include pseudo;
+    overflow: hidden;
+    z-index: -1;
+    box-shadow: $bevel-s;
+    @include noise;
+  }
+}
+
+.demo-glass {
+  position: relative;
+  overflow: hidden;
+
+  // box-shadow: 
+  //     2px 1.5px 3.5px -0.5px rgba(0, 10, 30, 0.08),
+  //     4px 3px 7px -1px rgba(0, 10, 30, 0.1),
+  //     16px 12px 24px -1.5px rgba(0, 10, 30, 0.12),
+  //     0 0 0.2px rgba(0, 10, 30, 0.08);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: -2;
+    overflow: hidden;
+
+    -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
+    backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);;
+
+    background-color: rgba(0, 10, 30, 0.1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+    z-index: -1;
+
+    box-shadow: 
+      inset 1.2px 1.2px 0.4px rgba(245, 252, 255, 0.15), //top-left bevel
+      inset 2px 2px 1px -2.4px rgba(245, 252, 255, 0.6), //top-left specular highlight
+      inset -2px -2px 0.4px -2.4px rgba(245, 252, 255, 0.15), //bottom-right specular
+      inset 0.2px -0.5px 0.5px -0.4px rgba(245, 252, 255, 0.1); //bottom thin highlight
+
+    background-image: url(/assets/textures/noise-texture-500x500.png); 
+    background-size: 100px;
+    background-repeat: repeat;
+  }
+}
+
+.btn-glass-xs {
+  position: relative;
+  z-index: -2;
+  box-shadow: $ele-s;
+  pointer-events: auto;
+  cursor: pointer;
+  overflow: hidden;
+
+  background-color: rgba($highlight-color, 0.3);
+
+  &::before {
+    @include pseudo;
+    z-index: -3;
+
+    -webkit-backdrop-filter: blur(48px) saturate(1.5);
+    backdrop-filter: blur(48px) saturate(1.5);
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+
+    box-shadow: $bevel-xs;
+  }
+
+  &:hover {
+    background-color: rgba($highlight-color, 0.6);
+  }
+}
+
+
+.btn-glass-s {
+  position: relative;
+  z-index: -2;
+  box-shadow: $ele-s;
+  pointer-events: auto;
+  cursor: pointer;
+  overflow: hidden;
+
+  background-color: rgba($highlight-color, 0.3);
+
+  &::before {
+    @include pseudo;
+    z-index: -3;
+
+    -webkit-backdrop-filter: blur(48px) saturate(1.5);
+    backdrop-filter: blur(48px) saturate(1.5);
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    //  @include noise;
+    box-shadow: $bevel-s;
+  }
+
+  &:hover {
+    background-color: rgba($highlight-color, 0.6);
+  }
+}
+
+.btn-glass-m {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 500ms ease;
+
+  background-color: rgba($highlight-color, 0.1);
+
+  -webkit-backdrop-filter: blur(20px) brightness(1.1);
+  backdrop-filter: blur(20px) brightness(1.1);
+
+  &:hover {
+    background-color: rgba($highlight-color, 0.3);
+  }
+}
+
+.clear-glass {
+  position: relative;
+  box-shadow: $ele-m;
+  overflow: hidden;
+  background-color: rgba($shadow-color, 0.05);
+
+  -webkit-backdrop-filter: blur(16px) brightness(0.9);
+  backdrop-filter: blur(16px) brightness(0.9);
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+    border-radius: inherit;
+    border: 1px solid rgba($highlight-color, 0.2);
+  }
+}
+
+
+.new-frosted-glass {
+  position: relative;
+  box-shadow: $ele-m;
+  @include noise;
+  -webkit-backdrop-filter: blur(28px) brightness(0.9);
+  backdrop-filter: blur(28px) brightness(0.9);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    border-radius: inherit;
+    border: 1px solid rgba($highlight-color, 0.1);
+  }
+}
+
+.beveled-glass {
+  // box-shadow: $ele-m;
+  box-shadow: 
+  2px 1.5px 3.5px -0.5px rgba(0, 10, 30, 0.08),
+  4px 3px 7px -1px rgba(0, 10, 30, 0.1),
+  16px 12px 24px -1.5px rgba(0, 10, 30, 0.12),
+  0 0 0.2px rgba(0, 10, 30, 0.08);
+
+  position: relative;
+  overflow: hidden;
+  background-color:rgba(250, 254, 255, 0.02);
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    overflow: hidden;
+    // background: 
+    // linear-gradient(150deg, rgba($highlight-color, 0.1), transparent);
+    // background-color: rgba($highlight-color, 0.1);
+    // -webkit-backdrop-filter: blur(64px) brightness(0.9)  saturate(1.1);
+    // backdrop-filter: blur(64px) brightness(0.9) saturate(1.1);
+    -webkit-backdrop-filter: blur(64px) brightness(0.9);
+    backdrop-filter: blur(64px) brightness(0.9);
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    @include noise;
+    box-shadow: $bevel-m;
+    overflow: hidden;
+  }
+}
+
+
+
+.new-dynamic-glass {
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 
+  2px 1.5px 3.5px -0.5px rgba(0, 10, 30, 0.08),
+  4px 3px 7px -1px rgba(0, 10, 30, 0.1),
+  16px 12px 24px -1.5px rgba(0, 10, 30, 0.12),
+  0 0 0.2px rgba(0, 10, 30, 0.08);
+
+  
+  // background: 
+  // linear-gradient(150deg, rgba($highlight-color, 0.08) 40%, transparent);
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+      // background: 
+  // linear-gradient(150deg, rgba($highlight-color, 0.1) 40%, transparent);
+    background-color: rgba(255, 255, 255, 1);
+    // background-color: rgba($shadow-color, 0.25);
+
+    // mix-blend-mode: luminosity; 
+    // mix-blend-mode: multiply;
+    mix-blend-mode: difference;
+    // mix-blend-mode: color-burn;
+    // mix-blend-mode: saturation;
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    box-shadow: $bevel-m;
+    overflow: hidden;
+    @include noise;
+    // -webkit-backdrop-filter: blur(64px) brightness(0.95);
+    backdrop-filter: blur(64px) brightness(1.15) saturate(1.05);
+    // background-color: rgba($highlight-color, 0.08);
+    // backdrop-filter: blur(64px) brightness(0.95);
+  }
+}
+
+
+
+
+
+
+.new-vibrant-glass {
+  // padding: var(--space-m);
+  // width: 480px;
+  // max-width: 95vw;
+  // border-radius: 1.5rem;
+  // pointer-events: none;
+  // box-shadow: $ele-xl;
+
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+
+    background: 
+    linear-gradient(-20deg, rgba($shadow-color, 0.15), transparent);
+
+    -webkit-backdrop-filter: brightness(0.9) blur(5vw) saturate(1.5);
+    backdrop-filter: brightness(0.9) blur(5vw) saturate(1.5);
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    @include noise;
+    box-shadow: $bevel-s;
+  }
+}
+
+
+// .clear-glass {
+//   position: relative;
+//   box-shadow: $bevel-m;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: -2;
+//     -webkit-backdrop-filter: brightness(0.9) blur(8vw);
+//     backdrop-filter: brightness(0.9) blur(8vw);
+//     box-shadow: $ele-xl;
+//   }
+// }
+
+@mixin frosted-glass {
+  position: relative;
+  @include noise;
+  box-shadow: $bevel-m;
+  z-index: -2;
+
+  &::after {
+    @include pseudo;
+    z-index: -3;
+    background: 
+    linear-gradient(-20deg, rgba($shadow-color, 0.12), transparent);
+    -webkit-backdrop-filter: brightness(0.9) blur(5vw) saturate(1.5);
+    backdrop-filter: brightness(0.9) blur(5vw) saturate(1.5);
+  }
+}
+
+.frosted-glass {
+  @include frosted-glass;
+}
+
+.frosted-glass-3d {
+  position: relative;
+  box-shadow: $bevel-m;
+  @include noise;
+
+  &::after {
+    @include pseudo;
+    z-index: -2;
+    -webkit-backdrop-filter: brightness(0.9) blur(10vw);
+    backdrop-filter: brightness(0.9) blur(10vw);
+    box-shadow: $ele-xl;
+  }
+}
+
+.newish-dynamic-glass {
+  position: relative;
+  box-shadow: $bevel-m;
+  @include noise;
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    background-color: rgba($highlight-color, 0.1);
+    // background-color: rgba($shadow-color, 0.05);
+
+    mix-blend-mode: luminosity; 
+    // mix-blend-mode: multiply;
+    // mix-blend-mode: overlay;
+    // mix-blend-mode: darken;
+    // mix-blend-mode: hard-light;
+    // mix-blend-mode: difference;
+    // mix-blend-mode: hue;
+  }
+
+  &::after {
+    @include pseudo;
+    z-index: -2;
+    -webkit-backdrop-filter: brightness(0.9) blur(10vw) saturate(1.8);
+    backdrop-filter: brightness(0.9) blur(10vw) saturate(1.8);
+    box-shadow: $ele-xl;
+    will-change: filter;
+  }
+}
+
+
+
+
+// .dynamic-glass {
+//   position: relative;
+
+//   -webkit-backdrop-filter: blur(10px);
+//   backdrop-filter: blur(10px);
+
+//   z-index: 2;
+// }
+
+// .dynamic-glass::before {
+//   content: "";
+//   position: absolute;
+//   inset: 0;
+//   pointer-events: none;
+//   border-radius: inherit;
+
+//   filter: brightness(0.8);
+//   box-shadow: $ele-xl;
+//   z-index: -1;
+// }
+
+// .dynamic-glass::after {
+//   content: "";
+//   position: absolute;
+//   inset: 0;
+//   pointer-events: none;
+//   border-radius: inherit;
+
+//   box-shadow: $bevel-l;
+//   // background-image: url(/assets/images/noise-texture-500x500.png);
+//   // background-size: 100px;
+//   // background-repeat: repeat;
+
+//   background-color: rgba($sky98, 0.2);
+//   // mix-blend-mode: multiply; //under layer almost seethrough
+//   // mix-blend-mode: color-burn; //under layer almost seethrough
+//   // mix-blend-mode: difference;
+
+//   z-index: 3;
+// }
+
+
+
+// @mixin glass-far {
+//   @include noise;
+//   background-color: rgba($ink6, 0.08);
+//   -webkit-backdrop-filter: blur(64px) brightness(0.7);
+//   backdrop-filter: blur(64px) brightness(0.7);
+// }
+
+// @mixin glass-base {
+//   @include noise;
+//   background-color: rgba($sky98, 0.5);
+//   mix-blend-mode: multiply;
+//   // mix-blend-mode: luminosity;
+//   // -webkit-backdrop-filter: blur(20px) brightness(0.92);
+//   // backdrop-filter: blur(20px) brightness(0.92);
+//   // -webkit-backdrop-filter: blur(20px);
+//   // backdrop-filter: blur(20px);
+// }
+
+// @mixin glass-near {
+//   @include noise;
+//   background-color: rgba($sky99, 0.04);
+//   -webkit-backdrop-filter: blur(32px) brightness(1.1);
+//   backdrop-filter: blur(32px) brightness(1.1);
+// }
+
+// .glass-far {
+//   @include glass-far;
+// }
+
+// .glass-base {
+//   @include glass-base;
+// }
+
+// .glass-near {
+//   @include glass-near;
+// }

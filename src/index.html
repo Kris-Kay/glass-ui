@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Glass UI SCSS library</title>
+    <meta
+      name="description"
+      content="3D Glassmorphism inspired by Apple Vision Pro's spatial UI"
+    />
+    <meta name="author" content="Kris Kay" />
+    <meta
+      name="keywords"
+      content="apple vision pro, glassmorphism, UI, wed design, web dev, CSS, spatial UI"
+    />
+
+    <!-- === Fonts === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nunito+Sans:wght@200;300;400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <!-- === Favicon === -->
+  </head>
+
+<!-- Body -->
+<!-- ================================== -->
+  <body id="top-of-page">
+    <div id="js-bg" class="background color"></div>
+    <div class="body-grid">
+<!-- Header -->
+<!-- ================================== -->
+      <header class="atf">
+
+<!-- Nav -->
+<!-- ================================== -->
+          <nav>
+            <div class="nav-fixed">
+              <div class="nav-grid max-w hero-width-padding">
+                <a
+                  href="#top-of-page"
+                  class="circle-btn-l frosted-glass nav-logo"
+                >
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="back to top"
+                    class="icon-s"
+                  />
+                </a>
+
+                <div id="js-tabMenu" class="tab-menu inset-glass">
+                  <button type="button" class="tab" id="dark-tab">Dark</button>
+
+                  <button type="button" class="tab" id="light-tab">
+                    Light
+                  </button>
+
+                  <button type="button" class="tab tab-active" id="color-tab">
+                    Color
+                  </button>
+                </div>
+
+                <div class="flex-right dropdown-bin">
+                  <button
+                    type="button"
+                    id="js-dropdownToggle"
+                    class="circle-btn-l frosted-glass dropdown-toggle"
+                  >
+                    <img
+                      src="assets/icons/List.svg"
+                      alt="Open nav dropdown"
+                      id="js-navHam"
+                      class="isClosed nav-ham icon-s"
+                    />
+                    <img
+                      src="/assets/icons/X.svg"
+                      alt="Close nav dropdown"
+                      id="js-navX"
+                      class="isClosed nav-x icon-s"
+                    />
+                  </button>
+
+                  <div id="js-navDropdown" class="nav-dropdown isClosed">
+                    <div class="dropdown-bg frosted-glass">
+                      <div class="dropdown-grid">
+                        <a href="#clearGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg" 
+                          class="icon-s"/>
+                          Clear glass
+                        </a>
+
+                        <a href="#frostedGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Frosted glass
+                        </a>
+
+                        <a href="#vibrantGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Vibrant glass
+                        </a>
+
+                        <!-- <a href="#insetGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Inset glass
+                        </a>
+
+                        <a href="#reflectiveGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Reflective glass
+                        </a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+            <div class="card glass-dark-very-mild ele-xl">
+     
+              <h1 class="title-xl">3D Glassmorphism</h1>
+
+              <div class="tint-fullwidth-s-reg">
+                <p class="first-line-bold">
+                  An exploration of how Apple Vision Pro's spatial UI might be recreated for the web, using the latest broadly supported CSS.
+                </p>
+              </div>
+
+              <div class="flex-right gap-xs">
+                <p class="lower-s">Created by</p>
+                <p class="upper-s">Kris Kay</p>
+              </div>
+          </div>
+
+      </header>
+
+<!-- Main -->
+<!-- ================================== -->
+      <main class="grid-gap-l">
+        <section class="blur-tint-strong">
+          <div class="margin-tb-l">
+
+            <div class="grid-gap-s inner-full-w ">
+              <h2 class="title-xl-thin">The latest incarnation of glassmorphism</h2>
+  
+              <div class="grid-gap-m">
+                <p>Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. Developed in 2003, Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.</p>
+  
+                <img src="/assets/homeImg/Project-Looking-Glass.png" class="max-w" />
+  
+                <p>Since then, glassmorphism has experienced several peaks and troughs in popularity. But now that Apple has unveiled the Vision Pro and its exquisite spatial UI, I foresee a new high point for glassmorphism on the digital horizon.</p>
+  
+                <img src="/assets/homeImg/apple-photos-app.png" class="max-w" />
+              </div>
+            </div>
+  
+            <div class="grid-gap-s inner-full-w">
+              <h2 class="title-xl-thin">So how is Vision Pro’s UI different from run-of-the-mill glassmorphism?</h2>
+  
+              <div class="grid-gap-m">
+                <p>Upon close examination, one may notice that Vision Pro’s UI doesn't quite resemble any of the existing glassmorphism designs. It's difficult to pinpoint exactly what sets it apart, but it appears more polished and dimensional. Consequently, I spent a rather significant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results. Here are my findings:</p>
+  
+                <img src="/assets/homeImg/bevel-detail.png" class="img-max-w" />
+  
+                <h3 class="title-m">Key characteristics</h3>
+                <ul class="grid-gap-xs">
+                  <li>
+                    A well-defined, yet subtle, beveled edge.
+                  </li>
+  
+                  <li>
+                    Dazzling specular highlights.
+                  </li>
+  
+                  <li>
+                    A very large blur radius.
+                  </li>
+  
+                  <li>
+                    An extremely fine-grained noise texture.
+                  </li>
+  
+                  <li>
+                    Some sort of blend mode magic that adds dynamic depth of color to the UI. After much experimentation, I've found that this doesn't consistently work for the web (yet). For a detailed account of my trials and tribulations, refer to the end of the tutorial section.
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="grid-gap-s inner-full-w ">
+              <h2 class="title-xl-thin">3D glassmorphism layers</h2>
+              <img src="/assets/homeImg/glass-x-view-white.png" class="img-max-w" />
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+
+<!-- Footer -->
+<!-- ================================== -->
+      <footer class="blur-tint-strong">
+        <div class="footer-bin max-w">
+          <p class="footer-email">Email: hello@kris-kay.com</p>
+
+          <div class="footer-social">
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/InstagramLogo.svg"
+                alt="link to Instagram account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/LinkedinLogo.svg"
+                alt="link to LinkedIn account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/GithubLogo.svg"
+                alt="link to GitHub account"
+                class="icon-m"
+              />
+            </a>
+          </div>
+
+          <p class="copyright">&copy; 2023 Kris Kay All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+
+<!-- Scripts -->
+<!-- ================================== -->
+    <script src="/js/main.js" type="text/javascript"></script>
+  </body>
+</html>

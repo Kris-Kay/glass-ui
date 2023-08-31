@@ -1,0 +1,59 @@
+/* ================================== */
+/* Tab menu */
+@use "../0-base" as *;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../3-material" as *;
+@use "button" as btn;
+/* ================================== */
+
+
+.tab-menu {
+  width: fit-content;
+  height: var(--ui-size-l); 
+  @include flex-center;
+  gap: 8px;
+  padding: 2.5px 3.25px 3px 2.5px;
+  border-radius: 12px;
+  margin: auto;
+}
+
+.tab {
+  // --inner-h: 1rem; // font size & line height to vertically center
+  --inner-h: var(--text-m);
+  width: max-content; 
+  height: 100%;
+  @include flex-center;
+  padding: 1px 0.7rem 0 0.7rem;
+
+  pointer-events: auto;
+  cursor: pointer;
+
+  font-size: var(--inner-h);
+  line-height: var(--inner-h);
+  @include btn-text;
+
+  border-radius: 9px;
+
+  &.tab-active {
+    background-color: rgba($highlight-color, 0.05);
+    -webkit-backdrop-filter: brightness(1.1);
+    backdrop-filter: brightness(1.1);
+    box-shadow: $ele-xxs;
+  }
+
+  @include breakpoint(s) {
+    padding: 2px 1rem 0 1rem;
+  }
+
+  @include breakpoint(m) {
+    // --inner-h: 1.1rem;
+    padding: 2px 1.25rem 0 1.25rem;
+  }
+
+  @include breakpoint(l) {
+    // --inner-h: 1.25rem;
+    padding: 2px 1.8rem 0 1.8rem;
+  }
+}
+

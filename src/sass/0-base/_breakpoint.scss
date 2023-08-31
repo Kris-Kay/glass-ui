@@ -1,0 +1,29 @@
+/* ================================== */
+/* Breakpoints */
+/* ================================== */
+
+
+/* Viewport width breakpoints */
+/* ================================== */
+$vw-breakpoints: (
+  "s": 23rem,   // 368px and bigger
+  "m": 30rem,   // 480px and bigger
+  "l": 48rem,   // 768px and bigger
+  "xl": 64rem,  // 1024px and bigger
+  "xxl": 120rem // 1920px and bigger
+);
+
+@mixin breakpoint($name) {
+  @if not map-has-key($vw-breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($vw-breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+
+/* Container query breakpoints */
+/* ================================== */
+

@@ -1,0 +1,19 @@
+/* ================================== */
+/* Tutorial */
+@use "../0-base" as *;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../3-material" as *;
+@use "../4-component" as *;
+/* ================================== */
+
+.how-to-ul {
+
+  & li {
+    display: flex;
+    gap: $gap-xs;
+  }
+}
+
+
+

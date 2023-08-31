@@ -1,0 +1,62 @@
+/* ================================== */
+/* Nav */
+@use "../0-base" as *;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../3-material" as *;
+@use "button" as btn;
+/* ================================== */
+
+nav {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-fixed {
+  height: var(--ui-size-l); 
+  position: fixed;
+  @include flex-center;
+  inset: var(--space-s) 0 0 0;
+  z-index: 100;
+}
+
+.nav-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: var(--ui-size-l) 1fr var(--ui-size-l);
+}
+
+.dropdown-toggle, .nav-logo {
+  width: var(--ui-size-l); 
+  height: var(--ui-size-l); 
+}
+
+.nav-ham {
+  display: none;
+
+  &.isClosed {
+    display: inline-block;
+  }
+}
+
+.nav-x {
+  display: inline-block;
+
+  &.isClosed {
+    display: none;
+  }
+}
+
+.nav-dropdown {
+  display: block;
+  position: absolute;
+  top: var(--ui-size-l); 
+  right: 0;
+  padding-top: 0.5rem;
+
+  &.isClosed {
+    display: none;
+  }
+}
+

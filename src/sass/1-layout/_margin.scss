@@ -1,0 +1,56 @@
+/* ================================== */
+/* Margins */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
+/* ================================== */
+
+
+$margin-xs: size.$xs3;
+$margin-s: size.$xs2;
+$margin-m: size.$m;
+$margin-l: size.$xl;
+$margin-xl: size.$xl4;
+
+/* Margin */
+.margin-xs {
+  margin: $margin-xs;
+}
+
+.margin-s {
+  margin: $margin-s;
+}
+
+.margin-m {
+  margin: $margin-m;
+}
+
+.margin-l {
+  margin: $margin-l;
+}
+
+.margin-xl {
+  margin: $margin-xl;
+}
+
+/* Top / Bottom margin */
+/* ================================== */
+.margin-tb-xs {
+  margin: $margin-xs auto;
+}
+
+.margin-tb-s {
+  margin: $margin-s auto;
+}
+
+.margin-tb-m {
+  margin: $margin-m auto;
+}
+
+.margin-tb-l {
+  margin: $margin-l auto;
+}
+
+.margin-tb-xl {
+  margin: $margin-xl auto;
+}
+

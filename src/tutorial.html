@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Glassmorphism UI kit</title>
+    <meta
+      name="description"
+      content="Glassmorphism 3.0 inspired by Apple Vision Pro's spatial UI"
+    />
+    <meta name="author" content="Kris Kay" />
+    <meta
+      name="keywords"
+      content="apple vision pro, glassmorphism, UI, wed design, web dev, CSS, spatial UI"
+    />
+
+    <!-- === Fonts === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,700&family=Questrial&display=switch"
+      rel="stylesheet"
+    />
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <!-- === Favicon === -->
+  </head>
+
+<!-- Body -->
+<!-- ================================== -->
+  <body id="top-of-page">
+    <div id="js-bg" class="background color"></div>
+    <div class="body-grid">
+<!-- Header -->
+<!-- ================================== -->
+      <header class="atf">
+
+<!-- Nav -->
+<!-- ================================== -->
+          <nav>
+            <div class="nav-fixed">
+              <div class="nav-grid max-w hero-width-padding">
+                <a
+                  href="#top-of-page"
+                  class="circle-btn-l frosted-glass nav-logo"
+                >
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="back to top"
+                    class="icon-s"
+                  />
+                </a>
+
+                <div id="js-tabMenu" class="tab-menu inset-glass">
+                  <button type="button" class="tab" id="dark-tab">Dark</button>
+
+                  <button type="button" class="tab" id="light-tab">
+                    Light
+                  </button>
+
+                  <button type="button" class="tab tab-active" id="color-tab">
+                    Color
+                  </button>
+                </div>
+
+                <div class="flex-right dropdown-bin">
+                  <button
+                    type="button"
+                    id="js-dropdownToggle"
+                    class="circle-btn-l frosted-glass dropdown-toggle"
+                  >
+                    <img
+                      src="assets/icons/List.svg"
+                      alt="Open nav dropdown"
+                      id="js-navHam"
+                      class="isClosed nav-ham icon-s"
+                    />
+                    <img
+                      src="/assets/icons/X.svg"
+                      alt="Close nav dropdown"
+                      id="js-navX"
+                      class="isClosed nav-x icon-s"
+                    />
+                  </button>
+
+                  <div id="js-navDropdown" class="nav-dropdown isClosed">
+                    <div class="dropdown-bg frosted-glass">
+                      <div class="dropdown-grid">
+                        <a href="#clearGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg" 
+                          class="icon-s"/>
+                          Clear glass
+                        </a>
+
+                        <a href="#frostedGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Frosted glass
+                        </a>
+
+                        <a href="#vibrantGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Vibrant glass
+                        </a>
+
+                        <!-- <a href="#insetGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Inset glass
+                        </a>
+
+                        <a href="#reflectiveGlass" class="dropdown-item icon-left">
+                          <img src="/assets/icons/CubeTransparent.svg"
+                          class="icon-s" />
+                          Reflective glass
+                        </a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+            <div class="card demo-glass ele-xl">
+            <h1 class="title-xl">3D glass UI</h1>
+
+            <div class="tint-fullwidth-s-reg">
+              <p class="first-line-bold">
+                An exploration of how Apple Vision Pro's spatial UI might be recreated for the web, using the latest broadly supported CSS.
+              </p>
+            </div>
+
+            <div class="flex-right gap-xs">
+              <p class="text-lower-s">Created by</p>
+              <p class="text-eyebrow-s">Kris Kay</p>
+            </div>
+          </div>
+
+      </header>
+
+<!-- Main -->
+<!-- ================================== -->
+      <main class="grid-gap-l margin-tb-xl">
+
+        <!-- <section id="glassDemo" class="max-w hero-width-padding">
+          <div class="glass-demo-bin">
+
+            <div class="clear-glass">
+              <h3 class="">Clear & Simple</h3>
+            </div>
+
+            <div class="new-frosted-glass">
+              <h3 class="">Frosted</h3>
+            </div>
+
+            <div class="beveled-glass">
+              <h3 class="">3D Bevel</h3>
+            </div>
+          </div>
+        </section> -->
+
+        <div class="hero-width-padding grid-gap-s">
+          <div class="beveled-glass max-w card">
+            
+            <h3 class="title-l-thin">Glassmorphism 3.0 ui</h3>
+
+              <div class="grid-gap-xs">
+                <h3 class="title-m">3D buttons</h3>
+                <button type="button" class="btn-l btn-glass-xs">Button</button>
+                <button type="button" class="btn-l btn-glass-s">Button</button>
+                <button type="button" class="btn-l btn-glass-m">Button</button>
+              </div>
+
+              <div class="grid-gap-xs">
+                <h3 class="title-m">Inset</h3>
+                <p class="dark-round-rect inset-m max-w">
+                  Glass inset with bevel and a dark background</p>
+              </div>
+
+          </div>
+        </div>
+
+
+        <div class="blur-tint-strong">
+          <div class="grid-gap-m inner-full-w margin-tb-xl">
+            <p class="title-l-thin">What sets Vision Pro's UI apart</p>
+            <img src="/assets/images/glass-x-view-white.png" class="max-w" />
+          </div>
+        </div>
+
+        <section class="straight-inset-s">
+          <div class="grid-gap-s inner-full-w">
+
+            <div class="grid-gap-m">
+              <h3 class="title-xl-thin">What is Glassmorphism 3.0?</h3>
+              <p class="dark-round-rect inset-m">
+                Glassmorphism 3.0 employs a combination of backdrop-filters, a complex box-shadow layering technique, and a noise texture to create a to create a glass effect so realistic, you'll be trying to wipe your fingerprints off the screen.</p>
+
+              <ul class="grid-gap-xs">
+                <li>
+                  Box-shadow layering instead of border
+                </li>
+
+                <li>
+                  Big blur radius
+                </li>
+
+                <li>
+                  Brightness & saturation filters
+                </li>
+
+                <li>
+                  Subtle noise texture
+                </li>
+
+                <li>
+                  Mask-composite gradient to create specular highlights
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </section>
+
+
+<!-- Clear glass -->
+        <section id="clearGlass" class="max-w">
+          <div class="accordion is-closed">
+            <div class="card clear-glass">
+
+              <h3 class="title-l">Clear glass tutorial</h3>
+
+              <div class="tint-fullwidth-s-reg">
+                <p>
+                  Clear glass is the foundation on top of which all the other types of glass materials are built. 
+                </p>
+              </div>
+
+              <div class="js-accordionToggle is-closed accordion-toggle" aria-expanded="false"
+              aria-controls="clear-glass-content">
+
+                <div class="see-more-btn flex-right">
+                  <p class="bold-text">View clear glass tutorial</p>
+                  <img src="/assets/icons/CaretDown.svg" class="icon-s" />
+                </div>
+  
+                <div class="see-less-btn flex-right">
+                  <p class="bold-text">Hide clear glass tutorial</p>
+                  <img src="/assets/icons/CaretUp.svg" class="icon-s" />
+                </div>
+              </div>
+
+            </div>
+
+            <div id="clear-glass-content"
+            aria-hidden="true"
+            class="accordion-content is-closed"
+          >
+            <div>
+              <p>
+                Frosted glass
+              </p>
+
+            </div>
+
+            <div class="grid-gap-s">
+              <h4 class="title-m">Main element</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.frosted-glass {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+              <br>
+                <pre><code class="c-prop">  box-shadow: </code></pre>
+                <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
+              <br>
+
+                <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+                <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+                <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+                <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+  
+              <div>
+                <p class="bold-text">The main element...</p>
+                <ul class="how-to-ul">
+                  <li>
+                    <p class="bold-text">Must</p>
+                    <p>be set to position absolute or relative</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>have a z-index</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>use any property that creates a new stacking context</p>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="tint-fullwidth-s-reg">
+                <p class="bold-text">Note</p>
+                <p>
+                  If you apply vibrant glass to an element and it looks wrong or seethrough, then a new stacking has been context is created by another class or in a papent element. You can either fix the stacking context or just use frosted glass instead.
+                </p>
+              </div>
+
+
+              <h4 class="title-m">::after</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.frosted-glass::after {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+                <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+                <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+                <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+                <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
+                <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
+                <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </section>
+
+
+<!-- Frosted glass -->
+        <section id="frostedGlass" class="max-w">
+          <div class="accordion is-closed">
+            <div class="card new-frosted-glass">
+
+              <h3 class="title-l">Frosted glass tutorial</h3>
+
+              <div class="tint-fullwidth-s-reg">
+                <p>
+                  Frosted glass utilizes a noise texture soften the too smooth look given by the blur filter.
+                </p>
+              </div>
+
+              <div class="js-accordionToggle is-closed accordion-toggle" aria-expanded="false"
+              aria-controls="frosted-glass-content">
+
+                <div class="see-more-btn flex-right">
+                  <p class="bold-text">View frosted glass tutorial</p>
+                  <img src="/assets/icons/CaretDown.svg" class="icon-s" />
+                </div>
+  
+                <div class="see-less-btn flex-right">
+                  <p class="bold-text">Hide frosted glass tutorial</p>
+                  <img src="/assets/icons/CaretUp.svg" class="icon-s" />
+                </div>
+              </div>
+
+            </div>
+
+            <div id="frosted-glass-content"
+            aria-hidden="true"
+            class="accordion-content is-closed tutorial-grid"
+          >
+            <div>
+              <p>
+                Frosted glass
+              </p>
+
+            </div>
+
+            <div class="grid-gap-s">
+              <h4 class="title-m">Main element</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.frosted-glass {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+              <br>
+                <pre><code class="c-prop">  box-shadow: </code></pre>
+                <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
+              <br>
+
+                <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+                <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+                <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+                <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+  
+              <div>
+                <p class="bold-text">The main element...</p>
+                <ul class="how-to-ul">
+                  <li>
+                    <p class="bold-text">Must</p>
+                    <p>be set to position absolute or relative</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>have a z-index</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>use any property that creates a new stacking context</p>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="tint-fullwidth-s-reg">
+                <p class="bold-text">Note</p>
+                <p>
+                  If you apply vibrant glass to an element and it looks wrong or seethrough, then a new stacking has been context is created by another class or in a papent element. You can either fix the stacking context or just use frosted glass instead.
+                </p>
+              </div>
+
+
+              <h4 class="title-m">::after</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.frosted-glass::after {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+                <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+                <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+                <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+                <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
+                <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
+                <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+            </div>
+            
+          </div>
+
+          </div>
+
+
+        </section>
+
+
+<!-- Virbrant glass -->
+        <section id="vibrantGlass" class="max-w">
+          <div class="accordion is-closed">
+            <div class="card beveled-glass">
+
+              <h3 class="title-l">Beveled glass tutorial</h3>
+
+              <div class="tint-fullwidth-s-reg">
+                <p>
+                  Vibrant glass uses the <code>mix-blend-mode</code> property to add dynamic
+                  depth of color to the glass material.
+                </p>
+              </div>
+
+              <div class="js-accordionToggle is-closed accordion-toggle" aria-expanded="false"
+              aria-controls="vibrant-glass-content">
+
+                <div class="see-more-btn flex-right">
+                  <p class="bold-text">View vibrant glass tutorial</p>
+                  <img src="/assets/icons/CaretDown.svg" class="icon-s" />
+                </div>
+  
+                <div class="see-less-btn flex-right">
+                  <p class="bold-text">Hide vibrant glass tutorial</p>
+                  <img src="/assets/icons/CaretUp.svg" class="icon-s" />
+                </div>
+              </div>
+
+            </div>
+
+            <div id="vibrant-glass-content"
+            aria-hidden="true"
+            class="accordion-content is-closed grid-gap-m"
+          >
+            <div>
+              <p>
+                Abandon all hope, ye who's wondered thus far.'
+                Be warned that this technique is quite finicky to implement and
+                will stop working if applied to an element that has its own
+                stacking context. The complexity arises from the interplay of
+                multiple CSS properties, that each automatically create a new
+                stacking context. Furthermore, mix-blend-mode needs to be set up
+                such that it has access to the page’s backdrop to bend with.
+                Finally, it is important to keep text above the glass so that
+                its legibility is not affected.
+              </p>
+              <br />
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context"
+                class="link"
+                target="_blank"
+              >MDN documentation for stacking contexts</a>
+            </div>
+
+            <div class="grid-gap-s">
+              <h4 class="title-m">Main element</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.vibrant-glass {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+              <br>
+                <pre><code class="c-prop">  box-shadow: </code></pre>
+                <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
+                <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
+                <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
+              <br>
+
+                <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+                <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+                <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+                <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+  
+              <div>
+                <p class="bold-text">The main element...</p>
+                <ul class="how-to-ul">
+                  <li>
+                    <p class="bold-text">Must</p>
+                    <p>be set to position absolute or relative</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>have a z-index</p>
+                  </li>
+
+                  <li>
+                    <p>Must</p>
+                    <p class="bold-text">Not</p>
+                    <p>use any property that creates a new stacking context</p>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="tip tint-fullwidth-s-reg">
+                <p class="bold-text">Note</p>
+                <p>
+                  If you apply vibrant glass to an element and it looks wrong or seethrough, then a new stacking has been context is created by another class or in a papent element. You can either fix the stacking context or just use frosted glass instead.
+                </p>
+              </div>
+
+
+              <h4 class="title-m">::before</h4>
+
+              <div class="code-bg">
+                <pre><code class="c-class">.vibrant-glass::before {</code></pre>
+                <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+                <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+                <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+                <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+                <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
+                <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
+                <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+
+
+                <pre><code class="c-class">}</code></pre>
+              </div>
+            </div>
+            
+          </div>
+
+          </div>
+
+
+        </section>
+
+
+<!-- Inset glass -->
+        <!-- <section id="insetGlass" class="max-w">
+          <div class="hero-width-padding">
+            <div class="inset-glass title-bg">
+              <h3 class="title-l">Inset glass</h3>
+            </div>
+          </div>
+        </section> -->
+
+
+<!-- Reflective glass -->
+        <!-- <section id="reflectiveGlass" class="max-w">
+          <div class="hero-width-padding">
+            <div class="glass-morphism-container-hover-effect">
+              <div class="inset-glass title-bg">
+                <h3 class="title-l">Reflective glass</h3>
+              </div>
+            </div>
+
+             <div class="card-hover-effect">
+              <div class="inset-glass title-bg">
+                <h3 class="title-l">Reflective glass</h3>
+              </div>
+            </div> 
+          </div>
+        </section> -->
+
+      </main>
+
+
+<!-- Footer -->
+<!-- ================================== -->
+      <footer class="blur-tint-strong">
+        <div class="footer-bin max-w">
+          <p class="footer-email">Email: hello@kris-kay.com</p>
+
+          <div class="footer-social">
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/InstagramLogo.svg"
+                alt="link to Instagram account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/LinkedinLogo.svg"
+                alt="link to LinkedIn account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/GithubLogo.svg"
+                alt="link to GitHub account"
+                class="icon-m"
+              />
+            </a>
+          </div>
+
+          <p class="copyright">&copy; 2023 Kris Kay All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+
+<!-- Scripts -->
+<!-- ================================== -->
+    <script src="/js/main.js" type="text/javascript"></script>
+  </body>
+</html>

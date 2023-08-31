@@ -1,0 +1,54 @@
+/* ================================== */
+/* Borders */
+@use "../0-base/breakpoint" as br;
+@use "../0-base/size";
+/* ================================== */
+
+
+/* Border Radius */  
+/* ================================== */
+//remove border radius if element width = 100vw
+@mixin radius-toggle {
+  border-radius: max(0, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
+}
+
+/* border-radius: */
+$radius-xs: size.$xs3;
+$radius-s: size.$xs2;
+$radius-m: size.$xs;
+$radius-l: size.$s;
+$radius-xl: size.$xl;
+
+$round: 9999px;
+
+
+/* Nested border radius */  
+/* ================================== */
+@mixin innerR ($outerR, $padding) {
+  $r: calc($outerR - $padding);
+  $f: calc(($r * 13) / 100);
+  $innerR: calc($r + $f);
+
+  border-radius: $innerR;
+}
+
+@mixin outerR ($innerR, $padding) {
+  $r: calc($innerR + $padding);
+  $f: calc(($r * 13) / 100);
+  $outerR: calc($r - $f);
+
+  border-radius: $outerR;
+}
+
+
+/* Round Rect */  
+/* ================================== */
+.round-rect {    
+  border-radius: var(--radius);
+}
+
+.inner-rect {
+  border-radius: var(--inRadius);
+}
+
+

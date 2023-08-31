@@ -1,0 +1,64 @@
+/* ================================== */
+/* Colors */
+/* ================================== */
+
+///* Ice *///
+$ice98: rgb(249, 250, 251);
+$ice95: rgb(239, 242, 245);
+$ice90: rgb(223, 228, 236);
+$ice85: rgb(208, 215, 226);
+$ice80: rgb(192, 202, 216);
+$ice75: rgb(176, 188, 207);
+$ice70: rgb(160, 175, 197);
+$ice65: rgb(144, 161, 187);
+
+///* Grey */// 
+$grey60: rgb(143, 151, 163);
+$grey50: rgb(115, 125, 140);
+$grey40: rgb(92, 100, 112);
+$grey30: rgb(69, 75, 84);
+$grey20: rgb(46, 50, 56);
+
+///* Sky */// 
+$sky99: rgb(250, 254, 255);
+$sky98: rgb(245, 252, 255);
+$sky95: rgb(230, 248, 254);
+$sky90: rgb(205, 240, 254);
+$sky80: rgb(156, 225, 252);
+$sky70: rgb(106, 209, 251);
+$sky60: rgb(56, 195, 250);
+$sky50: rgb(6, 181, 249);
+
+///* Ink */// 
+$ink2:  rgb(0, 3, 10);
+$ink4: rgb(0, 7, 20);
+$ink6: rgb(0, 10, 30);
+$ink8: rgb(0, 14, 40);
+$ink10: rgb(0, 17, 50);
+
+///* Leaf */// H80 S80
+$leaf80: rgb(218, 245, 163);
+$leaf70: rgb(199, 240, 117);
+$leaf60: rgb(180, 235, 71);
+$leaf40:  rgb(129, 184, 20);
+$leaf30: rgb(97, 138, 15);
+
+
+$text-color: $sky98;
+$text-color-mild: $ice80;
+$text-color-milder: $ice65;
+
+$code-color-class: $leaf70;
+$code-color-prop: $ice70;
+$code-color-value: $sky80;
+
+$link-color: $sky70;
+$link-hover-color: $sky50;
+$link-visited-color: $sky80;
+
+$shadow-color: $ink4;
+$highlight-color: $sky99;
+$highlight-color-mild: $sky95;
+
+$bg-color: $sky99;
+

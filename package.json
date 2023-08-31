@@ -1,0 +1,36 @@
+{
+  "name": "glass-ui-scss",
+  "version": "0.1.0",
+  "description": "Apple Vision Pro-inspired glassmorphism UI",
+  "main": "/src/index.html",
+  "scripts": {
+    "build:sass": "sass  src/sass:public/css",
+    "copy:js": "copyfiles -u 1 ./src/js/* public",
+    "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
+    "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:js": "onchange 'src/js/*' -- npm run copy:js",
+    "watch:assets": "onchange 'src/assets/**/*' -- npm run copy:assets",
+    "watch:html": "onchange 'src/*.html' -- npm run copy:html",
+    "watch:sass": "sass --watch src/sass:public/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server public --files public",
+    "start": "npm-run-all copy --parallel watch serve",
+    "build": "npm-run-all copy:html build:*",
+    "postbuild": "postcss public/css/*.css -u autoprefixer -r"
+  },
+  "keywords": [
+    "glassmorphism, glass, scss, css, Apple Vision Pro, UI"
+  ],
+  "author": "Kris Kay",
+  "license": "bsd-3-clause",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.8"
+  }
+}
