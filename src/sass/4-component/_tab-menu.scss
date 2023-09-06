@@ -20,7 +20,7 @@
 
 .tab {
   // --inner-h: 1rem; // font size & line height to vertically center
-  --inner-h: var(--text-m);
+  --inner-h: var(--text-md);
   width: max-content; 
   height: 100%;
   @include flex-center;

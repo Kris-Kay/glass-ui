@@ -3,6 +3,7 @@
 @use "../0-base" as *;
 @use "../1-layout" as *;
 @use "../2-visual" as *;
+@use "../2-visual/border";
 @use "../3-material" as *;
 /* ================================== */
 
@@ -15,7 +16,7 @@
 
 .dropdown-bg {
   padding: 1.25rem;
-  border-radius: $radius-m;
+  border-radius: border.$br-md;
 }
 
 .dropdown-grid {
@@ -47,7 +48,7 @@
   text-align: center;
   color: rgba($text-color, 0.75);
 
-  border-radius: $round;
+  border-radius: border.$round;
   pointer-events: auto;
   cursor: pointer;
 

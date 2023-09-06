@@ -1,15 +1,17 @@
 /* ================================== */
 /* Accordion */
 @use "../0-base" as *;
+@use "../0-base/gap";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
+@use "../2-visual/border";
 @use "../3-material" as *;
 /* ================================== */
 
 
 .accordion {
   width: 100%;
-  padding: 0 var(--space-s);
+  padding: 0 var(--p-sm);
 
   @include breakpoint(l) {
     padding: 0;
@@ -19,7 +21,7 @@
     padding: 0;
 
     .card {
-      border-radius: $radius-m $radius-m 0 0;
+      border-radius: border.$br-md border.$br-md 0 0;
     }
   }
 }
@@ -45,7 +47,7 @@
   .see-more-btn {
     width: 100%;
     display: flex;
-    gap: $gap-xs;
+    @extend .gap-xs;
   }
 
   .see-less-btn {
@@ -62,7 +64,7 @@
   .see-less-btn {
     width: 100%;
     display: flex;
-    gap: $gap-xs;
+    @extend .gap-xs;
   }
 }
 
@@ -72,10 +74,10 @@
   height: auto;
   max-height: 100%;
   transition: max-height 5000ms ease;
-  @include grid-gap($gap-m);
-  border-radius: 0 0 $radius-m $radius-m;
+  @extend .gap-md;
+  border-radius: 0 0 border.$br-md border.$br-md;
 
-  padding: var(--space-m);
+  padding: var(--p-md);
   @include blur-tint-strong;
 }
 

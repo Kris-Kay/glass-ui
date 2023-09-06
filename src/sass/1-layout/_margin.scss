@@ -1,56 +1,51 @@
 /* ================================== */
 /* Margins */
 @use "../0-base/breakpoint" as bp;
-@use "../0-base/size";
+@use "../0-base/gap";
 /* ================================== */
+/* Same values are use for both margin and grid/flex gap. */
+/* So that they will match if set to the same T-shirt size. */
 
-
-$margin-xs: size.$xs3;
-$margin-s: size.$xs2;
-$margin-m: size.$m;
-$margin-l: size.$xl;
-$margin-xl: size.$xl4;
-
-/* Margin */
-.margin-xs {
-  margin: $margin-xs;
+/* Margin all around */
+.m-xs {
+  margin: gap.$gap-xs;
 }
 
-.margin-s {
-  margin: $margin-s;
+.m-sm {
+  margin: gap.$gap-sm;
 }
 
-.margin-m {
-  margin: $margin-m;
+.m-md {
+  margin: gap.$gap-md;
 }
 
-.margin-l {
-  margin: $margin-l;
+.m-lg {
+  margin: gap.$gap-lg;
 }
 
-.margin-xl {
-  margin: $margin-xl;
+.m-xl {
+  margin: gap.$gap-xl;
 }
 
-/* Top / Bottom margin */
+
+/* Top/Bottom margin */
 /* ================================== */
-.margin-tb-xs {
-  margin: $margin-xs auto;
+.m-y-xs {
+  margin: gap.$gap-xs auto;
 }
 
-.margin-tb-s {
-  margin: $margin-s auto;
+.m-y-sm {
+  margin: gap.$gap-sm auto;
 }
 
-.margin-tb-m {
-  margin: $margin-m auto;
+.m-y-md {
+  margin: gap.$gap-md auto;
 }
 
-.margin-tb-l {
-  margin: $margin-l auto;
+.m-y-lg {
+  margin: gap.$gap-lg auto;
 }
 
-.margin-tb-xl {
-  margin: $margin-xl auto;
+.m-y-xl {
+  margin: gap.$gap-xl auto;
 }
-

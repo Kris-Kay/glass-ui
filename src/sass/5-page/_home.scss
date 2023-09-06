@@ -1,8 +1,10 @@
 /* ================================== */
 /* Home */
 @use "../0-base" as *;
+@use "../0-base/gap";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
+@use "../2-visual/border";
 @use "../3-material" as *;
 @use "../4-component" as *;
 /* ================================== */
@@ -56,9 +58,9 @@ body{
 /* ================================== */
 .atf {
   position: relative;
-  $nav-h: calc(var(--ui-size-l) + var(--space-s));
+  $nav-h: calc(var(--ui-size-l) + var(--p-sm));
   display: grid;
-  grid-template-columns: var(--space-s) auto var(--space-s);
+  grid-template-columns: var(--p-sm) auto var(--p-sm);
   grid-template-rows: $nav-h 1fr auto 8vh;
   grid-template-areas:
     ". topNav ."
@@ -135,7 +137,7 @@ footer {
 
 .img-box {
   // padding: $space-m;
-  // border-radius: var(--space-m);
+  // border-radius: var(--p-md);
   // background-color: $sky90;
   @include dark-medium;
 }
@@ -183,7 +185,7 @@ footer {
 
     flex-direction: column;
     border-radius: $round;
-    padding: var(--space-s);
+    padding: var(--p-sm);
 
     margin-top: 5rem;
 
@@ -197,7 +199,7 @@ footer {
 .cards-grid {
   width: 100%;
   display: grid;
-  gap: $gap-m;
+  gap: gap.$gap-md;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 
@@ -223,6 +225,6 @@ footer {
   align-items: center;
 
   flex-direction: column;
-  border-radius: $radius-xl;
-  // padding: var(--space-s);
+  border-radius: border.$br-xl;
+  // padding: var(--p-sm);
 }

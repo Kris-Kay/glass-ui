@@ -12,7 +12,7 @@
 .grid-time {
   max-width: 100%;
   width: 100%;
-  @include center-grid;
+  @include grid-center;
   grid-template-columns: min(240px, 100%);
   grid-template-rows: 32px 32px 32px 100px 100px;
   // gap: 1rem;

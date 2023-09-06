@@ -1,5 +1,6 @@
 /* ================================== */
 /* Size */
+@use "breakpoint" as bp;
 /* ================================== */
 
 $base-size: 0.25rem; // <- customize this
@@ -20,16 +21,39 @@ $s16: calc($base-size * 16); /* 64px */
 $s20: calc($base-size * 20); /* 80px */
 
 
-$xs5: $s2;  /* 8px  0.5rem */
-$xs4: $s3;  /* 12px 0.75rem */
-$xs3: $s4;  /* 16px 1rem */
-$xs2: $s5;  /* 20px 1.25rem */
-$xs: $s6;   /* 24px 1.5rem */
-$s: $s7;    /* 28px 1.75rem */
-$m: $s8;    /* 32px 2rem */
-$l: $s9;    /* 36px 2.25rem */
-$xl: $s10;  /* 40px 2.5rem */
-$xl2: $s12; /* 48px 3rem */
-$xl3: $s14; /* 56px 3.5rem */
-$xl4: $s16; /* 64px 4rem */
-$xl5: $s20; /* 80px 4.5rem */
+$s-5xs: $s2;  /* 8px  0.5rem */
+$s-4xs: $s3;  /* 12px 0.75rem */
+$s-3xs: $s4;  /* 16px 1rem */
+$s-2xs: $s5;  /* 20px 1.25rem */
+$s-xs: $s6;   /* 24px 1.5rem */
+$s-sm: $s7;    /* 28px 1.75rem */
+$s-md: $s8;    /* 32px 2rem */
+$s-lg: $s9;    /* 36px 2.25rem */
+$s-xl: $s10;  /* 40px 2.5rem */
+$s-2xl: $s12; /* 48px 3rem */
+$s-3xl: $s14; /* 56px 3.5rem */
+$s-4xl: $s16; /* 64px 4rem */
+$s-5xl: $s20; /* 80px 4.5rem */
+
+/* Responsive UI height */
+/* ================================== */
+/* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
+.ui-h-sm {
+  height: $s-sm;
+}
+
+.ui-h-md {
+  height: $s-md;
+}
+
+.ui-h-lg {
+  height: $s-lg;
+
+  @include bp.breakpoint(m) {
+    height: $s-xl;
+  }
+
+  @include bp.breakpoint(xl) {
+    height: $s-2xl;
+  }
+}

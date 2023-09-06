@@ -1,0 +1,35 @@
+/* ================================== */
+/* Spacing */
+@use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
+/* ================================== */
+
+/* Grid/Felx gap */
+/* ================================== */
+/* Same values are use for both margin and grid/flex gap,
+/* so that they will match in a layout */
+$gap-xs: size.$s-5xs;
+$gap-sm: size.$s-3xs;
+$gap-md: size.$s-xs;
+$gap-lg: size.$s-xl;
+$gap-xl: size.$s-5xl;
+
+.gap-xs {
+  gap: $gap-xs;
+}
+
+.gap-sm {
+  gap: $gap-sm;
+}
+
+.gap-md {
+  gap: $gap-md;
+}
+
+.gap-lg {
+  gap: $gap-lg;
+}
+
+.gap-xl {
+  gap: $gap-xl;
+}

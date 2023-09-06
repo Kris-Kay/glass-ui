@@ -1,8 +1,11 @@
 /* ================================== */
 /* Cards */
 @use "../0-base" as *;
+@use "../0-base/gap";
 @use "../1-layout" as *;
+@use "../1-layout/padding";
 @use "../2-visual" as *;
+@use "../2-visual/border";
 @use "../3-material" as *;
 /* ================================== */
 
@@ -12,14 +15,14 @@
 }
 
 .card {
-  padding: var(--space-m);
+  padding: var(--p-md);
   width: 100%;
   display: grid;
-  gap: var(--space-m);
-  border-radius: $radius-m;
+  gap: gap.$gap-md;
+  border-radius: border.$br-md;
 
   @include breakpoint(m) {
-    border-radius: $radius-l;
+    border-radius: border.$br-lg;
   }
 }
 

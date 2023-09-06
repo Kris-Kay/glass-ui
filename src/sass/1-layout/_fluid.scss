@@ -4,31 +4,29 @@
 @use "../0-base/size";
 /* ================================== */
 
-/* Responsive padding */
-/* gives elements consistent padding with fewer media queries
-/* also used for negative margines in edge-to-edge layouts
+/* Responsive layout size */
 /* ================================== */
 body {
   --max-w: 100%;
   --img-max-w: 100%;
 
-  --space-s: #{size.$xs4}; /* 12px */
-  --space-m: #{size.$xs2}; /* 20px 1.25rem */
+  // --space-s: #{size.$s-4xs}; /* 12px */
+  // --space-m: #{size.$s-2xs}; /* 20px 1.25rem */
 
-  --ui-size-s: #{size.$s}; /* 28px */
-  --ui-size-m: #{size.$m}; /* 32px */
-  --ui-size-l: #{size.$l}; /* 36px */
+  // --ui-size-s: #{size.$s-sm}; /* 28px */
+  // --ui-size-m: #{size.$s-md}; /* 32px */
+  // --ui-size-l: #{size.$s-lg}; /* 36px */
   
-  @include bp.breakpoint(s) {
-    --space-s: #{size.$xs3};
-  }
+  // @include bp.breakpoint(s) {
+  //   --space-s: #{size.$s-3xs};
+  // }
 
-  @include bp.breakpoint(m) {
-    --space-s: #{size.$xs2};
-    --space-m: #{size.$s};
+  // @include bp.breakpoint(m) {
+  //   --space-s: #{size.$s-2xs};
+  //   --space-m: #{size.$s-sm};
 
-    --ui-size-l: #{size.$xl}; /* 40px */
-  }
+  //   --ui-size-l: #{size.$s-xl}; /* 40px */
+  // }
 
   @include bp.breakpoint(l) {
     --max-w: 45rem; //720px
@@ -39,10 +37,10 @@ body {
     --max-w: 50rem; //800px
     --img-max-w: 70%;
 
-    --space-s: #{size.$xs};
-    --space-m: #{size.$l};
+    // --space-s: #{size.$s-xs};
+    // --space-m: #{size.$s-lg};
 
-    --ui-size-l: #{size.$xl2}; /* 48px */
+    // --ui-size-l: #{size.$s-2xl}; /* 48px */
   }
 }
 
@@ -75,15 +73,15 @@ body {
 .inner-full-w {
   width: 100%;
   max-width: var(--max-w);
-  padding: size.$m var(--space-m);
+  padding: size.$s-md var(--space-m);
   margin: auto;
 
   @include bp.breakpoint(m) {
-    padding: size.$l var(--space-m);
+    padding: size.$s-lg var(--space-m);
   }
 
   @include bp.breakpoint(l) {
-    padding: size.$xl 0;
+    padding: size.$s-xl 0;
   }
 }
 
@@ -94,30 +92,3 @@ body {
   padding: 0;
 }
 
-/* Grid or felx gap */
-/* ================================== */
-$gap-xs: 0.5rem;
-$gap-s: 1rem;
-$gap-m: 1.5rem;
-$gap-l: 4rem;
-$gap-xl: 7rem;
-
-.gap-xs {
-  gap: $gap-xs;
-}
-
-.gap-s {
-  gap: $gap-s;
-}
-
-.gap-m {
-  gap: $gap-m;
-}
-
-.gap-l {
-  gap: $gap-l;
-}
-
-.gap-xl {
-  gap: $gap-xl;
-}
