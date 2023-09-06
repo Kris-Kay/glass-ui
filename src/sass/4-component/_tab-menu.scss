@@ -7,7 +7,6 @@
 @use "button" as btn;
 /* ================================== */
 
-
 .tab-menu {
   width: fit-content;
   height: var(--ui-lg); 
@@ -39,7 +38,7 @@
     background-color: rgba($highlight-color, 0.05);
     -webkit-backdrop-filter: brightness(1.1);
     backdrop-filter: brightness(1.1);
-    box-shadow: $ele-xxs;
+    box-shadow: $sha-2xs;
   }
 
   @include breakpoint(s) {

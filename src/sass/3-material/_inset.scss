@@ -5,6 +5,7 @@
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
 @use "glass";
+@use "../2-visual/shadow" as sha;
 /* ================================== */
 
 $inset-sha-xs: 

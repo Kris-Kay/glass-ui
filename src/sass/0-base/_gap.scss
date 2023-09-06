@@ -14,12 +14,39 @@ $gap-md: size.$s-xs;
 $gap-lg: size.$s-xl;
 $gap-xl: size.$s-5xl;
 
+html {
+  --gap-sm: #{size.$s-3xs}; 
+  --gap-md: #{size.$s-xs};
+  --gap-lg: #{size.$s-xl}; 
+
+
+  @include bp.breakpoint(m) {
+    --gap-sm: #{size.$s-xs}; 
+    --gap-md: #{size.$s-md}; 
+    --gap-lg: #{size.$s-3xl}; 
+  }
+
+  @include bp.breakpoint(l) {
+    --gap-sm: #{size.$s-md}; 
+    --gap-md: #{size.$s-2xl}; 
+    --gap-lg: #{size.$s-5xl}; 
+  }
+}
+
 .gap-xs {
   gap: $gap-xs;
 }
 
 .gap-sm {
-  gap: $gap-sm;
+  gap: size.$s-2xs;
+
+  @include bp.breakpoint(m) {
+    gap: size.$s-xs; 
+  }
+
+  @include bp.breakpoint(l) {
+    gap: size.$s-sm;  
+  }
 }
 
 .gap-md {

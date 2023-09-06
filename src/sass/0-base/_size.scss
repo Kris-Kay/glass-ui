@@ -39,7 +39,14 @@ $s-5xl: $s20; /* 80px 4.5rem */
 /* ================================== */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
 
-body {
+html {
+  --p-sm: #{$s-4xs};
+  --p-md: #{$s-2xs};
+
+  --space-2xs: #{$s-4xs}; //12px
+  --space-xs: #{$s-3xs}; //16px
+  --space-sm: #{$s-xs}; //24px
+
   --ui-sm: #{$s-sm}; /* 28px */
   --ui-md: #{$s-md}; /* 32px */
   --ui-lg: #{$s-lg}; /* 36px */
@@ -48,7 +55,7 @@ body {
     --ui-lg: #{$s-xl}; /* 40px */
   }
 
-  @include bp.breakpoint(xl) {
+  @include bp.breakpoint(l) {
     --ui-lg: #{$s-2xl}; /* 48px */
   }
 }

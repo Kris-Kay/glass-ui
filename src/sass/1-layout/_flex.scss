@@ -35,6 +35,10 @@
   display: flex;
 }
 
+.flex-wap {
+  flex-wrap: wrap;
+}
+
 .flex-center {
   @include flex-center;
 }

@@ -30,23 +30,18 @@
   }
 }
 
-.footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  gap: 1rem;
+// .footer-social {
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-content: center;
+//   justify-content: center;
+//   gap: 1rem;
 
-  @include breakpoint(m) {
-    gap: 1.5rem;
-  }
+//   @include breakpoint(m) {
+//     gap: 1.5rem;
+//   }
 
-  @include breakpoint(l) {
-    gap: 2rem;
-  }
-}
-
-.copyright {
-  font-size: var(--text-xs);
-  color: rgba($sky95, 0.6);
-}
+//   @include breakpoint(l) {
+//     gap: 2rem;
+//   }
+// }

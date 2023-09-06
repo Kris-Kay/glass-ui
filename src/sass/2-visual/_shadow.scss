@@ -1,107 +1,107 @@
 /* ================================== */
 /* Shadows */
-@use "../0-base/color" as *;
+@use "../0-base/color";
 /* ================================== */
 
-$ele-xxs: 0.5px 0.4px 1px rgba($shadow-color, 0.2),
-  1px 0.75px 1.75px -0.1px rgba($shadow-color, 0.13),
-  0 0 0.2px rgba($shadow-color, 0.08);
+$sha-2xs: 0.5px 0.4px 1px rgba(color.$shadow-color, 0.2),
+  1px 0.75px 1.75px -0.1px rgba(color.$shadow-color, 0.13),
+  0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$ele-xs: 1px 0.75px 1.75px -0.1px rgba($shadow-color, 0.18),
-  2px 1.5px 3.5px -0.5px rgba($shadow-color, 0.1),
-  0 0 0.2px rgba($shadow-color, 0.08);
+$sha-xs: 1px 0.75px 1.75px -0.1px rgba(color.$shadow-color, 0.18),
+  2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.1),
+  0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$ele-s: 1px 0.75px 1.75px -0.25px rgba($shadow-color, 0.06),
-  2px 1.5px 3.5px -0.5px rgba($shadow-color, 0.1),
-  4px 3px 7px -1px rgba($shadow-color, 0.18),
-  0 0 0.2px rgba($shadow-color, 0.08);
+$sha-sm: 1px 0.75px 1.75px -0.25px rgba(color.$shadow-color, 0.06),
+  2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.1),
+  4px 3px 7px -1px rgba(color.$shadow-color, 0.18),
+  0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$ele-m: 
-  2px 1.5px 3.5px -0.5px rgba($shadow-color, 0.08),
-  4px 3px 7px -1px rgba($shadow-color, 0.13),
-  8px 6px 14px -1.5px rgba($shadow-color, 0.18),
-  0 0 0.2px rgba($shadow-color, 0.08);
+$sha-md: 
+  2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.08),
+  4px 3px 7px -1px rgba(color.$shadow-color, 0.13),
+  8px 6px 14px -1.5px rgba(color.$shadow-color, 0.18),
+  0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$ele-l: 2px 1.5px 3.5px -0.5px rgba($shadow-color, 0.03),
-  3px 2.25px 7px -1px rgba($shadow-color, 0.08),
-  6px 4.5px 10.5px -1.5px rgba($shadow-color, 0.13),
-  12px 9px 21px -2px rgba($shadow-color, 0.18),
-  0 0 0.3px rgba($shadow-color, 0.13);
+$sha-lg: 2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
+  3px 2.25px 7px -1px rgba(color.$shadow-color, 0.08),
+  6px 4.5px 10.5px -1.5px rgba(color.$shadow-color, 0.13),
+  12px 9px 21px -2px rgba(color.$shadow-color, 0.18),
+  0 0 0.3px rgba(color.$shadow-color, 0.13);
 
-$ele-xl: 2px 1.5px 3.5px -0.5px rgba($shadow-color, 0.03),
-  4px 3px 7px -1px rgba($shadow-color, 0.08),
-  8px 6px 14px -1.5px rgba($shadow-color, 0.13),
-  16px 12px 28px -2px rgba($shadow-color, 0.18),
-  0 0 0.4px rgba($shadow-color, 0.13);
+$sha-xl: 2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
+  4px 3px 7px -1px rgba(color.$shadow-color, 0.08),
+  8px 6px 14px -1.5px rgba(color.$shadow-color, 0.13),
+  16px 12px 28px -2px rgba(color.$shadow-color, 0.18),
+  0 0 0.4px rgba(color.$shadow-color, 0.13);
 
-$ele-xxl: 2.5px 2px 4.5px -0.5px rgba($shadow-color, 0.03),
-  5px 3.75px 8.75px -1px rgba($shadow-color, 0.08),
-  10px 7.5px 17.5px -1.5px rgba($shadow-color, 0.13),
-  20px 15px 35px -2px rgba($shadow-color, 0.18),
-  0 0 0.4px rgba($shadow-color, 0.13);
+$sha-2xl: 2.5px 2px 4.5px -0.5px rgba(color.$shadow-color, 0.03),
+  5px 3.75px 8.75px -1px rgba(color.$shadow-color, 0.08),
+  10px 7.5px 17.5px -1.5px rgba(color.$shadow-color, 0.13),
+  20px 15px 35px -2px rgba(color.$shadow-color, 0.18),
+  0 0 0.4px rgba(color.$shadow-color, 0.13);
 
-@mixin ele-m {
-  filter: drop-shadow(2px 1.5px 3.5px rgba($shadow-color, 0.1))
-    drop-shadow(4px 3px 7px rgba($shadow-color, 0.15))
-    drop-shadow(8px 6px 14px rgba($shadow-color, 0.2))
-    drop-shadow(0 0 0.2px rgba($shadow-color, 0.1));
+@mixin ele-md {
+  filter: drop-shadow(2px 1.5px 3.5px rgba(color.$shadow-color, 0.1))
+    drop-shadow(4px 3px 7px rgba(color.$shadow-color, 0.15))
+    drop-shadow(8px 6px 14px rgba(color.$shadow-color, 0.2))
+    drop-shadow(0 0 0.2px rgba(color.$shadow-color, 0.1));
 }
 
-.ele-m {
-  box-shadow: $ele-m;
+.ele-md {
+  box-shadow: $sha-md;
 }
 
 .ele-xl {
-  box-shadow: $ele-xl;
+  box-shadow: $sha-xl;
 }
 
-$icon-shadow-s: drop-shadow(0 0 0.8px rgba($shadow-color, 0.25));
+$icon-shadow-sm: drop-shadow(0 0 0.8px rgba(color.$shadow-color, 0.25));
 
 /* text-shadow: */
 $text-shadow-xs: 
-  0.2px 0.2px 0.2px rgba($shadow-color, 0.15),
-  0.5px 0.5px 1px  rgba($shadow-color, 0.12),  
-  0 0 1px rgba($shadow-color, 0.1), 
-  0 0 2px rgba($shadow-color, 0.05);
+  0.2px 0.2px 0.2px rgba(color.$shadow-color, 0.15),
+  0.5px 0.5px 1px  rgba(color.$shadow-color, 0.12),  
+  0 0 1px rgba(color.$shadow-color, 0.1), 
+  0 0 2px rgba(color.$shadow-color, 0.05);
 
-$text-shadow-s: 
-  0.25px 0.25px 0.25px rgba($shadow-color, 0.2),
-  1px 1px 2px rgba($shadow-color, 0.12),  
-  0 0 2px rgba($shadow-color, 0.1), 
-  0 0 4px rgba($shadow-color, 0.1);
+$text-shadow-sm: 
+  0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.2),
+  1px 1px 2px rgba(color.$shadow-color, 0.12),  
+  0 0 2px rgba(color.$shadow-color, 0.1), 
+  0 0 4px rgba(color.$shadow-color, 0.1);
 
-$text-shadow-m: 
-  0.5px 0.5px 0.5px rgba($shadow-color, 0.2),
-  1px 1px 2px rgba($shadow-color, 0.15),  
-  0 0 4px rgba($shadow-color, 0.1), 
-  0 0 8px rgba($shadow-color, 0.1);
+$text-shadow-md: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.2),
+  1px 1px 2px rgba(color.$shadow-color, 0.15),  
+  0 0 4px rgba(color.$shadow-color, 0.1), 
+  0 0 8px rgba(color.$shadow-color, 0.1);
 
-$text-shadow-l: 
-  0.5px 0.5px 0.5px rgba($shadow-color, 0.25),
-  1px 1px 2px rgba($shadow-color, 0.2), 
-  0 0 6px rgba($shadow-color, 0.15), 
-  0 0 12px rgba($shadow-color, 0.1); 
+$text-shadow-lg: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.25),
+  1px 1px 2px rgba(color.$shadow-color, 0.2), 
+  0 0 6px rgba(color.$shadow-color, 0.15), 
+  0 0 12px rgba(color.$shadow-color, 0.1); 
 
 $text-shadow-xl: 
-  0.8px 0.8px 0.8px rgba($shadow-color, 0.3),
-  2px 2px 4px rgba($shadow-color, 0.2), 
-  0 0 8px rgba($shadow-color, 0.15), 
-  0 0 16px rgba($shadow-color, 0.1); 
+  0.8px 0.8px 0.8px rgba(color.$shadow-color, 0.3),
+  2px 2px 4px rgba(color.$shadow-color, 0.2), 
+  0 0 8px rgba(color.$shadow-color, 0.15), 
+  0 0 16px rgba(color.$shadow-color, 0.1); 
 
 .text-sha-xs {
   text-shadow: $text-shadow-xs;
 }
 
-.text-sha-s {
-  text-shadow: $text-shadow-s;
+.text-sha-sm {
+  text-shadow: $text-shadow-sm;
 }
 
-.text-sha-m {
-  text-shadow: $text-shadow-m;
+.text-sha-md {
+  text-shadow: $text-shadow-md;
 }
 
-.text-sha-l {
-  text-shadow: $text-shadow-l;
+.text-sha-lg {
+  text-shadow: $text-shadow-lg;
 }
 
 .text-sha-xl {
@@ -109,38 +109,37 @@ $text-shadow-xl:
 }
 
 
+$svg-sha-sm: 
+  0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.2)
+  1px 1px 2px rgba(color.$shadow-color, 0.12) 
+  0 0 2px rgba(color.$shadow-color, 0.1)
+  0 0 4px rgba(color.$shadow-color, 0.1);
 
-$svg-sha-s: 
-  0.25px 0.25px 0.25px rgba($shadow-color, 0.2)
-  1px 1px 2px rgba($shadow-color, 0.12) 
-  0 0 2px rgba($shadow-color, 0.1)
-  0 0 4px rgba($shadow-color, 0.1);
+$svg-sha-md: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.2),
+  1px 1px 2px rgba(color.$shadow-color, 0.15),  
+  0 0 4px rgba(color.$shadow-color, 0.1), 
+  0 0 8px rgba(color.$shadow-color, 0.1);
 
-$svg-sha-m: 
-  0.5px 0.5px 0.5px rgba($shadow-color, 0.2),
-  1px 1px 2px rgba($shadow-color, 0.15),  
-  0 0 4px rgba($shadow-color, 0.1), 
-  0 0 8px rgba($shadow-color, 0.1);
-
-$svg-sha-l: 
-  0.5px 0.5px 0.5px rgba($shadow-color, 0.25),
-  1px 1px 2px rgba($shadow-color, 0.2), 
-  0 0 6px rgba($shadow-color, 0.15), 
-  0 0 12px rgba($shadow-color, 0.1); 
+$svg-sha-lg: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.25),
+  1px 1px 2px rgba(color.$shadow-color, 0.2), 
+  0 0 6px rgba(color.$shadow-color, 0.15), 
+  0 0 12px rgba(color.$shadow-color, 0.1); 
 
 
-  .svg-sha-s {
-    filter: 
-    drop-shadow(0.25px 0.25px 0.25px rgba($shadow-color, 0.2))
-    drop-shadow(1px 1px 2px rgba($shadow-color, 0.12))
-    drop-shadow( 0 0 2px rgba($shadow-color, 0.1))
-    drop-shadow(    0 0 4px rgba($shadow-color, 0.1));
-  }
-  
-  .svg-sha-m {
-    filter: drop-shadow($svg-sha-m);
-  }
-  
-  .svg-sha-l {
-    filter: drop-shadow($svg-sha-l);
-  }
+.svg-sha-sm {
+  filter: 
+  drop-shadow(0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.2))
+  drop-shadow(1px 1px 2px rgba(color.$shadow-color, 0.12))
+  drop-shadow( 0 0 2px rgba(color.$shadow-color, 0.1))
+  drop-shadow(    0 0 4px rgba(color.$shadow-color, 0.1));
+}
+
+.svg-sha-md {
+  filter: drop-shadow($svg-sha-md);
+}
+
+.svg-sha-lg {
+  filter: drop-shadow($svg-sha-lg);
+}

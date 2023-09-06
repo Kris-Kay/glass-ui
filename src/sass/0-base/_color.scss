@@ -42,9 +42,11 @@ $leaf40:  rgb(129, 184, 20);
 
 /* Semantic color values */
 /* ================================== */
-$text-reg: $sky98;
+$text-strong: $sky99;
+$text-reg: $sky95;
 $text-mild: $snow80;
-$text-xmild: $snow65;
+$text-xmild: $snow70;
+$text-2xmild: $snow65;
 
 $code-class: $leaf70;
 $code-prop: $snow70;
@@ -60,3 +62,22 @@ $highlight-color-mild: $sky95;
 
 $bg-color: $sky99;
 
+.text-strong {
+  color: $text-strong;
+}
+
+.text-reg {
+  color: $text-reg;
+}
+
+.text-mild {
+  color: $text-mild;
+}
+
+.text-xmild {
+  color: $text-xmild;
+}
+
+.text-2xmild {
+  color: $text-2xmild;
+}

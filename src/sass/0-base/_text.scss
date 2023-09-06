@@ -1,6 +1,6 @@
 /* ================================== */
 /* Text */
-@use "color" as *;
+@use "color";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -34,64 +34,85 @@ $letter-spacing-lg: 0.08em;
 $letter-spacing-xl: 0.25vw;
 
 /* line-height: */
-$line-height-xs: 1;
 $line-height-sm: 1.2;
 $line-height-md: 1.4;
 $line-height-lg: 1.8;
+
+/* font-size: */
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-md {
+  font-size: var(--text-md);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
 
 /* Basic text styles */ 
 /* ================================== */
 body {
   font-family: $font-family-body;
-}
-
-p {
-  font-family: $font-family-body;
   font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-sm;
   font-size: var(--text-sm);
+  letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
-  color: $text-reg;
-  // max-width: 70ch;
+  color: color.$text-reg;
 }
 
-li {
-  font-family: $font-family-body;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-sm;
+.list-i {
   font-size: var(--text-md);
   line-height: $line-height-lg;
-  color: $text-reg;
 
-  &::before {
-    font-size: var(--text-md);
-    padding-right: 0.25em;
-    content: "➟"
+  .arrow {
+    &::before {
+      padding-right: 0.25em;
+      content: "➟"
+    }
+  }
+  
+  .check {
+    &::before {
+      padding-right: 0.25em;
+      content: "☐"
+    }
   }
 }
 
-label {
-  font-family: $font-family-body;
+.label-text {
   font-weight: $font-weight-md;
   font-size: var(--text-xs);
-  line-height: $line-height-sm;
-  letter-spacing: 0.05em;
+  letter-spacing: $letter-spacing-lg;
+  line-height: 1;
 }
 
 .link {
-  color: $link-rest;
+  color: color.$link-rest;
 
   :hover {
-    color: $link-hover;
+    color: color.$link-hover;
   }
 
   :visited {
-    color: $link-visit;
+    color: color.$link-visit;
   }
 }
 
 .bold {
-  @extend p;
   font-weight: $font-weight-md;
 }
 
@@ -101,7 +122,7 @@ label {
   letter-spacing: $letter-spacing-md;
   text-align: center;
   text-shadow: sha.$text-shadow-sm;
-  color: $text-reg;
+  color: color.$text-reg;
 }
 
 /* Code */ 
@@ -109,7 +130,7 @@ label {
 code {
   font-family: $font-family-code;
   font-size: var(--text-sm);
-  color: $code-class;
+  color: color.$code-class;
   line-height: 1.4;
   letter-spacing: $letter-spacing-sm;
 }
@@ -121,19 +142,19 @@ pre code {
 }
 
 .c-comment {
-  color: $text-mild;
+  color: color.$text-mild;
 }
 
 .c-class {
-  color: $code-class;
+  color: color.$code-class;
 }
 
 .c-prop {
-  color: $code-prop;
+  color: color.$code-prop;
 }
 
 .c-value {
-  color: $code-value;
+  color: color.$code-value;
 }
 
 /* Titles */
@@ -142,7 +163,7 @@ pre code {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-lg;
-  color: $text-reg;
+  color: color.$text-reg;
   // text-wrap: balance;
 }
 

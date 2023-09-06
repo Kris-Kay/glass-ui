@@ -40,11 +40,11 @@
   gap: 0.75rem;
 
   font-family: $font-family-title;
-  font-weight: $font-weight-l;
+  font-weight: $font-weight-lg;
   font-size: $inner-h;
   line-height: $inner-h;
-  text-shadow: $text-shadow-s;
-  letter-spacing: $letter-spacing-l;
+  text-shadow: $text-shadow-sm;
+  letter-spacing: $letter-spacing-lg;
   text-align: center;
   color: rgba($text-reg, 0.75);
 
@@ -68,7 +68,7 @@
     height: calc($inner-h + 0.5rem);
     align-self: center;
 
-    filter: $icon-shadow-s;
+    filter: $icon-shadow-sm;
   }
 
   background-color: transparent;
