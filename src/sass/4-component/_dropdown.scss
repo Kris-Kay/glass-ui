@@ -32,7 +32,7 @@
   $inner-h: 1.2rem; // set font size & center
 
   min-width: max-content;
-  height: var(--ui-size-l); 
+  height: var(--ui-lg); 
   display: grid;
   grid-template-columns: calc($inner-h + 0.5rem) auto;
   justify-items: start;
@@ -46,7 +46,7 @@
   text-shadow: $text-shadow-s;
   letter-spacing: $letter-spacing-l;
   text-align: center;
-  color: rgba($text-color, 0.75);
+  color: rgba($text-reg, 0.75);
 
   border-radius: border.$round;
   pointer-events: auto;
@@ -77,13 +77,13 @@
   &:hover {
     -webkit-backdrop-filter: brightness(1.2);
     backdrop-filter: brightness(1.2);
-    color: rgba($text-color, 0.9);
+    color: rgba($text-reg, 0.9);
   }
 
   &:active {
     -webkit-backdrop-filter: brightness(0.9);
     backdrop-filter: brightness(0.9);
-    color: $text-color;
+    color: $text-reg;
   }
 }
 

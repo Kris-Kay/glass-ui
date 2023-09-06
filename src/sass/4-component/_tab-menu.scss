@@ -10,7 +10,7 @@
 
 .tab-menu {
   width: fit-content;
-  height: var(--ui-size-l); 
+  height: var(--ui-lg); 
   @include flex-center;
   gap: 8px;
   padding: 2.5px 3.25px 3px 2.5px;

@@ -38,22 +38,29 @@ $s-5xl: $s20; /* 80px 4.5rem */
 /* Responsive UI height */
 /* ================================== */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
-.ui-h-sm {
-  height: $s-sm;
-}
 
-.ui-h-md {
-  height: $s-md;
-}
-
-.ui-h-lg {
-  height: $s-lg;
+body {
+  --ui-sm: #{$s-sm}; /* 28px */
+  --ui-md: #{$s-md}; /* 32px */
+  --ui-lg: #{$s-lg}; /* 36px */
 
   @include bp.breakpoint(m) {
-    height: $s-xl;
+    --ui-lg: #{$s-xl}; /* 40px */
   }
 
   @include bp.breakpoint(xl) {
-    height: $s-2xl;
+    --ui-lg: #{$s-2xl}; /* 48px */
   }
+}
+
+.ui-sm {
+  height: var(--ui-sm);
+}
+
+.ui-md {
+  height: var(--ui-md);
+}
+
+.ui-lg {
+  height: var(--ui-lg);
 }

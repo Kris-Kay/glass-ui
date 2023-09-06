@@ -58,7 +58,7 @@ body{
 /* ================================== */
 .atf {
   position: relative;
-  $nav-h: calc(var(--ui-size-l) + var(--p-sm));
+  $nav-h: calc(var(--ui-lg) + var(--p-sm));
   display: grid;
   grid-template-columns: var(--p-sm) auto var(--p-sm);
   grid-template-rows: $nav-h 1fr auto 8vh;

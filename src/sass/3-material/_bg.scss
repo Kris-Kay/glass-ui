@@ -69,17 +69,17 @@
 .tint-fullwidth-s-reg {
   @include blur-tint-reg;
 
-  padding: var(--space-s) var(--space-m);
-  margin-left: calc((-1 * var(--space-m)) + 0.5px);
-  margin-right: calc(-1 * var(--space-m));
+  padding: var(--p-sm) var(--p-md);
+  margin-left: calc((-1 * var(--p-md)) + 0.5px);
+  margin-right: calc(-1 * var(--p-md));
   box-shadow: in.$straight-inset-m;
 }
 
 .dark-fullwidth {
   background-color: rgba($shadow-color, 0.8);
-  padding: var(--space-s) var(--space-m);
-  margin-left: calc((-1 * var(--space-m)) + 0.5px);
-  margin-right: calc(-1 * var(--space-m));
+  padding: var(--p-sm) var(--p-md);
+  margin-left: calc((-1 * var(--p-md)) + 0.5px);
+  margin-right: calc(-1 * var(--p-md));
 }
 
 .code-bg {
@@ -89,16 +89,16 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-s) var(--space-m);
-  margin-left: calc(-1 * var(--space-m));
-  margin-right: calc(-1 * var(--space-m));
+  padding: var(--p-sm) var(--p-md);
+  margin-left: calc(-1 * var(--p-md));
+  margin-right: calc(-1 * var(--p-md));
 
   &:hover {
     overflow-x: scroll;
   }
 
   @include bp.breakpoint(m) {
-    padding: var(--space-s);
+    padding: var(--p-sm);
     border-radius: border.$br-sm;
     margin: 0;
   }
@@ -107,7 +107,7 @@
 .dark-round-rect {
   width: 100%;
   @include glass.dark-mild;
-  padding: var(--space-s);
+  padding: var(--p-sm);
   border-radius: border.$br-sm;
 }
 

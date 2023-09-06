@@ -62,7 +62,7 @@ body {
 
 .hero-width-padding {
   width: 100%;
-  padding: 0 var(--space-s);
+  padding: 0 var(--p-sm);
 
   @include bp.breakpoint(l) {
     padding: 0;
@@ -73,11 +73,11 @@ body {
 .inner-full-w {
   width: 100%;
   max-width: var(--max-w);
-  padding: size.$s-md var(--space-m);
+  padding: size.$s-md var(--p-md);
   margin: auto;
 
   @include bp.breakpoint(m) {
-    padding: size.$s-lg var(--space-m);
+    padding: size.$s-lg var(--p-md);
   }
 
   @include bp.breakpoint(l) {

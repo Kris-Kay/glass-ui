@@ -14,22 +14,22 @@ nav {
 }
 
 .nav-fixed {
-  height: var(--ui-size-l); 
+  height: var(--ui-lg);
   position: fixed;
   @include flex-center;
-  inset: var(--space-s) 0 0 0;
+  inset: var(--p-sm) 0 0 0;
   z-index: 100;
 }
 
 .nav-grid {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: var(--ui-size-l) 1fr var(--ui-size-l);
+  grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
 }
 
 .dropdown-toggle, .nav-logo {
-  width: var(--ui-size-l); 
-  height: var(--ui-size-l); 
+  width: var(--ui-lg); 
+  height: var(--ui-lg); 
 }
 
 .nav-ham {
@@ -51,7 +51,7 @@ nav {
 .nav-dropdown {
   display: block;
   position: absolute;
-  top: var(--ui-size-l); 
+  top: var(--ui-lg); 
   right: 0;
   padding-top: 0.5rem;
 

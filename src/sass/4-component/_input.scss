@@ -18,7 +18,7 @@ input {
   pointer-events: auto;
   cursor: text;
   width: min(300px, 100%);
-  height: var(--ui-size-l);
+  height: var(--ui-lg);
   border-radius: $round;
   margin-top: 0.4rem;
   padding: 0 0.75rem;
@@ -45,7 +45,7 @@ input {
 //   pointer-events: auto;
 //   cursor: text;
 //   width: min(300px, 100%);
-//   height: var(--ui-size-l); 
+//   height: var(--ui-lg); 
 //   border-radius: $round;
 //   margin-top: 0.4rem;
 //   padding: 0 0.75rem;
@@ -110,9 +110,9 @@ input {
 //     border-bottom: 2px solid transparent;
 //     background: linear-gradient(
 //         to right,
-//         rgba($ice90, 0.1) 0%,
+//         rgba($snow90, 0.1) 0%,
 //         rgba($sky99, 0.5) 80%,
-//         rgba($ice95, 0.2) 100%) border-box;
+//         rgba($snow95, 0.2) 100%) border-box;
   
 //     -webkit-mask: 
 //       border-box linear-gradient(#fff, #fff),
