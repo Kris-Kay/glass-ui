@@ -12,12 +12,12 @@ body {
   --p-sm: #{size.$s-4xs};
   --p-md: #{size.$s-2xs};
   
-  @include bp.breakpoint(s) {
+  @include bp.breakpoint(sm) {
     --p-sm: #{size.$s-3xs};
     --p-md: #{size.$s-xs};
   }
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     --p-sm: #{size.$s-2xs};
     --p-md: #{size.$s-sm};
   }

@@ -84,7 +84,7 @@
   cursor: pointer;
   pointer-events: auto;
 
-  @include breakpoint(m) {
+  @include breakpoint(md) {
     border-radius: border.$br-lg;
   }
 }

@@ -17,18 +17,18 @@ body {
   // --ui-size-m: #{size.$s-md}; /* 32px */
   // --ui-size-l: #{size.$s-lg}; /* 36px */
   
-  // @include bp.breakpoint(s) {
+  // @include bp.breakpoint(sm) {
   //   --space-s: #{size.$s-3xs};
   // }
 
-  // @include bp.breakpoint(m) {
+  // @include bp.breakpoint(md) {
   //   --space-s: #{size.$s-2xs};
   //   --space-m: #{size.$s-sm};
 
   //   --ui-size-l: #{size.$s-xl}; /* 40px */
   // }
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     --max-w: 45rem; //720px
     --img-max-w: 80%;
   }
@@ -60,11 +60,26 @@ body {
   margin: auto;
 }
 
+.full-w {
+  width: 100%;
+  max-width: 100vw;
+  padding: var(--p-md);
+  margin: auto;
+
+  // @include bp.breakpoint(md) {
+  //   padding: size.$s-lg var(--p-md);
+  // }
+
+  // @include bp.breakpoint(lg) {
+  //   padding: size.$s-xl 0;
+  // }
+}
+
 .hero-width-padding {
   width: 100%;
   padding: 0 var(--p-sm);
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     padding: 0;
   }
 }
@@ -76,11 +91,11 @@ body {
   padding: size.$s-md var(--p-md);
   margin: auto;
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     padding: size.$s-lg var(--p-md);
   }
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     padding: size.$s-xl 0;
   }
 }

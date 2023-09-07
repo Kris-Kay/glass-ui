@@ -5,11 +5,11 @@
 /* Viewport width breakpoints */
 /* ================================== */
 $vw-breakpoints: (
-  "s": 23rem,   // 368px and bigger
-  "m": 30rem,   // 480px and bigger
-  "l": 48rem,   // 768px and bigger
+  "sm": 23rem,   // 368px and bigger
+  "md": 30rem,   // 480px and bigger
+  "lg": 48rem,   // 768px and bigger
   "xl": 64rem,  // 1024px and bigger
-  "xxl": 120rem // 1920px and bigger
+  "2xl": 120rem // 1920px and bigger
 );
 
 @mixin breakpoint($name) {

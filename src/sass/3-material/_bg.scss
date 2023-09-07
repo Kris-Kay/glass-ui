@@ -97,7 +97,7 @@
     overflow-x: scroll;
   }
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     padding: var(--p-sm);
     border-radius: border.$br-sm;
     margin: 0;

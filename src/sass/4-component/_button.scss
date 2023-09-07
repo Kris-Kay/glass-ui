@@ -219,7 +219,7 @@ z-index: 10;
     width: auto;
     height: calc(var(--ui-sm) * 0.9); 
 
-    @include breakpoint(m) {
+    @include breakpoint(md) {
       height: var(--ui-sm); 
     }
 

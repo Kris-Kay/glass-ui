@@ -6,7 +6,6 @@
 @use "../3-material" as *;
 /* ================================== */
 
-
 .footer-bin {
   width: 100%;
   padding: 0.8rem;
@@ -21,11 +20,11 @@
   //   padding: 0.8rem;
   // }
 
-  @include breakpoint(m) {
+  @include breakpoint(md) {
     padding: 1rem;
   }
 
-  @include breakpoint(l) {
+  @include breakpoint(lg) {
     padding: 1.5rem 0;
   }
 }
@@ -37,11 +36,11 @@
 //   justify-content: center;
 //   gap: 1rem;
 
-//   @include breakpoint(m) {
+//   @include breakpoint(md) {
 //     gap: 1.5rem;
 //   }
 
-//   @include breakpoint(l) {
+//   @include breakpoint(lg) {
 //     gap: 2rem;
 //   }
 // }

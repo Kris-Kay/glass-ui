@@ -1,6 +1,7 @@
 /* ================================== */
 /* Colors */
 /* ================================== */
+/* The number in the color name is its HSL lightness value */
 
 ///* Snow *///
 $snow95: rgb(239, 242, 245);
@@ -33,7 +34,7 @@ $ink6: rgb(0, 10, 30);
 // $ink8: rgb(0, 14, 40);
 $ink10: rgb(0, 17, 50);
 
-///* Leaf */// H80 S80
+///* Leaf */// H80 S80 L--
 $leaf80: rgb(218, 245, 163);
 $leaf70: rgb(199, 240, 117);
 $leaf60: rgb(180, 235, 71);

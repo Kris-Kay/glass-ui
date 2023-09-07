@@ -73,7 +73,7 @@ body{
     justify-self: center;
     max-width: 460px;
 
-    @include breakpoint(l) {
+    @include breakpoint(lg) {
       justify-self: end;
       margin-right: 8vw;
     }
@@ -153,7 +153,7 @@ footer {
 }
 
 .glass-demo-flex {
-  // @include breakpoint(l) {
+  // @include breakpoint(lg) {
   //   justify-self: start;
   //   // margin-left: 8vw;
   // }
@@ -189,7 +189,7 @@ footer {
 
     margin-top: 5rem;
 
-    // @include breakpoint(l) {
+    // @include breakpoint(lg) {
     //   justify-self: start;
     // }
 
