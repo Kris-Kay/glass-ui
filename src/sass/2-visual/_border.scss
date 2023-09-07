@@ -5,9 +5,47 @@
 /* ================================== */
 
 /* border-radius: */
-$br-xs: size.$s-3xs;
-$br-sm: size.$s-2xs;
-$br-md: size.$s-xs;
-$br-lg: size.$s-md;
-$br-xl: size.$s-xl;
+$br-xs: size.$s2;
+$br-sm: size.$s4; //16px
+$br-md: size.$s6;
+$br-lg: size.$s8;
+$br-xl: size.$s12;
 $round: 9999px;
+
+.br-sx {
+  border-radius: $br-xs;
+  overflow: hidden;
+}
+
+.br-sm {
+  border-radius: $br-sm;
+  overflow: hidden;
+}
+
+.br-md {
+  border-radius: $br-md;
+  overflow: hidden;
+}
+
+.br-lg {
+  border-radius: $br-lg;
+  overflow: hidden;
+}
+
+.br-xl {
+  border-radius: $br-xl;
+  overflow: hidden;
+}
+
+.br-round {
+  border-radius: $round;
+  overflow: hidden;
+}
+
+/* Border Radius toggle*/  
+/* ================================== */
+//remove border radius if element width = 100vw
+.br-toggle {
+  border-radius: max(0, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
+}
+

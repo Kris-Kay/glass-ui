@@ -20,13 +20,13 @@ html {
   --gap-lg: #{size.$s-xl}; 
 
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     --gap-sm: #{size.$s-xs}; 
     --gap-md: #{size.$s-md}; 
     --gap-lg: #{size.$s-3xl}; 
   }
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     --gap-sm: #{size.$s-md}; 
     --gap-md: #{size.$s-2xl}; 
     --gap-lg: #{size.$s-5xl}; 
@@ -40,11 +40,11 @@ html {
 .gap-sm {
   gap: size.$s-2xs;
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     gap: size.$s-xs; 
   }
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     gap: size.$s-sm;  
   }
 }

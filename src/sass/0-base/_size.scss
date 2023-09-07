@@ -5,20 +5,20 @@
 
 $base-size: 0.25rem; // <- customize this
 
-$s1: calc($base-size * 1);   /* 4px */
-$s2: calc($base-size * 2);   /* 8px */
-$s3: calc($base-size * 3);   /* 12px */
-$s4: calc($base-size * 4);   /* 16px */
-$s5: calc($base-size * 5);   /* 20px */
-$s6: calc($base-size * 6);   /* 24px */
-$s7: calc($base-size * 7);   /* 28px */
-$s8: calc($base-size * 8);   /* 32px */
-$s9: calc($base-size * 9);   /* 36px */
-$s10: calc($base-size * 10); /* 40px */
-$s12: calc($base-size * 12); /* 48px */
-$s14: calc($base-size * 14); /* 56px */
-$s16: calc($base-size * 16); /* 64px */
-$s20: calc($base-size * 20); /* 80px */
+$s1: calc($base-size * 1);   /* 4px  0.25rem */
+$s2: calc($base-size * 2);   /* 8px  0.5rem */
+$s3: calc($base-size * 3);   /* 12px 0.75rem */
+$s4: calc($base-size * 4);   /* 16px 1rem */
+$s5: calc($base-size * 5);   /* 20px 1.25rem */
+$s6: calc($base-size * 6);   /* 24px 1.5rem */
+$s7: calc($base-size * 7);   /* 28px 1.75rem */
+$s8: calc($base-size * 8);   /* 32px 2rem */
+$s9: calc($base-size * 9);   /* 36px 2.25rem */
+$s10: calc($base-size * 10); /* 40px 2.5rem */
+$s12: calc($base-size * 12); /* 48px 3rem */
+$s14: calc($base-size * 14); /* 56px 3.5rem */
+$s16: calc($base-size * 16); /* 64px 4rem */
+$s20: calc($base-size * 20); /* 80px 4.5rem */
 
 
 $s-5xs: $s2;  /* 8px  0.5rem */
@@ -40,9 +40,6 @@ $s-5xl: $s20; /* 80px 4.5rem */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
 
 html {
-  --p-sm: #{$s-4xs};
-  --p-md: #{$s-2xs};
-
   --space-2xs: #{$s-4xs}; //12px
   --space-xs: #{$s-3xs}; //16px
   --space-sm: #{$s-xs}; //24px
@@ -51,11 +48,11 @@ html {
   --ui-md: #{$s-md}; /* 32px */
   --ui-lg: #{$s-lg}; /* 36px */
 
-  @include bp.breakpoint(m) {
+  @include bp.breakpoint(md) {
     --ui-lg: #{$s-xl}; /* 40px */
   }
 
-  @include bp.breakpoint(l) {
+  @include bp.breakpoint(lg) {
     --ui-lg: #{$s-2xl}; /* 48px */
   }
 }

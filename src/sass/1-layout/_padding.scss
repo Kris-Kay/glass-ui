@@ -8,73 +8,114 @@
 /* gives elements consistent padding with fewer media queries
 /* also used for negative margines in edge-to-edge layouts
 /* ================================== */
-body {
-  --p-sm: #{size.$s-4xs};
+html {
+  --layout-sm: #{size.$s3}; // 12px
+
+  --p-sm: #{size.$s-4xs};  
   --p-md: #{size.$s-2xs};
   
   @include bp.breakpoint(sm) {
+    --layout-sm: #{size.$s4}; // 16px
+
     --p-sm: #{size.$s-3xs};
     --p-md: #{size.$s-xs};
   }
 
   @include bp.breakpoint(md) {
+    --layout-sm: #{size.$s5}; // 20px
+
     --p-sm: #{size.$s-2xs};
     --p-md: #{size.$s-sm};
   }
 
-  @include bp.breakpoint(xl) {
+  @include bp.breakpoint(lg) {
+    --layout-sm: #{size.$s6}; // 24px
+
     --p-sm: #{size.$s-xs};
     --p-md: #{size.$s-lg};
   }
 }
 
+.layout-sm {
+  padding: var(--layout-sm);
+}
 
-// $p-xs: size.$s-3xs;
-// $p-sm: size.$s-2xs;
-// $p-md: size.$s-md;
-// $p-lg: size.$s-xl;
-// $p-xl: size.$s-4xl;
+.layout-sm-x {
+  padding: 0 var(--layout-sm);
+}
+
+.layout-sm-y {
+  padding: var(--layout-sm) 0;
+}
+
+$p-xs: size.$s-3xs;
+$p-sm: size.$s-2xs;
+$p-md: size.$s-md;
+$p-lg: size.$s-xl;
+$p-xl: size.$s-4xl;
 
 // /* All around padding */
 // /* ================================== */
-// .p-xs {
-//   padding: $p-xs;
-// }
+.p-xs {
+  padding: $p-xs;
+}
 
-// .p-sm {
-//   padding: $p-sm;
-// }
+.p-sm {
+  padding: $p-sm;
+}
 
-// .p-md {
-//   padding: $p-md;
-// }
+.p-md {
+  padding: $p-md;
+}
 
-// .p-lg {
-//   padding: $p-lg;
-// }
+.p-lg {
+  padding: $p-lg;
+}
 
-// .p-xl {
-//   padding: $p-xl;
-// }
+.p-xl {
+  padding: $p-xl;
+}
 
 // /* Top/Bottom padding */
 // /* ================================== */
-// .p-y-xs {
-//   padding: $p-xs 0;
-// }
+.p-x-xs {
+  padding: 0 $p-xs;
+}
 
-// .p-y-sm {
-//   padding: $p-sm 0;
-// }
+.p-x-sm {
+  padding: 0 $p-sm;
+}
 
-// .p-y-md {
-//   padding: $p-md 0;
-// }
+.p-x-md {
+  padding: 0 $p-md;
+}
 
-// .p-y-lg {
-//   padding: $p-lg 0;
-// }
+.p-x-lg {
+  padding: 0 $p-lg;
+}
 
-// .p-y-xl {
-//   padding: $p-xl 0;
-// }
+.p-x-xl {
+  padding: 0 $p-xl;
+}
+
+// /* Top/Bottom padding */
+// /* ================================== */
+.p-y-xs {
+  padding: $p-xs 0;
+}
+
+.p-y-sm {
+  padding: $p-sm 0;
+}
+
+.p-y-md {
+  padding: $p-md 0;
+}
+
+.p-y-lg {
+  padding: $p-lg 0;
+}
+
+.p-y-xl {
+  padding: $p-xl 0;
+}
