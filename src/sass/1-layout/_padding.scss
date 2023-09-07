@@ -9,43 +9,43 @@
 /* also used for negative margines in edge-to-edge layouts
 /* ================================== */
 html {
-  --layout-sm: #{size.$s3}; // 12px
+  --space-sm: #{size.$s3}; // 12px
 
   --p-sm: #{size.$s-4xs};  
   --p-md: #{size.$s-2xs};
   
   @include bp.breakpoint(sm) {
-    --layout-sm: #{size.$s4}; // 16px
+    --space-sm: #{size.$s4}; // 16px
 
     --p-sm: #{size.$s-3xs};
     --p-md: #{size.$s-xs};
   }
 
   @include bp.breakpoint(md) {
-    --layout-sm: #{size.$s5}; // 20px
+    --space-sm: #{size.$s5}; // 20px
 
     --p-sm: #{size.$s-2xs};
     --p-md: #{size.$s-sm};
   }
 
   @include bp.breakpoint(lg) {
-    --layout-sm: #{size.$s6}; // 24px
+    --space-sm: #{size.$s6}; // 24px
 
     --p-sm: #{size.$s-xs};
     --p-md: #{size.$s-lg};
   }
 }
 
-.layout-sm {
-  padding: var(--layout-sm);
+.space-sm {
+  padding: var(--space-sm);
 }
 
-.layout-sm-x {
-  padding: 0 var(--layout-sm);
+.space-sm-x {
+  padding: 0 var(--space-sm);
 }
 
-.layout-sm-y {
-  padding: var(--layout-sm) 0;
+.space-sm-y {
+  padding: var(--space-sm) 0;
 }
 
 $p-xs: size.$s-3xs;

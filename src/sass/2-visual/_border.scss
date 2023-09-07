@@ -1,6 +1,6 @@
 /* ================================== */
 /* Borders */
-@use "../0-base/breakpoint" as br;
+@use "../0-base/breakpoint" as bp;
 @use "../0-base/size";
 /* ================================== */
 
@@ -28,8 +28,16 @@ $round: 9999px;
 }
 
 .br-lg {
-  border-radius: $br-lg;
+  border-radius: 0;
   overflow: hidden;
+
+  @include bp.breakpoint(md) {
+    border-radius: size.$s6;
+  }
+
+  @include bp.breakpoint(lg) {
+    border-radius: size.$s8;
+  }
 }
 
 .br-xl {
@@ -42,10 +50,4 @@ $round: 9999px;
   overflow: hidden;
 }
 
-/* Border Radius toggle*/  
-/* ================================== */
-//remove border radius if element width = 100vw
-.br-toggle {
-  border-radius: max(0, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
-}
 

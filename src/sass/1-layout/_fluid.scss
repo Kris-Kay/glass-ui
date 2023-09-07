@@ -30,7 +30,11 @@ html {
 /* ================================== */
 /* wrapper for max-w that gives it x padding at small screen sizes */
 .max-w-wrap {
-  padding: 0 var(--layout-sm);
+  padding: 0;
+
+  @include bp.breakpoint(md) {
+    padding: 0 var(--space-sm);
+  }
 
   @include bp.breakpoint(lg) {
     padding: 0;
