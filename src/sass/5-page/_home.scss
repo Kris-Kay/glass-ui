@@ -58,9 +58,9 @@ body{
 /* ================================== */
 .atf {
   position: relative;
-  $nav-h: calc(var(--ui-lg) + var(--p-sm));
+  $nav-h: calc(var(--ui-lg) + var(space-sm));
   display: grid;
-  grid-template-columns: var(--p-sm) auto var(--p-sm);
+  grid-template-columns: var(space-sm) auto var(space-sm);
   grid-template-rows: $nav-h 1fr auto 8vh;
   grid-template-areas:
     ". topNav ."
@@ -137,7 +137,7 @@ footer {
 
 .img-box {
   // padding: $space-m;
-  // border-radius: var(--p-md);
+  // border-radius: var(--space-md);
   // background-color: $sky90;
   @include dark-medium;
 }
@@ -185,7 +185,7 @@ footer {
 
     flex-direction: column;
     border-radius: $round;
-    padding: var(--p-sm);
+    padding: var(--space-sm);
 
     margin-top: 5rem;
 
@@ -226,5 +226,5 @@ footer {
 
   flex-direction: column;
   border-radius: border.$br-xl;
-  // padding: var(--p-sm);
+  // padding: var(space-sm);
 }

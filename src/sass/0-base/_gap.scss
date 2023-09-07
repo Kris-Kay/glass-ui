@@ -1,6 +1,6 @@
 /* ================================== */
 /* Gap */
-@use "../0-base/breakpoint" as bp;
+// @use "../0-base/breakpoint" as bp;
 @use "../0-base/size";
 /* ================================== */
 
@@ -33,23 +33,3 @@ $gap-xl: size.$s16; /* 64px 4rem */
 .gap-xl {
   gap: $gap-xl;
 }
-
-
-// html {
-//   --gap-sm: #{size.$s-3xs}; 
-//   --gap-md: #{size.$s-xs};
-//   --gap-lg: #{size.$s-xl}; 
-
-
-//   @include bp.breakpoint(md) {
-//     --gap-sm: #{size.$s-xs}; 
-//     --gap-md: #{size.$s-md}; 
-//     --gap-lg: #{size.$s-3xl}; 
-//   }
-
-//   @include bp.breakpoint(lg) {
-//     --gap-sm: #{size.$s-md}; 
-//     --gap-md: #{size.$s-2xl}; 
-//     --gap-lg: #{size.$s-5xl}; 
-//   }
-// }

@@ -20,21 +20,6 @@ $s14: calc($base-size * 14); /* 56px 3.5rem */
 $s16: calc($base-size * 16); /* 64px 4rem */
 $s20: calc($base-size * 20); /* 80px 4.5rem */
 
-
-$s-5xs: $s2;  /* 8px  0.5rem */
-$s-4xs: $s3;  /* 12px 0.75rem */
-$s-3xs: $s4;  /* 16px 1rem */
-$s-2xs: $s5;  /* 20px 1.25rem */
-$s-xs: $s6;   /* 24px 1.5rem */
-$s-sm: $s7;    /* 28px 1.75rem */
-$s-md: $s8;    /* 32px 2rem */
-$s-lg: $s9;    /* 36px 2.25rem */
-$s-xl: $s10;  /* 40px 2.5rem */
-$s-2xl: $s12; /* 48px 3rem */
-$s-3xl: $s14; /* 56px 3.5rem */
-$s-4xl: $s16; /* 64px 4rem */
-$s-5xl: $s20; /* 80px 4.5rem */
-
 /* Responsive UI height */
 /* ================================== */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
@@ -107,6 +92,7 @@ html {
 
 /* Responsive Max width */
 /* ================================== */
+/* uniformly limits content width */
 html {
   --max-w: 100%;
 
@@ -123,20 +109,6 @@ html {
   }
 }
 
-// /* wrapper for max-w that gives it x padding at tablet (md) size */
-// .max-w-wrap {
-//   padding: 0;
-
-//   @include bp.breakpoint(md) {
-//     padding: 0 var(--space-sm);
-//   }
-
-//   @include bp.breakpoint(lg) {
-//     padding: 0;
-//   }
-// }
-
-/* uniformly limits content width */
 .max-w { 
   width: 100%;
   max-width: var(--max-w);
@@ -151,3 +123,19 @@ html {
   width: 100%;
   max-width: 100vw;
 }
+
+
+
+
+// /* wrapper for max-w that gives it x padding at tablet (md) size */
+// .max-w-wrap {
+//   padding: 0;
+
+//   @include bp.breakpoint(md) {
+//     padding: 0 var(--space-sm);
+//   }
+
+//   @include bp.breakpoint(lg) {
+//     padding: 0;
+//   }
+// }

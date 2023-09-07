@@ -17,7 +17,7 @@ nav {
   height: var(--ui-lg);
   position: fixed;
   @include flex-center;
-  inset: var(--p-sm) 0 0 0;
+  inset: var(space-sm) 0 0 0;
   z-index: 100;
 }
 

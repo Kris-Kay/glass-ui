@@ -1,7 +1,6 @@
 /* ================================== */
 /* Grid */
 @use "../0-base/size";
-
 /* ================================== */
 
 .grid {
@@ -18,30 +17,3 @@
 .grid-center {
   @include grid-center;
 }
-
-
-// @mixin grid-gap($gap) {
-//   @extend .grid;
-//   gap: $gap;
-
-// }
-
-// .grid-gap-xs {
-//   @include grid-gap($gap-xs);
-// }
-
-// .grid-gap-s {
-//   @include grid-gap($gap-sm);
-// }
-
-// .grid-gap-m {
-//   @include grid-gap($gap-md);
-// }
-
-// .grid-gap-l {
-//   @include grid-gap($gap-lg);
-// }
-
-// .grid-gap-xl {
-//   @include grid-gap($gap-xl);
-// }

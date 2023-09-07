@@ -1,42 +1,16 @@
 /* ================================== */
 /* Padding */
-@use "../0-base/breakpoint" as bp;
 @use "../0-base/size";
 /* ================================== */
-
-/* Responsive padding */
-/* gives elements consistent padding with fewer media queries
-/* also used for negative margines in edge-to-edge layouts
-/* ================================== */
-html {
-  --p-sm: #{size.$s-4xs};  
-  --p-md: #{size.$s-2xs};
-  
-  @include bp.breakpoint(sm) {
-    --p-sm: #{size.$s-3xs};
-    --p-md: #{size.$s-xs};
-  }
-
-  @include bp.breakpoint(md) {
-    --p-sm: #{size.$s-2xs};
-    --p-md: #{size.$s-sm};
-  }
-
-  @include bp.breakpoint(lg) {
-    --p-sm: #{size.$s-xs};
-    --p-md: #{size.$s-lg};
-  }
-}
-
 
 $p-xs: size.$s2;  /* 8px  0.5rem */
 $p-sm: size.$s4;  /* 16px 1rem */
 $p-md: size.$s5;  /* 20px 1.25rem */
-$p-lg: size.$s6; /* 24px 1.5rem */
-$p-xl: size.$s8; /* 32px 2rem */
+$p-lg: size.$s6;  /* 24px 1.5rem */
+$p-xl: size.$s8;  /* 32px 2rem */
 
-// /* All around padding */
-// /* ================================== */
+/* All around padding */
+/* ================================== */
 .p-xs {
   padding: $p-xs;
 }
@@ -57,46 +31,46 @@ $p-xl: size.$s8; /* 32px 2rem */
   padding: $p-xl;
 }
 
-// /* Top/Bottom padding */
-// /* ================================== */
-.p-x-xs {
+/* Left/Right padding */
+/* ================================== */
+.p-xs-x {
   padding: 0 $p-xs;
 }
 
-.p-x-sm {
+.p-sm-x {
   padding: 0 $p-sm;
 }
 
-.p-x-md {
+.p-md-x {
   padding: 0 $p-md;
 }
 
-.p-x-lg {
+.p-lg-x {
   padding: 0 $p-lg;
 }
 
-.p-x-xl {
+.p-xl-x {
   padding: 0 $p-xl;
 }
 
-// /* Top/Bottom padding */
-// /* ================================== */
-.p-y-xs {
+/* Top/Bottom padding */
+/* ================================== */
+.p-xs-y {
   padding: $p-xs 0;
 }
 
-.p-y-sm {
+.p-sm-y {
   padding: $p-sm 0;
 }
 
-.p-y-md {
+.p-md-y {
   padding: $p-md 0;
 }
 
-.p-y-lg {
+.p-lg-y {
   padding: $p-lg 0;
 }
 
-.p-y-xl {
+.p-xl-y {
   padding: $p-xl 0;
 }
