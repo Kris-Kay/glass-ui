@@ -15,15 +15,11 @@
 }
 
 .card {
-  padding: var(--p-md);
   width: 100%;
   display: grid;
-  gap: gap.$gap-md;
+  gap: var(--space-md);
+  padding: var(--space-md);
   border-radius: border.$br-md;
-
-  @include breakpoint(md) {
-    border-radius: border.$br-lg;
-  }
 }
 
 // @container card (width >= 400px) {

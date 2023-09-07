@@ -9,50 +9,31 @@
 /* also used for negative margines in edge-to-edge layouts
 /* ================================== */
 html {
-  --space-sm: #{size.$s3}; // 12px
-
   --p-sm: #{size.$s-4xs};  
   --p-md: #{size.$s-2xs};
   
   @include bp.breakpoint(sm) {
-    --space-sm: #{size.$s4}; // 16px
-
     --p-sm: #{size.$s-3xs};
     --p-md: #{size.$s-xs};
   }
 
   @include bp.breakpoint(md) {
-    --space-sm: #{size.$s5}; // 20px
-
     --p-sm: #{size.$s-2xs};
     --p-md: #{size.$s-sm};
   }
 
   @include bp.breakpoint(lg) {
-    --space-sm: #{size.$s6}; // 24px
-
     --p-sm: #{size.$s-xs};
     --p-md: #{size.$s-lg};
   }
 }
 
-.space-sm {
-  padding: var(--space-sm);
-}
 
-.space-sm-x {
-  padding: 0 var(--space-sm);
-}
-
-.space-sm-y {
-  padding: var(--space-sm) 0;
-}
-
-$p-xs: size.$s-3xs;
-$p-sm: size.$s-2xs;
-$p-md: size.$s-md;
-$p-lg: size.$s-xl;
-$p-xl: size.$s-4xl;
+$p-xs: size.$s2;  /* 8px  0.5rem */
+$p-sm: size.$s4;  /* 16px 1rem */
+$p-md: size.$s5;  /* 20px 1.25rem */
+$p-lg: size.$s6; /* 24px 1.5rem */
+$p-xl: size.$s8; /* 32px 2rem */
 
 // /* All around padding */
 // /* ================================== */

@@ -8,45 +8,18 @@
 /* ================================== */
 /* Same values are use for both margin and grid/flex gap,
 /* so that they will match in a layout */
-$gap-xs: size.$s-5xs;
-$gap-sm: size.$s-3xs;
-$gap-md: size.$s-xs;
-$gap-lg: size.$s-xl;
-$gap-xl: size.$s-5xl;
-
-html {
-  --gap-sm: #{size.$s-3xs}; 
-  --gap-md: #{size.$s-xs};
-  --gap-lg: #{size.$s-xl}; 
-
-
-  @include bp.breakpoint(md) {
-    --gap-sm: #{size.$s-xs}; 
-    --gap-md: #{size.$s-md}; 
-    --gap-lg: #{size.$s-3xl}; 
-  }
-
-  @include bp.breakpoint(lg) {
-    --gap-sm: #{size.$s-md}; 
-    --gap-md: #{size.$s-2xl}; 
-    --gap-lg: #{size.$s-5xl}; 
-  }
-}
+$gap-xs: size.$s2;  /* 8px  0.5rem */
+$gap-sm: size.$s4;  /* 16px 1rem */
+$gap-md: size.$s8;  /* 32px 2rem */
+$gap-lg: size.$s12; /* 48px 3rem */
+$gap-xl: size.$s16; /* 64px 4rem */
 
 .gap-xs {
   gap: $gap-xs;
 }
 
 .gap-sm {
-  gap: size.$s-2xs;
-
-  @include bp.breakpoint(md) {
-    gap: size.$s-xs; 
-  }
-
-  @include bp.breakpoint(lg) {
-    gap: size.$s-sm;  
-  }
+  gap: $gap-sm;
 }
 
 .gap-md {
@@ -60,3 +33,23 @@ html {
 .gap-xl {
   gap: $gap-xl;
 }
+
+
+// html {
+//   --gap-sm: #{size.$s-3xs}; 
+//   --gap-md: #{size.$s-xs};
+//   --gap-lg: #{size.$s-xl}; 
+
+
+//   @include bp.breakpoint(md) {
+//     --gap-sm: #{size.$s-xs}; 
+//     --gap-md: #{size.$s-md}; 
+//     --gap-lg: #{size.$s-3xl}; 
+//   }
+
+//   @include bp.breakpoint(lg) {
+//     --gap-sm: #{size.$s-md}; 
+//     --gap-md: #{size.$s-2xl}; 
+//     --gap-lg: #{size.$s-5xl}; 
+//   }
+// }

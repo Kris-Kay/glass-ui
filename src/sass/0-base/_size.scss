@@ -40,20 +40,18 @@ $s-5xl: $s20; /* 80px 4.5rem */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
 
 html {
-  --space-2xs: #{$s-4xs}; //12px
-  --space-xs: #{$s-3xs}; //16px
-  --space-sm: #{$s-xs}; //24px
-
-  --ui-sm: #{$s-sm}; /* 28px */
-  --ui-md: #{$s-md}; /* 32px */
-  --ui-lg: #{$s-lg}; /* 36px */
+  --ui-sm: #{$s6}; /* 24px */
+  --ui-md: #{$s8}; /* 32px */
+  --ui-lg: #{$s9}; /* 36px */
 
   @include bp.breakpoint(md) {
-    --ui-lg: #{$s-xl}; /* 40px */
+    --ui-sm: #{$s7}; /* 28px */
+    --ui-lg: #{$s10}; /* 40px */
   }
 
   @include bp.breakpoint(lg) {
-    --ui-lg: #{$s-2xl}; /* 48px */
+    --ui-md: #{$s9}; /* 36px */
+    --ui-lg: #{$s12}; /* 48px */
   }
 }
 
@@ -67,4 +65,89 @@ html {
 
 .ui-lg {
   height: var(--ui-lg);
+}
+
+/* Responsive edge */
+/* ================================== */
+/* gives elements consistent vertical alignment with fewer media queries */
+/* also used for negative margines for inner edge-to-edge backgrounds */
+
+html {
+  --space-sm: #{$s3}; // 12px
+  --space-md: #{$s5}; // 20px
+  
+  @include bp.breakpoint(sm) {
+    --space-sm: #{$s4}; // 16px
+    --space-md: #{$s6}; // 24px
+  }
+
+  @include bp.breakpoint(md) {
+    --space-sm: #{$s4}; // 16px
+    --space-md: #{$s7}; // 28px
+  }
+
+  @include bp.breakpoint(lg) {
+    --space-sm: #{$s4}; // 16px
+    --space-md: #{$s8}; // 32px 
+  }
+}
+
+.space-sm {
+  padding: var(--space-sm);
+}
+
+.space-sm-x {
+  padding: 0 var(--space-sm);
+}
+
+.space-sm-y {
+  padding: var(--space-sm) 0;
+}
+
+
+/* Responsive Max width */
+/* ================================== */
+html {
+  --max-w: 100%;
+
+  @include bp.breakpoint(md) {
+    --max-w: calc(100vw - (var(--space-sm) * 2));
+  }
+
+  @include bp.breakpoint(lg) {
+    --max-w: 45rem; //720px
+  }
+
+  @include bp.breakpoint(xl) {
+    --max-w: 50rem; //800px
+  }
+}
+
+// /* wrapper for max-w that gives it x padding at tablet (md) size */
+// .max-w-wrap {
+//   padding: 0;
+
+//   @include bp.breakpoint(md) {
+//     padding: 0 var(--space-sm);
+//   }
+
+//   @include bp.breakpoint(lg) {
+//     padding: 0;
+//   }
+// }
+
+/* uniformly limits content width */
+.max-w { 
+  width: 100%;
+  max-width: var(--max-w);
+  margin: auto;
+}
+
+
+/* Full width */
+/* ================================== */
+/* edge to edge at every size */
+.full-w, img {
+  width: 100%;
+  max-width: 100vw;
 }
