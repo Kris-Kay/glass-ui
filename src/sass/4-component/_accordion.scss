@@ -47,7 +47,7 @@
   .see-more-btn {
     width: 100%;
     display: flex;
-    @extend .gap-xs;
+    gap: 1rem;
   }
 
   .see-less-btn {
@@ -64,7 +64,7 @@
   .see-less-btn {
     width: 100%;
     display: flex;
-    @extend .gap-xs;
+    gap: 1rem;
   }
 }
 
@@ -74,11 +74,11 @@
   height: auto;
   max-height: 100%;
   transition: max-height 5000ms ease;
-  @extend .gap-md;
+  gap: 1rem;
   border-radius: 0 0 border.$br-md border.$br-md;
 
   padding: var(--space-md);
-  @include blur-tint-strong;
+  @include blur-dark-strong;
 }
 
 .accordion-content.is-closed {

@@ -54,14 +54,13 @@
   @include tint-strong;
 }
 
-@mixin blur-tint-strong {
+@mixin blur-dark-strong {
   background-color: rgba($shadow-color, 0.1);
-  -webkit-backdrop-filter: blur(64px) brightness(0.15);
-  backdrop-filter: blur(64px) brightness(0.15);
+  -webkit-backdrop-filter: blur(64px) brightness(0.45);
+  backdrop-filter: blur(64px) brightness(0.45);
 }
-
-.blur-tint-strong {
-  @include blur-tint-strong;
+.blur-dark-strong {
+  @include blur-dark-strong;
 }
 
 .tint-fullwidth-s-reg {
@@ -70,6 +69,15 @@
   padding: var(--space-sm) var(--space-md);
   margin-left: calc((-1 * var(--space-md)) + 0.5px);
   margin-right: calc(-1 * var(--space-md));
+  box-shadow: in.$straight-inset-m;
+}
+
+.full-w-strong {
+  @include blur-dark-strong;
+
+  padding: var(--space-md) var(--space-sm);
+  // margin-left: calc((-1 * var(--space-sm)) + 0.5px);
+  // margin-right: calc(-1 * var(--space-sm));
   box-shadow: in.$straight-inset-m;
 }
 

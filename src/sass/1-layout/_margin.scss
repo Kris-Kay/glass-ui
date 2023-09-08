@@ -1,73 +1,101 @@
 /* ================================== */
 /* Margins */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/gap";
+@use "../0-base/size";
 /* ================================== */
-/* Same values are use for both margin and grid/flex gap. */
-/* So that they will match if set to the same T-shirt size. */
 
-/* Margin all around */
-.m-xs {
-  margin: gap.$gap-xs;
+.m {
+  @include size.size-modifiers('margin');
 }
 
-.m-sm {
-  margin: gap.$gap-sm;
+.m-x {
+  @include size.size-modifiers('margin-left');
+  @include size.size-modifiers('margin-right');
 }
 
-.m-md {
-  margin: gap.$gap-md;
+.m-y {
+  @include size.size-modifiers('margin-top');
+  @include size.size-modifiers('margin-bottom');
 }
 
-.m-lg {
-  margin: gap.$gap-lg;
+.m-t {
+  @include size.size-modifiers('margin-top');
 }
 
-.m-xl {
-  margin: gap.$gap-xl;
+.m-b {
+  @include size.size-modifiers('margin-bottom');
+}
+
+.m-l {
+  @include size.size-modifiers('margin-left');
+}
+
+.m-r {
+  @include size.size-modifiers('margin-right');
 }
 
 
-/* Top/Bottom margin */
-/* ================================== */
-.m-y-xs {
-  margin: gap.$gap-xs auto;
-}
 
-.m-y-sm {
-  margin: gap.$gap-sm auto;
-}
+// .m-xs {
+//   margin: gap.$gap-xs;
+// }
 
-.m-y-md {
-  margin: gap.$gap-md auto;
-}
+// .m-sm {
+//   margin: gap.$gap-sm;
+// }
 
-.m-y-lg {
-  margin: gap.$gap-lg auto;
-}
+// .m-md {
+//   margin: gap.$gap-md;
+// }
 
-.m-y-xl {
-  margin: gap.$gap-xl auto;
-}
+// .m-lg {
+//   margin: gap.$gap-lg;
+// }
 
-/* Top margin */
-/* ================================== */
-.m-t-xs {
-  margin-top: gap.$gap-xs;
-}
+// .m-xl {
+//   margin: gap.$gap-xl;
+// }
 
-.m-t-sm {
-  margin-top: gap.$gap-sm;
-}
 
-.m-t-md {
-  margin-top: gap.$gap-md;
-}
+// /* Top/Bottom margin */
+// /* ================================== */
+// .m-y-xs {
+//   margin: gap.$gap-xs auto;
+// }
 
-.m-t-lg {
-  margin-top: gap.$gap-lg;
-}
+// .m-y-sm {
+//   margin: gap.$gap-sm auto;
+// }
 
-.m-t-xl {
-  margin-top: gap.$gap-xl;
-}
+// .m-y-md {
+//   margin: gap.$gap-md auto;
+// }
+
+// .m-y-lg {
+//   margin: gap.$gap-lg auto;
+// }
+
+// .m-y-xl {
+//   margin: gap.$gap-xl auto;
+// }
+
+// /* Top margin */
+// /* ================================== */
+// .m-t-xs {
+//   margin-top: gap.$gap-xs;
+// }
+
+// .m-t-sm {
+//   margin-top: gap.$gap-sm;
+// }
+
+// .m-t-md {
+//   margin-top: gap.$gap-md;
+// }
+
+// .m-t-lg {
+//   margin-top: gap.$gap-lg;
+// }
+
+// .m-t-xl {
+//   margin-top: gap.$gap-xl;
+// }

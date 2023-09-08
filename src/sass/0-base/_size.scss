@@ -3,23 +3,64 @@
 @use "breakpoint" as bp;
 /* ================================== */
 
-$base-size: 0.25rem; // <- customize this
+$root-size: 0.25rem; // <- customize this
 
-$s1: calc($base-size * 1);   /* 4px  0.25rem */
-$s2: calc($base-size * 2);   /* 8px  0.5rem */
-$s3: calc($base-size * 3);   /* 12px 0.75rem */
-$s4: calc($base-size * 4);   /* 16px 1rem */
-$s5: calc($base-size * 5);   /* 20px 1.25rem */
-$s6: calc($base-size * 6);   /* 24px 1.5rem */
-$s7: calc($base-size * 7);   /* 28px 1.75rem */
-$s8: calc($base-size * 8);   /* 32px 2rem */
-$s9: calc($base-size * 9);   /* 36px 2.25rem */
-$s10: calc($base-size * 10); /* 40px 2.5rem */
-$s11: calc($base-size * 11); /* 44px 2.75rem */
-$s12: calc($base-size * 12); /* 48px 3rem */
-$s14: calc($base-size * 14); /* 56px 3.5rem */
-$s16: calc($base-size * 16); /* 64px 4rem */
-$s20: calc($base-size * 20); /* 80px 4.5rem */
+/* Size Values */
+/* ================================== */
+$s1: calc($root-size * 1);   /* 4px  0.25rem */
+$s2: calc($root-size * 2);   /* 8px  0.5rem */
+$s3: calc($root-size * 3);   /* 12px 0.75rem */
+$s4: calc($root-size * 4);   /* 16px 1rem */
+$s5: calc($root-size * 5);   /* 20px 1.25rem */
+$s6: calc($root-size * 6);   /* 24px 1.5rem */
+$s7: calc($root-size * 7);   /* 28px 1.75rem */
+$s8: calc($root-size * 8);   /* 32px 2rem */
+$s9: calc($root-size * 9);   /* 36px 2.25rem */
+$s10: calc($root-size * 10); /* 40px 2.5rem */
+$s11: calc($root-size * 11); /* 44px 2.75rem */
+$s12: calc($root-size * 12); /* 48px 3rem */
+$s14: calc($root-size * 14); /* 56px 3.5rem */
+$s16: calc($root-size * 16); /* 64px 4rem */
+$s20: calc($root-size * 20); /* 80px 4.5rem */
+
+/* T-shirt Size Values */
+/* ================================== */
+/* These are just easier to remember */
+/* If you add or remove any just update the size MAP below */
+$size-3xs: $s1;   /* 4px  0.25rem */
+$size-2xs: $s2;   /* 8px  0.5rem */
+$size-xs:  $s3;   /* 12px 0.75rem */
+$size-sm:  $s4;   /* 16px 1rem */
+$size-md:  $s5;   /* 20px 1.25rem */
+$size-lg:  $s6;   /* 24px 1.5rem */
+$size-xl:  $s8;   /* 32px 2rem */
+$size-2xl: $s12;  /* 48px 3rem */
+$size-3xl: $s20;  /* 80px 4.5rem */
+
+/* Size MAP */
+/* ================================== */
+$sizes: (
+  3xs: $size-3xs,
+  2xs: $size-2xs,
+  xs:  $size-xs,
+  sm:  $size-sm,
+  md:  $size-md,
+  lg:  $size-lg,
+  xl:  $size-xl,
+  2xl: $size-2xl,
+  3xl: $size-3xl
+);
+
+@mixin size-modifiers($attribute: 'a') {
+  @each $key, $value in $sizes {
+    &-#{$key} {
+      #{$attribute}: $value;
+    }
+  }
+}
+
+
+
 
 /* Responsive UI height */
 /* ================================== */
@@ -92,6 +133,21 @@ html {
   padding: var(--space-sm) 0;
 }
 
+.space-sm-t {
+  padding-top: var(--space-sm);
+}
+
+.space-sm-b {
+  padding-bottom: var(--space-sm);
+}
+
+.space-sm-l {
+  padding-left: var(--space-sm);
+}
+
+.space-sm-r {
+  padding-right: var(--space-sm);
+}
 
 /* Responsive Max width */
 /* ================================== */
@@ -142,3 +198,6 @@ html {
 //     padding: 0;
 //   }
 // }
+
+
+

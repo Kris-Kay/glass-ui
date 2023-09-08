@@ -199,7 +199,7 @@ footer {
 .cards-grid {
   width: 100%;
   display: grid;
-  gap: gap.$gap-md;
+  gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 

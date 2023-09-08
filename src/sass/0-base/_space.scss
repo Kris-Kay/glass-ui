@@ -1,0 +1,37 @@
+/* ================================== */
+/* Spacing */
+@use "../0-base/size";
+/* ================================== */
+
+
+
+
+
+/* GAP */
+/* ================================== */
+
+/* Mixin for generating `.gap-` classes from size MAP */
+// @mixin gap-generate {
+//   @each $name, $value in $size {
+//     &-#{$name} {
+//       gap: #{$value};
+//     }
+//   }
+// }
+/* Generate the calsses */
+// .gap {
+//   @include gap-generate;
+// }
+
+
+
+// @mixin gap-generate {
+//   @each $name, $value in $size {
+//     &-#{$name} {
+//       gap: #{$value};
+//     }
+//   }
+// }
+
+
+
