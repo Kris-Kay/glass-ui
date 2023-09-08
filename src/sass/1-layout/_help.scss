@@ -29,7 +29,13 @@
   transform:translate(-50%,-50%);
 }
 
-
+/* Full width */
+/* ================================== */
+/* edge to edge at every size */
+.full-w, img {
+  width: 100%;
+  max-width: 100vw;
+}
 
 
 

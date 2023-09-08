@@ -1,0 +1,118 @@
+/* ================================== */
+/* Fluid layout and sizing */
+@use "../0-base/size";
+@use "breakpoint" as bp;
+/* ================================== */
+
+
+/* Responsive UI height */
+/* ================================== */
+/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
+
+:root {
+  --ui-sm: #{size.$s6};   /* 24px */
+  --ui-md: #{size.$s8};   /* 32px */
+  --ui-lg: #{size.$s9};   /* 36px */
+
+  @include bp.breakpoint(lg) {
+    --ui-sm: #{size.$s7};  /* 28px */
+    --ui-md: #{size.$s9};  /* 36px */
+    --ui-lg: #{size.$s10}; /* 40px */
+  }
+
+  @include bp.breakpoint(xl) {
+    --ui-sm: #{size.$s8};  /* 32px */
+    --ui-md: #{size.$s10}; /* 40px */
+    --ui-lg: #{size.$s11}; /* 44px */
+  }
+}
+
+// .ui-sm {
+//   height: var(--ui-sm);
+// }
+
+// .ui-md {
+//   height: var(--ui-md);
+// }
+
+// .ui-lg {
+//   height: var(--ui-lg);
+// }
+
+/* Responsive edge */
+/* ================================== */
+/* gives elements consistent vertical alignment with fewer media queries */
+/* also used for negative margines for inner edge-to-edge backgrounds */
+
+html {
+  --space-sm: #{size.$s3}; // 12px
+  --space-md: #{size.$s5}; // 20px
+  
+  @include bp.breakpoint(sm) {
+    --space-sm: #{size.$s4}; // 16px
+    --space-md: #{size.$s6}; // 24px
+  }
+
+  @include bp.breakpoint(md) {
+    --space-sm: #{size.$s5}; 
+    --space-md: #{size.$s7}; // 28px
+  }
+
+  @include bp.breakpoint(lg) {
+    --space-sm: #{size.$s7}; // 
+    --space-md: #{size.$s8}; // 32px 
+  }
+}
+
+.space-sm {
+  padding: var(--space-sm);
+}
+
+.space-sm-x {
+  padding: 0 var(--space-sm);
+}
+
+.space-sm-y {
+  padding: var(--space-sm) 0;
+}
+
+.space-sm-t {
+  padding-top: var(--space-sm);
+}
+
+.space-sm-b {
+  padding-bottom: var(--space-sm);
+}
+
+.space-sm-l {
+  padding-left: var(--space-sm);
+}
+
+.space-sm-r {
+  padding-right: var(--space-sm);
+}
+
+/* Responsive Max width */
+/* ================================== */
+/* 100% width on mobile and limited width on desktop */
+html {
+  --max-w: 100%;
+
+  @include bp.breakpoint(md) {
+    --max-w: calc(100vw - (var(--space-sm) * 2));
+  }
+
+  @include bp.breakpoint(lg) {
+    --max-w: 45rem; //720px
+  }
+
+  @include bp.breakpoint(xl) {
+    --max-w: 50rem; //800px
+  }
+}
+
+.max-w { 
+  width: 100%;
+  max-width: var(--max-w);
+  margin: auto;
+}

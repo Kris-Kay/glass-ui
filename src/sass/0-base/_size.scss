@@ -3,7 +3,7 @@
 @use "breakpoint" as bp;
 /* ================================== */
 
-$root-size: 0.25rem; // <- customize this
+$root-size: 0.25rem;
 
 /* Size Values */
 /* ================================== */
@@ -19,185 +19,89 @@ $s9: calc($root-size * 9);   /* 36px 2.25rem */
 $s10: calc($root-size * 10); /* 40px 2.5rem */
 $s11: calc($root-size * 11); /* 44px 2.75rem */
 $s12: calc($root-size * 12); /* 48px 3rem */
+$s13: calc($root-size * 13); /* 52px 3.25rem */
 $s14: calc($root-size * 14); /* 56px 3.5rem */
+$s15: calc($root-size * 15); /* 60px 3.75rem */
 $s16: calc($root-size * 16); /* 64px 4rem */
-$s20: calc($root-size * 20); /* 80px 4.5rem */
+$s17: calc($root-size * 17); /* 68px 4.25rem */
+$s18: calc($root-size * 18); /* 72px 4.5rem */
+$s19: calc($root-size * 19); /* 76px 4.75rem */
+$s20: calc($root-size * 20); /* 80px 5rem */
 
-/* T-shirt Size Values */
-/* ================================== */
-/* These are just easier to remember */
-/* If you add or remove any just update the size MAP below */
-$size-3xs: $s1;   /* 4px  0.25rem */
-$size-2xs: $s2;   /* 8px  0.5rem */
-$size-xs:  $s3;   /* 12px 0.75rem */
-$size-sm:  $s4;   /* 16px 1rem */
-$size-md:  $s5;   /* 20px 1.25rem */
-$size-lg:  $s6;   /* 24px 1.5rem */
-$size-xl:  $s8;   /* 32px 2rem */
-$size-2xl: $s12;  /* 48px 3rem */
-$size-3xl: $s20;  /* 80px 4.5rem */
+:root {
+  --3xs:  #{$s1};
+  --2xs:  #{$s2};
+  --xs:   #{$s3};
+  --sm:   #{$s4};
+  --md:   #{$s5};
+  --lg:   #{$s6};
+  --xl:   #{$s9};
+  --2xl:  #{$s12};
+  --3xl:  #{$s15};
+
+  @include bp.breakpoint(md) {
+    --3xs:  #{$s2};
+    --2xs:  #{$s3};
+    --xs:   #{$s4};
+    --sm:   #{$s5};
+    --md:   #{$s6};
+    --lg:   #{$s7};
+    --xl:   #{$s12};
+    --2xl:  #{$s15};
+    --3xl:  #{$s18};
+  }
+
+  @include bp.breakpoint(xl) {
+    --3xs:  #{$s3};
+    --2xs:  #{$s4};
+    --xs:   #{$s5};
+    --sm:   #{$s6};
+    --md:   #{$s7};
+    --lg:   #{$s8};
+    --xl:   #{$s15};
+    --2xl:  #{$s18};
+    --3xl:  #{$s20};
+  }
+}
 
 /* Size MAP */
 /* ================================== */
+// $sizes: (
+//   3xs: $s1,
+//   2xs: $s2,
+//   xs:  $s3,
+//   sm:  $s6,
+//   md:  $s5,
+//   lg:  $s6,
+//   xl:  $s8,
+//   2xl: $s12,
+//   3xl: $s20
+// );
+
 $sizes: (
-  3xs: $size-3xs,
-  2xs: $size-2xs,
-  xs:  $size-xs,
-  sm:  $size-sm,
-  md:  $size-md,
-  lg:  $size-lg,
-  xl:  $size-xl,
-  2xl: $size-2xl,
-  3xl: $size-3xl
+  3xs: var(--3xs),
+  2xs: var(--2xs),
+  xs:  var(--xs),
+  sm:  var(--sm),
+  md:  var(--md),
+  lg:  var(--lg),
+  xl:  var(--xl),
+  2xl: var(--2xl),
+  3xl: var(--3xl),
 );
 
+/* Size modifier mixin */
+/* ================================== */
+/* Generates size modifier classes */
+/* Used in grid/flex gap, border-radius, margin, and padding */
 @mixin size-modifiers($attribute: 'a') {
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$attribute}: $value;
+
+      // @include bp.breakpoint(xl) {
+      //   #{$attribute}: calc(#{$value} * 2);
+      // }
     }
   }
 }
-
-
-
-
-/* Responsive UI height */
-/* ================================== */
-/* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
-
-html {
-  --ui-sm: #{$s6};   /* 24px */
-  --ui-md: #{$s8};   /* 32px */
-  --ui-lg: #{$s9};   /* 36px */
-
-  @include bp.breakpoint(lg) {
-    --ui-sm: #{$s7};  /* 28px */
-    --ui-md: #{$s9};  /* 36px */
-    --ui-lg: #{$s10}; /* 44px */
-  }
-
-  @include bp.breakpoint(xl) {
-    --ui-sm: #{$s8};  /* 32px */
-    --ui-md: #{$s10}; /* 40px */
-    --ui-lg: #{$s11}; /* 44px */
-  }
-}
-
-.ui-sm {
-  height: var(--ui-sm);
-}
-
-.ui-md {
-  height: var(--ui-md);
-}
-
-.ui-lg {
-  height: var(--ui-lg);
-}
-
-/* Responsive edge */
-/* ================================== */
-/* gives elements consistent vertical alignment with fewer media queries */
-/* also used for negative margines for inner edge-to-edge backgrounds */
-
-html {
-  --space-sm: #{$s3}; // 12px
-  --space-md: #{$s5}; // 20px
-  
-  @include bp.breakpoint(sm) {
-    --space-sm: #{$s4}; // 16px
-    --space-md: #{$s6}; // 24px
-  }
-
-  @include bp.breakpoint(md) {
-    --space-sm: #{$s5}; 
-    --space-md: #{$s7}; // 28px
-  }
-
-  @include bp.breakpoint(lg) {
-    --space-sm: #{$s7}; // 
-    --space-md: #{$s8}; // 32px 
-  }
-}
-
-.space-sm {
-  padding: var(--space-sm);
-}
-
-.space-sm-x {
-  padding: 0 var(--space-sm);
-}
-
-.space-sm-y {
-  padding: var(--space-sm) 0;
-}
-
-.space-sm-t {
-  padding-top: var(--space-sm);
-}
-
-.space-sm-b {
-  padding-bottom: var(--space-sm);
-}
-
-.space-sm-l {
-  padding-left: var(--space-sm);
-}
-
-.space-sm-r {
-  padding-right: var(--space-sm);
-}
-
-/* Responsive Max width */
-/* ================================== */
-/* uniformly limits content width */
-html {
-  --max-w: 100%;
-
-  @include bp.breakpoint(md) {
-    --max-w: calc(100vw - (var(--space-sm) * 2));
-  }
-
-  @include bp.breakpoint(lg) {
-    --max-w: 45rem; //720px
-  }
-
-  @include bp.breakpoint(xl) {
-    --max-w: 50rem; //800px
-  }
-}
-
-.max-w { 
-  width: 100%;
-  max-width: var(--max-w);
-  margin: auto;
-}
-
-
-/* Full width */
-/* ================================== */
-/* edge to edge at every size */
-.full-w, img {
-  width: 100%;
-  max-width: 100vw;
-}
-
-
-
-
-// /* wrapper for max-w that gives it x padding at tablet (md) size */
-// .max-w-wrap {
-//   padding: 0;
-
-//   @include bp.breakpoint(md) {
-//     padding: 0 var(--space-sm);
-//   }
-
-//   @include bp.breakpoint(lg) {
-//     padding: 0;
-//   }
-// }
-
-
-

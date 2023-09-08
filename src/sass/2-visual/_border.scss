@@ -4,7 +4,7 @@
 @use "../0-base/size";
 /* ================================== */
 
-/* border-radius: */
+// /* border-radius: */
 $br-3xs: size.$s2; //8px
 $br-2xs: 0.625rem; //10px
 $br-xs: size.$s3; //12px
@@ -13,6 +13,12 @@ $br-md: size.$s6;
 $br-lg: size.$s8;
 $br-xl: size.$s12;
 $round: 9999px;
+
+
+.br {
+  @include size.size-modifiers('border-radius');
+  // overflow: hidden;
+}
 
 @mixin br-sx {
   border-radius: size.$s2;
@@ -62,10 +68,10 @@ $round: 9999px;
 
 /* Nested border radius */  
 /* ================================== */
-@mixin outer-br ($innerR, $padding) {
-  $r: calc($innerR + $padding);
+@mixin outer-br ($inner-br, $padding) {
+  $r: calc($inner-br + $padding);
   $f: calc(($r * 23) / 100);
-  $outerR: calc($r - $f);
+  $br: calc($r - $f);
 
-  border-radius: $outerR;
+  border-radius: $br;
 }
