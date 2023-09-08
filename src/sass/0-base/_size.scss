@@ -15,6 +15,7 @@ $s7: calc($base-size * 7);   /* 28px 1.75rem */
 $s8: calc($base-size * 8);   /* 32px 2rem */
 $s9: calc($base-size * 9);   /* 36px 2.25rem */
 $s10: calc($base-size * 10); /* 40px 2.5rem */
+$s11: calc($base-size * 11); /* 44px 2.75rem */
 $s12: calc($base-size * 12); /* 48px 3rem */
 $s14: calc($base-size * 14); /* 56px 3.5rem */
 $s16: calc($base-size * 16); /* 64px 4rem */
@@ -25,18 +26,20 @@ $s20: calc($base-size * 20); /* 80px 4.5rem */
 /* used for matching the height of buttons, inputs, and icons so that they don't look weird next to each other */
 
 html {
-  --ui-sm: #{$s6}; /* 24px */
-  --ui-md: #{$s8}; /* 32px */
-  --ui-lg: #{$s9}; /* 36px */
-
-  @include bp.breakpoint(md) {
-    --ui-sm: #{$s7}; /* 28px */
-    --ui-lg: #{$s10}; /* 40px */
-  }
+  --ui-sm: #{$s6};   /* 24px */
+  --ui-md: #{$s8};   /* 32px */
+  --ui-lg: #{$s9};   /* 36px */
 
   @include bp.breakpoint(lg) {
-    --ui-md: #{$s9}; /* 36px */
-    --ui-lg: #{$s12}; /* 48px */
+    --ui-sm: #{$s7};  /* 28px */
+    --ui-md: #{$s9};  /* 36px */
+    --ui-lg: #{$s10}; /* 44px */
+  }
+
+  @include bp.breakpoint(xl) {
+    --ui-sm: #{$s8};  /* 32px */
+    --ui-md: #{$s10}; /* 40px */
+    --ui-lg: #{$s11}; /* 44px */
   }
 }
 
@@ -67,12 +70,12 @@ html {
   }
 
   @include bp.breakpoint(md) {
-    --space-sm: #{$s4}; // 16px
+    --space-sm: #{$s5}; 
     --space-md: #{$s7}; // 28px
   }
 
   @include bp.breakpoint(lg) {
-    --space-sm: #{$s4}; // 16px
+    --space-sm: #{$s7}; // 
     --space-md: #{$s8}; // 32px 
   }
 }

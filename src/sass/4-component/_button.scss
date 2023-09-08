@@ -1,6 +1,7 @@
 /* ================================== */
 /* Buttons & chips */
 @use "../0-base" as *;
+@use "../0-base/breakpoint" as bp;
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../3-material" as *;
@@ -85,7 +86,7 @@
 /* Button size and text */
 /* ================================== */
 .btn-s {
-  $inner-h: 0.75rem; 
+  $inner-h: 0.75em; 
   height: var(--ui-sm); 
   @include btn-base;
   gap: 0.3rem;
@@ -111,7 +112,7 @@
 }
 
 .btn-m {
-  $inner-h: 1rem;
+  $inner-h: 0.95em;
   height: var(--ui-md); 
   @include btn-base;
   gap: 0.35rem;
@@ -137,14 +138,15 @@
 }
 
 .btn-l {
-  $inner-h: 1.25rem; 
+  $inner-h: 1.1em; 
   height: var(--ui-lg); 
   @include btn-base;
   gap: 0.4rem;
   font-size: $inner-h;
   line-height: $inner-h;
-  padding: 2px 1.2rem 0 1.2rem;
-z-index: 10;
+  padding: 1px 1.2rem 0 1.2rem;
+  z-index: 10;
+
   & img {
     width: auto;
     height: $inner-h;

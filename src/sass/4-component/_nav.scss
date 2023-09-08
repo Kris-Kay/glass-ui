@@ -16,15 +16,25 @@ nav {
 .nav-fixed {
   height: var(--ui-lg);
   position: fixed;
-  @include flex-center;
-  inset: var(space-sm) 0 0 0;
+  @include flex-sb;
+  inset: var(--space-sm) 0 0 0;
   z-index: 100;
+
+  padding: 0 var(--space-sm);
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
 }
 
 .nav-grid {
   margin: 0 auto;
   display: grid;
   grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
+
+  @include breakpoint(xl) {
+    max-width: calc(var(--max-w) + (var(--ui-lg) * 2) + 3rem);
+  }
 }
 
 .dropdown-toggle, .nav-logo {

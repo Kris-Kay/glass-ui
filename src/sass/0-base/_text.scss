@@ -117,12 +117,12 @@ body {
 }
 
 @mixin btn-text {
-  font-family: $font-family-title;
+  font-family: $font-family-body;
   font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
+  letter-spacing: $letter-spacing-lg;
   text-align: center;
   text-shadow: sha.$text-shadow-sm;
-  color: color.$text-reg;
+  color: color.$text-strong;
 }
 
 /* Code */ 

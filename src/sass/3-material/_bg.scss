@@ -75,7 +75,7 @@
 
 .dark-fullwidth {
   background-color: rgba($shadow-color, 0.8);
-  padding: var(space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   margin-left: calc((-1 * var(--space-md)) + 0.5px);
   margin-right: calc(-1 * var(--space-md));
 }
@@ -87,7 +87,7 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   margin-left: calc(-1 * var(--space-md));
   margin-right: calc(-1 * var(--space-md));
 
@@ -96,7 +96,7 @@
   }
 
   @include bp.breakpoint(md) {
-    padding: var(space-sm);
+    padding: var(--space-sm);
     border-radius: border.$br-sm;
     margin: 0;
   }
@@ -105,7 +105,7 @@
 .dark-round-rect {
   width: 100%;
   @include glass.dark-mild;
-  padding: var(space-sm);
+  padding: var(--space-sm);
   border-radius: border.$br-sm;
 }
 

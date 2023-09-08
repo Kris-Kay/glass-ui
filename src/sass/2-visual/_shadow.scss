@@ -135,11 +135,3 @@ $svg-sha-lg:
   drop-shadow( 0 0 2px rgba(color.$shadow-color, 0.1))
   drop-shadow(    0 0 4px rgba(color.$shadow-color, 0.1));
 }
-
-.svg-sha-md {
-  filter: drop-shadow($svg-sha-md);
-}
-
-.svg-sha-lg {
-  filter: drop-shadow($svg-sha-lg);
-}

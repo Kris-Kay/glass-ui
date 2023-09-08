@@ -5,16 +5,26 @@
 /* ================================== */
 
 /* border-radius: */
-$br-xs: size.$s2;
+$br-3xs: size.$s2; //8px
+$br-2xs: 0.625rem; //10px
+$br-xs: size.$s3; //12px
 $br-sm: size.$s4; //16px
 $br-md: size.$s6;
 $br-lg: size.$s8;
 $br-xl: size.$s12;
 $round: 9999px;
 
-.br-sx {
-  border-radius: $br-xs;
+@mixin br-sx {
+  border-radius: size.$s2;
   overflow: hidden;
+
+  @include bp.breakpoint(lg) {
+    border-radius: size.$s3;
+  }
+}
+
+.br-sx {
+  @include br-sx;
 }
 
 .br-sm {
@@ -50,4 +60,12 @@ $round: 9999px;
   overflow: hidden;
 }
 
+/* Nested border radius */  
+/* ================================== */
+@mixin outer-br ($innerR, $padding) {
+  $r: calc($innerR + $padding);
+  $f: calc(($r * 23) / 100);
+  $outerR: calc($r - $f);
 
+  border-radius: $outerR;
+}
