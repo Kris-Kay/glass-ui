@@ -28,41 +28,29 @@ $s18: calc($root-size * 18); /* 72px 4.5rem */
 $s19: calc($root-size * 19); /* 76px 4.75rem */
 $s20: calc($root-size * 20); /* 80px 5rem */
 
-:root {
-  --3xs:  #{$s1};
-  --2xs:  #{$s2};
-  --xs:   #{$s3};
-  --sm:   #{$s4};
-  --md:   #{$s5};
-  --lg:   #{$s6};
-  --xl:   #{$s9};
-  --2xl:  #{$s12};
-  --3xl:  #{$s15};
+
+html {
+  --multiplier:  1.1rem;
+
+  --3xs:  calc(#{$s3} * var(--multiplier));
+  --2xs:  calc(#{$s4} * var(--multiplier));
+  --xs:   calc(#{$s5} * var(--multiplier));
+  --sm:   calc(#{$s6} * var(--multiplier));
+  --md:   calc(#{$s8} * var(--multiplier));
+  --lg:   calc(#{$s10} * var(--multiplier));
+  --xl:   calc(#{$s12} * var(--multiplier));
+  --2xl:  calc(#{$s14} * var(--multiplier));
+  --3xl:  calc(#{$s16} * var(--multiplier));
 
   @include bp.breakpoint(md) {
-    --3xs:  #{$s2};
-    --2xs:  #{$s3};
-    --xs:   #{$s4};
-    --sm:   #{$s5};
-    --md:   #{$s6};
-    --lg:   #{$s7};
-    --xl:   #{$s12};
-    --2xl:  #{$s15};
-    --3xl:  #{$s18};
+    --multiplier: 1.25rem;
   }
 
   @include bp.breakpoint(xl) {
-    --3xs:  #{$s3};
-    --2xs:  #{$s4};
-    --xs:   #{$s5};
-    --sm:   #{$s6};
-    --md:   #{$s7};
-    --lg:   #{$s8};
-    --xl:   #{$s15};
-    --2xl:  #{$s18};
-    --3xl:  #{$s20};
+    --multiplier: 1.5rem;
   }
 }
+
 
 /* Size MAP */
 /* ================================== */

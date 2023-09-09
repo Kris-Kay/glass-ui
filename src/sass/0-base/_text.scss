@@ -10,10 +10,10 @@
 // https://modern-fluid-typography.vercel.app/
 // use this tool to fine-tune your fluid typography range
 html {
-  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
-  --text-sm: clamp(1rem, 0.16vw + 1rem, 1.125rem);
-  --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
-  --text-lg: clamp(1.375rem, 0.9vw + 1rem, 1.75rem);
+  --text-xs: clamp(0.938rem, 5vw - 1rem, 1rem);
+  --text-sm: clamp(1rem, 0.3vw + 1rem, 1.188rem);;
+  --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.5rem);
+  --text-lg: clamp(1.5rem, 0.9vw + 1rem, 1.75rem);
   --text-xl: clamp(1.75rem, 1.7vw + 1rem, 2rem);
   --text-2xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
 }
@@ -38,7 +38,7 @@ $font-family-code: 'Fragment Mono', Courier, monospace;
 $font-weight-xs: 200;
 $font-weight-sm: 300;
 $font-weight-md: 400;
-$font-weight-lg: 500;
+$font-weight-lg: 600;
 
 /* letter-spacing: */
 $letter-spacing-sm: 0.02em;
@@ -47,7 +47,7 @@ $letter-spacing-lg: 0.125em;
 
 /* line-height: */
 $line-height-sm: 1.2;
-$line-height-md: 1.4;
+$line-height-md: calc(0.125em + 2ex + 0.125em);
 $line-height-lg: 1.6;
 
 /* Text */
@@ -55,9 +55,9 @@ $line-height-lg: 1.6;
 
 @mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-xs;
+  font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-sm;
-  line-height: $line-height-md;
+  line-height: calc(2px + 2.2ex + 2px);
   color: color.$text-reg;
 }
 
@@ -83,7 +83,6 @@ body {
 
 .list-i {
   @include body-text;
-  font-weight: $font-weight-sm;
   font-size: var(--text-md);
 }
 
@@ -133,18 +132,22 @@ body {
   color: color.$text-strong;
 }
 
-/* Titles */
+/* Title */
 /* ================================== */
+@mixin title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  line-height: calc(2px + 2.15ex + 2px);
+  color: color.$text-reg;
+  text-shadow: sha.$text-shadow-lg;
+}
+
 @mixin title-size-modifiers {
   @each $key, $value in $font-sizes {
     &-#{$key} {
       font-size: $value;
-      font-family: $font-family-title;
-      font-weight: $font-weight-sm;
-      letter-spacing: $letter-spacing-sm;
-      line-height: $line-height-md;
-      color: color.$text-reg;
-      text-shadow: sha.$text-shadow-md;
+      @include title;
     }
   }
 }
@@ -153,6 +156,29 @@ body {
   @include title-size-modifiers;
 }
 
+/* Thin Title */
+/* ================================== */
+@mixin title-thin {
+  font-family: $font-family-title;
+  font-weight: $font-weight-xs;
+  letter-spacing: $letter-spacing-sm;
+  line-height: calc(2px + 2.1ex + 2px);
+  color: color.$text-reg;
+  text-shadow: sha.$text-shadow-md;
+}
+
+@mixin title-thin-size-modifiers {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      @include title-thin;
+    }
+  }
+}
+
+.title-thin {
+  @include title-thin-size-modifiers;
+}
 
 /* Code */ 
 /* ================================== */
