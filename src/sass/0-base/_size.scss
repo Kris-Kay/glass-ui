@@ -98,10 +98,6 @@ $sizes: (
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$attribute}: $value;
-
-      // @include bp.breakpoint(xl) {
-      //   #{$attribute}: calc(#{$value} * 2);
-      // }
     }
   }
 }

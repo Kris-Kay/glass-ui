@@ -4,16 +4,30 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
-/* Responsive font sizes */ 
+/* Fluidly Responsive font sizes */ 
 /* ================================== */
+// credit to Adrian Bece for interactive fluid typography editor 
+// https://modern-fluid-typography.vercel.app/
+// use this tool to fine-tune your fluid typography range
 html {
-  --text-xs: clamp(14px, (13px + 0.3vw), 16px);
-  --text-sm: clamp(16px, (15px + 0.3vw), 18px);
-  --text-md: clamp(18px, (17px + 0.3vw), 22px);
-  --text-lg: clamp(22px, (21px + 0.3vw), 28px);
-  --text-xl: clamp(28px, (27px + 0.3vw), 32px);
-  --text-2xl: clamp(32px, (31px + 0.3vw), 40px);
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+  --text-sm: clamp(1rem, 0.16vw + 1rem, 1.125rem);
+  --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  --text-lg: clamp(1.375rem, 0.9vw + 1rem, 1.75rem);
+  --text-xl: clamp(1.75rem, 1.7vw + 1rem, 2rem);
+  --text-2xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
 }
+
+/* Font size MAP */
+/* ================================== */
+$font-sizes: (
+  xs:  var(--text-xs),
+  sm:  var(--text-sm),
+  md:  var(--text-md),
+  lg:  var(--text-lg),
+  xl:  var(--text-xl),
+  2xl: var(--text-2xl)
+);
 
 /* font-family: */
 $font-family-title: 'Poppins', Arial, sans-serif;
@@ -27,56 +41,50 @@ $font-weight-md: 400;
 $font-weight-lg: 500;
 
 /* letter-spacing: */
-$letter-spacing-xs: 0.01em;
 $letter-spacing-sm: 0.02em;
-$letter-spacing-md: 0.04em;
-$letter-spacing-lg: 0.08em;
-$letter-spacing-xl: 0.125em;
+$letter-spacing-md: 0.08em;
+$letter-spacing-lg: 0.125em;
 
 /* line-height: */
-$line-height-sm: 1.25;
-$line-height-md: 1.5;
-$line-height-lg: 2;
+$line-height-sm: 1.2;
+$line-height-md: 1.4;
+$line-height-lg: 1.6;
 
-/* font-size: */
-.text-xs {
-  font-size: var(--text-xs);
-}
-
-.text-sm {
-  font-size: var(--text-sm);
-}
-
-.text-md {
-  font-size: var(--text-md);
-}
-
-.text-lg {
-  font-size: var(--text-lg);
-}
-
-.text-xl {
-  font-size: var(--text-xl);
-}
-
-.text-2xl {
-  font-size: var(--text-2xl);
-}
-
-/* Basic text styles */ 
+/* Text */
 /* ================================== */
-body {
+
+@mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-sm;
-  font-size: var(--text-sm);
+  font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
   color: color.$text-reg;
 }
 
+@mixin text-size-modifiers {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      @include body-text;
+    }
+  }
+}
+
+.text {
+  @include text-size-modifiers;
+}
+
+/* Basic text styles */ 
+/* ================================== */
+body {
+  @include body-text;
+  font-size: var(--text-sm);
+}
+
 .list-i {
+  @include body-text;
+  font-weight: $font-weight-sm;
   font-size: var(--text-md);
-  line-height: $line-height-md;
 }
 
 .check {
@@ -125,6 +133,27 @@ body {
   color: color.$text-strong;
 }
 
+/* Titles */
+/* ================================== */
+@mixin title-size-modifiers {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      font-family: $font-family-title;
+      font-weight: $font-weight-sm;
+      letter-spacing: $letter-spacing-sm;
+      line-height: $line-height-md;
+      color: color.$text-reg;
+      text-shadow: sha.$text-shadow-md;
+    }
+  }
+}
+
+.title {
+  @include title-size-modifiers;
+}
+
+
 /* Code */ 
 /* ================================== */
 code {
@@ -157,60 +186,9 @@ pre code {
   color: color.$code-value;
 }
 
-/* Titles */
-/* ================================== */
-.title {
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-lg;
-  color: color.$text-reg;
-  // text-wrap: balance;
-}
 
-.title-s {
-  @extend .title;
-  font-size: var(--text-sm);
-  font-weight: $font-weight-sm;
-  // line-height: 1.4;
-  // text-shadow: sha.$text-shadow-s;
-}
 
-.title-m {
-  @extend .title;
-  font-size: var(--text-md);
-  line-height: 1.4;
-  text-shadow: sha.$text-shadow-sm;
-}
 
-.title-l {
-  @extend .title;
-  font-size: var(--text-lg);
-  line-height: 1.3;
-  text-shadow: sha.$text-shadow-md;
-}
-
-.title-xl {
-  @extend .title;
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  text-shadow: sha.$text-shadow-lg;
-}
-
-/* Thin titles */
-.title-m-thin {
-  @extend .title-m;
-  font-weight: $font-weight-xs;
-}
-
-.title-l-thin {
-  @extend .title-l;
-  font-weight: $font-weight-xs;
-}
-
-.title-xl-thin {
-  @extend .title-xl;
-  font-weight: $font-weight-xs;
-}
 
 /* Text helpers */
 /* ================================== */
