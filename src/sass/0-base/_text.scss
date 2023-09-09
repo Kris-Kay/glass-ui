@@ -41,7 +41,7 @@ $font-weight-md: 400;
 $font-weight-lg: 600;
 
 /* letter-spacing: */
-$letter-spacing-sm: 0.02em;
+$letter-spacing-sm: 0.01em;
 $letter-spacing-md: 0.08em;
 $letter-spacing-lg: 0.125em;
 
@@ -55,10 +55,11 @@ $line-height-lg: 1.6;
 
 @mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-sm;
+  font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
-  line-height: calc(2px + 2.2ex + 2px);
+  line-height: calc(2px + 2.1ex + 2px);
   color: color.$text-reg;
+  text-shadow: sha.$text-shadow-xs;
 }
 
 @mixin text-size-modifiers {

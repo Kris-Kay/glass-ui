@@ -29,28 +29,63 @@ $s19: calc($root-size * 19); /* 76px 4.75rem */
 $s20: calc($root-size * 20); /* 80px 5rem */
 
 
-html {
-  --multiplier:  1.1rem;
+// html {
+//   --multiplier:  1.1rem;
 
-  --3xs:  calc(#{$s3} * var(--multiplier));
-  --2xs:  calc(#{$s4} * var(--multiplier));
-  --xs:   calc(#{$s5} * var(--multiplier));
-  --sm:   calc(#{$s6} * var(--multiplier));
-  --md:   calc(#{$s8} * var(--multiplier));
-  --lg:   calc(#{$s10} * var(--multiplier));
-  --xl:   calc(#{$s12} * var(--multiplier));
-  --2xl:  calc(#{$s14} * var(--multiplier));
-  --3xl:  calc(#{$s16} * var(--multiplier));
+//   --3xs:  calc(#{$s3} * var(--multiplier));
+//   --2xs:  calc(#{$s4} * var(--multiplier));
+//   --xs:   calc(#{$s5} * var(--multiplier));
+//   --sm:   calc(#{$s6} * var(--multiplier));
+//   --md:   calc(#{$s8} * var(--multiplier));
+//   --lg:   calc(#{$s10} * var(--multiplier));
+//   --xl:   calc(#{$s12} * var(--multiplier));
+//   --2xl:  calc(#{$s14} * var(--multiplier));
+//   --3xl:  calc(#{$s16} * var(--multiplier));
 
-  @include bp.breakpoint(md) {
-    --multiplier: 1.25rem;
-  }
+//   @include bp.breakpoint(md) {
+//     --multiplier: 1.25rem;
+//   }
 
-  @include bp.breakpoint(xl) {
-    --multiplier: 1.5rem;
-  }
-}
+//   @include bp.breakpoint(xl) {
+//     --multiplier: 1.5rem;
+//   }
+// }
 
+// :root {
+//   --3xs:  #{$s1};
+//   --2xs:  #{$s2};
+//   --xs:   #{$s3};
+//   --sm:   #{$s4};
+//   --md:   #{$s5};
+//   --lg:   #{$s6};
+//   --xl:   #{$s9};
+//   --2xl:  #{$s12};
+//   --3xl:  #{$s15};
+
+//   @include bp.breakpoint(md) {
+//     --3xs:  #{$s2};
+//     --2xs:  #{$s3};
+//     --xs:   #{$s4};
+//     --sm:   #{$s5};
+//     --md:   #{$s6};
+//     --lg:   #{$s7};
+//     --xl:   #{$s12};
+//     --2xl:  #{$s15};
+//     --3xl:  #{$s18};
+//   }
+
+//   @include bp.breakpoint(xl) {
+//     --3xs:  #{$s3};
+//     --2xs:  #{$s4};
+//     --xs:   #{$s5};
+//     --sm:   #{$s6};
+//     --md:   #{$s7};
+//     --lg:   #{$s8};
+//     --xl:   #{$s15};
+//     --2xl:  #{$s18};
+//     --3xl:  #{$s20};
+//   }
+// }
 
 /* Size MAP */
 /* ================================== */
@@ -78,6 +113,41 @@ $sizes: (
   3xl: var(--3xl),
 );
 
+html {
+  --3xs:  #{$s3};
+  --2xs:  #{$s4};
+  --xs:   #{$s5};
+  --sm:   #{$s6};
+  --md:   #{$s8};
+  --lg:   #{$s10};
+  --xl:   #{$s12};
+  --2xl:  #{$s14};
+  --3xl:  #{$s16};
+}
+
+$sizes: (
+  3xs: $s1,
+  2xs: $s2,
+  xs:  $s3,
+  sm:  $s4,
+  md:  $s6,
+  lg:  $s8,
+  xl:  $s10,
+  2xl: $s12,
+  3xl: $s14
+);
+
+//   --3xs:  calc(#{$s3} * var(--multiplier));
+//   --2xs:  calc(#{$s4} * var(--multiplier));
+//   --xs:   calc(#{$s5} * var(--multiplier));
+//   --sm:   calc(#{$s6} * var(--multiplier));
+//   --md:   calc(#{$s8} * var(--multiplier));
+//   --lg:   calc(#{$s10} * var(--multiplier));
+//   --xl:   calc(#{$s12} * var(--multiplier));
+//   --2xl:  calc(#{$s14} * var(--multiplier));
+//   --3xl:  calc(#{$s16} * var(--multiplier));
+
+
 /* Size modifier mixin */
 /* ================================== */
 /* Generates size modifier classes */
@@ -86,6 +156,15 @@ $sizes: (
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$attribute}: $value;
+
+      @include bp.breakpoint(sm) {
+        #{$attribute}:calc($value * 1.25);
+      }
+    
+      @include bp.breakpoint(lg) {
+        #{$attribute}:calc($value * 1.5);
+      }
     }
   }
 }
+
