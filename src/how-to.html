@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Glass UI SCSS library</title>
+    <title>3D Glass UI</title>
     <meta
       name="description"
       content="3D Glassmorphism inspired by Apple Vision Pro's spatial UI"
@@ -42,7 +42,7 @@
             <div class="nav-fixed">
               <div class="nav-grid max-w">
                 <a
-                  href="#top-of-page"
+                  href="./index.html"
                   class="circle-btn-l frosted-glass nav-logo"
                 >
                   <img
@@ -124,9 +124,11 @@
             </div>
           </nav>
 
-            <div class="card glass-dark-very-mild sha-xl">
-     
-              <h1 class="title-xl">3D Glass UI</h1>
+            <div class="card glass-dark-very-mild sha-xl flex-center">
+              <div class="max-w blur-dark-strong br-lg space-sm flex-center gap-md">
+                <h1>How to glass</h1>
+         
+              <!-- <h1 class="title-xl">3D Glass UI</h1>
 
               <div class="tint-fullwidth-s-reg">
                 <p class="first-line-bold">
@@ -137,7 +139,7 @@
               <div class="flex-right gap-xs">
                 <p class="lower-s">Created by</p>
                 <p class="upper-s">Kris Kay</p>
-              </div>
+              </div> -->
           </div>
 
       </header>
@@ -146,25 +148,41 @@
 <!-- ================================== -->
       <main class="grid gap-3xl p-y-3xl">
 
-        <!-- <div class="max-w blur-dark-strong br-lg space-sm flex-center gap-md">
-          <button type="button" class="btn-glass-xs btn-s">
-            View
-          </button>
+        <div class="blur-dark-strong">
+          <img src="/assets/homeImg/glass-x-view-white.png" class="space-sm" />
 
-          <button type="button" class="btn-glass-s btn-m">
-            View 
-          </button>
+          <div class="space-sm">
+            <h3 class="text-lg">Layers</h3>
+            <ul class="grid gap-xs p-xs">
+              <li class="list-i check">
+                Bevel box-shadow 
+              </li>
 
-          <button type="button" class="btn-glass-m btn-l">
-            View 
-          </button>
-        </div> -->
+              <li class="list-i check">
+                Noise texture
+              </li>
+
+              <li class="list-i check">
+                Background-color
+              </li>
+
+              <li class="list-i check">
+                Backdrop-filter
+              </li>
+
+              <li class="list-i check">
+                Elevation box-shadow
+              </li>
+            </ul>
+          </div>
+        </div>
+
+<!-- 
 
         
         <div class="max-w blur-tint-reg br-lg grid">
-          <h2 class="title-lg space-sm">Glassmorphism gets a glowup</h2>
-
-          <p class="blur-dark-strong space-sm">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. Developed in 2003, Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.</p>
+          <h2 class="title-lg p-sm">Glassmorphism gets a glowup</h2>
+            <p class="blur-dark-strong space-sm">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. Developed in 2003, Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.</p>
 
           <img src="/assets/homeImg/Project-Looking-Glass.png"/>
 
@@ -175,16 +193,15 @@
 
         <div class="max-w blur-tint-reg br-lg grid">
           
-            <h2 class="title-xl space-sm">What makes Vision Pro’s UI so sleek?</h2>
-
+            <h2 class="title-xl  space-sm">What makes Vision Pro’s UI so sleek?</h2>
             <div class="blur-dark-strong">
             <p class="space-sm first-line-bold">Upon close examination, one may notice that Vision Pro’s UI doesn't quite resemble any of the existing glassmorphism designs. It's difficult to pinpoint exactly what sets it apart, but it appears more polished and dimensional. Consequently, I spent a rather significant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results. Here are my findings:</p>
   
             <img src="/assets/homeImg/bevel-detail.png" class="space-sm-x"/>
   
             <div class="space-sm">
-              <h3 class="title-md">Key characteristics</h3>
-              <ul class="grid gap-sm">
+              <h3 class="text-lg">Key characteristics</h3>
+              <ul class="grid gap-xs p-xs">
                 <li class="list-i check">
                   A well-defined, yet subtle, beveled edge.
                 </li>
@@ -208,36 +225,10 @@
             </div>
           </div>
 
-          <div class="space-sm flex-sb gap-xl">
-            <a
-            href="#"
-            class="btn-m icon-left">
-              <img
-              src="/assets/icons/CaretLeft.svg"
-              alt="back to top"
-              class="icon-s"
-            />
-            View UI demo
-            </a>
-            
-            <a
-            href="./how-to.html"
-            class="btn-m icon-right">
-              Go to tutorial
-
-            <img
-              src="/assets/icons/CaretRight.svg"
-              alt="back to top"
-              class="icon-s"
-            />
-
-            </a>
-
-          </div>
           
         </div>
     
-        <!-- <section class="max-w blur-tint-reg br-lg">
+        <section class="max-w blur-tint-reg br-lg">
           <h2 class="title-xl space-sm">3D glass layers</h2>
 
           <div class="blur-dark-strong">
@@ -272,15 +263,13 @@
               <button type="button" class="btn-glass-m btn-l">
                 View UI demo 
               </button>
-
-              <a
-              href="./how-to.html"
-              class="btn-glass-m btn-l">
+    
+              <button type="button" class="btn-glass-m btn-l">
                 Go to tutorial
-              </a>
-
+              </button>
             </div>
           </div>
+          
         </section> -->
 
       </main>

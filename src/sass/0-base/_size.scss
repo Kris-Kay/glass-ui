@@ -101,29 +101,29 @@ $s20: calc($root-size * 20); /* 80px 5rem */
 //   3xl: $s20
 // );
 
-$sizes: (
-  3xs: var(--3xs),
-  2xs: var(--2xs),
-  xs:  var(--xs),
-  sm:  var(--sm),
-  md:  var(--md),
-  lg:  var(--lg),
-  xl:  var(--xl),
-  2xl: var(--2xl),
-  3xl: var(--3xl),
-);
+// $sizes: (
+//   3xs: var(--3xs),
+//   2xs: var(--2xs),
+//   xs:  var(--xs),
+//   sm:  var(--sm),
+//   md:  var(--md),
+//   lg:  var(--lg),
+//   xl:  var(--xl),
+//   2xl: var(--2xl),
+//   3xl: var(--3xl),
+// );
 
-html {
-  --3xs:  #{$s3};
-  --2xs:  #{$s4};
-  --xs:   #{$s5};
-  --sm:   #{$s6};
-  --md:   #{$s8};
-  --lg:   #{$s10};
-  --xl:   #{$s12};
-  --2xl:  #{$s14};
-  --3xl:  #{$s16};
-}
+// html {
+//   --3xs:  #{$s3};
+//   --2xs:  #{$s4};
+//   --xs:   #{$s5};
+//   --sm:   #{$s6};
+//   --md:   #{$s8};
+//   --lg:   #{$s10};
+//   --xl:   #{$s12};
+//   --2xl:  #{$s14};
+//   --3xl:  #{$s16};
+// }
 
 $sizes: (
   3xs: $s1,
@@ -136,16 +136,6 @@ $sizes: (
   2xl: $s12,
   3xl: $s14
 );
-
-//   --3xs:  calc(#{$s3} * var(--multiplier));
-//   --2xs:  calc(#{$s4} * var(--multiplier));
-//   --xs:   calc(#{$s5} * var(--multiplier));
-//   --sm:   calc(#{$s6} * var(--multiplier));
-//   --md:   calc(#{$s8} * var(--multiplier));
-//   --lg:   calc(#{$s10} * var(--multiplier));
-//   --xl:   calc(#{$s12} * var(--multiplier));
-//   --2xl:  calc(#{$s14} * var(--multiplier));
-//   --3xl:  calc(#{$s16} * var(--multiplier));
 
 
 /* Size modifier mixin */
