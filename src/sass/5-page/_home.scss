@@ -57,25 +57,34 @@ body{
 /* Above the fold */
 /* ================================== */
 .atf-home {
-  position: relative;
-  // $nav-h: calc(var(--ui-lg) + var(--space-sm));
+  height: 100%;
   display: grid;
-  grid-template-columns: var(--space-sm) auto var(--space-sm);
+  grid-template-columns: auto auto auto;
   grid-template-rows: $nav-h 1fr auto;
   grid-template-areas:
     ". . ."
-    ". glass ."
-    ". card .";
+    ". . ."
+    ". tag .";
 
-  .card {
-    grid-area: card;
-    justify-self: center;
-    max-width: 460px;
-
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       justify-self: end;
-      margin-right: 8vw;
+      grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . tag ";
     }
+
+  .tag {
+    grid-area: tag;
+    justify-self: center;
+    max-width: 480px;
+    width: fit-content;
+    height: fit-content;
+
+    @include breakpoint(md) {
+      justify-self: end;
+    }
+
   }
 
   @media (height < 500px) {

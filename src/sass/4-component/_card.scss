@@ -8,34 +8,9 @@
 @use "../3-material" as *;
 /* ================================== */
 
-// .container {
-//   // container: card / inline-size;
-//   container-type: inline-size;
-// }
-
 .card {
-  width: 100%;
   display: grid;
-  // @include gap(xs);
-  gap: var(--space-md);
-  padding: var(--space-md);
+  gap: var(--space-sm);
+  padding: var(--space-sm);
   border-radius: border.$br-md;
 }
-
-// @container card (width >= 400px) {
-//   .card {
-
-//     // box-shadow:  $bevel-s;
-//   }
-// }
-
-// @container card (width >= 600px) {
-//   .card {
-//  
-//   }
-
-//   // .card::before {
-//   //   box-shadow: $ele-l;
-//   // }
-// }
-
