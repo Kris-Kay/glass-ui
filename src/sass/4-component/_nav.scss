@@ -19,7 +19,6 @@ nav {
   @include flex-sb;
   inset: var(--space-sm) 0 0 0;
   z-index: 100;
-
   padding: 0 var(--space-sm);
 
   @include breakpoint(md) {

@@ -32,113 +32,111 @@
     <div id="js-bg" class="background color"></div>
     <div class="body-grid">
 
-<!-- Header -->
-<!-- ================================== -->
-      <header class="atf">
-
 <!-- Nav -->
 <!-- ================================== -->
-          <nav>
-            <div class="nav-fixed">
-              <div class="nav-grid max-w">
-                <a
-                  href="#top-of-page"
-                  class="circle-btn-l frosted-glass nav-logo"
-                >
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="back to top"
-                    class="icon-s"
-                  />
-                </a>
+    <nav>
+      <div class="nav-fixed">
+        <div class="nav-grid max-w">
+          <a
+            href="#top-of-page"
+            class="circle-btn-l frosted-glass nav-logo"
+          >
+            <img
+              src="/assets/icons/CubeTransparent.svg"
+              alt="back to top"
+              class="icon-s"
+            />
+          </a>
 
-                <div id="js-tabMenu" class="tab-menu inset-glass">
-                  <button type="button" class="tab" id="dark-tab">Dark</button>
+          <!-- Color tabs -->
+          <div id="js-tabMenu" class="tab-menu inset-glass">
+            <button type="button" class="tab" id="dark-tab">Dark</button>
 
-                  <button type="button" class="tab" id="light-tab">
-                    Light
-                  </button>
+            <button type="button" class="tab" id="light-tab">
+              Light
+            </button>
 
-                  <button type="button" class="tab tab-active" id="color-tab">
-                    Color
-                  </button>
-                </div>
+            <button type="button" class="tab tab-active" id="color-tab">
+              Color
+            </button>
+          </div>
+          <!-- Color tabs end -->
 
-                <div class="flex-right dropdown-bin">
-                  <button
-                    type="button"
-                    id="js-dropdownToggle"
-                    class="circle-btn-l frosted-glass dropdown-toggle"
-                  >
-                    <img
-                      src="assets/icons/List.svg"
-                      alt="Open nav dropdown"
-                      id="js-navHam"
-                      class="isClosed nav-ham icon-s"
-                    />
-                    <img
-                      src="/assets/icons/X.svg"
-                      alt="Close nav dropdown"
-                      id="js-navX"
-                      class="isClosed nav-x icon-s"
-                    />
-                  </button>
+          <!-- Dropdown menu -->
+          <div class="flex-right dropdown-bin">
+            <button
+              type="button"
+              id="js-dropdownToggle"
+              class="circle-btn-l frosted-glass dropdown-toggle"
+            >
+              <img
+                src="assets/icons/List.svg"
+                alt="Open nav dropdown"
+                id="js-navHam"
+                class="isClosed nav-ham icon-s"
+              />
+              <img
+                src="/assets/icons/X.svg"
+                alt="Close nav dropdown"
+                id="js-navX"
+                class="isClosed nav-x icon-s"
+              />
+            </button>
 
-                  <div id="js-navDropdown" class="nav-dropdown isClosed">
-                    <div class="dropdown-bg frosted-glass">
-                      <div class="dropdown-grid">
-                        <a href="#clearGlass" class="dropdown-item icon-left">
-                          <img src="/assets/icons/CubeTransparent.svg" 
-                          class="icon-s"/>
-                          Clear glass
-                        </a>
+             <!-- Dropdown -->
+            <div id="js-navDropdown" class="nav-dropdown isClosed">
+              <div class="dropdown-bg frosted-glass">
+                <div class="dropdown-grid">
+                  <a href="./index.html" class="dropdown-item icon-left">
+                    <img src="/assets/icons/CubeTransparent.svg" 
+                    class="icon-s"/>
+                    Home
+                  </a>
 
-                        <a href="#frostedGlass" class="dropdown-item icon-left">
-                          <img src="/assets/icons/CubeTransparent.svg"
-                          class="icon-s" />
-                          Frosted glass
-                        </a>
+                  <a href="./demo.html" class="dropdown-item icon-left">
+                    <img src="/assets/icons/CubeTransparent.svg"
+                    class="icon-sm" />
+                    Demo
+                  </a>
 
-                        <a href="#vibrantGlass" class="dropdown-item icon-left">
-                          <img src="/assets/icons/CubeTransparent.svg"
-                          class="icon-s" />
-                          Vibrant glass
-                        </a>
-
-                        <!-- <a href="#insetGlass" class="dropdown-item icon-left">
-                          <img src="/assets/icons/CubeTransparent.svg"
-                          class="icon-s" />
-                          Inset glass
-                        </a>
-
-                        <a href="#reflectiveGlass" class="dropdown-item icon-left">
-                          <img src="/assets/icons/CubeTransparent.svg"
-                          class="icon-s" />
-                          Reflective glass
-                        </a> -->
-                      </div>
-                    </div>
-                  </div>
+                  <a 
+                  href="./tutorial.html" 
+                  class="dropdown-item icon-left">
+                    <img src="/assets/icons/CubeTransparent.svg"
+                    class="icon-sm" />
+                    Tutorial
+                  </a>
                 </div>
               </div>
             </div>
-          </nav>
-
-            <div class="card glass-dark-very-mild sha-xl">
-     
-              <h1 class="title-xl">3D Glass UI</h1>
-
-              <div class="tint-fullwidth-s-reg">
-                <p class="first-line-bold">
-                  An exploration of how Apple Vision Pro's spatial UI might be recreated for the web, using the latest broadly supported CSS.
-                </p>
-              </div>
-
-              <div class="flex-right gap-xs">
-                <p class="lower-s">Created by</p>
-                <p class="upper-s">Kris Kay</p>
-              </div>
           </div>
+          <!-- Dropdown menu end -->
+
+        </div>
+      </div>
+    </nav>
+
+<!-- Header -->
+<!-- ================================== -->
+    <header>
+      <section class="atf-home">
+        <div class="card glass-dark-very-mild sha-xl">
+     
+          <h1 class="title-xl">3D Glass UI</h1>
+
+          <div class="tint-fullwidth-s-reg">
+            <p class="first-line-bold">
+              An exploration of how Apple Vision Pro's spatial UI might be recreated for the web, using the latest broadly supported CSS.
+            </p>
+          </div>
+
+          <div class="flex-right gap-xs">
+            <p class="lower-s">Created by</p>
+            <p class="upper-s">Kris Kay</p>
+          </div>
+        </div>
+      </section>
+
 
       </header>
 
@@ -172,6 +170,7 @@
 
           <img src="/assets/homeImg/apple-photos-app.png"/>
         </div>
+
 
         <div class="max-w blur-tint-reg br-lg grid">
           
@@ -210,25 +209,25 @@
 
           <div class="space-sm flex-sb gap-xl">
             <a
-            href="#"
+            href="./demo.html"
             class="btn-m icon-left">
               <img
               src="/assets/icons/CaretLeft.svg"
               alt="back to top"
-              class="icon-s"
+              class="icon-sm"
             />
             View UI demo
             </a>
             
             <a
-            href="./how-to.html"
+            href="./tutorial.html"
             class="btn-m icon-right">
               Go to tutorial
 
             <img
               src="/assets/icons/CaretRight.svg"
               alt="back to top"
-              class="icon-s"
+              class="icon-sm"
             />
 
             </a>

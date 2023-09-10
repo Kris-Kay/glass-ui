@@ -12,11 +12,13 @@
   position: relative;
   width: 100%;
   z-index: 100;
+  pointer-events: none;
 }
 
 .dropdown-bg {
   padding: 1.25rem;
   border-radius: border.$br-md;
+  pointer-events: none;
 }
 
 .dropdown-grid {
@@ -24,13 +26,13 @@
   display: grid;
   gap: 0.75rem;
   justify-items: stretch;
-  pointer-events: auto;
+  pointer-events: none;
   margin: -0.5rem;
 }
 
 .dropdown-item {
   $inner-h: 1.2rem; // set font size & center
-
+  z-index: 101;
   min-width: max-content;
   height: var(--ui-lg); 
   display: grid;

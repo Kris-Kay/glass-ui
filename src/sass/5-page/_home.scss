@@ -56,17 +56,16 @@ body{
 
 /* Above the fold */
 /* ================================== */
-.atf {
+.atf-home {
   position: relative;
-  $nav-h: calc(var(--ui-lg) + var(--space-sm));
+  // $nav-h: calc(var(--ui-lg) + var(--space-sm));
   display: grid;
   grid-template-columns: var(--space-sm) auto var(--space-sm);
-  grid-template-rows: $nav-h 1fr auto 8vh;
+  grid-template-rows: $nav-h 1fr auto;
   grid-template-areas:
-    ". topNav ."
+    ". . ."
     ". glass ."
-    ". card ."
-    ". . .";
+    ". card .";
 
   .card {
     grid-area: card;
@@ -84,9 +83,6 @@ body{
   }
 }
 
-nav {
-  grid-area: topNav;
-}
 
 
 
@@ -106,10 +102,16 @@ nav {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
+    "topnav"
     "head"
     "main"
     "footer";
   justify-items: center;
+}
+
+nav {
+  grid-area: topnav;
+
 }
 
 header {

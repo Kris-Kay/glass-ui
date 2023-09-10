@@ -1,16 +1,22 @@
 /* ================================== */
 /* Icons */
 /* ================================== */
-@use "../0-base/breakpoint" as br;
-@use "shadow";
+@use "../0-base/color";
+@use "shadow" as sha;
 
 
 .icon-sm {
+  height: var(--ui-sm);
   width: auto;
-  // filter: drop-shadow(0 0 0.8px rgba($shadow-color, 0.4));
+  filter: 
+  drop-shadow(0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.2))
+  drop-shadow(1px 1px 2px rgba(color.$shadow-color, 0.12))
+  drop-shadow( 0 0 2px rgba(color.$shadow-color, 0.1))
+  drop-shadow(    0 0 4px rgba(color.$shadow-color, 0.1));
 }
 
 .icon-md {
+  height: var(--ui-md);
   width: auto;
   // filter: drop-shadow(0 0 0.8px rgba($shadow-color, 0.4));
 }

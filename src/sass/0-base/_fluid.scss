@@ -4,6 +4,32 @@
 @use "breakpoint" as bp;
 /* ================================== */
 
+/* Responsive Max width */
+/* ================================== */
+/* 100% width on mobile and limited width on desktop */
+html {
+  --max-w: 100%;
+
+  @include bp.breakpoint(md) {
+    --max-w: calc(100vw - (var(--space-sm) * 2));
+  }
+
+  @include bp.breakpoint(lg) {
+    --max-w: 45rem; //720px
+  }
+
+  @include bp.breakpoint(xl) {
+    --max-w: 50rem; //800px
+  }
+}
+
+.max-w { 
+  width: 100%;
+  max-width: var(--max-w);
+  margin: auto;
+}
+
+$nav-h: calc(var(--ui-lg) + (var(--space-sm) * 2));
 
 /* Responsive UI height */
 /* ================================== */
@@ -32,29 +58,33 @@
 /* gives elements consistent vertical alignment with fewer media queries */
 /* also used for negative margines for inner edge-to-edge backgrounds */
 
-html {
+:root {
   --space-sm: #{size.$s3}; // 12px
-  --space-md: #{size.$s5}; // 20px
+  --space-md: #{size.$s4}; // 16px
   
   @include bp.breakpoint(sm) {
-    --space-sm: calc(#{size.$s4} * 2);
-    // --space-sm: #{size.$s4}; // 16px
-    --space-md: #{size.$s6}; // 24px
+    --space-sm: #{size.$s4}; // 16px
+    --space-md: #{size.$s5}; // 20px
   }
 
   @include bp.breakpoint(md) {
-    --space-sm: #{size.$s5}; 
-    --space-md: #{size.$s7}; // 28px
+    --space-sm: #{size.$s5}; //20px
+    --space-md: #{size.$s10}; // 40px 
   }
 
   @include bp.breakpoint(lg) {
-    --space-sm: calc(#{size.$s7} * 2);
+    --space-sm: #{size.$s6}; 
+    --space-md: #{size.$s16}; 
+  }
 
-    // --space-sm: #{size.$s7}; 
-    --space-md: #{size.$s8}; // 32px 
+    @include bp.breakpoint(xl) {
+    --space-sm: #{size.$s7}; 
+    --space-md: #{size.$s18}; 
   }
 }
 
+// Space small
+/* ================================== */
 .space-sm {
   padding: var(--space-sm);
 }
@@ -83,27 +113,32 @@ html {
   padding-right: var(--space-sm);
 }
 
-/* Responsive Max width */
+// Space medium 
 /* ================================== */
-/* 100% width on mobile and limited width on desktop */
-html {
-  --max-w: 100%;
-
-  @include bp.breakpoint(md) {
-    --max-w: calc(100vw - (var(--space-sm) * 2));
-  }
-
-  @include bp.breakpoint(lg) {
-    --max-w: 45rem; //720px
-  }
-
-  @include bp.breakpoint(xl) {
-    --max-w: 50rem; //800px
-  }
+.space-md {
+  padding: var(--space-md);
 }
 
-.max-w { 
-  width: 100%;
-  max-width: var(--max-w);
-  margin: auto;
+.space-md-x {
+  padding: 0 var(--space-md);
+}
+
+.space-md-y {
+  padding: var(--space-md) 0;
+}
+
+.space-md-t {
+  padding-top: var(--space-md);
+}
+
+.space-md-b {
+  padding-bottom: var(--space-md);
+}
+
+.space-md-l {
+  padding-left: var(--space-md);
+}
+
+.space-md-r {
+  padding-right: var(--space-md);
 }
