@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Glassmorphism UI kit</title>
+    <meta
+      name="description"
+      content="Glassmorphism 3.0 inspired by Apple Vision Pro's spatial UI"
+    />
+    <meta name="author" content="Kris Kay" />
+    <meta
+      name="keywords"
+      content="apple vision pro, glassmorphism, UI, wed design, web dev, CSS, spatial UI"
+    />
+
+    <!-- === Fonts === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,700&family=Questrial&display=switch"
+      rel="stylesheet"
+    />
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <!-- === Favicon === -->
+  </head>
+
+<!-- Body -->
+<!-- ================================== -->
+  <body id="top-of-page">
+    <div id="js-bg" class="background color"></div>
+    <div class="body-grid">
+
+<!-- Nav -->
+<!-- ================================== -->
+<nav>
+  <div class="nav-fixed">
+    <div class="nav-grid max-w">
+      <a
+        href="#top-of-page"
+        class="circle-btn-l frosted-glass nav-logo"
+      >
+        <img
+          src="/assets/icons/CubeTransparent.svg"
+          alt="back to top"
+          class="icon-s"
+        />
+      </a>
+
+      <!-- Color tabs -->
+      <div id="js-tabMenu" class="tab-menu inset-glass">
+        <button type="button" class="tab" id="dark-tab">Dark</button>
+
+        <button type="button" class="tab" id="light-tab">
+          Light
+        </button>
+
+        <button type="button" class="tab tab-active" id="color-tab">
+          Color
+        </button>
+      </div>
+      <!-- Color tabs end -->
+
+      <!-- Dropdown menu -->
+      <div class="flex-right dropdown-bin">
+        <button
+          type="button"
+          id="js-dropdownToggle"
+          class="circle-btn-l frosted-glass dropdown-toggle"
+        >
+          <img
+            src="assets/icons/List.svg"
+            alt="Open nav dropdown"
+            id="js-navHam"
+            class="isClosed nav-ham icon-s"
+          />
+          <img
+            src="/assets/icons/X.svg"
+            alt="Close nav dropdown"
+            id="js-navX"
+            class="isClosed nav-x icon-s"
+          />
+        </button>
+
+         <!-- Dropdown -->
+        <div id="js-navDropdown" class="nav-dropdown isClosed">
+          <div class="dropdown-bg frosted-glass">
+            <div class="dropdown-grid">
+              <a href="./index.html" class="dropdown-item icon-left">
+                <img src="/assets/icons/CubeTransparent.svg" 
+                class="icon-s"/>
+                Home
+              </a>
+
+              <a href="./demo.html" class="dropdown-item icon-left">
+                <img src="/assets/icons/CubeTransparent.svg"
+                class="icon-sm" />
+                Demo
+              </a>
+
+              <a 
+              href="./tutorial.html" 
+              class="dropdown-item icon-left">
+                <img src="/assets/icons/CubeTransparent.svg"
+                class="icon-sm" />
+                Tutorial
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Dropdown menu end -->
+
+    </div>
+  </div>
+</nav>
+<!-- ================================== -->
+
+<!-- Header -->
+<!-- ================================== -->
+      <header class="atf">
+
+            <div class="card demo-glass ele-xl">
+            <h1 class="title-xl">DEMO</h1>
+
+            <div class="tint-fullwidth-s-reg">
+              <p class="first-line-bold">
+                look at the UI!
+              </p>
+            </div>
+
+            <div class="flex-right gap-xs">
+              <p class="text-lower-s">Created by</p>
+              <p class="text-eyebrow-s">Kris Kay</p>
+            </div>
+          </div>
+
+      </header>
+
+<!-- Main -->
+<!-- ================================== -->
+      <main class="grid-gap-l margin-tb-xl">
+
+        <!-- <section id="glassDemo" class="max-w hero-width-padding">
+          <div class="glass-demo-bin">
+
+            <div class="clear-glass">
+              <h3 class="">Clear & Simple</h3>
+            </div>
+
+            <div class="new-frosted-glass">
+              <h3 class="">Frosted</h3>
+            </div>
+
+            <div class="beveled-glass">
+              <h3 class="">3D Bevel</h3>
+            </div>
+          </div>
+        </section> -->
+
+      <!-- DEMO  -->
+        <div class="hero-width-padding grid-gap-s">
+          <div class="beveled-glass max-w card">
+            
+            <h3 class="title-l-thin">Glassmorphism 3.0 ui</h3>
+
+              <div class="grid-gap-xs">
+                <h3 class="title-m">3D buttons</h3>
+                <button type="button" class="btn-l btn-glass-xs">Button</button>
+                <button type="button" class="btn-l btn-glass-s">Button</button>
+                <button type="button" class="btn-l btn-glass-m">Button</button>
+              </div>
+
+              <div class="grid-gap-xs">
+                <h3 class="title-m">Inset</h3>
+                <p class="dark-round-rect inset-m max-w">
+                  Glass inset with bevel and a dark background</p>
+              </div>
+
+          </div>
+        </div>
+   <!-- DEMO  -->
+
+
+
+      </main>
+
+
+<!-- Footer -->
+<!-- ================================== -->
+      <footer class="blur-tint-strong">
+        <div class="footer-bin max-w">
+          <p class="footer-email">Email: hello@kris-kay.com</p>
+
+          <div class="footer-social">
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/InstagramLogo.svg"
+                alt="link to Instagram account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/LinkedinLogo.svg"
+                alt="link to LinkedIn account"
+                class="icon-m"
+              />
+            </a>
+
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/GithubLogo.svg"
+                alt="link to GitHub account"
+                class="icon-m"
+              />
+            </a>
+          </div>
+
+          <p class="copyright">&copy; 2023 Kris Kay All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+
+
+<!-- Scripts -->
+<!-- ================================== -->
+    <script src="/js/main.js" type="text/javascript"></script>
+  </body>
+</html>
