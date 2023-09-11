@@ -435,7 +435,35 @@
   }
 }
 
+.glassGPT-card {
+  width: min(100%, 480px);
+  height: 240px;
+}
 
+.glassGPT {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.1),
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    0 20px 25px rgba(0, 0, 0, 0.3);
+  &:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 10px;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
 
 
 // .dynamic-glass {

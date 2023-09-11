@@ -12,7 +12,7 @@ $snow65: rgb(144, 161, 187);
 
 ///* Gray */// 
 // $gray60: rgb(143, 151, 163);
-// $gray50: rgb(115, 125, 140);
+$gray50: rgb(115, 125, 140);
 // $gray40: rgb(92, 100, 112);
 // $gray30: rgb(69, 75, 84);
 // $gray20: rgb(46, 50, 56);
@@ -49,6 +49,10 @@ $text-mild: $snow80;
 $text-xmild: $snow70;
 $text-2xmild: $snow65;
 
+$f-dark-strong: $ink6;
+$f-dark: $ink10;
+$f-dark-mild: $gray50;
+
 $code-class: $leaf70;
 $code-prop: $snow70;
 $code-value: $sky80;
@@ -81,4 +85,19 @@ $bg-color: $sky99;
 
 .text-2xmild {
   color: $text-2xmild;
+}
+
+
+// Dark font color
+.f-dark-strong {
+  color: $f-dark-strong;
+}
+
+.f-dark {
+  color: $f-dark;
+
+}
+
+.f-dark-mild {
+  color: $f-dark-mild;
 }

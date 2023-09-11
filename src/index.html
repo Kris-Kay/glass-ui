@@ -141,26 +141,64 @@
 <!-- Main -->
 <!-- ================================== -->
       <main class="grid gap-3xl p-y-3xl">
-
+        
         <section class="max-w blur-tint-reg br-lg grid">
-          <h2 class="title-lg space-sm">Glassmorphism gets a glowup</h2>
+          <div class="space-sm">
+            <p class="text-xs upper">The raison d'être</p>
+            <h2 class="title-lg">What is this and why did I make it?</h2>
+          </div>
+
+          <div class="blur-dark-strong space-md grid gap-md">
+            <p class=" first-line-bold">After retrieving the jaw I had dropped during the Apple Vision Pro keynote, I was struck with the inescapable need to figure out if that exquisite spatial UI could be rendered using CSS. The answer wasn't an obvious one since the UI is to live on one-of-a-kind hardware using a custom operating system. For all I know the whole R1 chip is really just there to run real-time ray tracing for UI that’s constructed from actual 3D meshes. I jest, but only a little.
+            </p>
+
+            <div>
+              <h3 class="title-sm">This website exists...</h3>
+              <ul class="grid gap-xs">
+                <li class="list-i dot">
+                  to share a detailed 3D glass tutorial (SCSS)
+                </li>
+  
+                <li class="list-i dot">
+                  to demo the open-sourced UI library I ended up writing
+                </li>
+  
+                <li class="list-i dot">
+                  to chronicle everything that didn’t work, to save you the bother
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+      </section>
+
+<!-- The temporal context -->
+        <section class="max-w blur-tint-reg br-lg grid">
+          <div class="space-sm">
+            <p class="text-xs upper">The temporal context</p>
+            <h2 class="title-lg">Glassmorphism gets a glow-up</h2>
+          </div>
 
           <div class="blur-dark-strong">
             <p class=" first-line-bold space-md">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. 
-              For instance, developed in 2003 Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.
+              For instance, Project Looking Glass (developed in 2003) was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.
             </p>
           </div>
 
           <img src="/assets/homeImg/Project-Looking-Glass.png"/>
 
-          <p class="blur-dark-strong space-md">Since then, glassmorphism has experienced several peaks and troughs in popularity. And now that Apple has unveiled the Vision Pro, I foresee an upcoming high point for glassmorphism on our digital horizons.</p>
+          <p class="blur-dark-strong space-md">Over the course of those two decades, glassmorphism has experienced several peaks and troughs in popularity. From  Apple's iOS 7 (released in 2013) to “Acrylic" in Microsoft's fluent design system. And now that Apple has unveiled the Vision Pro, I foresee an imminent high point for glassmorphism on our digital horizons.</p>
 
           <img src="/assets/homeImg/apple-photos-app.png"/>
         </section>
 
-
+<!-- The aesthetic ideal -->
         <section class="max-w blur-tint-reg br-lg grid">
-            <h2 class="title-xl space-sm">What makes Vision Pro’s UI so sleek?</h2>
+            <div class="space-sm">
+              <p class="text-xs upper">The aesthetic ideal</p>
+              <h2 class="title-lg">What makes Vision Pro’s UI so special?</h2>
+            </div>
 
             <div class="blur-dark-strong">
             <p class="space-md first-line-bold">Upon close examination, one may notice that Vision Pro’s UI doesn't quite resemble any of the existing glassmorphism designs. It's difficult to pinpoint exactly what sets it apart, but it appears more polished and dimensional. Consequently, I spent a rather significant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results. Here are my findings:
@@ -188,62 +226,51 @@
                 </li>
   
                 <li class="list-i check">
-                  Some sort of blend mode magic that adds dynamic depth of color to the UI. After much experimentation, I've found that this doesn't consistently work for the web (yet). For a detailed account of my trials and tribulations, refer to the end of the tutorial section.
+                  Some sort of blend mode magic that adds dynamic depth of color to the UI as the backdrop behind it changes. After much experimentation, I've found that this technique doesn't reliably work across browsers. For a detailed account of my trials and tribulations, check out the tutorial page.
                 </li>
               </ul>
             </div>
           </div>
         </section>
 
-        <section class="max-w blur-tint-reg br-lg grid">
-          <div class="space-sm">
-            <p class="text-xs">Naturally, the next question is:</p>
-            <h2 class="title-lg">Can chatGPT write 3D glass SCSS for you?</h2>
+<!-- The available tools -->
+        <section class="max-w br-lg grid">
+          <div class="space-sm blur-tint-reg">
+            <p class="text-xs upper">The available tools</p>
+            <h2 class="title-lg">Can chatGPT write this CSS for you?</h2>
           </div>
   
-          <div class="flex flex-wrap">
-            <img src="/assets/homeImg/glass-gpt-img.png" class="space-sm-x"/>
-            <img src="/assets/homeImg/glass-gpt-code.png" class="space-sm-x"/>
+          <div class="flex-center space-md">
+            <div class="glassGPT glassGPT-card space-sm grid-center">
+              <div>
+                <p class="title-md f-dark f-center">Glass authored by chatGPT</p>
+              </div>
+            </div>
           </div>
   
+          <img src="/assets/homeImg/glass-gpt-code.png" class="space-sm-x"/>
+
           <div class="blur-dark-strong grid gap-sm space-md">
-            <h3 class="text-md">Answer: nope this ain’t it.</h3>
-  
-            <ul class="grid gap-xs ">
-              <li class="list-i check">
-                Not enough blur
-              </li>
-  
-              <li class="list-i check">
-                The background is too light
-              </li>
-  
-              <li class="list-i check">
-                Has an extra translucent outline
-              </li>
-  
-              <li class="list-i check">
-                Border is too bright and wraps all the way around
-              </li>
-  
-              <li class="list-i check">
-                No noise texture 
-              </li>
-  
-              <li class="list-i check">
-                No specular highlightse 
-              </li>
-            </ul>
+            <h3 class="title-sm">Answer: nope this ain’t it.</h3>
+            <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The meager blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict. </p>
+           
+            <p>We can do better! Keep reading and I'll show you how.</p>
           </div>
   
         </section>
 
-        
+  <!-- The objective -->
         <section class="max-w blur-tint-reg br-lg grid">
-          <h2 class="title-xl space-sm">3D glass layers</h2>
 
-          <div class="blur-dark-strong">
-            <img src="/assets/homeImg/glass-x-view-white.png" class="space-md"/>
+          <div class="space-sm blur-tint-reg">
+            <p class="text-xs upper">The end product</p>
+            <h2 class="title-lg">Okay, so how is this done?</h2>
+          </div>
+
+          <div class="blur-dark-strong space-md grid gap-md">
+            <p> I combined backdrop-filters, a complex box-shadow layering technique, and a super fine noise texture to create a glass effect so realistic, you'll be trying to wipe your nose-print off the screen.</p>
+            <h3 class="title-thin-md f-center">3D glass layers</h3>
+            <img src="/assets/homeImg/glass-x-view-white.png"/>
           </div>
   
           <div class="space-sm flex-sb">

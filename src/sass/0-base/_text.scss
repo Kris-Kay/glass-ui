@@ -87,6 +87,13 @@ body {
   font-weight: $font-weight-sm;
 }
 
+.dot {
+  &::before {
+    padding-right: 0.25em;
+    content: "•"
+  }
+}
+
 .check {
   &::before {
     padding-right: 0.25em;
@@ -140,7 +147,7 @@ body {
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
   line-height: calc(2px + 2.15ex + 2px);
-  color: color.$text-reg;
+  // color: color.$text-reg;
   text-shadow: sha.$text-shadow-lg;
 }
 
@@ -164,7 +171,7 @@ body {
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: calc(2px + 2.1ex + 2px);
-  color: color.$text-reg;
+  // color: color.$text-reg;
   text-shadow: sha.$text-shadow-md;
 }
 
@@ -224,6 +231,10 @@ pre code {
     font-weight: $font-weight-lg;
   }
 }
+.upper {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-lg;
+}
 
 .upper-s {
   text-transform: uppercase;
@@ -245,3 +256,6 @@ pre code {
   white-space: nowrap;
 }
 
+.f-center {
+  text-align: center;
+}
