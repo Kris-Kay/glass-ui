@@ -4,14 +4,19 @@
 @use "../0-base/gap";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
-@use "../2-visual/border";
+@use "../2-visual/border" as br;
 @use "../3-material" as *;
 /* ================================== */
 
 
 .accordion {
   width: 100%;
-  padding: 0 var(--space-sm);
+  padding: 0;
+  border-radius: 0;
+
+  @include breakpoint(md) {
+    border-radius: br.$br-md;
+  }
 
   @include breakpoint(lg) {
     padding: 0;
@@ -21,7 +26,7 @@
     padding: 0;
 
     .card {
-      border-radius: border.$br-md border.$br-md 0 0;
+      border-radius: br.$br-md br.$br-md 0 0;
     }
   }
 }
@@ -75,7 +80,7 @@
   max-height: 100%;
   transition: max-height 5000ms ease;
   gap: 1rem;
-  border-radius: 0 0 border.$br-md border.$br-md;
+  border-radius: 0 0 br.$br-md br.$br-md;
 
   padding: var(--space-md);
   @include blur-dark-strong;

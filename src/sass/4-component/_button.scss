@@ -256,11 +256,10 @@
 
 .btn-clear {
   background-color: transparent;
-  color: $sky98;
   transition: background-color 500ms ease-out;
 
   &:hover {
-    background-color: rgba($sky98, 0.1);
+    background-color: rgba($sky98, 0.2);
   }
 
   &:active {

@@ -142,46 +142,34 @@
 <!-- ================================== -->
       <main class="grid gap-3xl p-y-3xl">
 
-        <!-- <div class="max-w blur-dark-strong br-lg space-sm flex-center gap-md">
-          <button type="button" class="btn-glass-xs btn-s">
-            View
-          </button>
-
-          <button type="button" class="btn-glass-s btn-m">
-            View 
-          </button>
-
-          <button type="button" class="btn-glass-m btn-l">
-            View 
-          </button>
-        </div> -->
-
-        
-        <div class="max-w blur-tint-reg br-lg grid">
+        <section class="max-w blur-tint-reg br-lg grid">
           <h2 class="title-lg space-sm">Glassmorphism gets a glowup</h2>
 
-          <p class="blur-dark-strong space-md first-line-bold">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. 
-            For instance, developed in 2003 Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.</p>
+          <div class="blur-dark-strong">
+            <p class=" first-line-bold space-md">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. 
+              For instance, developed in 2003 Project Looking Glass was an entire desktop environment designed to resemble slabs of glass. From what I understand, it was rather unusable. However, I remain impressed; Hideya Kawahara was essentially designing two full decades ahead of his time.
+            </p>
+          </div>
 
           <img src="/assets/homeImg/Project-Looking-Glass.png"/>
 
           <p class="blur-dark-strong space-md">Since then, glassmorphism has experienced several peaks and troughs in popularity. And now that Apple has unveiled the Vision Pro, I foresee an upcoming high point for glassmorphism on our digital horizons.</p>
 
           <img src="/assets/homeImg/apple-photos-app.png"/>
-        </div>
+        </section>
 
 
-        <div class="max-w blur-tint-reg br-lg grid">
-          
+        <section class="max-w blur-tint-reg br-lg grid">
             <h2 class="title-xl space-sm">What makes Vision Pro’s UI so sleek?</h2>
 
             <div class="blur-dark-strong">
-            <p class="space-md first-line-bold">Upon close examination, one may notice that Vision Pro’s UI doesn't quite resemble any of the existing glassmorphism designs. It's difficult to pinpoint exactly what sets it apart, but it appears more polished and dimensional. Consequently, I spent a rather significant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results. Here are my findings:</p>
+            <p class="space-md first-line-bold">Upon close examination, one may notice that Vision Pro’s UI doesn't quite resemble any of the existing glassmorphism designs. It's difficult to pinpoint exactly what sets it apart, but it appears more polished and dimensional. Consequently, I spent a rather significant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results. Here are my findings:
+            </p>
   
-            <img src="/assets/homeImg/bevel-detail.png" class="space-sm-x"/>
+            <img src="/assets/homeImg/bevel-detail.png" class="space-x-md"/>
   
             <div class="space-md">
-              <h3 class="title-md">Key characteristics</h3>
+              <h3 class="title-md p-y-xs">Key characteristics</h3>
               <ul class="grid gap-sm">
                 <li class="list-i check">
                   A well-defined, yet subtle, beveled edge.
@@ -205,11 +193,63 @@
               </ul>
             </div>
           </div>
+        </section>
 
-          <div class="space-sm flex-sb gap-xl">
+        <section class="max-w blur-tint-reg br-lg grid">
+          <div class="space-sm">
+            <p class="text-xs">Naturally, the next question is:</p>
+            <h2 class="title-lg">Can chatGPT write 3D glass SCSS for you?</h2>
+          </div>
+  
+          <div class="flex flex-wrap">
+            <img src="/assets/homeImg/glass-gpt-img.png" class="space-sm-x"/>
+            <img src="/assets/homeImg/glass-gpt-code.png" class="space-sm-x"/>
+          </div>
+  
+          <div class="blur-dark-strong grid gap-sm space-md">
+            <h3 class="text-md">Answer: nope this ain’t it.</h3>
+  
+            <ul class="grid gap-xs ">
+              <li class="list-i check">
+                Not enough blur
+              </li>
+  
+              <li class="list-i check">
+                The background is too light
+              </li>
+  
+              <li class="list-i check">
+                Has an extra translucent outline
+              </li>
+  
+              <li class="list-i check">
+                Border is too bright and wraps all the way around
+              </li>
+  
+              <li class="list-i check">
+                No noise texture 
+              </li>
+  
+              <li class="list-i check">
+                No specular highlightse 
+              </li>
+            </ul>
+          </div>
+  
+        </section>
+
+        
+        <section class="max-w blur-tint-reg br-lg grid">
+          <h2 class="title-xl space-sm">3D glass layers</h2>
+
+          <div class="blur-dark-strong">
+            <img src="/assets/homeImg/glass-x-view-white.png" class="space-md"/>
+          </div>
+  
+          <div class="space-sm flex-sb">
             <a
             href="./demo.html"
-            class="btn-m icon-left">
+            class="btn-m btn-clear icon-left">
               <img
               src="/assets/icons/CaretLeft.svg"
               alt="back to top"
@@ -220,66 +260,20 @@
             
             <a
             href="./tutorial.html"
-            class="btn-m icon-right">
+            class="btn-m btn-clear icon-right">
               Go to tutorial
-
+  
             <img
               src="/assets/icons/CaretRight.svg"
               alt="back to top"
               class="icon-sm"
             />
-
+  
             </a>
-
+  
           </div>
-          
-        </div>
-    
-        <!-- <section class="max-w blur-tint-reg br-lg">
-          <h2 class="title-xl space-sm">3D glass layers</h2>
+        </section>
 
-          <div class="blur-dark-strong">
-            <img src="/assets/homeImg/glass-x-view-white.png" class="space-sm" />
-
-            <div class="space-sm">
-              <h3 class="text-lg">Layers</h3>
-              <ul class="grid gap-xs p-xs">
-                <li class="list-i check">
-                  Bevel box-shadow 
-                </li>
-  
-                <li class="list-i check">
-                  Noise texture
-                </li>
-  
-                <li class="list-i check">
-                  Background-color
-                </li>
-  
-                <li class="list-i check">
-                  Backdrop-filter
-                </li>
-  
-                <li class="list-i check">
-                  Elevation box-shadow
-                </li>
-              </ul>
-            </div>
-
-            <div class="p-b-2xl flex-center gap-xl">
-              <button type="button" class="btn-glass-m btn-l">
-                View UI demo 
-              </button>
-
-              <a
-              href="./how-to.html"
-              class="btn-glass-m btn-l">
-                Go to tutorial
-              </a>
-
-            </div>
-          </div>
-        </section> -->
 
       </main>
 

@@ -24,28 +24,31 @@
   position: relative;
 
   display: grid;
-  grid-template-rows: $nav-h auto auto;
+  grid-template-rows: $nav-h auto;
   grid-template-areas:
     " . "
-    "tag"
     "img";
 
     nav {
       grid-area: topNav;
     }
 
-    .tag {
-      grid-area: tag;
-      width: fit-content;
-      height: fit-content;
-      justify-self: start;
-    }
+    // .tag {
+    //   grid-area: tag;
+    //   width: fit-content;
+    //   height: fit-content;
+    //   justify-self: start;
+    // }
 
     .atf-img-bg {
       grid-area: img;
 
       @include breakpoint(md) {
         justify-self: end;
+      }
+
+      .atf-img {
+   
       }
     }
 
