@@ -54,54 +54,16 @@ $s28: calc($root-size * 28); /* 112px 7rem */
 
 /* Size MAP */
 /* ================================== */
-// $sizes: (
-//   3xs: $s1,
-//   2xs: $s2,
-//   xs:  $s3,
-//   sm:  $s6,
-//   md:  $s5,
-//   lg:  $s6,
-//   xl:  $s8,
-//   2xl: $s12,
-//   3xl: $s20
-// );
-
-// html {
-//   --3xs:  #{$s3};
-//   --2xs:  #{$s4};
-//   --xs:   #{$s5};
-//   --sm:   #{$s6};
-//   --md:   #{$s8};
-//   --lg:   #{$s10};
-//   --xl:   #{$s12};
-//   --2xl:  #{$s14};
-//   --3xl:  #{$s16};
-// }
-
-// $sizes: (
-//   3xs: var(--3xs),
-//   2xs: var(--2xs),
-//   xs:  var(--xs),
-//   sm:  var(--sm),
-//   md:  var(--md),
-//   lg:  var(--lg),
-//   xl:  var(--xl),
-//   2xl: var(--2xl),
-//   3xl: var(--3xl),
-// );
-
-
-
 $sizes: (
-  3xs: $s1,
-  2xs: $s2,
-  xs:  $s3,
-  sm:  $s4,
-  md:  $s6,
-  lg:  $s8,
-  xl:  $s10,
-  2xl: $s12,
-  3xl: $s14
+  3xs: $s2,
+  2xs: $s3,
+  xs:  $s4,
+  sm:  $s6,
+  md:  $s8,
+  lg:  $s10,
+  xl:  $s20,
+  2xl: $s24,
+  3xl: $s28
 );
 
 

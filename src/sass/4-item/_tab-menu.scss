@@ -4,6 +4,7 @@
 @use "../0-base/breakpoint" as bp;
 @use "../1-layout" as *;
 @use "../2-visual" as *;
+@use "../2-visual/border" as br;
 @use "../3-material" as *;
 @use "button" as btn;
 /* ================================== */
@@ -13,13 +14,12 @@
   height: var(--ui-lg); 
   @include flex-center;
   padding: 2px 2.5px 3px 1.5px;
-  // $pad: 5px;
-  @include outer-br ($br-2xs, 5px);
+  @include outer-br (var(--3xs), 5px);
   margin: auto;
 
   @include bp.breakpoint(lg) {
     padding: 3.2px 3px 3.8px 2px;
-    @include outer-br ($br-xs, 7px);
+    @include outer-br (var(--3xs), 7px);
   }
 }
 
@@ -38,7 +38,7 @@
   line-height: var(--inner-h);
   @include btn-text;
 
-  border-radius: $br-2xs;
+  @include br.br(3xs);
 
   &.tab-active {
     background-color: rgba($highlight-color, 0.05);
@@ -59,7 +59,7 @@
   @include breakpoint(lg) {
     --inner-h: 1.25rem;
     padding: 2px 1.8rem 0 1.8rem;
-    border-radius: $br-xs;
+    @include br.br(xs);
   }
 }
 

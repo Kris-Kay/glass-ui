@@ -1,7 +1,7 @@
 /* ================================== */
 /* Motion */
 @use "../0-base" as *;
-@use "border";
+@use "border" as br;
 /* ================================== */
 
 
@@ -79,13 +79,13 @@
   position: relative;
 
   background-clip: padding-box;
-  border-radius: border.$br-md; // match border radius to parent!
+  border-radius: 20rem;
   overflow: hidden;
   cursor: pointer;
   pointer-events: auto;
 
   @include breakpoint(md) {
-    border-radius: border.$br-lg;
+    border-radius: 20rem;
   }
 }
 

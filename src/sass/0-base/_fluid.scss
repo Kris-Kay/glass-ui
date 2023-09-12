@@ -23,17 +23,20 @@ html {
   }
 }
 
-.max-w { 
+@mixin max-w {
   width: 100%;
   max-width: var(--max-w);
   margin: auto;
 }
 
-$nav-h: calc(var(--ui-lg) + (var(--space-narrow) * 2));
+.max-w { 
+  @include max-w;
+}
 
 /* Responsive UI height */
 /* ================================== */
 /* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
+$nav-h: calc(var(--ui-lg) + (var(--space-narrow) * 2));
 
 :root {
   --ui-sm: #{size.$s6};   /* 24px */

@@ -20,7 +20,7 @@
     "postbuild": "postcss public/css/*.css -u autoprefixer -r"
   },
   "keywords": [
-    "glassmorphism, glass, scss, css, Apple Vision Pro, UI"
+    "glassmorphism, dev, scss, css, Apple Vision Pro, UI"
   ],
   "author": "Kris Kay",
   "license": "bsd-3-clause",

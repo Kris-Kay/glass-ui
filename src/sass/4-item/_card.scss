@@ -4,7 +4,7 @@
 @use "../1-layout" as *;
 @use "../1-layout/padding";
 @use "../2-visual" as *;
-@use "../2-visual/border";
+@use "../2-visual/border" as br;
 @use "../3-material" as *;
 /* ================================== */
 
@@ -12,5 +12,5 @@
   display: grid;
   gap: var(--space-narrow);
   padding: var(--space-narrow);
-  border-radius: border.$br-md;
+  @include br.br(md);
 }

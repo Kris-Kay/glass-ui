@@ -2,13 +2,14 @@
 /* Backgrounds */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color" as *;
+@use "../0-base/fluid";
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../2-visual/fill";
-@use "inset" as in;
-@use "glass";
+@use "../3-material/inset" as in;
+@use "../3-material/glass";
 /* ================================== */
 
 /* Tinted glass */
@@ -92,7 +93,7 @@
 
   @include bp.breakpoint(md) {
     padding: var(--space-narrow);
-    border-radius: br.$br-sm;
+    @include br.br(md);
     margin: 0;
   }
 }
@@ -101,7 +102,7 @@
   width: 100%;
   @include fill.dark-mild;
   padding: var(--space-narrow);
-  border-radius: br.$br-sm;
+  @include br.br(md);
 }
 
 .diff {
@@ -115,8 +116,6 @@
 }
 
 
-
-
 .full-w-strong {
   @include fill.blur-dark-strong;
 
@@ -124,4 +123,16 @@
   // margin-left: calc((-1 * var(--space-narrow)) + 0.5px);
   // margin-right: calc(-1 * var(--space-narrow));
   box-shadow: in.$straight-inset-m;
+}
+
+
+// NEW sep 12 2023
+.page-section {
+  @include fluid.max-w;
+  border-radius: 0;
+  display: grid;
+
+  @include bp.breakpoint(md) {
+    @include br.br(lg);
+  }
 }

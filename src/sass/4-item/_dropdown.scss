@@ -18,7 +18,7 @@
 
 .dropdown-bg {
   padding: 1.25rem;
-  border-radius: br.$br-sm;
+  @include br.br(sm);
   pointer-events: none;
 }
 

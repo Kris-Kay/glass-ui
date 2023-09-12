@@ -1,13 +1,11 @@
 /* ================================== */
 /* Accordion */
 @use "../0-base" as *;
-@use "../0-base/gap";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../3-material" as *;
 /* ================================== */
-
 
 .accordion {
   width: 100%;
@@ -15,7 +13,7 @@
   border-radius: 0;
 
   @include breakpoint(md) {
-    border-radius: br.$br-md;
+    @include br.br(md);
   }
 
   @include breakpoint(lg) {
@@ -26,11 +24,10 @@
     padding: 0;
 
     .card {
-      border-radius: br.$br-md br.$br-md 0 0;
+      border-radius: var(--md) var(--md) 0 0;
     }
   }
 }
-
 
 .accordion-toggle {
   pointer-events: auto;
@@ -73,14 +70,13 @@
   }
 }
 
-
 .accordion-content.is-open {
   width: 100%;
   height: auto;
   max-height: 100%;
   transition: max-height 5000ms ease;
   gap: 1rem;
-  border-radius: 0 0 br.$br-md br.$br-md;
+  border-radius: 0 0 var(--md) var(--md);
 
   padding: var(--space-wide);
   @include blur-dark-strong;
