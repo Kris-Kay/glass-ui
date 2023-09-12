@@ -14,7 +14,7 @@ html {
   --text-sm: clamp(1rem, 0.3vw + 1rem, 1.188rem);;
   --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.5rem);
   --text-lg: clamp(1.25rem, 0.9vw + 1rem, 1.75rem);
-  --text-xl: clamp(1.6rem, 1.7vw + 1rem, 2rem);
+  --text-xl: clamp(1.6rem, 1.7vw + 1rem, 4rem);
 }
 
 /* Font size MAP */
@@ -44,9 +44,9 @@ $letter-spacing-md: 0.08em;
 $letter-spacing-lg: 0.125em;
 
 /* line-height: */
-$line-height-sm: 1.2;
-$line-height-md: calc(0.125em + 2ex + 0.125em);
-$line-height-lg: 1.6;
+$line-height-sm: calc(0.125em + 2ex + 0.125em);
+$line-height-md: calc(0.125em + 2.3ex + 0.125em);
+$line-height-lg: calc(0.125em + 2.5ex + 0.125em);
 
 /* Text */
 /* ================================== */
@@ -55,9 +55,7 @@ $line-height-lg: 1.6;
   font-family: $font-family-body;
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
-  line-height: calc(2px + 2.3ex + 2px);
-  color: color.$text-reg;
-  text-shadow: sha.$text-shadow-xs;
+  line-height: $line-height-md;
 }
 
 @mixin text-size-modifiers {
@@ -73,11 +71,59 @@ $line-height-lg: 1.6;
   @include text-size-modifiers;
 }
 
+/* Title */
+/* ================================== */
+@mixin title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-sm;
+  text-shadow: sha.$text-shadow-lg;
+}
+
+@mixin title-size-modifiers {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      @include title;
+    }
+  }
+}
+
+.title {
+  @include title-size-modifiers;
+}
+
+/* Thin Title */
+/* ================================== */
+@mixin title-thin {
+  font-family: $font-family-title;
+  font-weight: $font-weight-xs;
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-sm;
+  text-shadow: sha.$text-shadow-md;
+}
+
+@mixin title-thin-size-modifiers {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      @include title-thin;
+    }
+  }
+}
+
+.title-thin {
+  @include title-thin-size-modifiers;
+}
+
+
 /* Basic text styles */ 
 /* ================================== */
 body {
   @include body-text;
   font-size: var(--text-sm);
+  color: color.$text-reg;
 }
 
 .list-i {
@@ -129,6 +175,10 @@ body {
   font-weight: $font-weight-lg;
 }
 
+.lh-1 {
+  line-height: 1;
+}
+
 @mixin btn-text {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
@@ -138,53 +188,7 @@ body {
   color: color.$text-strong;
 }
 
-/* Title */
-/* ================================== */
-@mixin title {
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  line-height: calc(2px + 2.15ex + 2px);
-  // color: color.$text-reg;
-  text-shadow: sha.$text-shadow-lg;
-}
 
-@mixin title-size-modifiers {
-  @each $key, $value in $font-sizes {
-    &-#{$key} {
-      font-size: $value;
-      @include title;
-    }
-  }
-}
-
-.title {
-  @include title-size-modifiers;
-}
-
-/* Thin Title */
-/* ================================== */
-@mixin title-thin {
-  font-family: $font-family-title;
-  font-weight: $font-weight-xs;
-  letter-spacing: $letter-spacing-sm;
-  line-height: calc(2px + 2.1ex + 2px);
-  // color: color.$text-reg;
-  text-shadow: sha.$text-shadow-md;
-}
-
-@mixin title-thin-size-modifiers {
-  @each $key, $value in $font-sizes {
-    &-#{$key} {
-      font-size: $value;
-      @include title-thin;
-    }
-  }
-}
-
-.title-thin {
-  @include title-thin-size-modifiers;
-}
 
 /* Code */ 
 /* ================================== */

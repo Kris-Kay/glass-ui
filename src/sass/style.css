@@ -926,7 +926,7 @@ label {
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));
 }
 
-.circle-btn-m {
+.round-btn-md {
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -936,13 +936,13 @@ label {
   pointer-events: auto;
   cursor: pointer;
 }
-.circle-btn-m img {
+.round-btn-md img {
   width: auto;
   height: 1.1rem;
   filter: drop-shadow(0 0 0.75px rgba(0, 10, 30, 0.4));
 }
 
-.circle-btn-l {
+.round-btn-lg {
   width: 2.5rem;
   height: 2.5rem;
   display: flex;
@@ -952,7 +952,7 @@ label {
   pointer-events: auto;
   cursor: pointer;
 }
-.circle-btn-l img {
+.round-btn-lg img {
   width: auto;
   height: 1.4rem;
   filter: drop-shadow(0 0 0.8px rgba(0, 10, 30, 0.4));

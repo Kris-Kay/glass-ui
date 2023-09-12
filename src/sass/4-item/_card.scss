@@ -6,11 +6,19 @@
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../3-material" as *;
+@use "../3-material/inset" as in;
 /* ================================== */
 
 .card {
   display: grid;
-  gap: var(--space-narrow);
-  padding: var(--space-narrow);
+  gap: var(--xs);
+  padding: var(--xs);
   @include br.br(md);
+
+  .full-w-fill {
+    padding: var(--sm);
+    margin-left: calc((-1 * var(--xs)) + 0.5px);
+    margin-right: calc(-1 * var(--xs));
+    box-shadow: in.$straight-inset-m;
+  }
 }

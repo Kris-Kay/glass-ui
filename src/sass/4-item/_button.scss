@@ -5,6 +5,7 @@
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
+@use "../2-visual/shadow" as sha;
 @use "../3-material" as *;
 /* ================================== */
 
@@ -125,68 +126,48 @@
 
 
 /* ================================== */
-/* Icon buttons */
+/* Round buttons */
 /* ================================== */
-@mixin icon-btn-base {
+@mixin round-btn-base {
   @include flex-center;
-  border-radius: $round;
+  border-radius: br.$round;
   pointer-events: auto;
   cursor: pointer;
 }
 
-.icon-btn-s {
+.round-btn-sm {
   width: var(--ui-sm); 
   height: var(--ui-sm); 
-  @include icon-btn-base;
+  @include round-btn-base;
 
   & img {
     width: auto;
-    height: var(--ui-sm); 
-    filter: drop-shadow(0 0 0.5px rgba($ink6, 0.4));
+    height: calc(var(--ui-sm) * 0.7); 
+    @include sha.svg-sha-sm;
   }
 }
 
-
-.circle-btn-s {
-  width: var(--ui-sm); 
-  height: var(--ui-sm); 
-  @include icon-btn-base;
-
-  & img {
-    width: auto;
-    height: 0.9rem;
-    filter: drop-shadow(0 0 0.5px rgba($ink6, 0.4));
-  }
-}
-
-.circle-btn-m {
+.round-btn-md {
   width: var(--ui-md); 
   height: var(--ui-md); 
-  @include icon-btn-base;
+  @include round-btn-base;
 
   & img {
     width: auto;
-    height: 1.1rem;
-    filter: drop-shadow(0 0 0.75px rgba($ink6, 0.4));
+    height: calc(var(--ui-md) * 0.6); 
+    @include sha.svg-sha-md;
   }
 }
 
-.circle-btn-l {
+.round-btn-lg {
   width: var(--ui-lg); 
   height: var(--ui-lg); 
-  @include icon-btn-base;
+  @include round-btn-base;
 
   & img {
     width: auto;
-    height: calc(var(--ui-sm) * 0.9); 
-
-    @include breakpoint(md) {
-      height: var(--ui-sm); 
-    }
-
-    @include breakpoint(xl) {
-      height: calc(var(--ui-sm) * 1.1); 
-    }
+    height: calc(var(--ui-lg) * 0.6); 
+    @include sha.svg-sha-lg;
   }
 }
 
@@ -251,3 +232,23 @@
 .chip.icon-left {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
+
+
+// /* Button Size MAP */
+// /* ================================== */
+// $btn-sizes: (
+//   sm:  var(--ui-sm),
+//   md:  var(--ui-md),
+//   lg:  var(--ui-lg)
+// );
+
+
+// /* Button size modifier mixin */
+// /* ================================== */
+// @mixin btn-modifiers($attribute: 'a') {
+//   @each $key, $value in $btn-sizes {
+//     &-#{$key} {
+//       #{$attribute}: calc($value * var(--multiplier));
+//     }
+//   }
+// }

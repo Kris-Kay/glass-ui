@@ -20,34 +20,21 @@
 
 .atf-tutorial {
   position: relative;
-
+  place-items: center;
   display: grid;
-  grid-template-rows: $nav-h auto;
+  grid-template-rows: $nav-h 1fr;
   grid-template-areas:
     " . "
     "img";
 
-    nav {
-      grid-area: topNav;
+    h1 {
+      grid-area: img;
+      position: absolute;
     }
 
-    // .tag {
-    //   grid-area: tag;
-    //   width: fit-content;
-    //   height: fit-content;
-    //   justify-self: start;
-    // }
-
-    .atf-img-bg {
+    img {
       grid-area: img;
 
-      @include breakpoint(md) {
-        justify-self: end;
-      }
-
-      .atf-img {
-   
-      }
     }
 
   @media (height < 500px) {

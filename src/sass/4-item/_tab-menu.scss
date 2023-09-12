@@ -10,26 +10,30 @@
 /* ================================== */
 
 .tab-menu {
+  --tab-br: 0.4em;
+  --padding: 3px;
+  
   width: fit-content;
   height: var(--ui-lg); 
   @include flex-center;
-  padding: 2px 2.5px 3px 1.5px;
-  @include outer-br (var(--3xs), 5px);
+  padding: var(--padding);
+  @include outer-br (var(--tab-br), var(--padding));
   margin: auto;
 
-  @include bp.breakpoint(lg) {
-    padding: 3.2px 3px 3.8px 2px;
-    @include outer-br (var(--3xs), 7px);
-  }
+  // @include bp.breakpoint(lg) {
+  //   padding: 3.2px 3px 3.8px 2px;
+  //   @include outer-br(var(--3xs), 7px);
+  // }
+  
 }
 
 .tab {
-  --inner-h: 0.95rem; // font size & line height to vertically center
-  // --inner-h: var(--text-md);
+  --inner-h: 0.95rem; 
+
   width: max-content; 
-  height: calc(var(--ui-lg) - 4px);
+  height: 100%;
   @include flex-center;
-  padding: 1px 0.7rem 0 0.7rem;
+  padding: 0 0.7rem;
 
   pointer-events: auto;
   cursor: pointer;
@@ -38,28 +42,25 @@
   line-height: var(--inner-h);
   @include btn-text;
 
-  @include br.br(3xs);
-
-  &.tab-active {
-    background-color: rgba($highlight-color, 0.05);
-    -webkit-backdrop-filter: brightness(1.1);
-    backdrop-filter: brightness(1.1);
-    box-shadow: $sha-2xs;
-  }
+  border-radius: var(--tab-br);
 
   @include breakpoint(sm) {
-    padding: 2px 1rem 0 1rem;
+    padding: 0 1rem;
   }
 
   @include breakpoint(md) {
     --inner-h: 1.1rem;
-    padding: 2px 1.25rem 0 1.25rem;
   }
 
   @include breakpoint(lg) {
     --inner-h: 1.25rem;
-    padding: 2px 1.8rem 0 1.8rem;
-    @include br.br(xs);
+  }
+
+  &.tab-active {
+    background-color: rgba($highlight-color, 0.05);
+    -webkit-backdrop-filter: brightness(1.2);
+    backdrop-filter: brightness(1.2);
+    box-shadow: $sha-2xs;
   }
 }
 

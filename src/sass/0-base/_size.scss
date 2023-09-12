@@ -34,13 +34,17 @@ $s28: calc($root-size * 28); /* 112px 7rem */
 
   --3xs:  calc(#{$s2} * var(--multiplier));
   --2xs:  calc(#{$s3} * var(--multiplier));
-  --xs:   calc(#{$s4} * var(--multiplier));
+  --xs:   calc(#{$s5} * var(--multiplier));
   --sm:   calc(#{$s6} * var(--multiplier));
   --md:   calc(#{$s8} * var(--multiplier));
   --lg:   calc(#{$s10} * var(--multiplier));
   --xl:   calc(#{$s20} * var(--multiplier));
   --2xl:  calc(#{$s24} * var(--multiplier));
   --3xl:  calc(#{$s28} * var(--multiplier));
+
+  @include bp.breakpoint(sm) {
+    --multiplier: 1.1;
+  }
 
   @include bp.breakpoint(md) {
     --multiplier: 1.25;
@@ -57,7 +61,7 @@ $s28: calc($root-size * 28); /* 112px 7rem */
 $sizes: (
   3xs: $s2,
   2xs: $s3,
-  xs:  $s4,
+  xs:  $s5,
   sm:  $s6,
   md:  $s8,
   lg:  $s10,
@@ -75,6 +79,10 @@ $sizes: (
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$attribute}: calc($value * var(--multiplier));
+
+      @include bp.breakpoint(sm) {
+        #{$attribute}: calc($value * var(--multiplier));
+      }
 
       @include bp.breakpoint(md) {
         #{$attribute}: calc($value * var(--multiplier));
