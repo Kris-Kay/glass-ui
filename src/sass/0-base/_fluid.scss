@@ -11,7 +11,7 @@ html {
   --max-w: 100%;
 
   @include bp.breakpoint(md) {
-    --max-w: calc(100vw - (var(--space-sm) * 2));
+    --max-w: calc(100vw - (var(--space-narrow) * 2));
   }
 
   @include bp.breakpoint(lg) {
@@ -29,7 +29,7 @@ html {
   margin: auto;
 }
 
-$nav-h: calc(var(--ui-lg) + (var(--space-sm) * 2));
+$nav-h: calc(var(--ui-lg) + (var(--space-narrow) * 2));
 
 /* Responsive UI height */
 /* ================================== */
@@ -40,13 +40,13 @@ $nav-h: calc(var(--ui-lg) + (var(--space-sm) * 2));
   --ui-md: #{size.$s8};   /* 32px */
   --ui-lg: #{size.$s10};   /* 40px */
 
-  @include bp.breakpoint(lg) {
+  @include bp.breakpoint(md) {
     --ui-sm: #{size.$s7};  /* 28px */
     --ui-md: #{size.$s9};  /* 36px */
     --ui-lg: #{size.$s10}; /* 40px */
   }
 
-  @include bp.breakpoint(xl) {
+  @include bp.breakpoint(lg) {
     --ui-sm: #{size.$s8};  /* 32px */
     --ui-md: #{size.$s10}; /* 40px */
     --ui-lg: #{size.$s11}; /* 44px */
@@ -59,86 +59,86 @@ $nav-h: calc(var(--ui-lg) + (var(--space-sm) * 2));
 /* also used for negative margines for inner edge-to-edge backgrounds */
 
 :root {
-  --space-sm: #{size.$s3}; // 12px
-  --space-md: #{size.$s4}; // 16px
+  --space-narrow: #{size.$s3}; // 12px
+  --space-wide: #{size.$s4}; // 16px
   
   @include bp.breakpoint(sm) {
-    --space-sm: #{size.$s4}; // 16px
-    --space-md: #{size.$s5}; // 20px
+    --space-narrow: #{size.$s4}; // 16px
+    --space-wide: #{size.$s5}; // 20px
   }
 
   @include bp.breakpoint(md) {
-    --space-sm: #{size.$s5}; //20px
-    --space-md: #{size.$s10}; // 40px 
+    --space-narrow: #{size.$s6}; //24px
+    --space-wide: #{size.$s10}; // 40px 
   }
 
   @include bp.breakpoint(lg) {
-    --space-sm: #{size.$s6}; 
-    --space-md: #{size.$s16}; 
+    --space-narrow: #{size.$s7}; 
+    --space-wide: #{size.$s14}; 
   }
 
-    @include bp.breakpoint(xl) {
-    --space-sm: #{size.$s7}; 
-    --space-md: #{size.$s18}; 
+  @include bp.breakpoint(xl) {
+    --space-narrow: #{size.$s8}; 
+    --space-wide: #{size.$s16}; 
   }
 }
 
 // Space small
 /* ================================== */
-.space-sm {
-  padding: var(--space-sm);
+.space-narrow {
+  padding: var(--space-narrow);
 }
 
-.space-x-sm {
-  padding: 0 var(--space-sm);
+.space-x-narrow {
+  padding: 0 var(--space-narrow);
 }
 
-.space-y-sm {
-  padding: var(--space-sm) 0;
+.space-y-narrow {
+  padding: var(--space-narrow) 0;
 }
 
-.space-t-sm {
-  padding-top: var(--space-sm);
+.space-t-narrow {
+  padding-top: var(--space-narrow);
 }
 
-.space-b-sm {
-  padding-bottom: var(--space-sm);
+.space-b-narrow {
+  padding-bottom: var(--space-narrow);
 }
 
-.space-l-sm {
-  padding-left: var(--space-sm);
+.space-l-narrow {
+  padding-left: var(--space-narrow);
 }
 
-.space-r-sm {
-  padding-right: var(--space-sm);
+.space-r-narrow {
+  padding-right: var(--space-narrow);
 }
 
 // Space medium 
 /* ================================== */
-.space-md {
-  padding: var(--space-md);
+.space-wide {
+  padding: var(--space-wide);
 }
 
-.space-x-md {
-  padding: 0 var(--space-md);
+.space-x-wide {
+  padding: 0 var(--space-wide);
 }
 
-.space-y-md {
-  padding: var(--space-md) 0;
+.space-y-wide {
+  padding: var(--space-wide) 0;
 }
 
-.space-t-md {
-  padding-top: var(--space-md);
+.space-t-wide {
+  padding-top: var(--space-wide);
 }
 
-.space-b-md {
-  padding-bottom: var(--space-md);
+.space-b-wide {
+  padding-bottom: var(--space-wide);
 }
 
-.space-l-md {
-  padding-left: var(--space-md);
+.space-l-wide {
+  padding-left: var(--space-wide);
 }
 
-.space-r-md {
-  padding-right: var(--space-md);
+.space-r-wide {
+  padding-right: var(--space-wide);
 }

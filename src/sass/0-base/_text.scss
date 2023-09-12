@@ -10,12 +10,11 @@
 // https://modern-fluid-typography.vercel.app/
 // use this tool to fine-tune your fluid typography range
 html {
-  --text-xs: clamp(0.938rem, 5vw - 1rem, 1rem);
+  --text-xs: clamp(0.8rem, 4vw - 1rem, 1rem);
   --text-sm: clamp(1rem, 0.3vw + 1rem, 1.188rem);;
   --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.5rem);
-  --text-lg: clamp(1.5rem, 0.9vw + 1rem, 1.75rem);
-  --text-xl: clamp(1.75rem, 1.7vw + 1rem, 2rem);
-  --text-2xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
+  --text-lg: clamp(1.25rem, 0.9vw + 1rem, 1.75rem);
+  --text-xl: clamp(1.6rem, 1.7vw + 1rem, 2rem);
 }
 
 /* Font size MAP */
@@ -25,8 +24,7 @@ $font-sizes: (
   sm:  var(--text-sm),
   md:  var(--text-md),
   lg:  var(--text-lg),
-  xl:  var(--text-xl),
-  2xl: var(--text-2xl)
+  xl:  var(--text-xl)
 );
 
 /* font-family: */

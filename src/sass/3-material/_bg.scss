@@ -5,7 +5,8 @@
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
-@use "../2-visual/border";
+@use "../2-visual/border" as br;
+@use "../2-visual/fill";
 @use "inset" as in;
 @use "glass";
 /* ================================== */
@@ -54,38 +55,24 @@
   @include tint-strong;
 }
 
-@mixin blur-dark-strong {
-  background-color: rgba($shadow-color, 0.1);
-  -webkit-backdrop-filter: blur(64px) brightness(0.6);
-  backdrop-filter: blur(64px) brightness(0.6);
-}
-.blur-dark-strong {
-  @include blur-dark-strong;
-}
+
 
 .tint-fullwidth-s-reg {
   @include blur-tint-reg;
 
-  padding: var(--space-sm) var(--space-md);
-  margin-left: calc((-1 * var(--space-md)) + 0.5px);
-  margin-right: calc(-1 * var(--space-md));
+  padding: var(--space-narrow) var(--space-wide);
+  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+  margin-right: calc(-1 * var(--space-wide));
   box-shadow: in.$straight-inset-m;
 }
 
-.full-w-strong {
-  @include blur-dark-strong;
 
-  padding: var(--space-md) var(--space-sm);
-  // margin-left: calc((-1 * var(--space-sm)) + 0.5px);
-  // margin-right: calc(-1 * var(--space-sm));
-  box-shadow: in.$straight-inset-m;
-}
 
 .dark-fullwidth {
   background-color: rgba($shadow-color, 0.8);
-  padding: var(--space-sm) var(--space-md);
-  margin-left: calc((-1 * var(--space-md)) + 0.5px);
-  margin-right: calc(-1 * var(--space-md));
+  padding: var(--space-narrow) var(--space-wide);
+  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+  margin-right: calc(-1 * var(--space-wide));
 }
 
 .code-bg {
@@ -95,26 +82,26 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-sm) var(--space-md);
-  margin-left: calc(-1 * var(--space-md));
-  margin-right: calc(-1 * var(--space-md));
+  padding: var(--space-narrow) var(--space-wide);
+  margin-left: calc(-1 * var(--space-wide));
+  margin-right: calc(-1 * var(--space-wide));
 
   &:hover {
     overflow-x: scroll;
   }
 
   @include bp.breakpoint(md) {
-    padding: var(--space-sm);
-    border-radius: border.$br-sm;
+    padding: var(--space-narrow);
+    border-radius: br.$br-sm;
     margin: 0;
   }
 }
 
 .dark-round-rect {
   width: 100%;
-  @include glass.dark-mild;
-  padding: var(--space-sm);
-  border-radius: border.$br-sm;
+  @include fill.dark-mild;
+  padding: var(--space-narrow);
+  border-radius: br.$br-sm;
 }
 
 .diff {
@@ -122,7 +109,19 @@
   mix-blend-mode: difference;
   // filter: grayscale(100%);
 }
+
 .gray {
   filter: grayscale(100%);
 }
 
+
+
+
+.full-w-strong {
+  @include fill.blur-dark-strong;
+
+  padding: var(--space-wide) var(--space-narrow);
+  // margin-left: calc((-1 * var(--space-narrow)) + 0.5px);
+  // margin-right: calc(-1 * var(--space-narrow));
+  box-shadow: in.$straight-inset-m;
+}

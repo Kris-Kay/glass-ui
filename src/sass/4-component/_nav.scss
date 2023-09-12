@@ -17,9 +17,9 @@ nav {
   height: var(--ui-lg);
   position: fixed;
   @include flex-sb;
-  inset: var(--space-sm) 0 0 0;
+  inset: var(--space-narrow) 0 0 0;
   z-index: 100;
-  padding: 0 var(--space-sm);
+  padding: 0 var(--space-narrow);
 
   @include breakpoint(md) {
     padding: 0;

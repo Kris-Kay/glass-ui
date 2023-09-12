@@ -2,3 +2,77 @@
 /* Fill */
 @use "../0-base/color" as *;
 /* ================================== */
+
+/* Noise texture */
+/* ================================== */
+/* Noise generator: https://devsdash.com/tools/noise-texture-generator */
+@mixin noise {
+  background-image: url(/assets/textures/noise-texture-500x500.png); 
+  background-size: 100px;
+  background-repeat: repeat;
+}
+
+// Dark fill 
+/* ================================== */
+@mixin dark-mild {
+  background-color: rgba($shadow-color, 0.05);
+  -webkit-backdrop-filter: brightness(0.92) saturate(1.4);
+  backdrop-filter: brightness(0.92) saturate(1.4);
+}
+
+@mixin dark-reg {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: brightness(0.85) saturate(1.6);
+  backdrop-filter: brightness(0.85) saturate(1.6);
+}
+
+@mixin dark-strong {
+  background-color: rgba($shadow-color, 0.5);
+  -webkit-backdrop-filter: brightness(0.5)  saturate(1.8);
+  backdrop-filter: brightness(0.5) saturate(1.8);
+}
+
+.dark-mild {
+  @include dark-mild;
+}
+
+.dark-reg {
+  @include dark-reg;
+}
+
+.dark-strong {
+  @include dark-strong;
+}
+
+
+// Blur & Dark fill 
+/* ================================== */
+@mixin blur-dark-mild {
+  background-color: rgba($shadow-color, 0.05);
+  -webkit-backdrop-filter: blur(10vw) brightness(0.92) saturate(1.4);
+  backdrop-filter: blur(10vw) brightness(0.92) saturate(1.4);
+}
+
+@mixin blur-dark-reg {
+  background-color: rgba($shadow-color, 0.1);
+  -webkit-backdrop-filter: blur(10vw) brightness(0.85) saturate(1.2);
+  backdrop-filter: blur(10vw) brightness(0.85) saturate(1.2);
+}
+
+@mixin blur-dark-strong {
+  background-color: rgba($shadow-color, 0.5);
+  -webkit-backdrop-filter: blur(10vw) brightness(0.5) saturate(1.8);
+  backdrop-filter: blur(32px) brightness(0.4) saturate(1.8);
+}
+
+.blur-dark-mild {
+  @include blur-dark-mild;
+}
+
+.blur-dark-reg {
+  @include blur-dark-reg;
+}
+
+.blur-dark-strong {
+  @include blur-dark-strong;
+}

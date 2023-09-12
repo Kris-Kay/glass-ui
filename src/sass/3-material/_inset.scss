@@ -4,6 +4,7 @@
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
+@use "../2-visual/fill";
 @use "glass";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
@@ -199,7 +200,7 @@ inset 0 1px 0.5px -1px rgba($shadow-color, 0.12); // small top
 
 .straight-inset-s {
   box-shadow: $straight-inset-s;
-  @include glass.dark-strong;
+  @include dark-strong;
 }
 
 $straight-inset-m: 
@@ -246,7 +247,7 @@ inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
     inset: 0;
     border-radius: inherit;
     z-index: 2;
-    @include glass.noise;
+    @include fill.noise;
     box-shadow: $inset-shadow-s;
     filter: brightness(0.3);
     width: 100%;
@@ -305,7 +306,7 @@ inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
     z-index: -1;
     border-radius: inherit;
 
-    @include glass.noise;
+    @include fill.noise;
     box-shadow: $inset-shadow-m;
     filter: brightness(0.1);
   }
@@ -326,7 +327,7 @@ inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
 .inset-glass {
   position: relative;
   box-shadow: $inset-highlight-m;
-  // @include noise;
+  // @include fill.noise;
   -webkit-backdrop-filter: brightness(0.85) blur(10vw) saturate(1.4);
   backdrop-filter: brightness(0.85) blur(10vw) saturate(1.4);
   // -webkit-backdrop-filter: blur(16px);

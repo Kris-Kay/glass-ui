@@ -8,49 +8,7 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
-/* Noise texture for frosted glass */
-@mixin noise {
-  background-image: url(/assets/textures/noise-texture-500x500.png); 
-  background-size: 100px;
-  background-repeat: repeat;
-}
 
-// Dark glass for insets and text backgrounds
-@mixin dark-very-mild {
-  -webkit-backdrop-filter: brightness(0.88) blur(10vw) saturate(1.2);
-  // backdrop-filter: brightness(1.1) blur(10vw);
-  backdrop-filter: blur(10vw) brightness(1.1) saturate(0.95);
-}
-
-@mixin dark-mild {
-  background-color: rgba($shadow-color, 0.04);
-  -webkit-backdrop-filter: brightness(0.9) blur(10vw) saturate(1.2);
-  backdrop-filter: brightness(0.9) blur(10vw) saturate(1.2);
-}
-
-@mixin dark-medium {
-  background-color: rgba($shadow-color, 0.08);
-  -webkit-backdrop-filter: brightness(0.8) blur(10vw) saturate(1.2);
-  backdrop-filter: brightness(0.8) blur(10vw) saturate(1.2);
-}
-
-@mixin dark-strong {
-  background-color: rgba($shadow-color, 0.1);
-  -webkit-backdrop-filter: brightness(0.65) blur(10vw) saturate(1.2);
-  backdrop-filter: brightness(0.65) blur(10vw) saturate(1.2);
-}
-
-.dark-mild {
-  @include dark-mild;
-}
-
-.dark-medium {
-  @include dark-medium;
-}
-
-.dark-strong {
-  @include dark-strong;
-}
 
 .glass-dark-very-mild {
   position: relative;
@@ -329,7 +287,7 @@
 
 
 .new-vibrant-glass {
-  // padding: var(--space-md);
+  // padding: var(--space-wide);
   // width: 480px;
   // max-width: 95vw;
   // border-radius: 1.5rem;

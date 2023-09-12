@@ -82,7 +82,7 @@
   gap: 1rem;
   border-radius: 0 0 br.$br-md br.$br-md;
 
-  padding: var(--space-md);
+  padding: var(--space-wide);
   @include blur-dark-strong;
 }
 

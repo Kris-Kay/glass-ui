@@ -10,7 +10,7 @@
 
 .card {
   display: grid;
-  gap: var(--space-sm);
-  padding: var(--space-sm);
+  gap: var(--space-narrow);
+  padding: var(--space-narrow);
   border-radius: border.$br-md;
 }
