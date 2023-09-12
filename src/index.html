@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Glass UI SCSS library</title>
+    <title>3D Glass UI </title>
     <meta
       name="description"
-      content="3D Glassmorphism inspired by Apple Vision Pro's spatial UI"
+      content="3D Glassmorphism SCSS library inspired by Apple Vision Pro's spatial UI"
     />
     <meta name="author" content="Kris Kay" />
     <meta
       name="keywords"
-      content="apple vision pro, glassmorphism, UI, wed design, web dev, CSS, spatial UI"
+      content="vision pro, glassmorphism, wed design, web dev, CSS, SCSS, spatial UI, glass UI"
     />
 
     <!-- === Fonts === -->
@@ -22,13 +22,6 @@
 
     <!-- === CSS === -->
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-
-    <!-- === Favicon === -->
-
-    <!-- === jQuary === -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <script src="/js/parts.js" type="text/javascript"></script>
   </head>
 
 <!-- Body -->
@@ -92,19 +85,27 @@
             <div id="js-navDropdown" class="nav-dropdown isClosed">
               <div class="dropdown-bg frosted-glass">
                 <div class="dropdown-grid">
-                  <a href="./index.html" class="dropdown-item btn-clear">
+                  <a 
+                  href="#" 
+                  id="js-home"
+                  class="dropdown-item btn-clear">
                     Home
                   </a>
       
-                  <a href="./demo.html" class="dropdown-item btn-clear">
-                    Demo
-                  </a>
-      
                   <a 
-                  href="./tutorial.html" 
+                  href="#" 
+                  id="js-tutorial"
                   class="dropdown-item btn-clear">
                     Tutorial
                   </a>
+                  
+                  <a 
+                  href="#" 
+                  id="js-demo"
+                  class="dropdown-item btn-clear">
+                    Demo
+                  </a>
+    
                 </div>
               </div>
             </div>
@@ -115,51 +116,56 @@
       </div>
     </nav>
 
-    <div class="content"> 
+    <div id="content"> 
 
     </div>
 
 <!-- Footer -->
 <!-- ================================== -->
-      <footer class="blur-dark-strong space-narrow">
-        <div class="max-w flex-sb flex-wrap gap-xs">
+    <footer class="blur-dark-strong space-narrow">
+      <div class="max-w flex-sb flex-wrap gap-xs">
 
-          <p class="">Email: hello@kris-kay.com</p>
-        
-          <div class="flex-center flex-wrap gap-sm">
-            <a href="#" target="_blank" class="btn-clear icon-btn-s">
-              <img
-                src="assets/icons/InstagramLogo.svg"
-                alt="Instagram account"
-                class="icon-md"
-              />
-            </a>
-        
-            <a href="#" target="_blank" class="btn-clear icon-btn-s">
-              <img
-                src="assets/icons/LinkedinLogo.svg"
-                alt="LinkedIn account"
-                class="icon-md"
-              />
-            </a>
-        
-            <a href="#" target="_blank" class="btn-clear icon-btn-s">
-              <img
-                src="assets/icons/GithubLogo.svg"
-                alt="GitHub account"
-                class="icon-md"
-              />
-            </a>
-          </div>
-        
-          <p class="text-xmild text-xs">&copy; 2023 Kris Kay All Rights Reserved</p>
-        
+        <p class="">Email: hello@kris-kay.com</p>
+      
+        <div class="flex-center flex-wrap gap-sm">
+          <a href="#" target="_blank" class="btn-clear icon-btn-s">
+            <img
+              src="assets/icons/InstagramLogo.svg"
+              alt="Instagram account"
+              class="icon-md"
+            />
+          </a>
+      
+          <a href="#" target="_blank" class="btn-clear icon-btn-s">
+            <img
+              src="assets/icons/LinkedinLogo.svg"
+              alt="LinkedIn account"
+              class="icon-md"
+            />
+          </a>
+      
+          <a href="#" target="_blank" class="btn-clear icon-btn-s">
+            <img
+              src="assets/icons/GithubLogo.svg"
+              alt="GitHub account"
+              class="icon-md"
+            />
+          </a>
         </div>
-      </footer>
-    </div>
+      
+        <p class="text-xmild text-xs">&copy; 2023 Kris Kay All Rights Reserved</p>
+      
+      </div>
+    </footer>
+  </div>
+
+<!-- === jQuary === -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <!-- Scripts -->
 <!-- ================================== -->
-
+    <script src="/js/content.js" type="text/javascript"></script>
     <script src="/js/main.js" type="text/javascript"></script>
+
   </body>
 </html>
