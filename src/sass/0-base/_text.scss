@@ -36,7 +36,7 @@ $font-family-code: 'Fragment Mono', Courier, monospace;
 $font-weight-xs: 200;
 $font-weight-sm: 300;
 $font-weight-md: 400;
-$font-weight-lg: 600;
+$font-weight-lg: 500;
 
 /* letter-spacing: */
 $letter-spacing-sm: 0.02em;
@@ -130,7 +130,7 @@ body {
 }
 
 @mixin btn-text {
-  font-family: $font-family-body;
+  font-family: $font-family-title;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-lg;
   text-align: center;

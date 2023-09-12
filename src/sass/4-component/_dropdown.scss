@@ -1,9 +1,10 @@
 /* ================================== */
 /* Dropdown */
 @use "../0-base" as *;
+@use "../0-base/text";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
-@use "../2-visual/border";
+@use "../2-visual/border" as br;
 @use "../3-material" as *;
 /* ================================== */
 
@@ -17,7 +18,7 @@
 
 .dropdown-bg {
   padding: 1.25rem;
-  border-radius: border.$br-md;
+  border-radius: br.$br-sm;
   pointer-events: none;
 }
 
@@ -32,6 +33,9 @@
 
 .dropdown-item {
   $inner-h: 1.2rem; // set font size & center
+
+  pointer-events: auto;
+  cursor: pointer;
   z-index: 101;
   min-width: max-content;
   height: var(--ui-lg); 
@@ -41,158 +45,26 @@
   align-items: center;
   gap: 0.75rem;
 
-  font-family: $font-family-title;
-  font-weight: $font-weight-lg;
+  @include btn-text;
   font-size: $inner-h;
   line-height: $inner-h;
-  text-shadow: $text-shadow-sm;
-  letter-spacing: $letter-spacing-lg;
-  text-align: center;
   color: rgba($text-reg, 0.75);
 
-  border-radius: border.$round;
-  pointer-events: auto;
-  cursor: pointer;
+
 
   padding: 0.2rem 0.7rem 0.2rem 0.7rem;
 
-  &.icon-left {
+  & .icon-left {
     padding: 0.2rem 0.7rem 0.2rem 0.6rem;
   }
   
-  &.icon-right {
+  & .icon-right {
     padding: 0.2rem 0.6rem 0.2rem 0.7rem;
   }
-
 
   & img {
     width: auto;
     height: calc($inner-h + 0.5rem);
     align-self: center;
-
-    filter: $icon-shadow-sm;
-  }
-
-  background-color: transparent;
-  transition: backdrop-filter 1000ms ease, color 1000ms ease;
-
-  &:hover {
-    -webkit-backdrop-filter: brightness(1.2);
-    backdrop-filter: brightness(1.2);
-    color: rgba($text-reg, 0.9);
-  }
-
-  &:active {
-    -webkit-backdrop-filter: brightness(0.9);
-    backdrop-filter: brightness(0.9);
-    color: $text-reg;
   }
 }
-
-// .mobilenav {position: fixed; z-index: 1000;}
-// .hamburger-menu-button {
-//   width: 40px;
-//   height: 40px;
-//   padding: 6px;
-//   display: block;
-//   position: relative;
-//   margin-top: 15px;
-//   z-index: 100;
-//   background: transparent;
-//   box-sizing: content-box;
-//   border: 0;
-//   color: transparent;
-//   white-space: nowrap;
-//   cursor: pointer;
-//   overflow: hidden;
-    
-// }
-// .hamburger-menu-button-open {
-//   top: 50%;
-//   margin-top: -1px;
-//   left: 50%;
-//   margin-left: -12px;
-// }
-// .hamburger-menu-button-open, 
-// .hamburger-menu-button-open::before, 
-// .hamburger-menu-button-open::after {
-//   position: absolute;
-//   width: 24px;
-//   height: 2px;
-//   background: teal;
-//   border-radius: 8px;
-//   -webkit-transition: all 0.3s;
-//   transition: all 0.3s;
-// }
-// .hamburger-menu-button-open::before, 
-// .hamburger-menu-button-open::after {
-//   left: 0;
-//   content: "";
-// }
-// .hamburger-menu-button-open::before {
-//   top: 6px;
-// }
-// .hamburger-menu-button-open::after {
-//   bottom: 6px;
-// }
-// .hamburger-menu-button-close {
-//   background: transparent;
-//   -webkit-transform: rotate(180deg);
-//           transform: rotate(180deg);
-// }
-// .hamburger-menu-button-close::before {
-//     background:white;
-//   -webkit-transform: translateY(-6px) rotate(45deg);
-//           transform: translateY(-6px) rotate(45deg);
-// }
-// .hamburger-menu-button-close::after {
-//     background:white;
-//   -webkit-transform: translateY(6px) rotate(-45deg);
-//           transform: translateY(6px) rotate(-45deg);
-// }
-// .ham-menu {
-//     position: absolute;
-//     top:0;
-// text-align: center;
-//   margin: auto;
-//     width:100%;
-//     min-width: 375px;
-// }
-// .ham-menu ul {
-//   -webkit-transform: translateX(-110%);
-//           transform: translateX(-110%);
-//   background-color: #3896d3;
-//   -webkit-transition: all 0.5s ease-in-out;
-//   transition: all 0.5s ease-in-out;
-//     width:100%;
-// }
-// .ham-menu.on ul {
-//   -webkit-transform: translateX(0px);
-//           transform: translateX(0px);
-// }
-// .ham-menu ul {
-//   font-size: 0;
-// }
-// .ham-menu ul li {
-//   display: block;
-// }
-// .ham-menu ul li:first-child .ham-menu ul li a {
-//   padding-left: 30px;
-// }
-// .ham-menu ul li a {
-//   padding: 15px;
-//   display: block;
-//     width:100%;
-//   background-color: transparent;
-//   color: #fff;
-//   text-transform: uppercase;
-//   -webkit-transition: all 0.2s ease-in-out;
-//   transition: all 0.2s ease-in-out;
-//   font-size: 13px;
-//   text-decoration: none;
-// }
-// .ham-menu ul li.active a, .ham-menu ul li a:hover {
- 
-//   color: #000 !important;
-  
-// } 
