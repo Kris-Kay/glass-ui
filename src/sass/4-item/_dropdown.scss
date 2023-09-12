@@ -1,70 +1,26 @@
 /* ================================== */
 /* Dropdown */
 @use "../0-base" as *;
-@use "../0-base/text";
-@use "../1-layout" as *;
-@use "../2-visual" as *;
 @use "../2-visual/border" as br;
-@use "../3-material" as *;
+@use "../2-visual/shadow" as sha;
 /* ================================== */
 
 
-.dropdown-bin {
-  position: relative;
-  width: 100%;
-  z-index: 100;
-  pointer-events: none;
-}
+// .dropdown-bg {
+//   padding: var(--2xs);
+//   @include br.br(xs);
+//   box-shadow: sha.$sha-lg;
+// }
 
-.dropdown-bg {
-  padding: 1.25rem;
-  @include br.br(sm);
-  pointer-events: none;
-}
+// .dropdown-grid {
+//   width: fit-content;
+//   display: grid;
+//   gap: calc(var(--3xs) * 0.5);
+//   margin: calc(var(--3xs) * -1);
+// }
 
-.dropdown-grid {
-  width: fit-content;
-  display: grid;
-  gap: 0.75rem;
-  justify-items: stretch;
-  pointer-events: none;
-  margin: -0.5rem;
-}
-
-.dropdown-item {
-  $inner-h: 1.2rem; // set font size & center
-
-  pointer-events: auto;
-  cursor: pointer;
-  z-index: 101;
-  min-width: max-content;
-  height: var(--ui-lg); 
-  display: grid;
-  grid-template-columns: calc($inner-h + 0.5rem) auto;
-  justify-items: start;
-  align-items: center;
-  gap: 0.75rem;
-
-  @include btn-text;
-  font-size: $inner-h;
-  line-height: $inner-h;
-  color: rgba($text-reg, 0.75);
-
-
-
-  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
-
-  & .icon-left {
-    padding: 0.2rem 0.7rem 0.2rem 0.6rem;
-  }
-  
-  & .icon-right {
-    padding: 0.2rem 0.6rem 0.2rem 0.7rem;
-  }
-
-  & img {
-    width: auto;
-    height: calc($inner-h + 0.5rem);
-    align-self: center;
-  }
-}
+// .js-dd-item {
+//   min-width: max-content;
+//   width: 100%;
+//   color: rgba($text-reg, 0.8);
+// }

@@ -3,6 +3,8 @@
 @use "../0-base" as *;
 @use "../1-layout" as *;
 @use "../2-visual" as *;
+@use "../2-visual/border" as br;
+@use "../2-visual/shadow" as sha;
 @use "../3-material" as *;
 @use "../4-item" as *;
 @use "../4-item/button" as btn;
@@ -12,6 +14,7 @@ nav {
   position: relative;
   width: 100%;
   height: $nav-h;
+  pointer-events: none;
 }
 
 .nav-fixed {
@@ -21,6 +24,7 @@ nav {
   inset: var(--space-narrow) 0 0 0;
   z-index: 100;
   padding: 0 var(--space-narrow);
+  pointer-events: none;
 
   @include breakpoint(md) {
     padding: 0;
@@ -28,18 +32,14 @@ nav {
 }
 
 .nav-grid {
+  position: relative;
   margin: 0 auto;
   display: grid;
   grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
-
+  pointer-events: none;
   @include breakpoint(xl) {
     max-width: calc(var(--max-w) + (var(--ui-lg) * 2) + 3rem);
   }
-}
-
-.dropdown-toggle, .nav-logo {
-  width: var(--ui-lg); 
-  height: var(--ui-lg); 
 }
 
 .nav-ham {
@@ -58,15 +58,39 @@ nav {
   }
 }
 
+/* ================================== */
+/* Dropdown */
+/* ================================== */
 .nav-dropdown {
   display: block;
   position: absolute;
   top: var(--ui-lg); 
   right: 0;
-  padding-top: 0.5rem;
+  padding-top: var(--3xs);
+  pointer-events: none;
 
   &.isClosed {
     display: none;
   }
 }
 
+.dropdown-bg {
+  padding: var(--2xs);
+  @include br.br(xs);
+  box-shadow: sha.$sha-lg;
+  pointer-events: none;
+}
+
+.dropdown-grid {
+  width: fit-content;
+  display: grid;
+  gap: calc(var(--3xs) * 0.5);
+  margin: calc(var(--3xs) * -1);
+  pointer-events: none;
+}
+
+.js-dd-item {
+  min-width: max-content;
+  width: 100%;
+  color: rgba($text-reg, 0.8);
+}

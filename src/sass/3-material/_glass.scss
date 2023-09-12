@@ -6,13 +6,13 @@
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
 @use "../2-visual/shadow" as sha;
+@use "../2-visual/fill";
 /* ================================== */
 
 
 
 .glass-dark-very-mild {
   position: relative;
-  overflow: hidden;
 
   &::before {
     @include pseudo;
@@ -89,31 +89,34 @@
 
 .btn-glass-xs {
   position: relative;
-  z-index: -2;
-  box-shadow: $sha-sm;
-  pointer-events: auto;
-  cursor: pointer;
+  box-shadow: $sha-xs;
   overflow: hidden;
 
-  background-color: rgba($highlight-color, 0.3);
+  background-color: rgba($highlight-color, 0.05);
+  transition: background-color 1000ms ease-out;
+
+  &:hover {
+    background-color: rgba($highlight-color, 0.3);
+  }
+
+  &:active {
+    background-color: rgba($shadow-color, 0.1);
+  }
 
   &::before {
     @include pseudo;
-    z-index: -3;
-
-    -webkit-backdrop-filter: blur(48px) saturate(1.5);
-    backdrop-filter: blur(48px) saturate(1.5);
+    z-index: -2;
+    @include fill.blur-dark-mild;
+    // -webkit-backdrop-filter: blur(48px) saturate(1.5);
+    // backdrop-filter: blur(48px) saturate(1.5);
   }
 
   &::after {
     @include pseudo;
+    overflow: hidden;
     z-index: -1;
-
+    @include noise;
     box-shadow: $bevel-xs;
-  }
-
-  &:hover {
-    background-color: rgba($highlight-color, 0.6);
   }
 }
 

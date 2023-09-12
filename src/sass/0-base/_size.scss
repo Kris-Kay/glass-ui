@@ -33,7 +33,7 @@ $s28: calc($root-size * 28); /* 112px 7rem */
   --multiplier:  1;
 
   --3xs:  calc(#{$s2} * var(--multiplier));
-  --2xs:  calc(#{$s3} * var(--multiplier));
+  --2xs:  calc(#{$s4} * var(--multiplier));
   --xs:   calc(#{$s5} * var(--multiplier));
   --sm:   calc(#{$s6} * var(--multiplier));
   --md:   calc(#{$s8} * var(--multiplier));
@@ -60,7 +60,7 @@ $s28: calc($root-size * 28); /* 112px 7rem */
 /* ================================== */
 $sizes: (
   3xs: $s2,
-  2xs: $s3,
+  2xs: $s4,
   xs:  $s5,
   sm:  $s6,
   md:  $s8,

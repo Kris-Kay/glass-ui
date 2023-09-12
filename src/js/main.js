@@ -3,26 +3,26 @@
 /* ================================== */
   // console.log("page is fully loaded");
 
-// Open & Close nav dropdown menu
+// Open & Close dropdown
 /* ================================== */
 const $ham = document.getElementById("js-navHam");
 const $x = document.getElementById("js-navX");
-const $dropdown = document.getElementById("js-navDropdown");
-const $allItems = $dropdown.querySelectorAll(".dropdown-item");
-const itemsArray = Array.from($allItems);
+const $dd = document.getElementById("js-navDropdown");
+const $ddItems = $dd.querySelectorAll(".js-dd-item");
+const ddArray = Array.from($ddItems);
 
 document.getElementById("js-dropdownToggle").onclick = () => {
   $ham.classList.toggle("isClosed");
   $x.classList.toggle("isClosed");
-  $dropdown.classList.toggle("isClosed");
+  $dd.classList.toggle("isClosed");
 };
 
-// close dropdown when an item is clicked
-itemsArray.forEach((item) => {
+// on item click -> close dropdown
+ddArray.forEach((item) => {
   item.onclick = () => {
     $ham.classList.add("isClosed");
     $x.classList.add("isClosed");
-    $dropdown.classList.add("isClosed");
+    $dd.classList.add("isClosed");
   };
 });
 

@@ -17,9 +17,7 @@
   width: max-content; // to stop stretching in flex layouts 
   @include flex-center;
   @include btn-text;
-  border-radius: $round;
-  pointer-events: auto;
-  cursor: pointer;
+  border-radius: br.$round;
 }
 
 // .btn-glass {
@@ -95,8 +93,9 @@
   padding: 2px 0.85rem 0 0.75rem;
 }
 
-.btn-l {
+.btn-lg {
   $inner-h: 1.1em; 
+
   height: var(--ui-lg); 
   @include btn-base;
   gap: 0.4rem;
@@ -108,9 +107,9 @@
   & img {
     width: auto;
     height: $inner-h;
+    // height: calc(var(--ui-lg) * 0.6); 
     align-self: center;
-    margin-top: -1.5px;
-    filter: drop-shadow(0 0 0.8px rgba($ink6, 0.4));
+    @include sha.svg-sha-sm;
   }
 
   & .icon-right {
@@ -133,6 +132,7 @@
   border-radius: br.$round;
   pointer-events: auto;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .round-btn-sm {
@@ -155,7 +155,7 @@
   & img {
     width: auto;
     height: calc(var(--ui-md) * 0.6); 
-    @include sha.svg-sha-md;
+    @include sha.svg-sha-sm;
   }
 }
 
@@ -167,7 +167,7 @@
   & img {
     width: auto;
     height: calc(var(--ui-lg) * 0.6); 
-    @include sha.svg-sha-lg;
+    @include sha.svg-sha-sm;
   }
 }
 
@@ -176,16 +176,20 @@
 /* ================================== */
 
 .btn-clear {
+  pointer-events: auto;
+  cursor: pointer;
   border-radius: br.$round;
   background-color: transparent;
   transition: background-color 1000ms ease-out;
 
   &:hover {
-    background-color: rgba($highlight-color, 0.2);
+    background-color: rgba($highlight-color, 0.3);
+    overflow: hidden;
   }
 
   &:active {
     background-color: rgba($shadow-color, 0.1);
+    overflow: hidden;
   }
 }
 
