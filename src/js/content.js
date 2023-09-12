@@ -6,21 +6,24 @@
   "use strict";
 
   $(function () {
-    $("#content").load("/home-copy.html");
+    $("#content").load("/home.html");
 
     $("#js-demo").on( "click", function(event) {
       event.preventDefault();
-      $("#content").load("/demo-copy.html");
+      $(window).scrollTop(0);
+      $("#content").load("/demo.html");
     }); 
 
     $("#js-tutorial").on( "click", function(event) {
       event.preventDefault();
+      $(window).scrollTop(0);
       $("#content").load("/tutorial.html");
     }); 
 
     $("#js-home").on( "click", function(event) {
       event.preventDefault();
-      $("#content").load("/home-copy.html");
+      $(window).scrollTop(0);
+      $("#content").load("/home.html");
     });
   });
 })();
