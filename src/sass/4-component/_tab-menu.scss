@@ -24,8 +24,8 @@
 }
 
 .tab {
-  // --inner-h: 1rem; // font size & line height to vertically center
-  --inner-h: var(--text-md);
+  --inner-h: 0.95rem; // font size & line height to vertically center
+  // --inner-h: var(--text-md);
   width: max-content; 
   height: calc(var(--ui-lg) - 4px);
   @include flex-center;
@@ -52,12 +52,12 @@
   }
 
   @include breakpoint(md) {
-    // --inner-h: 1.1rem;
+    --inner-h: 1.1rem;
     padding: 2px 1.25rem 0 1.25rem;
   }
 
   @include breakpoint(lg) {
-    // --inner-h: 1.25rem;
+    --inner-h: 1.25rem;
     padding: 2px 1.8rem 0 1.8rem;
     border-radius: $br-xs;
   }

@@ -24,6 +24,11 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
 
     <!-- === Favicon === -->
+
+    <!-- === jQuary === -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/parts.js" type="text/javascript"></script>
+
   </head>
 
 
@@ -35,88 +40,8 @@
 
 <!-- Nav -->
 <!-- ================================== -->
-<nav>
-  <div class="nav-fixed">
-    <div class="nav-grid max-w">
-      <a
-        href="#top-of-page"
-        class="circle-btn-l frosted-glass nav-logo"
-      >
-        <img
-          src="/assets/icons/CubeTransparent.svg"
-          alt="back to top"
-          class="icon-s"
-        />
-      </a>
-
-      <!-- Color tabs -->
-      <div id="js-tabMenu" class="tab-menu inset-glass">
-        <button type="button" class="tab" id="dark-tab">Dark</button>
-
-        <button type="button" class="tab" id="light-tab">
-          Light
-        </button>
-
-        <button type="button" class="tab tab-active" id="color-tab">
-          Color
-        </button>
-      </div>
-      <!-- Color tabs end -->
-
-      <!-- Dropdown menu -->
-      <div class="flex-right dropdown-bin">
-        <button
-          type="button"
-          id="js-dropdownToggle"
-          class="circle-btn-l frosted-glass dropdown-toggle"
-        >
-          <img
-            src="assets/icons/List.svg"
-            alt="Open nav dropdown"
-            id="js-navHam"
-            class="isClosed nav-ham icon-s"
-          />
-          <img
-            src="/assets/icons/X.svg"
-            alt="Close nav dropdown"
-            id="js-navX"
-            class="isClosed nav-x icon-s"
-          />
-        </button>
-
-         <!-- Dropdown -->
-        <div id="js-navDropdown" class="nav-dropdown isClosed">
-          <div class="dropdown-bg frosted-glass">
-            <div class="dropdown-grid">
-              <a href="./index.html" class="dropdown-item icon-left">
-                <img src="/assets/icons/CubeTransparent.svg" 
-                class="icon-s"/>
-                Home
-              </a>
-
-              <a href="./demo.html" class="dropdown-item icon-left">
-                <img src="/assets/icons/CubeTransparent.svg"
-                class="icon-sm" />
-                Demo
-              </a>
-
-              <a 
-              href="./tutorial.html" 
-              class="dropdown-item icon-left">
-                <img src="/assets/icons/CubeTransparent.svg"
-                class="icon-sm" />
-                Tutorial
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Dropdown menu end -->
-
-    </div>
-  </div>
-</nav>
-<!-- ================================== -->
+    <nav class="js-nav">
+    </nav>
 
 <!-- Header -->
 <!-- ================================== -->
@@ -628,42 +553,9 @@
 
 <!-- Footer -->
 <!-- ================================== -->
-    <footer class="blur-dark-strong space-sm">
-      <div class="max-w flex-sb flex-wrap gap-xs">
+<footer class="js-footer blur-dark-strong space-narrow"></footer>
 
-        <p class="">Email: hello@kris-kay.com</p>
-
-        <div class="flex-center flex-wrap gap-sm">
-          <a href="#" target="_blank" class="btn-clear icon-btn-s">
-            <img
-              src="assets/icons/InstagramLogo.svg"
-              alt="Instagram account"
-              class="icon-md"
-            />
-          </a>
-
-          <a href="#" target="_blank" class="btn-clear icon-btn-s">
-            <img
-              src="assets/icons/LinkedinLogo.svg"
-              alt="LinkedIn account"
-              class="icon-md"
-            />
-          </a>
-
-          <a href="#" target="_blank" class="btn-clear icon-btn-s">
-            <img
-              src="assets/icons/GithubLogo.svg"
-              alt="GitHub account"
-              class="icon-md"
-            />
-          </a>
-        </div>
-
-        <p class="text-xmild text-xs">&copy; 2023 Kris Kay All Rights Reserved</p>
-
-      </div>
-    </footer>
-<!-- ================================== -->
+</div>
 
 
 <!-- Scripts -->

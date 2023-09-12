@@ -39,208 +39,127 @@
 
 <!-- Nav -->
 <!-- ================================== -->
-    <nav class="js-nav">
-    </nav>
-
-<!-- Header -->
-<!-- ================================== -->
-    <header>
-      <section class="atf-home space-narrow">
-        <div class="card tag glass-dark-very-mild sha-xl">
-     
-          <h1 class="title-xl">3D Glass UI</h1>
-
-          <div class="tint-fullwidth-s-reg">
-            <p class="first-line-bold">
-              An exploration of how Apple Vision Pro's spatial UI might be recreated for the web, using the latest broadly supported CSS.
-            </p>
+    <nav>
+      <div class="nav-fixed">
+        <div class="nav-grid max-w">
+          <a
+            href="#top-of-page"
+            class="circle-btn-l frosted-glass nav-logo"
+          >
+            <img
+              src="/assets/icons/CubeTransparent.svg"
+              alt="back to top"
+              class="icon-s"
+            />
+          </a>
+      
+          <!-- Color tabs -->
+          <div id="js-tabMenu" class="tab-menu inset-glass">
+            <button type="button" class="tab" id="dark-tab">Dark</button>
+      
+            <button type="button" class="tab" id="light-tab">
+              Light
+            </button>
+      
+            <button type="button" class="tab tab-active" id="color-tab">
+              Color
+            </button>
           </div>
-
-          <div class="flex-right gap-xs">
-            <p class="lower-s">Created by</p>
-            <p class="upper-s">Kris Kay</p>
-          </div>
-          
-        </div>
-      </section>
-    </header>
-
-<!-- Main -->
-<!-- ================================== -->
-    <main class="grid gap-3xl p-y-3xl">
-
-<!-- The raison d'être -->
-      <section class="max-w blur-dark-reg br-lg grid">
-        <div class="space-narrow">
-          <p class="text-xs upper">The raison d'être</p>
-          <h2 class="title-lg">What on earth is this? And why did I torture myself making it?</h2>
-        </div>
-
-        <div class="dark-strong space-wide grid gap-md">
-          <p class=" first-line-bold">After picking my jaw up off the floor post-Apple Vision Pro keynote, I was struck with the inescapable urge to find out if that exquisite spatial UI could be rendered using CSS. The answer wasn't obvious. After all, the UI is meant to live on a unique piece of hardware, running on a custom operating system. For all I knew, the whole R1 chip might just be there to run real-time ray tracing for a UI that’s constructed from actual 3D meshes. I jest, but only a little.
-          </p>
-
-          <div>
-            <h3 class="title-sm">So, why does this website exist, you might ask?</h3>
-            <ul class="grid gap-xs">
-              <li class="list-i dot">
-                To share a detailed 3D glass tutorial (SCSS).
-              </li>
-
-              <li class="list-i dot">
-                To demo the open-sourced UI library I ended up writing (and rewriting, and rewriting...).
-              </li>
-
-              <li class="list-i dot">
-                And, to chronicle everything that didn’t work, to save you the bother.
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-    </section>
-
-<!-- The temporal context -->
-      <section class="max-w blur-tint-reg br-lg grid">
-        <div class="space-narrow">
-          <p class="text-xs upper">The temporal context</p>
-          <h2 class="title-lg">Glassmorphism's epic journey</h2>
-        </div>
-
-        <div class="dark-strong">
-          <p class=" first-line-bold space-wide">Surprisingly (at least to me), glassmorphism dates back to the early years of this millennium. Take Project Looking Glass, for example. Developed in 2003, this was an entire desktop environment designed to resemble thick glass slabs. Usable? Not so much. Impressive? Absolutely. Hideya Kawahara was designing two full decades ahead of his time. Available compute power and rendering resources be damned!
-          </p>
-        </div>
-
-        <img src="/assets/homeImg/Project-Looking-Glass.png"/>
-
-        <p class="blur-dark-strong space-wide">Over the course of those two decades, glassmorphism has ridden the rollercoaster of popularity.  From the moderate heights of Apple's iOS 7 to the irredeemable depths of Windows Vista, this design trend has seen it all. Now, with the Apple Vision Pro, hitting the scene, I predict a new peak for glassmorphism on our digital horizons.</p>
-
-        <img src="/assets/homeImg/apple-photos-app.png"/>
-      </section>
-
-<!-- The aesthetic ideal -->
-      <section class="max-w blur-tint-reg br-lg grid">
-          <div class="space-narrow">
-            <p class="text-xs upper">The aesthetic ideal</p>
-            <h2 class="title-lg">What makes this glass the fairest of them all?</h2>
-          </div>
-
-          <div class="blur-dark-strong">
-          <p class="space-wide first-line-bold">Take a close look at Vision Pro’s UI, and you'll notice it's not your run-of-the-mill glassmorphism. Yet, at first glance, it's difficult to pinpoint exactly what sets it apart. Much like the rest of everything Apple ever does, it just seems subliminally superior and more polished. Consequently, I spent a rather not-so-insignificant amount of time capturing screenshots from the Vision Pro keynote and wishing that yelling "enhance!" at my computer would actually yield results.
-          Here are my findings:
-          </p>
-
-          <img src="/assets/homeImg/bevel-detail.png" class="space-narrow"/>
-
-          <div class="space-wide">
-            <h3 class="title-md p-y-xs">Key characteristics</h3>
-            <ul class="grid gap-sm">
-              <li class="list-i check">
-                A well-defined, yet subtle, beveled edge.
-              </li>
-
-              <li class="list-i check">
-                Dazzling specular highlights.
-              </li>
-
-              <li class="list-i check">
-                A very wide blur radius.
-              </li>
-
-              <li class="list-i check">
-                An extremely fine-grained noise texture.
-              </li>
-
-              <li class="list-i check">
-                Some sort of blend mode magic that adds a dynamic depth of color to the UI as the backdrop behind it changes. Disclaimer: this technique doesn't play nice with all browsers. For the full saga of my trials and tribulations, check out the tutorial page.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-<!-- The available tools -->
-      <section class="max-w br-lg grid">
-        <div class="space-narrow blur-tint-reg">
-          <p class="text-xs upper">The available tools</p>
-          <h2 class="title-lg">Can chatGPT write this CSS for you?</h2>
-        </div>
-
-        <div class="flex-center space-wide">
-          <div class="glassGPT glassGPT-card space-narrow grid-center">
-            <div>
-              <p class="title-md f-dark f-center">SCSS authored by chatGPT</p>
+          <!-- Color tabs end -->
+      
+          <!-- Dropdown menu -->
+          <div class="flex-right dropdown-bin">
+            <button
+              type="button"
+              id="js-dropdownToggle"
+              class="circle-btn-l frosted-glass dropdown-toggle"
+            >
+              <img
+                src="assets/icons/List.svg"
+                alt="Open nav dropdown"
+                id="js-navHam"
+                class="isClosed nav-ham icon-s"
+              />
+              <img
+                src="/assets/icons/X.svg"
+                alt="Close nav dropdown"
+                id="js-navX"
+                class="isClosed nav-x icon-s"
+              />
+            </button>
+      
+             <!-- Dropdown -->
+            <div id="js-navDropdown" class="nav-dropdown isClosed">
+              <div class="dropdown-bg frosted-glass">
+                <div class="dropdown-grid">
+                  <a href="./index.html" class="dropdown-item btn-clear">
+                    Home
+                  </a>
+      
+                  <a href="./demo.html" class="dropdown-item btn-clear">
+                    Demo
+                  </a>
+      
+                  <a 
+                  href="./tutorial.html" 
+                  class="dropdown-item btn-clear">
+                    Tutorial
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
+          <!-- Dropdown menu end -->
+      
         </div>
+      </div>
+    </nav>
 
-        <img src="/assets/homeImg/glass-gpt-code.png" class="space-narrow-x"/>
-
-        <div class="blur-dark-strong grid gap-sm space-wide">
-          <h3 class="title-sm">Answer: nope this ain’t it.</h3>
-          <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The meager blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
-          
-          <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
-        </div>
-
-      </section>
-
-<!-- The end Product -->
-      <section class="max-w blur-tint-reg br-lg grid">
-
-        <div class="space-narrow blur-tint-reg">
-          <p class="text-xs upper">The end product</p>
-          <h2 class="title-lg">So, How's the magic made?</h2>
-        </div>
-
-        <div class="blur-dark-strong space-wide grid gap-md">
-          <p> With a dash of backdrop-filters, a sprinkle of complex box-shadow layering technique, and a pinch of superfine noise texture, I whipped up a glass effect so realistic, you'll need to wipe your nose-print off the screen.</p>
-          <h3 class="title-thin-md f-center">3D glass layers</h3>
-          <img src="/assets/homeImg/glass-x-view-white.png"/>
-        </div>
-
-        <div class="space-narrow flex-sb">
-          <a
-          href="./demo.html"
-          class="btn-m btn-clear icon-left">
-            <img
-            src="/assets/icons/CaretLeft.svg"
-            alt="back to top"
-            class="icon-sm"
-          />
-          View UI demo
-          </a>
-          
-          <a
-          href="./tutorial.html"
-          class="btn-m btn-clear icon-right">
-            Go to tutorial
-
-          <img
-            src="/assets/icons/CaretRight.svg"
-            alt="back to top"
-            class="icon-sm"
-          />
-
-          </a>
-
-        </div>
-      </section>
-
-    </main>
-
-
-<!-- Footer -->
-<!-- ================================== -->
-    <footer class="js-footer blur-dark-strong space-sm"></footer>
+    <div class="content"> 
 
     </div>
 
+<!-- Footer -->
+<!-- ================================== -->
+      <footer class="blur-dark-strong space-narrow">
+        <div class="max-w flex-sb flex-wrap gap-xs">
+
+          <p class="">Email: hello@kris-kay.com</p>
+        
+          <div class="flex-center flex-wrap gap-sm">
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/InstagramLogo.svg"
+                alt="Instagram account"
+                class="icon-md"
+              />
+            </a>
+        
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/LinkedinLogo.svg"
+                alt="LinkedIn account"
+                class="icon-md"
+              />
+            </a>
+        
+            <a href="#" target="_blank" class="btn-clear icon-btn-s">
+              <img
+                src="assets/icons/GithubLogo.svg"
+                alt="GitHub account"
+                class="icon-md"
+              />
+            </a>
+          </div>
+        
+          <p class="text-xmild text-xs">&copy; 2023 Kris Kay All Rights Reserved</p>
+        
+        </div>
+      </footer>
+    </div>
 <!-- Scripts -->
 <!-- ================================== -->
 
-    <!-- <script src="/js/main.js" type="text/javascript"></script> -->
+    <script src="/js/main.js" type="text/javascript"></script>
   </body>
 </html>

@@ -2,6 +2,9 @@
 /* JS */
 /* ================================== */
 
+window.addEventListener("load", (event) => {
+
+  console.log("page is fully loaded");
 // Open & Close nav dropdown menu
 /* ================================== */
 const $ham = document.getElementById("js-navHam");
@@ -158,6 +161,8 @@ $tabMenu.addEventListener("click", buttonPressed);
     accordionToggles[i].addEventListener("click", switchAccordion, false);
   }
 })();
+
+});
 
 /*  Card hover effect */
 /* ================================== */
