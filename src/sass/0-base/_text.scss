@@ -39,7 +39,7 @@ $font-weight-md: 400;
 $font-weight-lg: 500;
 
 /* letter-spacing: */
-$letter-spacing-sm: 0.02em;
+$letter-spacing-sm: 0.01em;
 $letter-spacing-md: 0.08em;
 $letter-spacing-lg: 0.125em;
 
@@ -75,10 +75,10 @@ $line-height-lg: calc(0.125em + 2.5ex + 0.125em);
 /* ================================== */
 @mixin title {
   font-family: $font-family-title;
-  font-weight: $font-weight-md;
+  font-weight: $font-weight-lg;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-shadow-lg;
+  // text-shadow: sha.$text-shadow-lg;
 }
 
 @mixin title-size-modifiers {

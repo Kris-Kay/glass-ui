@@ -108,9 +108,9 @@ $text-shadow-xl:
   text-shadow: $text-shadow-xl;
 }
 
-.text-sha-text {
-  color: #fff;
-  text-shadow: 0 1px #444, 0 -1px 1px #000;
+.engrave-sm {
+  text-shadow: 
+  0.25px 0.25px 0 rgba(color.$shadow-color, 0.8);
 }
 
 /* ================================== */

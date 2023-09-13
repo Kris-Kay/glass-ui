@@ -11,33 +11,48 @@
 
 .some-dynamic-glass {
   position: relative;
-  // overflow: hidden;
   box-shadow: sha.$sha-2xl;
-    // background: 
-    // linear-gradient(150deg, transparent 30%, rgba($shadow-color, 0.1));
 
   &::after {
     @include pseudo;
     z-index: -1;
-    // overflow: hidden;
-
     background-color: rgba(255, 255, 255, 0.15);
     mix-blend-mode: difference;
-
-    // mix-blend-mode: luminosity; 
-    // mix-blend-mode: multiply;
-    // mix-blend-mode: exclusion;
-    // mix-blend-mode: color-burn;
   }
 
   &::before {
     @include pseudo;
     z-index: -2;
     box-shadow: $bevel-m;
-    -webkit-backdrop-filter: blur(3vw) saturate(2.1);
-    backdrop-filter: blur(3vw) saturate(2.1);
+    // -webkit-backdrop-filter: blur() brightness(1.1)saturate(2.1);
+    backdrop-filter: blur(20px) saturate(1.8);
     @include noise;
   }
+
+
+}
+
+.textmess {
+  font-size: 80px;
+  mix-blend-mode: difference;
+  // mix-blend-mode: exclusion;
+  // mix-blend-mode: multiply;
+  // color: rgba(255, 255, 255, 1);
+  color: rgba($highlight-color, 1);
+  // filter: invert(70%) brightness(0.9);
+  filter: invert(51%) contrast(18);
+
+  // color: rgba($shadow-color, 1);
+  // color: rgba(0, 0, 0, 1);
+  // color: rgba($shadow-color, 0.5);
+
+
+  // -webkit-filter: brightness(2) contrast(2);
+
+
+
+  // filter: brightness(0.7);
+  // filter: contrast(0.9);
 }
 
 .glass-dark-very-mild {
