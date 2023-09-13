@@ -6,7 +6,8 @@
   "use strict";
 
   $(function () {
-    $("#content").load("/home.html");
+    // $("#content").load("/home.html");
+    $("#content").load("/tutorial.html");
 
     $("#js-demo").on( "click", function(event) {
       event.preventDefault();

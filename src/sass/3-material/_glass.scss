@@ -9,7 +9,36 @@
 @use "../2-visual/fill";
 /* ================================== */
 
+.some-dynamic-glass {
+  position: relative;
+  // overflow: hidden;
+  box-shadow: sha.$sha-2xl;
+    // background: 
+    // linear-gradient(150deg, transparent 30%, rgba($shadow-color, 0.1));
 
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    // overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    mix-blend-mode: difference;
+
+    // mix-blend-mode: luminosity; 
+    // mix-blend-mode: multiply;
+    // mix-blend-mode: exclusion;
+    // mix-blend-mode: color-burn;
+  }
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    box-shadow: $bevel-m;
+    -webkit-backdrop-filter: blur(3vw) saturate(2.1);
+    backdrop-filter: blur(3vw) saturate(2.1);
+    @include noise;
+  }
+}
 
 .glass-dark-very-mild {
   position: relative;
