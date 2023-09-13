@@ -37,14 +37,18 @@ body{
 
   &.dark {
     // background-image: url(/assets/bgImg/dark-wave.jpg);
-    // background-image: url(/assets/bgImg/black-paper.jpg);
-    background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
+    background-image: url(/assets/bgImg/black-paper.jpg);
+    // background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
   }
 
   &.light {
     // background-color: $bg-color;
     // background-image: url(/assets/bgImg/clouds.jpg);
     background-image: url(/assets/bgImg/white-paper.jpg);
+      //   background-image: image-set( 
+      // "/assets/bgImg/chris-lee-plant-s.jpg" 1x, 
+      // "/assets/bgImg/chris-lee-plant-m.jpg" 2x, 
+      // "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
   }
 
   &.color {

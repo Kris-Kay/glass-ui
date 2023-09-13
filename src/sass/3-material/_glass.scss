@@ -11,77 +11,94 @@
 
 .some-dynamic-glass {
   position: relative;
-  box-shadow: sha.$sha-2xl;
+  // box-shadow: sha.$sha-2xl;
 
   &::after {
     @include pseudo;
     z-index: -1;
-    background-color: rgba(255, 255, 255, 0.15);
-    mix-blend-mode: difference;
+    @include noise;
+    box-shadow: $bevel-m;
+    backdrop-filter: blur(3vw) brightness(0.9) saturate(1.5);
   }
 
   &::before {
     @include pseudo;
     z-index: -2;
+    mix-blend-mode: difference;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.glass-final {
+  position: relative;
+  // box-shadow: sha.$sha-2xl;
+
+  &::after {
+    @include pseudo;
+    overflow: hidden;
+    z-index: -1;
     box-shadow: $bevel-m;
-    // -webkit-backdrop-filter: blur() brightness(1.1)saturate(2.1);
-    backdrop-filter: blur(20px) saturate(1.8);
     @include noise;
   }
 
+  &::before {
+    @include pseudo;
+    overflow: hidden;
+    z-index: -2;
 
+    backdrop-filter: blur(3vw) brightness(0.9) saturate(1.5);
+    background-color: rgba($shadow-color, 0.08);
+  }
 }
 
-.textmess {
+  // -webkit-backdrop-filter:  blur(32px) brightness(0.95) saturate(1.1);
+  // backdrop-filter: blur(3vw) saturate(1.5);
+
+.title-on-glass {
   font-size: 80px;
-  mix-blend-mode: difference;
-  // mix-blend-mode: exclusion;
   // mix-blend-mode: multiply;
-  // color: rgba(255, 255, 255, 1);
-  color: rgba($highlight-color, 1);
-  // filter: invert(70%) brightness(0.9);
-  filter: invert(51%) contrast(18);
-
-  // color: rgba($shadow-color, 1);
-  // color: rgba(0, 0, 0, 1);
-  // color: rgba($shadow-color, 0.5);
-
-
-  // -webkit-filter: brightness(2) contrast(2);
-
-
-
-  // filter: brightness(0.7);
-  // filter: contrast(0.9);
+  // mix-blend-mode: difference;
+  color: rgba($highlight-color, 0.9);
+  // color: rgba($shadow-color, 0.95);
+  // filter: contrast(10);
+  // filter: invert(51%) contrast(10);
+  @include engrave-sm;
 }
+
+.head {
+ min-height: 100vh;
+ align-items: end;
+}
+
 
 .glass-dark-very-mild {
   position: relative;
-
+  box-shadow: sha.$sha-2xl;
+  
   &::before {
     @include pseudo;
     overflow: hidden;
     z-index: -2;
-    -webkit-backdrop-filter:  blur(32px) brightness(0.95) saturate(1.1);
-    backdrop-filter: blur(32px) brightness(0.95) saturate(1.1);
+    // -webkit-backdrop-filter:  blur(32px) brightness(0.95) saturate(1.1);
+    backdrop-filter: blur(3vw) brightness(0.95) saturate(1.1);
     background-color: rgba($shadow-color, 0.05);
 
-    @include bp.breakpoint(md) {
-      -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
-      backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
-    }
+    // @include bp.breakpoint(md) {
+    //   -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
+    //   backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
+    // }
   }
 
   &::after {
     @include pseudo;
     overflow: hidden;
     z-index: -1;
-    box-shadow: $bevel-s;
+    box-shadow: $bevel-m;
     @include noise;
 
-    @include bp.breakpoint(md) {
-      box-shadow: $bevel-m;
-    }
+    // @include bp.breakpoint(md) {
+    //   box-shadow: $bevel-m;
+    // }
   }
 }
 
