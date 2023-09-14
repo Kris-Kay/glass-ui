@@ -9,7 +9,7 @@
 @use "../2-visual/fill";
 /* ================================== */
 
-.bg-glass {
+.bg-glass-reg {
   position: relative;
 
   &::after {
@@ -27,7 +27,20 @@
   }
 }
 
+.bg-glass-reg-no-bevel {
+  position: relative;
 
+  &::after {
+    @include pseudo;
+    z-index: -1;
+
+    background-color: rgba($shadow-color, 0.08);
+
+
+
+    @include noise;
+  }
+}
 
 
 .some-dynamic-glass {

@@ -10,37 +10,16 @@
 @use "../4-item/button" as btn;
 /* ================================== */
 
-nav {
-  position: relative;
-  width: 100%;
-  // height: var(--nav-h);
-  // pointer-events: none;
-}
-
-.nav-fixed {
-  height: var(--ui-lg);
-  // position: fixed;
-
-  // inset: var(--space-narrow) 0 0 0;
-  z-index: 100;
-
-  pointer-events: none;
-}
-
 .nav-grid {
-  width: 100%;
-  // position: relative;
+  position: relative;
   margin: 0 auto;
-  // display: grid;
   @include flex-sb;
   padding: var(--space-narrow);
-  // grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
   pointer-events: none;
 }
 
 .nav-ham {
   display: none;
-
   &.isClosed {
     display: inline-block;
   }
@@ -58,19 +37,21 @@ nav {
 /* Dropdown */
 /* ================================== */
 .nav-dropdown {
-  display: block;
-  position: absolute;
-  top: var(--ui-lg); 
-  right: 0;
-  padding-top: var(--3xs);
+  position: relative;
+  display: inline-block;
   pointer-events: none;
   z-index: 100;
+  padding-top: var(--3xs);
+  
   &.isClosed {
     display: none;
   }
 }
 
 .dropdown-bg {
+  position: absolute;
+  top: var(--ui-lg); 
+  right: 0;
   padding: var(--2xs);
   @include br.br(xs);
   box-shadow: sha.$sha-lg;

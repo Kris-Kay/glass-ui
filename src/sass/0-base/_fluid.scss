@@ -55,13 +55,8 @@ html {
 /* also used for negative margines for inner edge-to-edge backgrounds */
 
 :root {
-  --space-narrow: #{size.$s3}; // 12px
+  --space-narrow: #{size.$s4}; // 16px
   --space-wide: #{size.$s4}; // 16px
-  
-  @include bp.breakpoint(sm) {
-    --space-narrow: #{size.$s4}; // 16px
-    --space-wide: #{size.$s5}; // 20px
-  }
 
   @include bp.breakpoint(md) {
     --space-narrow: #{size.$s6}; //24px

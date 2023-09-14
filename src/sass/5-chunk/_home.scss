@@ -94,6 +94,7 @@ body{
 
 nav {
   grid-area: topnav;
+  width: 100%;
 }
 
 .content {
@@ -145,7 +146,7 @@ footer {
     }
 
     @include breakpoint(lg) {
-      max-width: 540px;
+      max-width: 525px;
     }
 
   }
