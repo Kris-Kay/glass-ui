@@ -22,7 +22,7 @@
   position: relative;
   place-items: center;
   display: grid;
-  grid-template-rows: $nav-h 1fr;
+  grid-template-rows: var(--nav-h) 1fr;
   grid-template-areas:
     " . "
     "img";
@@ -38,7 +38,7 @@
     }
 
   @media (height < 500px) {
-    grid-template-rows: $nav-h auto auto 1rem;
+    grid-template-rows: var(--nav-h) auto auto 1rem;
   }
 }
 

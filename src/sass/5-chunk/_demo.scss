@@ -178,7 +178,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: $nav-h 1fr auto;
+  grid-template-rows: var(--nav-h) 1fr auto;
   grid-template-areas:
     ". . ."
     ". . ."
@@ -206,7 +206,7 @@
   }
 
   @media (height < 500px) {
-    grid-template-rows: $nav-h auto auto 1rem;
+    grid-template-rows: var(--nav-h) auto auto 1rem;
   }
 }
 

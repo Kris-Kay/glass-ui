@@ -25,6 +25,12 @@
   align-items: center;
 }
 
+@mixin flex-b {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 @mixin flex-sb {
   display: flex;
   justify-content: space-between;
@@ -55,6 +61,9 @@
   @include flex-sb;
 }
 
+.flex-b {
+  @include flex-b;
+}
 
 
 

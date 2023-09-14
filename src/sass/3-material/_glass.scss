@@ -9,6 +9,27 @@
 @use "../2-visual/fill";
 /* ================================== */
 
+.bg-glass {
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+
+    background-color: rgba($shadow-color, 0.08);
+
+    -webkit-backdrop-filter:  blur(4vw) brightness(0.92) saturate(1.5);
+    backdrop-filter: blur(4vw) brightness(0.92) saturate(1.5);
+
+    @include noise;
+
+    box-shadow: $bevel-m;
+  }
+}
+
+
+
+
 .some-dynamic-glass {
   position: relative;
   // box-shadow: sha.$sha-2xl;
@@ -38,8 +59,8 @@
 
     background-color: rgba($shadow-color, 0.08);
 
-    -webkit-backdrop-filter:  blur(3vw) brightness(0.9) saturate(1.5);
-    backdrop-filter: blur(3vw) brightness(0.9) saturate(1.5);
+    -webkit-backdrop-filter:  blur(4vw) brightness(0.92) saturate(1.5);
+    backdrop-filter: blur(4vw) brightness(0.92) saturate(1.5);
 
     @include noise;
 

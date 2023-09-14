@@ -13,33 +13,29 @@
 nav {
   position: relative;
   width: 100%;
-  height: $nav-h;
-  pointer-events: none;
+  // height: var(--nav-h);
+  // pointer-events: none;
 }
 
 .nav-fixed {
   height: var(--ui-lg);
-  position: fixed;
-  @include flex-sb;
-  inset: var(--space-narrow) 0 0 0;
-  z-index: 100;
-  padding: 0 var(--space-narrow);
-  pointer-events: none;
+  // position: fixed;
 
-  @include breakpoint(md) {
-    padding: 0;
-  }
+  // inset: var(--space-narrow) 0 0 0;
+  z-index: 100;
+
+  pointer-events: none;
 }
 
 .nav-grid {
-  position: relative;
+  width: 100%;
+  // position: relative;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
+  // display: grid;
+  @include flex-sb;
+  padding: var(--space-narrow);
+  // grid-template-columns: var(--ui-lg) 1fr var(--ui-lg);
   pointer-events: none;
-  @include breakpoint(xl) {
-    max-width: calc(var(--max-w) + (var(--ui-lg) * 2) + 3rem);
-  }
 }
 
 .nav-ham {
@@ -68,7 +64,7 @@ nav {
   right: 0;
   padding-top: var(--3xs);
   pointer-events: none;
-
+  z-index: 100;
   &.isClosed {
     display: none;
   }

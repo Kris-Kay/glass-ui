@@ -28,7 +28,7 @@ $sky60: rgb(56, 195, 250);
 $sky50: rgb(6, 181, 249);
 
 ///* Ink */// 
-// $ink2:  rgb(0, 3, 10);
+$ink2:  rgb(0, 3, 10);
 $ink4: rgb(0, 7, 20);
 $ink6: rgb(0, 10, 30);
 // $ink8: rgb(0, 14, 40);
@@ -43,15 +43,14 @@ $leaf40:  rgb(129, 184, 20);
 
 /* Semantic color values */
 /* ================================== */
-$text-strong: $sky99;
-$text-reg: $sky95;
+$text-reg: $sky98;
 $text-mild: $snow80;
 $text-xmild: $snow70;
 $text-2xmild: $snow65;
 
-$f-dark-strong: $ink6;
-$f-dark: $ink10;
-$f-dark-mild: $gray50;
+$text-inverse-strong: $ink6;
+$text-inverse-reg: $ink10;
+$text-inverse-mild: $gray50;
 
 $code-class: $leaf70;
 $code-prop: $snow70;
@@ -65,15 +64,14 @@ $shadow-color: $ink4;
 $highlight-color: $sky99;
 $highlight-color-mild: $sky95;
 
-$bg-color: $sky99;
-
 $btn-1-rest: $snow70;
 $btn-1-hover: $sky95;
 $btn-1-active: $gray50;
 
-.text-strong {
-  color: $text-strong;
-}
+$dark-glass: $ink2;
+$light-glass: $ink2;
+
+$bg-color: $sky98;
 
 .text-reg {
   color: $text-reg;
@@ -93,15 +91,15 @@ $btn-1-active: $gray50;
 
 
 // Dark font color
-.f-dark-strong {
-  color: $f-dark-strong;
+.text-invers-strong {
+  color: $text-inverse-strong;
 }
 
-.f-dark {
-  color: $f-dark;
+.text-invers-reg {
+  color: $text-inverse-reg;
 
 }
 
-.f-dark-mild {
-  color: $f-dark-mild;
+.text-invers-mild {
+  color: $text-inverse-mild;
 }

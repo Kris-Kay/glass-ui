@@ -6,20 +6,12 @@
 
 /* Responsive Max width */
 /* ================================== */
-/* 100% width on mobile and limited width on desktop */
 html {
   --max-w: 100%;
 
+  // viewport width minus padding up to a max of 800px
   @include bp.breakpoint(md) {
-    --max-w: calc(100vw - (var(--space-narrow) * 2));
-  }
-
-  @include bp.breakpoint(lg) {
-    --max-w: 45rem; //720px
-  }
-
-  @include bp.breakpoint(xl) {
-    --max-w: 50rem; //800px
+    --max-w: min(calc(100vw - (var(--space-narrow) * 2)), 50rem);
   }
 }
 
@@ -36,12 +28,13 @@ html {
 /* Responsive UI height */
 /* ================================== */
 /* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
-$nav-h: calc(var(--ui-lg) + (var(--space-narrow) * 2));
 
 :root {
   --ui-sm: #{size.$s6};   /* 24px */
   --ui-md: #{size.$s8};   /* 32px */
   --ui-lg: #{size.$s10};   /* 40px */
+
+  --nav-h: calc(var(--ui-lg) + var(--space-narrow));
 
   @include bp.breakpoint(md) {
     --ui-sm: #{size.$s7};  /* 28px */
