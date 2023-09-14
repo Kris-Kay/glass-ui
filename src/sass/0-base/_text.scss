@@ -75,10 +75,10 @@ $line-height-lg: calc(0.125em + 2.5ex + 0.125em);
 /* ================================== */
 @mixin title {
   font-family: $font-family-title;
-  font-weight: $font-weight-lg;
+  font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
-  // text-shadow: sha.$text-shadow-lg;
+  text-shadow: sha.$text-shadow-lg;
 }
 
 @mixin title-size-modifiers {
@@ -181,8 +181,8 @@ body {
 
 @mixin btn-text {
   font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-lg;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-md;
   text-align: center;
   text-shadow: sha.$text-shadow-sm;
   color: color.$text-strong;
