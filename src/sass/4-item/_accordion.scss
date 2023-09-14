@@ -72,14 +72,13 @@
 
 .accordion-content.is-open {
   width: 100%;
-  height: auto;
-  max-height: 100%;
-  transition: max-height 5000ms ease;
+  max-height: fit-content;
+  transition: max-height 1000ms ease;
   gap: 1rem;
   border-radius: 0 0 var(--md) var(--md);
 
-  padding: var(--space-wide);
-  @include blur-dark-strong;
+  padding: var(--space-narrow);
+  @include fill-xdark;
 }
 
 .accordion-content.is-closed {
