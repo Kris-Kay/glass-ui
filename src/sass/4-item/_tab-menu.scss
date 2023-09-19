@@ -10,21 +10,17 @@
 /* ================================== */
 
 .tab-menu {
-  --tab-br: 0.4em;
-  --padding: 3px;
-  
+  padding: 3px;
   width: fit-content;
-  height: var(--ui-lg); 
-  @include flex-center;
-  padding: var(--padding);
-  @include outer-br (var(--tab-br), var(--padding));
+  height: var(--ui-lg);
   margin: auto;
+  @include flex-center;
+  border-radius: 9px;
 
-  // @include bp.breakpoint(lg) {
-  //   padding: 3.2px 3px 3.8px 2px;
-  //   @include outer-br(var(--3xs), 7px);
-  // }
-  
+  // --padding: 3px;
+  // --tab-br: 0.4em;
+  // padding: var(--padding);
+  // @include outer-br (var(--tab-br), var(--padding));
 }
 
 .tab {
@@ -42,7 +38,8 @@
   line-height: var(--inner-h);
   @include btn-text;
 
-  border-radius: var(--tab-br);
+  border-radius: 8px;
+  // border-radius: var(--tab-br);
 
   @include breakpoint(sm) {
     padding: 0 1rem;

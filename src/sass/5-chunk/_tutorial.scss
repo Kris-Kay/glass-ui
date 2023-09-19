@@ -42,3 +42,14 @@
   }
 }
 
+.btn-demo-box {
+  height: fit-content;
+  @include grid-center;
+}
+
+.inset-demo {
+  width: min(100%, 300px);
+  height: 150px;
+  margin: auto;
+  @include flex-center;
+}

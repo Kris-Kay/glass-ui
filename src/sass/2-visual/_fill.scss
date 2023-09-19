@@ -8,13 +8,15 @@
 /* Noise generator: https://devsdash.com/tools/noise-texture-generator */
 
 @mixin noise {
-  background-image: url(/assets/textures/noise-texture-500x500.png); 
+  background-image: url(/assets/textures/noise-texture-100x100.png); 
+  // background-image: url(/assets/textures/noise-texture-500x500.png); 
   background-size: 125px;
   background-repeat: repeat;
 }
 
 @mixin noise-sm {
-  background-image: url(/assets/textures/noise-texture-500x500.png); 
+  background-image: url(/assets/textures/noise-texture-100x100.png); 
+  // background-image: url(/assets/textures/noise-texture-500x500.png); 
   background-size: 50px;
   background-repeat: repeat;
 }
@@ -45,29 +47,37 @@
 
 /* Glass Filters */
 /* ================================== */
+$blur: 1rem;
+$satu: 1.5;
+
 @mixin filter-xlight {
-  -webkit-backdrop-filter:  blur(5vw) brightness(0.98) saturate(1.5);
-  backdrop-filter: blur(5vw) brightness(0.98) saturate(1.5);
+  $bright-xlight: 0.98;
+  -webkit-backdrop-filter:  blur($blur) brightness($bright-xlight) saturate($satu);
+  backdrop-filter: blur($blur) brightness($bright-xlight) saturate($satu);
 }
 
 @mixin filter-light {
-  -webkit-backdrop-filter:  blur(5vw) brightness(0.95) saturate(1.5);
-  backdrop-filter: blur(5vw) brightness(0.95) saturate(1.5);
+  $bright-light: 0.95;
+  -webkit-backdrop-filter:  blur($blur) brightness($bright-light) saturate($satu);
+  backdrop-filter: blur($blur) brightness($bright-light) saturate($satu);
 }
 
 @mixin filter-reg {
-  -webkit-backdrop-filter:  blur(5vw) brightness(0.92) saturate(1.5);
-  backdrop-filter: blur(5vw) brightness(0.92) saturate(1.5);
+  $bright-reg: 0.92;
+  -webkit-backdrop-filter:  blur($blur) brightness($bright-reg) saturate($satu);
+  backdrop-filter: blur($blur) brightness($bright-reg) saturate($satu);
 }
 
 @mixin filter-dark {
-  -webkit-backdrop-filter:  blur(5vw) brightness(0.7) saturate(1.5);
-  backdrop-filter: blur(5vw) brightness(0.7) saturate(1.5);
+  $bright-dark: 0.9;
+  -webkit-backdrop-filter:  blur($blur) brightness($bright-dark) saturate($satu);
+  backdrop-filter: blur($blur) brightness($bright-dark) saturate($satu);
 }
 
 @mixin filter-xdark {
-  -webkit-backdrop-filter: blur(5vw) brightness(0.4)  saturate(0.8);
-  backdrop-filter: blur(5vw) brightness(0.4) saturate(0.8);
+  $bright-xdark: 0.4;
+  -webkit-backdrop-filter: blur($blur) brightness($bright-xdark)  saturate(0.8);
+  backdrop-filter: blur($blur) brightness($bright-xdark) saturate(0.8);
 }
 
 .filter-xlight {
@@ -150,8 +160,8 @@
 
 // @mixin blur-dark-reg {
 //   background-color: rgba($shadow-color, 0.08);
-//   -webkit-backdrop-filter:  blur(4vw) brightness(0.92) saturate(1.5);
-//   backdrop-filter: blur(4vw) brightness(0.92) saturate(1.5);
+//   -webkit-backdrop-filter:  blur(4vw) brightness(0.92) saturate($satu);
+//   backdrop-filter: blur(4vw) brightness(0.92) saturate($satu);
 // }
 
 // @mixin blur-dark-strong {

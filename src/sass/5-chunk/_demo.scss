@@ -55,7 +55,7 @@
 
   -webkit-backdrop-filter: blur(30px) brightness(0.9);
   backdrop-filter: blur(30px) brightness(0.9);
-  box-shadow: $inset-highlight-m;
+  box-shadow: $inset-high-md;
 
   &::before {
     content: "";
@@ -67,7 +67,7 @@
     border-radius: inherit;
 
     @include noise;
-    box-shadow: $inset-shadow-m;
+    box-shadow: $inset-sha-md;
     filter: brightness(0.2);
   }
 }
