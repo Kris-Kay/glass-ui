@@ -78,7 +78,7 @@
   border-radius: 0 0 var(--md) var(--md);
 
   padding: var(--space-narrow);
-  @include fill-xdark;
+  @include glass-fill-xdark;
 }
 
 .accordion-content.is-closed {

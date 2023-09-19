@@ -11,39 +11,72 @@
 
 .bg-glass-reg {
   position: relative;
+  overflow: hidden;
   box-shadow: $sha-xl;
-
-  background-color: $glass-reg;
 
   &::after {
     @include pseudo;
     z-index: -1;
-    @include filter-reg;
-    @include noise;
+
     box-shadow: $bevel-m;
+    @include fill.noise;
+    @include fill.noise;
+    @include fill.glass-fill-reg;
   }
 }
 
-.bg-glass {
+.some-dynamic-glass {
   position: relative;
+  overflow: hidden;
   box-shadow: $sha-xl;
 
   &::after {
     @include pseudo;
     z-index: -1;
-    @include filter-reg;
-    @include noise;
+
+    @include fill.noise;
     box-shadow: $bevel-m;
-    
-    background-color: $glass-reg;
+    @include fill.glass-filter-reg;
+  }
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+
+    mix-blend-mode: difference;
+    background-color: rgba(255, 255, 255, 0.3);
+    // background-color: rgba(255, 255, 255, 0.08);
   }
 }
+
+// .bg-glass {
+//   position: relative;
+//   overflow: hidden;
+//   box-shadow: $sha-xl;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: -1;
+
+//     box-shadow: $bevel-m;
+//   }
+
+//   &::before {
+//     @include pseudo;
+//     z-index: -2;
+
+//     @include fill.noise;
+//     @include fill.glass-fill-reg;
+//   }
+// }
+
+
 
 //Primary btn glass
 .btn1-glass {
   position: relative;
   box-shadow: $sha-2xs;
-  @include filter-reg;
+  @include glass-filter-reg;
   transition: background-color 800ms ease-out;
 
   &::before {
@@ -67,7 +100,7 @@
 .btn2-glass {
   position: relative;
   box-shadow: $sha-2xs;
-  @include filter-reg;
+  @include glass-filter-reg;
   transition: background-color 800ms ease-out;
 
   &::before {
@@ -100,25 +133,7 @@
 }
 
 
-.some-dynamic-glass {
-  position: relative;
-  // box-shadow: sha.$sha-2xl;
 
-  &::after {
-    @include pseudo;
-    z-index: -1;
-    @include noise;
-    box-shadow: $bevel-m;
-    backdrop-filter: blur(3vw) brightness(0.9) saturate(1.5);
-  }
-
-  &::before {
-    @include pseudo;
-    z-index: -2;
-    mix-blend-mode: difference;
-    background-color: rgba(255, 255, 255, 0.08);
-  }
-}
 
 .glass-final {
   position: relative;

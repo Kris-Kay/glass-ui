@@ -42,6 +42,7 @@
   pointer-events: none;
   z-index: 100;
   padding-top: var(--3xs);
+  cursor: pointer;
   
   &.isClosed {
     display: none;
@@ -55,7 +56,8 @@
   padding: var(--2xs);
   @include br.br(xs);
   box-shadow: sha.$sha-lg;
-  pointer-events: none;
+  cursor: pointer;
+  // pointer-events: none;
 }
 
 .dropdown-grid {
@@ -63,7 +65,8 @@
   display: grid;
   gap: calc(var(--3xs) * 0.5);
   margin: calc(var(--3xs) * -1);
-  pointer-events: none;
+  cursor: pointer;
+  // pointer-events: none;
 }
 
 .js-dd-item {
