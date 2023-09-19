@@ -35,7 +35,7 @@
   background: linear-gradient(
     to right,
     transparent,
-    rgba($highlight-color, 0.5) 50%,
+    rgba($light-color, 0.5) 50%,
     transparent
   );
 
@@ -59,9 +59,9 @@
   background: linear-gradient(
     to right,
     transparent,
-    rgba($highlight-color, 0.5) 50%,
+    rgba($light-color, 0.5) 50%,
     rgba($shadow-color, 0.5) 51%,
-    rgba($highlight-color, 0.5) 52%,
+    rgba($light-color, 0.5) 52%,
     transparent
   );
 
@@ -99,7 +99,7 @@
     top: var(--y);
     width: var(--size);
     height: var(--size);
-    background: radial-gradient(circle closest-side, rgba($highlight-color,0.9), transparent);
+    background: radial-gradient(circle closest-side, rgba($light-color,0.9), transparent);
     opacity: 0;
     transform: translate(-50%, -50%);
     transition: 

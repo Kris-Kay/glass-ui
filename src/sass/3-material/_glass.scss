@@ -203,7 +203,7 @@
   font-size: 80px;
   // mix-blend-mode: multiply;
   // mix-blend-mode: difference;
-  color: rgba($highlight-color, 0.9);
+  color: rgba($light-color, 0.9);
   // color: rgba($shadow-color, 0.95);
   // filter: contrast(10);
   // filter: invert(51%) contrast(10);
@@ -294,7 +294,7 @@
 //   -webkit-backdrop-filter:  blur(20px) brightness(1.15) saturate(1.8);
 //   backdrop-filter: blur(20px) brightness(1.15) saturate(1.8);
 
-//   background-color: rgba($highlight-color, 0.08);
+//   background-color: rgba($light-color, 0.08);
 //   transition: background-color 500ms ease-out;
 
 //   &::before {
@@ -305,7 +305,7 @@
 //   }
 
 //   &:hover {
-//     background-color: rgba($highlight-color, 0.3);
+//     background-color: rgba($light-color, 0.3);
 //     box-shadow: $sha-xs;
 //   }
 
@@ -322,7 +322,7 @@
   cursor: pointer;
   overflow: hidden;
 
-  background-color: rgba($highlight-color, 0.3);
+  background-color: rgba($light-color, 0.3);
 
   &::before {
     @include pseudo;
@@ -340,7 +340,7 @@
   }
 
   &:hover {
-    background-color: rgba($highlight-color, 0.6);
+    background-color: rgba($light-color, 0.6);
   }
 }
 
@@ -351,13 +351,13 @@
   overflow: hidden;
   transition: background-color 500ms ease;
 
-  background-color: rgba($highlight-color, 0.1);
+  background-color: rgba($light-color, 0.1);
 
   -webkit-backdrop-filter: blur(20px) brightness(1.1);
   backdrop-filter: blur(20px) brightness(1.1);
 
   &:hover {
-    background-color: rgba($highlight-color, 0.3);
+    background-color: rgba($light-color, 0.3);
   }
 }
 
@@ -378,7 +378,7 @@
     z-index: -3;
     overflow: hidden;
     border-radius: inherit;
-    border: 1px solid rgba($highlight-color, 0.2);
+    border: 1px solid rgba($light-color, 0.2);
   }
 }
 
@@ -396,7 +396,7 @@
     inset: 0;
     z-index: -2;
     border-radius: inherit;
-    border: 1px solid rgba($highlight-color, 0.1);
+    border: 1px solid rgba($light-color, 0.1);
   }
 }
 
@@ -417,8 +417,8 @@
     z-index: -2;
     overflow: hidden;
     // background: 
-    // linear-gradient(150deg, rgba($highlight-color, 0.1), transparent);
-    // background-color: rgba($highlight-color, 0.1);
+    // linear-gradient(150deg, rgba($light-color, 0.1), transparent);
+    // background-color: rgba($light-color, 0.1);
     // -webkit-backdrop-filter: blur(64px) brightness(0.9)  saturate(1.1);
     // backdrop-filter: blur(64px) brightness(0.9) saturate(1.1);
     -webkit-backdrop-filter: blur(64px) brightness(0.9);
@@ -446,13 +446,13 @@
 
   
   // background: 
-  // linear-gradient(150deg, rgba($highlight-color, 0.08) 40%, transparent);
+  // linear-gradient(150deg, rgba($light-color, 0.08) 40%, transparent);
 
   &::before {
     @include pseudo;
     z-index: -2;
       // background: 
-  // linear-gradient(150deg, rgba($highlight-color, 0.1) 40%, transparent);
+  // linear-gradient(150deg, rgba($light-color, 0.1) 40%, transparent);
     background-color: rgba(255, 255, 255, 1);
     // background-color: rgba($shadow-color, 0.25);
 
@@ -471,14 +471,14 @@
     @include noise;
     // -webkit-backdrop-filter: blur(64px) brightness(0.95);
     backdrop-filter: blur(64px) brightness(1.15) saturate(1.05);
-    // background-color: rgba($highlight-color, 0.08);
+    // background-color: rgba($light-color, 0.08);
     // backdrop-filter: blur(64px) brightness(0.95);
   }
 }
 
 
 .new-vibrant-glass {
-  // padding: var(--space-wide);
+  // padding: var(--space-lg);
   // width: 480px;
   // max-width: 95vw;
   // border-radius: 1.5rem;
@@ -562,7 +562,7 @@
   &::before {
     @include pseudo;
     z-index: -2;
-    background-color: rgba($highlight-color, 0.1);
+    background-color: rgba($light-color, 0.1);
     // background-color: rgba($shadow-color, 0.05);
 
     mix-blend-mode: luminosity; 

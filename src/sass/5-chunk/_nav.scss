@@ -14,7 +14,7 @@
   position: relative;
   margin: 0 auto;
   @include flex-sb;
-  padding: var(--space-narrow);
+  padding: var(--space-sm);
   pointer-events: none;
 }
 
@@ -72,5 +72,5 @@
 .js-dd-item {
   min-width: max-content;
   width: 100%;
-  color: rgba($text-reg, 0.8);
+  color: rgba($text-light-reg, 0.8);
 }

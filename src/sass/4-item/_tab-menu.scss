@@ -54,7 +54,7 @@
   }
 
   &.tab-active {
-    background-color: rgba($highlight-color, 0.05);
+    background-color: rgba($light-color, 0.05);
     -webkit-backdrop-filter: brightness(1.2);
     backdrop-filter: brightness(1.2);
     box-shadow: $sha-2xs;

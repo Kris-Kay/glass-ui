@@ -61,9 +61,9 @@
 .tint-fullwidth-s-reg {
   @include blur-tint-reg;
 
-  padding: var(--space-narrow) var(--space-wide);
-  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-  margin-right: calc(-1 * var(--space-wide));
+  padding: var(--space-sm) var(--space-lg);
+  margin-left: calc((-1 * var(--space-lg)) + 0.5px);
+  margin-right: calc(-1 * var(--space-lg));
   box-shadow: in.$flat-inset-md;
 }
 
@@ -71,9 +71,9 @@
 
 .dark-fullwidth {
   background-color: rgba($shadow-color, 0.8);
-  padding: var(--space-narrow) var(--space-wide);
-  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-  margin-right: calc(-1 * var(--space-wide));
+  padding: var(--space-sm) var(--space-lg);
+  margin-left: calc((-1 * var(--space-lg)) + 0.5px);
+  margin-right: calc(-1 * var(--space-lg));
 }
 
 .code-bg {
@@ -83,16 +83,16 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-narrow) var(--space-wide);
-  margin-left: calc(-1 * var(--space-wide));
-  margin-right: calc(-1 * var(--space-wide));
+  padding: var(--space-sm) var(--space-lg);
+  margin-left: calc(-1 * var(--space-lg));
+  margin-right: calc(-1 * var(--space-lg));
 
   &:hover {
     overflow-x: scroll;
   }
 
   @include bp.breakpoint(md) {
-    padding: var(--space-narrow);
+    padding: var(--space-sm);
     @include br.br(md);
     margin: 0;
   }
@@ -101,7 +101,7 @@
 .dark-round-rect {
   width: 100%;
   @include fill.glass-fill-dark;
-  padding: var(--space-narrow);
+  padding: var(--space-sm);
   @include br.br(md);
 }
 
@@ -119,9 +119,9 @@
 .full-w-strong {
   @include fill.glass-fill-xdark;
 
-  padding: var(--space-wide) var(--space-narrow);
-  // margin-left: calc((-1 * var(--space-narrow)) + 0.5px);
-  // margin-right: calc(-1 * var(--space-narrow));
+  padding: var(--space-lg) var(--space-sm);
+  // margin-left: calc((-1 * var(--space-sm)) + 0.5px);
+  // margin-right: calc(-1 * var(--space-sm));
   box-shadow: in.$flat-inset-md;
 }
 

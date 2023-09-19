@@ -3,19 +3,19 @@
 @use "breakpoint" as bp;
 /* ================================== */
 
-$root-size: 0.25rem;
-
-/* Size Values */
+/* Static Size Values */
 /* ================================== */
-$s1: calc($root-size * 1);   /* 4px  0.25rem */
-$s2: calc($root-size * 2);   /* 8px  0.5rem */
-$s3: calc($root-size * 3);   /* 12px 0.75rem */
-$s4: calc($root-size * 4);   /* 16px 1rem */
-$s5: calc($root-size * 5);   /* 20px 1.25rem */
-$s6: calc($root-size * 6);   /* 24px 1.5rem */
-$s7: calc($root-size * 7);   /* 28px 1.75rem */
-$s8: calc($root-size * 8);   /* 32px 2rem */
-$s9: calc($root-size * 9);   /* 36px 2.25rem */
+$root-size: 0.25rem; // <- knob
+
+$s1: calc($root-size * 1); /* 4px  0.25rem */
+$s2: calc($root-size * 2); /* 8px  0.5rem */
+$s3: calc($root-size * 3); /* 12px 0.75rem */
+$s4: calc($root-size * 4); /* 16px 1rem */
+$s5: calc($root-size * 5); /* 20px 1.25rem */
+$s6: calc($root-size * 6); /* 24px 1.5rem */
+$s7: calc($root-size * 7); /* 28px 1.75rem */
+$s8: calc($root-size * 8); /* 32px 2rem */
+$s9: calc($root-size * 9); /* 36px 2.25rem */
 $s10: calc($root-size * 10); /* 40px 2.5rem */
 $s11: calc($root-size * 11); /* 44px 2.75rem */
 $s12: calc($root-size * 12); /* 48px 3rem */
@@ -23,56 +23,73 @@ $s13: calc($root-size * 13); /* 52px 3.25rem */
 $s14: calc($root-size * 14); /* 56px 3.5rem */
 $s15: calc($root-size * 15); /* 60px 3.75rem */
 $s16: calc($root-size * 16); /* 64px 4rem */
-
 $s20: calc($root-size * 20); /* 80px 5rem */
 $s24: calc($root-size * 24); /* 96px 6rem */
 $s28: calc($root-size * 28); /* 112px 7rem */
 
 
-:root {
-  --multiplier:  1;
+/* Base Static T sizes !Only for setup! */
+/* ================================== */
+/* Used in T-shirt size mixins and variables !do Not use in your project! */
+$t-shirt-4xs: $s1; // <- knob
+$t-shirt-3xs: $s2;
+$t-shirt-2xs: $s4;
+$t-shirt-xs: $s5;
+$t-shirt-sm: $s6;
+$t-shirt-md: $s8;
+$t-shirt-lg: $s10;
+$t-shirt-xl: $s12;
+$t-shirt-2xl: $s16;
+$t-shirt-3xl: $s24; // <- knob
 
-  --4xs:  calc(#{$s1} * var(--multiplier));
-  --3xs:  calc(#{$s2} * var(--multiplier));
-  --2xs:  calc(#{$s4} * var(--multiplier));
-  --xs:   calc(#{$s5} * var(--multiplier));
-  --sm:   calc(#{$s6} * var(--multiplier));
-  --md:   calc(#{$s8} * var(--multiplier));
-  --lg:   calc(#{$s10} * var(--multiplier));
-  --xl:   calc(#{$s20} * var(--multiplier));
-  --2xl:  calc(#{$s24} * var(--multiplier));
-  --3xl:  calc(#{$s28} * var(--multiplier));
+
+/* Scalable T-shirt sizes */
+/* ================================== */
+/* Sizes scale with viewport width */
+:root {
+  --multiplier: 1; // <- knob
+
+  --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
+  --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
+  --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
+  --xs: calc(#{$t-shirt-xs} * var(--multiplier));
+  --sm: calc(#{$t-shirt-sm} * var(--multiplier));
+  --md: calc(#{$t-shirt-md} * var(--multiplier));
+  --lg: calc(#{$t-shirt-lg} * var(--multiplier));
+  --xl: calc(#{$t-shirt-xl} * var(--multiplier));
+  --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
+  --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
 
   @include bp.breakpoint(md) {
-    --multiplier: 1.2;
+    --multiplier: 1.2; // <- knob
   }
 
   @include bp.breakpoint(lg) {
-    --multiplier: 1.5;
+    --multiplier: 1.5; // <- knob
   }
 }
 
-
 /* Size MAP */
 /* ================================== */
+/* Used by modifier mixins */
+/* Static but uses --multiplier at same breakpoints as the dynamic */
 $sizes: (
-  3xs: $s2,
-  2xs: $s4,
-  xs:  $s5,
-  sm:  $s6,
-  md:  $s8,
-  lg:  $s10,
-  xl:  $s20,
-  2xl: $s24,
-  3xl: $s28
+  3xs: $t-shirt-3xs,
+  2xs: $t-shirt-2xs,
+  xs: $t-shirt-xs,
+  sm: $t-shirt-sm,
+  md: $t-shirt-md,
+  lg: $t-shirt-lg,
+  xl: $t-shirt-xl,
+  2xl: $t-shirt-2xl,
+  3xl: $t-shirt-3xl,
 );
-
 
 /* Size modifier mixin */
 /* ================================== */
 /* Generates size modifier classes */
 /* Used in grid/flex gap, border-radius, margin, and padding */
-@mixin size-modifiers($attribute: 'a') {
+@mixin size-modifiers($attribute: "a") {
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$attribute}: calc($value * var(--multiplier));
@@ -80,7 +97,7 @@ $sizes: (
       @include bp.breakpoint(md) {
         #{$attribute}: calc($value * var(--multiplier));
       }
-    
+
       @include bp.breakpoint(lg) {
         #{$attribute}: calc($value * var(--multiplier));
       }
@@ -89,6 +106,8 @@ $sizes: (
 }
 
 
+/* T-shirt size .classes that scale with viewport width */
+// TODO > write T-shirt mixin 
 .size-3xs {
   width: var(--3xs);
 }

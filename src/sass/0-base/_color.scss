@@ -1,7 +1,7 @@
 /* ================================== */
 /* Colors */
 /* ================================== */
-/* The number in the color name is its HSL lightness value */
+/* The number in the color name is its HS[L] lightness value */
 
 ///* Snow *///
 $snow95: rgb(239, 242, 245);
@@ -11,11 +11,11 @@ $snow70: rgb(160, 175, 197);
 $snow65: rgb(144, 161, 187);
 
 ///* Gray */// 
-// $gray60: rgb(143, 151, 163);
+$gray60: rgb(143, 151, 163);
 $gray50: rgb(115, 125, 140);
-// $gray40: rgb(92, 100, 112);
-// $gray30: rgb(69, 75, 84);
-// $gray20: rgb(46, 50, 56);
+$gray40: rgb(92, 100, 112);
+$gray30: rgb(69, 75, 84);
+$gray20: rgb(46, 50, 56);
 
 ///* Sky */// 
 $sky99: rgb(250, 254, 255);
@@ -31,7 +31,7 @@ $sky50: rgb(6, 181, 249);
 $ink2:  rgb(0, 3, 10);
 $ink4: rgb(0, 7, 20);
 $ink6: rgb(0, 10, 30);
-// $ink8: rgb(0, 14, 40);
+$ink8: rgb(0, 14, 40);
 $ink10: rgb(0, 17, 50);
 
 ///* Leaf */// H80 S80 L--
@@ -39,18 +39,20 @@ $leaf80: rgb(218, 245, 163);
 $leaf70: rgb(199, 240, 117);
 $leaf60: rgb(180, 235, 71);
 $leaf40:  rgb(129, 184, 20);
-// $leaf30: rgb(97, 138, 15);
+$leaf30: rgb(97, 138, 15);
 
 /* Semantic color values */
 /* ================================== */
-$text-reg: $sky98;
-$text-mild: $snow80;
-$text-xmild: $snow70;
-$text-2xmild: $snow65;
+$bg-color: $sky98;
 
-$text-inverse-strong: $ink6;
-$text-inverse-reg: $ink10;
-$text-inverse-mild: $gray50;
+$text-light-reg: $sky98;
+$text-light-mild: $snow80;
+$text-light-xmild: $snow70;
+$text-light-2xmild: $snow65;
+
+$text-dark-strong: $ink6;
+$text-dark-reg: $ink10;
+$text-dark-mild: $gray50;
 
 $code-class: $leaf70;
 $code-prop: $snow70;
@@ -61,8 +63,14 @@ $link-hover: $sky50;
 $link-visit: $sky80;
 
 $shadow-color: $ink2;
-$highlight-color: $sky99;
-$highlight-color-mild: $sky95;
+$light-color: $sky99;
+$light-color-mild: $sky95;
+
+$glass-xlight: rgba($sky98, 0.1);
+$glass-light: rgba($sky98, 0.03);
+$glass-reg: rgba($ink2, 0.1);
+$glass-dark: rgba($ink2, 0.2);
+$glass-xdark: rgba($ink2, 0.5);
 
 $btn-1-rest: rgba($leaf70, 0.5);
 $btn-1-hover: rgba($leaf80, 0.8);
@@ -72,41 +80,36 @@ $btn-2-rest: rgba($sky99, 0.4);
 $btn-2-hover: rgba($sky99, 0.7);
 $btn-2-active: rgba($ink2, 0.15);
 
-$glass-xlight: rgba($sky98, 0.1);
-$glass-light: rgba($sky98, 0.03);
-$glass-reg: rgba($ink2, 0.1);
-$glass-dark: rgba($ink2, 0.2);
-$glass-xdark: rgba($ink2, 0.5);
 
-$bg-color: $sky98;
+/* Text colors */
+/* ================================== */
 
-.text-reg {
-  color: $text-reg;
+/* Light */
+.text-light-reg {
+  color: $text-light-reg;
 }
 
-.text-mild {
-  color: $text-mild;
+.text-light-mild {
+  color: $text-light-mild;
 }
 
-.text-xmild {
-  color: $text-xmild;
+.text-light-xmild {
+  color: $text-light-xmild;
 }
 
-.text-2xmild {
-  color: $text-2xmild;
+.text-light-2xmild {
+  color: $text-light-2xmild;
 }
 
-
-// Dark font color
-.text-invers-strong {
-  color: $text-inverse-strong;
+/* Dark */
+.text-dark-strong {
+  color: $text-dark-strong;
 }
 
-.text-invers-reg {
-  color: $text-inverse-reg;
-
+.text-dark-reg {
+  color: $text-dark-reg;
 }
 
-.text-invers-mild {
-  color: $text-inverse-mild;
+.text-dark-mild {
+  color: $text-dark-mild;
 }

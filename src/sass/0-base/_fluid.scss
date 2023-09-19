@@ -11,7 +11,7 @@ html {
 
   // viewport width minus padding up to a max of 800px
   @include bp.breakpoint(md) {
-    --max-w: min(calc(100vw - (var(--space-narrow) * 2)), 50rem);
+    --max-w: min(calc(100vw - (var(--space-sm) * 2)), 50rem);
   }
 }
 
@@ -32,9 +32,9 @@ html {
 :root {
   --ui-sm: #{size.$s6};   /* 24px */
   --ui-md: #{size.$s8};   /* 32px */
-  --ui-lg: #{size.$s10};   /* 40px */
+  --ui-lg: #{size.$s10};  /* 40px */
 
-  --nav-h: calc(var(--ui-lg) + var(--space-narrow));
+  --nav-h: calc(var(--ui-lg) + var(--space-sm));
 
   @include bp.breakpoint(md) {
     --ui-sm: #{size.$s7};  /* 28px */
@@ -52,84 +52,84 @@ html {
 /* Responsive edge */
 /* ================================== */
 /* gives elements consistent vertical alignment with fewer media queries */
-/* also used for negative margines for inner edge-to-edge backgrounds */
-
+/* also used in negative margines for cards with an edge-to-edge image/bg */
 :root {
-  --space-narrow: #{size.$s4}; // 16px
-  --space-wide: #{size.$s4}; // 16px
+  --space-sm: #{size.$s4}; // 16px
+  --space-lg: #{size.$s4}; // 16px
 
   @include bp.breakpoint(md) {
-    --space-narrow: #{size.$s6}; //24px
-    --space-wide: #{size.$s10}; // 40px 
+    --space-sm: #{size.$s6}; //24px
+    --space-lg: #{size.$s10}; // 40px 
   }
 
   @include bp.breakpoint(lg) {
-    --space-narrow: #{size.$s7}; 
-    --space-wide: #{size.$s14}; 
+    --space-sm: #{size.$s7}; 
+    --space-lg: #{size.$s14}; 
   }
 
   @include bp.breakpoint(xl) {
-    --space-narrow: #{size.$s8}; 
-    --space-wide: #{size.$s16}; 
+    --space-sm: #{size.$s8}; 
+    --space-lg: #{size.$s16}; 
   }
 }
 
+
 // Space small
 /* ================================== */
-.space-narrow {
-  padding: var(--space-narrow);
+.space-sm {
+  padding: var(--space-sm);
 }
 
-.space-x-narrow {
-  padding: 0 var(--space-narrow);
+.space-sm-x {
+  padding: 0 var(--space-sm);
 }
 
-.space-y-narrow {
-  padding: var(--space-narrow) 0;
+.space-sm-y {
+  padding: var(--space-sm) 0;
 }
 
-.space-t-narrow {
-  padding-top: var(--space-narrow);
+.space-sm-t {
+  padding-top: var(--space-sm);
 }
 
-.space-b-narrow {
-  padding-bottom: var(--space-narrow);
+.space-sm-b {
+  padding-bottom: var(--space-sm);
 }
 
-.space-l-narrow {
-  padding-left: var(--space-narrow);
+.space-sm-l {
+  padding-left: var(--space-sm);
 }
 
-.space-r-narrow {
-  padding-right: var(--space-narrow);
+.space-sm-r {
+  padding-right: var(--space-sm);
 }
 
-// Space medium 
+// Space large
 /* ================================== */
-.space-wide {
-  padding: var(--space-wide);
+.space-lg {
+  padding: var(--space-lg);
 }
 
-.space-x-wide {
-  padding: 0 var(--space-wide);
+.space-lg-x {
+  padding: 0 var(--space-lg);
 }
 
-.space-y-wide {
-  padding: var(--space-wide) 0;
+.space-lg-y {
+  padding: var(--space-lg) 0;
 }
 
-.space-t-wide {
-  padding-top: var(--space-wide);
+.space-lg-t {
+  padding-top: var(--space-lg);
 }
 
-.space-b-wide {
-  padding-bottom: var(--space-wide);
+.space-lg-b {
+  padding-bottom: var(--space-lg);
 }
 
-.space-l-wide {
-  padding-left: var(--space-wide);
+.space-lg-l {
+  padding-left: var(--space-lg);
 }
 
-.space-r-wide {
-  padding-right: var(--space-wide);
+.space-lg-r {
+  padding-right: var(--space-lg);
 }
