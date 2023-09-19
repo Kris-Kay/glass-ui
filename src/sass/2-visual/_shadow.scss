@@ -40,19 +40,44 @@ $sha-2xl: 2.5px 2px 4.5px -0.5px rgba(color.$shadow-color, 0.03),
   20px 15px 35px -2px rgba(color.$shadow-color, 0.18),
   0 0 0.4px rgba(color.$shadow-color, 0.13);
 
+.sha-2xs {
+  box-shadow: $sha-2xs;
+}
+
+.sha-xs {
+  box-shadow: $sha-xs;
+}
+
+.sha-sm {
+  box-shadow: $sha-sm;
+}
+
+.sha-sm {
+  box-shadow: $sha-sm;
+}
+
+.sha-md {
+  box-shadow: $sha-md;
+}
+
+.sha-lg {
+  box-shadow: $sha-lg;
+}
+
+.sha-xl {
+  box-shadow: $sha-xl;
+}
+
+.sha-2xl {
+  box-shadow: $sha-2xl;
+}
+
+
 @mixin ele-md {
   filter: drop-shadow(2px 1.5px 3.5px rgba(color.$shadow-color, 0.1))
     drop-shadow(4px 3px 7px rgba(color.$shadow-color, 0.15))
     drop-shadow(8px 6px 14px rgba(color.$shadow-color, 0.2))
     drop-shadow(0 0 0.2px rgba(color.$shadow-color, 0.1));
-}
-
-.ele-md {
-  box-shadow: $sha-md;
-}
-
-.sha-xl {
-  box-shadow: $sha-xl;
 }
 
 $icon-shadow-sm: drop-shadow(0 0 0.8px rgba(color.$shadow-color, 0.25));

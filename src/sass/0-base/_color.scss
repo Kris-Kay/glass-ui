@@ -64,13 +64,17 @@ $shadow-color: $ink2;
 $highlight-color: $sky99;
 $highlight-color-mild: $sky95;
 
-$btn-1-rest: $snow70;
-$btn-1-hover: $sky95;
-$btn-1-active: $gray50;
+$btn-1-rest: rgba($leaf70, 0.5);
+$btn-1-hover: rgba($leaf80, 0.8);
+$btn-1-active: rgba($leaf60, 0.2);
+
+$btn-2-rest: rgba($sky99, 0.4);
+$btn-2-hover: rgba($sky99, 0.7);
+$btn-2-active: rgba($ink2, 0.15);
 
 $glass-xlight: rgba($sky98, 0.1);
 $glass-light: rgba($sky98, 0.03);
-$glass-reg: rgba($ink2, 0.08);
+$glass-reg: rgba($ink2, 0.1);
 $glass-dark: rgba($ink2, 0.2);
 $glass-xdark: rgba($ink2, 0.5);
 

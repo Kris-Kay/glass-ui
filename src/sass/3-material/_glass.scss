@@ -13,19 +13,88 @@
   position: relative;
   overflow: hidden;
   box-shadow: $sha-xl;
+  @include fill.noise;
 
   &::after {
     @include pseudo;
     z-index: -1;
 
-    box-shadow: $bevel-m;
-    @include fill.noise;
-    @include fill.noise;
+    box-shadow: $bevel-md;
+    @include fill.noise-dark;
     @include fill.glass-fill-reg;
   }
 }
 
-.some-dynamic-glass {
+// .bg-glass {
+//   position: relative;
+//   overflow: hidden;
+//   box-shadow: $sha-xl;
+//   @include fill.noise;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: -1;
+
+//     box-shadow: $bevel-md;
+//     @include fill.noise-dark;
+//     @include fill.glass-fill-reg;
+//   }
+// }
+
+//Primary btn glass
+.btn1-glass {
+  position: relative;
+  overflow: hidden;
+  box-shadow: $sha-2xs;
+  @include fill.noise;
+  transition: background-color 800ms ease-out;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+
+    background-color: $btn-1-rest;
+    box-shadow: $bevel-xs;
+    @include fill.noise-dark;
+    @include glass-filter-reg;
+  }
+ 
+  &:hover {
+    background-color: $btn-1-hover;
+  }
+
+  &:active {
+    background-color: $btn-1-active;
+  }
+}
+
+//Secondary btn glass
+.btn2-glass {
+  position: relative;
+  overflow: hidden;
+  box-shadow: $sha-2xs;
+  transition: background-color 800ms ease-out;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    @include glass-filter-reg;
+    background-color: $btn-2-rest;
+    box-shadow: $bevel-xs;
+    @include fill.noise-dark;
+  }
+
+  &:hover {
+    background-color: $btn-2-hover;
+  }
+
+  &:active {
+    background-color: $btn-2-active;
+  }
+}
+
+
+.bg-glass-dark {
   position: relative;
   overflow: hidden;
   box-shadow: $sha-xl;
@@ -34,20 +103,55 @@
     @include pseudo;
     z-index: -1;
 
+    box-shadow: $bevel-md;
     @include fill.noise;
-    box-shadow: $bevel-m;
-    @include fill.glass-filter-reg;
-  }
-
-  &::before {
-    @include pseudo;
-    z-index: -2;
-
-    mix-blend-mode: difference;
-    background-color: rgba(255, 255, 255, 0.3);
-    // background-color: rgba(255, 255, 255, 0.08);
+    @include fill.glass-fill-dark;
   }
 }
+
+.bg-glass-dark-no-bevel {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    box-shadow: none;
+    @include fill.noise;
+    @include fill.glass-fill-dark;
+  }
+
+  @include bp.breakpoint(md) {
+    &::after {
+    box-shadow: $bevel-md;
+    }
+  }
+}
+
+
+// .some-dynamic-glass {
+//   position: relative;
+//   overflow: hidden;
+//   box-shadow: $sha-xl;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: -1;
+
+//     box-shadow: $bevel-md;
+//     @include fill.noise;
+//     @include fill.glass-filter-reg;
+//   }
+
+//   &::before {
+//     @include pseudo;
+//     z-index: -2;
+
+//     mix-blend-mode: difference;
+//     background-color: rgba(255, 255, 255, 0.2);
+//     // background-color: rgba(255, 255, 255, 0.08);
+//   }
+// }
 
 // .bg-glass {
 //   position: relative;
@@ -58,7 +162,7 @@
 //     @include pseudo;
 //     z-index: -1;
 
-//     box-shadow: $bevel-m;
+//     box-shadow: $bevel-md;
 //   }
 
 //   &::before {
@@ -72,65 +176,7 @@
 
 
 
-//Primary btn glass
-.btn1-glass {
-  position: relative;
-  box-shadow: $sha-2xs;
-  @include glass-filter-reg;
-  transition: background-color 800ms ease-out;
 
-  &::before {
-    @include pseudo;
-    z-index: -1;
-    @include noise;
-    box-shadow: $bevel-xs;
-    background-color: $glass-reg;
-  }
-
-  &:hover {
-    background-color: rgba($btn-1-hover, 0.4);
-  }
-
-  &:active {
-    background-color: rgba($btn-1-active, 0.4);
-  }
-}
-
-//Secondary btn glass
-.btn2-glass {
-  position: relative;
-  box-shadow: $sha-2xs;
-  @include glass-filter-reg;
-  transition: background-color 800ms ease-out;
-
-  &::before {
-    @include pseudo;
-    z-index: -1;
-    @include noise;
-    box-shadow: $bevel-xs;
-    background-color: $glass-reg;
-  }
-
-  &:hover {
-    background-color: rgba($btn-1-hover, 0.4);
-  }
-
-  &:active {
-    background-color: rgba($btn-1-active, 0.4);
-  }
-}
-
-
-.bg-glass-reg-no-bevel {
-  position: relative;
-
-  &::after {
-    @include pseudo;
-    z-index: -1;
-    background-color: rgba($shadow-color, 0.08);
-    @include noise;
-  }
-}
 
 
 
@@ -149,7 +195,7 @@
 
     @include noise;
 
-    box-shadow: $bevel-m;
+    box-shadow: $bevel-md;
   }
 }
 
@@ -186,11 +232,11 @@
     @include pseudo;
     overflow: hidden;
     z-index: -1;
-    box-shadow: $bevel-m;
+    box-shadow: $bevel-md;
     @include noise;
 
     // @include bp.breakpoint(md) {
-    //   box-shadow: $bevel-m;
+    //   box-shadow: $bevel-md;
     // }
   }
 }
@@ -241,32 +287,32 @@
   }
 }
 
-.btn-glass-xs {
-  position: relative;
-  box-shadow: $sha-2xs;
+// .btn-glass-xs {
+//   position: relative;
+//   box-shadow: $sha-2xs;
 
-  -webkit-backdrop-filter:  blur(20px) brightness(1.15) saturate(1.8);
-  backdrop-filter: blur(20px) brightness(1.15) saturate(1.8);
+//   -webkit-backdrop-filter:  blur(20px) brightness(1.15) saturate(1.8);
+//   backdrop-filter: blur(20px) brightness(1.15) saturate(1.8);
 
-  background-color: rgba($highlight-color, 0.08);
-  transition: background-color 500ms ease-out;
+//   background-color: rgba($highlight-color, 0.08);
+//   transition: background-color 500ms ease-out;
 
-  &::before {
-    @include pseudo;
-    z-index: -1;
-    @include noise;
-    box-shadow: $bevel-xs;
-  }
+//   &::before {
+//     @include pseudo;
+//     z-index: -1;
+//     @include noise;
+//     box-shadow: $bevel-xs;
+//   }
 
-  &:hover {
-    background-color: rgba($highlight-color, 0.3);
-    box-shadow: $sha-xs;
-  }
+//   &:hover {
+//     background-color: rgba($highlight-color, 0.3);
+//     box-shadow: $sha-xs;
+//   }
 
-  &:active {
-    background-color: rgba($shadow-color, 0.1);
-  }
-}
+//   &:active {
+//     background-color: rgba($shadow-color, 0.1);
+//   }
+// }
 
 .btn-glass-s {
   position: relative;
@@ -383,7 +429,7 @@
     @include pseudo;
     z-index: -1;
     @include noise;
-    box-shadow: $bevel-m;
+    box-shadow: $bevel-md;
     overflow: hidden;
   }
 }
@@ -420,7 +466,7 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    box-shadow: $bevel-m;
+    box-shadow: $bevel-md;
     overflow: hidden;
     @include noise;
     // -webkit-backdrop-filter: blur(64px) brightness(0.95);
@@ -463,7 +509,7 @@
 
 // .clear-glass {
 //   position: relative;
-//   box-shadow: $bevel-m;
+//   box-shadow: $bevel-md;
 
 //   &::after {
 //     @include pseudo;
@@ -477,7 +523,7 @@
 @mixin frosted-glass {
   position: relative;
   @include noise;
-  box-shadow: $bevel-m;
+  box-shadow: $bevel-md;
   z-index: -2;
 
   &::after {
@@ -496,7 +542,7 @@
 
 .frosted-glass-3d {
   position: relative;
-  box-shadow: $bevel-m;
+  box-shadow: $bevel-md;
   @include noise;
 
   &::after {
@@ -510,7 +556,7 @@
 
 .newish-dynamic-glass {
   position: relative;
-  box-shadow: $bevel-m;
+  box-shadow: $bevel-md;
   @include noise;
 
   &::before {

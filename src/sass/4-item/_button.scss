@@ -22,7 +22,7 @@
 
 // .btn-glass {
 //   position: relative;
-//   box-shadow: $bevel-m;
+//   box-shadow: $bevel-md;
 //   background-color: rgba($highlight-color, 0.2);
 
 //   &::after {
@@ -180,16 +180,16 @@
   cursor: pointer;
   border-radius: br.$round;
   background-color: transparent;
-  transition: background-color 1000ms ease-out;
+  transition: background-color 800ms ease-out;
 
   &:hover {
-    background-color: rgba($highlight-color, 0.3);
-    overflow: hidden;
+    background-color: $btn-1-hover;
+    // overflow: hidden;
   }
 
   &:active {
-    background-color: rgba($shadow-color, 0.1);
-    overflow: hidden;
+    background-color: $btn-1-active;
+    // overflow: hidden;
   }
 }
 
