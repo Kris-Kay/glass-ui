@@ -48,8 +48,8 @@
 }
 
 .inset-demo {
-  width: min(100%, 300px);
-  height: 150px;
+  width: min(100%, 200px);
+  height: var(--nav-h);
   margin: auto;
   @include flex-center;
 }
