@@ -44,12 +44,11 @@
 
 .btn-demo-box {
   height: fit-content;
-  @include grid-center;
 }
 
 .inset-demo {
-  width: min(100%, 200px);
-  height: var(--nav-h);
+  width: min(100%, 400px);
+  height: 180px;
   margin: auto;
-  @include flex-center;
+  @include grid-center;
 }

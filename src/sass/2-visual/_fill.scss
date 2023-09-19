@@ -10,7 +10,7 @@
 @mixin noise {
   background-image: url(/assets/textures/noise-texture-100x100.png); 
   // background-image: url(/assets/textures/noise-texture-500x500.png); 
-  background-size: 125px;
+  background-size: 50px;
   background-repeat: repeat;
 }
 
@@ -25,127 +25,127 @@
 /* ================================== */
 /* edit colors in _color.SCSS */
 
-.tint-xlight {
+.glass-tint-xlight {
   background-color: $glass-xlight;
 }
 
-.tint-light {
+.glass-tint-light {
   background-color: $glass-light;
 }
 
-.tint-reg {
+.glass-tint-reg {
   background-color: $glass-reg;
 }
 
-.tint-dark {
+.glass-tint-dark {
   background-color: $glass-dark;
 }
 
-.tint-xdark {
+.glass-tint-xdark {
   background-color: $glass-xdark;
 }
 
 /* Glass Filters */
 /* ================================== */
 $blur: 1.5rem;
-$satu: 1.5;
+$satu: 3.5;
 
-@mixin filter-xlight {
+@mixin glass-filter-xlight {
   $bright-xlight: 0.98;
   -webkit-backdrop-filter:  blur($blur) brightness($bright-xlight) saturate($satu);
   backdrop-filter: blur($blur) brightness($bright-xlight) saturate($satu);
 }
 
-@mixin filter-light {
+@mixin glass-filter-light {
   $bright-light: 0.95;
   -webkit-backdrop-filter:  blur($blur) brightness($bright-light) saturate($satu);
   backdrop-filter: blur($blur) brightness($bright-light) saturate($satu);
 }
 
-@mixin filter-reg {
+@mixin glass-filter-reg {
   $bright-reg: 0.92;
   -webkit-backdrop-filter:  blur($blur) brightness($bright-reg) saturate($satu);
   backdrop-filter: blur($blur) brightness($bright-reg) saturate($satu);
 }
 
-@mixin filter-dark {
+@mixin glass-filter-dark {
   $bright-dark: 0.85;
   -webkit-backdrop-filter:  blur($blur) brightness($bright-dark) saturate($satu);
   backdrop-filter: blur($blur) brightness($bright-dark) saturate($satu);
 }
 
-@mixin filter-xdark {
+@mixin glass-filter-xdark {
   $bright-xdark: 0.4;
   -webkit-backdrop-filter: blur($blur) brightness($bright-xdark)  saturate(0.8);
   backdrop-filter: blur($blur) brightness($bright-xdark) saturate(0.8);
 }
 
-.filter-xlight {
-  @include filter-xlight;
+.glass-filter-xlight {
+  @include glass-filter-xlight;
 }
 
-.filter-light {
-  @include filter-light;
+.glass-filter-light {
+  @include glass-filter-light;
 }
 
-.filter-reg {
-  @include filter-reg;
+.glass-filter-reg {
+  @include glass-filter-reg;
 }
 
-.filter-dark{
-  @include filter-dark;
+.glass-filter-dark{
+  @include glass-filter-dark;
 }
 
-.filter-xdark{
-  @include filter-xdark;
+.glass-filter-xdark{
+  @include glass-filter-xdark;
 }
 
 
 /* Glass Fills */
 /* ================================== */
-@mixin fill-xlight {
+@mixin glass-fill-xlight {
   background-color: $glass-xlight;
-  @include filter-xlight;
+  @include glass-filter-xlight;
 }
 
-@mixin fill-light {
+@mixin glass-fill-light {
   background-color: $glass-light;
-  @include filter-light;
+  @include glass-filter-light;
 }
 
-@mixin fill-reg {
+@mixin glass-fill-reg {
   background-color: $glass-reg;
-  @include filter-reg;
+  @include glass-filter-reg;
 }
 
-@mixin fill-dark {
+@mixin glass-fill-dark {
   background-color: $glass-dark;
-  @include filter-dark;
+  @include glass-filter-dark;
 }
 
-@mixin fill-xdark {
+@mixin glass-fill-xdark {
   background-color: $glass-xdark;
-  @include filter-xdark;
+  @include glass-filter-xdark;
 }
 
-.fill-xlight {
-  @include fill-xlight;
+.glass-fill-xlight {
+  @include glass-fill-xlight;
 }
 
-.fill-light {
-  @include fill-light;
+.glass-fill-light {
+  @include glass-fill-light;
 }
 
-.fill-reg {
-  @include fill-reg;
+.glass-fill-reg {
+  @include glass-fill-reg;
 }
 
-.fill-dark{
-  @include fill-dark;
+.glass-fill-dark {
+  @include glass-fill-dark;
 }
 
-.fill-xdark{
-  @include fill-xdark;
+.glass-fill-xdark { 
+  @include glass-fill-xdark;
 }
 
 
@@ -168,16 +168,4 @@ $satu: 1.5;
 //   background-color: rgba($shadow-color, 0.5);
 //   -webkit-backdrop-filter: blur(10vw) brightness(0.5) saturate(1.8);
 //   backdrop-filter: blur(32px) brightness(0.4) saturate(1.8);
-// }
-
-// .blur-dark-mild {
-//   @include blur-dark-mild;
-// }
-
-// .blur-dark-reg {
-//   @include blur-dark-reg;
-// }
-
-// .blur-dark-strong {
-//   @include blur-dark-strong;
 // }

@@ -8,13 +8,11 @@
 @use "glass";
 @use "../2-visual/shadow" as sha;
 
-
-
 // for med insets /////
 $inset-high-md: 
   inset -0.5px -0.5px 0.5px  rgba($highlight-color, 0.2),  // bottom-right highlight
   inset -1px -1px 0 rgba($highlight-color, 0.06),           // bottom-right bevel
-  inset 1px 1px 0.5px -1.5px rgba($highlight-color, 0.15),  // top-left specular highlight
+  inset 2px 2px 0.2px -2.6px rgba($highlight-color, 0.1),  // top-left specular highlight
   inset -2px -2px 0.5px -2.8px rgba($highlight-color, 0.2); // bottom-right specular
 
 
@@ -25,25 +23,27 @@ $inset-sha-md:
 
 // same as above but all in one 
 $inset-md: 
-  inset -0.5px -0.5px 0.5px  rgba($highlight-color, 0.17),  // bottom-right highlight
+  inset -0.5px -0.5px 0.5px  rgba($highlight-color, 0.2),  // bottom-right highlight
   inset -1px -1px 0 rgba($highlight-color, 0.06),           // bottom-right bevel
-  inset 1px 1px 0.5px -1.5px rgba($highlight-color, 0.15),  // top-left specular highlight
+  inset 2px 2px 0.2px -2.6px rgba($highlight-color, 0.1),  // top-left specular highlight
   inset -2px -2px 0.5px -2.8px rgba($highlight-color, 0.2), // bottom-right specular
   inset 0 3px 6px rgba($shadow-color, 0.1), // L around
   inset 2px 1.25px 3px rgba($shadow-color, 0.1), // med top left
   inset 1px 1px 1px rgba($shadow-color, 0.1); // small around
+
 
 .inset-glass-md {
   // pointer-events: none;
   position: relative;
   overflow: hidden;
 
-  box-shadow: $inset-high-md;
+  box-shadow: $inset-md;
+  // background-color: $glass-dark;
 
   &::after {
     @include pseudo;
     z-index: -1;
-     
+
     border-bottom: 0.5px solid transparent;
     background: linear-gradient(
         to right,
@@ -69,14 +69,17 @@ $inset-md:
     @include pseudo;
     z-index: -2;
 
-    @include fill.filter-dark;
-    box-shadow: $inset-sha-md;
-    background-color: $glass-dark;
+    box-shadow: $inset-md;
+    @include fill.glass-filter-dark;
+    @include fill.noise; 
   }
 }
 
+
+    // box-shadow: $inset-high-md;
+    // box-shadow: $inset-sha-md;
     // filter: brightness(0.1);
-      // filter keeps $glass-dark & $inset-sha-md from looking washed out over dark backdrops. Can remove if using #000 for $shadow color 
+    // filter keeps $glass-dark & $inset-sha-md from looking washed out over dark backdrops. Can remove if using #000 for $shadow color 
 /* ================================== */
 
 
@@ -384,7 +387,7 @@ $flat-inset-md:
 
   box-shadow: $inset-high-md;
   // @include fill.noise;
-  @include fill.filter-dark;
+  @include fill.glass-filter-dark;
 
   &::after {
     @include pseudo;

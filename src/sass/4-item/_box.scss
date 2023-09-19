@@ -100,7 +100,7 @@
 
 .dark-round-rect {
   width: 100%;
-  @include fill.fill-dark;
+  @include fill.glass-fill-dark;
   padding: var(--space-narrow);
   @include br.br(md);
 }
@@ -117,7 +117,7 @@
 
 
 .full-w-strong {
-  @include fill.fill-xdark;
+  @include fill.glass-fill-xdark;
 
   padding: var(--space-wide) var(--space-narrow);
   // margin-left: calc((-1 * var(--space-narrow)) + 0.5px);

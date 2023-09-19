@@ -36,9 +36,10 @@ body{
   will-change: scroll-position;
 
   &.dark {
-    background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
+    // background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
 
     // background-image: url(/assets/bgImg/black-paper.jpg);
+        background-color: #000;
   }
 
   &.light {
@@ -55,10 +56,12 @@ body{
     // background-image: url(https://images.unsplash.com/photo-1573655349936-de6bed86f839?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2820&q=80);
 
     // background-image: url(/assets/bgImg/black-paper.jpg);
-            background-image: image-set( 
+    background-image: image-set( 
       "/assets/bgImg/chris-lee-plant-s.jpg" 1x, 
       "/assets/bgImg/chris-lee-plant-m.jpg" 2x, 
       "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
+
+    // background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
   }
 }
 
