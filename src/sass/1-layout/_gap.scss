@@ -3,15 +3,24 @@
 @use "../0-base/size";
 /* ================================== */
 
+/* Gap classes */
+/* ================================== */
+// * Generates a .gap- class for every T-shirt size
+// * T-shirt size values scale with viewport width
+
 .gap {
   @include size.size-modifiers('gap');
 }
 
-/* Gap mixin using size MAP values */
-@mixin gap($s) {
-  @if not map-has-key(size.$sizes, $s) {
-    @warn "Warning: `#{$s}` is not a valid size value. Check _size.SCSS for a list of valid values.";
+
+/* Gap mixin */
+/* ================================== */
+// * T-shirt size values scale with viewport width
+
+@mixin gap($t-s) {
+  @if not map-has-key(size.$sizes, $t-s) {
+    @warn "Warning: `#{$t-s}` is not a valid T-shirt size value. Check _size.SCSS for a list of valid values.";
   } @else {
-    gap: map-get(size.$sizes, $s);
+    gap: map-get(size.$sizes, $t-s);
   }
 }

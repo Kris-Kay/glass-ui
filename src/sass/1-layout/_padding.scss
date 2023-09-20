@@ -7,16 +7,6 @@
   @include size.size-modifiers('padding');
 }
 
-.p-x {
-  @include size.size-modifiers('padding-left');
-  @include size.size-modifiers('padding-right');
-}
-
-.p-y {
-  @include size.size-modifiers('padding-top');
-  @include size.size-modifiers('padding-bottom');
-}
-
 .p-t {
   @include size.size-modifiers('padding-top');
 }

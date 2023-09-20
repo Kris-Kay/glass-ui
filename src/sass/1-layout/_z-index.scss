@@ -2,18 +2,22 @@
 /* Z-index */
 /* ================================== */
 
+$z: (
+  "wrap",
+  "bg",
+  "modal",
+  "card",
+  "btn",
+  "nav",
+  "menu"
+);
+
 @function z($name) {
-  @if index($z-indexes, $name) {
-      @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  @if index($z, $name) {
+      @return (length($z) - index($z, $name)) + 1;
   } @else {
-      @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+      @warn 'There is no item "#{$name}" in this list; choose one of: #{$z}';
       @return null;
   }
 }
-$z-indexes: (
-  "outdated-browser",
-  "modal",
-  "site-header",
-  "page-wrapper",
-  "site-footer"
-);
+

@@ -15,7 +15,7 @@
 
 @mixin btn-base {
   width: max-content; // to stop stretching in flex layouts 
-  @include flex-center;
+  @include flex-c;
   @include btn-text;
   border-radius: br.$round;
 }
@@ -128,7 +128,7 @@
 /* Round buttons */
 /* ================================== */
 @mixin round-btn-base {
-  @include flex-center;
+  @include flex-c;
   border-radius: br.$round;
   pointer-events: auto;
   cursor: pointer;
@@ -155,7 +155,7 @@
   & img {
     width: auto;
     height: calc(var(--ui-md) * 0.6); 
-    @include sha.svg-sha-sm;
+    @include sha.svg-sha-md;
   }
 }
 
@@ -167,7 +167,7 @@
   & img {
     width: auto;
     height: calc(var(--ui-lg) * 0.6); 
-    @include sha.svg-sha-sm;
+    @include sha.svg-sha-lg;
   }
 }
 
@@ -210,7 +210,7 @@
 
   width: max-content; // to stop stretching in flex layouts 
   height: var(--ui-sm); 
-  @include flex-center;
+  @include flex-c;
   gap: 0.3rem;
 
   @include btn-text;

@@ -7,16 +7,6 @@
   @include size.size-modifiers('margin');
 }
 
-.m-x {
-  @include size.size-modifiers('margin-left');
-  @include size.size-modifiers('margin-right');
-}
-
-.m-y {
-  @include size.size-modifiers('margin-top');
-  @include size.size-modifiers('margin-bottom');
-}
-
 .m-t {
   @include size.size-modifiers('margin-top');
 }

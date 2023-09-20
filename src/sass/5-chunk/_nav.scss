@@ -14,7 +14,7 @@
   position: relative;
   margin: 0 auto;
   @include flex-sb;
-  padding: var(--space-sm);
+  padding: var(--space-thin);
   pointer-events: none;
 }
 

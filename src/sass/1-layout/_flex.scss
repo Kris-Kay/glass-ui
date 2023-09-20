@@ -1,42 +1,68 @@
 /* ================================== */
 /* Flex-box */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/size";
 /* ================================== */
 
-
-/* Flex box */
+/* Flex mixins */
 /* ================================== */
-@mixin flex-center {
+@mixin flex-c {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin flex-left {
+@mixin flex-c-x {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+@mixin flex-c-y {
+  display: flex;
   align-items: center;
 }
 
-@mixin flex-right {
+@mixin flex-t {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }
 
 @mixin flex-b {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
+}
+
+@mixin flex-l {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin flex-r {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @mixin flex-sb {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
+@mixin flex-sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin flex-se {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@mixin flex-str-y {
+  display: flex;
+  align-items: stretch;
+}
+
+
+/* Flex .classes */
+/* ================================== */
 .flex {
   display: flex;
 }
@@ -45,27 +71,46 @@
   flex-wrap: wrap;
 }
 
-.flex-center {
-  @include flex-center;
+.flex-c {
+  @include flex-c;
 }
 
-.flex-left {
-  @include flex-left;
+.flex-c-x {
+  @include flex-c-x;
 }
 
-.flex-right {
-  @include flex-right;
+.flex-c-y {
+  @include flex-c-y;
 }
 
-.flex-sb {
-  @include flex-sb;
+.flex-t {
+  @include flex-t;
 }
 
 .flex-b {
   @include flex-b;
 }
 
+.flex-l {
+  @include flex-l;
+}
 
+.flex-r {
+  @include flex-r;
+}
 
+.flex-sb {
+  @include flex-sb;
+}
 
+.flex-sa {
+  @include flex-sa;
+}
 
+.flex-se {
+  @include flex-se;
+}
+
+.flex-str-y {
+  @include flex-str-y;
+}

@@ -2,7 +2,6 @@
 /* Backgrounds */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color" as *;
-@use "../0-base/fluid";
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
 @use "../2-visual" as *;
@@ -61,9 +60,9 @@
 .tint-fullwidth-s-reg {
   @include blur-tint-reg;
 
-  padding: var(--space-sm) var(--space-lg);
-  margin-left: calc((-1 * var(--space-lg)) + 0.5px);
-  margin-right: calc(-1 * var(--space-lg));
+  padding: var(--space-thin) var(--space-wide);
+  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+  margin-right: calc(-1 * var(--space-wide));
   box-shadow: in.$flat-inset-md;
 }
 
@@ -71,9 +70,9 @@
 
 .dark-fullwidth {
   background-color: rgba($shadow-color, 0.8);
-  padding: var(--space-sm) var(--space-lg);
-  margin-left: calc((-1 * var(--space-lg)) + 0.5px);
-  margin-right: calc(-1 * var(--space-lg));
+  padding: var(--space-thin) var(--space-wide);
+  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+  margin-right: calc(-1 * var(--space-wide));
 }
 
 .code-bg {
@@ -83,16 +82,16 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-sm) var(--space-lg);
-  margin-left: calc(-1 * var(--space-lg));
-  margin-right: calc(-1 * var(--space-lg));
+  padding: var(--space-thin) var(--space-wide);
+  margin-left: calc(-1 * var(--space-wide));
+  margin-right: calc(-1 * var(--space-wide));
 
   &:hover {
     overflow-x: scroll;
   }
 
   @include bp.breakpoint(md) {
-    padding: var(--space-sm);
+    padding: var(--space-thin);
     @include br.br(md);
     margin: 0;
   }
@@ -101,7 +100,7 @@
 .dark-round-rect {
   width: 100%;
   @include fill.glass-fill-dark;
-  padding: var(--space-sm);
+  padding: var(--space-thin);
   @include br.br(md);
 }
 
@@ -119,20 +118,20 @@
 .full-w-strong {
   @include fill.glass-fill-xdark;
 
-  padding: var(--space-lg) var(--space-sm);
-  // margin-left: calc((-1 * var(--space-sm)) + 0.5px);
-  // margin-right: calc(-1 * var(--space-sm));
+  padding: var(--space-wide) var(--space-thin);
+  // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
+  // margin-right: calc(-1 * var(--space-thin));
   box-shadow: in.$flat-inset-md;
 }
 
 
 // NEW sep 12 2023
 .page-section {
-  @include fluid.max-w;
+  @include size.limit-w;
   border-radius: 0;
   display: grid;
 
   @include bp.breakpoint(md) {
-    @include br.br(lg);
+    @include br.br(lg); 
   }
 }

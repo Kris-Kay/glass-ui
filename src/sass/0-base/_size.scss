@@ -69,77 +69,128 @@ $t-shirt-3xl: $s24; // <- knob
   }
 }
 
-/* Size MAP */
+/* T-shirt Size MAP */
 /* ================================== */
 /* Used by modifier mixins */
-/* Static but uses --multiplier at same breakpoints as the dynamic */
 $sizes: (
-  3xs: $t-shirt-3xs,
-  2xs: $t-shirt-2xs,
-  xs: $t-shirt-xs,
-  sm: $t-shirt-sm,
-  md: $t-shirt-md,
-  lg: $t-shirt-lg,
-  xl: $t-shirt-xl,
-  2xl: $t-shirt-2xl,
-  3xl: $t-shirt-3xl,
+  "3xs": $t-shirt-3xs,
+  "2xs": $t-shirt-2xs,
+  "xs": $t-shirt-xs,
+  "sm": $t-shirt-sm,
+  "md": $t-shirt-md,
+  "lg": $t-shirt-lg,
+  "xl": $t-shirt-xl,
+  "2xl": $t-shirt-2xl,
+  "3xl": $t-shirt-3xl,
 );
 
 /* Size modifier mixin */
 /* ================================== */
 /* Generates size modifier classes */
 /* Used in grid/flex gap, border-radius, margin, and padding */
-@mixin size-modifiers($attribute: "a") {
+
+@mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &-#{$key} {
-      #{$attribute}: calc($value * var(--multiplier));
+      #{$property}: calc($value * var(--multiplier));
 
       @include bp.breakpoint(md) {
-        #{$attribute}: calc($value * var(--multiplier));
+        #{$property}: calc($value * var(--multiplier));
       }
 
       @include bp.breakpoint(lg) {
-        #{$attribute}: calc($value * var(--multiplier));
+        #{$property}: calc($value * var(--multiplier));
       }
     }
   }
 }
 
+/* Responsive layout edge */
+/* ================================== */
+// * used to create consistent responsive layouts
+// * also used in negative margines for edge-to-edge image/bg
+// * thin = small change at each bp, wide= starts small and gets very big
 
-/* T-shirt size .classes that scale with viewport width */
-// TODO > write T-shirt mixin 
-.size-3xs {
-  width: var(--3xs);
+:root {
+  --space-thin: #{$s4}; // 16px
+  --space-wide: #{$s4}; // 16px
+
+  @include bp.breakpoint(sm) {
+    --space-thin: #{$s4}; // 16px
+    --space-wide: #{$s6}; // 24px
+  }
+
+  @include bp.breakpoint(md) {
+    --space-thin: #{$s6}; //24px
+    --space-wide: #{$s10}; // 40px 
+  }
+
+  @include bp.breakpoint(lg) {
+    --space-thin: #{$s7}; 
+    --space-wide: #{$s14}; 
+  }
 }
 
-.size-2xs {
-  width: var(--2xs);
+/* Limit width */
+/* ================================== */
+:root {
+  --limit-w: calc(100vw - (var(--space-thin) * 2));
+
+  @include bp.breakpoint(md) {
+    --limit-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
+  }
 }
 
-.size-xs {
-  width: var(--xs);
+@mixin limit-w {
+  width: 100%;
+  max-width: var(--limit-w);
+  margin: auto;
 }
 
-.size-sm {
-  width: var(--sm);
+.limit-w { 
+  @include max-w;
 }
 
-.size-md {
-  width: var(--md);
+/* Full width */
+.full-w, img {
+  width: 100%;
+  max-width: 100vw;
 }
 
-.size-lg {
-  width: var(--lg);
+/* Responsive UI height */
+/* ================================== */
+/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
+
+:root {
+  --ui-sm: #{$s6};   /* 24px */
+  --ui-md: #{$s8};   /* 32px */
+  --ui-lg: #{$s10};  /* 40px */
+
+  --nav-h: calc(var(--ui-lg) + var(--space-thin));
+
+  @include bp.breakpoint(md) {
+    --ui-sm: #{$s7};  /* 28px */
+    --ui-md: #{$s9};  /* 36px */
+    --ui-lg: #{$s10}; /* 40px */
+  }
+
+  @include bp.breakpoint(lg) {
+    --ui-sm: #{$s8};  /* 32px */
+    --ui-md: #{$s10}; /* 40px */
+    --ui-lg: #{$s11}; /* 44px */
+  }
 }
 
-.size-xl {
-  width: var(--xl);
-}
 
-.size-2xl {
-  width: var(--2xl);
-}
+/* Width & height classes */
+/* ================================== */
+// * Generates a class for every T-shirt size
+// * T-shirt size values scale with viewport width
+// ? are these useful? 
+// .w {
+//   @include size-modifiers('width');
+// }
 
-.size-3xl {
-  width: var(--3xl);
-}
+// .h {
+//   @include size-modifiers('height');
+// }

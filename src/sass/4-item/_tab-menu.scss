@@ -14,7 +14,7 @@
   width: fit-content;
   height: var(--ui-lg);
   margin: auto;
-  @include flex-center;
+  @include flex-c;
   border-radius: 9px;
 
   // --padding: 3px;
@@ -28,7 +28,7 @@
 
   width: max-content; 
   height: 100%;
-  @include flex-center;
+  @include flex-c;
   padding: 0 0.7rem;
 
   pointer-events: auto;

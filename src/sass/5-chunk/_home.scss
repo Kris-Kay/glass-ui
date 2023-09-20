@@ -133,10 +133,10 @@ footer {
   justify-content: center;  
   align-content: end;  
 
-  padding: var(--space-sm);
+  padding: var(--space-thin);
 
   @include breakpoint(md) {
-    padding: var(--space-sm) 0;
+    padding: var(--space-thin) 0;
   }
 
   .card {
