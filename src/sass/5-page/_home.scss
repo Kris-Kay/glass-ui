@@ -1,0 +1,86 @@
+/* ================================== */
+/* Home */
+@use "../0-base" as *;
+@use "../0-base/breakpoint" as bp;
+@use "../1-layout" as *;
+@use "../2-visual" as *;
+@use "../2-visual/border" as br;
+@use "../3-item" as *;
+@use "../4-part" as *;
+/* ================================== */
+
+/* Above the fold */
+/* ================================== */
+.atf {
+  width: 100%;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "."
+    "card";
+  justify-content: center;  
+  align-content: end;  
+
+  padding: var(--space-thin);
+
+  @include bp.bp(md) {
+    padding: var(--space-thin) 0;
+  }
+
+  .card {
+    grid-area: card;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    max-width: 450px;
+    align-self: end;
+
+    @include bp.bp(md) {
+      justify-self: end;
+    }
+
+    @include bp.bp(lg) {
+      max-width: 525px;
+    }
+
+  }
+
+  @media (height < 500px) {
+    grid-template-rows: var(--nav-h) auto auto 1rem;
+  }
+}
+
+
+.glassGPT-card {
+  width: min(100%, 480px);
+  height: 240px;
+}
+
+.glassGPT {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.1),
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    0 20px 25px rgba(0, 0, 0, 0.3);
+  &:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 10px;
+    z-index: 1;
+    pointer-events: none;
+  }
+}

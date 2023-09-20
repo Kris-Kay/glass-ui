@@ -3,10 +3,9 @@
 @use "../0-base/color" as *;
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
-@use "../2-visual" as *;
-@use "../2-visual/fill";
+@use "fill";
 @use "glass";
-@use "../2-visual/shadow" as sha;
+@use "shadow" as sha;
 
 // for med insets /////
 $inset-high-md: 

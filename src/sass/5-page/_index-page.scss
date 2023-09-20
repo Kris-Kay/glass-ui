@@ -1,13 +1,12 @@
 /* ================================== */
-/* Home */
+/* index.html styles */
 @use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
 @use "../1-layout" as *;
-@use "../1-layout/gap";
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
-@use "../3-material" as *;
-@use "../4-item" as *;
+@use "../3-item" as *;
+@use "../4-part" as *;
 /* ================================== */
 
 

@@ -5,8 +5,7 @@
 @use "../1-layout/padding";
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
-@use "../3-material" as *;
-@use "../3-material/inset" as in;
+@use "../2-visual/inset" as in;
 /* ================================== */
 
 .card {

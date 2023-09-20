@@ -4,22 +4,23 @@
 @use "../0-base/breakpoint" as bp;
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
-@use "../2-visual" as *;
-@use "../2-visual/shadow" as sha;
-@use "../2-visual/fill";
+@use "bevel";
+@use "fill";
+@use "shadow" as sha;
+
 /* ================================== */
 
 .bg-glass-reg {
   position: relative;
   overflow: hidden;
-  box-shadow: $sha-xl;
+  box-shadow: sha.$sha-xl;
   @include fill.noise;
 
   &::after {
     @include pseudo;
     z-index: -1;
 
-    box-shadow: $bevel-md;
+    box-shadow: bevel.$bevel-md;
     @include fill.noise-dark;
     @include fill.glass-fill-reg;
   }
@@ -28,14 +29,14 @@
 // .bg-glass {
 //   position: relative;
 //   overflow: hidden;
-//   box-shadow: $sha-xl;
+//   box-shadow: sha.$sha-xl;
 //   @include fill.noise;
 
 //   &::after {
 //     @include pseudo;
 //     z-index: -1;
 
-//     box-shadow: $bevel-md;
+//     box-shadow: bevel.$bevel-md;
 //     @include fill.noise-dark;
 //     @include fill.glass-fill-reg;
 //   }
@@ -45,7 +46,7 @@
 .btn1-glass {
   position: relative;
   overflow: hidden;
-  box-shadow: $sha-2xs;
+  box-shadow: sha.$sha-2xs;
   @include fill.noise;
   transition: background-color 800ms ease-out;
 
@@ -54,9 +55,9 @@
     z-index: -1;
 
     background-color: $btn-1-rest;
-    box-shadow: $bevel-sm;
+    box-shadow: bevel.$bevel-sm;
     @include fill.noise-dark;
-    @include glass-filter-reg;
+    @include fill.glass-filter-reg;
   }
  
   &:hover {
@@ -72,15 +73,15 @@
 .btn2-glass {
   position: relative;
   overflow: hidden;
-  box-shadow: $sha-2xs;
+  box-shadow: sha.$sha-2xs;
   transition: background-color 800ms ease-out;
 
   &::after {
     @include pseudo;
     z-index: -1;
-    @include glass-filter-reg;
+    @include fill.glass-filter-reg;
     background-color: $btn-2-rest;
-    box-shadow: $bevel-sm;
+    box-shadow: bevel.$bevel-sm;
     @include fill.noise-dark;
   }
 
@@ -97,13 +98,13 @@
 .bg-glass-dark {
   position: relative;
   overflow: hidden;
-  box-shadow: $sha-xl;
+  box-shadow: sha.$sha-xl;
 
   &::after {
     @include pseudo;
     z-index: -1;
 
-    box-shadow: $bevel-md;
+    box-shadow: bevel.$bevel-md;
     @include fill.noise;
     @include fill.glass-fill-dark;
   }
@@ -123,7 +124,7 @@
 
   @include bp.bp(md) {
     &::after {
-    box-shadow: $bevel-md;
+    box-shadow: bevel.$bevel-md;
     }
   }
 }
@@ -132,13 +133,13 @@
 // .some-dynamic-glass {
 //   position: relative;
 //   overflow: hidden;
-//   box-shadow: $sha-xl;
+//   box-shadow: sha.$sha-xl;
 
 //   &::after {
 //     @include pseudo;
 //     z-index: -1;
 
-//     box-shadow: $bevel-md;
+//     box-shadow: bevel.$bevel-md;
 //     @include fill.noise;
 //     @include fill.glass-filter-reg;
 //   }
@@ -156,13 +157,13 @@
 // .bg-glass {
 //   position: relative;
 //   overflow: hidden;
-//   box-shadow: $sha-xl;
+//   box-shadow: sha.$sha-xl;
 
 //   &::after {
 //     @include pseudo;
 //     z-index: -1;
 
-//     box-shadow: $bevel-md;
+//     box-shadow: bevel.$bevel-md;
 //   }
 
 //   &::before {
@@ -193,9 +194,9 @@
     -webkit-backdrop-filter:  blur(4vw) brightness(0.92) saturate(1.5);
     backdrop-filter: blur(4vw) brightness(0.92) saturate(1.5);
 
-    @include noise;
+    @include fill.noise;
 
-    box-shadow: $bevel-md;
+    box-shadow: bevel.$bevel-md;
   }
 }
 
@@ -207,7 +208,7 @@
   // color: rgba($shadow-color, 0.95);
   // filter: contrast(10);
   // filter: invert(51%) contrast(10);
-  @include engrave-sm;
+  @include sha.engrave-sm;
 }
 
 .glass-dark-very-mild {
@@ -232,11 +233,11 @@
     @include pseudo;
     overflow: hidden;
     z-index: -1;
-    box-shadow: $bevel-md;
-    @include noise;
+    box-shadow: bevel.$bevel-md;
+    @include fill.noise;
 
     // @include bp.bp(md) {
-    //   box-shadow: $bevel-md;
+    //   box-shadow: bevel.$bevel-md;
     // }
   }
 }
@@ -289,7 +290,7 @@
 
 // .btn-glass-xs {
 //   position: relative;
-//   box-shadow: $sha-2xs;
+//   box-shadow: sha.$sha-2xs;
 
 //   -webkit-backdrop-filter:  blur(20px) brightness(1.15) saturate(1.8);
 //   backdrop-filter: blur(20px) brightness(1.15) saturate(1.8);
@@ -300,13 +301,13 @@
 //   &::before {
 //     @include pseudo;
 //     z-index: -1;
-//     @include noise;
-//     box-shadow: $bevel-sm;
+//     @include fill.noise;
+//     box-shadow: bevel.$bevel-sm;
 //   }
 
 //   &:hover {
 //     background-color: rgba($light-color, 0.3);
-//     box-shadow: $sha-xs;
+//     box-shadow: sha.$sha-xs;
 //   }
 
 //   &:active {
@@ -317,7 +318,7 @@
 .btn-glass-s {
   position: relative;
   z-index: -2;
-  box-shadow: $sha-sm;
+  box-shadow: sha.$sha-sm;
   pointer-events: auto;
   cursor: pointer;
   overflow: hidden;
@@ -335,8 +336,8 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    //  @include noise;
-    box-shadow: $bevel-sm;
+    //  @include fill.noise;
+    box-shadow: bevel.$bevel-sm;
   }
 
   &:hover {
@@ -363,7 +364,7 @@
 
 .clear-glass {
   position: relative;
-  box-shadow: $sha-md;
+  box-shadow: sha.$sha-md;
   overflow: hidden;
   background-color: rgba($shadow-color, 0.05);
 
@@ -385,8 +386,8 @@
 
 .new-frosted-glass {
   position: relative;
-  box-shadow: $sha-md;
-  @include noise;
+  box-shadow: sha.$sha-md;
+  @include fill.noise;
   -webkit-backdrop-filter: blur(28px) brightness(0.9);
   backdrop-filter: blur(28px) brightness(0.9);
 
@@ -428,8 +429,8 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    @include noise;
-    box-shadow: $bevel-md;
+    @include fill.noise;
+    box-shadow: bevel.$bevel-md;
     overflow: hidden;
   }
 }
@@ -466,9 +467,9 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    box-shadow: $bevel-md;
+    box-shadow: bevel.$bevel-md;
     overflow: hidden;
-    @include noise;
+    @include fill.noise;
     // -webkit-backdrop-filter: blur(64px) brightness(0.95);
     backdrop-filter: blur(64px) brightness(1.15) saturate(1.05);
     // background-color: rgba($light-color, 0.08);
@@ -501,15 +502,15 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    @include noise;
-    box-shadow: $bevel-sm;
+    @include fill.noise;
+    box-shadow: bevel.$bevel-sm;
   }
 }
 
 
 // .clear-glass {
 //   position: relative;
-//   box-shadow: $bevel-md;
+//   box-shadow: bevel.$bevel-md;
 
 //   &::after {
 //     @include pseudo;
@@ -522,8 +523,8 @@
 
 @mixin frosted-glass {
   position: relative;
-  @include noise;
-  box-shadow: $bevel-md;
+  @include fill.noise;
+  box-shadow: bevel.$bevel-md;
   z-index: -2;
 
   &::after {
@@ -542,22 +543,22 @@
 
 .frosted-glass-3d {
   position: relative;
-  box-shadow: $bevel-md;
-  @include noise;
+  box-shadow: bevel.$bevel-md;
+  @include fill.noise;
 
   &::after {
     @include pseudo;
     z-index: -2;
     -webkit-backdrop-filter: brightness(0.9) blur(10vw);
     backdrop-filter: brightness(0.9) blur(10vw);
-    box-shadow: $sha-xl;
+    box-shadow: sha.$sha-xl;
   }
 }
 
 .newish-dynamic-glass {
   position: relative;
-  box-shadow: $bevel-md;
-  @include noise;
+  box-shadow: bevel.$bevel-md;
+  @include fill.noise;
 
   &::before {
     @include pseudo;
@@ -579,7 +580,7 @@
     z-index: -2;
     -webkit-backdrop-filter: brightness(0.9) blur(10vw) saturate(1.8);
     backdrop-filter: brightness(0.9) blur(10vw) saturate(1.8);
-    box-shadow: $sha-xl;
+    box-shadow: sha.$sha-xl;
     will-change: filter;
   }
 }
@@ -615,7 +616,7 @@
 //   pointer-events: none;
 //   border-radius: inherit;
 
-//   box-shadow: $bevel-l;
+//   box-shadow: bevel.$bevel-l;
 //   // background-image: url(/assets/images/noise-texture-500x500.png);
 //   // background-size: 100px;
 //   // background-repeat: repeat;
@@ -631,14 +632,14 @@
 
 
 // @mixin glass-far {
-//   @include noise;
+//   @include fill.noise;
 //   background-color: rgba($ink6, 0.08);
 //   -webkit-backdrop-filter: blur(64px) brightness(0.7);
 //   backdrop-filter: blur(64px) brightness(0.7);
 // }
 
 // @mixin glass-base {
-//   @include noise;
+//   @include fill.noise;
 //   background-color: rgba($sky98, 0.5);
 //   mix-blend-mode: multiply;
 //   // mix-blend-mode: luminosity;
@@ -649,7 +650,7 @@
 // }
 
 // @mixin glass-near {
-//   @include noise;
+//   @include fill.noise;
 //   background-color: rgba($sky99, 0.04);
 //   -webkit-backdrop-filter: blur(32px) brightness(1.1);
 //   backdrop-filter: blur(32px) brightness(1.1);

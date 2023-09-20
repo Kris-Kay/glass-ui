@@ -5,8 +5,8 @@
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
-@use "../3-material" as *;
-@use "button" as btn;
+@use "../3-item" as *;
+@use "../3-item/button" as btn;
 /* ================================== */
 
 .tab-menu {
