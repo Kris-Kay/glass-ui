@@ -121,7 +121,7 @@
     @include fill.glass-fill-dark;
   }
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     &::after {
     box-shadow: $bevel-md;
     }
@@ -222,7 +222,7 @@
     backdrop-filter: blur(3vw) brightness(0.95) saturate(1.1);
     background-color: rgba($shadow-color, 0.05);
 
-    // @include bp.breakpoint(md) {
+    // @include bp.bp(md) {
     //   -webkit-backdrop-filter:  blur(64px) brightness(0.95) saturate(1.1);
     //   backdrop-filter: blur(64px) brightness(0.95) saturate(1.1);
     // }
@@ -235,7 +235,7 @@
     box-shadow: $bevel-md;
     @include noise;
 
-    // @include bp.breakpoint(md) {
+    // @include bp.bp(md) {
     //   box-shadow: $bevel-md;
     // }
   }

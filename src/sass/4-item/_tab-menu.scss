@@ -41,15 +41,15 @@
   border-radius: 8px;
   // border-radius: var(--tab-br);
 
-  @include breakpoint(sm) {
+  @include bp.bp(sm) {
     padding: 0 1rem;
   }
 
-  @include breakpoint(md) {
+  @include bp.bp(md) {
     --inner-h: 1.1rem;
   }
 
-  @include breakpoint(lg) {
+  @include bp.bp(lg) {
     --inner-h: 1.25rem;
   }
 

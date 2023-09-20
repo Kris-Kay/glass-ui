@@ -1,8 +1,8 @@
 /* ================================== */
-/* Breakpoints and Responsive layout & sizing */
+/* Breakpoints */
 /* ================================== */
 
-/* Breakpoint MAP */
+/* Mobile first breakpoint MAP */
 /* ================================== */
 $breakpoints: (
   "sm": 23rem,   // 368px and bigger
@@ -13,7 +13,7 @@ $breakpoints: (
 
 /* Breakpoint mixin */
 /* ================================== */
-@mixin breakpoint($name) {
+@mixin bp($name) {
   @if not map-has-key($breakpoints, $name) {
     @warn "Warning: `#{$name}` is not a valid breakpoint name.";
   } @else {

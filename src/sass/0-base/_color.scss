@@ -1,23 +1,26 @@
 /* ================================== */
 /* Colors */
 /* ================================== */
-/* The number in the color name is its HS[L] lightness value */
 
-///* Snow *///
+/* RGB color values */
+/* ================================== */
+// * The number in the color name is its HSL lightness value */
+
+// * Snow
 $snow95: rgb(239, 242, 245);
 $snow90: rgb(223, 228, 236);
 $snow80: rgb(192, 202, 216);
 $snow70: rgb(160, 175, 197);
 $snow65: rgb(144, 161, 187);
 
-///* Gray */// 
+// * Gray
 $gray60: rgb(143, 151, 163);
 $gray50: rgb(115, 125, 140);
 $gray40: rgb(92, 100, 112);
 $gray30: rgb(69, 75, 84);
 $gray20: rgb(46, 50, 56);
 
-///* Sky */// 
+// * Sky
 $sky99: rgb(250, 254, 255);
 $sky98: rgb(245, 252, 255);
 $sky95: rgb(230, 248, 254);
@@ -27,40 +30,24 @@ $sky70: rgb(106, 209, 251);
 $sky60: rgb(56, 195, 250);
 $sky50: rgb(6, 181, 249);
 
-///* Ink */// 
+// * Ink
 $ink2:  rgb(0, 3, 10);
 $ink4: rgb(0, 7, 20);
 $ink6: rgb(0, 10, 30);
 $ink8: rgb(0, 14, 40);
 $ink10: rgb(0, 17, 50);
 
-///* Leaf */// H80 S80 L--
+// * Leaf H80 S80 L--
 $leaf80: rgb(218, 245, 163);
 $leaf70: rgb(199, 240, 117);
 $leaf60: rgb(180, 235, 71);
 $leaf40:  rgb(129, 184, 20);
 $leaf30: rgb(97, 138, 15);
 
+
 /* Semantic color values */
 /* ================================== */
 $bg-color: $sky98;
-
-$text-light-reg: $sky98;
-$text-light-mild: $snow80;
-$text-light-xmild: $snow70;
-$text-light-2xmild: $snow65;
-
-$text-dark-strong: $ink6;
-$text-dark-reg: $ink10;
-$text-dark-mild: $gray50;
-
-$code-class: $leaf70;
-$code-prop: $snow70;
-$code-value: $sky80;
-
-$link-rest: $sky70;
-$link-hover: $sky50;
-$link-visit: $sky80;
 
 $shadow-color: $ink2;
 $light-color: $sky99;
@@ -71,6 +58,23 @@ $glass-light: rgba($sky98, 0.03);
 $glass-reg: rgba($ink2, 0.1);
 $glass-dark: rgba($ink2, 0.2);
 $glass-xdark: rgba($ink2, 0.5);
+
+$text-light-reg: $sky98;
+$text-light-mild: $snow80;
+$text-light-xmild: $snow70;
+$text-light-2xmild: $snow65;
+
+$text-dark-bold: $ink6;
+$text-dark-reg: $ink10;
+$text-dark-mild: $gray50;
+
+$code-class: $leaf70;
+$code-prop: $snow70;
+$code-value: $sky80;
+
+$link-rest: $sky70;
+$link-hover: $sky50;
+$link-visit: $sky80;
 
 $btn-1-rest: rgba($leaf70, 0.5);
 $btn-1-hover: rgba($leaf80, 0.8);
@@ -102,8 +106,8 @@ $btn-2-active: rgba($ink2, 0.15);
 }
 
 /* Dark */
-.text-dark-strong {
-  color: $text-dark-strong;
+.text-dark-bold {
+  color: $text-dark-bold;
 }
 
 .text-dark-reg {

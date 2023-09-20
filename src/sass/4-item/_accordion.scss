@@ -1,6 +1,7 @@
 /* ================================== */
 /* Accordion */
 @use "../0-base" as *;
+@use "../0-base/breakpoint" as bp;
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
@@ -12,11 +13,11 @@
   padding: 0;
   border-radius: 0;
 
-  @include breakpoint(md) {
+  @include bp.bp(md) {
     @include br.br(md);
   }
 
-  @include breakpoint(lg) {
+  @include bp.bp(lg) {
     padding: 0;
   }
 

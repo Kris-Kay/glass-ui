@@ -179,14 +179,14 @@ $inset-l:
 //   inset 0 0 2px  rgba($shadow-color, 0.1), // small around
 //   inset -2px 0.5px 0.5px -1px rgba($shadow-color, 0.15); //right corner in-bevel shadow
 
-//Strong
-$inset-highlight-strong: inset -2px 0.5px 0.4px -1px rgba($shadow-color, 0.1),
+//bold
+$inset-highlight-bold: inset -2px 0.5px 0.4px -1px rgba($shadow-color, 0.1),
 //right corner in-bevel shadow
 inset -0.5px -1.5px 0.1px rgba($light-color, 0.15),
 //bottom bevel
 inset -1px -2.5px 0.4px -1.5px rgba($light-color, 0.3); //bottom specular
 
-$inset-shadow-strong: inset 1px 1px 6px rgba($shadow-color, 0.3),
+$inset-shadow-bold: inset 1px 1px 6px rgba($shadow-color, 0.3),
 // small top left
 inset 0 0 8px -2px rgba($shadow-color, 0.25),
 // med around

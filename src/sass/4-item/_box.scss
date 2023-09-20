@@ -1,6 +1,7 @@
 /* ================================== */
 /* Backgrounds */
 @use "../0-base/breakpoint" as bp;
+@use "../0-base/size";
 @use "../0-base/color" as *;
 @use "../1-layout/help" as *;
 @use "../1-layout/z-index" as z;
@@ -45,14 +46,14 @@
   @include blur-tint-reg;
 }
 
-@mixin tint-strong {
+@mixin tint-bold {
   background-color: rgba($shadow-color, 0.1);
   -webkit-backdrop-filter: brightness(0.6);
   backdrop-filter: brightness(0.6);
 }
 
-.tint-strong {
-  @include tint-strong;
+.tint-bold {
+  @include tint-bold;
 }
 
 
@@ -77,7 +78,7 @@
 
 .code-bg {
   // width: 100%;
-  @include tint-strong;
+  @include tint-bold;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   scrollbar-width: none;
@@ -90,7 +91,7 @@
     overflow-x: scroll;
   }
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     padding: var(--space-thin);
     @include br.br(md);
     margin: 0;
@@ -115,7 +116,7 @@
 }
 
 
-.full-w-strong {
+.full-w-bold {
   @include fill.glass-fill-xdark;
 
   padding: var(--space-wide) var(--space-thin);
@@ -131,7 +132,7 @@
   border-radius: 0;
   display: grid;
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     @include br.br(lg); 
   }
 }

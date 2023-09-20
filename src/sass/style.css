@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, bold, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details {
   margin: 0;
   padding: 0;
   border: 0;
@@ -85,7 +85,7 @@ button, input {
   --bg: rgb(249, 250, 251);
   --bg-dark: rgb(192, 202, 216);
   --bg-darker: rgb(176, 188, 207);
-  --text-color-strong: rgb(250, 254, 255);
+  --text-color-bold: rgb(250, 254, 255);
   --text-color-reg: rgb(245, 252, 255);
   --text-color-mild: rgb(230, 248, 254);
   --link: rgb(106, 209, 251);

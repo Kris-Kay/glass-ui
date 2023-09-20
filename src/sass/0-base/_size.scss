@@ -40,7 +40,7 @@ $t-shirt-md: $s8;
 $t-shirt-lg: $s10;
 $t-shirt-xl: $s12;
 $t-shirt-2xl: $s16;
-$t-shirt-3xl: $s24; // <- knob
+$t-shirt-3xl: $s24; 
 
 
 /* Scalable T-shirt sizes */
@@ -60,11 +60,11 @@ $t-shirt-3xl: $s24; // <- knob
   --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
   --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     --multiplier: 1.2; // <- knob
   }
 
-  @include bp.breakpoint(lg) {
+  @include bp.bp(lg) {
     --multiplier: 1.5; // <- knob
   }
 }
@@ -94,11 +94,11 @@ $sizes: (
     &-#{$key} {
       #{$property}: calc($value * var(--multiplier));
 
-      @include bp.breakpoint(md) {
+      @include bp.bp(md) {
         #{$property}: calc($value * var(--multiplier));
       }
 
-      @include bp.breakpoint(lg) {
+      @include bp.bp(lg) {
         #{$property}: calc($value * var(--multiplier));
       }
     }
@@ -115,17 +115,17 @@ $sizes: (
   --space-thin: #{$s4}; // 16px
   --space-wide: #{$s4}; // 16px
 
-  @include bp.breakpoint(sm) {
+  @include bp.bp(sm) {
     --space-thin: #{$s4}; // 16px
     --space-wide: #{$s6}; // 24px
   }
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     --space-thin: #{$s6}; //24px
     --space-wide: #{$s10}; // 40px 
   }
 
-  @include bp.breakpoint(lg) {
+  @include bp.bp(lg) {
     --space-thin: #{$s7}; 
     --space-wide: #{$s14}; 
   }
@@ -136,7 +136,7 @@ $sizes: (
 :root {
   --limit-w: calc(100vw - (var(--space-thin) * 2));
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     --limit-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
   }
 }
@@ -148,7 +148,7 @@ $sizes: (
 }
 
 .limit-w { 
-  @include max-w;
+  @include limit-w;
 }
 
 /* Full width */
@@ -168,13 +168,13 @@ $sizes: (
 
   --nav-h: calc(var(--ui-lg) + var(--space-thin));
 
-  @include bp.breakpoint(md) {
+  @include bp.bp(md) {
     --ui-sm: #{$s7};  /* 28px */
     --ui-md: #{$s9};  /* 36px */
     --ui-lg: #{$s10}; /* 40px */
   }
 
-  @include bp.breakpoint(lg) {
+  @include bp.bp(lg) {
     --ui-sm: #{$s8};  /* 32px */
     --ui-md: #{$s10}; /* 40px */
     --ui-lg: #{$s11}; /* 44px */

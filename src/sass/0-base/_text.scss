@@ -20,11 +20,11 @@ html {
 /* Font size MAP */
 /* ================================== */
 $font-sizes: (
-  xs:  var(--text-xs),
-  sm:  var(--text-sm),
-  md:  var(--text-md),
-  lg:  var(--text-lg),
-  xl:  var(--text-xl)
+  "xs":  var(--text-xs),
+  "sm":  var(--text-sm),
+  "md":  var(--text-md),
+  "lg":  var(--text-lg),
+  "xl":  var(--text-xl)
 );
 
 /* font-family: */
@@ -49,71 +49,75 @@ $line-height-sm: calc(0.125rem + 2ex + 0.125rem);
 $line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
 $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
-/* Text */
+/* Text size classes */
+/* ================================== */
+// * Generates a class for every $font-sizes
+@mixin text-size-modifier {
+  @each $key, $value in $font-sizes {
+    &-#{$key} {
+      font-size: $value;
+      @content;
+    }
+  }
+}
+
+/* Body text */
 /* ================================== */
 @mixin body-text {
   font-family: $font-family-body;
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
+  text-shadow: sha.$text-shadow-xs;
 }
 
-@mixin text-size-modifiers {
-  @each $key, $value in $font-sizes {
-    &-#{$key} {
-      font-size: $value;
-      @include body-text;
-    }
-  }
+%body-text {
+  @include body-text;
 }
 
 .text {
-  @include text-size-modifiers;
+  @include text-size-modifier {
+    @extend %body-text;
+  }
 }
 
 /* Title */
 /* ================================== */
-@mixin title {
+@mixin title-text {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
   text-shadow: sha.$text-shadow-lg;
 }
 
-@mixin title-size-modifiers {
-  @each $key, $value in $font-sizes {
-    &-#{$key} {
-      font-size: $value;
-      @include title;
-    }
-  }
+%title-text {
+  @include title-text;
 }
 
 .title {
-  @include title-size-modifiers;
+  @include text-size-modifier {
+    @extend %title-text;
+  }
 }
 
 /* Thin Title */
 /* ================================== */
-@mixin title-thin {
+@mixin thin-title-text {
   font-family: $font-family-title;
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-shadow-md;
+  text-shadow: sha.$text-shadow-sm;
 }
 
-@mixin title-thin-size-modifiers {
-  @each $key, $value in $font-sizes {
-    &-#{$key} {
-      font-size: $value;
-      @include title-thin;
-    }
+%thin-title-text {
+  @include thin-title-text;
+}
+
+.thin-title {
+  @include text-size-modifier {
+    @extend %thin-title-text;
   }
-}
-
-.title-thin {
-  @include title-thin-size-modifiers;
 }
 
 
@@ -125,7 +129,7 @@ body {
   color: color.$text-light-reg;
 }
 
-.list-i {
+li {
   @include body-text;
   font-weight: $font-weight-sm;
 }
@@ -188,14 +192,13 @@ body {
 }
 
 
-
 /* Code */ 
 /* ================================== */
 code {
   font-family: $font-family-code;
   font-size: var(--text-sm);
   color: color.$code-class;
-  line-height: 1.4;
+  line-height: $line-height-lg;
   letter-spacing: $letter-spacing-sm;
 }
 

@@ -1,6 +1,7 @@
 /* ================================== */
 /* UI Demo */
 @use "../0-base" as *;
+@use "../0-base/breakpoint" as bp;
 @use "../1-layout" as *;
 @use "../1-layout/gap";
 @use "../2-visual" as *;
@@ -97,7 +98,7 @@
 }
 
 .glass-demo-flex {
-  // @include breakpoint(lg) {
+  // @include bp.bp(lg) {
   //   justify-self: start;
   //   // margin-left: 8vw;
   // }
@@ -133,7 +134,7 @@
 
     margin-top: 5rem;
 
-    // @include breakpoint(lg) {
+    // @include bp.bp(lg) {
     //   justify-self: start;
     // }
 
@@ -170,7 +171,7 @@
 
   flex-direction: column;
   @include br.br(xl);
-  // padding: var(space-sm);
+  // padding: var(space-thin);
 }
 
 
@@ -184,7 +185,7 @@
     ". . ."
     ". tag .";
 
-    @include breakpoint(md) {
+    @include bp.bp(md) {
       justify-self: end;
       grid-template-areas:
       ". . ."
@@ -199,7 +200,7 @@
     width: fit-content;
     height: fit-content;
 
-    @include breakpoint(md) {
+    @include bp.bp(md) {
       justify-self: end;
     }
 
