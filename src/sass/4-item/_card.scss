@@ -13,7 +13,7 @@
   display: grid;
   gap: var(--xs);
   padding: var(--sm);
-  @include br.br(md);
+  border-radius: var(--md);
 
   .full-w-fill {
     padding: var(--sm);

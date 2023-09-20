@@ -5,25 +5,21 @@
 
 $round: 9999px;
 
-.br {
-  @include size.size-modifiers('border-radius');
-  overflow: hidden;
-}
-
 .br-round {
   border-radius: $round;
   overflow: hidden;
 }
 
-/* border-radiu mixin using size MAP values */
-@mixin br($t-shirt) {
-  @if not map-has-key(size.$sizes, $t-shirt) {
-    @warn "Warning: `#{$t-shirt}` is not a valid size value. Check _size.SCSS for a list of valid values.";
-  } @else {
-    border-radius: map-get(size.$sizes, $t-shirt);
+/* Border radius classes */
+/* ================================== */
+// * Generates a .br- class for every T-shirt size
+// * T-shirt size values scale with viewport width
+.br {
+  @include size.size-modifiers('border-radius') {
     overflow: hidden;
   }
 }
+
 
 /* Nested border radius */  
 /* ================================== */

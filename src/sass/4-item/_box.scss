@@ -83,7 +83,7 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-thin) var(--space-wide);
+  padding: var(--space-thin);
   margin-left: calc(-1 * var(--space-wide));
   margin-right: calc(-1 * var(--space-wide));
 
@@ -93,7 +93,7 @@
 
   @include bp.bp(md) {
     padding: var(--space-thin);
-    @include br.br(md);
+    border-radius: var(--md);
     margin: 0;
   }
 }
@@ -102,7 +102,7 @@
   width: 100%;
   @include fill.glass-fill-dark;
   padding: var(--space-thin);
-  @include br.br(md);
+  border-radius: var(--md);
 }
 
 .diff {
@@ -133,6 +133,6 @@
   display: grid;
 
   @include bp.bp(md) {
-    @include br.br(lg); 
+    border-radius: var(--lg);
   }
 }

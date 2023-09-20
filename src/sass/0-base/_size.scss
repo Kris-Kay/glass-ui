@@ -93,6 +93,7 @@ $sizes: (
   @each $key, $value in $sizes {
     &-#{$key} {
       #{$property}: calc($value * var(--multiplier));
+      @content;
 
       @include bp.bp(md) {
         #{$property}: calc($value * var(--multiplier));
@@ -182,15 +183,11 @@ $sizes: (
 }
 
 
-/* Width & height classes */
+/* Gap classes */
 /* ================================== */
-// * Generates a class for every T-shirt size
+// * Generates a .gap- class for every T-shirt size
 // * T-shirt size values scale with viewport width
-// ? are these useful? 
-// .w {
-//   @include size-modifiers('width');
-// }
 
-// .h {
-//   @include size-modifiers('height');
-// }
+.gap {
+  @include size-modifiers('gap');
+}

@@ -54,7 +54,7 @@
     z-index: -1;
 
     background-color: $btn-1-rest;
-    box-shadow: $bevel-xs;
+    box-shadow: $bevel-sm;
     @include fill.noise-dark;
     @include glass-filter-reg;
   }
@@ -80,7 +80,7 @@
     z-index: -1;
     @include glass-filter-reg;
     background-color: $btn-2-rest;
-    box-shadow: $bevel-xs;
+    box-shadow: $bevel-sm;
     @include fill.noise-dark;
   }
 
@@ -301,7 +301,7 @@
 //     @include pseudo;
 //     z-index: -1;
 //     @include noise;
-//     box-shadow: $bevel-xs;
+//     box-shadow: $bevel-sm;
 //   }
 
 //   &:hover {
@@ -336,7 +336,7 @@
     @include pseudo;
     z-index: -1;
     //  @include noise;
-    box-shadow: $bevel-s;
+    box-shadow: $bevel-sm;
   }
 
   &:hover {
@@ -502,7 +502,7 @@
     @include pseudo;
     z-index: -1;
     @include noise;
-    box-shadow: $bevel-s;
+    box-shadow: $bevel-sm;
   }
 }
 

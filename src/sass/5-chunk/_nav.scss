@@ -54,7 +54,7 @@
   top: var(--ui-lg); 
   right: 0;
   padding: var(--2xs);
-  @include br.br(xs);
+  border-radius: var(--xs);
   box-shadow: sha.$sha-lg;
   cursor: pointer;
   // pointer-events: none;

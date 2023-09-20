@@ -14,7 +14,7 @@
   border-radius: 0;
 
   @include bp.bp(md) {
-    @include br.br(md);
+    border-radius: var(--md);
   }
 
   @include bp.bp(lg) {

@@ -154,7 +154,7 @@
   // background-position: end;
   // background-repeat: no-repeat;
   // z-index: -9;
-  @include br.br(lg);
+  border-radius: var(--lg);
   @include flex-c;
   flex-direction: column;
   gap: 1rem;
@@ -170,7 +170,7 @@
   align-items: center;
 
   flex-direction: column;
-  @include br.br(xl);
+  border-radius: var(--xl);
   // padding: var(space-thin);
 }
 
