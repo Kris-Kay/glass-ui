@@ -182,12 +182,12 @@
   transition: background-color 800ms ease-out;
 
   &:hover {
-    background-color: $btn-1-hover;
+    background-color: $btn1-hover;
     // overflow: hidden;
   }
 
   &:active {
-    background-color: $btn-1-active;
+    background-color: $btn1-active;
     // overflow: hidden;
   }
 }

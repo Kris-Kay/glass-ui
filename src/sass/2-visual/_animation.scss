@@ -1,0 +1,19 @@
+/* ================================== */
+/* Animation */
+/* ================================== */
+
+$speed-xslow: 1000ms;
+$speed-slow:  800ms;
+$speed-reg:   500ms;
+$speed-fast:  300ms;
+$speed-xfast: 100ms;
+
+/* Speed MAP */
+/* ================================== */
+$speeds: (
+  "xslow": $speed-xslow,
+  "slow":  $speed-slow,
+  "reg":   $speed-reg,
+  "fast":  $speed-fast,
+  "xfast": $speed-xfast
+);

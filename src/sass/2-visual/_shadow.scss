@@ -3,15 +3,50 @@
 @use "../0-base/color";
 /* ================================== */
 
-$sha-2xs: 0.5px 0.4px 1px rgba(color.$shadow-color, 0.2),
+/* Shadow Size MAP */
+/* ================================== */
+$shadows:
+  "2xs",
+  "xs",
+  "sm",
+  "md",
+  "lg",
+  "xl",
+  "2xl";
+
+/* Shadow size classes */
+/* ================================== */
+// * Generates a class for every shadow size
+// @mixin shadow-modifier ($property, $prefix) {
+//   @each $key in $shadows {
+//     &-#{$key} {
+//       #{$property}: #{$prefix}-#{$key};
+//     }
+//   }
+// }
+
+// .sha {
+//   @include shadow-modifier(box-shadow, "$sha");
+// }
+
+// .text-sha {
+//   @include shadow-modifier(text-shadow, "$text-sha");
+// }
+
+/* Elevation shadows */
+/* ================================== */
+$sha-2xs: 
+  0.5px 0.4px 1px rgba(color.$shadow-color, 0.2),
   1px 0.75px 1.75px -0.1px rgba(color.$shadow-color, 0.13),
   0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$sha-xs: 1px 0.75px 1.75px -0.1px rgba(color.$shadow-color, 0.18),
+$sha-xs: 
+  1px 0.75px 1.75px -0.1px rgba(color.$shadow-color, 0.18),
   2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.1),
   0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$sha-sm: 1px 0.75px 1.75px -0.25px rgba(color.$shadow-color, 0.06),
+$sha-sm: 
+  1px 0.75px 1.75px -0.25px rgba(color.$shadow-color, 0.06),
   2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.1),
   4px 3px 7px -1px rgba(color.$shadow-color, 0.18),
   0 0 0.2px rgba(color.$shadow-color, 0.08);
@@ -22,126 +57,71 @@ $sha-md:
   8px 6px 14px -1.5px rgba(color.$shadow-color, 0.18),
   0 0 0.2px rgba(color.$shadow-color, 0.08);
 
-$sha-lg: 2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
+$sha-lg: 
+  2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
   3px 2.25px 7px -1px rgba(color.$shadow-color, 0.08),
   6px 4.5px 10.5px -1.5px rgba(color.$shadow-color, 0.13),
   12px 9px 21px -2px rgba(color.$shadow-color, 0.18),
   0 0 0.3px rgba(color.$shadow-color, 0.13);
 
-$sha-xl: 2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
+$sha-xl: 
+  2px 1.5px 3.5px -0.5px rgba(color.$shadow-color, 0.03),
   4px 3px 7px -1px rgba(color.$shadow-color, 0.08),
   8px 6px 14px -1.5px rgba(color.$shadow-color, 0.13),
   16px 12px 28px -2px rgba(color.$shadow-color, 0.18),
   0 0 0.4px rgba(color.$shadow-color, 0.13);
 
-$sha-2xl: 2.5px 2px 4.5px -0.5px rgba(color.$shadow-color, 0.03),
+$sha-2xl: 
+  2.5px 2px 4.5px -0.5px rgba(color.$shadow-color, 0.03),
   5px 3.75px 8.75px -1px rgba(color.$shadow-color, 0.08),
   10px 7.5px 17.5px -1.5px rgba(color.$shadow-color, 0.13),
   20px 15px 35px -2px rgba(color.$shadow-color, 0.18),
   0 0 0.4px rgba(color.$shadow-color, 0.13);
 
-.sha-2xs {
-  box-shadow: $sha-2xs;
-}
 
-.sha-xs {
-  box-shadow: $sha-xs;
-}
+/* Text shadows */
+/* ================================== */
+$text-sha-2xs: 
+  0.1px 0.1px 0.1px rgba(color.$shadow-color, 0.3),
+  0.25px 0.25px 0.5px  rgba(color.$shadow-color, 0.12),  
+  0 0 0.5px rgba(color.$shadow-color, 0.1), 
+  0 0 1px rgba(color.$shadow-color, 0.05);
 
-.sha-sm {
-  box-shadow: $sha-sm;
-}
-
-.sha-sm {
-  box-shadow: $sha-sm;
-}
-
-.sha-md {
-  box-shadow: $sha-md;
-}
-
-.sha-lg {
-  box-shadow: $sha-lg;
-}
-
-.sha-xl {
-  box-shadow: $sha-xl;
-}
-
-.sha-2xl {
-  box-shadow: $sha-2xl;
-}
-
-
-@mixin ele-md {
-  filter: drop-shadow(2px 1.5px 3.5px rgba(color.$shadow-color, 0.1))
-    drop-shadow(4px 3px 7px rgba(color.$shadow-color, 0.15))
-    drop-shadow(8px 6px 14px rgba(color.$shadow-color, 0.2))
-    drop-shadow(0 0 0.2px rgba(color.$shadow-color, 0.1));
-}
-
-
-/* text-shadow: */
-$text-shadow-xs: 
-  0.2px 0.2px 0.2px rgba(color.$shadow-color, 0.25),
+$text-sha-xs: 
+  0.2px 0.2px 0.2px rgba(color.$shadow-color, 0.3),
   0.5px 0.5px 1px  rgba(color.$shadow-color, 0.12),  
   0 0 1px rgba(color.$shadow-color, 0.1), 
   0 0 2px rgba(color.$shadow-color, 0.05);
 
-$text-shadow-sm: 
-  0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.3),
+$text-sha-sm: 
+  0.25px 0.25px 0.25px rgba(color.$shadow-color, 0.4),
   1px 1px 2px rgba(color.$shadow-color, 0.12),  
   0 0 2px rgba(color.$shadow-color, 0.1), 
   0 0 4px rgba(color.$shadow-color, 0.1);
 
-$text-shadow-md: 
-  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.3),
+$text-sha-md: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.4),
   1px 1px 2px rgba(color.$shadow-color, 0.15),  
   0 0 4px rgba(color.$shadow-color, 0.1), 
   0 0 8px rgba(color.$shadow-color, 0.1);
 
-$text-shadow-lg: 
-  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.3),
+$text-sha-lg: 
+  0.5px 0.5px 0.5px rgba(color.$shadow-color, 0.4),
   1px 1px 2px rgba(color.$shadow-color, 0.2), 
   0 0 6px rgba(color.$shadow-color, 0.15), 
   0 0 12px rgba(color.$shadow-color, 0.1); 
 
-$text-shadow-xl: 
-  0.8px 0.8px 0.8px rgba(color.$shadow-color, 0.3),
+$text-sha-xl: 
+  0.8px 0.8px 0.8px rgba(color.$shadow-color, 0.4),
   2px 2px 4px rgba(color.$shadow-color, 0.2), 
   0 0 8px rgba(color.$shadow-color, 0.15), 
   0 0 16px rgba(color.$shadow-color, 0.1); 
 
-.text-sha-xs {
-  text-shadow: $text-shadow-xs;
-}
-
-.text-sha-sm {
-  text-shadow: $text-shadow-sm;
-}
-
-.text-sha-md {
-  text-shadow: $text-shadow-md;
-}
-
-.text-sha-lg {
-  text-shadow: $text-shadow-lg;
-}
-
-.text-sha-xl {
-  text-shadow: $text-shadow-xl;
-}
-
-/* Engrave text */
-/* ================================== */
-@mixin engrave-sm {
-  text-shadow: 
-  0.25px 0.25px 0 rgba(color.$shadow-color, 0.8);
-}
-
-.engrave-sm {
-  @include engrave-sm;
-}
+$text-sha-2xl: 
+  1px 1px 1px rgba(color.$shadow-color, 0.4),
+  2px 2px 4px rgba(color.$shadow-color, 0.2), 
+  0 0 10px rgba(color.$shadow-color, 0.15), 
+  0 0 20px rgba(color.$shadow-color, 0.1); 
 
 
 /* SVG shadows */

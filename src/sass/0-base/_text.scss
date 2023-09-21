@@ -51,7 +51,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* Text size classes */
 /* ================================== */
-// * Generates a class for every $font-sizes
+// * Generates a class for every font size
 @mixin text-size-modifier {
   @each $key, $value in $font-sizes {
     &-#{$key} {
@@ -68,7 +68,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
-  text-shadow: sha.$text-shadow-xs;
+  text-shadow: sha.$text-sha-xs;
 }
 
 %body-text {
@@ -87,7 +87,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-shadow-lg;
+  text-shadow: sha.$text-sha-lg;
 }
 
 %title-text {
@@ -107,7 +107,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-shadow-sm;
+  text-shadow: sha.$text-sha-sm;
 }
 
 %thin-title-text {
@@ -187,7 +187,7 @@ li {
   font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-md;
   text-align: center;
-  text-shadow: sha.$text-shadow-md;
+  text-shadow: sha.$text-sha-md;
   color: color.$text-light-reg;
 }
 
@@ -241,14 +241,14 @@ pre code {
   text-transform: uppercase;
   font-size: var(--text-xs);
   letter-spacing: $letter-spacing-lg;
-  text-shadow: sha.$text-shadow-sm;
+  text-shadow: sha.$text-sha-sm;
 }
 
 .lower-s {
   text-transform: lowercase;
   font-size: var(--text-xs);
   letter-spacing: $letter-spacing-lg;
-  text-shadow: sha.$text-shadow-sm;
+  text-shadow: sha.$text-sha-sm;
 }
 
 .truncate {
