@@ -6,6 +6,7 @@
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../2-visual/shadow" as sha;
+@use "../2-visual/animation" as ani;
 /* ================================== */
 
 /* ================================== */
@@ -179,16 +180,14 @@
   cursor: pointer;
   border-radius: br.$round;
   background-color: transparent;
-  transition: background-color 800ms ease-out;
+  transition: background-color ani.$speed-slow ease-out;
 
   &:hover {
     background-color: $btn1-hover;
-    // overflow: hidden;
   }
 
   &:active {
     background-color: $btn1-active;
-    // overflow: hidden;
   }
 }
 

@@ -30,3 +30,5 @@ $round: 9999px;
 
   border-radius: $br;
 }
+
+// border-radius: max(0px, min(20px, calc((100vw - 100%) * 9999)));

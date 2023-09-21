@@ -9,22 +9,23 @@
 @use "../3-item/button" as btn;
 /* ================================== */
 
-.nav-grid {
+.main-nav {
   position: relative;
   margin: 0 auto;
   @include flex-sb;
-  padding: var(--space-thin);
+  padding: var(--space-thin) 0;
   pointer-events: none;
 }
 
-.nav-ham {
+.main-nav__ham {
   display: none;
+
   &.isClosed {
     display: inline-block;
   }
 }
 
-.nav-x {
+.main-nav__x {
   display: inline-block;
 
   &.isClosed {
@@ -35,12 +36,11 @@
 /* ================================== */
 /* Dropdown */
 /* ================================== */
-.nav-dropdown {
+.dropdown {
   position: relative;
   display: inline-block;
   pointer-events: none;
-  z-index: 100;
-  padding-top: var(--3xs);
+  z-index: z(menu);
   cursor: pointer;
   
   &.isClosed {

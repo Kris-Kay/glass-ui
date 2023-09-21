@@ -105,16 +105,6 @@
   border-radius: var(--md);
 }
 
-// .diff {
-//   color: white;
-//   mix-blend-mode: difference;
-//   // filter: grayscale(100%);
-// }
-
-// .gray {
-//   filter: grayscale(100%);
-// }
-
 
 // .full-w-bold {
 //   @include fill.glass-fill-xdark;
@@ -126,19 +116,12 @@
 // }
 
 
-// NEW sep 12 2023
 .page-section {
   overflow: hidden;
-  @include size.max-w;
-  border-radius: 0;
   display: grid;
-  @include glass-fill-dark;
+  border-radius: 0;
 
   @include bp.bp(md) {
-    border-radius: var(--sm);
-  }
-
-  @include bp.bp(lg) {
     border-radius: var(--md);
   }
 }

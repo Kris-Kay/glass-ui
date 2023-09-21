@@ -32,22 +32,20 @@
 
 
 
-.hide {
-  display:none
+
+
+.js-show-block {
+  display: block;
 }
 
-.show-block {
-  display:block
+.js-show-inline {
+  display: inline;
 }
 
-.show-inline {
-  display:inline
+.js-show-inlineblock {
+  display: inline-block;
 }
 
-.show-inlineblock {
-  display:inline-block
+.js-hide {
+  display: none;
 }
-
-
-
-
