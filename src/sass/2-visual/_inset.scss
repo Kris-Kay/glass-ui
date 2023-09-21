@@ -32,12 +32,11 @@ $inset-md:
 
 
 .inset-glass-md {
-  // pointer-events: none;
   position: relative;
   overflow: hidden;
 
   box-shadow: $inset-md;
-  // background-color: $glass-dark;
+  background-color: $glass-dark;
 
   &::after {
     @include pseudo;
@@ -67,8 +66,6 @@ $inset-md:
   &::before {
     @include pseudo;
     z-index: -2;
-
-    box-shadow: $inset-md;
     @include fill.glass-filter-dark;
     @include fill.noise; 
   }

@@ -47,25 +47,34 @@ $t-shirt-3xl: $s24;
 /* ================================== */
 /* Sizes scale with viewport width */
 :root {
-  --multiplier: 1; // <- knob
-
-  --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
-  --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
-  --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
-  --xs: calc(#{$t-shirt-xs} * var(--multiplier));
-  --sm: calc(#{$t-shirt-sm} * var(--multiplier));
-  --md: calc(#{$t-shirt-md} * var(--multiplier));
-  --lg: calc(#{$t-shirt-lg} * var(--multiplier));
-  --xl: calc(#{$t-shirt-xl} * var(--multiplier));
-  --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
-  --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
+  --4xs: #{$t-shirt-4xs};
+  --3xs: #{$t-shirt-3xs};
+  --2xs: #{$t-shirt-2xs};
+  --xs:  #{$t-shirt-xs};
+  --sm:  #{$t-shirt-sm};
+  --md:  #{$t-shirt-md};
+  --lg:  #{$t-shirt-lg};
+  --xl:  #{$t-shirt-xl};
+  --2xl: #{$t-shirt-2xl};
+  --3xl: #{$t-shirt-3xl};
 
   @include bp.bp(md) {
     --multiplier: 1.2; // <- knob
+
+    --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
+    --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
+    --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
+    --xs: calc(#{$t-shirt-xs} * var(--multiplier));
+    --sm: calc(#{$t-shirt-sm} * var(--multiplier));
+    --md: calc(#{$t-shirt-md} * var(--multiplier));
+    --lg: calc(#{$t-shirt-lg} * var(--multiplier));
+    --xl: calc(#{$t-shirt-xl} * var(--multiplier));
+    --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
+    --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
   }
 
   @include bp.bp(lg) {
-    --multiplier: 1.5; // <- knob
+    --multiplier: 1.4; // <- knob
   }
 }
 
@@ -73,6 +82,7 @@ $t-shirt-3xl: $s24;
 /* ================================== */
 /* Used by modifier mixins */
 $sizes: (
+  "4xs": $t-shirt-4xs,
   "3xs": $t-shirt-3xs,
   "2xs": $t-shirt-2xs,
   "xs": $t-shirt-xs,
@@ -92,7 +102,7 @@ $sizes: (
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &-#{$key} {
-      #{$property}: calc($value * var(--multiplier));
+      #{$property}: $value;
       @content;
 
       @include bp.bp(md) {
@@ -106,6 +116,27 @@ $sizes: (
   }
 }
 
+@mixin xy-size-modifiers($property1, $property2) {
+  @each $key, $value in $sizes {
+
+    &-#{$key} {
+      #{$property1}: $value;
+      #{$property2}: $value;
+
+      @include bp.bp(md) {
+        #{$property1}: calc($value * var(--multiplier));
+        #{$property2}: calc($value * var(--multiplier));
+      }
+
+      @include bp.bp(lg) {
+        #{$property1}: calc($value * var(--multiplier));
+        #{$property2}: calc($value * var(--multiplier));
+      }
+    }
+  }
+}
+
+
 /* Responsive layout edge */
 /* ================================== */
 // * used to create consistent responsive layouts
@@ -114,7 +145,9 @@ $sizes: (
 
 :root {
   --space-thin: #{$s4}; // 16px
-  --space-wide: #{$s4}; // 16px
+  --neg-space-thin: calc(-1 * var(--space-thin));
+  --space-wide: #{$s5}; // 20px
+  --neg-space-wide: calc(-1 * var(--space-wide));
 
   @include bp.bp(sm) {
     --space-thin: #{$s4}; // 16px
@@ -132,24 +165,79 @@ $sizes: (
   }
 }
 
-/* Limit width */
-/* ================================== */
-:root {
-  --limit-w: calc(100vw - (var(--space-thin) * 2));
-
-  @include bp.bp(md) {
-    --limit-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
-  }
+.space-thin {
+  padding: var(--space-thin);
 }
 
-@mixin limit-w {
-  width: 100%;
-  max-width: var(--limit-w);
+.neg-space-thin {
+  margin: var(--neg-space-thin);
+}
+
+.space-wide {
+  padding: var(--space-wide);
   margin: auto;
 }
 
-.limit-w { 
-  @include limit-w;
+.neg-space-wide {
+  margin-left: var(--neg-space-wide);
+  margin-right: var(--neg-space-wide);
+}
+
+/* Limit width */
+/* ================================== */
+body {
+  min-width: 320px;
+}
+
+// .content-w {
+// 	margin-left:auto;
+// 	margin-right:auto;
+// 	width:980px
+// }
+
+// @media only screen and (min-width: 1441px) {
+// 	.viewport-content {
+// 		margin-left:auto;
+// 		margin-right:auto;
+// 		width:980px
+// 	}
+// }
+// @media only screen and (max-width: 1068px) {
+// 	.viewport-content {
+// 		margin-left:auto;
+// 		margin-right:auto;
+// 		width:692px
+// 	}
+// }
+// @media only screen and (max-width: 734px) {
+// 	.viewport-content {
+// 		margin-left:auto;
+// 		margin-right:auto;
+// 		width:87.5%
+// 	}
+// }
+
+
+:root {
+  --max-w: 100%;
+
+  @include bp.bp(md) {
+    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
+  }
+
+  @include bp.bp(xl) {
+    --max-w: 60rem;
+  }
+}
+
+@mixin max-w {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w { 
+  @include max-w;
 }
 
 /* Full width */

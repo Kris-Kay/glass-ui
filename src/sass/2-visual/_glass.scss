@@ -13,20 +13,18 @@
 
 
 
-// .bg-glass-reg {
-//   position: relative;
-//   overflow: hidden;
-//   @include fill.noise;
+.bg-glass-reg {
+  position: relative;
+  overflow: hidden;
 
-//   &::after {
-//     @include pseudo;
-//     z-index: -1;
-
-//     box-shadow: bevel.$bevel-md;
-//     @include fill.noise-dark;
-//     @include fill.glass-fill-reg;
-//   }
-// }
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-md;
+    @include fill.noise;
+    @include fill.glass-fill-reg;
+  }
+}
 
 // .bg-glass-dark {
 //   position: relative;
@@ -173,23 +171,17 @@
 
 
 
-@mixin bg-glass {
-  position: relative;
-  overflow: hidden;
-  @include fill.noise;
+// @mixin bg-glass {
+//   position: relative;
+//   overflow: hidden;
+  
+//   ::after {
+//     @include pseudo;
+//     z-index: -1;
+//     @include fill.noise;
+//   }
+// }
 
-  ::after {
-    @include pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-md;
-    @include fill.noise-dark;
-  }
-}
-
-.bg-glass-reg {
-  @include bg-glass;
-
-  ::after {
-    @include fill.glass-fill-reg;
-  }
-}
+// .bg-glass {
+//   @include bg-glass;
+// }

@@ -11,7 +11,9 @@
   // background-image: url(/assets/textures/noise-texture-100x100.png); 
   // background-image: url(/assets/textures/noise-texture-500x500-grey50.png); 
   // background-image: url(/assets/textures/noise-texture-500x500.png); 
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png); 
+  // background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png); 
+
+  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
   background-repeat: repeat;
 }
@@ -36,30 +38,38 @@
   background-repeat: repeat;
 }
 
-/* Glass tint MAP */
+/* Glass tint list */
 /* ================================== */
-$tints: (
+$tints:
   "xlight",
   "light",
   "reg",
   "dark",
-  "xdark"
-);
+  "xdark";
 
 /* Glass tints */
 /* ================================== */
-// * Generates a class for every tint
-@mixin tint-classes ($property, $prefix) {
-  @each $key in $tints {
-    &-#{$key} {
-      #{$property}: #{$prefix}-#{$key};
-    }
-  }
+/* edit colors in _color.SCSS */
+
+.glass-tint-xlight {
+  background-color: color.$glass-xlight;
 }
 
-// .glass-tint {
-//   @include tint-classes(background-color, "color.$glass");
-// }
+.glass-tint-light {
+  background-color: color.$glass-light;
+}
+
+.glass-tint-reg {
+  background-color: color.$glass-reg;
+}
+
+.glass-tint-dark {
+  background-color: color.$glass-dark;
+}
+
+.glass-tint-xdark {
+  background-color: color.$glass-xdark;
+}
 
 /* Glass Filters */
 /* ================================== */

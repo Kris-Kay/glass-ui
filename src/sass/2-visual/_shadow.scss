@@ -3,7 +3,7 @@
 @use "../0-base/color";
 /* ================================== */
 
-/* Shadow Size MAP */
+/* Shadow Size list */
 /* ================================== */
 $shadows:
   "2xs",
@@ -13,25 +13,6 @@ $shadows:
   "lg",
   "xl",
   "2xl";
-
-/* Shadow size classes */
-/* ================================== */
-// * Generates a class for every shadow size
-// @mixin shadow-modifier ($property, $prefix) {
-//   @each $key in $shadows {
-//     &-#{$key} {
-//       #{$property}: #{$prefix}-#{$key};
-//     }
-//   }
-// }
-
-// .sha {
-//   @include shadow-modifier(box-shadow, "$sha");
-// }
-
-// .text-sha {
-//   @include shadow-modifier(text-shadow, "$text-sha");
-// }
 
 /* Elevation shadows */
 /* ================================== */
@@ -78,6 +59,37 @@ $sha-2xl:
   20px 15px 35px -2px rgba(color.$shadow-color, 0.18),
   0 0 0.4px rgba(color.$shadow-color, 0.13);
 
+  .sha-2xs {
+    box-shadow: $sha-2xs;
+  }
+  
+  .sha-xs {
+    box-shadow: $sha-xs;
+  }
+  
+  .sha-sm {
+    box-shadow: $sha-sm;
+  }
+  
+  .sha-sm {
+    box-shadow: $sha-sm;
+  }
+  
+  .sha-md {
+    box-shadow: $sha-md;
+  }
+  
+  .sha-lg {
+    box-shadow: $sha-lg;
+  }
+  
+  .sha-xl {
+    box-shadow: $sha-xl;
+  }
+  
+  .sha-2xl {
+    box-shadow: $sha-2xl;
+  }
 
 /* Text shadows */
 /* ================================== */
@@ -123,6 +135,25 @@ $text-sha-2xl:
   0 0 10px rgba(color.$shadow-color, 0.15), 
   0 0 20px rgba(color.$shadow-color, 0.1); 
 
+.text-sha-xs {
+  text-shadow: $text-sha-xs;
+}
+
+.text-sha-sm {
+  text-shadow: $text-sha-sm;
+}
+
+.text-sha-md {
+  text-shadow: $text-sha-md;
+}
+
+.text-sha-lg {
+  text-shadow: $text-sha-lg;
+}
+
+.text-sha-xl {
+  text-shadow: $text-sha-xl;
+}
 
 /* SVG shadows */
 /* ================================== */

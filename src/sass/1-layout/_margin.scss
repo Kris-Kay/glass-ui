@@ -22,3 +22,11 @@
 .m-r {
   @include size.size-modifiers('margin-right');
 }
+
+.m-x {
+  @include size.xy-size-modifiers('margin-right', 'margin-left');
+}
+
+.m-y {
+  @include size.xy-size-modifiers('margin-top', 'margin-bottom');
+}

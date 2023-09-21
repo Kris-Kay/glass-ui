@@ -16,69 +16,69 @@
 /* ================================== */
 
 // Used to add contrast to buttons and text
-@mixin tint-mild {
-  background-color: rgba($shadow-color, 0.1);
-  -webkit-backdrop-filter: brightness(0.9);
-  backdrop-filter: brightness(0.9);
-}
+// @mixin tint-mild {
+//   background-color: rgba($shadow-color, 0.1);
+//   -webkit-backdrop-filter: brightness(0.9);
+//   backdrop-filter: brightness(0.9);
+// }
 
-.tint-mild {
-  @include tint-mild;
-}
+// .tint-mild {
+//   @include tint-mild;
+// }
 
-@mixin tint-reg {
-  background-color: rgba($shadow-color, 0.05);
-  -webkit-backdrop-filter: brightness(0.9);
-  backdrop-filter: brightness(0.9);
-}
+// @mixin tint-reg {
+//   background-color: rgba($shadow-color, 0.05);
+//   -webkit-backdrop-filter: brightness(0.9);
+//   backdrop-filter: brightness(0.9);
+// }
 
-.tint-reg {
-  @include tint-reg;
-}
+// .tint-reg {
+//   @include tint-reg;
+// }
 
-@mixin blur-tint-reg {
-  background-color: rgba($shadow-color, 0.05);
-  -webkit-backdrop-filter: blur(32px) brightness(0.9);
-  backdrop-filter: blur(32px) brightness(0.9);
-}
+// @mixin blur-tint-reg {
+//   background-color: rgba($shadow-color, 0.05);
+//   -webkit-backdrop-filter: blur(32px) brightness(0.9);
+//   backdrop-filter: blur(32px) brightness(0.9);
+// }
 
-.blur-tint-reg {
-  @include blur-tint-reg;
-}
+// .blur-tint-reg {
+//   @include blur-tint-reg;
+// }
 
-@mixin tint-bold {
-  background-color: rgba($shadow-color, 0.1);
-  -webkit-backdrop-filter: brightness(0.6);
-  backdrop-filter: brightness(0.6);
-}
+// @mixin tint-bold {
+//   background-color: rgba($shadow-color, 0.1);
+//   -webkit-backdrop-filter: brightness(0.6);
+//   backdrop-filter: brightness(0.6);
+// }
 
-.tint-bold {
-  @include tint-bold;
-}
-
-
-
-.tint-fullwidth-s-reg {
-  @include blur-tint-reg;
-
-  padding: var(--space-thin) var(--space-wide);
-  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-  margin-right: calc(-1 * var(--space-wide));
-  box-shadow: in.$flat-inset-md;
-}
+// .tint-bold {
+//   @include tint-bold;
+// }
 
 
 
-.dark-fullwidth {
-  background-color: rgba($shadow-color, 0.8);
-  padding: var(--space-thin) var(--space-wide);
-  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-  margin-right: calc(-1 * var(--space-wide));
-}
+// .tint-fullwidth-s-reg {
+//   @include blur-tint-reg;
+
+//   padding: var(--space-thin) var(--space-wide);
+//   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+//   margin-right: calc(-1 * var(--space-wide));
+//   box-shadow: in.$flat-inset-md;
+// }
+
+
+
+// .dark-fullwidth {
+//   background-color: rgba($shadow-color, 0.8);
+//   padding: var(--space-thin) var(--space-wide);
+//   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+//   margin-right: calc(-1 * var(--space-wide));
+// }
 
 .code-bg {
   // width: 100%;
-  @include tint-bold;
+  // @include tint-bold;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   scrollbar-width: none;
@@ -105,34 +105,40 @@
   border-radius: var(--md);
 }
 
-.diff {
-  color: white;
-  mix-blend-mode: difference;
-  // filter: grayscale(100%);
-}
+// .diff {
+//   color: white;
+//   mix-blend-mode: difference;
+//   // filter: grayscale(100%);
+// }
 
-.gray {
-  filter: grayscale(100%);
-}
+// .gray {
+//   filter: grayscale(100%);
+// }
 
 
-.full-w-bold {
-  @include fill.glass-fill-xdark;
+// .full-w-bold {
+//   @include fill.glass-fill-xdark;
 
-  padding: var(--space-wide) var(--space-thin);
-  // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
-  // margin-right: calc(-1 * var(--space-thin));
-  box-shadow: in.$flat-inset-md;
-}
+//   padding: var(--space-wide) var(--space-thin);
+//   // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
+//   // margin-right: calc(-1 * var(--space-thin));
+//   box-shadow: in.$flat-inset-md;
+// }
 
 
 // NEW sep 12 2023
 .page-section {
-  @include size.limit-w;
+  overflow: hidden;
+  @include size.max-w;
   border-radius: 0;
   display: grid;
+  @include glass-fill-dark;
 
   @include bp.bp(md) {
-    border-radius: var(--lg);
+    border-radius: var(--sm);
+  }
+
+  @include bp.bp(lg) {
+    border-radius: var(--md);
   }
 }
