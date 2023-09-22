@@ -28,53 +28,40 @@ $s24: calc($root-size * 24); /* 96px 6rem */
 $s28: calc($root-size * 28); /* 112px 7rem */
 
 
-/* Base Static T sizes !Only for setup! */
-/* ================================== */
-/* Used in T-shirt size mixins and variables !do Not use in your project! */
-$t-shirt-4xs: $s1; // <- knob
-$t-shirt-3xs: $s2;
-$t-shirt-2xs: $s4;
-$t-shirt-xs: $s5;
-$t-shirt-sm: $s6;
-$t-shirt-md: $s8;
-$t-shirt-lg: $s10;
-$t-shirt-xl: $s12;
-$t-shirt-2xl: $s16;
-$t-shirt-3xl: $s24; 
-
 
 /* Scalable T-shirt sizes */
 /* ================================== */
 /* Sizes scale with viewport width */
 :root {
-  --4xs: #{$t-shirt-4xs};
-  --3xs: #{$t-shirt-3xs};
-  --2xs: #{$t-shirt-2xs};
-  --xs:  #{$t-shirt-xs};
-  --sm:  #{$t-shirt-sm};
-  --md:  #{$t-shirt-md};
-  --lg:  #{$t-shirt-lg};
-  --xl:  #{$t-shirt-xl};
-  --2xl: #{$t-shirt-2xl};
-  --3xl: #{$t-shirt-3xl};
+  --4xs: #{$s1};
+  --3xs: #{$s2};
+  --2xs: #{$s3};
+  --xs:  #{$s4};
+  --sm:  #{$s6};
+  --md:  #{$s7};
+  --lg:  #{$s10};
+  --xl:  #{$s12};
+  --2xl: #{$s15};
+  --3xl: #{$s24};
 
   @include bp.bp(md) {
-    --multiplier: 1.2; // <- knob
+    --multiplier: 1.5; // <- knob
 
-    --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
-    --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
-    --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
-    --xs: calc(#{$t-shirt-xs} * var(--multiplier));
-    --sm: calc(#{$t-shirt-sm} * var(--multiplier));
-    --md: calc(#{$t-shirt-md} * var(--multiplier));
-    --lg: calc(#{$t-shirt-lg} * var(--multiplier));
-    --xl: calc(#{$t-shirt-xl} * var(--multiplier));
-    --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
-    --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
+    --4xs: calc(#{$s1} * var(--multiplier));
+    --3xs: calc(#{$s2} * var(--multiplier));
+    --2xs: calc(#{$s3} * var(--multiplier));
+    --xs:  calc(#{$s4} * var(--multiplier));
+    --sm:  calc(#{$s6} * var(--multiplier));
+    --md:  calc(#{$s7} * var(--multiplier));
+    --lg:  calc(#{$s10} * var(--multiplier));
+    --xl:  calc(#{$s12} * var(--multiplier));
+    --2xl: calc(#{$s15} * var(--multiplier));
+    --3xl: calc(#{$s24} * var(--multiplier));
+    
   }
 
   @include bp.bp(lg) {
-    --multiplier: 1.4; // <- knob
+    --multiplier: 1.8; // <- knob
   }
 }
 
@@ -82,56 +69,117 @@ $t-shirt-3xl: $s24;
 /* ================================== */
 /* Used by modifier mixins */
 $sizes: (
-  "4xs": $t-shirt-4xs,
-  "3xs": $t-shirt-3xs,
-  "2xs": $t-shirt-2xs,
-  "xs": $t-shirt-xs,
-  "sm": $t-shirt-sm,
-  "md": $t-shirt-md,
-  "lg": $t-shirt-lg,
-  "xl": $t-shirt-xl,
-  "2xl": $t-shirt-2xl,
-  "3xl": $t-shirt-3xl,
+  "4xs": --4xs,
+  "3xs": --3xs,
+  "2xs": --2xs,
+  "xs": --xs,
+  "sm": --sm,
+  "md": --md,
+  "lg": --lg,
+  "xl": --xl,
+  "2xl": --2xl,
+  "3xl": --3xl,
 );
+
+
+/* Scalable T-shirt sizes */
+/* ================================== */
+/* Sizes scale with viewport width */
+// :root {
+//   --4xs: #{$t-shirt-4xs};
+//   --3xs: #{$t-shirt-3xs};
+//   --2xs: #{$t-shirt-2xs};
+//   --xs:  #{$t-shirt-xs};
+//   --sm:  #{$t-shirt-sm};
+//   --md:  #{$t-shirt-md};
+//   --lg:  #{$t-shirt-lg};
+//   --xl:  #{$t-shirt-xl};
+//   --2xl: #{$t-shirt-2xl};
+//   --3xl: #{$t-shirt-3xl};
+
+//   @include bp.bp(md) {
+//     --multiplier: 1.2; // <- knob
+
+//     --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
+//     --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
+//     --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
+//     --xs: calc(#{$t-shirt-xs} * var(--multiplier));
+//     --sm: calc(#{$t-shirt-sm} * var(--multiplier));
+//     --md: calc(#{$t-shirt-md} * var(--multiplier));
+//     --lg: calc(#{$t-shirt-lg} * var(--multiplier));
+//     --xl: calc(#{$t-shirt-xl} * var(--multiplier));
+//     --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
+//     --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
+//   }
+
+//   @include bp.bp(lg) {
+//     --multiplier: 1.4; // <- knob
+//   }
+// }
+
+// /* T-shirt Size MAP */
+// /* ================================== */
+// /* Used by modifier mixins */
+// $sizes: (
+//   "4xs": $t-shirt-4xs,
+//   "3xs": $t-shirt-3xs,
+//   "2xs": $t-shirt-2xs,
+//   "xs": $t-shirt-xs,
+//   "sm": $t-shirt-sm,
+//   "md": $t-shirt-md,
+//   "lg": $t-shirt-lg,
+//   "xl": $t-shirt-xl,
+//   "2xl": $t-shirt-2xl,
+//   "3xl": $t-shirt-3xl,
+// );
 
 /* Size modifier mixin */
 /* ================================== */
 /* Generates size modifier classes */
 /* Used in grid/flex gap, border-radius, margin, and padding */
-
+// TODO write 1 mega modifier mixin! that can also do shadow and text and colors
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &-#{$key} {
-      #{$property}: $value;
+      #{$property}: var($value);
       @content;
-
-      @include bp.bp(md) {
-        #{$property}: calc($value * var(--multiplier));
-      }
-
-      @include bp.bp(lg) {
-        #{$property}: calc($value * var(--multiplier));
-      }
     }
   }
 }
+
+// @mixin size-modifiers($property) {
+//   @each $key, $value in $sizes {
+//     &-#{$key} {
+//       #{$property}: var($value);
+//       @content;
+
+//       @include bp.bp(md) {
+//         #{$property}: calc(var($value) * var(--multiplier));
+//       }
+
+//       @include bp.bp(lg) {
+//         #{$property}: calc(var($value) * var(--multiplier));
+//       }
+//     }
+//   }
+// }
 
 @mixin xy-size-modifiers($property1, $property2) {
   @each $key, $value in $sizes {
 
     &-#{$key} {
-      #{$property1}: $value;
-      #{$property2}: $value;
+      #{$property1}: var($value);
+      #{$property2}: var($value);
 
-      @include bp.bp(md) {
-        #{$property1}: calc($value * var(--multiplier));
-        #{$property2}: calc($value * var(--multiplier));
-      }
+      // @include bp.bp(md) {
+      //   #{$property1}: calc($value * var(--multiplier));
+      //   #{$property2}: calc($value * var(--multiplier));
+      // }
 
-      @include bp.bp(lg) {
-        #{$property1}: calc($value * var(--multiplier));
-        #{$property2}: calc($value * var(--multiplier));
-      }
+      // @include bp.bp(lg) {
+      //   #{$property1}: calc($value * var(--multiplier));
+      //   #{$property2}: calc($value * var(--multiplier));
+      // }
     }
   }
 }
@@ -286,4 +334,9 @@ body {
 
 .gap {
   @include size-modifiers('gap');
+}
+
+
+.size {
+  @include size-modifiers('width');
 }

@@ -214,5 +214,6 @@
 .size-demo-item {
   background-color: rgba($snow90, 0.7);
   border-radius: 0.1rem;
-  height: var(--md);
+  height: $s10;
+  margin: $s3 0;
 }
