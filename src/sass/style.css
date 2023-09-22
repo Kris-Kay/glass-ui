@@ -780,7 +780,7 @@ label {
 /* ================================== */
 /* Button size and text */
 /* ================================== */
-.btn-s {
+.btn-sm {
   height: 1.75rem;
   width: -moz-max-content;
   width: max-content;
@@ -801,7 +801,7 @@ label {
   text-shadow: 0 0 0.25px rgba(0, 10, 30, 0.3), 0 0 2px rgba(0, 10, 30, 0.25), 0 0 8px rgba(0, 10, 30, 0.2);
   padding: 2.5px 0.7rem 0 0.7rem;
 }
-.btn-s img {
+.btn-sm img {
   width: auto;
   height: 0.75rem;
   align-self: center;
@@ -809,15 +809,15 @@ label {
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));
 }
 
-.btn-s.icon-right {
+.btn-sm.icon-right {
   padding: 2.5px 0.55rem 0 0.7rem;
 }
 
-.btn-s.icon-left {
+.btn-sm.icon-left {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
 
-.btn-m {
+.btn-md {
   height: 2rem;
   width: -moz-max-content;
   width: max-content;
@@ -838,7 +838,7 @@ label {
   line-height: 1rem;
   padding: 2px 0.85rem 0 0.85rem;
 }
-.btn-m img {
+.btn-md img {
   width: auto;
   height: 1rem;
   align-self: center;
@@ -846,15 +846,15 @@ label {
   filter: drop-shadow(0 0 0.75px rgba(0, 10, 30, 0.4));
 }
 
-.btn-m.icon-right {
+.btn-md.icon-right {
   padding: 2px 0.75rem 0 0.85rem;
 }
 
-.btn-m.icon-left {
+.btn-md.icon-left {
   padding: 2px 0.85rem 0 0.75rem;
 }
 
-.btn-l {
+.btn-lg {
   height: 2.5rem;
   width: -moz-max-content;
   width: max-content;
@@ -875,7 +875,7 @@ label {
   text-shadow: 0 0 0.5px rgba(0, 10, 30, 0.3), 0 0 3px rgba(0, 10, 30, 0.25), 0 0 12px rgba(0, 10, 30, 0.2);
   padding: 3px 1.2rem 0 1.2rem;
 }
-.btn-l img {
+.btn-lg img {
   width: auto;
   height: 1.25rem;
   align-self: center;
@@ -883,18 +883,18 @@ label {
   filter: drop-shadow(0 0 0.8px rgba(0, 10, 30, 0.4));
 }
 
-.btn-l.icon-right {
+.btn-lg.icon-right {
   padding: 3px 1rem 0 1.2rem;
 }
 
-.btn-l.icon-left {
+.btn-lg.icon-left {
   padding: 3px 1.2rem 0 1rem;
 }
 
 /* ================================== */
 /* Icon buttons */
 /* ================================== */
-.icon-btn-s {
+.icon-btn-sm {
   width: 1.75rem;
   height: 1.75rem;
   display: flex;
@@ -904,13 +904,13 @@ label {
   pointer-events: auto;
   cursor: pointer;
 }
-.icon-btn-s img {
+.icon-btn-sm img {
   width: auto;
   height: 1.75rem;
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));
 }
 
-.circle-btn-s {
+.circle-btn-sm {
   width: 1.75rem;
   height: 1.75rem;
   display: flex;
@@ -920,7 +920,7 @@ label {
   pointer-events: auto;
   cursor: pointer;
 }
-.circle-btn-s img {
+.circle-btn-sm img {
   width: auto;
   height: 0.9rem;
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));

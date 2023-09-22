@@ -1,6 +1,7 @@
 /* ================================== */
 /* Fill */
 @use "../0-base/color";
+@use "../0-base/breakpoint" as bp;
 /* ================================== */
 
 /* Noise textures */
@@ -73,37 +74,48 @@ $tints:
 
 /* Glass Filters */
 /* ================================== */
-$blur: 3vw;
 $satu: 1.3;
+
+:root {
+  --blur: 28px;
+
+  @include bp.bp(md) {
+    --blur: 36px;
+  }
+
+  @include bp.bp(lg) {
+    --blur: 48px;
+  }
+}
 
 @mixin glass-filter-xlight {
   $bright: 0.98;
-  -webkit-backdrop-filter:  blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter: blur($blur) brightness($bright) saturate($satu);
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
 }
 
 @mixin glass-filter-light {
   $bright: 0.95;
-  -webkit-backdrop-filter:  blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter: blur($blur) brightness($bright) saturate($satu);
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
 }
 
 @mixin glass-filter-reg {
   $bright: 0.92;
-  -webkit-backdrop-filter:  blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter: blur($blur) brightness($bright) saturate($satu);
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
 }
 
 @mixin glass-filter-dark {
   $bright: 0.85;
-  -webkit-backdrop-filter:  blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter: blur($blur) brightness($bright) saturate($satu);
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
 }
 
 @mixin glass-filter-xdark {
   $bright: 0.4;
-  -webkit-backdrop-filter: blur($blur) brightness($bright)  saturate(0.8);
-  backdrop-filter: blur($blur) brightness($bright) saturate(0.8);
+  -webkit-backdrop-filter: blur(var(--blur)) brightness($bright)  saturate(0.8);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate(0.8);
 }
 
 /* Glass filters */

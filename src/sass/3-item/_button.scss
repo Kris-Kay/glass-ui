@@ -41,7 +41,7 @@
 
 /* Button size and text */
 /* ================================== */
-.btn-s {
+.btn-sm {
   $inner-h: 0.75em; 
   height: var(--ui-sm); 
   @include btn-base;
@@ -59,15 +59,15 @@
   }
 }
 
-.btn-s.icon-right {
+.btn-sm.icon-right {
   padding: 2.5px 0.55rem 0 0.7rem;
 }
 
-.btn-s.icon-left {
+.btn-sm.icon-left {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
 
-.btn-m {
+.btn-md {
   $inner-h: 0.95em;
   height: var(--ui-md); 
   @include btn-base;
@@ -85,11 +85,11 @@
   }
 }
 
-.btn-m.icon-right {
+.btn-md.icon-right {
   padding: 2px 0.75rem 0 0.85rem;
 }
 
-.btn-m.icon-left {
+.btn-md.icon-left {
   padding: 2px 0.85rem 0 0.75rem;
 }
 

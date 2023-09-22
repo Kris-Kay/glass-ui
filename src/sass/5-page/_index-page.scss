@@ -33,7 +33,7 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  will-change: scroll-position;
+
 
   &.dark {
     background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
@@ -86,7 +86,7 @@ body{
 /* ================================== */
 
 .body-grid {
-  @include vh100;
+  // @include vh100;
 
   display: grid;
   grid-template-columns: 1fr;

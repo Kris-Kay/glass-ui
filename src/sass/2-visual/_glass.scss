@@ -116,24 +116,21 @@
   }
 }
 
-
-//Primary btn glass
-.btn1-glass {
+.btn2-glass {
   position: relative;
   overflow: hidden;
   box-shadow: sha.$sha-xs;
+  background-color: transparent;
   transition: background-color ani.$speed-slow ease-out;
 
   &::after {
     @include pseudo;
     z-index: -1;
-
-    background-color: $btn1-rest;
     box-shadow: bevel.$bevel-sm;
-    @include fill.noise-dark-sm;
-    @include fill.glass-filter-reg;
+    @include fill.noise-sm;
+    @include fill.glass-fill-dark;
   }
- 
+
   &:hover {
     background-color: $btn1-hover;
   }
@@ -143,31 +140,57 @@
   }
 }
 
+//Primary btn glass
+// .btn1-glass {
+//   position: relative;
+//   overflow: hidden;
+//   box-shadow: sha.$sha-xs;
+//   transition: background-color ani.$speed-slow ease-out;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: -1;
+
+//     background-color: $btn1-rest;
+//     box-shadow: bevel.$bevel-sm;
+//     @include fill.noise-dark-sm;
+//     @include fill.glass-filter-reg;
+//   }
+ 
+//   &:hover {
+//     background-color: $btn1-hover;
+//   }
+
+//   &:active {
+//     background-color: $btn1-active;
+//   }
+// }
+
 //Secondary btn glass
-.btn2-glass {
-  position: relative;
-  overflow: hidden;
-  box-shadow: sha.$sha-2xs;
-  transition: background-color ani.$speed-slow ease-out;
+// .btn2-glass {
+//   position: relative;
+//   overflow: hidden;
+//   box-shadow: sha.$sha-2xs;
+//   transition: background-color ani.$speed-slow ease-out;
 
-  &::after {
-    @include pseudo;
-    z-index: -1;
+//   &::after {
+//     @include pseudo;
+//     z-index: -1;
 
-    background-color: $btn2-rest;
-    box-shadow: bevel.$bevel-sm;
-    @include fill.noise-dark-sm;
-    @include fill.glass-filter-reg;
-  }
+//     background-color: $btn2-rest;
+//     box-shadow: bevel.$bevel-sm;
+//     @include fill.noise-dark-sm;
+//     @include fill.glass-filter-reg;
+//   }
 
-  &:hover {
-    background-color: $btn2-hover;
-  }
+//   &:hover {
+//     background-color: $btn2-hover;
+//   }
 
-  &:active {
-    background-color: $btn2-active;
-  }
-}
+//   &:active {
+//     background-color: $btn2-active;
+//   }
+// }
 
 
 

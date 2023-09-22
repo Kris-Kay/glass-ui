@@ -28,12 +28,3 @@
     });
   });
 })();
-
-
-  $(function () {
-    $("#js-tutorial-two").on( "click", function(event) {
-      event.preventDefault();
-      // $(window).scrollTop(0);
-      $("#content").load("/tutorial.html");
-    }); 
-  });
