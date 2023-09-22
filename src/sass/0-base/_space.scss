@@ -1,0 +1,112 @@
+/* ================================== */
+/* Space */
+@use "breakpoint" as bp;
+@use "size";
+/* ================================== */
+
+/* Responsive layout edge */
+/* ================================== */
+// * used to create consistent responsive layouts
+// * thin = small change at each bp, wide= starts small and gets very big
+
+:root {
+  --space-thin: #{size.$s4}; // 16px
+  --space-wide: #{size.$s5}; // 20px
+
+  @include bp.bp(sm) {
+    --space-thin: #{size.$s4}; // 16px
+    --space-wide: #{size.$s6}; // 24px
+  }
+
+  @include bp.bp(md) {
+    --space-thin: #{size.$s6}; //24px
+    --space-wide: #{size.$s10}; // 40px
+  }
+
+  @include bp.bp(lg) {
+    --space-thin: #{size.$s7};
+    --space-wide: #{size.$s14};
+  }
+}
+
+.space-thin {
+  padding: var(--space-thin);
+}
+
+.neg-space-thin {
+  margin-left: calc(-1 * var(--space-thin));
+  margin-right: calc(-1 * var(--space-thin));
+}
+
+.space-wide {
+  padding: var(--space-wide);
+  // margin: auto;
+}
+
+.neg-space-wide {
+  margin-left: calc(-1 * var(--space-wide));
+  margin-right: calc(-1 * var(--space-wide));
+}
+
+/* Limit width */
+/* ================================== */
+:root {
+  --max-w: 100%;
+
+  @include bp.bp(md) {
+    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
+  }
+
+  @include bp.bp(xl) {
+    --max-w: 60rem;
+  }
+}
+
+@mixin max-w {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w {
+  @include max-w;
+}
+
+.max-w-gutter {
+  padding: var(--space-thin);
+
+  @include bp.bp(md) {
+    padding: var(--space-thin) 0;
+  }
+}
+
+/* Full width */
+.full-w,
+img {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Responsive UI height */
+/* ================================== */
+/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
+
+:root {
+  --ui-sm: #{size.$s6}; /* 24px */
+  --ui-md: #{size.$s8}; /* 32px */
+  --ui-lg: #{size.$s10}; /* 40px */
+
+  --nav-h: calc(var(--ui-lg) + var(--space-thin));
+
+  @include bp.bp(md) {
+    --ui-sm: #{size.$s7}; /* 28px */
+    --ui-md: #{size.$s9}; /* 36px */
+    --ui-lg: #{size.$s10}; /* 40px */
+  }
+
+  @include bp.bp(lg) {
+    --ui-sm: #{size.$s8}; /* 32px */
+    --ui-md: #{size.$s10}; /* 40px */
+    --ui-lg: #{size.$s11}; /* 44px */
+  }
+}

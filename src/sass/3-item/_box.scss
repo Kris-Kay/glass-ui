@@ -122,6 +122,6 @@
   border-radius: 0;
 
   @include bp.bp(md) {
-    border-radius: var(--md);
+    border-radius: var(--sm);
   }
 }

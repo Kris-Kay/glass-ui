@@ -2,6 +2,7 @@
 /* UI Demo */
 @use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
+@use "../0-base/color";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
@@ -96,7 +97,7 @@
   @include flex-r;
 }
 
-.glass-demo-flex {
+// .glass-demo-flex {
   // @include bp.bp(lg) {
   //   justify-self: start;
   //   // margin-left: 8vw;
@@ -106,7 +107,7 @@
   // display: grid;
   // gap: 1rem;
 
-  @include flex-r;
+  // @include flex-r;
 
   // :nth-child(2) {
   //   margin: 8rem 0 0 -4rem;
@@ -138,7 +139,7 @@
     // }
 
   }
-}
+
 
 .cards-grid {
   width: 100%;
@@ -210,9 +211,12 @@
   }
 }
 
+.size-demo {
+  width: 100%;
+}
 
-.size-demo-item {
-  background-color: rgba($snow90, 0.7);
+.size-demo__box {
+  background-color: rgba(color.$snow90, 0.7);
   border-radius: 0.1rem;
   height: $s10;
   margin: $s3 0;

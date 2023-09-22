@@ -1,11 +1,11 @@
 /* ================================== */
-/* Size */
+/* Sizes */
 @use "breakpoint" as bp;
 /* ================================== */
 
 /* Static Size Values */
 /* ================================== */
-$root-size: 0.25rem; // <- knob
+$root-size: 0.25rem; // <= configure me
 
 $s1: calc($root-size * 1); /* 4px  0.25rem */
 $s2: calc($root-size * 2); /* 8px  0.5rem */
@@ -28,10 +28,9 @@ $s24: calc($root-size * 24); /* 96px 6rem */
 $s28: calc($root-size * 28); /* 112px 7rem */
 
 
-
-/* Scalable T-shirt sizes */
+/* T-shirt sizes */
 /* ================================== */
-/* Sizes scale with viewport width */
+// * Scale with viewport width */
 :root {
   --4xs: #{$s1};
   --3xs: #{$s2};
@@ -45,7 +44,7 @@ $s28: calc($root-size * 28); /* 112px 7rem */
   --3xl: #{$s24};
 
   @include bp.bp(md) {
-    --multiplier: 1.5; // <- knob
+    --multiplier: 1.3; // <= configure me
 
     --4xs: calc(#{$s1} * var(--multiplier));
     --3xs: calc(#{$s2} * var(--multiplier));
@@ -57,11 +56,10 @@ $s28: calc($root-size * 28); /* 112px 7rem */
     --xl:  calc(#{$s12} * var(--multiplier));
     --2xl: calc(#{$s15} * var(--multiplier));
     --3xl: calc(#{$s24} * var(--multiplier));
-    
   }
 
   @include bp.bp(lg) {
-    --multiplier: 1.8; // <- knob
+    --multiplier: 1.6; // <= configure me
   }
 }
 
@@ -81,62 +79,9 @@ $sizes: (
   "3xl": --3xl,
 );
 
-
-/* Scalable T-shirt sizes */
-/* ================================== */
-/* Sizes scale with viewport width */
-// :root {
-//   --4xs: #{$t-shirt-4xs};
-//   --3xs: #{$t-shirt-3xs};
-//   --2xs: #{$t-shirt-2xs};
-//   --xs:  #{$t-shirt-xs};
-//   --sm:  #{$t-shirt-sm};
-//   --md:  #{$t-shirt-md};
-//   --lg:  #{$t-shirt-lg};
-//   --xl:  #{$t-shirt-xl};
-//   --2xl: #{$t-shirt-2xl};
-//   --3xl: #{$t-shirt-3xl};
-
-//   @include bp.bp(md) {
-//     --multiplier: 1.2; // <- knob
-
-//     --4xs: calc(#{$t-shirt-4xs} * var(--multiplier));
-//     --3xs: calc(#{$t-shirt-3xs} * var(--multiplier));
-//     --2xs: calc(#{$t-shirt-2xs} * var(--multiplier));
-//     --xs: calc(#{$t-shirt-xs} * var(--multiplier));
-//     --sm: calc(#{$t-shirt-sm} * var(--multiplier));
-//     --md: calc(#{$t-shirt-md} * var(--multiplier));
-//     --lg: calc(#{$t-shirt-lg} * var(--multiplier));
-//     --xl: calc(#{$t-shirt-xl} * var(--multiplier));
-//     --2xl: calc(#{$t-shirt-2xl} * var(--multiplier));
-//     --3xl: calc(#{$t-shirt-3xl} * var(--multiplier));
-//   }
-
-//   @include bp.bp(lg) {
-//     --multiplier: 1.4; // <- knob
-//   }
-// }
-
-// /* T-shirt Size MAP */
-// /* ================================== */
-// /* Used by modifier mixins */
-// $sizes: (
-//   "4xs": $t-shirt-4xs,
-//   "3xs": $t-shirt-3xs,
-//   "2xs": $t-shirt-2xs,
-//   "xs": $t-shirt-xs,
-//   "sm": $t-shirt-sm,
-//   "md": $t-shirt-md,
-//   "lg": $t-shirt-lg,
-//   "xl": $t-shirt-xl,
-//   "2xl": $t-shirt-2xl,
-//   "3xl": $t-shirt-3xl,
-// );
-
 /* Size modifier mixin */
 /* ================================== */
-/* Generates size modifier classes */
-/* Used in grid/flex gap, border-radius, margin, and padding */
+/* Generates .classes using $sizes map */
 // TODO write 1 mega modifier mixin! that can also do shadow and text and colors
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
@@ -147,196 +92,26 @@ $sizes: (
   }
 }
 
-// @mixin size-modifiers($property) {
-//   @each $key, $value in $sizes {
-//     &-#{$key} {
-//       #{$property}: var($value);
-//       @content;
-
-//       @include bp.bp(md) {
-//         #{$property}: calc(var($value) * var(--multiplier));
-//       }
-
-//       @include bp.bp(lg) {
-//         #{$property}: calc(var($value) * var(--multiplier));
-//       }
-//     }
-//   }
-// }
-
 @mixin xy-size-modifiers($property1, $property2) {
   @each $key, $value in $sizes {
 
     &-#{$key} {
       #{$property1}: var($value);
       #{$property2}: var($value);
-
-      // @include bp.bp(md) {
-      //   #{$property1}: calc($value * var(--multiplier));
-      //   #{$property2}: calc($value * var(--multiplier));
-      // }
-
-      // @include bp.bp(lg) {
-      //   #{$property1}: calc($value * var(--multiplier));
-      //   #{$property2}: calc($value * var(--multiplier));
-      // }
     }
   }
 }
 
-
-/* Responsive layout edge */
+/* Width classes */
 /* ================================== */
-// * used to create consistent responsive layouts
-// * also used in negative margines for edge-to-edge image/bg
-// * thin = small change at each bp, wide= starts small and gets very big
-
-:root {
-  --space-thin: #{$s4}; // 16px
-  --neg-space-thin: calc(-1 * var(--space-thin));
-  --space-wide: #{$s5}; // 20px
-  --neg-space-wide: calc(-1 * var(--space-wide));
-
-  @include bp.bp(sm) {
-    --space-thin: #{$s4}; // 16px
-    --space-wide: #{$s6}; // 24px
-  }
-
-  @include bp.bp(md) {
-    --space-thin: #{$s6}; //24px
-    --space-wide: #{$s10}; // 40px 
-  }
-
-  @include bp.bp(lg) {
-    --space-thin: #{$s7}; 
-    --space-wide: #{$s14}; 
-  }
+// * Generates a .class for every T-shirt size
+.w {
+  @include size-modifiers('width');
 }
-
-.space-thin {
-  padding: var(--space-thin);
-}
-
-.neg-space-thin {
-  margin: var(--neg-space-thin);
-}
-
-.space-wide {
-  padding: var(--space-wide);
-  margin: auto;
-}
-
-.neg-space-wide {
-  margin-left: var(--neg-space-wide);
-  margin-right: var(--neg-space-wide);
-}
-
-/* Limit width */
-/* ================================== */
-body {
-  min-width: 320px;
-}
-
-// .content-w {
-// 	margin-left:auto;
-// 	margin-right:auto;
-// 	width:980px
-// }
-
-// @media only screen and (min-width: 1441px) {
-// 	.viewport-content {
-// 		margin-left:auto;
-// 		margin-right:auto;
-// 		width:980px
-// 	}
-// }
-// @media only screen and (max-width: 1068px) {
-// 	.viewport-content {
-// 		margin-left:auto;
-// 		margin-right:auto;
-// 		width:692px
-// 	}
-// }
-// @media only screen and (max-width: 734px) {
-// 	.viewport-content {
-// 		margin-left:auto;
-// 		margin-right:auto;
-// 		width:87.5%
-// 	}
-// }
-
-
-:root {
-  --max-w: 100%;
-
-  @include bp.bp(md) {
-    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
-  }
-
-  @include bp.bp(xl) {
-    --max-w: 60rem;
-  }
-}
-
-@mixin max-w {
-  max-width: var(--max-w);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.max-w { 
-  @include max-w;
-}
-
-.max-w-gutter {
-  padding: var(--space-thin);
-
-  @include bp.bp(md) {
-    padding: var(--space-thin) 0;
-  }
-}
-
-/* Full width */
-.full-w, img {
-  width: 100%;
-  max-width: 100vw;
-}
-
-/* Responsive UI height */
-/* ================================== */
-/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
-
-:root {
-  --ui-sm: #{$s6};   /* 24px */
-  --ui-md: #{$s8};   /* 32px */
-  --ui-lg: #{$s10};  /* 40px */
-
-  --nav-h: calc(var(--ui-lg) + var(--space-thin));
-
-  @include bp.bp(md) {
-    --ui-sm: #{$s7};  /* 28px */
-    --ui-md: #{$s9};  /* 36px */
-    --ui-lg: #{$s10}; /* 40px */
-  }
-
-  @include bp.bp(lg) {
-    --ui-sm: #{$s8};  /* 32px */
-    --ui-md: #{$s10}; /* 40px */
-    --ui-lg: #{$s11}; /* 44px */
-  }
-}
-
 
 /* Gap classes */
 /* ================================== */
-// * Generates a .gap- class for every T-shirt size
-// * T-shirt size values scale with viewport width
-
+// * Generates a .class for every T-shirt size
 .gap {
   @include size-modifiers('gap');
-}
-
-
-.size {
-  @include size-modifiers('width');
 }

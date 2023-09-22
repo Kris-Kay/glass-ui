@@ -13,7 +13,6 @@
   position: relative;
   margin: 0 auto;
   @include flex-sb;
-  padding: var(--space-thin) 0;
   pointer-events: none;
 }
 

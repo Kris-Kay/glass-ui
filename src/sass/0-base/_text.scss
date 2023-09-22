@@ -233,23 +233,29 @@ pre code {
     font-weight: $font-weight-lg;
   }
 }
+
 .upper {
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-lg;
+  @include text-size-modifier {
+    text-transform: uppercase;
+
+    font-family: $font-family-title;
+    font-weight: $font-weight-sm;
+    letter-spacing: $letter-spacing-md;
+    line-height: $line-height-sm;
+    text-shadow: sha.$text-sha-sm;
+  }
 }
 
-.upper-s {
-  text-transform: uppercase;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-lg;
-  text-shadow: sha.$text-sha-sm;
-}
+.lower {
+  @include text-size-modifier {
+    text-transform: lowercase;
 
-.lower-s {
-  text-transform: lowercase;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-lg;
-  text-shadow: sha.$text-sha-sm;
+    font-family: $font-family-title;
+    font-weight: $font-weight-sm;
+    letter-spacing: $letter-spacing-md;
+    line-height: $line-height-sm;
+    text-shadow: sha.$text-sha-sm;
+  }
 }
 
 .truncate {
