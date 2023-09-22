@@ -24,19 +24,6 @@ main, article, aside, figure, footer, header, nav, section, details, summary {
   display: block;
 }
 
-html {
-  // overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-html, body {
-  cursor: default;
-  min-height: 100vh;
-  height: fit-content;
-  width: 100%;
-  max-width: 100vw;
-}
-
 a,
 ul,
 ol,
@@ -64,6 +51,23 @@ button,
 body {
   margin: 0;
   padding: 0;
+}
+
+html {
+  // overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  cursor: default;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  max-width: 100vw;
+}
+
+body {
+  background-color: color.$bg-color;
 }
 
 body,
@@ -101,7 +105,7 @@ button:disabled {
 :focus {
   outline: 1px solid rgba(color.$sky95, 0.4);
   outline-offset: 1px;
-  box-shadow: 0 0 2px rgba(color.$sky50, 0.4);
+  box-shadow: 0 0 2px rgba(color.$ink10, 0.6);
 }
 
 ::-moz-focus-inner {
@@ -144,6 +148,4 @@ video,
 progress {
   vertical-align: baseline;
 }
-
-
 

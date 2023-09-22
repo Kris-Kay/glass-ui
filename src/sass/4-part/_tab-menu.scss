@@ -10,17 +10,18 @@
 /* ================================== */
 
 .tab-menu {
-  padding: 3px;
+
   width: fit-content;
   height: var(--ui-lg);
   margin: auto;
   @include flex-c;
-  border-radius: 9px;
+  gap: var(--4xs);
+  // border-radius: 9px;
 
-  // --padding: 3px;
-  // --tab-br: 0.4em;
-  // padding: var(--padding);
-  // @include outer-br (var(--tab-br), var(--padding));
+  --padding: 3px;
+  padding: var(--padding);
+  --tab-br: 8px;
+  @include outer-br (var(--tab-br), var(--padding));
 }
 
 .tab {

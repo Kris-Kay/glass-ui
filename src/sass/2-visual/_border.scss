@@ -25,7 +25,7 @@ $round: 9999px;
 /* ================================== */
 @mixin outer-br ($inner-br, $padding) {
   $r: calc($inner-br + $padding);
-  $f: calc(($r * 12) / 100);
+  $f: calc(($r * 3) / 100);
   $br: calc($r - $f);
 
   border-radius: $br;

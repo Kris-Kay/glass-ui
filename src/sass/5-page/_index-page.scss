@@ -2,17 +2,13 @@
 /* index.html styles */
 @use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
+@use "../0-base/color";
 @use "../1-layout" as *;
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../3-item" as *;
 @use "../4-part" as *;
 /* ================================== */
-
-
-body{
-  background-color: white;
-}
 
 .background {
   position: fixed;
@@ -25,9 +21,9 @@ body{
   max-width: 100vw;
   height: 100vh;
   min-height: 100vh;
+  max-height: 100vh;
   display: block;
-  
-  background-color: $bg-color;
+
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -67,51 +63,12 @@ body{
 }
 
 
-@mixin vh100 {
-  width: 100%;
-  max-width: 100vw;
-  height: fit-content;
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-.vh100 {
-  @include vh100;
-}
-
-
-
-/* ================================== */
-/* Whole page layout */
-/* ================================== */
-
-.body-grid {
-  // @include vh100;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: var(--nav-h) auto auto;
-  grid-template-areas: 
-    "topnav"
-    "content"
-    "footer";
-  justify-items: center;
-}
-
-nav {
-  grid-area: topnav;
-  width: 100%;
-}
-
 .content {
-  grid-area: content;
-  width: 100%;
+  display: block;
   height: fit-content;
 }
 
 footer {
-  grid-area: footer;
-  width: 100%;
   height: fit-content;
   align-self: end;
 }

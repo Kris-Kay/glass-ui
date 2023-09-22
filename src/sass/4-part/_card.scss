@@ -10,7 +10,7 @@
 
 .card {
   display: grid;
-  gap: var(--xs);
+  gap: var(--sm);
   padding: var(--sm);
   border-radius: var(--md);
 
@@ -21,3 +21,4 @@
     box-shadow: in.$flat-inset-md;
   }
 }
+

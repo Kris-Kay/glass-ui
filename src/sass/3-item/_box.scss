@@ -120,7 +120,8 @@
   overflow: hidden;
   display: grid;
   border-radius: 0;
-
+  width: 100%;
+  
   @include bp.bp(md) {
     border-radius: var(--sm);
   }
