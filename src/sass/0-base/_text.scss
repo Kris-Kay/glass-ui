@@ -12,9 +12,9 @@
 html {
   --text-xs: clamp(0.8rem, 4vw - 1rem, 1rem);
   --text-sm: clamp(1rem, 0.3vw + 1rem, 1.188rem);;
-  --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.5rem);
-  --text-lg: clamp(1.25rem, 0.9vw + 1rem, 2rem);
-  --text-xl: clamp(2rem, 3.4vw + 1rem, 3rem);
+  --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.75rem);
+  --text-lg: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  --text-xl: clamp(2rem, 3vw + 1rem, 3rem);
 }
 
 /* Font size MAP */

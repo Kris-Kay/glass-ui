@@ -141,30 +141,30 @@
 }
 
 //Primary btn glass
-// .btn1-glass {
-//   position: relative;
-//   overflow: hidden;
-//   box-shadow: sha.$sha-xs;
-//   transition: background-color ani.$speed-slow ease-out;
+.btn1-glass {
+  position: relative;
+  overflow: hidden;
+  box-shadow: sha.$sha-xs;
+  transition: background-color ani.$speed-slow ease-out;
 
-//   &::after {
-//     @include pseudo;
-//     z-index: -1;
+  &::after {
+    @include pseudo;
+    z-index: -1;
 
-//     background-color: $btn1-rest;
-//     box-shadow: bevel.$bevel-sm;
-//     @include fill.noise-dark-sm;
-//     @include fill.glass-filter-reg;
-//   }
+    background-color: $btn1-rest;
+    box-shadow: bevel.$bevel-sm;
+    @include fill.noise-dark-sm;
+    @include fill.glass-filter-reg;
+  }
  
-//   &:hover {
-//     background-color: $btn1-hover;
-//   }
+  &:hover {
+    background-color: $btn1-hover;
+  }
 
-//   &:active {
-//     background-color: $btn1-active;
-//   }
-// }
+  &:active {
+    background-color: $btn1-active;
+  }
+}
 
 //Secondary btn glass
 // .btn2-glass {
