@@ -24,9 +24,9 @@
 }
 
 .tagline {
-  width: min(100%, 448px);
+  width: min(100%, 450px);
 
-  // @include bp.bp(lg) {
-  //   width: 480px;
-  // }
+  @include bp.bp(lg) {
+    width: 460px;
+  }
 }

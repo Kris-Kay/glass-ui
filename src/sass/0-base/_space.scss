@@ -103,10 +103,19 @@ img {
 
 .space-wide {
   padding: var(--space-wide);
-  // margin: auto;
 }
 
-.neg-space-wide {
+.space-wide-y {
+  padding-top: var(--space-wide);
+  padding-bottom: var(--space-wide);
+}
+
+.space-wide-x {
+  padding-left: var(--space-wide);
+  padding-right: var(--space-wide);
+}
+
+.neg-space-wide-x {
   margin-left: calc(-1 * var(--space-wide));
   margin-right: calc(-1 * var(--space-wide));
 }

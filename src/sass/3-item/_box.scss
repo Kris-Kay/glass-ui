@@ -123,6 +123,28 @@
   width: 100%;
   
   @include bp.bp(md) {
-    border-radius: var(--sm);
+    border-radius: var(--lg);
+  }
+}
+
+.section__header {
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+  padding: var(--space-thin);
+  margin-top: var(--xs);
+
+  @include bp.bp(md) {
+    border-radius: var(--lg) var(--lg) 0 0;
+  }
+}
+
+.section__end {
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+
+  @include bp.bp(md) {
+    border-radius: 0 0 var(--lg) var(--lg);
   }
 }

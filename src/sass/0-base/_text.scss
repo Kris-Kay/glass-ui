@@ -16,8 +16,8 @@
   /* sm: 16px → 20px */
   --text-sm: clamp(1rem, 0.35vw + 1rem, 1.25rem);
 
-  /* md: 20px → 28px */
-  --text-md: clamp(1.25rem, 1.2vw + 1rem, 1.75rem);
+  /* md: 20px → 24px */
+  --text-md: clamp(1.25rem, 1.2vw + 1rem, 1.5rem);
 
   /* lg: 28px → 40px */
   --text-lg: clamp(1.75rem, 3vw + 1rem, 2.5rem);
@@ -76,7 +76,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 /* ================================== */
 @mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-xs;
+  font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
   text-shadow: sha.$text-sha-xs;
