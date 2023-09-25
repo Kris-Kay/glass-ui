@@ -10,14 +10,14 @@
 
 .card {
   display: grid;
-  gap: var(--sm);
-  padding: var(--sm);
-  border-radius: var(--sm);
+  gap: var(--lg);
+  padding: var(--lg);
+  border-radius: var(--lg);
 
   .full-w-fill {
-    padding: var(--sm);
-    margin-left: calc((-1 * var(--sm)) + 0.5px);
-    margin-right: calc(-1 * var(--sm));
+    padding: var(--lg);
+    margin-left: calc((-1 * var(--lg)) + 0.5px);
+    margin-right: calc(-1 * var(--lg));
     box-shadow: in.$flat-inset-md;
   }
 }

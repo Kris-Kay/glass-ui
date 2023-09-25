@@ -11,8 +11,8 @@
 /* ================================== */
 
 .atf {
-  min-height: calc(100vh - (var(--nav-h) + (var(--page-edge) * 2)));
-  min-height: calc(100svh - (var(--nav-h) + (var(--page-edge) * 2)));
+  min-height: calc(100vh - (var(--nav-h) + (var(--space-thin) * 2)));
+  min-height: calc(100svh - (var(--nav-h) + (var(--space-thin) * 2)));
 
   display: grid;
   justify-items: center;  
