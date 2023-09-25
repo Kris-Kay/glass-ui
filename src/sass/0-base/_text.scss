@@ -19,11 +19,11 @@
   /* md: 20px → 24px */
   --text-md: clamp(1.25rem, 1.2vw + 1rem, 1.5rem);
 
-  /* lg: 28px → 40px */
-  --text-lg: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  /* lg: 24px → 36px */
+  --text-lg: clamp(1.5rem, 3vw + 1rem, 2.25rem);
 
-  /* xl: 36px → 52px */
-  --text-xl: clamp(2.25rem, 3.25vw + 1rem, 3.25rem);
+  /* xl: 36px → 48px */
+  --text-xl: clamp(2.25rem, 3.2vw + 1rem, 3rem);
 }
 
 

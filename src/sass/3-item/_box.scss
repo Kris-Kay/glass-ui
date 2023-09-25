@@ -116,23 +116,17 @@
 // }
 
 
-.page-section {
-  overflow: hidden;
-  display: grid;
-  border-radius: 0;
-  width: 100%;
-  
-  @include bp.bp(md) {
-    border-radius: var(--lg);
-  }
-}
-
 .section__header {
+  display: grid;
+  gap: size.$s1;
   overflow: hidden;
   border-radius: 0;
   width: 100%;
   padding: var(--space-thin);
-  margin-top: var(--xs);
+
+  p {
+    margin-top: size.$s1;
+  }
 
   @include bp.bp(md) {
     border-radius: var(--lg) var(--lg) 0 0;
