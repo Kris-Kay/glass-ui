@@ -61,7 +61,7 @@
 // .tint-fullwidth-s-reg {
 //   @include blur-tint-reg;
 
-//   padding: var(--space-thin) var(--space-wide);
+//   padding: var(--page-edge) var(--space-wide);
 //   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
 //   margin-right: calc(-1 * var(--space-wide));
 //   box-shadow: in.$flat-inset-md;
@@ -71,7 +71,7 @@
 
 // .dark-fullwidth {
 //   background-color: rgba($shadow-color, 0.8);
-//   padding: var(--space-thin) var(--space-wide);
+//   padding: var(--page-edge) var(--space-wide);
 //   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
 //   margin-right: calc(-1 * var(--space-wide));
 // }
@@ -83,7 +83,7 @@
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-thin);
+  padding: var(--page-edge);
   margin-left: calc(-1 * var(--space-wide));
   margin-right: calc(-1 * var(--space-wide));
 
@@ -92,7 +92,7 @@
   }
 
   @include bp.bp(md) {
-    padding: var(--space-thin);
+    padding: var(--page-edge);
     border-radius: var(--md);
     margin: 0;
   }
@@ -101,7 +101,7 @@
 .dark-round-rect {
   width: 100%;
   @include fill.glass-fill-dark;
-  padding: var(--space-thin);
+  padding: var(--page-edge);
   border-radius: var(--md);
 }
 
@@ -109,9 +109,9 @@
 // .full-w-bold {
 //   @include fill.glass-fill-xdark;
 
-//   padding: var(--space-wide) var(--space-thin);
-//   // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
-//   // margin-right: calc(-1 * var(--space-thin));
+//   padding: var(--space-wide) var(--page-edge);
+//   // margin-left: calc((-1 * var(--page-edge)) + 0.5px);
+//   // margin-right: calc(-1 * var(--page-edge));
 //   box-shadow: in.$flat-inset-md;
 // }
 

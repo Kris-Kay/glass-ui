@@ -130,7 +130,7 @@
 
     flex-direction: column;
     border-radius: br.$round;
-    padding: var(--space-thin);
+    padding: var(--page-edge);
 
     margin-top: 5rem;
 
@@ -171,7 +171,7 @@
 
   flex-direction: column;
   border-radius: var(--xl);
-  // padding: var(space-thin);
+  // padding: var(page-edge);
 }
 
 

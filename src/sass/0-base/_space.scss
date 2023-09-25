@@ -10,37 +10,42 @@
 // * thin = small change at each bp, wide= starts small and gets very big
 
 :root {
-  --space-thin: #{size.$s3}; // 12px
-  --space-wide: #{size.$s5}; // 20px
+  --page-edge: #{size.$s4}; // 16px
+  --space-wide: #{size.$s4}; // 16px
 
   @include bp.bp(sm) {
-    --space-thin: #{size.$s4}; // 16px
-    --space-wide: #{size.$s6}; // 24px
+    --page-edge: #{size.$s5}; // 20px
+    --space-wide: #{size.$s5}; // 20px
   }
 
   @include bp.bp(md) {
-    --space-thin: #{size.$s5}; //20px
+    --page-edge: #{size.$s6}; // 24px
     --space-wide: #{size.$s10}; // 40px
   }
 
   @include bp.bp(lg) {
-    --space-thin: #{size.$s7};
-    --space-wide: #{size.$s16};
+    --page-edge: #{size.$s7}; // 28px
+    --space-wide: #{size.$s16}; // 64px
+  }
+
+  @include bp.bp(xl) {
+    --page-edge: #{size.$s8}; // 32px
+    --space-wide: #{size.$s20}; // 80px
   }
 }
 
-.space-thin {
-  padding: var(--space-thin);
+.page-edge {
+  padding: var(--page-edge);
 }
 
-.space-thin-y {
-  padding-top: var(--space-thin);
-  padding-bottom: var(--space-thin);
+.page-edge-y {
+  padding-top: var(--page-edge);
+  padding-bottom: var(--page-edge);
 }
 
-.neg-space-thin {
-  margin-left: calc(-1 * var(--space-thin));
-  margin-right: calc(-1 * var(--space-thin));
+.neg-page-edge {
+  margin-left: calc(-1 * var(--page-edge));
+  margin-right: calc(-1 * var(--page-edge));
 }
 
 .space-wide {
@@ -59,12 +64,12 @@
   --max-w: 100%;
 
   @include bp.bp(md) {
-    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
+    --max-w: min(calc(100vw - (var(--page-edge) * 2)), 60rem);
   }
 
-  @include bp.bp(xl) {
-    --max-w: 60rem;
-  }
+  // @include bp.bp(xl) {
+  //   --max-w: 60rem;
+  // }
 }
 
 @mixin max-w {
@@ -79,7 +84,7 @@
 }
 
 .max-w-gutter {
-  padding: 0 var(--space-thin);
+  padding: 0 var(--page-edge);
   // height: fit-content;
 
   @include bp.bp(md) {
@@ -103,7 +108,7 @@ img {
   --ui-md: #{size.$s8}; /* 32px */
   --ui-lg: #{size.$s10}; /* 40px */
 
-  --nav-h: calc(var(--ui-lg) + var(--space-thin));
+  --nav-h: calc(var(--ui-lg) + var(--page-edge));
 
   @include bp.bp(md) {
     --ui-sm: #{size.$s7}; /* 28px */
