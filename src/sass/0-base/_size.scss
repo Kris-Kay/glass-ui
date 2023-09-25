@@ -7,67 +7,100 @@
 /* ================================== */
 $root-size: 0.25rem; // <= configure me
 
-$s1: calc($root-size * 1); /* 4px  0.25rem */
-$s2: calc($root-size * 2); /* 8px  0.5rem */
-$s3: calc($root-size * 3); /* 12px 0.75rem */
-$s4: calc($root-size * 4); /* 16px 1rem */
-$s5: calc($root-size * 5); /* 20px 1.25rem */
-$s6: calc($root-size * 6); /* 24px 1.5rem */
-$s7: calc($root-size * 7); /* 28px 1.75rem */
-$s8: calc($root-size * 8); /* 32px 2rem */
-$s9: calc($root-size * 9); /* 36px 2.25rem */
+$s1: calc($root-size * 1);   /* 4px  0.25rem */
+$s2: calc($root-size * 2);   /* 8px  0.5rem */
+$s3: calc($root-size * 3);   /* 12px 0.75rem */
+$s4: calc($root-size * 4);   /* 16px 1rem */
+$s5: calc($root-size * 5);   /* 20px 1.25rem */
+$s6: calc($root-size * 6);   /* 24px 1.5rem */
+$s7: calc($root-size * 7);   /* 28px 1.75rem */
+$s8: calc($root-size * 8);   /* 32px 2rem */
+$s9: calc($root-size * 9);   /* 36px 2.25rem */
 $s10: calc($root-size * 10); /* 40px 2.5rem */
 $s11: calc($root-size * 11); /* 44px 2.75rem */
 $s12: calc($root-size * 12); /* 48px 3rem */
-$s13: calc($root-size * 13); /* 52px 3.25rem */
-$s14: calc($root-size * 14); /* 56px 3.5rem */
-$s15: calc($root-size * 15); /* 60px 3.75rem */
 $s16: calc($root-size * 16); /* 64px 4rem */
 $s20: calc($root-size * 20); /* 80px 5rem */
-$s24: calc($root-size * 24); /* 96px 6rem */
-$s28: calc($root-size * 28); /* 112px 7rem */
 
 
-/* T-shirt sizes */
+/* Dynamic T-shirt sizes */
 /* ================================== */
-// * Scale with viewport width */
+// * Sizes scale with viewport width */
+// https://utopia.fyi/space/calculator/
 :root {
-  --4xs: #{$s1};
-  --3xs: #{$s2};
-  --2xs: #{$s3};
-  --xs:  #{$s4};
-  --sm:  #{$s6};
-  --md:  #{$s7};
-  --lg:  #{$s10};
-  --xl:  #{$s12};
-  --2xl: #{$s15};
-  --3xl: #{$s24};
+  /* 3xs: 4px → 6px */
+  --3xs: clamp(0.25rem, 0.21rem + 0.21vw, 0.38rem);
 
-  @include bp.bp(md) {
-    --multiplier: 1.3; // <= configure me
+  /* 2xs: 8px → 12px */
+  --2xs: clamp(0.50rem, 0.42rem + 0.42vw, 0.75rem);
 
-    --4xs: calc(#{$s1} * var(--multiplier));
-    --3xs: calc(#{$s2} * var(--multiplier));
-    --2xs: calc(#{$s3} * var(--multiplier));
-    --xs:  calc(#{$s4} * var(--multiplier));
-    --sm:  calc(#{$s6} * var(--multiplier));
-    --md:  calc(#{$s7} * var(--multiplier));
-    --lg:  calc(#{$s10} * var(--multiplier));
-    --xl:  calc(#{$s12} * var(--multiplier));
-    --2xl: calc(#{$s15} * var(--multiplier));
-    --3xl: calc(#{$s24} * var(--multiplier));
-  }
+  /* xs: 12px → 18px */
+  --xs: clamp(0.75rem, 0.63rem + 0.63vw, 1.13rem);
 
-  @include bp.bp(lg) {
-    --multiplier: 1.6; // <= configure me
-  }
+  /* sm: 16px → 24px */
+  --sm: clamp(1.00rem, 0.83rem + 0.83vw, 1.50rem);
+
+  /* md: 20px → 30px */
+  --md: clamp(1.25rem, 1.04rem + 1.04vw, 1.88rem);
+
+  /* lg: 24px → 36px */
+  --lg: clamp(1.50rem, 1.25rem + 1.25vw, 2.25rem);
+
+  /* xl: 32px → 48px */
+  --xl: clamp(2.00rem, 1.67rem + 1.67vw, 3.00rem);
+
+  /* 2xl: 40px → 60px */
+  --2xl: clamp(2.50rem, 2.08rem + 2.08vw, 3.75rem);
+
+  /* 3xl: 48px → 72px */
+  --3xl: clamp(3.00rem, 2.50rem + 2.50vw, 4.50rem);
+
+  /* 4xl: 64px → 96px */
+  --4xl: clamp(4.00rem, 3.33rem + 3.33vw, 6.00rem);
+
+  /* 5xl: 80px → 120px */
+  --5xl: clamp(5.00rem, 4.17rem + 4.17vw, 7.50rem);
+
+
+  // --multi: 1.5;
+  // /* 3xs: px → px */
+  // --3xs: clamp(#{$s1}, 0.21rem + 0.21vw, calc(#{$s1} * var(--multi)));
+
+  // /* 2xs: px → px */
+  // --2xs: clamp(#{$s2}, 0.42rem + 0.42vw, calc(#{$s2} * var(--multi)));
+
+  // /* xs: px → px */
+  // --xs: clamp(#{$s3}, 0.63rem + 0.63vw, calc(#{$s3} * var(--multi)));
+
+  // /* sm: px → px */
+  // --sm: clamp(#{$s4}, 0.83rem + 0.83vw, calc(#{$s4} * var(--multi)));
+
+  // /* md: px → px */
+  // --md: clamp(#{$s5}, 1.04rem + 1.04vw, calc(#{$s5} * var(--multi)));
+
+  // /* lg: px → px */
+  // --lg: clamp(#{$s6}, 1.25rem + 1.25vw, calc(#{$s6} * var(--multi)));
+
+  // /* xl: px → px */
+  // --xl: clamp(#{$s8}, 1.67rem + 1.67vw, calc(#{$s8} * var(--multi)));
+
+  // /* 2xl: px → px */
+  // --2xl: clamp(#{$s10}, 2.08rem + 2.08vw, calc(#{$s10} * var(--multi)));
+
+  // /* 3xl: px → px */
+  // --3xl: clamp(#{$s12}, 2.50rem + 2.50vw, calc(#{$s12} * var(--multi)));
+
+  // /* 4xl: px → px */
+  // --4xl: clamp(#{$s16}, 3.33rem + 3.33vw, calc(#{$s16} * var(--multi)));
+
+  // /* 5xl: px → px */
+  // --5xl: clamp(#{$s20}, 4.17rem + 4.17vw, calc(#{$s20} * var(--multi)));
 }
 
 /* T-shirt Size MAP */
 /* ================================== */
 /* Used by modifier mixins */
 $sizes: (
-  "4xs": --4xs,
   "3xs": --3xs,
   "2xs": --2xs,
   "xs": --xs,
@@ -77,6 +110,8 @@ $sizes: (
   "xl": --xl,
   "2xl": --2xl,
   "3xl": --3xl,
+  "4xl": --4xl,
+  "5xl": --5xl,
 );
 
 /* Size modifier mixin */

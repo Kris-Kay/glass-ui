@@ -9,13 +9,23 @@
 /* credit to Adrian Bece for interactive fluid typography editor */
 /* https://modern-fluid-typography.vercel.app/ */
 /* use this tool to fine-tune your fluid typography range */
-html {
-  --text-xs: clamp(0.8rem, 4vw - 1rem, 1rem);
-  --text-sm: clamp(1rem, 0.3vw + 1rem, 1.188rem);;
-  --text-md: clamp(1.188rem, 0.7vw + 1rem, 1.75rem);
+:root {
+  /* xs: 14px → 16px */
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+
+  /* sm: 16px → 20px */
+  --text-sm: clamp(1rem, 0.35vw + 1rem, 1.25rem);
+
+  /* md: 20px → 28px */
+  --text-md: clamp(1.25rem, 1.2vw + 1rem, 1.75rem);
+
+  /* lg: 28px → 40px */
   --text-lg: clamp(1.75rem, 3vw + 1rem, 2.5rem);
-  --text-xl: clamp(2rem, 3vw + 1rem, 3rem);
+
+  /* xl: 36px → 52px */
+  --text-xl: clamp(2.25rem, 3.25vw + 1rem, 3.25rem);
 }
+
 
 /* Font size MAP */
 /* ================================== */

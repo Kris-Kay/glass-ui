@@ -10,7 +10,7 @@
 // * thin = small change at each bp, wide= starts small and gets very big
 
 :root {
-  --space-thin: #{size.$s4}; // 16px
+  --space-thin: #{size.$s3}; // 12px
   --space-wide: #{size.$s5}; // 20px
 
   @include bp.bp(sm) {
@@ -19,13 +19,13 @@
   }
 
   @include bp.bp(md) {
-    --space-thin: #{size.$s6}; //24px
+    --space-thin: #{size.$s5}; //20px
     --space-wide: #{size.$s10}; // 40px
   }
 
   @include bp.bp(lg) {
     --space-thin: #{size.$s7};
-    --space-wide: #{size.$s14};
+    --space-wide: #{size.$s16};
   }
 }
 
