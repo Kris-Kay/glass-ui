@@ -14,8 +14,8 @@
   // background-image: url(/assets/textures/noise-texture-500x500-grey50.png); 
   // background-image: url(/assets/textures/noise-texture-500x500.png); 
   // background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png); 
-
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
+  // background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png), url(/assets/textures/noise-texture-100x100.png);
   background-size: 100px;
   background-repeat: repeat;
 }
@@ -29,8 +29,8 @@
 }
 
 @mixin noise-sm {
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png); 
-  background-size: 20px;
+  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png); 
+  background-size: 50px;
   background-repeat: repeat;
 }
 

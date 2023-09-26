@@ -11,7 +11,8 @@ $bevel-sm:
   inset -1.4px -2px 1.8px -3px rgba(color.$light-color, 0.5); //bottom thin
 
 $bevel-md: 
-  inset 1px 1px 0.4px rgba(color.$light-color, 0.1), //top-left bevel
+  // inset 1px 1px 0 rgba(color.$light-color, 0.4), //top-left bevel
+  inset 1px 1px 0.2px rgba(color.$light-color, 0.2), //top-left bevel
   inset 2px 2px 1px -2.4px rgba(color.$light-color, 0.8), //top-left specular highlight
   inset -2px -2px 0.4px -2.4px rgba(color.$light-color, 0.1), //bottom-right specular
   inset 0 -0.5px 1px -1px rgba(color.$light-color, 0.5); //bottom thin

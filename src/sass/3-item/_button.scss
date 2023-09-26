@@ -12,6 +12,18 @@
 /* ================================== */
 /* Buttons */
 /* ================================== */
+.btn {
+  width: max-content; // to stop stretching in flex layouts 
+  @include flex-c;
+  @include btn-text;
+  border-radius: br.$round;
+  $inner-h: 0.95rem;
+  height: var(--ui-md); 
+  font-size: $inner-h;
+  line-height: $inner-h;
+  padding: 0 1.2rem;
+}
+
 
 @mixin btn-base {
   width: max-content; // to stop stretching in flex layouts 
@@ -42,7 +54,7 @@
 /* Button size and text */
 /* ================================== */
 .btn-sm {
-  $inner-h: 0.75em; 
+  $inner-h: 0.75rem; 
   height: var(--ui-sm); 
   @include btn-base;
   gap: 0.3rem;
@@ -68,7 +80,7 @@
 }
 
 .btn-md {
-  $inner-h: 0.95em;
+  $inner-h: 0.95rem;
   height: var(--ui-md); 
   @include btn-base;
   gap: 0.35rem;
@@ -94,15 +106,14 @@
 }
 
 .btn-lg {
-  $inner-h: 1.1em; 
-
+  $inner-h: 1.1rem; 
   height: var(--ui-lg); 
   @include btn-base;
   gap: 0.4rem;
   font-size: $inner-h;
   line-height: $inner-h;
   padding: 1px 1.2rem 0 1.2rem;
-  z-index: 10;
+  z-index: 20;
 
   & img {
     width: auto;
