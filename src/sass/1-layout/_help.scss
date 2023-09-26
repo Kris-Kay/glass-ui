@@ -30,6 +30,27 @@
   transform:translate(-50%,-50%);
 }
 
+.sidescroll-wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:hover {
+    overflow-x: scroll;
+  }
+}
+
+.sidescroll {
+  flex: 0 0 auto;
+  // margin-right: var(--space-thin);
+}
 
 @mixin vh100 {
   width: 100%;

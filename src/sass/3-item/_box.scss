@@ -77,31 +77,30 @@
 // }
 
 .code-bg {
-  // width: 100%;
-  // @include tint-bold;
+
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   scrollbar-width: none;
   
-  padding: var(--space-thin);
-  margin-left: calc(-1 * var(--space-wide));
-  margin-right: calc(-1 * var(--space-wide));
+  // padding: var(--space-thin);
+  // margin-left: calc(-1 * var(--space-wide));
+  // margin-right: calc(-1 * var(--space-wide));
 
   &:hover {
     overflow-x: scroll;
   }
 
-  @include bp.bp(md) {
-    padding: var(--space-thin);
-    border-radius: var(--md);
-    margin: 0;
-  }
+  // @include bp.bp(md) {
+  //   padding: var(--space-thin);
+  //   border-radius: var(--md);
+  //   margin: 0;
+  // }
 }
 
 .dark-round-rect {
-  width: 100%;
-  @include fill.glass-fill-dark;
-  padding: var(--space-thin);
+  // width: 100%;
+  background-color: $glass-dark;
+  // padding: var(--space-thin);
   border-radius: var(--md);
 }
 
@@ -118,7 +117,6 @@
 
 .section__header {
   display: grid;
-  gap: size.$s1;
   overflow: hidden;
   border-radius: 0;
   width: 100%;

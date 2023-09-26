@@ -12,7 +12,7 @@
   display: grid;
   gap: var(--lg);
   padding: var(--lg);
-  border-radius: var(--xl);
+  border-radius: var(--lg);
 
   .full-w-fill {
     padding: var(--lg);
@@ -22,3 +22,15 @@
   }
 }
 
+
+.space-thin .full-w-fill {
+  margin-left: calc((-1 * var(--space-thin)) + 0.5px);
+  margin-right: calc(-1 * var(--space-thin));
+  box-shadow: in.$flat-inset-md;
+}
+
+.space-wide .full-w-fill {
+  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
+  margin-right: calc(-1 * var(--space-wide));
+  box-shadow: in.$flat-inset-md;
+}

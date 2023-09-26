@@ -84,7 +84,11 @@
     border-radius: inherit;
     overflow: hidden;
     z-index: -1;
-    box-shadow: inset 1px 1px 0.4px rgba(250, 254, 255, 0.1), inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1), inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);
+    box-shadow: 
+      inset 1px 1px 0.4px rgba(250, 254, 255, 0.1), 
+      inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), 
+      inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1), 
+      inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);
     background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
     background-size: 100px;
     background-repeat: repeat;
