@@ -83,25 +83,11 @@
 
     <div class="glass-fill-xdark grid section__end">
 
-      <div class="sidescroll-wrap">
+      <!-- <div class="sidescroll-wrap">
         <div class="sidescroll space-thin">
-          <pre><code class="c-class">.bg-glass-reg {</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
-          <br>
-          <pre><code class="c-prop">  box-shadow: </code></pre>
-          <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
-          <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
-          <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
-          <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
-          <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
-          <br>
-          <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
-          <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
-          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
-          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
-          <pre><code class="c-class">}</code></pre>
+
       </div>
-      </div>
+      </div> -->
 
       <div class="space-thin">
         <div class="space-thin grid gap-xs dark-round-rect">
@@ -130,16 +116,50 @@
 
       <div class="sidescroll-wrap">
         <div class="sidescroll space-thin">
-          <pre><code class="c-class">.frosted-glass::after {</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+
+          <pre><code class="c-class">.card-glass {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+          <pre><code class="c-class">}</code></pre>
+
+          <br>
+
+          <pre><code class="c-class">.card-glass::after {</code></pre>
+
           <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
           <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+          <pre><code class="c-prop">  pointer-events: <span class="c-value">none</span>;</code></pre>
           <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
-          <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
-          <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
-          <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+          <br>
+
+          <pre><code class="c-prop">  z-index: <span class="c-value">-1</span>;</code></pre>
+
+          <br>
+          <pre><code class="c-prop">  box-shadow: </code></pre>
+          <pre><code class="c-value">   inset 1px 1px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), </code></pre>
+          <pre><code class="c-value">   inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);</code></pre>
+
+          <br>
+
+          <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+          <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+          <br>
+
+          <pre><code class="c-prop">  background-color: <span class="c-value">rgba(0, 3, 10, 0.1)</span>;</code></pre>
+
+          <br>
+          
+          <pre><code class="c-prop">  -webkit-backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.92) saturate(1.3)</span>;</code></pre>
+          <pre><code class="c-prop">  backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.92) saturate(1.3)</span>;</code></pre>
   
           <pre><code class="c-class">}</code></pre>
+
         </div>
       </div>
 
