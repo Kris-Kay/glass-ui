@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
 // html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details {
 //   margin: 0;
 //   padding: 0;
@@ -53,22 +59,6 @@ body {
   padding: 0;
 }
 
-html {
-  // overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-html, body {
-  cursor: default;
-  min-height: 100vh;
-  height: fit-content;
-  width: 100%;
-  max-width: 100vw;
-}
-
-body {
-  background-color: color.$bg-color;
-}
 
 body,
 input,
@@ -93,6 +83,11 @@ input {
   text-decoration: none;
 }
 
+a, button {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 // button {
 //   -webkit-box-sizing: content-box;
 //   box-sizing: content-box;
@@ -113,15 +108,8 @@ button:disabled {
   padding: 0;
 }
 
-
 p {
   text-align: left;
-}
-
-a,
-button {
-  cursor: pointer;
-  pointer-events: auto;
 }
 
 ol,
@@ -140,7 +128,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 
 audio,
 canvas,

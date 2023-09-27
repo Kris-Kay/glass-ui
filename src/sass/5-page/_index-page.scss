@@ -24,6 +24,7 @@
   max-height: 100vh;
   display: block;
 
+  background-color: color.$bg-color;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -62,6 +63,12 @@
   }
 }
 
+.body-grid {
+  height: fit-content;
+  min-height: 100vh;
+  display: grid;
+
+}
 
 .content {
   display: block;
