@@ -125,7 +125,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   @include thin-title-text;
 }
 
-.thin-title {
+.title-thin {
   @include text-size-modifier {
     @extend %thin-title-text;
   }
