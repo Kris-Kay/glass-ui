@@ -114,11 +114,6 @@
 //   box-shadow: in.$flat-inset-md;
 // }
 
-.full-w-fill { // < layout controlled by parent element
-  /* visual */
-  background-color: color.$glass-dark;
-  box-shadow: in.$flat-inset-md;
-}
 
 .space-thin > .full-w-fill {
   margin-left: calc((-1 * var(--space-thin)) + 0.5px);

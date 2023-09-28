@@ -17,12 +17,14 @@
   /* visual */
   @include glass.bg-glass-reg;
 
-  > .full-w-fill { // < edit visual styling in _bg.SCSS
+  >.full-w-fill { 
     /* layout */
     padding: var(--space);
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: calc(-1 * var(--space));
+
+    /* visual */
+    background-color: color.$glass-dark;
+    box-shadow: in.$flat-inset-md;
   }
 }
-
-

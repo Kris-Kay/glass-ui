@@ -18,7 +18,7 @@
   --ui-md: #{size.$s8}; /* 32px */
   --ui-lg: #{size.$s10}; /* 40px */
 
-  --nav-h: calc(var(--ui-lg) + var(--space-thin));
+  --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
 
   @include bp.bp(sm) {
     --space-thin: #{size.$s5}; // 20px

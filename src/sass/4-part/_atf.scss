@@ -1,30 +1,24 @@
 /* ================================== */
 /* Above the fold */
-@use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
-@use "../0-base/color";
-@use "../1-layout" as *;
-@use "../2-visual" as *;
-@use "../2-visual/border" as br;
-@use "../3-item" as *;
-
 /* ================================== */
 
 .atf {
-  min-height: calc(100vh - (var(--nav-h) + (var(--space-thin) * 2)));
-  min-height: calc(100svh - (var(--nav-h) + (var(--space-thin) * 2)));
-
+  /* layout */
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
   display: grid;
-  justify-items: center;  
-  align-items: end;  
-
-  @include bp.bp(md) {
-    justify-items: end;
-  }
+  padding-bottom: var(--space-wide);
 }
 
 .atf__card {
+  /* layout */
   width: min(100%, 450px);
+  place-self: end center;
+
+  @include bp.bp(md) {
+    place-self: end end;
+  }
 
   @include bp.bp(lg) {
     width: 580px;

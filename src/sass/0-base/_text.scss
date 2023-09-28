@@ -1,6 +1,7 @@
 /* ================================== */
 /* Text */
 @use "color";
+@use "size";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -242,6 +243,21 @@ pre code {
   &:first-line {
     font-weight: $font-weight-lg;
   }
+}
+
+@mixin eyebrow {
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-md;
+  text-shadow: sha.$text-sha-md;
+  color: color.$text-light-mild;
+}
+
+.eyebrow {
+  @include eyebrow;
 }
 
 .upper {

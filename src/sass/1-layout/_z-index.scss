@@ -4,12 +4,13 @@
 
 $z: (
   "wrap",
+  "part",
   "bg",
-  "modal",
   "card",
   "btn",
   "nav",
-  "menu"
+  "menu",
+  "modal"
 );
 
 @function z($name) {
