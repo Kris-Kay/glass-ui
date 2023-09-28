@@ -23,7 +23,7 @@
   }
 }
 
-.card-glass--responsive {
+@mixin card-glass--responsive {
   position: relative;
   @include fill.glass-filter-reg;
 
@@ -37,6 +37,11 @@
       box-shadow: bevel.$bevel-md;
     }
   }
+}
+
+
+.card-glass--responsive {
+  @include card-glass--responsive
 }
 
 

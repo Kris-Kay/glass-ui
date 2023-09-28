@@ -10,7 +10,13 @@
 @use "../4-part" as *;
 /* ================================== */
 
-.glassGPT-card {
+.glassGPT__wrap {
+  filter: none;
+  background: none;
+  box-shadow: none;
+}
+
+.glassGPT__card {
   width: min(100%, 480px);
   height: 240px;
 }

@@ -9,12 +9,13 @@
 .section__wrap {
   /* layout */
   z-index: z.z(part);
-
+  display: grid;
+  
   /* visual */
   overflow: hidden;
   border-radius: 0;
   box-shadow: sha.$sha-2xl;
-  @include glass.bg-glass-reg;
+  @include glass.card-glass--responsive;
   
   @include bp.bp(md) {
     border-radius: var(--lg);
