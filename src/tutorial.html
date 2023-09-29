@@ -1,19 +1,20 @@
 <!-- Tutorial Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <section class="max-w space-wide">
-    <div class="card atf__card">
+  <section class="max-w space-wide grid gap-xl">
+
+    <div class="card glass-base fill-reg sha-xl">
 
       <div class="grid gap-2xs">
         <div>
-          <p class="eyebrow">SCSS tutorial</p>
-          <h1 class="title-lg">How to code Vision Pro style UI</h1>
+          <!-- <p class="eyebrow">SCSS tutorial</p> -->
+          <h1 class="title-lg">3D Glass tutorial</h1>
         </div>
 
-        <p>An in-depth guide to creating hyper-realistic 3D glass materials using modern CSS</p>
+        <p>How to code Apple Vision Pro style glass materials</p>
       </div>
 
-      <div class="flex-r">
+      <!-- <div class="flex-r">
         <a
         href="#"
         class="btn-lg icon-right btn1-glass ">
@@ -22,9 +23,10 @@
           src="/assets/icons/SquareOut.svg"
           alt="open GitHub repo in new window"/>
         </a>
-      </div>
+      </div> -->
 
     </div>
+
   </section>
 </header>
 
@@ -34,50 +36,161 @@
 
 <!-- The building blocks -->
   <section class="max-w section__wrap">
-    <div class="space-thin">
+    <div class="section__header">
       <!-- <p class="eyebrow">First question</p> -->
       <h2 class="title-lg">The building blocks</h2>
     </div>
 
-    <div class="grid glass-tint-xdark">
-      <img src="/assets/homeImg/glass-x-view-white.png" class="space-wide"/>
+    <div class="grid tint-2xdark space-wide">
 
-      <ul class="grid gap-2xl space-wide">
-        <li>
-          <p  class="title-md">
+      <img src="/assets/homeImg/glass-x-view-white.png" class="p-b-4xl img-lg"/>
+
+      <div class="grid gap-2xl">
+
+        <div class="grid gap-2xs">
+          <h3  class="title-md">
             Backdrop-filter
-          </p>
+          </h3>
           <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </li>
+        </div>
 
-        <li>
-          <p  class="title-md">
-            Background-color or gradient
-          </p>
-          <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </li>
+        <div class="grid gap-2xs">
+          <h3  class="title-md">
+            Background-color
+          </h3>
+          <div class="grid gap-md">
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">What it does</h4>
+              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">Do you really need it?</h4>
+                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
+                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">How to use it</h4>
+              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
+              
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
 
-        <li>
-          <p  class="title-md">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="grid gap-2xs">
+          <h3  class="title-md">
             Noise texture(s)
-          </p>
+          </h3>
           <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </li>
+        </div>
 
-        <li>
-          <p  class="title-md">
-            Bevel
-          </p>
-          <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </li>
+        <div class="grid gap-2xs">
+          <h3  class="title-md">Bevel</h3>
+          <div class="grid gap-md">
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">What it does</h4>
+              <p>The </p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">Do you really need it?</h4>
+                <p>no.</p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">How to use it</h4>
+              <p>The .</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
+            </div>
 
-        <li>
-          <p  class="title-md">
-            Elevation box-shadow
-          </p>
-          <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </li>
-      </ul> 
+          </div>
+        </div>
+
+        <div class="grid gap-2xs">
+          <h3  class="title-md">Elevation box-shadow</h3>
+
+          <div class="grid gap-md">
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">What it does</h4>
+              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">Do you really need it?</h4>
+                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
+                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">How to use it</h4>
+              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
+              
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div> 
     </div>
 
   </section>
@@ -91,7 +204,7 @@
 
     <img src="/assets/homeImg/glass-gpt-code.png"/>
 
-    <div class="glass-tint-xdark grid gap-2xs space-wide">
+    <div class="tint-xdark grid gap-2xs space-wide">
       <h3 class="title-sm">Answer: nope this ain’t it.</h3>
       <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The tiny blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
       
@@ -106,113 +219,24 @@
     </div>
   </div>
 
-<!-- Card glass -->
-  <!-- <section class="max-w section__wrap">
-    <div class="card-glass--responsive glass-tint-xdark">
-      <p class="eyebrow">Step two</p>
-      <h2 class="title-md">Card glass</h2>
-    </div> -->
 
-      <!-- <div class="space-thin">
-        <div class="space-thin grid gap-xs dark-round-rect">
-          <p class="title-sm">The main element...</p>
-          <ul class="grid gap-sm">
-            <li class="check flex">
-              <p class="bold">Must</p>
-              <p>be set to position absolute or relative</p>
-            </li>
-  
-            <li class="check flex">
-              <p>Must</p>
-              <p class="bold">Not</p>
-              <p>have a z-index</p>
-            </li>
-  
-            <li class="check flex">
-              <p>Must</p>
-              <p class="bold">Not</p>
-              <p>use any property that creates a new stacking context</p>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-
-<!-- Card glass code -->
-      <!-- <div class="sidescroll-wrap">
-        <div class="sidescroll space-thin" id="code-text"">
-          <pre><code class="c-class">.card-glass {</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
-          <pre><code class="c-prop">  -webkit-backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
-          <pre><code class="c-prop">  backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
-          <pre><code class="c-class">}</code></pre>
-          <br>
-          <pre><code class="c-class">.card-glass::after {</code></pre>
-          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
-          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
-          <pre><code class="c-prop">  pointer-events: <span class="c-value">none</span>;</code></pre>
-          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
-          <pre><code class="c-prop">  z-index: <span class="c-value">-1</span>;</code></pre>
-          <br>
-          <pre><code class="c-prop">  box-shadow: </code></pre>
-          <pre><code class="c-value">    inset 1px 1px 0.2px rgba(250, 254, 255, 0.2),</code></pre>
-          <pre><code class="c-value">    inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), </code></pre>
-          <pre><code class="c-value">    inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1),</code></pre>
-          <pre><code class="c-value">    inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);</code></pre>
-          <br>
-          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
-          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
-          <br>
-          <pre><code><span class="c-comment">/*** Add your own noise textures here! ***/</span></code></pre>
-          <pre><code class="c-prop">  background-image:</code></pre>
-          <pre><code class="c-prop">    <span class="c-value">url(/assets/images/noise-texture-500x500.png),</span></code></pre>
-          <pre><code class="c-prop">    <span class="c-value">url(/assets/textures/noise-texture-black-100den-10op-500x500.png)</span>;</code></pre>
-
-          <pre><code class="c-class">}</code></pre>
-        </div>
-      </div> -->
-
-<!-- Copy btn -->
-      <!-- <div class="flex-r space-thin">
-        <button
-          type="button"
-          id="copy-code"
-          class="btn-md btn2-glass">
-          Copy code
-          <img src="/assets/icons/Copy.svg"/>
-        </button>
-      </div> -->
-
-<!-- Code pen -->
-      <!-- <div class="code-pen space-thin">
-        <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ZEVoBOM" data-editable="false" data-user="kris-kay-design" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 1px solid; margin: 1em 0; padding: 1em;">
-          <span>See the Pen <a href="https://codepen.io/kris-kay-design/pen/ZEVoBOM">
-          Untitled</a> by Kris (<a href="https://codepen.io/kris-kay-design">@kris-kay-design</a>)
-          on <a href="https://codepen.io">CodePen</a>.</span>
-        </p>
-        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-      </div>   -->
-
-    <!-- </div>
-
-  </section> -->
-
+<!-- .glass code -->
   <section class="max-w section__wrap">
     <div class="space-thin">
       <!-- <p class="eyebrow">Step two</p> -->
-      <h2 class="title-md">.card-glass</h2>
+      <h2 class="title-md">.glass CSS</h2>
     </div>
 <!-- Code pen -->
-    <div class="code-pen"> 
+    <!-- <div class="code-pen"> 
       <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ZEVoBOM" data-editable="false" data-user="kris-kay-design" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 1px solid; margin: 1em 0; padding: 1em;">
         <span>See the Pen <a href="https://codepen.io/kris-kay-design/pen/ZEVoBOM">
         Untitled</a> by Kris (<a href="https://codepen.io/kris-kay-design">@kris-kay-design</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
       </p>
       <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-    </div>  
+    </div>   -->
 
-    <div class="glass-tint-xdark grid space-wide">
+    <div class="tint-xdark grid space-wide">
 
 <!-- Card glass code -->
       <div class="sidescroll-wrap">

@@ -8,8 +8,71 @@
 @use "bevel";
 @use "fill";
 @use "shadow" as sha;
-
 /* ================================== */
+
+
+/* Glass base */
+/* ================================== */
+@mixin glass-base {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    @include fill.noise;
+    box-shadow: bevel.$bevel-md;
+    @content;
+
+    @include bp.bp(md) {
+      box-shadow: bevel.$bevel-lg;
+    }
+  }
+}
+
+.glass-base {
+  @include glass-base;
+}
+
+/* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
+/* ================================== */
+@mixin glass--no-bevel-mobile {
+  @include glass-base {
+    box-shadow: none;
+  }
+}
+
+.glass--no-bevel-mobile {
+  @include glass--no-bevel-mobile;
+}
+
+/* The main glass but without a bevel */
+/* ================================== */
+@mixin glass--no-bevel {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    @include fill.noise;
+  }
+}
+
+// @mixin glass--no-bevel {
+//   @include glass-base {
+//     box-shadow: none;
+
+//     @include bp.bp(md) {
+//       box-shadow: none;
+//     }
+//   }
+// }
+
+.glass--no-bevel {
+  @include glass--no-bevel;
+}
+
+
+
 
 .card-glass {
   position: relative;
@@ -38,7 +101,6 @@
     }
   }
 }
-
 
 .card-glass--responsive {
   @include card-glass--responsive
@@ -73,13 +135,15 @@
 @mixin bg-glass-reg {
   position: relative;
   // overflow: hidden;
-  box-shadow: sha.$sha-xl;
+  // box-shadow: sha.$sha-xl;
+  @include fill.fill-reg;
+
   &::after {
     @include pseudo;
     z-index: -1;
     box-shadow: bevel.$bevel-md;
     @include fill.noise;
-    @include fill.glass-fill-reg;
+
   }
 }
 
@@ -99,7 +163,7 @@
 
     box-shadow: bevel.$bevel-sm;
     @include fill.noise-dark;
-    @include fill.glass-fill-dark;
+    @include fill.fill-dark;
 
     @include bp.bp(md) {
       box-shadow: bevel.$bevel-md;
@@ -144,8 +208,8 @@
 .btn2-glass {
   position: relative;
   z-index: 20;
-  box-shadow: sha.$sha-xl;
-  transition: background-color ani.$speed-slow ease-out;
+  box-shadow: sha.$sha-sm;
+  transition: background-color box-shadow ani.$speed-slow ease-out;
 
   background-color: $btn2-rest;
 
@@ -163,10 +227,11 @@
 
     @include fill.glass-filter-reg;
     @include fill.noise;
-  }
+  } 
 
   &:hover {
     background-color: $btn2-hover;
+    box-shadow: sha.$sha-md;
   }
 
   &:active {

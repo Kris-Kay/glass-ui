@@ -58,6 +58,7 @@ $glass-light: rgba($sky98, 0.03);
 $glass-reg: rgba($ink2, 0.2);
 $glass-dark: rgba($ink2, 0.3);
 $glass-xdark: rgba($ink2, 0.7);
+$glass-2xdark: rgba($ink2, 0.97);
 
 $text-light-reg: $sky98;
 $text-light-mild: $snow95;
@@ -115,4 +116,30 @@ $btn2-active: rgba($ink2, 0.2);
 
 .text-dark-mild {
   color: $text-dark-mild;
+}
+
+/* Glass tints */
+/* ================================== */
+.tint-xlight {
+  background-color: $glass-xlight;
+}
+
+.tint-light {
+  background-color: $glass-light;
+}
+
+.tint-reg {
+  background-color: $glass-reg;
+}
+
+.tint-dark {
+  background-color: $glass-dark;
+}
+
+.tint-xdark {
+  background-color: $glass-xdark;
+}
+
+.tint-2xdark {
+  background-color: $glass-2xdark;
 }

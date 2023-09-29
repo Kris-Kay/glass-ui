@@ -261,7 +261,13 @@ $flat-inset-md:
   inset 0 2px 4px rgba($shadow-color, 0.1), // med top 
   inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
 
+$flat-sha-md: 
+  inset 0 2px 4px rgba($shadow-color, 0.1), // med top 
+  inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
 
+.flat-sha-md {
+  box-shadow: $flat-sha-md;
+}
 
 // inset 2px 2px 0.4px -2.4px rgba($light-color, 0.4), //top-left specular sliver
 // inset 0.6px 0.6px 0.1px rgba($light-color, 0.12), //top-left highlight wrap s

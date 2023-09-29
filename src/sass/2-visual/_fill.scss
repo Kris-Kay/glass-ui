@@ -49,29 +49,6 @@ $tints:
   "dark",
   "xdark";
 
-/* Glass tints */
-/* ================================== */
-/* edit colors in _color.SCSS */
-
-.glass-tint-xlight {
-  background-color: color.$glass-xlight;
-}
-
-.glass-tint-light {
-  background-color: color.$glass-light;
-}
-
-.glass-tint-reg {
-  background-color: color.$glass-reg;
-}
-
-.glass-tint-dark {
-  background-color: color.$glass-dark;
-}
-
-.glass-tint-xdark {
-  background-color: color.$glass-xdark;
-}
 
 /* Glass Filters */
 /* ================================== */
@@ -145,48 +122,48 @@ $satu: 1.3;
 
 /* Glass Fills */
 /* ================================== */
-@mixin glass-fill-xlight {
+@mixin fill-xlight {
   background-color: color.$glass-xlight;
   @include glass-filter-xlight;
 }
 
-@mixin glass-fill-light {
+@mixin fill-light {
   background-color: color.$glass-light;
   @include glass-filter-light;
 }
 
-@mixin glass-fill-reg {
+@mixin fill-reg {
   background-color: color.$glass-reg;
   @include glass-filter-reg;
 }
 
-@mixin glass-fill-dark {
+@mixin fill-dark {
   background-color: color.$glass-dark;
   @include glass-filter-dark;
 }
 
-@mixin glass-fill-xdark {
+@mixin fill-xdark {
   background-color: color.$glass-xdark;
   @include glass-filter-xdark;
 }
 
 
-.glass-fill-xlight {
-  @include glass-fill-xlight;
+.fill-xlight {
+  @include fill-xlight;
 }
 
-.glass-fill-light {
-  @include glass-fill-light;
+.fill-light {
+  @include fill-light;
 }
 
-.glass-fill-reg {
-  @include glass-fill-reg;
+.fill-reg {
+  @include fill-reg;
 }
 
-.glass-fill-dark {
-  @include glass-fill-dark;
+.fill-dark {
+  @include fill-dark;
 }
 
-.glass-fill-xdark { 
-  @include glass-fill-xdark;
+.fill-xdark { 
+  @include fill-xdark;
 }

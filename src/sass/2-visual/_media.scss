@@ -1,7 +1,9 @@
 /* ================================== */
-/* Icons */
-/* ================================== */
+/* Media */
+@use "../0-base/breakpoint" as bp;
 @use "shadow" as sha;
+/* ================================== */
+
 
 .icon-sm {
   height: var(--ui-sm);
@@ -19,4 +21,18 @@
   height: var(--ui-lg);
   width: auto;
   @include sha.svg-sha-lg;
+}
+
+.img-sm {
+  width: min(100%, 400px);
+  margin: auto;
+}
+
+.img-lg {
+  width: 100%;
+  margin: auto;
+
+  @include bp.bp(md) {
+    width: 80%;
+  }
 }

@@ -79,7 +79,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-family: $font-family-body;
   font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-sm;
-  line-height: $line-height-md;
+  line-height: $line-height-sm;
   text-shadow: sha.$text-sha-xs;
 }
 
@@ -144,6 +144,10 @@ body {
 li {
   @include body-text;
   font-weight: $font-weight-sm;
+}
+
+h4 {
+  color: color.$text-light-xmild;
 }
 
 .dot {
@@ -293,3 +297,4 @@ pre code {
 .text-c{
   text-align: center;
 }
+
