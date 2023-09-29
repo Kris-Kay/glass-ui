@@ -1,20 +1,20 @@
 <!-- Tutorial Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <section class="max-w space-wide grid gap-xl">
+  <section class="max-w grid gap-xl atf">
 
-    <div class="card glass-base fill-reg sha-xl">
+    <div class="card atf__card glass-base fill-reg sha-xl">
 
-      <div class="grid gap-2xs">
+      <div class="grid">
         <div>
           <!-- <p class="eyebrow">SCSS tutorial</p> -->
-          <h1 class="title-lg">3D Glass tutorial</h1>
+          <h1 class="title-xl">3D Glass tutorial</h1>
         </div>
 
-        <p>How to code Apple Vision Pro style glass materials</p>
+        <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p>
       </div>
 
-      <!-- <div class="flex-r">
+      <div class="flex-r">
         <a
         href="#"
         class="btn-lg icon-right btn1-glass ">
@@ -23,7 +23,7 @@
           src="/assets/icons/SquareOut.svg"
           alt="open GitHub repo in new window"/>
         </a>
-      </div> -->
+      </div>
 
     </div>
 
@@ -32,21 +32,27 @@
 
 <!-- Main -->
 <!-- ================================== -->
-<main class="grid gap-5xl p-y-5xl">
+<main class="grid gap-5xl p-b-5xl">
 
 <!-- The building blocks -->
   <section class="max-w section__wrap">
+
     <div class="section__header">
       <!-- <p class="eyebrow">First question</p> -->
       <h2 class="title-lg">The building blocks</h2>
     </div>
 
     <div class="grid tint-2xdark space-wide">
-
+      <div class="space-wide m-b-xl">
+        <p class="title-md text-center p-b-2xs">If performance wasn’t a factor, what is the most stunning glass material I can bring into being?</p>
+        <p class="">That was my thought process, but it might not be yours. So I will start off by explaining what each layer does, and you can decide if you need it.</p>
+      </div>
+      
       <img src="/assets/homeImg/glass-x-view-white.png" class="p-b-4xl img-lg"/>
 
-      <div class="grid gap-2xl">
+      <div class="grid gap-4xl">
 
+        <!-- Backdrop-filter -->
         <div class="grid gap-2xs">
           <h3  class="title-md">
             Backdrop-filter
@@ -54,6 +60,7 @@
           <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
         </div>
 
+        <!-- Background-color -->
         <div class="grid gap-2xs">
           <h3  class="title-md">
             Background-color
@@ -67,7 +74,6 @@
             <div class="grid gap-3xs">
               <h4 class="title-sm">Do you really need it?</h4>
                 <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
-                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
             </div>
   
             <div class="grid gap-3xs">
@@ -99,6 +105,7 @@
           </div>
         </div>
 
+        <!-- Noise -->
         <div class="grid gap-2xs">
           <h3  class="title-md">
             Noise texture(s)
@@ -106,6 +113,7 @@
           <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
         </div>
 
+        <!-- Bevel -->
         <div class="grid gap-2xs">
           <h3  class="title-md">Bevel</h3>
           <div class="grid gap-md">
@@ -116,36 +124,13 @@
   
             <div class="grid gap-3xs">
               <h4 class="title-sm">Do you really need it?</h4>
-                <p>no.</p>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">How to use it</h4>
-              <p>The .</p>
-              <div class="grid gap-xl m-t-sm">
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
-                </div>
-  
-              </div>
+                <p>No but it's what makes this glass material stand out. The alternative is a translucent white border.</p>
             </div>
 
           </div>
         </div>
 
+        <!-- Elevation -->
         <div class="grid gap-2xs">
           <h3  class="title-md">Elevation box-shadow</h3>
 
@@ -164,7 +149,6 @@
             <div class="grid gap-3xs">
               <h4 class="title-sm">How to use it</h4>
               <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
-              
               <div class="grid gap-xl m-t-sm">
                 <div class="grid gap-2xs">
                   <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
@@ -184,7 +168,6 @@
                 </div>
   
               </div>
-
             </div>
 
           </div>
@@ -197,18 +180,20 @@
 
 <!-- GPT -->
   <section class="max-w section__wrap">
-    <div class="space-thin">
-      <!-- <p class="eyebrow">First question</p> -->
+    <div class="section__header">
+      <p class="eyebrow">Naturally, the first question is:</p>
       <h2 class="title-lg">Can chatGPT write this CSS?</h2>
     </div>
 
-    <img src="/assets/homeImg/glass-gpt-code.png"/>
+    <div class="grid tint-2xdark">
+      <img src="/assets/homeImg/glass-gpt-code.png"/>
 
-    <div class="tint-xdark grid gap-2xs space-wide">
-      <h3 class="title-sm">Answer: nope this ain’t it.</h3>
-      <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The tiny blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
-      
-      <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
+      <div class="tint-xdark grid gap-2xs space-wide">
+        <h3 class="title-sm">Answer: nope this ain’t it.</h3>
+        <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The tiny blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
+        
+        <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
+      </div>
     </div>
   </section>
 
@@ -222,7 +207,7 @@
 
 <!-- .glass code -->
   <section class="max-w section__wrap">
-    <div class="space-thin">
+    <div class="section__header">
       <!-- <p class="eyebrow">Step two</p> -->
       <h2 class="title-md">.glass CSS</h2>
     </div>

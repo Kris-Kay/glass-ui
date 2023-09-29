@@ -1,12 +1,17 @@
 <!-- Documentation Header -->
 <!-- ================================== -->
-<!-- <header class="max-w-gutter">
-  <section class="atf max-w">
-    <div class="card atf__card bg-glass-reg sha-xl">
+<header class="max-w-gutter">
+  <section class="max-w grid gap-xl atf">
 
-      <div>
-        <p class="upper-xs">SCSS tutorial</p>
-        <h1 class="title-lg m-t-3xs">How to create Vision Pro style glass UI</h1>
+    <div class="card atf__card glass-base fill-reg sha-xl">
+
+      <div class="grid">
+        <div>
+          <!-- <p class="eyebrow">SCSS tutorial</p> -->
+          <h1 class="title-xl">3D Glass Documentation</h1>
+        </div>
+
+        <!-- <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p> -->
       </div>
 
       <div class="flex-r">
@@ -21,12 +26,59 @@
       </div>
 
     </div>
+
   </section>
-</header> -->
+</header>
 
 <!-- Main -->
 <!-- ================================== -->
-<main class="grid gap-sm p-y-5xl">
+<main class="grid gap-5xl p-b-5xl">
+
+
+        <!-- Elevation -->
+        <div class="grid gap-2xs">
+          <h3  class="title-md">Elevation box-shadow</h3>
+
+          <div class="grid gap-md">
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">What it does</h4>
+              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">Do you really need it?</h4>
+                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
+                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">How to use it</h4>
+              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
 
 <!-- intro -->
   <!-- <section class="max-w grid">
