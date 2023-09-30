@@ -1,10 +1,13 @@
 /* ================================== */
 /* Tab menu */
-@use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
-@use "../1-layout" as *;
-@use "../2-visual" as *;
+@use "../0-base/color";
+@use "../0-base/size";
+@use "../0-base/text";
+@use "../1-layout/flex";
+@use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
+@use "../2-visual/shadow" as sha;
 @use "button" as btn;
 /* ================================== */
 
@@ -12,13 +15,13 @@
   width: fit-content;
   height: var(--ui-lg);
   margin: auto;
-  @include flex-c;
+  @include flex.flex-c;
   gap: var(--4xs);
 
   --padding: 3px;
   padding: var(--padding);
   --tab-br: 8px;
-  @include outer-br (var(--tab-br), var(--padding));
+  @include br.outer-br (var(--tab-br), var(--padding));
 }
 
 .tab {
@@ -26,7 +29,7 @@
 
   width: max-content; 
   height: 100%;
-  @include flex-c;
+  @include flex.flex-c;
   padding: 0 0.7rem;
 
   pointer-events: auto;
@@ -34,10 +37,9 @@
 
   font-size: var(--inner-h);
   line-height: var(--inner-h);
-  @include btn-text;
+  @include text.btn-text;
 
-  border-radius: 8px;
-  // border-radius: var(--tab-br);
+  border-radius: var(--tab-br);
 
   @include bp.bp(sm) {
     padding: 0 1rem;
@@ -52,10 +54,10 @@
   }
 
   &.tab-active {
-    background-color: rgba($light-color, 0.05);
-    -webkit-backdrop-filter: brightness(1.2);
-    backdrop-filter: brightness(1.2);
-    box-shadow: $sha-2xs;
+    background-color: rgba(color.$light-color, 0.05);
+    -webkit-backdrop-filter: brightness(1.3);
+    backdrop-filter: brightness(1.3);
+    box-shadow: sha.$sha-2xs;
   }
 }
 

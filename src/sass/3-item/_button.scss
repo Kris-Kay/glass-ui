@@ -5,9 +5,9 @@
 @use "../0-base/size";
 @use "../0-base/text";
 @use "../1-layout/flex";
+@use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
 @use "../2-visual/shadow" as sha;
-@use "../2-visual/animation" as ani;
 /* ================================== */
 
 /* Button base */

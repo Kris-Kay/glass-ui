@@ -1,18 +1,17 @@
 /* ================================== */
 /* Nav */
-@use "../0-base" as *;
-@use "../1-layout" as *;
-@use "../2-visual" as *;
-@use "../2-visual/border" as br;
+@use "../0-base/color";
+@use "../0-base/text";
+@use "../1-layout/flex";
+@use "../2-visual/animation" as ani;
 @use "../2-visual/shadow" as sha;
-@use "../3-item" as *;
 @use "../3-item/button" as btn;
 /* ================================== */
 
 .main-nav {
   position: relative;
   margin: 0 auto;
-  @include flex-sb;
+  @include flex.flex-sb;
   pointer-events: none;
 }
 
@@ -55,7 +54,6 @@
   border-radius: var(--xs);
   box-shadow: sha.$sha-lg;
   cursor: pointer;
-  // pointer-events: none;
 }
 
 .dropdown-grid {
@@ -64,11 +62,10 @@
   gap: calc(var(--3xs) * 0.5);
   margin: calc(var(--3xs) * -1);
   cursor: pointer;
-  // pointer-events: none;
 }
 
 .js-dd-item {
   min-width: max-content;
   width: 100%;
-  color: rgba($text-light-reg, 0.8);
+  color: rgba(color.$text-light-reg, 0.8);
 }

@@ -8,11 +8,11 @@
 /* ================================== */
 
 .section__wrap {
-  /* layout */
+/* layout */
   z-index: z.z(part);
   display: grid;
   
-  /* visual */
+/* visual */
   border-radius: 0;
   box-shadow: none;
   
@@ -24,11 +24,11 @@
 }
 
 .section__header {
-  /* layout */
+/* layout */
   display: grid;
   padding: var(--space-thin);
 
-  /* visual */
+/* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
   @include fill.fill-reg;
@@ -38,20 +38,3 @@
     border-radius: var(--lg) var(--lg) 0 0;
   }
 }
-
-// .section__wrap {
-//   /* layout */
-//   z-index: z.z(part);
-//   display: grid;
-  
-//   /* visual */
-//   overflow: hidden;
-//   @include glass.glass--no-bevel;
-//   // @include glass.glass--no-bevel-mobile;
-//   @include fill.fill-reg;
-  
-//   @include bp.bp(md) {
-//     border-radius: var(--lg);
-//     box-shadow: sha.$sha-2xl;
-//   }
-// }
