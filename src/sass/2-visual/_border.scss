@@ -12,14 +12,13 @@ $round: 9999px;
 
 /* Border radius classes */
 /* ================================== */
-// * Generates a .br- class for every T-shirt size
+// * Generates a class for every T-shirt size
 // * T-shirt size values scale with viewport width
 .br {
   @include size.size-modifiers('border-radius') {
     overflow: hidden;
   }
 }
-
 
 /* Nested border radius */  
 /* ================================== */
@@ -31,5 +30,4 @@ $round: 9999px;
   border-radius: $br;
 }
 
-// border-radius: max(0px, min(20px, calc((100vw - 100%) * 9999)));
 

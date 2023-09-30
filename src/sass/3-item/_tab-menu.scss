@@ -9,13 +9,11 @@
 /* ================================== */
 
 .tab-menu {
-
   width: fit-content;
   height: var(--ui-lg);
   margin: auto;
   @include flex-c;
   gap: var(--4xs);
-  // border-radius: 9px;
 
   --padding: 3px;
   padding: var(--padding);

@@ -1,57 +1,25 @@
 /* ================================== */
 /* Buttons & chips */
-@use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
-@use "../1-layout" as *;
-@use "../2-visual" as *;
+@use "../0-base/color";
+@use "../0-base/size";
+@use "../0-base/text";
+@use "../1-layout/flex";
 @use "../2-visual/border" as br;
 @use "../2-visual/shadow" as sha;
 @use "../2-visual/animation" as ani;
 /* ================================== */
 
+/* Button base */
 /* ================================== */
-/* Buttons */
-/* ================================== */
-.btn {
-  width: max-content; // to stop stretching in flex layouts 
-  @include flex-c;
-  @include btn-text;
-  border-radius: br.$round;
-  $inner-h: 0.95rem;
-  height: var(--ui-md); 
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: 0 1.2rem;
-}
-
-
 @mixin btn-base {
   width: max-content; // to stop stretching in flex layouts 
-  @include flex-c;
-  @include btn-text;
+  @include flex.flex-c;
+  @include text.btn-text;
   border-radius: br.$round;
 }
 
-// .btn-glass {
-//   position: relative;
-//   box-shadow: $bevel-md;
-//   background-color: rgba($light-color, 0.2);
-
-//   &::after {
-//     @include pseudo;
-//     z-index: -2;
-    
-//     -webkit-backdrop-filter: brightness(0.9) blur(8vw);
-//     backdrop-filter: brightness(0.9) blur(8vw);
-//     box-shadow: $ele-xl;
-//   }
-
-//   &:hover {
-//     background-color: rgba($light-color, 0.4);
-//   }
-// }
-
-/* Button size and text */
+/* Button sm */
 /* ================================== */
 .btn-sm {
   $inner-h: 0.75rem; 
@@ -67,18 +35,20 @@
     height: $inner-h;
     align-self: center;
     margin-top: -1.25px;
-    filter: drop-shadow(0 0 0.5px rgba($ink6, 0.4));
+    filter: drop-shadow(0 0 0.5px rgba(color.$ink6, 0.4));
+  }
+
+  &.btn-sm.icon-right {
+    padding: 2.5px 0.55rem 0 0.7rem;
+  }
+  
+  &.btn-sm.icon-left {
+    padding: 2.5px 0.7rem 0 0.55rem;
   }
 }
 
-.btn-sm.icon-right {
-  padding: 2.5px 0.55rem 0 0.7rem;
-}
-
-.btn-sm.icon-left {
-  padding: 2.5px 0.7rem 0 0.55rem;
-}
-
+/* Button md*/
+/* ================================== */
 .btn-md {
   $inner-h: 0.95rem;
   height: var(--ui-md); 
@@ -93,18 +63,20 @@
     height: $inner-h;
     align-self: center;
     margin-top: -1px;
-    filter: drop-shadow(0 0 0.75px rgba($ink6, 0.4));
+    filter: drop-shadow(0 0 0.75px rgba(color.$ink6, 0.4));
+  }
+
+  &.btn-md.icon-right {
+    padding: 2px 0.75rem 0 0.85rem;
+  }
+
+  &.btn-md.icon-left {
+    padding: 2px 0.85rem 0 0.75rem;
   }
 }
 
-.btn-md.icon-right {
-  padding: 2px 0.75rem 0 0.85rem;
-}
-
-.btn-md.icon-left {
-  padding: 2px 0.85rem 0 0.75rem;
-}
-
+/* Button lg */
+/* ================================== */
 .btn-lg {
   $inner-h: 1.1rem; 
   height: var(--ui-lg); 
@@ -132,14 +104,10 @@
   }
 }
 
-
-
-
-/* ================================== */
 /* Round buttons */
 /* ================================== */
 @mixin round-btn-base {
-  @include flex-c;
+  @include flex.flex-c;
   border-radius: br.$round;
   pointer-events: auto;
   cursor: pointer;
@@ -182,10 +150,8 @@
   }
 }
 
-
 /* Button color & state styling */
 /* ================================== */
-
 .btn-clear {
   pointer-events: auto;
   cursor: pointer;
@@ -194,20 +160,17 @@
   transition: background-color ani.$speed-slow ease-out;
 
   &:hover {
-    background-color: $btn1-hover;
+    background-color: color.$btn1-hover;
   }
 
   &:active {
-    background-color: $btn1-active;
+    background-color: color.$btn1-active;
   }
 }
 
 
-
-/* ================================== */
 /* Chips */
 /* ================================== */
-
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -219,22 +182,22 @@
 
   width: max-content; // to stop stretching in flex layouts 
   height: var(--ui-sm); 
-  @include flex-c;
+  @include flex.flex-c;
   gap: 0.3rem;
 
-  @include btn-text;
+  @include text.btn-text;
   font-size: $inner-h;
   line-height: $inner-h;
 
   padding: 2.5px 0.7rem 0 0.7rem;
-  border-radius: $round;
+  border-radius: br.$round;
 
   & img {
     width: auto;
     height: $inner-h;
     align-self: center;
     margin-top: -1.25px;
-    filter: drop-shadow(0 0 0.5px rgba($ink6, 0.4));
+    filter: drop-shadow(0 0 0.5px rgba(color.$ink6, 0.4));
   }
 }
 
@@ -245,23 +208,3 @@
 .chip.icon-left {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
-
-
-// /* Button Size MAP */
-// /* ================================== */
-// $btn-sizes: (
-//   sm:  var(--ui-sm),
-//   md:  var(--ui-md),
-//   lg:  var(--ui-lg)
-// );
-
-
-// /* Button size modifier mixin */
-// /* ================================== */
-// @mixin btn-modifiers($attribute: 'a') {
-//   @each $key, $value in $btn-sizes {
-//     &-#{$key} {
-//       #{$attribute}: calc($value * var(--multiplier));
-//     }
-//   }
-// }

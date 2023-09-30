@@ -67,3 +67,39 @@
     margin: 0;
   }
 }
+
+
+//Demo glass CSS
+.glass-base-css {
+  position: relative;
+}
+
+.glass-base-css::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: -2;
+  background-image: 
+    url(/assets/textures/noise-texture-white-100den-10op-500x500.png), 
+    url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
+  background-size: 100px;
+  background-repeat: repeat;
+  box-shadow: 
+    inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.6), 
+    inset 1px 1px 0.2px rgba(250, 254, 255, 0.15), 
+    inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1), 
+    inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);
+}
+
+@media only screen and (min-width: 40rem) {
+  .glass-base-css::before {
+    box-shadow: 
+      inset 3px 3px 1px -3.5px rgba(250, 254, 255, 0.5), 
+      inset 1.2px 1.2px 0.2px rgba(250, 254, 255, 0.15), 
+      inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08), 
+      inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.3);
+  }
+}

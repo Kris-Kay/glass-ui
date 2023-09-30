@@ -1,10 +1,7 @@
 /* ================================== */
 /* Accordion */
-@use "../0-base" as *;
+@use "../0-base/color";
 @use "../0-base/breakpoint" as bp;
-@use "../1-layout" as *;
-@use "../2-visual" as *;
-@use "../2-visual/border" as br;
 /* ================================== */
 
 .accordion {
@@ -39,9 +36,9 @@
     background-color:darken(#38cc70, 10%);
   }
 
-  > * {
-    pointer-events: none;
-  }
+  // > * {
+  //   pointer-events: none;
+  // }
 }
 
 .accordion-toggle.is-closed {
@@ -78,7 +75,7 @@
   border-radius: 0 0 var(--md) var(--md);
 
   padding: var(--space-thin);
-  @include fill-xdark;
+  background-color: color.$glass-2xdark;
 }
 
 .accordion-content.is-closed {

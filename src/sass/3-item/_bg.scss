@@ -1,119 +1,15 @@
 /* ================================== */
 /* Backgrounds */
 @use "../0-base/breakpoint" as bp;
-@use "../0-base/size";
 @use "../0-base/color";
-@use "../1-layout/help" as *;
-@use "../1-layout/z-index" as z;
-@use "../2-visual" as *;
-@use "../2-visual/border" as br;
 @use "../2-visual/inset" as in;
-@use "../2-visual/fill";
-@use "../2-visual/glass";
 /* ================================== */
-
-/* Tinted glass */
-/* ================================== */
-
-// Used to add contrast to buttons and text
-// @mixin tint-mild {
-//   background-color: rgba($shadow-color, 0.1);
-//   -webkit-backdrop-filter: brightness(0.9);
-//   backdrop-filter: brightness(0.9);
-// }
-
-// .tint-mild {
-//   @include tint-mild;
-// }
-
-// @mixin tint-reg {
-//   background-color: rgba($shadow-color, 0.05);
-//   -webkit-backdrop-filter: brightness(0.9);
-//   backdrop-filter: brightness(0.9);
-// }
-
-// .tint-reg {
-//   @include tint-reg;
-// }
-
-// @mixin blur-tint-reg {
-//   background-color: rgba($shadow-color, 0.05);
-//   -webkit-backdrop-filter: blur(32px) brightness(0.9);
-//   backdrop-filter: blur(32px) brightness(0.9);
-// }
-
-// .blur-tint-reg {
-//   @include blur-tint-reg;
-// }
-
-// @mixin tint-bold {
-//   background-color: rgba($shadow-color, 0.1);
-//   -webkit-backdrop-filter: brightness(0.6);
-//   backdrop-filter: brightness(0.6);
-// }
-
-// .tint-bold {
-//   @include tint-bold;
-// }
-
-
-
-// .tint-fullwidth-s-reg {
-//   @include blur-tint-reg;
-
-//   padding: var(--space-thin) var(--space-wide);
-//   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-//   margin-right: calc(-1 * var(--space-wide));
-//   box-shadow: in.$flat-inset-md;
-// }
-
-
-
-// .dark-fullwidth {
-//   background-color: rgba($shadow-color, 0.8);
-//   padding: var(--space-thin) var(--space-wide);
-//   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-//   margin-right: calc(-1 * var(--space-wide));
-// }
-
-.code-bg {
-
-  -webkit-overflow-scrolling: touch;
-  overflow: hidden;
-  scrollbar-width: none;
-  
-  // padding: var(--space-thin);
-  // margin-left: calc(-1 * var(--space-wide));
-  // margin-right: calc(-1 * var(--space-wide));
-
-  &:hover {
-    overflow-x: scroll;
-  }
-
-  // @include bp.bp(md) {
-  //   padding: var(--space-thin);
-  //   border-radius: var(--md);
-  //   margin: 0;
-  // }
-}
 
 .dark-round-rect {
-  // width: 100%;
   background-color: color.$glass-dark;
-  // padding: var(--space-thin);
+  padding: var(--space-thin);
   border-radius: var(--md);
 }
-
-
-// .full-w-bold {
-//   @include fill.fill-xdark;
-
-//   padding: var(--space-wide) var(--space-thin);
-//   // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
-//   // margin-right: calc(-1 * var(--space-thin));
-//   box-shadow: in.$flat-inset-md;
-// }
-
 
 .space-thin > .full-w-fill {
   margin-left: calc((-1 * var(--space-thin)) + 0.5px);

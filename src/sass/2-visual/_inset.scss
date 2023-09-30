@@ -7,7 +7,7 @@
 @use "glass";
 @use "shadow" as sha;
 
-// for med insets /////
+// for med insets 
 $inset-high-md: 
   inset -0.5px -0.5px 0.5px  rgba($light-color, 0.2),  // bottom-right highlight
   inset -1px -1px 0 rgba($light-color, 0.06),           // bottom-right bevel
@@ -66,8 +66,8 @@ $inset-md:
   &::before {
     @include pseudo;
     z-index: -2;
-    @include fill.glass-filter-dark;
-    @include fill.noise; 
+    @include fill.filter-dark;
+    @include fill.noise-md; 
   }
 }
 
@@ -159,17 +159,14 @@ $inset-l:
   // wide around
   inset 0.25px 0.25px 1px rgba($shadow-color, 0.2); // thin top left
 
-////
-///
-///
 
-// //Base inset
+ //Base inset
 // $inset-highlight-base:
 //   inset -1px -2.5px 0.4px -1.5px rgba($light-color, 0.5), //bottom specular
 //   inset -0.5px -1.5px 0.1px  rgba($light-color, 0.15); //bottom bevel
 
-// $inset-shadow-base:
-//   // inset -3px -2px 0.4px -2.5px rgba($light-color, 0.5), //bottom specular
+// $inset-shadow-base: 
+// inset -3px -2px 0.4px -2.5px rgba($light-color, 0.5), //bottom specular
 //   inset 2px 2px 4px -1px rgba($shadow-color, 0.25), // med top left
 //   inset 0 0 8px -1px rgba($shadow-color, 0.15), // L around
 //   inset 0 0 2px  rgba($shadow-color, 0.1), // small around
@@ -205,15 +202,6 @@ inset 1.5px 1.2px 2px rgba($shadow-color, 0.15), // med top left
 inset 0.5px 0.5px 0.5px rgba($shadow-color, 0.1); // small around
 
 
-
-////
-
-
-
-
-
-
-
 $inset-new: 
   inset 1px 2px 16px rgba($shadow-color, 0.05), // L top-left shadow
   inset 2px 1.25px 3px rgba($shadow-color, 0.15), // M top-left shadow
@@ -222,10 +210,6 @@ $inset-new:
   inset -2px -2px 0.4px -2.4px rgba($light-color, 0.15), // bottom-right specular
   inset -0.8px -0.8px 0.2px rgba($light-color, 0.15), // bottom-right wrap bevel
   inset 0 0 0.5px rgba($light-color, 0.15); // smol light all around 
-
- 
-
-
 
 
 @mixin inset-xs {
@@ -261,20 +245,7 @@ $flat-inset-md:
   inset 0 2px 4px rgba($shadow-color, 0.1), // med top 
   inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
 
-$flat-sha-md: 
-  inset 0 2px 4px rgba($shadow-color, 0.1), // med top 
-  inset 0 0.8px 0.5px rgba($shadow-color, 0.1); // small top
 
-.flat-sha-md {
-  box-shadow: $flat-sha-md;
-}
-
-// inset 2px 2px 0.4px -2.4px rgba($light-color, 0.4), //top-left specular sliver
-// inset 0.6px 0.6px 0.1px rgba($light-color, 0.12), //top-left highlight wrap s
-// inset 2px 2px 0.2px -2px rgba($light-color, 0.1), //top-left corner bevel s
-
-// inset -2px -2px 0.2px -2.4px rgba($light-color, 0.04), //bottom-right specular
-// inset -1.4px -2px 1.8px -3px rgba($light-color, 0.5); //bottom thin
 
 .inset-bevel-s {
   position: relative;
@@ -286,8 +257,6 @@ $flat-sha-md:
   border-radius: 32px;
   width: 100%;
   height: 100%;
-
-
 
   & svg {
     width: 100%;
@@ -306,7 +275,7 @@ $flat-sha-md:
     inset: 0;
     border-radius: inherit;
     z-index: 2;
-    @include fill.noise;
+    @include fill.noise-md;
     box-shadow: $inset-shadow-s;
     filter: brightness(0.3);
     width: 100%;
@@ -339,8 +308,6 @@ $flat-sha-md:
   // }
 }
 
-
-
 .inset-bevel-3 {
   position: relative;
   overflow: hidden;
@@ -365,7 +332,7 @@ $flat-sha-md:
     z-index: -1;
     border-radius: inherit;
 
-    @include fill.noise;
+    @include fill.noise-md;
     box-shadow: $inset-sha-md;
     filter: brightness(0.1);
   }
@@ -388,8 +355,8 @@ $flat-sha-md:
   position: relative;
 
   box-shadow: $inset-high-md;
-  // @include fill.noise;
-  @include fill.glass-filter-dark;
+  // @include fill.noise-md;
+  @include fill.filter-dark;
 
   &::after {
     @include pseudo;
@@ -423,10 +390,6 @@ $flat-sha-md:
     filter: brightness(0.01);
   }
 }
-
-
-
-
 
 .inset-bevel-m {
   position: relative;

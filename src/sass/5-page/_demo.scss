@@ -67,7 +67,7 @@
     z-index: -1;
     border-radius: inherit;
 
-    @include noise;
+    @include noise-md;
     box-shadow: $inset-sha-md;
     filter: brightness(0.2);
   }

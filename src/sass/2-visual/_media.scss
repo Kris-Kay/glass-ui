@@ -4,7 +4,8 @@
 @use "shadow" as sha;
 /* ================================== */
 
-
+/* SVG icons */
+/* ================================== */
 .icon-sm {
   height: var(--ui-sm);
   width: auto;
@@ -23,6 +24,8 @@
   @include sha.svg-sha-lg;
 }
 
+/* images */
+/* ================================== */
 .img-sm {
   width: min(100%, 400px);
   margin: auto;
