@@ -17,14 +17,17 @@
   /* sm: 16px → 20px */
   --text-sm: clamp(1rem, 0.35vw + 1rem, 1.25rem);
 
-  /* md: 20px → 24px */
-  --text-md: clamp(1.25rem, 1.2vw + 1rem, 1.5rem);
+  /* md: 18px → 22px */
+  --text-md: clamp(1.125rem, 1.2vw + 1rem, 1.375rem);
 
-  /* lg: 24px → 36px */
-  --text-lg: clamp(1.5rem, 3vw + 1rem, 2.25rem);
+  /* lg: 24px → 28px */
+  --text-lg: clamp(1.5rem, 1.2vw + 1rem, 1.75rem);
 
-  /* xl: 36px → 48px */
-  --text-xl: clamp(2.25rem, 3.2vw + 1rem, 3rem);
+  /* xl: 28px → 36px */
+  --text-xl: clamp(1.75rem, 3vw + 1rem, 2.25rem);
+
+  /* 2xl: 36px → 48px */
+  --text-2xl: clamp(2.25rem, 3.2vw + 1rem, 3rem);
 }
 
 
@@ -35,7 +38,8 @@ $font-sizes: (
   "sm":  var(--text-sm),
   "md":  var(--text-md),
   "lg":  var(--text-lg),
-  "xl":  var(--text-xl)
+  "xl":  var(--text-xl),
+  "2xl":  var(--text-2xl)
 );
 
 /* font-family: */

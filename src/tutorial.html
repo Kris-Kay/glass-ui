@@ -8,7 +8,7 @@
       <div class="grid">
         <div>
           <!-- <p class="eyebrow">SCSS tutorial</p> -->
-          <h1 class="title-xl">3D Glass tutorial</h1>
+          <h1 class="title-2xl">3D Glass tutorial</h1>
         </div>
 
         <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p>
@@ -35,7 +35,387 @@
 <main class="grid gap-5xl p-b-5xl">
 
 
-<!-- .glass-base CSS Accordion -->
+<!-- The building blocks -->
+  <section class="max-w section__wrap">
+
+    <div class="section__header">
+      <!-- <p class="eyebrow">First question</p> -->
+      <h2 class="title-xl">The building blocks</h2>
+      <p class="">This section goes into what each layer in a 3D glass material does.</p>
+    </div>
+
+    <div class="grid tint-2xdark">
+      <div class="space-wide grid">
+        <img src="/assets/homeImg/glass-x-view-white.png" class="p-b-4xl img-lg"/>
+      </div>
+      
+      <div class="grid gap-lg">
+
+        <!-- Backdrop-filter -->
+        <div class="grid">
+          <!-- header -->
+          <div class="is-closed grid space-wide-x">
+            <div class="grid gap-3xs">
+              <h2 class="title-lg">Backdrop-filter</h2>
+              <p>Blurs background</p>
+            </div>
+
+            <!-- toggle -->
+            <div class="js-accordionToggle is-closed accordion-toggle">
+
+              <div class="see-more-btn flex-r">
+                <p class="bold-text">More info</p>
+                <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+              </div>
+
+              <div class="see-less-btn flex-r">
+                <p class="bold-text">Less info</p>
+                <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- content -->
+          <div class="accordion-content is-closed grid gap-2xl space-wide-x p-b-xl">
+  
+             <!-- Do you need it? -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">Do you really need it?</h4>
+              <p>It would be hard to read the text without it.</p>
+            </div>
+  
+            <!-- How to use it -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">How to use it</h4>
+              <p>The .</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+
+        <!-- Background-color -->
+        <div class="grid">
+          <!-- header -->
+          <div class="is-closed grid space-wide-x">
+            <div class="grid gap-3xs">
+              <h2 class="title-lg">Background-color</h2>
+              <p>Ties in with brand colors and makes text more legible</p>
+            </div>
+
+            <!-- toggle -->
+            <div class="js-accordionToggle is-closed accordion-toggle">
+
+              <div class="see-more-btn flex-r">
+                <p class="bold-text">More info</p>
+                <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+              </div>
+
+              <div class="see-less-btn flex-r">
+                <p class="bold-text">Less info</p>
+                <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- content -->
+          <div class="accordion-content is-closed grid gap-2xl space-wide-x p-b-xl">
+  
+             <!-- Do you need it? -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">Do you really need it?</h4>
+              <p>It would be hard to read the text without it.</p>
+            </div>
+  
+            <!-- How to use it -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">How to use it</h4>
+              <p>The .</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+
+        <!-- Noise -->
+        <div class="grid">
+          <!-- header -->
+          <div class="is-closed grid space-wide-x">
+            <div class="grid gap-3xs">
+              <h2 class="title-lg">  Noise texture</h2>
+              <p>Makes the glass look more realistic.</p>
+            </div>
+
+            <!-- toggle -->
+            <div class="js-accordionToggle is-closed accordion-toggle">
+
+              <div class="see-more-btn flex-r">
+                <p class="bold-text">More info</p>
+                <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+              </div>
+
+              <div class="see-less-btn flex-r">
+                <p class="bold-text">Less info</p>
+                <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- content -->
+          <div class="accordion-content is-closed grid gap-xl space-wide-x p-b-xl">
+  
+            <!-- Do you need it? -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">Do you really need it?</h4>
+              <p>No but it helps prevent banding in the blur.</p>
+            </div>
+  
+            <!-- How to use it -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">How to use it</h4>
+              <p>The bevel must.</p>
+
+              <div class="grid gap-xl m-t-sm">
+
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+
+        <!-- Bevel -->
+        <div class="grid">
+          <!-- header -->
+          <div class="is-closed grid space-wide-x">
+            <div class="grid gap-3xs">
+              <h2 class="title-lg">Bevel box-shadow</h2>
+              <p>Gives the glass thickness.</p>
+            </div>
+
+            <!-- toggle -->
+            <div class="js-accordionToggle is-closed accordion-toggle">
+
+              <div class="see-more-btn flex-r">
+                <p class="bold-text">More info</p>
+                <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+              </div>
+
+              <div class="see-less-btn flex-r">
+                <p class="bold-text">Less info</p>
+                <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- content -->
+          <div class="accordion-content is-closed grid gap-xl space-wide-x p-b-xl">
+  
+            <!-- Do you need it? -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">Do you really need it?</h4>
+              <p>No but it's what makes this glass material stand out. The alternative is a translucent white border.</p>
+            </div>
+  
+            <!-- How to use it -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">How to use it</h4>
+              <p>The bevel must.</p>
+
+              <div class="grid gap-xl m-t-sm">
+
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+
+        <!-- Elevation -->
+        <div class="grid p-b-md">
+          <!-- header -->
+          <div class="is-closed grid space-wide-x">
+            <div class="grid gap-3xs">
+              <h2 class="title-lg">Elevation box-shadow</h2>
+              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
+            </div>
+
+            <!-- toggle -->
+            <div class="js-accordionToggle is-closed accordion-toggle">
+
+              <div class="see-more-btn flex-r">
+                <p class="bold-text">More info</p>
+                <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+              </div>
+
+              <div class="see-less-btn flex-r">
+                <p class="bold-text">Less info</p>
+                <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+              </div>
+            </div>
+
+          </div>
+
+          <!-- content -->
+          <div class="accordion-content is-closed grid gap-2xl space-wide-x p-b-xl">
+  
+             <!-- Do you need it? -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">Do you really need it?</h4>
+              <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
+              <img src="/assets/tutorial-img/noon.jpg" class="img-sm p-t-xs"/>
+            </div>
+  
+            <!-- How to use it -->
+            <div class="grid gap-3xs">
+              <h4 class="title-md">How to use it</h4>
+              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+
+      </div>
+    </div>
+  </section>
+
+<!-- GPT -->
+  <section class="max-w section__wrap">
+    <div class="section__header">
+      <p class="eyebrow">Naturally, the first question is:</p>
+      <h2 class="title-lg">Can chatGPT write this CSS?</h2>
+    </div>
+
+    <div class="grid tint-2xdark">
+      <img src="/assets/homeImg/glass-gpt-code.png"/>
+
+      <div class="grid gap-2xs space-wide">
+        <h3 class="title-sm">Answer: nope this ain’t it.</h3>
+        <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The tiny blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
+        
+        <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- GPT glass demo -->
+  <div class="flex-c space-thin">
+    <div class="glassGPT glassGPT__card space-thin grid-center">
+      <p class="title-md">chatGPT 4's glass CSS</p>
+    </div>
+  </div>
+
+
+<!-- .glass code -->
+  <section class="max-w section__wrap">
+    <div class="section__header">
+      <h2 class="title-md">.glass CSS</h2>
+    </div>
+
+    <div class="tint-2xdark grid space-wide">
+
+<!-- Card glass code -->
+      <div class="sidescroll-wrap">
+        <div class="sidescroll space-thin" id="code-text"">
+          <pre><code class="c-class">.glass-base {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+          <pre><code class="c-prop">  -webkit-backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
+          <pre><code class="c-prop">  backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
+          <pre><code class="c-class">}</code></pre>
+          <br>
+          <pre><code class="c-class">.glass-base::after {</code></pre>
+          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+          <pre><code class="c-prop">  pointer-events: <span class="c-value">none</span>;</code></pre>
+          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+          <pre><code class="c-prop">  z-index: <span class="c-value">-1</span>;</code></pre>
+          <br>
+          <pre><code class="c-prop">  box-shadow: </code></pre>
+          <pre><code class="c-value">    inset 1px 1px 0.2px rgba(250, 254, 255, 0.2),</code></pre>
+          <pre><code class="c-value">    inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), </code></pre>
+          <pre><code class="c-value">    inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">    inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);</code></pre>
+          <br>
+          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+          <br>
+          <pre><code><span class="c-comment">/*** Add your own noise textures here! ***/</span></code></pre>
+          <pre><code class="c-prop">  background-image:</code></pre>
+          <pre><code class="c-prop">    <span class="c-value">url(/assets/images/noise-texture-500x500.png),</span></code></pre>
+          <pre><code class="c-prop">    <span class="c-value">url(/assets/textures/noise-texture-black-100den-10op-500x500.png)</span>;</code></pre>
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+      </div>
+
+<!-- Copy btn -->
+      <div class="flex-r">
+      <button
+        type="button"
+        id="copy-code"
+        class="btn-md btn2-glass">
+        Copy code
+        <img src="/assets/icons/Copy.svg"/>
+      </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- .glass-base CSS Accordion -->
 <div class="max-w section__wrap">
   <!-- header -->
   <div class="accordion__header is-closed">
@@ -121,250 +501,6 @@
   </div>
   
 </div>
-
-
-
-
-
-<!-- The building blocks -->
-  <section class="max-w section__wrap">
-
-    <div class="section__header">
-      <!-- <p class="eyebrow">First question</p> -->
-      <h2 class="title-lg">The building blocks</h2>
-    </div>
-
-    <div class="grid tint-2xdark space-wide">
-      <div class="space-wide m-b-xl">
-        <p class="title-md text-center p-b-2xs">If performance wasn’t a factor, what is the most stunning glass material I can bring into being?</p>
-        <p class="">That was my thought process, but it might not be yours. So I will start off by explaining what each layer does, and you can decide if you need it.</p>
-      </div>
-      
-      <img src="/assets/homeImg/glass-x-view-white.png" class="p-b-4xl img-lg"/>
-
-      <div class="grid gap-4xl">
-
-        <!-- Backdrop-filter -->
-        <div class="grid gap-2xs">
-          <h3 class="title-lg">
-            Backdrop-filter
-          </h3>
-          <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </div>
-
-        <!-- Background-color -->
-        <div class="grid gap-2xs">
-          <h3  class="title-lg">
-            Background-color
-          </h3>
-          <div class="grid gap-md">
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">What it does</h4>
-              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">Do you really need it?</h4>
-                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">How to use it</h4>
-              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
-              
-              <div class="grid gap-xl m-t-sm">
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
-                </div>
-  
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Noise -->
-        <div class="grid gap-2xs">
-          <h3  class="title-lg">
-            Noise texture(s)
-          </h3>
-          <p>This is the only property that is nonnegotiable when creating a glass material class. </p>
-        </div>
-
-        <!-- Bevel -->
-        <div class="grid gap-2xs">
-          <h3  class="title-lg">Bevel</h3>
-
-          <div class="grid gap-md">
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">What it does</h4>
-              <p>The </p>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">Do you really need it?</h4>
-                <p>No but it's what makes this glass material stand out. The alternative is a translucent white border.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Elevation -->
-        <div class="grid gap-2xs">
-          <h3  class="title-lg">Elevation box-shadow</h3>
-
-          <div class="grid gap-md">
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">What it does</h4>
-              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">Do you really need it?</h4>
-                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
-                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
-            </div>
-  
-            <div class="grid gap-3xs">
-              <h4 class="title-sm">How to use it</h4>
-              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
-              <div class="grid gap-xl m-t-sm">
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn1-glass includes a box-shadow that changes size on :hover</p>
-                </div>
-    
-                <div class="grid gap-2xs">
-                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
-                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
-                </div>
-  
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div> 
-    </div>
-
-  </section>
-
-<!-- GPT -->
-  <section class="max-w section__wrap">
-    <div class="section__header">
-      <p class="eyebrow">Naturally, the first question is:</p>
-      <h2 class="title-lg">Can chatGPT write this CSS?</h2>
-    </div>
-
-    <div class="grid tint-2xdark">
-      <img src="/assets/homeImg/glass-gpt-code.png"/>
-
-      <div class="grid gap-2xs space-wide">
-        <h3 class="title-sm">Answer: nope this ain’t it.</h3>
-        <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The tiny blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
-        
-        <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
-      </div>
-    </div>
-  </section>
-
-<!-- GPT glass demo -->
-  <div class="flex-c space-thin">
-    <div class="glassGPT glassGPT__card space-thin grid-center">
-      <p class="title-md">chatGPT 4's glass CSS</p>
-    </div>
-  </div>
-
-
-<!-- .glass code -->
-  <section class="max-w section__wrap">
-    <div class="section__header">
-      <!-- <p class="eyebrow">Step two</p> -->
-      <h2 class="title-md">.glass CSS</h2>
-    </div>
-<!-- Code pen -->
-    <!-- <div class="code-pen"> 
-      <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ZEVoBOM" data-editable="false" data-user="kris-kay-design" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 1px solid; margin: 1em 0; padding: 1em;">
-        <span>See the Pen <a href="https://codepen.io/kris-kay-design/pen/ZEVoBOM">
-        Untitled</a> by Kris (<a href="https://codepen.io/kris-kay-design">@kris-kay-design</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-    </div>   -->
-
-    <div class="tint-2xdark grid space-wide">
-
-<!-- Card glass code -->
-      <div class="sidescroll-wrap">
-        <div class="sidescroll space-thin" id="code-text"">
-          <pre><code class="c-class">.glass-base {</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
-          <pre><code class="c-prop">  -webkit-backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
-          <pre><code class="c-prop">  backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
-          <pre><code class="c-class">}</code></pre>
-          <br>
-          <pre><code class="c-class">.glass-base::after {</code></pre>
-          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
-          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
-          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
-          <pre><code class="c-prop">  pointer-events: <span class="c-value">none</span>;</code></pre>
-          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
-          <pre><code class="c-prop">  z-index: <span class="c-value">-1</span>;</code></pre>
-          <br>
-          <pre><code class="c-prop">  box-shadow: </code></pre>
-          <pre><code class="c-value">    inset 1px 1px 0.2px rgba(250, 254, 255, 0.2),</code></pre>
-          <pre><code class="c-value">    inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), </code></pre>
-          <pre><code class="c-value">    inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1),</code></pre>
-          <pre><code class="c-value">    inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);</code></pre>
-          <br>
-          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
-          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
-          <br>
-          <pre><code><span class="c-comment">/*** Add your own noise textures here! ***/</span></code></pre>
-          <pre><code class="c-prop">  background-image:</code></pre>
-          <pre><code class="c-prop">    <span class="c-value">url(/assets/images/noise-texture-500x500.png),</span></code></pre>
-          <pre><code class="c-prop">    <span class="c-value">url(/assets/textures/noise-texture-black-100den-10op-500x500.png)</span>;</code></pre>
-
-          <pre><code class="c-class">}</code></pre>
-        </div>
-      </div>
-
-<!-- Copy btn -->
-      <div class="flex-r">
-      <button
-        type="button"
-        id="copy-code"
-        class="btn-md btn2-glass">
-        Copy code
-        <img src="/assets/icons/Copy.svg"/>
-      </button>
-      </div>
-
-    </div>
-  </section>
-
 
 <!-- Frosted glass -->
   <!-- <section id="frostedGlass" class="max-w">

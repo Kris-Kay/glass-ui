@@ -1,9 +1,11 @@
 /* ================================== */
 /* Sections */
 @use "../0-base/breakpoint" as bp;
+@use "../0-base/color";
 @use "../1-layout/z-index" as z;
 @use "../2-visual/fill";
 @use "../2-visual/glass";
+@use "../2-visual/inset" as in;
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -25,11 +27,13 @@
 }
 
 .section__header {
-/* layout */
-  display: grid;
-  padding: var(--space-thin);
+  --space: var(--space-thin); // < control padding from here
 
-/* visual */
+  /* layout */
+  display: grid;
+  padding: var(--space);
+
+  /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
   @include fill.fill-reg;
@@ -37,5 +41,16 @@
   @include bp.bp(md) {
     overflow: hidden;
     border-radius: var(--lg) var(--lg) 0 0;
+  }
+
+  >.full-w-fill {
+    /* layout */
+    padding: var(--space);
+    margin-left: calc((-1 * var(--space)) + 0.5px);
+    margin-right: calc(-1 * var(--space));
+
+    /* visual */
+    background-color: color.$glass-dark;
+    box-shadow: in.$flat-inset-md;
   }
 }
