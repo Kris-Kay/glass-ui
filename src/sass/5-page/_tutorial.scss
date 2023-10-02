@@ -61,10 +61,13 @@
 
 
 .code-pen {
-  margin-right: calc(-1 * var(--space-thin));
+  display: none;
 
   @include bp.bp(md) {
+    display: block;
     margin: 0;
+  // margin-right: calc(-1 * var(--space-thin));
+
   }
 }
 
