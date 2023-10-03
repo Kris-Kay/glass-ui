@@ -4,6 +4,7 @@
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../1-layout" as *;
+@use "../1-layout/flex";
 @use "../2-visual" as *;
 @use "../2-visual/border" as br;
 @use "../3-item" as *;
@@ -13,7 +14,7 @@
 .cube {
   width: min(100%, 200px);
   height: var(--lg);
-  @include flex-c;
+  @include flex.flex-c;
   flex: 1;
 }
 
@@ -47,7 +48,7 @@
   grid-column: 1/4;
   grid-row: 4/5;
 
-  @include flex-c;
+  @include flex.flex-c;
   position: relative;
   overflow: hidden;
   font-size: 1rem;
@@ -94,7 +95,7 @@
 
 .glass-demo-bin {
   grid-area: glass;
-  @include flex-r;
+  @include flex.flex-r;
 }
 
 // .glass-demo-flex {
@@ -155,7 +156,7 @@
   // background-repeat: no-repeat;
   // z-index: -9;
   border-radius: var(--lg);
-  @include flex-c;
+  @include flex.flex-c;
   flex-direction: column;
   gap: 1rem;
   grid-area: glass;
@@ -220,4 +221,20 @@
   border-radius: 0.1rem;
   height: $s10;
   margin: $s3 0;
+}
+
+.wrap__box--2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--xl);
+
+  @include bp.bp(md) {
+    gap: var(--md);
+  }
+
+  @include bp.bp(lg) {
+    gap: var(--xl);
+  }
 }
