@@ -36,7 +36,7 @@ $inset-md:
   overflow: hidden;
 
   box-shadow: $inset-md;
-  background-color: $glass-dark;
+  background-color: $tint-dark;
 
   &::after {
     @include pseudo;
@@ -75,7 +75,7 @@ $inset-md:
     // box-shadow: $inset-high-md;
     // box-shadow: $inset-sha-md;
     // filter: brightness(0.1);
-    // filter keeps $glass-dark & $inset-sha-md from looking washed out over dark backdrops. Can remove if using #000 for $shadow color 
+    // filter keeps $tint-dark & $inset-sha-md from looking washed out over dark backdrops. Can remove if using #000 for $shadow color 
 /* ================================== */
 
 
@@ -386,7 +386,7 @@ $flat-inset-md:
     z-index: -2;
 
     box-shadow: $inset-sha-md;
-    background-color: $glass-dark;
+    background-color: $tint-dark;
     filter: brightness(0.01);
   }
 }

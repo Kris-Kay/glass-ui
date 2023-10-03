@@ -60,15 +60,17 @@
   @include glass--no-bevel;
 }
 
-/* Primary 3D button glass */
+
+/* Clear 3D button glass */
 /* ================================== */
-.btn1-glass {
+@mixin btn-glass-clear {
   position: relative;
-  box-shadow: sha.$sha-xl;
-  transition: background-color ani.$speed-slow ease-out;
+  transition: 
+    background-color ani.$speed-slow ease,
+    color ani.$speed-slow ease;
   z-index: 20;
   @include fill.filter-reg;
-  background-color: color.$btn1-rest;
+  background-color: color.$tint-clear;
 
   &::after {
     @include help.pseudo;
@@ -79,22 +81,66 @@
   }
 
   &:hover {
-    background-color: color.$btn2-hover;
+    background-color: color.$tint-light;
+    color: color.$text-light-bold;
   }
 
   &:active {
-    background-color: color.$btn2-active;
+    background-color: color.$tint-xlight;
+    color: color.$text-dark-reg;
   }
 }
 
-/* Secondary 3D button glass */
+.btn-glass-clear {
+  @include btn-glass-clear;
+}
+
+
+/* Light 3D button glass */
 /* ================================== */
-.btn2-glass {
+@mixin btn-glass-light {
+  position: relative;
+  // box-shadow: sha.$sha-sm;
+  transition: 
+    background-color ani.$speed-slow ease,
+    color ani.$speed-slow ease;
+  z-index: 20;
+  @include fill.filter-reg;
+  background-color: color.$tint-light;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+
+    @include fill.noise-sm;
+    box-shadow: bevel.$bevel-sm;
+  }
+
+  &:hover {
+    background-color: color.$tint-xlight;
+    color: color.$text-light-bold;
+  }
+
+  &:active {
+    background-color: color.$tint-2xlight;
+    color: color.$text-dark-reg;
+  }
+}
+
+.btn-glass-light {
+  @include btn-glass-light;
+}
+
+/* Dark 3D button glass */
+/* ================================== */
+@mixin btn-glass-dark {
   position: relative;
   z-index: 20;
-  box-shadow: sha.$sha-sm;
-  transition: background-color box-shadow ani.$speed-slow ease-out;
-  background-color: color.$btn2-rest;
+  // box-shadow: sha.$sha-sm;
+  transition: 
+  background-color ani.$speed-slow ease,
+  color ani.$speed-slow ease;
+  background-color: color.$tint-dark;
 
   &::after {
     @include help.pseudo;
@@ -110,11 +156,15 @@
   } 
 
   &:hover {
-    background-color: color.$btn2-hover;
-    box-shadow: sha.$sha-md;
+    background-color: color.$tint-xdark;
   }
 
   &:active {
-    background-color: color.$btn2-active;
+    background-color: color.$tint-2xdark;
+    color: color.$text-light-bold;
   }
+}
+
+.btn-glass-dark {
+  @include btn-glass-dark;
 }

@@ -84,7 +84,6 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
-  text-shadow: sha.$text-sha-xs;
 }
 
 %body-text {
@@ -103,16 +102,11 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-sha-lg;
-}
-
-%title-text {
-  @include title-text;
 }
 
 .title {
   @include text-size-modifier {
-    @extend %title-text;
+    @include title-text;
   }
 }
 
@@ -123,16 +117,11 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-sha-sm;
-}
-
-%thin-title-text {
-  @include thin-title-text;
 }
 
 .title-thin {
   @include text-size-modifier {
-    @extend %thin-title-text;
+    @include thin-title-text;
   }
 }
 
@@ -148,10 +137,6 @@ body {
 li {
   @include body-text;
   font-weight: $font-weight-sm;
-}
-
-h4 {
-  color: color.$text-light-xmild;
 }
 
 .dot {
@@ -298,7 +283,7 @@ pre code {
   white-space: nowrap;
 }
 
-.text-c{
+.text-c {
   text-align: center;
 }
 

@@ -8,6 +8,12 @@
 @use "../3-item/button" as btn;
 /* ================================== */
 
+/* Main nav */
+/* ================================== */
+:root {
+  --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
+}
+
 .main-nav {
   position: relative;
   margin: 0 auto;
@@ -31,7 +37,6 @@
   }
 }
 
-/* ================================== */
 /* Dropdown */
 /* ================================== */
 .dropdown {

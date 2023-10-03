@@ -115,27 +115,27 @@ $satu: 1.3;
 /* Glass Fill mixins */
 /* ================================== */
 @mixin fill-xlight {
-  background-color: color.$glass-xlight;
+  background-color: color.$tint-xlight;
   @include filter-xlight;
 }
 
 @mixin fill-light {
-  background-color: color.$glass-light;
+  background-color: color.$tint-light;
   @include filter-light;
 }
 
 @mixin fill-reg {
-  background-color: color.$glass-reg;
+  background-color: color.$tint-reg;
   @include filter-reg;
 }
 
 @mixin fill-dark {
-  background-color: color.$glass-dark;
+  background-color: color.$tint-dark;
   @include filter-dark;
 }
 
 @mixin fill-xdark {
-  background-color: color.$glass-xdark;
+  background-color: color.$tint-xdark;
   @include filter-xdark;
 }
 

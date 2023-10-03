@@ -53,21 +53,26 @@ $shadow-color: $ink2;
 $light-color: $sky99;
 $light-color-mild: $sky95;
 
-$glass-xlight: rgba($sky98, 0.1);
-$glass-light: rgba($sky98, 0.03);
-$glass-reg: rgba($ink2, 0.2);
-$glass-dark: rgba($ink2, 0.3);
-$glass-xdark: rgba($ink2, 0.7);
-$glass-2xdark: rgba($ink2, 0.97);
+$tint-2xlight: rgba($sky99, 0.98);
+$tint-xlight: rgba($sky98, 0.5);
+$tint-light: rgba($sky98, 0.3);
+$tint-clear: rgba($sky99, 0.01);
+$tint-reg: rgba($ink2, 0.1);
+$tint-dark: rgba($ink2, 0.3);
+$tint-xdark: rgba($ink2, 0.7);
+$tint-2xdark: rgba($ink2, 0.97);
 
-$text-light-reg: $sky98;
-$text-light-mild: $snow95;
-$text-light-xmild: $snow70;
+$text-light-bold: $sky99;
+$text-light-reg: $sky95;
+$text-light-mild: $snow90;
+$text-light-xmild: $snow80;
 $text-light-2xmild: $snow65;
 
-$text-dark-bold: $ink6;
+$text-dark-bold: $ink2;
 $text-dark-reg: $ink10;
-$text-dark-mild: $gray50;
+$text-dark-mild: $gray20;
+$text-dark-xmild: $gray50;
+$text-dark-2xmild: $gray60;
 
 $code-class: $leaf70;
 $code-prop: $snow70;
@@ -118,28 +123,40 @@ $btn2-active: rgba($ink2, 0.2);
   color: $text-dark-mild;
 }
 
+.text-dark-xmild {
+  color: $text-dark-xmild;
+}
+
+.text-dark-2xmild {
+  color: $text-dark-2xmild;
+}
+
 /* Glass tints */
 /* ================================== */
+.tint-2xlight {
+  background-color: $tint-2xlight;
+}
+
 .tint-xlight {
-  background-color: $glass-xlight;
+  background-color: $tint-xlight;
 }
 
 .tint-light {
-  background-color: $glass-light;
+  background-color: $tint-light;
 }
 
 .tint-reg {
-  background-color: $glass-reg;
+  background-color: $tint-reg;
 }
 
 .tint-dark {
-  background-color: $glass-dark;
+  background-color: $tint-dark;
 }
 
 .tint-xdark {
-  background-color: $glass-xdark;
+  background-color: $tint-xdark;
 }
 
 .tint-2xdark {
-  background-color: $glass-2xdark;
+  background-color: $tint-2xdark;
 }
