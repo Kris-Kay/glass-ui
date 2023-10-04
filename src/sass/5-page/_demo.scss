@@ -12,10 +12,11 @@
 /* ================================== */
 
 .cube {
-  width: min(100%, 200px);
-  height: var(--lg);
+  width: min(100%, 400px);
+  height: 400px;
   @include flex.flex-c;
   flex: 1;
+  border-radius: var(--sm);
 }
 
 // round-rect.html
@@ -238,3 +239,15 @@
     gap: var(--xl);
   }
 }
+
+.tint-demo {
+  width: 100%;
+  @include flex-l;
+  padding: var(--md);
+  border-radius: var(--xs);
+
+  @include bp.bp(md) {
+    border-radius: var(--md);
+  }
+}
+

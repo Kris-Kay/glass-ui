@@ -14,7 +14,12 @@
   gap: var(--sm);
   margin: 0 auto;
   padding: var(--space-thin);
-  border-radius: var(--md);
+  border-radius: var(--sm);
+
+  @include bp.bp(sm) {
+    gap: var(--md);
+    border-radius: var(--md);
+  }
 }
 
 .box-thin-fit {
@@ -32,21 +37,18 @@
 /* ================================== */
 @mixin box-wide {
   display: grid;
-  gap: var(--lg);
+  // gap: var(--lg);
   place-items: center;
   padding: var(--2xl);
   border-radius: var(--md);
 
   @include bp.bp(xs) {
-    gap: var(--xl);
+    // gap: var(--xl);
     padding: var(--3xl);
   }
 
   @include bp.bp(md) {
     padding: var(--space-wide);
-  }
-
-  @include bp.bp(lg) {
     border-radius: var(--lg);
   }
 }

@@ -32,6 +32,11 @@
   @include glass-base;
 }
 
+.glass-reg {
+  @include fill.fill-reg;
+  @include glass-base;
+}
+
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
 /* ================================== */
 @mixin glass--no-bevel-mobile {
@@ -69,7 +74,7 @@
     background-color ani.$speed-slow ease,
     color ani.$speed-slow ease;
   z-index: 20;
-  @include fill.filter-reg;
+  @include fill.glass-filter;
   background-color: color.$tint-clear;
 
   &::after {
@@ -105,7 +110,7 @@
     background-color ani.$speed-slow ease,
     color ani.$speed-slow ease;
   z-index: 20;
-  @include fill.filter-reg;
+  @include fill.glass-filter;
   background-color: color.$tint-light;
 
   &::after {
@@ -151,7 +156,7 @@
   &::before {
     @include help.pseudo;
     z-index: -2;
-    @include fill.filter-reg;
+    @include fill.glass-filter;
     @include fill.noise-sm;
   } 
 

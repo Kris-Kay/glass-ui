@@ -7,45 +7,33 @@
 
 /* Noise textures */
 /* ================================== */
-// * Noise .png generator: https://devsdash.com/tools/noise-texture-generator
+// * Noise texture .png generator: https://devsdash.com/tools/noise-texture-generator
 
 @mixin noise {
+  background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
 }
 
 @mixin noise-sm {
   @include noise;
   background-size: 20px;
-  background-repeat: repeat;
 }
 
 @mixin noise-md {
   @include noise;
   background-size: 100px;
-  background-repeat: repeat;
 }
 
 @mixin noise-lg {
   @include noise;
   background-size: 200px;
-  background-repeat: repeat;
 }
 
 
-/* Glass tint list */
-/* ================================== */
-//TODO
-$tints:
-  "xlight",
-  "light",
-  "reg",
-  "dark",
-  "xdark";
-
-
-/* Glass Filter mixins */
+/* Glass Filter */
 /* ================================== */
 $satu: 1.3;
+$bright: 0.95;
 
 :root {
   --blur: 28px;
@@ -59,88 +47,59 @@ $satu: 1.3;
   }
 }
 
-@mixin filter-xlight {
-  $bright: 1.2;
+@mixin glass-filter {
   -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
   backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
 }
 
-@mixin filter-light {
-  $bright: 1.1;
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
-  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
-}
-
-@mixin filter-reg {
-  $bright: 0.95;
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
-  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
-}
-
-@mixin filter-dark {
-  $bright: 0.85;
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
-  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
-}
-
-@mixin filter-xdark {
-  $bright: 0.7;
-  -webkit-backdrop-filter: blur(var(--blur)) brightness($bright)  saturate($satu);
-  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
-}
-
-/* Glass filter classes */
-/* ================================== */
-.filter-xlight {
-  @include filter-xlight;
-}
-
-.filter-light {
-  @include filter-light;
-}
-
-.filter-reg {
-  @include filter-reg;
-}
-
-.filter-dark{
-  @include filter-dark;
-}
-
-.filter-xdark{
-  @include filter-xdark;
+.glass-filter {
+  @include glass-filter;
 }
 
 
 /* Glass Fill mixins */
 /* ================================== */
+@mixin fill-2xlight {
+  background-color: color.$tint-2xlight;
+  @include glass-filter;
+}
+
 @mixin fill-xlight {
   background-color: color.$tint-xlight;
-  @include filter-xlight;
+  @include glass-filter;
 }
 
 @mixin fill-light {
   background-color: color.$tint-light;
-  @include filter-light;
+  @include glass-filter;
 }
 
 @mixin fill-reg {
   background-color: color.$tint-reg;
-  @include filter-reg;
+  @include glass-filter;
 }
 
 @mixin fill-dark {
   background-color: color.$tint-dark;
-  @include filter-dark;
+  @include glass-filter;
 }
 
 @mixin fill-xdark {
   background-color: color.$tint-xdark;
-  @include filter-xdark;
+  @include glass-filter;
+}
+
+@mixin fill-2xdark {
+  background-color: color.$tint-2xdark;
+  @include glass-filter;
 }
 
 /* Glass fill classes */
 /* ================================== */
+.fill-2xlight {
+  @include fill-2xlight;
+}
+
 .fill-xlight {
   @include fill-xlight;
 }
@@ -159,4 +118,8 @@ $satu: 1.3;
 
 .fill-xdark { 
   @include fill-xdark;
+}
+
+.fill-2xdark { 
+  @include fill-2xdark;
 }
