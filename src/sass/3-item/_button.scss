@@ -77,12 +77,6 @@
     height: calc(1.2 * $inner-h);
     margin-top: calc(-1 * $p-t);
   }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-sm;
-  }
 }
 
 /* Button md */
@@ -120,12 +114,6 @@
     height: calc(1.1 * $inner-h);
     margin-top: calc(-1 * $p-t);
   }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-md;
-  }
 }
 
 /* Button lg */
@@ -160,17 +148,8 @@
   text-shadow: sha.$text-sha-lg;
 
   & img {
-    // width: auto;
     height: calc(1 * $inner-h);
-    // align-self: center;
-    // z-index: z.z(on-btn);
     margin-top: calc(-1 * $p-t);
-  }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-lg;
   }
 }
 
@@ -197,12 +176,6 @@
   & img {
     height: calc(var(--ui-sm) * 0.6); 
   }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-sm;
-  }
 }
 
 .round-btn-md {
@@ -214,12 +187,6 @@
   & img {
     height: calc(var(--ui-md) * 0.6); 
   }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-md;
-  }
 }
 
 .round-btn-lg {
@@ -230,12 +197,6 @@
 
   & img {
     height: calc(var(--ui-lg) * 0.6); 
-  }
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-lg;
   }
 }
 
@@ -268,14 +229,6 @@
     color ani.$speed-slow ease;
   z-index: z.z(btn);
   @include fill.glass-filter;
-
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    @include fill.noise-sm;
-    // box-shadow: bevel.$bevel-md;
-  }
 }
 
 /* 3D button glass */
