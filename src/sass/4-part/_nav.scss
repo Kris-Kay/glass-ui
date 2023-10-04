@@ -3,6 +3,7 @@
 @use "../0-base/color";
 @use "../0-base/text";
 @use "../1-layout/flex";
+@use "../1-layout/z-index" as z;
 @use "../2-visual/animation" as ani;
 @use "../2-visual/shadow" as sha;
 @use "../3-item/button" as btn;
@@ -43,7 +44,7 @@
   position: relative;
   display: inline-block;
   pointer-events: none;
-  z-index: z(menu);
+  z-index: z.z(menu);
   cursor: pointer;
   
   &.isClosed {

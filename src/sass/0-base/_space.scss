@@ -10,7 +10,6 @@
 // * thin = small change at each bp, wide= starts small and gets very big
 
 :root {
-
   --max-w: 100%;
 
   @include bp.bp(xs) {
@@ -61,7 +60,6 @@
   max-width: var(--max-w);
   margin-left: auto;
   margin-right: auto;
-  // width: 100%;
 }
 
 .max-w {
@@ -86,8 +84,6 @@ img {
 /* Responsive UI height */
 /* ================================== */
 /* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
-
-
 
 .space-thin {
   padding: var(--space-thin);

@@ -27,9 +27,9 @@
   @include glass.glass--no-bevel-mobile;
   @include fill.fill-dark;
 
-  >.title-md {
-    width: 1fr;
-  }
+  // >.title-md {
+  //   width: 1fr;
+  // }
 
   @include bp.bp(md) {
     border-radius: var(--lg) var(--lg) 0 0;
@@ -46,7 +46,7 @@
 .accordion-toggle {
   pointer-events: auto;
   cursor: pointer;
-  width: 1fr;
+  width: 100%;
   z-index: 10;
 
   >.see-more-btn {
