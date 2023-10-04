@@ -60,14 +60,13 @@ $letter-spacing-md: 0.08em;
 $letter-spacing-lg: 0.125em;
 
 /* line-height: */
-$line-height-sm: calc(0.125rem + 2ex + 0.125rem);
+$line-height-sm: calc(0.1rem + 2ex + 0.1rem);
 $line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
 $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* Text size classes */
 /* ================================== */
 // * Generates a class for every font size
-// TODO write 1 mega modifier mixin!
 @mixin text-size-modifier {
   @each $key, $value in $font-sizes {
     &-#{$key} {

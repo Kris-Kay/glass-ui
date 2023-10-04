@@ -48,7 +48,7 @@
 
   @include bp.bp(xl) {
     --space-thin: #{size.$s8}; // 32px
-    --space-wide: #{size.$s20}; // 80px
+    --space-wide: #{size.$s16}; // 64px
   }
 }
 
