@@ -16,14 +16,15 @@
   --space-thin: #{size.$s4}; // 16px
   --space-wide: #{size.$s4}; // 16px
 
-  --ui-sm: #{size.$s6}; /* 24px */
-  --ui-md: #{size.$s8}; /* 32px */
-  --ui-lg: #{size.$s10}; /* 40px */
+  --ui-sm: #{size.$s7}; /* 28px */
+  --ui-md: #{size.$s9}; /* 36px */
+  --ui-lg: #{size.$s11}; /* 44px */
   }
 
   @include bp.bp(sm) {
     --space-thin: #{size.$s5}; // 20px
     --space-wide: #{size.$s10}; // 40px
+
     --max-w: calc(100vw - (var(--space-thin) * 2));
   }
 
@@ -31,19 +32,16 @@
     --space-thin: #{size.$s6}; // 24px
     --space-wide: #{size.$s12}; // 48px
 
-    --ui-sm: #{size.$s7}; /* 28px */
-    --ui-md: #{size.$s9}; /* 36px */
-    --ui-lg: #{size.$s10}; /* 40px */
+    --ui-sm: #{size.$s8}; /* 32px */
+    --ui-md: #{size.$s10}; /* 40px */
+    --ui-lg: #{size.$s12}; /* 48px */
+
     --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
   }
 
   @include bp.bp(lg) {
     --space-thin: #{size.$s7}; // 28px
     --space-wide: #{size.$s16}; // 64px
-
-    --ui-sm: #{size.$s8}; /* 32px */
-    --ui-md: #{size.$s10}; /* 40px */
-    --ui-lg: #{size.$s11}; /* 44px */
   }
 
   @include bp.bp(xl) {
@@ -75,8 +73,7 @@
 }
 
 /* Full width */
-.full-w,
-img {
+.full-w {
   width: 100%;
   max-width: 100vw;
 }

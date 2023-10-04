@@ -5,6 +5,7 @@
 @use "../0-base/size";
 @use "../0-base/text";
 @use "../1-layout/flex";
+@use "../1-layout/z-index" as z;
 @use "../1-layout/layout-help" as help;
 @use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
@@ -13,104 +14,163 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
+/* Button text */
+/* ================================== */
+@mixin btn-text {
+  font-family: text.$font-family-title;
+  font-weight: text.$font-weight-sm;
+  letter-spacing: text.$letter-spacing-md;
+  text-align: center;
+  text-wrap: nowrap;
+  color: color.$text-light-reg;
+  z-index: z.z(on-btn);
+}
+
 /* Button base */
 /* ================================== */
 @mixin btn-base {
-  width: max-content;
+  width: fit-content;
   @include flex.flex-c;
-  @include text.btn-text;
+  @include btn-text;
   border-radius: br.$round;
+  z-index: z.z(btn);
+
+  & img {
+    width: auto;
+    align-self: center;
+    z-index: z.z(on-btn);
+  }
 }
 
 /* Button sm */
 /* ================================== */
 .btn-sm {
-  $inner-h: 0.75rem; 
-  // * $inner-h sets the font size, line height and icon height to the same value for vertical alignment
+  /* config */
+  $inner-h: 0.875em; // ← set font size/line height/icon height here
+  $p-t: 1px; // ← padding-top diff for every font
+  $p-b: 0;
+  $p-x: 0.8em;
+  $icon-x: 0.75em; // ← less padding on icon side
+
+  &.icon-right {
+    gap: 0.3em;
+    padding: $p-t $icon-x $p-b $p-x;
+  }
+  
+  &.icon-left {
+    gap: 0.3em;
+    padding: $p-t $p-x $p-b $icon-x;
+  }
+
   /* layout */
   @include btn-base;
   height: var(--ui-sm); 
-  gap: 0.3rem;
   font-size: $inner-h;
   line-height: $inner-h;
-  padding: 2.5px 0.7rem 0 0.7rem;
+  padding: $p-t $p-x $p-b $p-x;
 
   /* visual */
   box-shadow: sha.$sha-sm;
+  text-shadow: sha.$text-sha-sm;
 
   & img {
-    width: auto;
-    height: $inner-h;
-    align-self: center;
-    // margin-top: -1.25px;
-    filter: drop-shadow(0 0 0.5px rgba(color.$ink6, 0.4));
+    height: calc(1.2 * $inner-h);
+    margin-top: calc(-1 * $p-t);
   }
 
-  &.btn-sm.icon-right {
-    padding: 2.5px 0.55rem 0 0.7rem;
-  }
-  
-  &.btn-sm.icon-left {
-    padding: 2.5px 0.7rem 0 0.55rem;
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-sm;
   }
 }
 
 /* Button md */
 /* ================================== */
 .btn-md {
-  $inner-h: 0.95rem;
-  height: var(--ui-md); 
+  /* config */
+  $inner-h: 0.9em; // ← set font size/line height/icon height here
+  $p-t: 1px; // ← padding-top diff for every font
+  $p-b: 0;
+  $p-x: 1em;
+  $icon-x: 0.9em; // ← less padding on icon side
+
+  &.icon-right {
+    gap: 0.35em;
+    padding: $p-t $icon-x $p-b $p-x;
+  }
+  
+  &.icon-left {
+    gap: 0.35em;
+    padding: $p-t $p-x $p-b $icon-x;
+  }
+
+  /* layout */
   @include btn-base;
-  gap: 0.35rem;
+  height: var(--ui-md); 
   font-size: $inner-h;
   line-height: $inner-h;
-  padding: 2px 0.85rem 0 0.85rem;
+  padding: $p-t $p-x $p-b $p-x;
+
+  /* visual */
   box-shadow: sha.$sha-md;
+  text-shadow: sha.$text-sha-md;
 
   & img {
-    width: auto;
-    height: $inner-h;
-    align-self: center;
-    margin-top: -1px;
-    filter: drop-shadow(0 0 0.75px rgba(color.$ink6, 0.4));
+    height: calc(1.1 * $inner-h);
+    margin-top: calc(-1 * $p-t);
   }
 
-  &.btn-md.icon-right {
-    padding: 2px 0.75rem 0 0.85rem;
-  }
-
-  &.btn-md.icon-left {
-    padding: 2px 0.85rem 0 0.75rem;
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-md;
   }
 }
 
 /* Button lg */
 /* ================================== */
 .btn-lg {
-  $inner-h: 1.1rem; 
-  height: var(--ui-lg); 
-  @include btn-base;
-  gap: 0.4rem;
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: 1px 1.2rem 0 1.2rem;
-  z-index: 20;
-  box-shadow: sha.$sha-lg;
+  /* config */
+  $inner-h: 1.1em; // ← set font size/line height/icon height here
+  $p-t: 1px; // ← padding-top diff for every font
+  $p-b: 0;
+  $p-x: 1.2em;
+  $icon-x: 1em; // ← less padding on icon side
 
-  & img {
-    width: auto;
-    height: $inner-h;
-    // height: calc(var(--ui-lg) * 0.6); 
-    align-self: center;
-    @include sha.svg-sha-sm;
-  }
-
-  & .icon-right {
-    padding: 3px 1rem 0 1.2rem;
+  &.icon-right {
+    gap: 0.4em;
+    padding: $p-t $icon-x $p-b $p-x;
   }
   
-  & .icon-left {
-    padding: 3px 1.2rem 0 1rem;
+  &.icon-left {
+    gap: 0.4em;
+    padding: $p-t $p-x $p-b $icon-x;
+  }
+
+  /* layout */
+  @include btn-base;
+  height: var(--ui-lg); 
+  font-size: $inner-h;
+  line-height: $inner-h;
+  padding: $p-t $p-x $p-b $p-x;
+
+  /* visual */
+  box-shadow: sha.$sha-lg;
+  text-shadow: sha.$text-sha-lg;
+
+  & img {
+    // width: auto;
+    height: calc(1 * $inner-h);
+    // align-self: center;
+    // z-index: z.z(on-btn);
+    margin-top: calc(-1 * $p-t);
+  }
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-lg;
   }
 }
 
@@ -119,83 +179,74 @@
 @mixin round-btn-base {
   @include flex.flex-c;
   border-radius: br.$round;
-  pointer-events: auto;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.round-btn-sm {
-  width: var(--ui-sm); 
-  height: var(--ui-sm); 
-  @include round-btn-base;
+  z-index: z.z(btn);
 
   & img {
     width: auto;
-    height: calc(var(--ui-sm) * 0.7); 
-    @include sha.svg-sha-sm;
+    align-self: center;
+    z-index: z.z(on-btn);
+  }
+}
+
+.round-btn-sm {
+  @include round-btn-base;
+  width: var(--ui-sm); 
+  height: var(--ui-sm); 
+  box-shadow: sha.$sha-xs;
+
+  & img {
+    height: calc(var(--ui-sm) * 0.6); 
+  }
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-sm;
   }
 }
 
 .round-btn-md {
+  @include round-btn-base;
   width: var(--ui-md); 
   height: var(--ui-md); 
-  @include round-btn-base;
+  box-shadow: sha.$sha-sm;
 
   & img {
-    width: auto;
     height: calc(var(--ui-md) * 0.6); 
-    @include sha.svg-sha-md;
+  }
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-md;
   }
 }
 
 .round-btn-lg {
+  @include round-btn-base;
   width: var(--ui-lg); 
   height: var(--ui-lg); 
-  @include round-btn-base;
+  box-shadow: sha.$sha-md;
 
   & img {
-    width: auto;
     height: calc(var(--ui-lg) * 0.6); 
-    @include sha.svg-sha-lg;
+  }
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-lg;
   }
 }
 
 /* Button color & state styling */
 /* ================================== */
 .btn-clear {
-  pointer-events: auto;
-  cursor: pointer;
   border-radius: br.$round;
   background-color: transparent;
-  transition: background-color ani.$speed-slow ease-out;
-
-  &:hover {
-    background-color: color.$btn1-hover;
-  }
-
-  &:active {
-    background-color: color.$btn1-active;
-  }
-}
-
-/* 3D button glass */
-/* ================================== */
-@mixin btn-glass {
-  position: relative;
   transition: 
-    background-color ani.$speed-slow ease,
-    color ani.$speed-slow ease;
-  z-index: 20;
-  @include fill.glass-filter;
-  background-color: color.$tint-clear;
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-
-    @include fill.noise-sm;
-    box-shadow: bevel.$bevel-sm;
-  }
+  background-color ani.$speed-slow ease,
+  color ani.$speed-slow ease;
 
   &:hover {
     background-color: color.$tint-light;
@@ -208,6 +259,82 @@
   }
 }
 
+/* Button glass material base */
+/* ================================== */
+@mixin btn-glass-base {
+  position: relative;
+  transition: 
+    background-color ani.$speed-slow ease,
+    color ani.$speed-slow ease;
+  z-index: z.z(btn);
+  @include fill.glass-filter;
+
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    @include fill.noise-sm;
+    // box-shadow: bevel.$bevel-md;
+  }
+}
+
+/* 3D button glass */
+/* ================================== */
+@mixin btn-glass {
+  @include btn-glass-base;
+  background-color: color.$tint-clear;
+
+  // &::after {
+  //   @include help.pseudo;
+  //   z-index: -1;
+
+  //   @include fill.noise-sm;
+  //   box-shadow: bevel.$bevel-sm;
+  // }
+
+  // &::after {
+  //   box-shadow: bevel.$bevel-sm;
+  // }
+
+  &:hover {
+    background-color: color.$tint-light;
+    color: color.$text-light-bold;
+  }
+
+  &:active {
+    background-color: color.$tint-xlight;
+    color: color.$text-dark-reg;
+  }
+}
+
+// @mixin btn-glass {
+//   position: relative;
+//   transition: 
+//     background-color ani.$speed-slow ease,
+//     color ani.$speed-slow ease;
+//   z-index: z.z(btn);
+//   @include fill.glass-filter;
+//   background-color: color.$tint-clear;
+
+//   &::after {
+//     @include help.pseudo;
+//     z-index: -1;
+
+//     @include fill.noise-sm;
+//     box-shadow: bevel.$bevel-sm;
+//   }
+
+//   &:hover {
+//     background-color: color.$tint-light;
+//     color: color.$text-light-bold;
+//   }
+
+//   &:active {
+//     background-color: color.$tint-xlight;
+//     color: color.$text-dark-reg;
+//   }
+// }
+
 .btn-glass {
   @include btn-glass;
 }
@@ -216,22 +343,8 @@
 /* Light 3D button glass */
 /* ================================== */
 @mixin btn-glass-light {
-  position: relative;
-  // box-shadow: sha.$sha-sm;
-  transition: 
-    background-color ani.$speed-slow ease,
-    color ani.$speed-slow ease;
-  z-index: 20;
-  @include fill.glass-filter;
+  @include btn-glass-base;
   background-color: color.$tint-light;
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-
-    @include fill.noise-sm;
-    box-shadow: bevel.$bevel-sm;
-  }
 
   &:hover {
     background-color: color.$tint-xlight;
@@ -244,6 +357,36 @@
   }
 }
 
+
+// @mixin btn-glass-light {
+//   position: relative;
+//   // box-shadow: sha.$sha-sm;
+//   transition: 
+//     background-color ani.$speed-slow ease,
+//     color ani.$speed-slow ease;
+//   z-index: 20;
+//   @include fill.glass-filter;
+//   background-color: color.$tint-light;
+
+//   &::after {
+//     @include help.pseudo;
+//     z-index: -1;
+
+//     @include fill.noise-sm;
+//     // box-shadow: bevel.$bevel-sm;
+//   }
+
+//   &:hover {
+//     background-color: color.$tint-xlight;
+//     color: color.$text-light-bold;
+//   }
+
+//   &:active {
+//     background-color: color.$tint-2xlight;
+//     color: color.$text-dark-reg;
+//   }
+// }
+
 .btn-glass-light {
   @include btn-glass-light;
 }
@@ -251,26 +394,8 @@
 /* Dark 3D button glass */
 /* ================================== */
 @mixin btn-glass-dark {
-  position: relative;
-  z-index: 20;
-  // box-shadow: sha.$sha-sm;
-  transition: 
-  background-color ani.$speed-slow ease,
-  color ani.$speed-slow ease;
+  @include btn-glass-base;
   background-color: color.$tint-dark;
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-md;
-  }
-
-  &::before {
-    @include help.pseudo;
-    z-index: -2;
-    @include fill.glass-filter;
-    @include fill.noise-sm;
-  } 
 
   &:hover {
     background-color: color.$tint-xdark;
@@ -281,6 +406,38 @@
     color: color.$text-light-bold;
   }
 }
+
+// @mixin btn-glass-dark {
+//   position: relative;
+//   z-index: 20;
+//   // box-shadow: sha.$sha-sm;
+//   transition: 
+//   background-color ani.$speed-slow ease,
+//   color ani.$speed-slow ease;
+//   background-color: color.$tint-dark;
+
+//   &::after {
+//     @include help.pseudo;
+//     z-index: -1;
+//     box-shadow: bevel.$bevel-md;
+//   }
+
+//   &::before {
+//     @include help.pseudo;
+//     z-index: -2;
+//     @include fill.glass-filter;
+//     @include fill.noise-sm;
+//   } 
+
+//   &:hover {
+//     background-color: color.$tint-xdark;
+//   }
+
+//   &:active {
+//     background-color: color.$tint-2xdark;
+//     color: color.$text-light-bold;
+//   }
+// }
 
 .btn-glass-dark {
   @include btn-glass-dark;
@@ -306,7 +463,7 @@
   @include flex.flex-c;
   gap: 0.3rem;
 
-  @include text.btn-text;
+  @include btn-text;
   font-size: $inner-h;
   line-height: $inner-h;
 
@@ -318,7 +475,6 @@
     height: $inner-h;
     align-self: center;
     margin-top: -1.25px;
-    filter: drop-shadow(0 0 0.5px rgba(color.$ink6, 0.4));
   }
 }
 

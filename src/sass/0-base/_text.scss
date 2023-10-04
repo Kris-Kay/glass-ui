@@ -186,15 +186,6 @@ li {
   line-height: 1;
 }
 
-@mixin btn-text {
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-md;
-  text-align: center;
-  text-shadow: sha.$text-sha-md;
-  color: color.$text-light-reg;
-}
-
 
 /* Code */ 
 /* ================================== */

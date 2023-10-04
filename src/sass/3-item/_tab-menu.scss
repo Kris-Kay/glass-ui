@@ -37,7 +37,7 @@
 
   font-size: var(--inner-h);
   line-height: var(--inner-h);
-  @include text.btn-text;
+  @include btn.btn-text;
 
   border-radius: var(--tab-br);
 
