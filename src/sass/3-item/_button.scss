@@ -5,15 +5,18 @@
 @use "../0-base/size";
 @use "../0-base/text";
 @use "../1-layout/flex";
+@use "../1-layout/layout-help" as help;
 @use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
+@use "../2-visual/bevel";
+@use "../2-visual/fill";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
 /* Button base */
 /* ================================== */
 @mixin btn-base {
-  width: max-content; // to stop stretching in flex layouts 
+  width: max-content;
   @include flex.flex-c;
   @include text.btn-text;
   border-radius: br.$round;
@@ -23,19 +26,23 @@
 /* ================================== */
 .btn-sm {
   $inner-h: 0.75rem; 
-  height: var(--ui-sm); 
+  // * $inner-h sets the font size, line height and icon height to the same value for vertical alignment
+  /* layout */
   @include btn-base;
+  height: var(--ui-sm); 
   gap: 0.3rem;
   font-size: $inner-h;
   line-height: $inner-h;
   padding: 2.5px 0.7rem 0 0.7rem;
+
+  /* visual */
   box-shadow: sha.$sha-sm;
 
   & img {
     width: auto;
     height: $inner-h;
     align-self: center;
-    margin-top: -1.25px;
+    // margin-top: -1.25px;
     filter: drop-shadow(0 0 0.5px rgba(color.$ink6, 0.4));
   }
 
@@ -48,7 +55,7 @@
   }
 }
 
-/* Button md*/
+/* Button md */
 /* ================================== */
 .btn-md {
   $inner-h: 0.95rem;
@@ -170,6 +177,117 @@
     background-color: color.$btn1-active;
   }
 }
+
+/* 3D button glass */
+/* ================================== */
+@mixin btn-glass {
+  position: relative;
+  transition: 
+    background-color ani.$speed-slow ease,
+    color ani.$speed-slow ease;
+  z-index: 20;
+  @include fill.glass-filter;
+  background-color: color.$tint-clear;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+
+    @include fill.noise-sm;
+    box-shadow: bevel.$bevel-sm;
+  }
+
+  &:hover {
+    background-color: color.$tint-light;
+    color: color.$text-light-bold;
+  }
+
+  &:active {
+    background-color: color.$tint-xlight;
+    color: color.$text-dark-reg;
+  }
+}
+
+.btn-glass {
+  @include btn-glass;
+}
+
+
+/* Light 3D button glass */
+/* ================================== */
+@mixin btn-glass-light {
+  position: relative;
+  // box-shadow: sha.$sha-sm;
+  transition: 
+    background-color ani.$speed-slow ease,
+    color ani.$speed-slow ease;
+  z-index: 20;
+  @include fill.glass-filter;
+  background-color: color.$tint-light;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+
+    @include fill.noise-sm;
+    box-shadow: bevel.$bevel-sm;
+  }
+
+  &:hover {
+    background-color: color.$tint-xlight;
+    color: color.$text-light-bold;
+  }
+
+  &:active {
+    background-color: color.$tint-2xlight;
+    color: color.$text-dark-reg;
+  }
+}
+
+.btn-glass-light {
+  @include btn-glass-light;
+}
+
+/* Dark 3D button glass */
+/* ================================== */
+@mixin btn-glass-dark {
+  position: relative;
+  z-index: 20;
+  // box-shadow: sha.$sha-sm;
+  transition: 
+  background-color ani.$speed-slow ease,
+  color ani.$speed-slow ease;
+  background-color: color.$tint-dark;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-md;
+  }
+
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+    @include fill.glass-filter;
+    @include fill.noise-sm;
+  } 
+
+  &:hover {
+    background-color: color.$tint-xdark;
+  }
+
+  &:active {
+    background-color: color.$tint-2xdark;
+    color: color.$text-light-bold;
+  }
+}
+
+.btn-glass-dark {
+  @include btn-glass-dark;
+}
+
+
+
 
 
 /* Chips */

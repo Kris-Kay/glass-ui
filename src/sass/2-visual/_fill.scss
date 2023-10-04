@@ -36,7 +36,11 @@ $satu: 1.3;
 $bright: 0.95;
 
 :root {
-  --blur: 28px;
+  --blur: 20px;
+
+  @include bp.bp(xs) {
+    --blur: 28px;
+  }
 
   @include bp.bp(md) {
     --blur: 40px;

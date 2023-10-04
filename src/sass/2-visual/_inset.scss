@@ -1,7 +1,7 @@
 /* ================================== */
 /* Inset */
 @use "../0-base/color" as *;
-@use "../1-layout/help" as *;
+@use "../1-layout/layout-help" as help;
 @use "../1-layout/z-index" as z;
 @use "fill";
 @use "glass";
@@ -39,7 +39,7 @@ $inset-md:
   background-color: $tint-dark;
 
   &::after {
-    @include pseudo;
+    @include help.pseudo;
     z-index: -1;
 
     border-bottom: 0.5px solid transparent;
@@ -64,7 +64,7 @@ $inset-md:
   }
 
   &::before {
-    @include pseudo;
+    @include help.pseudo;
     z-index: -2;
     @include fill.glass-filter;
     @include fill.noise-md; 
@@ -349,7 +349,7 @@ $flat-inset-md:
   }
 }
 
-//note: .inset-glass- does NOT work for text input elements because they can not have pseudo elements
+//note: .inset-glass- does NOT work for text input elements because they can not have help.pseudo elements
 .inset-glass-reg {
   pointer-events: none;
   position: relative;
@@ -359,7 +359,7 @@ $flat-inset-md:
   @include fill.glass-filter;
 
   &::after {
-    @include pseudo;
+    @include help.pseudo;
     z-index: -1;
 
     border-bottom: 0.8px solid transparent;
@@ -382,7 +382,7 @@ $flat-inset-md:
   }
 
   &::before {
-    @include pseudo;
+    @include help.pseudo;
     z-index: -2;
 
     box-shadow: $inset-sha-md;
@@ -404,7 +404,7 @@ $flat-inset-md:
   // background-color: rgba($ink6, 0.1);
 
   &::before {
-    @include pseudo;
+    @include help.pseudo;
     z-index: -3;
 
     // filter: brightness(0.1);
@@ -419,7 +419,7 @@ $flat-inset-md:
   }
 
   &::after {
-    @include pseudo;
+    @include help.pseudo;
     z-index: 2;
 
     border-bottom: 0.8px solid transparent;
