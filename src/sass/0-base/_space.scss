@@ -35,6 +35,7 @@
     --ui-sm: #{size.$s7}; /* 28px */
     --ui-md: #{size.$s9}; /* 36px */
     --ui-lg: #{size.$s10}; /* 40px */
+    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
   }
 
   @include bp.bp(lg) {
@@ -44,7 +45,6 @@
     --ui-sm: #{size.$s8}; /* 32px */
     --ui-md: #{size.$s10}; /* 40px */
     --ui-lg: #{size.$s11}; /* 44px */
-    --max-w: 60rem;
   }
 
   @include bp.bp(xl) {

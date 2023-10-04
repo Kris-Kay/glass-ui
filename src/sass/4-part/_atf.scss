@@ -9,18 +9,33 @@
   min-height: calc(100svh - var(--nav-h));
   display: grid;
   padding-bottom: var(--space-wide);
+
+  > .atf__card {
+    /* layout */
+    width: min(100%, 450px);
+    place-self: end center;
+  
+    @include bp.bp(md) {
+      place-self: end end;
+    }
+  
+    @include bp.bp(lg) {
+      width: 580px;
+    }
+  }
 }
 
-.atf__card {
+.atf-md {
   /* layout */
-  width: min(100%, 450px);
-  place-self: end center;
+  min-height: calc(50vh - var(--nav-h));
+  min-height: calc(50svh - var(--nav-h));
+  display: grid;
+  padding-bottom: var(--space-wide);
 
-  @include bp.bp(md) {
-    place-self: end end;
-  }
-
-  @include bp.bp(lg) {
-    width: 580px;
+  > .atf__card {
+    /* layout */
+    width: min(100%, 450px);
+    place-self: center;
   }
 }
+

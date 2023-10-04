@@ -19,7 +19,7 @@
   border-radius: 0;
   box-shadow: none;
   
-  @include bp.bp(md) {
+  @include bp.bp(sm) {
     overflow: hidden;
     border-radius: var(--lg);
     box-shadow: sha.$sha-2xl;
@@ -38,7 +38,7 @@
   @include glass.glass--no-bevel-mobile;
   @include fill.fill-reg;
   
-  @include bp.bp(md) {
+  @include bp.bp(sm) {
     overflow: hidden;
     border-radius: var(--lg) var(--lg) 0 0;
   }
