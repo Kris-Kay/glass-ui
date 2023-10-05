@@ -34,7 +34,7 @@
 }
 
 .glass-reg {
-  @include fill.fill-reg;
+  @include fill.fill-clear;
   @include glass-base;
 }
 

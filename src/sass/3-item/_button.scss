@@ -26,7 +26,7 @@
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
   text-wrap: nowrap;
-  color: color.$text-light-bold;
+  color: color.$text-light;
   z-index: z.z(on-btn);
   text-shadow: sha.$text-sha-md;
 }
@@ -205,12 +205,12 @@
 
   &:hover {
     background-color: color.$tint-light;
-    color: color.$text-light-bold;
+    color: color.$text-light;
   }
 
   &:active {
     background-color: color.$tint-xlight;
-    color: color.$text-dark-reg;
+    color: color.$text-dark;
   }
 }
 
@@ -227,12 +227,12 @@
 
   &:hover {
     background-color: color.$tint-xlight;
-    color: color.$text-light-bold;
+    color: color.$text-light;
   }
 
   &:active {
     background-color: color.$tint-2xlight;
-    color: color.$text-dark-reg;
+    color: color.$text-dark;
   }
 }
 
@@ -252,7 +252,7 @@
 
   &:active {
     background-color: color.$tint-2xdark;
-    color: color.$text-light-bold;
+    color: color.$text-light;
   }
 }
 
@@ -272,13 +272,13 @@
 
   &:hover {
     background-color: color.$tint-light;
-    color: color.$text-light-bold;
+    color: color.$text-light;
     box-shadow: sha.$sha-sm;
   }
 
   &:active {
     background-color: color.$tint-xlight;
-    color: color.$text-dark-reg;
+    color: color.$text-dark;
     box-shadow: sha.$sha-xs;
   }
 }

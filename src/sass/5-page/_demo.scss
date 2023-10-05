@@ -1,8 +1,9 @@
 /* ================================== */
 /* UI Demo */
-@use "../0-base" as *;
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
+@use "../0-base/size";
+@use "../0-base/text";
 @use "../1-layout" as *;
 @use "../1-layout/flex";
 @use "../2-visual" as *;
@@ -11,28 +12,114 @@
 @use "../4-part" as *;
 /* ================================== */
 
-.size-demo__cube {
-  background-color: color.$tint-xlight;
-  border-radius: 0.1rem;
-  height: $s10;
-  margin: $s3 0;
+.demo-header__title {
+  text-align: center;
+  @include text.title-thin;
+  font-size: var(--text-2xl);
 }
 
-.tint-demo__cube {
-  width: 100%;
+.size-demo__box {
+  background-color: color.$tint-xlight;
+  border-radius: 0.1rem;
+  height: size.$s10;
+  margin: size.$s3 0;
+}
+
+.tint-demo__box {
+  // width: 100%;
+  width: min(100%, 400px);
+
   height: fit-content;
   @include flex-l;
   @include flex-c-y;
-  padding: var(--md);
-  border-radius: var(--xs);
+  padding: var(--sm);
+  border-radius: var(--2xs);
 
   @include bp.bp(md) {
-    border-radius: var(--md);
-    padding: var(--xl);
+    border-radius: var(--sm);
+    padding: var(--md);
   }
 }
 
 //////
+
+
+
+.wrap__box--2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sm);
+
+  @include bp.bp(md) {
+    gap: var(--md);
+  }
+
+  @include bp.bp(lg) {
+    gap: var(--5xl);
+  }
+
+  :nth-child(1) {
+    flex: 1;
+  }
+
+  :nth-child(2) {
+    flex: 1;
+  }
+}
+
+/////
+// .cube {
+//   width: min(100%, 400px);
+//   height: 400px;
+//   @include flex.flex-c;
+//   flex: 1;
+//   border-radius: var(--sm);
+// }
+
+
+// .xxs {
+//   grid-column: 1/3;
+//   grid-row: 1/2;
+// }
+
+// .xs {
+//   grid-column: 1/3;
+//   grid-row: 2/3;
+// }
+
+// .sm {
+//   grid-column: 1/4;
+//   grid-row: 3/4;
+// }
+
+// .md {
+//   grid-column: 1/4;
+//   grid-row: 4/5;
+// }
+
+// .lg {
+//   grid-column: 1/4;
+//   grid-row: 5/6;
+// }
+
+// .xl {
+//   grid-column: 1/4;
+//   grid-row: 6/7;
+// }
+
+// .xxl {
+//   grid-column: 1/4;
+//   grid-row: 7/8;
+// }
+
+// .cards-grid {
+//   width: 100%;
+//   display: grid;
+//   gap: 3rem;
+//   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+// }
 
 .glass-demo-flex {
   width: 100%;
@@ -114,71 +201,3 @@
     z-index: 2;
   }
 }
-
-.wrap__box--2 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--xl);
-
-  @include bp.bp(md) {
-    gap: var(--md);
-  }
-
-  @include bp.bp(lg) {
-    gap: var(--xl);
-  }
-}
-
-/////
-// .cube {
-//   width: min(100%, 400px);
-//   height: 400px;
-//   @include flex.flex-c;
-//   flex: 1;
-//   border-radius: var(--sm);
-// }
-
-
-// .xxs {
-//   grid-column: 1/3;
-//   grid-row: 1/2;
-// }
-
-// .xs {
-//   grid-column: 1/3;
-//   grid-row: 2/3;
-// }
-
-// .sm {
-//   grid-column: 1/4;
-//   grid-row: 3/4;
-// }
-
-// .md {
-//   grid-column: 1/4;
-//   grid-row: 4/5;
-// }
-
-// .lg {
-//   grid-column: 1/4;
-//   grid-row: 5/6;
-// }
-
-// .xl {
-//   grid-column: 1/4;
-//   grid-row: 6/7;
-// }
-
-// .xxl {
-//   grid-column: 1/4;
-//   grid-row: 7/8;
-// }
-
-// .cards-grid {
-//   width: 100%;
-//   display: grid;
-//   gap: 3rem;
-//   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-// }

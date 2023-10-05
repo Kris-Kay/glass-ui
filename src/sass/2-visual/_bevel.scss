@@ -4,46 +4,46 @@
 /* ================================== */
 
 $bevel-xs: 
-  inset 0.2px 0.2px 0.2px rgba(color.$light-color, 0.15),      // top-left bevel
-  inset 2px 2px 0.4px -2.8px rgba(color.$light-color, 0.6),    // top-left specular highlight
-  inset 1px 1px 0.4px -1.4px rgba(color.$light-color, 0.1),      // top-left highlight
-  inset -1.4px -2px 1.4px -3.2px rgba(color.$light-color, 0.8),  // bottom thin highlight
-  inset -2px -2px 0.2px -2.8px rgba(color.$light-color, 0.08); // bottom-right specular
+  inset 0.2px 0.2px 0.2px rgba(color.$light, 0.15),      // top-left bevel
+  inset 2px 2px 0.4px -2.8px rgba(color.$light, 0.6),    // top-left specular highlight
+  inset 1px 1px 0.4px -1.4px rgba(color.$light, 0.1),      // top-left highlight
+  inset -1.4px -2px 1.4px -3.2px rgba(color.$light, 0.8),  // bottom thin highlight
+  inset -2px -2px 0.2px -2.8px rgba(color.$light, 0.08); // bottom-right specular
 
 
 $bevel-sm: 
-  inset 0.3px 0.3px 0.2px rgba(color.$light-color, 0.15),      // top-left bevel
-  inset 2px 2px 0.4px -2.6px rgba(color.$light-color, 0.6),    // top-left specular highlight
-  inset 1px 1px 0.4px -1.3px rgba(color.$light-color, 0.1),      // top-left highlight
-  inset -0.6px -1.8px 1.4px -3.2px rgba(color.$light-color, 0.8),  // bottom thin highlight
-  inset -1.8px -2px 0.2px -2.6px rgba(color.$light-color, 0.08); // bottom-right specular
+  inset 0.3px 0.3px 0.2px rgba(color.$light, 0.15),      // top-left bevel
+  inset 2px 2px 0.4px -2.6px rgba(color.$light, 0.6),    // top-left specular highlight
+  inset 1px 1px 0.4px -1.3px rgba(color.$light, 0.1),      // top-left highlight
+  inset -0.6px -1.8px 1.4px -3.2px rgba(color.$light, 0.8),  // bottom thin highlight
+  inset -1.8px -2px 0.2px -2.6px rgba(color.$light, 0.08); // bottom-right specular
 
 
 $bevel-md: 
-  inset 0.5px 0.5px 0.3px rgba(color.$light-color, 0.2),         // top-left bevel
-  inset 2px 2px 0.8px -2.4px rgba(color.$light-color, 0.6),    // top-left specular highlight
-  inset 1px 1px 0.4px -1px rgba(color.$light-color, 0.1),      // top-left highlight 
-  inset -0.8px -2px 1.4px -3.1px rgba(color.$light-color, 0.8),     // bottom thin highlight
-  inset -1.8px -2px 0.2px -2.5px rgba(color.$light-color, 0.08); // bottom-right specular
+  inset 0.5px 0.5px 0.3px rgba(color.$light, 0.2),         // top-left bevel
+  inset 2px 2px 0.8px -2.4px rgba(color.$light, 0.6),    // top-left specular highlight
+  inset 1px 1px 0.4px -1px rgba(color.$light, 0.1),      // top-left highlight 
+  inset -0.8px -2px 1.4px -3.1px rgba(color.$light, 0.8),     // bottom thin highlight
+  inset -1.8px -2px 0.2px -2.5px rgba(color.$light, 0.08); // bottom-right specular
 
 
 $bevel-lg: 
-  inset 0.8px 0.8px 0.4px rgba(color.$light-color, 0.15), // top-left bevel
-  inset 2px 2px 1px -2.2px rgba(color.$light-color, 0.4),    // top-left specular highlight
-  inset 1px 1px 0.6px -1px rgba(color.$light-color, 0.1), // top-left highlight
-  inset -0.8px -2px 1.4px -3px rgba(color.$light-color, 0.8), // bottom thin highlight
-  inset -1.6px -2px 0.4px -2.4px rgba(color.$light-color, 0.08); // bottom-right specular
+  inset 0.8px 0.8px 0.4px rgba(color.$light, 0.15), // top-left bevel
+  inset 2px 2px 1px -2.2px rgba(color.$light, 0.4),    // top-left specular highlight
+  inset 1px 1px 0.6px -1px rgba(color.$light, 0.1), // top-left highlight
+  inset -0.8px -2px 1.4px -3px rgba(color.$light, 0.8), // bottom thin highlight
+  inset -1.6px -2px 0.4px -2.4px rgba(color.$light, 0.08); // bottom-right specular
 
 
 
 // $bevel-md: 
-//   inset 2px 2px 1px -2.4px rgba(color.$light-color, 0.6),     // top-left specular highlight
-//   inset 1px 1px 0.2px rgba(color.$light-color, 0.15),         // top-left bevel
-//   inset -2px -2px 0.4px -2.4px rgba(color.$light-color, 0.1), // bottom-right specular
-//   inset 0 -0.5px 1px -1px rgba(color.$light-color, 0.5);      // bottom thin highlight
+//   inset 2px 2px 1px -2.4px rgba(color.$light, 0.6),     // top-left specular highlight
+//   inset 1px 1px 0.2px rgba(color.$light, 0.15),         // top-left bevel
+//   inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.1), // bottom-right specular
+//   inset 0 -0.5px 1px -1px rgba(color.$light, 0.5);      // bottom thin highlight
 
 // $bevel-lg: 
-//   inset 3px 3px 1px -3.5px rgba(color.$light-color, 0.5), // top-left specular highlight
-//   inset 1.2px 1.2px 0.2px rgba(color.$light-color, 0.15), // top-left bevel
-//   inset -2px -2px 0.4px -2.4px rgba(color.$light-color, 0.08), // bottom-right specular
-//   inset 0 -0.5px 1px -1px rgba(color.$light-color, 0.3); // bottom thin highlight
+//   inset 3px 3px 1px -3.5px rgba(color.$light, 0.5), // top-left specular highlight
+//   inset 1.2px 1.2px 0.2px rgba(color.$light, 0.15), // top-left bevel
+//   inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.08), // bottom-right specular
+//   inset 0 -0.5px 1px -1px rgba(color.$light, 0.3); // bottom thin highlight

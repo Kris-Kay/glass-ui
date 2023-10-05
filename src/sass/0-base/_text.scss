@@ -111,16 +111,17 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* Thin Title */
 /* ================================== */
-@mixin thin-title-text {
+@mixin title-thin {
   font-family: $font-family-title;
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-sm;
+  text-shadow: sha.$text-sha-sm;
 }
 
 .title-thin {
   @include text-size-modifier {
-    @include thin-title-text;
+    @include title-thin;
   }
 }
 
@@ -130,7 +131,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 body {
   @include body-text;
   font-size: var(--text-sm);
-  color: color.$text-light-reg;
+  color: color.$text-light;
 }
 
 li {

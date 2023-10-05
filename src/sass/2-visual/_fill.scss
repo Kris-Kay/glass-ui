@@ -63,6 +63,11 @@ $bright: 0.95;
 
 /* Glass Fill mixins */
 /* ================================== */
+@mixin fill-3xlight {
+  background-color: color.$tint-3xlight;
+  @include glass-filter;
+}
+
 @mixin fill-2xlight {
   background-color: color.$tint-2xlight;
   @include glass-filter;
@@ -78,8 +83,8 @@ $bright: 0.95;
   @include glass-filter;
 }
 
-@mixin fill-reg {
-  background-color: color.$tint-reg;
+@mixin fill-clear {
+  background-color: color.$tint-clear;
   @include glass-filter;
 }
 
@@ -98,8 +103,17 @@ $bright: 0.95;
   @include glass-filter;
 }
 
+@mixin fill-3xdark {
+  background-color: color.$tint-3xdark;
+  @include glass-filter;
+}
+
 /* Glass fill classes */
 /* ================================== */
+.fill-3xlight {
+  @include fill-3xlight;
+}
+
 .fill-2xlight {
   @include fill-2xlight;
 }
@@ -112,8 +126,8 @@ $bright: 0.95;
   @include fill-light;
 }
 
-.fill-reg {
-  @include fill-reg;
+.fill-clear {
+  @include fill-clear;
 }
 
 .fill-dark {
@@ -126,4 +140,8 @@ $bright: 0.95;
 
 .fill-2xdark { 
   @include fill-2xdark;
+}
+
+.fill-3xdark { 
+  @include fill-3xdark;
 }

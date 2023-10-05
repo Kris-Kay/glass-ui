@@ -44,32 +44,41 @@ $leaf60: rgb(180, 235, 71);
 $leaf40:  rgb(129, 184, 20);
 $leaf30: rgb(97, 138, 15);
 
+/* Color opacity values */
+/* ================================== */
+$light: $sky99;
+$light-90: rgba($sky99, 0.9);
+$light-70: rgba($sky99, 0.7);
+$light-50: rgba($sky99, 0.5);
+$light-30: rgba($sky99, 0.3);
+$light-10: rgba($sky99, 0.1);
+
+$dark: $ink2;
+$dark-90: rgba($ink2, 0.9);
+$dark-70: rgba($ink2, 0.7);
+$dark-50: rgba($ink2, 0.5);
+$dark-30: rgba($ink2, 0.3);
+$dark-10: rgba($ink2, 0.1);
 
 /* Semantic color values */
 /* ================================== */
-$bg-color: $sky98;
-
-$shadow-color: $ink2;
-$light-color: $sky99;
-$light-color-mild: $sky95;
-
-$tint-2xlight: rgba($sky99, 0.98);
-$tint-xlight: rgba($sky98, 0.7);
-$tint-light: rgba($sky98, 0.3);
+$tint-3xlight: rgba($sky99, 0.9);
+$tint-2xlight: rgba($sky99, 0.7);
+$tint-xlight: rgba($sky99, 0.3);
+$tint-light: rgba($sky99, 0.1);
 $tint-clear: rgba($sky99, 0.01);
-$tint-reg: rgba($ink2, 0.1);
-$tint-dark: rgba($ink2, 0.3);
-$tint-xdark: rgba($ink2, 0.7);
-$tint-2xdark: rgba($ink2, 0.98);
+$tint-dark: rgba($ink2, 0.1);
+$tint-xdark: rgba($ink2, 0.3);
+$tint-2xdark: rgba($ink2, 0.7);
+$tint-3xdark: rgba($ink2, 0.9);
 
-$text-light-bold: $sky99;
-$text-light-reg: $sky95;
+$text-light: $sky99;
 $text-light-mild: $snow90;
 $text-light-xmild: $snow80;
 $text-light-2xmild: $snow65;
 
 $text-dark-bold: $ink2;
-$text-dark-reg: $ink10;
+$text-dark: $ink10;
 $text-dark-mild: $gray20;
 $text-dark-xmild: $gray50;
 $text-dark-2xmild: $gray60;
@@ -82,20 +91,18 @@ $link-rest: $sky70;
 $link-hover: $sky50;
 $link-visit: $sky80;
 
-$btn1-rest: rgba($sky99, 0.3);
-$btn1-hover: rgba($sky99, 0.6);
-$btn1-active: rgba($ink2, 0.2);
+$bg-color: $sky98;
 
-$btn2-rest: rgba($gray50, 0.5);
-$btn2-hover: rgba($snow65, 0.9);
-$btn2-active: rgba($ink2, 0.2);
+// $btn-rest: rgba($sky99, 0.3);
+// $btn-hover: rgba($sky99, 0.6);
+// $btn-active: rgba($ink2, 0.2);
 
 /* Text colors */
 /* ================================== */
 
 /* Light */
 .text-light-reg {
-  color: $text-light-reg;
+  color: $text-light;
 }
 
 .text-light-mild {
@@ -111,12 +118,8 @@ $btn2-active: rgba($ink2, 0.2);
 }
 
 /* Dark */
-.text-dark-bold {
-  color: $text-dark-bold;
-}
-
-.text-dark-reg {
-  color: $text-dark-reg;
+.text-dark {
+  color: $text-dark;
 }
 
 .text-dark-mild {
@@ -133,6 +136,10 @@ $btn2-active: rgba($ink2, 0.2);
 
 /* Glass tints */
 /* ================================== */
+.tint-3xlight {
+  background-color: $tint-3xlight;
+}
+
 .tint-2xlight {
   background-color: $tint-2xlight;
 }
@@ -149,10 +156,6 @@ $btn2-active: rgba($ink2, 0.2);
   background-color: $tint-clear;
 }
 
-.tint-reg {
-  background-color: $tint-reg;
-}
-
 .tint-dark {
   background-color: $tint-dark;
 }
@@ -163,4 +166,8 @@ $btn2-active: rgba($ink2, 0.2);
 
 .tint-2xdark {
   background-color: $tint-2xdark;
+}
+
+.tint-3xdark {
+  background-color: $tint-3xdark;
 }
