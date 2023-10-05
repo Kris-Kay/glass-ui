@@ -1,5 +1,5 @@
 /* ================================== */
-/* Buttons & chips */
+/* Buttons */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../0-base/size";
@@ -14,6 +14,10 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
+/* ================================== */
+//* Button size & layout */
+/* ================================== */
+
 /* Button text */
 /* ================================== */
 @mixin btn-text {
@@ -22,8 +26,9 @@
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
   text-wrap: nowrap;
-  color: color.$text-light-reg;
+  color: color.$text-light-bold;
   z-index: z.z(on-btn);
+  text-shadow: sha.$text-sha-md;
 }
 
 /* Button base */
@@ -46,20 +51,15 @@
 /* ================================== */
 .btn-sm {
   /* config */
-  $inner-h: 0.875em; // ← set font size/line height/icon height here
+  $inner-h: 0.8em; // ← set font size/line height/icon height here
   $p-t: 1px; // ← padding-top diff for every font
   $p-b: 0;
-  $p-x: 0.8em;
-  $icon-x: 0.75em; // ← less padding on icon side
-
-  &.icon-right {
-    gap: 0.3em;
-    padding: $p-t $icon-x $p-b $p-x;
-  }
+  $p-x: 0.85em;
+  $p-x-icon: 0.7em;
   
-  &.icon-left {
-    gap: 0.3em;
-    padding: $p-t $p-x $p-b $icon-x;
+  &.btn-icon {
+    gap: 0.25em;
+    padding: $p-t $p-x-icon $p-b $p-x-icon;
   }
 
   /* layout */
@@ -69,12 +69,8 @@
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
 
-  /* visual */
-  box-shadow: sha.$sha-sm;
-  text-shadow: sha.$text-sha-sm;
-
   & img {
-    height: calc(1.2 * $inner-h);
+    height: calc(1.1 * $inner-h);
     margin-top: calc(-1 * $p-t);
   }
 }
@@ -87,16 +83,11 @@
   $p-t: 1px; // ← padding-top diff for every font
   $p-b: 0;
   $p-x: 1em;
-  $icon-x: 0.9em; // ← less padding on icon side
-
-  &.icon-right {
-    gap: 0.35em;
-    padding: $p-t $icon-x $p-b $p-x;
-  }
+  $p-x-icon: 0.75em;
   
-  &.icon-left {
-    gap: 0.35em;
-    padding: $p-t $p-x $p-b $icon-x;
+  &.btn-icon {
+    gap: 0.3em;
+    padding: $p-t $p-x-icon $p-b $p-x-icon;
   }
 
   /* layout */
@@ -105,10 +96,6 @@
   font-size: $inner-h;
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
-
-  /* visual */
-  box-shadow: sha.$sha-md;
-  text-shadow: sha.$text-sha-md;
 
   & img {
     height: calc(1.1 * $inner-h);
@@ -120,20 +107,15 @@
 /* ================================== */
 .btn-lg {
   /* config */
-  $inner-h: 1.1em; // ← set font size/line height/icon height here
+  $inner-h: 1em; // ← set font size/line height/icon height here
   $p-t: 1px; // ← padding-top diff for every font
   $p-b: 0;
-  $p-x: 1.2em;
-  $icon-x: 1em; // ← less padding on icon side
-
-  &.icon-right {
-    gap: 0.4em;
-    padding: $p-t $icon-x $p-b $p-x;
-  }
+  $p-x: 1.4em;
+  $p-x-icon: 1.1em;
   
-  &.icon-left {
+  &.btn-icon {
     gap: 0.4em;
-    padding: $p-t $p-x $p-b $icon-x;
+    padding: $p-t $p-x-icon $p-b $p-x-icon;
   }
 
   /* layout */
@@ -143,17 +125,13 @@
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
 
-  /* visual */
-  box-shadow: sha.$sha-lg;
-  text-shadow: sha.$text-sha-lg;
-
   & img {
-    height: calc(1 * $inner-h);
+    height: calc(1.1 * $inner-h);
     margin-top: calc(-1 * $p-t);
   }
 }
 
-/* Round buttons */
+//* Round buttons */
 /* ================================== */
 @mixin round-btn-base {
   @include flex.flex-c;
@@ -171,7 +149,6 @@
   @include round-btn-base;
   width: var(--ui-sm); 
   height: var(--ui-sm); 
-  box-shadow: sha.$sha-xs;
 
   & img {
     height: calc(var(--ui-sm) * 0.6); 
@@ -182,7 +159,6 @@
   @include round-btn-base;
   width: var(--ui-md); 
   height: var(--ui-md); 
-  box-shadow: sha.$sha-sm;
 
   & img {
     height: calc(var(--ui-md) * 0.6); 
@@ -193,61 +169,39 @@
   @include round-btn-base;
   width: var(--ui-lg); 
   height: var(--ui-lg); 
-  box-shadow: sha.$sha-md;
 
   & img {
     height: calc(var(--ui-lg) * 0.6); 
   }
 }
 
-/* Button color & state styling */
 /* ================================== */
-.btn-clear {
-  border-radius: br.$round;
-  background-color: transparent;
-  transition: 
-  background-color ani.$speed-slow ease,
-  color ani.$speed-slow ease;
-
-  &:hover {
-    background-color: color.$tint-light;
-    color: color.$text-light-bold;
-  }
-
-  &:active {
-    background-color: color.$tint-xlight;
-    color: color.$text-dark-reg;
-  }
-}
-
-/* Button glass material base */
+//* Button state & styling */
 /* ================================== */
-@mixin btn-glass-base {
+
+/* 3D Button material base */
+/* ================================== */
+@mixin btn-material-base {
   position: relative;
+  @include fill.glass-filter;
   transition: 
     background-color ani.$speed-slow ease,
     color ani.$speed-slow ease;
-  z-index: z.z(btn);
-  @include fill.glass-filter;
+  box-shadow: sha.$sha-sm;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    @include fill.noise-sm;
+    box-shadow: bevel.$bevel-sm;
+  }
 }
 
 /* 3D button glass */
 /* ================================== */
 @mixin btn-glass {
-  @include btn-glass-base;
+  @include btn-material-base;
   background-color: color.$tint-clear;
-
-  // &::after {
-  //   @include help.pseudo;
-  //   z-index: -1;
-
-  //   @include fill.noise-sm;
-  //   box-shadow: bevel.$bevel-sm;
-  // }
-
-  // &::after {
-  //   box-shadow: bevel.$bevel-sm;
-  // }
 
   &:hover {
     background-color: color.$tint-light;
@@ -259,34 +213,6 @@
     color: color.$text-dark-reg;
   }
 }
-
-// @mixin btn-glass {
-//   position: relative;
-//   transition: 
-//     background-color ani.$speed-slow ease,
-//     color ani.$speed-slow ease;
-//   z-index: z.z(btn);
-//   @include fill.glass-filter;
-//   background-color: color.$tint-clear;
-
-//   &::after {
-//     @include help.pseudo;
-//     z-index: -1;
-
-//     @include fill.noise-sm;
-//     box-shadow: bevel.$bevel-sm;
-//   }
-
-//   &:hover {
-//     background-color: color.$tint-light;
-//     color: color.$text-light-bold;
-//   }
-
-//   &:active {
-//     background-color: color.$tint-xlight;
-//     color: color.$text-dark-reg;
-//   }
-// }
 
 .btn-glass {
   @include btn-glass;
@@ -296,7 +222,7 @@
 /* Light 3D button glass */
 /* ================================== */
 @mixin btn-glass-light {
-  @include btn-glass-base;
+  @include btn-material-base;
   background-color: color.$tint-light;
 
   &:hover {
@@ -310,36 +236,6 @@
   }
 }
 
-
-// @mixin btn-glass-light {
-//   position: relative;
-//   // box-shadow: sha.$sha-sm;
-//   transition: 
-//     background-color ani.$speed-slow ease,
-//     color ani.$speed-slow ease;
-//   z-index: 20;
-//   @include fill.glass-filter;
-//   background-color: color.$tint-light;
-
-//   &::after {
-//     @include help.pseudo;
-//     z-index: -1;
-
-//     @include fill.noise-sm;
-//     // box-shadow: bevel.$bevel-sm;
-//   }
-
-//   &:hover {
-//     background-color: color.$tint-xlight;
-//     color: color.$text-light-bold;
-//   }
-
-//   &:active {
-//     background-color: color.$tint-2xlight;
-//     color: color.$text-dark-reg;
-//   }
-// }
-
 .btn-glass-light {
   @include btn-glass-light;
 }
@@ -347,7 +243,7 @@
 /* Dark 3D button glass */
 /* ================================== */
 @mixin btn-glass-dark {
-  @include btn-glass-base;
+  @include btn-material-base;
   background-color: color.$tint-dark;
 
   &:hover {
@@ -360,81 +256,33 @@
   }
 }
 
-// @mixin btn-glass-dark {
-//   position: relative;
-//   z-index: 20;
-//   // box-shadow: sha.$sha-sm;
-//   transition: 
-//   background-color ani.$speed-slow ease,
-//   color ani.$speed-slow ease;
-//   background-color: color.$tint-dark;
-
-//   &::after {
-//     @include help.pseudo;
-//     z-index: -1;
-//     box-shadow: bevel.$bevel-md;
-//   }
-
-//   &::before {
-//     @include help.pseudo;
-//     z-index: -2;
-//     @include fill.glass-filter;
-//     @include fill.noise-sm;
-//   } 
-
-//   &:hover {
-//     background-color: color.$tint-xdark;
-//   }
-
-//   &:active {
-//     background-color: color.$tint-2xdark;
-//     color: color.$text-light-bold;
-//   }
-// }
-
 .btn-glass-dark {
   @include btn-glass-dark;
 }
 
-
-
-
-
-/* Chips */
+/* 2D clear button */
 /* ================================== */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
+@mixin btn-clear {
+  background-color: transparent;
+  transition: 
+    background-color ani.$speed-slow ease,
+    box-shadow ani.$speed-slow ease,
+    color ani.$speed-slow ease;
+  box-shadow: none;
 
-.chip {
-  $inner-h: 0.75rem; // sets font, line, and icon size
+  &:hover {
+    background-color: color.$tint-light;
+    color: color.$text-light-bold;
+    box-shadow: sha.$sha-sm;
+  }
 
-  width: max-content; // to stop stretching in flex layouts 
-  height: var(--ui-sm); 
-  @include flex.flex-c;
-  gap: 0.3rem;
-
-  @include btn-text;
-  font-size: $inner-h;
-  line-height: $inner-h;
-
-  padding: 2.5px 0.7rem 0 0.7rem;
-  border-radius: br.$round;
-
-  & img {
-    width: auto;
-    height: $inner-h;
-    align-self: center;
-    margin-top: -1.25px;
+  &:active {
+    background-color: color.$tint-xlight;
+    color: color.$text-dark-reg;
+    box-shadow: sha.$sha-xs;
   }
 }
 
-.chip.icon-right {
-  padding: 2.5px 0.55rem 0 0.7rem;
-}
-
-.chip.icon-left {
-  padding: 2.5px 0.7rem 0 0.55rem;
+.btn-clear {
+  @include btn-clear;
 }

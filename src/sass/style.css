@@ -767,11 +767,11 @@ label {
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));
 }
 
-.chip.icon-right {
+.chip.btn-icon {
   padding: 2.5px 0.55rem 0 0.7rem;
 }
 
-.chip.icon-left {
+.chip.btn-icon {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
 
@@ -809,11 +809,11 @@ label {
   filter: drop-shadow(0 0 0.5px rgba(0, 10, 30, 0.4));
 }
 
-.btn-sm.icon-right {
+.btn-sm.btn-icon {
   padding: 2.5px 0.55rem 0 0.7rem;
 }
 
-.btn-sm.icon-left {
+.btn-sm.btn-icon {
   padding: 2.5px 0.7rem 0 0.55rem;
 }
 
@@ -846,11 +846,11 @@ label {
   filter: drop-shadow(0 0 0.75px rgba(0, 10, 30, 0.4));
 }
 
-.btn-md.icon-right {
+.btn-md.btn-icon {
   padding: 2px 0.75rem 0 0.85rem;
 }
 
-.btn-md.icon-left {
+.btn-md.btn-icon {
   padding: 2px 0.85rem 0 0.75rem;
 }
 
@@ -883,11 +883,11 @@ label {
   filter: drop-shadow(0 0 0.8px rgba(0, 10, 30, 0.4));
 }
 
-.btn-lg.icon-right {
+.btn-lg.btn-icon {
   padding: 3px 1rem 0 1.2rem;
 }
 
-.btn-lg.icon-left {
+.btn-lg.btn-icon {
   padding: 3px 1.2rem 0 1rem;
 }
 
@@ -1261,10 +1261,10 @@ nav {
   backdrop-filter: brightness(1.2);
   color: #f5fcff;
 }
-.menu-item.icon-left {
+.menu-item.btn-icon {
   padding: 0.2rem 0.5rem 0.2rem 0.45rem;
 }
-.menu-item.icon-right {
+.menu-item.btn-icon {
   padding: 0.24rem 0.45rem 0.2rem 0.5rem;
 }
 
