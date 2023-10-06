@@ -1,5 +1,6 @@
 /* ================================== */
 /* Borders */
+@use "../0-base/color";
 @use "../0-base/size";
 /* ================================== */
 
@@ -31,3 +32,6 @@ $round: 9999px;
 }
 
 
+.white-border {
+  border: 1px solid color.$light-50;;
+}

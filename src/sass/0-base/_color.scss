@@ -62,15 +62,15 @@ $dark-10: rgba($ink2, 0.1);
 
 /* Semantic color values */
 /* ================================== */
-$tint-3xlight: rgba($sky99, 0.9);
-$tint-2xlight: rgba($sky99, 0.7);
-$tint-xlight: rgba($sky99, 0.3);
-$tint-light: rgba($sky99, 0.1);
-$tint-clear: rgba($sky99, 0.01);
-$tint-dark: rgba($ink2, 0.1);
-$tint-xdark: rgba($ink2, 0.3);
-$tint-2xdark: rgba($ink2, 0.7);
-$tint-3xdark: rgba($ink2, 0.9);
+$tint-3xlight: rgba($sky99, 0.7);
+$tint-2xlight: rgba($sky99, 0.5);
+$tint-xlight:  rgba($sky99, 0.3);
+$tint-light:   rgba($sky99, 0.1);
+$tint-clear:   rgba($sky99, 0.01);
+$tint-dark:    rgba($ink2,  0.1);
+$tint-xdark:   rgba($ink2,  0.3);
+$tint-2xdark:  rgba($ink2,  0.5);
+$tint-3xdark:  rgba($ink2,  0.7);
 
 $text-light: $sky99;
 $text-light-mild: $snow90;
