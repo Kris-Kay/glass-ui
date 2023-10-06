@@ -13,7 +13,7 @@
 
 .tab-menu {
   width: fit-content;
-  height: var(--ui-lg);
+  height: var(--ui-md);
   margin: auto;
   @include flex.flex-c;
   gap: var(--4xs);
@@ -22,6 +22,10 @@
   padding: var(--padding);
   --tab-br: 8px;
   @include br.outer-br (var(--tab-br), var(--padding));
+
+  // @include bp.bp(md) {
+  //   height: var(--ui-lg);
+  // }
 }
 
 .tab {

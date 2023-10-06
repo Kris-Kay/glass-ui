@@ -17,8 +17,8 @@
   --space-wide: #{size.$s4}; // 16px
 
   --ui-sm: #{size.$s7}; /* 28px */
-  --ui-md: #{size.$s9}; /* 36px */
-  --ui-lg: #{size.$s11}; /* 44px */
+  --ui-md: #{size.$s10}; /* 40px */
+  --ui-lg: #{size.$s12}; /* 44px */
   }
 
   @include bp.bp(sm) {
@@ -33,7 +33,7 @@
     --space-wide: #{size.$s12}; // 48px
 
     --ui-sm: #{size.$s8}; /* 32px */
-    --ui-md: #{size.$s10}; /* 40px */
+    --ui-md: #{size.$s11}; /* 44px */
     --ui-lg: #{size.$s12}; /* 48px */
 
     --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
