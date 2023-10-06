@@ -35,3 +35,11 @@ $round: 9999px;
 .white-border {
   border: 1px solid color.$light-50;;
 }
+
+.outline-thin-light {
+  border-left: 2px solid rgba(color.$sky99, 0.3);
+  border-right: 2px solid rgba(color.$sky99, 0.3);
+  // border: 2px solid rgba(color.$sky99, 0.3);
+  outline: 1px solid rgba(color.$sky95, 0.3);
+  outline-offset: -1px;
+}

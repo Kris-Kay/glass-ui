@@ -36,7 +36,7 @@
   /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
-  @include fill.fill-clear;
+  @include fill.fill-dark;
   
   @include bp.bp(sm) {
     overflow: hidden;
