@@ -1,58 +1,32 @@
 <!-- Demo Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <!-- <section class="max-w atf">
+  <section class="max-w atf-md">
     <div class="atf__card ">
-      <div class="card glass-reg sha-xl grid gap-2xs">
+      <div class="card glass-reg sha-xl grid gap-3xs">
         <h1 class="title-xl text-c">UI demo</h1>
-
-        <div class="flex-c">
-          <a href="#" class="btn-lg btn-icon btn-glass-dark">
+        <!-- <div class="flex-c">
+          <a href="#" class="btn-lg btn-icon btn-glass-light">
             Github repo
             <img
               src="/assets/icons/SquareOut.svg"
               alt="open GitHub repo in new window"/>
           </a>
-        </div>
+        </div> -->
       </div>
 
-      <div class="flex-c">
+      <!-- <div class="flex-c">
         <img
         src="/assets/icons/CaretDown.svg"
         class="icon-sm"/>
-      </div>
+      </div> -->
     </div>
-  </section> -->
+  </section>
 </header>
 
 <!-- Main -->
 <!-- ================================== -->
 <main class="grid gap-5xl p-y-5xl">
-
-  <!-- Color tabs -->
-  <section class="max-w-gutter">
-    <div class="max-w box-wide-100 gap-lg glass-base fill-dark sha-xl">
-      <div class="grid gap-3xs">
-        <h3 class="demo-header__title">Tab menu</h3>
-      </div>
-
-      <div class="">
-        <div id="js-tabMenu" class="tab-menu inset-glass-md">
-          <button type="button" class="tab tab-active" id="dark-tab">
-            Dark
-          </button>
-
-          <button type="button" class="tab" id="light-tab">
-            Light
-          </button>
-
-          <button type="button" class="tab" id="color-tab">
-            Color
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- 3D Buttons  -->
   <section class="max-w-gutter">
@@ -63,7 +37,6 @@
         <p>Hover and click to see effects.</p>
       </div>
 
-      <!-- Button glass -->
       <div class="flex-wrap flex-c-x gap-2xl p-b-lg">
 
         <div class="grid-center gap-xs">
@@ -121,14 +94,13 @@
         </div>
       </div>
 
-      <!-- Other buttons -->
       <div class="flex-wrap flex-c-x gap-2xl">
   
         <div class="grid-center gap-xs">
           <h4 class="title-sm">.round-btn-</h4>
 
           <div class="flex gap-lg">
-            <div class="grid gap-xs">
+            <div class="grid-center gap-xs">
               <button type="button" class="round-btn-sm btn-glass">
                 <img
                   src="/assets/icons/CubeTransparent.svg"
@@ -148,7 +120,7 @@
               </button>
             </div>
 
-            <div class="grid gap-xs">
+            <div class="grid-center gap-xs">
               <button type="button" class="round-btn-sm btn-glass-light">
                 <img
                   src="/assets/icons/CubeTransparent.svg"
@@ -168,7 +140,7 @@
               </button>
             </div>
 
-            <div class="grid gap-xs">
+            <div class="grid-center gap-xs">
               <button type="button" class="round-btn-sm btn-glass-dark">
                 <img
                   src="/assets/icons/CubeTransparent.svg"
@@ -226,6 +198,111 @@
         </div> -->
       </div>
 
+    </div>
+  </section>
+
+  <!-- Tab menu -->
+  <section class="max-w-gutter">
+    <div class="max-w box-wide-100 gap-lg glass-base fill-dark sha-xl">
+      <div class="grid gap-3xs">
+        <h3 class="demo-header__title">Tab menu</h3>
+      </div>
+
+      <div class="">
+        <div id="js-tabMenu" class="tab-menu inset-glass-md">
+          <button type="button" class="tab tab-active" id="dark-tab">
+            Tab 1
+          </button>
+
+          <button type="button" class="tab" id="light-tab">
+            Tab 2
+          </button>
+
+          <button type="button" class="tab" id="color-tab">
+            Tab 3
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size range -->
+  <section class="max-w-gutter">
+    <div class="max-w box-wide-fit gap-lg glass-base fill-xdark sha-xl">
+      <div class="grid gap-3xs">
+        <h3 class="demo-header__title">Responsive size range</h3>
+        <p>Play with the viewport to see dynamic sizing.</p>
+      </div>
+
+      <div class="">
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-3xs"></div>
+          <p class="text-sm">var(--3xs) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-2xs"></div>
+          <p class="text-sm">var(--2xs) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-xs"></div>
+          <p class="text-sm">var(--xs) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-sm"></div>
+          <p class="text-sm">var(--sm) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-md"></div>
+          <p class="text-sm">var(--md) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-lg"></div>
+          <p class="text-sm">var(--lg) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-xl"></div>
+          <p class="text-sm">var(--xl) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-2xl"></div>
+          <p class="text-sm">var(--2xl) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-3xl"></div>
+          <p class="text-sm">var(--3xl) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-4xl"></div>
+          <p class="text-sm">var(--4xl) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+        <div class="flex-c-y gap-2xs">
+          <div class=" js-sizeCube size-demo__box w-5xl"></div>
+          <p class="text-sm">var(--5xl) =</p>
+          <span class="title-sm"></span>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -378,7 +455,7 @@
   </section>
 
   <!-- Text shadows -->
-  <section class="max-w box-wide-resp gap-xl fill-light">
+  <section class="max-w box-wide-resp gap-xl fill-2xlight">
     <h3 class="demo-header__title text-dark">
       Text shadows
     </h3>
@@ -399,86 +476,6 @@
       <p class="title-lg text-sha-md">.text-sha-md</p>
       <p class="title-lg text-sha-lg">.text-sha-lg</p>
       <p class="title-lg text-sha-xl">.text-sha-xl</p>
-    </div>
-  </section>
-
-  <!-- Size range -->
-  <section class="max-w-gutter">
-    <div class="max-w box-wide-fit gap-lg glass-base fill-xdark sha-xl">
-      <div class="grid gap-3xs">
-        <h3 class="demo-header__title">Responsive size range</h3>
-        <p>Play with the viewport to see dynamic sizing.</p>
-      </div>
-
-      <div class="">
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-3xs"></div>
-          <p class="text-sm">var(--3xs) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-2xs"></div>
-          <p class="text-sm">var(--2xs) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-xs"></div>
-          <p class="text-sm">var(--xs) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-sm"></div>
-          <p class="text-sm">var(--sm) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-md"></div>
-          <p class="text-sm">var(--md) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-lg"></div>
-          <p class="text-sm">var(--lg) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-xl"></div>
-          <p class="text-sm">var(--xl) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-2xl"></div>
-          <p class="text-sm">var(--2xl) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-3xl"></div>
-          <p class="text-sm">var(--3xl) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-4xl"></div>
-          <p class="text-sm">var(--4xl) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-        <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-5xl"></div>
-          <p class="text-sm">var(--5xl) =</p>
-          <span class="title-sm"></span>
-        </div>
-
-      </div>
     </div>
   </section>
 

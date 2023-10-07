@@ -1,0 +1,505 @@
+<!-- Documentation Header -->
+<!-- ================================== -->
+<header class="max-w-gutter">
+  <section class="max-w grid gap-xl atf">
+
+    <div class="card atf__card glass-base fill-clear sha-xl">
+
+      <div class="grid">
+        <div>
+          <!-- <p class="eyebrow">SCSS tutorial</p> -->
+          <h1 class="title-xl">3D Glass Documentation</h1>
+        </div>
+
+        <!-- <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p> -->
+      </div>
+
+      <div class="flex-r">
+        <a
+        href="#"
+        class="btn-lg btn-icon btn-glass-light ">
+          Github repo
+        <img
+          src="/assets/icons/SquareOut.svg"
+          alt="open GitHub repo in new window"/>
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+</header>
+
+<!-- Main -->
+<!-- ================================== -->
+<main class="grid gap-5xl p-b-5xl">
+
+
+        <!-- Elevation -->
+        <div class="grid gap-2xs">
+          <h3  class="title-md">Elevation box-shadow</h3>
+
+          <div class="grid gap-md">
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">What it does</h4>
+              <p>The elevation box-shadow plays a pivotal role in producing the illusion of a three-dimentional pane of glass.</p>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">Do you really need it?</h4>
+                <p>I would say yes, unless you are going for a Hawaiian Lāhainā Noon vibe.</p>
+                <img src="/assets/tutorial-img/noon.jpg" class="img-sm"/>
+            </div>
+  
+            <div class="grid gap-3xs">
+              <h4 class="title-sm">How to use it</h4>
+              <p>The shadow can either be added to the main element of a component class or via HTML. I chose not to include it in the .glass-base class because its size value is too variable.</p>
+              <div class="grid gap-xl m-t-sm">
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>No interactions or animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class, and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">or: </span>if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it into the HTML</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>CSS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it to the component class and consider giving it a couple breakpoints.</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">e.g. </span> .btn-glass-light includes a box-shadow that changes size on :hover</p>
+                </div>
+    
+                <div class="grid gap-2xs">
+                  <p class="bold"><span class="text-light-xmild title-sm">if: </span>JS interactions & animations</p>
+                  <p class="p-l-xs"><span class="text-light-xmild title-sm">then: </span>add it as .sha[t-shirt size] class to the HTML so that it can be easily swapped via JS </p>
+                </div>
+  
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+<!-- intro -->
+  <!-- <section class="max-w grid">
+    <div class="section__header glass-base">
+      <p class="upper-xs">Step one</p>
+      <h2 class="title-md">Have yourself a little CPU cookout</h2>
+    </div>
+
+    <div class="fill-xdark space-wide grid gap-lg section__wrap">
+      <img src="/assets/tutorial-img/heat-computer-cooking-with-style.gif"/>
+      <p>
+        Here's the deal…any text or content you display over a glass background will be a lot more legible if said glass has a very generous blur radius. Unfortunately, blur doesn't come cheap. Furthermore, this glass marterial also involves soft drop shadows, noise textures, backdrop-filters, and inset box-shadows stacked four layers deep. 
+        So, it might be wise to exercise the type of restraint that this website lacks…and refrain from modeling your product’s entire interface on the Crystal Palace. Or, you know what, throw caution to the wind! Utilize every very possible piece of glass, all at once, everywhere, and let's watch the world descend into chaos together. Please do share screenshots!
+      </p>
+    </div>
+  </section> -->
+
+
+  <!-- <section class="max-w glass-base br-md"> 
+
+      <div class="space-thin">
+        <h3 class="text-lg">Layers</h3>
+
+        <ul class="grid gap-xs p-xs">
+          <li class=" check">
+            Bevel box-shadow 
+          </li>
+
+          <li class=" check">
+            Noise texture
+          </li>
+
+          <li class=" check">
+            Background-color
+          </li>
+
+          <li class=" check">
+            Backdrop-filter
+          </li>
+
+          <li class=" check">
+            Elevation box-shadow
+          </li>
+        </ul>
+      </div>
+  </section> -->
+
+<!-- The available tools -->
+<section class="max-w grid">
+  <div class="section__header glass-reg">
+    <p class="text-xs upper-xs">First question</p>
+    <h2 class="title-lg">Can chatGPT just do it?</h2>
+  </div>
+
+  <div class="flex-c space-wide outline-thin-light">
+    <div class="glassGPT glassGPT-card space-thin grid-center">
+      <p class="title-md f-dark f-center">SCSS authored by chatGPT</p>
+    </div>
+  </div>
+
+  <img src="/assets/homeImg/glass-gpt-code.png" class="max-w"/>
+
+  <div class="section__wrap fill-xdark grid gap-2xs space-wide">
+    <h3 class="title-sm">Answer: nope this ain’t it.</h3>
+    <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight. The meager blur radius compromises legibility, while the bright white outline falls lightyears short of the dimensionality it is meant to depict.</p>
+    
+    <p>But fear not! We can do better. Keep reading, and I'll show you how.</p>
+  </div>
+
+</section>
+
+<!-- Card glass -->
+  <section class="max-w grid">
+    <div class="section__header glass-base--responsive tint-dark">
+      <p class="upper-xs">Step two</p>
+      <h2 class="title-md">Card glass</h2>
+    </div>
+
+    <div class="fill-xdark grid section__wrap">
+
+      <!-- <div class="sidescroll-wrap">
+        <div class="sidescroll space-thin">
+
+      </div>
+      </div> -->
+
+      <div class="space-thin">
+        <div class="space-thin grid gap-xs box-2xdark">
+          <p class="title-sm">The main element...</p>
+          <ul class="grid gap-sm">
+            <li class="check flex">
+              <p class="bold">Must</p>
+              <p>be set to position absolute or relative</p>
+            </li>
+  
+            <li class="check flex">
+              <p>Must</p>
+              <p class="bold">Not</p>
+              <p>have a z-index</p>
+            </li>
+  
+            <li class="check flex">
+              <p>Must</p>
+              <p class="bold">Not</p>
+              <p>use any property that creates a new stacking context</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="sidescroll-wrap">
+        <div class="sidescroll space-thin" id="code-text"">
+          <pre><code class="c-class">.glass-base {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+          <pre><code class="c-prop">  -webkit-backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
+          <pre><code class="c-prop">  backdrop-filter: <span class="c-value">blur(var(--blur)) brightness(0.95) saturate(1.3)</span>;</code></pre>
+          <pre><code class="c-class">}</code></pre>
+          <br>
+          <pre><code class="c-class">.glass-base::after {</code></pre>
+          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+          <pre><code class="c-prop">  pointer-events: <span class="c-value">none</span>;</code></pre>
+          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+          <pre><code class="c-prop">  z-index: <span class="c-value">-1</span>;</code></pre>
+          <br>
+          <pre><code class="c-prop">  box-shadow: </code></pre>
+          <pre><code class="c-value">    inset 1px 1px 0.2px rgba(250, 254, 255, 0.2),</code></pre>
+          <pre><code class="c-value">    inset 2px 2px 1px -2.4px rgba(250, 254, 255, 0.8), </code></pre>
+          <pre><code class="c-value">    inset -2px -2px 0.4px -2.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">    inset 0 -0.5px 1px -1px rgba(250, 254, 255, 0.5);</code></pre>
+          <br>
+          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+          <br>
+          <pre><code><span class="c-comment">/*** Add your own noise textures here! ***/</span></code></pre>
+          <pre><code class="c-prop">  background-image:</code></pre>
+          <pre><code class="c-prop">    <span class="c-value">url(/assets/images/noise-texture-500x500.png),</span></code></pre>
+          <pre><code class="c-prop">    <span class="c-value">url(/assets/textures/noise-texture-black-100den-10op-500x500.png)</span>;</code></pre>
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+      </div>
+
+      <div class="flex-r space-thin">
+        <button
+          type="button"
+          id="copy-code"
+          class="btn-md btn-glass-dark">
+          Copy code
+          <img src="/assets/icons/Copy.svg"/>
+        </button>
+      </div>
+
+      <!-- <div class="code-pen space-thin">
+        <p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="ZEVoBOM" data-editable="false" data-user="kris-kay-design" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 1px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/kris-kay-design/pen/ZEVoBOM">
+          Untitled</a> by Kris (<a href="https://codepen.io/kris-kay-design">@kris-kay-design</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+      </div>   -->
+
+    </div>
+
+  </section>
+
+
+<!-- Frosted glass -->
+  <!-- <section id="frostedGlass" class="max-w">
+    <div class="accordion is-closed">
+      <div class="card new-frosted-glass">
+
+        <h3 class="title-l">Frosted glass tutorial</h3>
+
+        <div class="tint-fullwidth-s-reg">
+          <p>
+            Frosted glass utilizes a noise texture soften the too smooth look given by the blur filter.
+          </p>
+        </div>
+
+        <div class="js-accordionToggle is-closed accordion-toggle" aria-expanded="false"
+        aria-controls="frosted-glass-content">
+
+          <div class="see-more-btn flex-r">
+            <p class="bold-text">View frosted glass tutorial</p>
+            <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+          </div>
+
+          <div class="see-less-btn flex-r">
+            <p class="bold-text">Hide frosted glass tutorial</p>
+            <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+          </div>
+        </div>
+
+      </div>
+
+      <div id="frosted-glass-content"
+      aria-hidden="true"
+      class="accordion-content is-closed tutorial-grid"
+    >
+      <div>
+        <p>
+          Frosted glass
+        </p>
+
+      </div>
+
+      <div class="grid-gap-s">
+        <h4 class="title-m">Main element</h4>
+
+        <div class="sidescroll">
+          <pre><code class="c-class">.frosted-glass {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+        <br>
+          <pre><code class="c-prop">  box-shadow: </code></pre>
+          <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
+          <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
+          <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
+        <br>
+
+          <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+          <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+
+        <div>
+          <p class="bold-text">The main element...</p>
+          <ul class="how-to-ul">
+            <li>
+              <p class="bold-text">Must</p>
+              <p>be set to position absolute or relative</p>
+            </li>
+
+            <li>
+              <p>Must</p>
+              <p class="bold-text">Not</p>
+              <p>have a z-index</p>
+            </li>
+
+            <li>
+              <p>Must</p>
+              <p class="bold-text">Not</p>
+              <p>use any property that creates a new stacking context</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tint-fullwidth-s-reg">
+          <p class="bold-text">Note</p>
+          <p>
+            If you apply vibrant glass to an element and it looks wrong or seethrough, then a new stacking has been context is created by another class or in a papent element. You can either fix the stacking context or just use frosted glass instead.
+          </p>
+        </div>
+
+
+        <h4 class="title-m">::after</h4>
+
+        <div class="sidescroll">
+          <pre><code class="c-class">.frosted-glass::after {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+          <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
+          <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
+          <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+      </div>
+      
+    </div>
+
+    </div>
+
+
+  </section> -->
+
+
+<!-- Virbrant glass -->
+  <!-- <section id="vibrantGlass" class="max-w">
+    <div class="accordion is-closed">
+      <div class="card beveled-glass">
+
+        <h3 class="title-l">Beveled glass tutorial</h3>
+
+        <div class="tint-fullwidth-s-reg">
+          <p>
+            Vibrant glass uses the <code>mix-blend-mode</code> property to add dynamic
+            depth of color to the glass material.
+          </p>
+        </div>
+
+        <div class="js-accordionToggle is-closed accordion-toggle" aria-expanded="false"
+        aria-controls="vibrant-glass-content">
+
+          <div class="see-more-btn flex-r">
+            <p class="bold-text">View vibrant glass tutorial</p>
+            <img src="/assets/icons/CaretDown.svg" class="icon-sm" />
+          </div>
+
+          <div class="see-less-btn flex-r">
+            <p class="bold-text">Hide vibrant glass tutorial</p>
+            <img src="/assets/icons/CaretUp.svg" class="icon-sm" />
+          </div>
+        </div>
+
+      </div>
+
+      <div id="vibrant-glass-content"
+      aria-hidden="true"
+      class="accordion-content is-closed grid-gap-m"
+    >
+      <div>
+        <p>
+          Abandon all hope, ye who's wondered thus far.'
+          Be warned that this technique is quite finicky to implement and
+          will stop working if applied to an element that has its own
+          stacking context. The complexity arises from the interplay of
+          multiple CSS properties, that each automatically create a new
+          stacking context. Furthermore, mix-blend-mode needs to be set up
+          such that it has access to the page’s backdrop to bend with.
+          Finally, it is important to keep text above the glass so that
+          its legibility is not affected.
+        </p>
+        <br />
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context"
+          class="link"
+          target="_blank"
+        >MDN documentation for stacking contexts</a>
+      </div>
+
+      <div class="grid-gap-s">
+        <h4 class="title-m">Main element</h4>
+
+        <div class="sidescroll">
+          <pre><code class="c-class">.vibrant-glass {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">relative</span>;</code></pre>
+        <br>
+          <pre><code class="c-prop">  box-shadow: </code></pre>
+          <pre><code class="c-value">   inset 2px 2px 0.4px -2.4px rgba(250, 254, 255, 0.7),</code></pre>
+          <pre><code class="c-value">   inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset 3px 3px 0.1px -3px rgba(250, 254, 255, 0.1),</code></pre>
+          <pre><code class="c-value">   inset -1.4px -2px 1.5px -3.25px rgba(250, 254, 255, 0.7),</code></pre>
+          <pre><code class="c-value">   inset -2px -2px 0.1px -2.4px rgba(250, 254, 255, 0.1);</code></pre>
+        <br>
+
+          <pre><code><span class="c-comment">  /* Add your own noise texture here! */</span></code></pre>
+          <pre><code class="c-prop">  background-image: <span class="c-value">url(/assets/images/noise-texture-500x500.png)</span>;</code></pre>
+          <pre><code class="c-prop">  background-size: <span class="c-value">100px</span>;</code></pre>
+          <pre><code class="c-prop">  background-repeat: <span class="c-value">repeat</span>;</code></pre>
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+
+        <div>
+          <p class="bold-text">The main element...</p>
+          <ul class="how-to-ul">
+            <li>
+              <p class="bold-text">Must</p>
+              <p>be set to position absolute or relative</p>
+            </li>
+
+            <li>
+              <p>Must</p>
+              <p class="bold-text">Not</p>
+              <p>have a z-index</p>
+            </li>
+
+            <li>
+              <p>Must</p>
+              <p class="bold-text">Not</p>
+              <p>use any property that creates a new stacking context</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tip tint-fullwidth-s-reg">
+          <p class="bold-text">Note</p>
+          <p>
+            If you apply vibrant glass to an element and it looks wrong or seethrough, then a new stacking has been context is created by another class or in a papent element. You can either fix the stacking context or just use frosted glass instead.
+          </p>
+        </div>
+
+
+        <h4 class="title-m">::before</h4>
+
+        <div class="sidescroll">
+          <pre><code class="c-class">.vibrant-glass::before {</code></pre>
+          <pre><code class="c-prop">  position: <span class="c-value">absolute</span>;</code></pre>
+          <pre><code class="c-prop">  content: <span class="c-value">""</span>;</code></pre>
+          <pre><code class="c-prop">  inset: <span class="c-value">0</span>;</code></pre>
+          <pre><code class="c-prop">  border-radius: <span class="c-value">inherit</span>;</code></pre>
+          <pre><code class="c-prop">  z-index: <span class="c-value">-2</span>;</code></pre>
+          <pre><code class="c-prop">  background-color: <span class="c-value">rgba(250, 254, 255, 0.12)</span>;</code></pre>
+          <pre><code class="c-prop">  mix-blend-mode: <span class="c-value">multiply</span>;</code></pre>
+
+
+
+          <pre><code class="c-class">}</code></pre>
+        </div>
+      </div>
+      
+    </div>
+
+    </div>
+
+
+  </section> -->
+
+</main>
+
+    <script src="/js/accordion.js" type="text/javascript"></script>
+

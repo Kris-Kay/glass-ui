@@ -13,17 +13,12 @@
 /* Main nav */
 /* ================================== */
 :root {
-  --nav-h: calc(var(--ui-md) + (var(--space-thin) * 2));
-
-  // @include bp.bp(md) {
-  //   --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
-  // }
+  --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
 }
 
 nav {
   position: relative;
   height: var(--nav-h);
-    // z-index: 100;
   z-index: z.z(nav);
 }
 
@@ -38,36 +33,6 @@ nav {
   @include flex.flex-c-y;
   pointer-events: none;
 }
-
-// .main-nav__ul {
-//   display: flex;
-//   gap: var(--sm);
-
-//   @include bp.bp(md) {
-//     gap: var(--xl);
-//   }
-// }
-
-// .nav__link {
-//   @include text.btn-text;
-//   font-size: var(--text-xs);
-//   transition: ani.$speed-slow;
-
-//   @include bp.bp(md) {
-//     font-size: var(--text-sm);
-//   }
-
-//   &.js-navLinkBg {
-//     @include glass.btn2-glass;
-//   } 
-// }
-
-// .main-nav {
-//   position: relative;
-//   margin: 0 auto;
-//   @include flex.flex-sb;
-//   pointer-events: none;
-// }
 
 .main-nav__ham {
   display: none;
@@ -101,7 +66,7 @@ nav {
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-md) + var(--space-thin)); 
+  top: calc(var(--ui-md) + var(--3xs)); 
   right: 0;
   padding: var(--sm);
   // pointer-events: none;

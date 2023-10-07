@@ -36,7 +36,7 @@
       <div class="max-w main-nav">
         <a
           href="#top-of-page"
-          class="round-btn-md btn-glass-dark">
+          class="round-btn-lg btn-glass-dark">
           <img
             src="/assets/icons/CubeTransparent.svg"
             alt="back to top"/>
@@ -61,7 +61,7 @@
         <button
           type="button"
           id="js-dropdownToggle"
-          class="round-btn-md btn-glass-dark"
+          class="round-btn-lg btn-glass-dark"
         >
           <img
             src="assets/icons/List.svg"
@@ -158,5 +158,30 @@
     <script src="/js/content.js" type="text/javascript"></script>
     <script src="/js/main.js" type="text/javascript"></script>
 
+    <script type="module">
+
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+    
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCBnkDUz4lSa3CMuc6xoLzO3QMCQoXrO6k",
+        authDomain: "glass-ui-c20ea.firebaseapp.com",
+        projectId: "glass-ui-c20ea",
+        storageBucket: "glass-ui-c20ea.appspot.com",
+        messagingSenderId: "774382265185",
+        appId: "1:774382265185:web:11e9980ad40fba04a1db20",
+        measurementId: "G-DBY7DJ9P95"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>

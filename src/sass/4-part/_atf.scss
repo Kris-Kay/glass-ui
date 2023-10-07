@@ -30,11 +30,11 @@
   min-height: calc(50vh - var(--nav-h));
   min-height: calc(50svh - var(--nav-h));
   display: grid;
-  padding-bottom: var(--space-wide);
 
   > .atf__card {
     /* layout */
-    width: min(100%, 450px);
+    width: fit-content;
+    // width: min(100%, 450px);
     place-self: center;
   }
 }
