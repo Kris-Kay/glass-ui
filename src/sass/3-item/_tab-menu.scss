@@ -11,21 +11,26 @@
 @use "button" as btn;
 /* ================================== */
 
+.tab-menu__wrap {
+
+}
+
 .tab-menu {
   width: fit-content;
+  max-width: 100%;
   height: var(--ui-md);
   margin: auto;
   @include flex.flex-c;
-  gap: var(--4xs);
+  gap: var(--3xs);
 
+  --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
-  --tab-br: 8px;
   @include br.outer-br (var(--tab-br), var(--padding));
 
-  // @include bp.bp(md) {
-  //   height: var(--ui-lg);
-  // }
+  @include bp.bp(md) {
+    gap: var(--3xs);
+  }
 }
 
 .tab {
@@ -34,7 +39,7 @@
   width: max-content; 
   height: 100%;
   @include flex.flex-c;
-  padding: 0 0.7rem;
+  padding: 0 0.8rem;
 
   pointer-events: auto;
   cursor: pointer;
@@ -45,16 +50,17 @@
 
   border-radius: var(--tab-br);
 
-  @include bp.bp(sm) {
-    padding: 0 1rem;
+  @include bp.bp(xs) {
+    padding: 0 0.9rem;
   }
 
   @include bp.bp(md) {
     --inner-h: 1.1rem;
+    padding: 0 1.2rem;
   }
 
   @include bp.bp(lg) {
-    --inner-h: 1.25rem;
+    padding: 0 1.3rem;
   }
 
   &.tab-active {

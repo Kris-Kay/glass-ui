@@ -1,7 +1,7 @@
 <!-- Demo Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <section class="max-w atf-md">
+  <!-- <section class="max-w atf">
     <div class="atf__card ">
       <div class="card glass-reg sha-xl grid gap-2xs">
         <h1 class="title-xl text-c">UI demo</h1>
@@ -22,12 +22,37 @@
         class="icon-sm"/>
       </div>
     </div>
-  </section>
+  </section> -->
 </header>
 
 <!-- Main -->
 <!-- ================================== -->
 <main class="grid gap-5xl p-y-5xl">
+
+  <!-- Color tabs -->
+  <section class="max-w-gutter">
+    <div class="max-w box-wide-100 gap-lg glass-base fill-dark sha-xl">
+      <div class="grid gap-3xs">
+        <h3 class="demo-header__title">Tab menu</h3>
+      </div>
+
+      <div class="">
+        <div id="js-tabMenu" class="tab-menu inset-glass-md">
+          <button type="button" class="tab tab-active" id="dark-tab">
+            Dark
+          </button>
+
+          <button type="button" class="tab" id="light-tab">
+            Light
+          </button>
+
+          <button type="button" class="tab" id="color-tab">
+            Color
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 3D Buttons  -->
   <section class="max-w-gutter">
@@ -379,13 +404,13 @@
 
   <!-- Size range -->
   <section class="max-w-gutter">
-    <div class="max-w box-wide-fit gap-md glass-base fill-xdark sha-xl">
+    <div class="max-w box-wide-fit gap-lg glass-base fill-xdark sha-xl">
       <div class="grid gap-3xs">
         <h3 class="demo-header__title">Responsive size range</h3>
         <p>Play with the viewport to see dynamic sizing.</p>
       </div>
 
-      <div class="grid space-wide-x">
+      <div class="">
 
         <div class="flex-c-y gap-2xs">
           <div class=" js-sizeCube size-demo__box w-3xs"></div>

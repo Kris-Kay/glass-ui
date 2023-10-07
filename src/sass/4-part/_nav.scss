@@ -20,12 +20,54 @@
   // }
 }
 
-.main-nav {
+nav {
   position: relative;
-  margin: 0 auto;
+  height: var(--nav-h);
+    // z-index: 100;
+  z-index: z.z(nav);
+}
+
+.main-nav__wrap {
+  position: fixed;
+  inset: 0;
+}
+
+.main-nav {
+  padding-top: var(--sm);
   @include flex.flex-sb;
+  @include flex.flex-c-y;
   pointer-events: none;
 }
+
+// .main-nav__ul {
+//   display: flex;
+//   gap: var(--sm);
+
+//   @include bp.bp(md) {
+//     gap: var(--xl);
+//   }
+// }
+
+// .nav__link {
+//   @include text.btn-text;
+//   font-size: var(--text-xs);
+//   transition: ani.$speed-slow;
+
+//   @include bp.bp(md) {
+//     font-size: var(--text-sm);
+//   }
+
+//   &.js-navLinkBg {
+//     @include glass.btn2-glass;
+//   } 
+// }
+
+// .main-nav {
+//   position: relative;
+//   margin: 0 auto;
+//   @include flex.flex-sb;
+//   pointer-events: none;
+// }
 
 .main-nav__ham {
   display: none;
