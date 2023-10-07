@@ -45,11 +45,11 @@
 
 /* Dropdown */
 /* ================================== */
-.dropdown {
+.main-nav__dropdown {
   position: relative;
   display: inline-block;
-  pointer-events: none;
   z-index: z.z(menu);
+  // pointer-events: none;
   cursor: pointer;
   
   &.isClosed {
@@ -57,26 +57,30 @@
   }
 }
 
-.dropdown-bg {
+.dropdown__bg {
   position: absolute;
-  top: var(--ui-lg); 
+  top: calc(var(--ui-md) + var(--space-thin)); 
   right: 0;
-  padding: var(--2xs);
-  border-radius: var(--xs);
-  box-shadow: sha.$sha-lg;
+  padding: var(--sm);
+  // pointer-events: none;
   cursor: pointer;
+
+  border-radius: var(--md);
+  box-shadow: sha.$sha-xl;
 }
 
-.dropdown-grid {
+.dropdown__bin {
   width: fit-content;
   display: grid;
-  gap: calc(var(--3xs) * 0.5);
+  gap: calc(var(--xs) * 0.5);
   margin: calc(var(--3xs) * -1);
   cursor: pointer;
 }
 
-.js-dd-item {
+.dropdown__item {
   min-width: max-content;
   width: 100%;
-  color: rgba(color.$text-light, 0.8);
+  color: rgba(color.$text-light, 0.7);
+  letter-spacing: text.$letter-spacing-lg;
+  font-weight: text.$font-weight-lg;
 }

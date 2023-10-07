@@ -43,11 +43,6 @@
     --space-thin: #{size.$s7}; // 28px
     --space-wide: #{size.$s16}; // 64px
   }
-
-  @include bp.bp(xl) {
-    --space-thin: #{size.$s8}; // 32px
-    --space-wide: #{size.$s16}; // 64px
-  }
 }
 
 

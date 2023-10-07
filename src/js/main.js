@@ -7,7 +7,7 @@
 const $ham = document.getElementById("js-navHam");
 const $x = document.getElementById("js-navX");
 const $dd = document.getElementById("js-navDropdown");
-const $ddItems = $dd.querySelectorAll(".js-dd-item");
+const $ddItems = $dd.querySelectorAll(".js-dropdownItem");
 const ddArray = Array.from($ddItems);
 
 document.getElementById("js-dropdownToggle").onclick = () => {
@@ -29,8 +29,8 @@ ddArray.forEach((item) => {
 /* ================================== */
 const $tabMenu = document.getElementById("js-tabMenu");
 const $bg = document.getElementById("js-bg");
-const $color = document.getElementById("color-tab");
-let $prevTab = $color;
+const $dark = document.getElementById("dark-tab");
+let $prevTab = $dark;
 
 buttonPressed = (e) => {
   if (e.target.nodeName === "BUTTON") {

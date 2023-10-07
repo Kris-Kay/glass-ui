@@ -6,8 +6,8 @@
   "use strict";
 
   $(function () {
-    // $("#content").load("/home.html");
-    $("#content").load("/about.html");
+    $("#content").load("/home.html");
+    // $("#content").load("/about.html");
     // $("#content").load("/demo.html");
     // $("#content").load("/tutorial.html");
 

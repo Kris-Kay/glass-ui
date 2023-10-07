@@ -1,28 +1,34 @@
 <!-- Home Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <section class="max-w">
-      <div class="card atf__card glass-base sha-xl">
-
-        <h1 class="title-xl">About</h1>
-
+  <section class="max-w atf">
+    <div class="atf__card grid gap-xs">
+      <div class="card glass-reg sha-xl ">
+        <h1 class="title-xl text-c">About this project</h1>
       </div>
+
+      <div class="flex-c">
+        <img
+        src="/assets/icons/CaretDown.svg"
+        class="icon-sm"/>
+      </div>
+    </div>
   </section>
 </header>
 
 <!-- Main -->
 <!-- ================================== -->
-  <main class="grid gap-3xl p-y-5xl">
+  <main class="grid gap-5xl p-y-5xl">
 
 <!-- Goals -->
-  <section class="max-w grid section__wrap">
+  <section class="max-w section__wrap">
 
-    <div class="section__header glass-base">
+    <div class="section__header">
       <!-- <p class="upper-xs">The raison d'être</p> -->
-      <h2 class="title-lg">Objectives for this project</h2>
+      <h2 class="section__title">Objectives for this project</h2>
     </div>
 
-    <ul class="grid gap-xl space-wide fill-xdark">
+    <ul class="grid gap-xl space-wide fill-3xdark">
       <li class="text-md dot">
         Recreate as closely as possible the Vision Pro spatial UI styling.
         <p class="text-xs">As depicted in the keynote since I don’t have access to the real thing</p>
@@ -41,34 +47,35 @@
   </section>
 
 <!-- Preemptive answers -->
-    <section class="max-w grid">
+    <section class="max-w section__wrap">
 
-      <div class="section__header glass-base">
+      <div class="section__header">
         <!-- <p class="upper-xs">The raison d'être</p> -->
-        <h2 class="title-lg">Some preemptive answers</h2>
+        <h2 class="section__title">Some preemptive answers</h2>
       </div>
-      <div class="space-wide fill-3xdark grid gap-xl section__wrap">
+
+      <div class="space-wide fill-3xdark grid gap-xl">
         <div class="grid gap-3xs">
-          <h3 class="title-thin-md">What is the point of this project?</h3>
+          <h3 class="title-thin-lg">What is the point of this project?</h3>
           <p class="">
             <span class="bold">This project is an educational exploration of modern CSS techniques, not a commercial plug-and-play UI solution. </span>
             <br>
             I set out to mimic the Apple Vision Pro spatial UI to see if it was possible and to challenge myself to play with all the shiny new CSS properties. I did not do it for monetary gain or to encourage people to copy other’s work and pass it off as their own. Not only because it would potentially be ethically/legally dubious but also because it would make for an extremely dull digital landscape.
           </p>
-          <p class="">
+          <p class="first-line-bold">
             That is why I designed the 3d glass UI library with ease of customization at its core.  I hope you will have fun being creative while making it your own!
           </p>
         </div>
   
         <div class="grid gap-3xs">
-          <h3 class="title-thin-md">But why the Vision Pro's UI?</h3>
+          <h3 class="title-thin-lg">But why the Vision Pro's UI?</h3>
           <p class="">
             Because it displays an impressive level of craftsmanship and creativity that I seldom encounter in this category. Generally, UI is a means to an end. Select a primary and secondary color, add a font, and decide how round the corners should be. Done! Now move on to the real work. Fair enough, UI is there to enable the user to access the functionality of a thing, and not a thing in and of itself. Be that as it may, I can’t help but swoon in the presence of great beauty and innovation. 
           </p>
         </div>
   
         <div class="grid gap-3xs">
-          <h3 class="title-thin-md">Why not create a unique glass look instead?</h3>
+          <h3 class="title-thin-lg">Why not create a unique glass look instead?</h3>
           <p class="">
             I did, several actually. But to be used in other projects. You don't them here because it’s tricky to objectively judge the success of a set of techniques via a unique creation. That’s because there is nothing concrete to compare the results to. Any artifact in the end product could be a mistake, a limitation, or a design decision. 
           </p>
@@ -78,22 +85,19 @@
     </section>
 
 
-
 <!-- Who -->
-    <section class="max-w grid">
+    <section class="max-w section__wrap">
       <div class="section__header">
         <!-- <p class="text-xs upper-xs">The temporal context</p> -->
-        <h2 class="title-lg">Who made this?</h2>
+        <h2 class="section__title">Who made this?</h2>
       </div>
 
-      <div class="fill-xdark first-line-bold space-wide section__wrap">
-        <img src="/assets/other img/Kris_w_Tetra_720x720.jpg"/ class="img-sm">
+      <div class="grid fill-3xdark first-line-bold space-wide">
+        <img src="/assets/other img/Kris_w_Tetra_720x720.jpg" class="img-sm">
 
-        <div class="grid-center gap-3xs p-t-xs">
-
+        <div class="grid-center gap-2xs p-t-md">
           <p class="">hello@kris-kay.com</p>
-        
-          <div class="flex-c flex-wrap gap-3xs">
+          <div class="flex-c flex-wrap gap-2xs">
             <a href="#" target="_blank" class="btn-clear round-btn-lg">
               <img
                 src="assets/icons/InstagramLogo.svg"
@@ -115,6 +119,8 @@
               />
             </a>
           </div>
+        </div>
+
       </div>
     </section>
 

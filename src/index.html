@@ -27,7 +27,7 @@
 <!-- Body -->
 <!-- ================================== -->
   <body id="top-of-page">
-    <div id="js-bg" class="background color"></div>
+    <div id="js-bg" class="background dark"></div>
     <div class="body-grid">
 
 <!-- Nav -->
@@ -44,7 +44,7 @@
     
         <!-- Color tabs -->
         <div id="js-tabMenu" class="tab-menu inset-glass-md">
-          <button type="button" class="tab" id="dark-tab">
+          <button type="button" class="tab tab-active" id="dark-tab">
             Dark
           </button>
     
@@ -52,7 +52,7 @@
             Light
           </button>
     
-          <button type="button" class="tab tab-active" id="color-tab">
+          <button type="button" class="tab" id="color-tab">
             Color
           </button>
         </div>
@@ -78,27 +78,27 @@
         </button>
 
           <!-- Dropdown -->
-          <div id="js-navDropdown" class="dropdown isClosed m-t-3xs">
-            <div class="dropdown-bg glass-reg">
-              <div class="dropdown-grid">
+          <div id="js-navDropdown" class="main-nav__dropdown isClosed">
+            <div class="dropdown__bg glass-reg">
+              <div class="dropdown__bin">
                 <a 
                   href="#" 
                   id="js-home"
-                  class="js-dropdownItem btn-md btn-clear">
+                  class="js-dropdownItem dropdown__item btn-md btn-clear">
                   Home
                 </a>
     
                 <a 
                   href="#" 
                   id="js-about"
-                  class="js-dropdownItem btn-md btn-clear">
+                  class="js-dropdownItem dropdown__item btn-md btn-clear">
                   About
                 </a>
 
                 <a 
                   href="#" 
                   id="js-demo"
-                  class="js-dropdownItem btn-md btn-clear">
+                  class="js-dropdownItem dropdown__item btn-md btn-clear">
                   Demo
                 </a>
   
@@ -115,8 +115,8 @@
 
 <!-- Footer -->
 <!-- ================================== -->
-    <footer class="fill-xdark p-y-2xs max-w-gutter">
-      <div class="max-w flex-sb flex-c-y flex-wrap gap-4xs">
+    <footer class="fill-3xdark max-w-gutter">
+      <div class="max-w flex-sb flex-c-y flex-wrap gap-4xs m-y-sm">
 
         <p class="">hello@kris-kay.com</p>
       
