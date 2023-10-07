@@ -60,41 +60,6 @@ $s20: calc($root-size * 20); /* 80px 5rem */
 
   /* 5xl: 80px → 120px */
   --5xl: clamp(5.00rem, 4.17rem + 4.17vw, 7.50rem);
-
-
-  // --multi: 1.5;
-  // /* 3xs: px → px */
-  // --3xs: clamp(#{$s1}, 0.21rem + 0.21vw, calc(#{$s1} * var(--multi)));
-
-  // /* 2xs: px → px */
-  // --2xs: clamp(#{$s2}, 0.42rem + 0.42vw, calc(#{$s2} * var(--multi)));
-
-  // /* xs: px → px */
-  // --xs: clamp(#{$s3}, 0.63rem + 0.63vw, calc(#{$s3} * var(--multi)));
-
-  // /* sm: px → px */
-  // --sm: clamp(#{$s4}, 0.83rem + 0.83vw, calc(#{$s4} * var(--multi)));
-
-  // /* md: px → px */
-  // --md: clamp(#{$s5}, 1.04rem + 1.04vw, calc(#{$s5} * var(--multi)));
-
-  // /* lg: px → px */
-  // --lg: clamp(#{$s6}, 1.25rem + 1.25vw, calc(#{$s6} * var(--multi)));
-
-  // /* xl: px → px */
-  // --xl: clamp(#{$s8}, 1.67rem + 1.67vw, calc(#{$s8} * var(--multi)));
-
-  // /* 2xl: px → px */
-  // --2xl: clamp(#{$s10}, 2.08rem + 2.08vw, calc(#{$s10} * var(--multi)));
-
-  // /* 3xl: px → px */
-  // --3xl: clamp(#{$s12}, 2.50rem + 2.50vw, calc(#{$s12} * var(--multi)));
-
-  // /* 4xl: px → px */
-  // --4xl: clamp(#{$s16}, 3.33rem + 3.33vw, calc(#{$s16} * var(--multi)));
-
-  // /* 5xl: px → px */
-  // --5xl: clamp(#{$s20}, 4.17rem + 4.17vw, calc(#{$s20} * var(--multi)));
 }
 
 /* T-shirt Size MAP */

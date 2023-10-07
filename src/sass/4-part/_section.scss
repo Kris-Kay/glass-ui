@@ -59,4 +59,5 @@
 
 .section__title {
   @include text.title-text;
+  font-size: var(--lg);
 }

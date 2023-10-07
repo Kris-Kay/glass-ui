@@ -85,10 +85,11 @@
 }
 
 
-.accordion-content {
+.accordion__content {
   width: 100%;
   max-height: fit-content;
   transition: max-height 1000ms ease;
+  @include fill.fill-3xdark;
   // gap: 1rem;
   // border-radius: 0 0 var(--md) var(--md);
 

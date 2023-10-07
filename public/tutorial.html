@@ -3,27 +3,26 @@
 <header class="max-w-gutter">
   <section class="max-w grid gap-xl atf">
 
-    <div class="card atf__card glass-reg fill-clear sha-xl">
-
-      <div class="grid">
+    <div class="card atf__card glass-reg sha-xl">
         <div>
           <!-- <p class="eyebrow">SCSS tutorial</p> -->
-          <h1 class="title-2xl">3D Glass tutorial</h1>
+          <h1 class="title-xl">3D Glass tutorial</h1>
         </div>
 
-        <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p>
-      </div>
+        <div class="full-w-fill">
+          <p>How to create Apple Vision Pro style glass materials using the latest broadly supported CSS.</p>
+        </div>
 
       <div class="flex-r">
-        <a
+        <!-- <a
         href="#"
-        class="btn-lg btn-icon btn-glass-light ">
+        class="btn-lg btn-icon btn-glass-light">
           Github repo
-        <img
+          <img
           src="/assets/icons/SquareOut.svg"
           alt="open GitHub repo in new window"/>
         </a>
-      </div>
+      </div> -->
 
     </div>
 
@@ -40,7 +39,7 @@
 
     <div class="section__header">
       <!-- <p class="eyebrow">First question</p> -->
-      <h2 class="title-xl">The building blocks</h2>
+      <h2 class="section__title">The building blocks</h2>
       <p class="">This section goes into what each layer in a 3D glass material does.</p>
     </div>
 
@@ -48,13 +47,15 @@
       <div class="space-wide grid">
         <img src="/assets/homeImg/glass-x-view-white.png" class="p-b-4xl img-lg"/>
       </div>
-      
-      <div class="grid gap-lg">
+    </div>
+  </section>
+
+      <div class="max-w grid gap-xl p-y-xl">
 
         <!-- Backdrop-filter -->
         <div class="grid">
           <!-- header -->
-          <div class="is-closed grid space-wide-x">
+          <div class="is-closed accordion__header">
             <div class="grid gap-3xs">
               <h2 class="title-lg">Backdrop-filter</h2>
               <p>Blurs background</p>
@@ -77,7 +78,7 @@
           </div>
 
           <!-- content -->
-          <div class="accordion-content is-closed grid gap-2xl space-wide-x p-b-xl">
+          <div class="accordion__content is-closed grid gap-2xl space-wide-x p-b-xl">
   
              <!-- Do you need it? -->
             <div class="grid gap-3xs">
@@ -182,12 +183,6 @@
 
           <!-- content -->
           <div class="accordion-content is-closed grid gap-xl space-wide-x p-b-xl">
-  
-            <!-- Do you need it? -->
-            <div class="grid gap-3xs">
-              <h4 class="title-md">Do you really need it?</h4>
-              <p>No but it helps prevent banding in the blur.</p>
-            </div>
   
             <!-- How to use it -->
             <div class="grid gap-3xs">
@@ -328,8 +323,8 @@
         </div> 
 
       </div>
-    </div>
-  </section>
+ 
+
 
 <!-- GPT -->
   <section class="max-w section__wrap">

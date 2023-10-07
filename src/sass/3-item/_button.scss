@@ -171,7 +171,7 @@
   height: var(--ui-lg); 
 
   & img {
-    height: calc(var(--ui-lg) * 0.7); 
+    height: calc(var(--ui-lg) * 0.6); 
   }
 }
 
@@ -223,15 +223,15 @@
 /* ================================== */
 @mixin btn-glass-light {
   @include btn-material-base;
-  background-color: color.$tint-light;
+  background-color: color.$tint-xlight;
 
   &:hover {
-    background-color: color.$tint-xlight;
+    background-color: color.$tint-2xlight;
     color: color.$text-light;
   }
 
   &:active {
-    background-color: color.$tint-2xlight;
+    background-color: color.$tint-3xlight;
     color: color.$text-dark;
   }
 }
@@ -244,14 +244,14 @@
 /* ================================== */
 @mixin btn-glass-dark {
   @include btn-material-base;
-  background-color: color.$tint-dark;
+  background-color: color.$tint-xdark;
 
   &:hover {
-    background-color: color.$tint-xdark;
+    background-color: color.$tint-2xdark;
   }
 
   &:active {
-    background-color: color.$tint-2xdark;
+    background-color: color.$tint-3xdark;
     color: color.$text-light;
   }
 }

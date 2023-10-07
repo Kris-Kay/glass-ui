@@ -8,8 +8,8 @@
   $(function () {
     // $("#content").load("/home.html");
     // $("#content").load("/about.html");
-    $("#content").load("/demo.html");
-    // $("#content").load("/tutorial.html");
+    // $("#content").load("/demo.html");
+    $("#content").load("/tutorial.html");
 
     $("#js-home").on( "click", function(event) {
       event.preventDefault();

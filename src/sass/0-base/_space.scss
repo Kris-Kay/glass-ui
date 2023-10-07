@@ -16,7 +16,7 @@
 
   --ui-sm: #{size.$s7};  /* 28px */
   --ui-md: #{size.$s9};  /* 36px */
-  --ui-lg: #{size.$s11}; /* 44px */
+  --ui-lg: #{size.$s10}; /* 40px */
 
   @include bp.bp(sm) {
     --max-w: calc(100vw - (var(--space-thin) * 2));
