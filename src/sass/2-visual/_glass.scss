@@ -18,14 +18,9 @@
   &::before {
     @include help.pseudo;
     z-index: -2;
-    @include fill.noise-sm;
+    @include fill.noise-md;
     box-shadow: bevel.$bevel-md;
     @content;
-
-    @include bp.bp(md) {
-      @include fill.noise-md;
-      box-shadow: bevel.$bevel-lg;
-    }
   }
 }
 
@@ -42,7 +37,12 @@
 /* ================================== */
 @mixin glass--no-bevel-mobile {
   @include glass-base {
-    box-shadow: none;
+    // box-shadow: none;
+    box-shadow: bevel.$flat-bevel-sm;
+
+    @include bp.bp(sm) {
+      box-shadow: bevel.$bevel-md;
+    }
   }
 }
 

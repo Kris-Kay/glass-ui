@@ -47,3 +47,14 @@ $bevel-lg:
 //   inset 1.2px 1.2px 0.2px rgba(color.$light, 0.15), // top-left bevel
 //   inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.08), // bottom-right specular
 //   inset 0 -0.5px 1px -1px rgba(color.$light, 0.3); // bottom thin highlight
+
+
+$flat-bevel-sm: 
+  inset 0 0.3px 0 rgba(color.$light, 0.12), // top highlight
+  inset 0 0.7px 0.1px rgba(color.$light, 0.12), // top bevel
+  inset 0 -3px 2px -2px rgba(color.$dark, 0.1), // med shadow bottom 
+  inset 0 -1px 0.5px -1px rgba(color.$dark, 0.12); // small  shadow bottom
+
+.flat-bevel-sm {
+  box-shadow: $flat-bevel-sm;
+}
