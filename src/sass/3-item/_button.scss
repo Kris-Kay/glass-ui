@@ -28,7 +28,7 @@
   // text-wrap: nowrap;
   color: color.$text-light;
   z-index: z.z(on-btn);
-  text-shadow: sha.$text-sha-md;
+  text-shadow: sha.$text-sha-sm;
 }
 
 /* Button base */
@@ -192,7 +192,7 @@
   &::after {
     @include help.pseudo;
     z-index: -1;
-    @include fill.noise-sm;
+    // @include fill.noise-sm;
     box-shadow: bevel.$bevel-sm;
   }
 }

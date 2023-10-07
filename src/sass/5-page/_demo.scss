@@ -22,10 +22,19 @@
 /* Sizing demo */
 /* ================================== */
 .size-demo__box {
-  background-color: color.$tint-xlight;
+  background-color: color.$tint-2xlight;
   border-radius: 0.1rem;
-  height: size.$s10;
+  height: size.$s11;
   margin: size.$s3 0;
+  box-shadow: sha.$sha-2xs;
+
+  @include bp.bp(md) {
+    border-radius: 0.16rem;
+  }
+
+  @include bp.bp(lg) {
+    border-radius: 0.2rem;
+  }
 }
 
 /* Tint & fill demo */

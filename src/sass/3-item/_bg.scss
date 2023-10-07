@@ -39,7 +39,7 @@
   display: grid;
   place-items: center;
   padding: var(--2xl);
-  border-radius: var(--md);
+  border-radius: var(--lg);
 
   @include bp.bp(xs) {
     padding: var(--3xl);
@@ -47,10 +47,6 @@
 
   @include bp.bp(md) {
     padding: var(--space-wide);
-    border-radius: var(--lg);
-  }
-
-  @include bp.bp(lg) {
     border-radius: var(--xl);
   }
 }

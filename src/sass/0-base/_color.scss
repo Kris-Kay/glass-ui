@@ -70,7 +70,7 @@ $tint-clear:   rgba($sky99, 0.01);
 $tint-dark:    rgba($ink2,  0.1);
 $tint-xdark:   rgba($ink2,  0.3);
 $tint-2xdark:  rgba($ink2,  0.5);
-$tint-3xdark:  rgba($ink2,  0.7);
+$tint-3xdark:  rgba($ink2,  0.8);
 
 $text-light: $sky99;
 $text-light-mild: $snow90;
@@ -79,7 +79,7 @@ $text-light-2xmild: $snow65;
 
 $text-dark-bold: $ink2;
 $text-dark: $ink10;
-$text-dark-mild: $gray20;
+$text-dark-mild: rgba($ink10,  0.8);
 $text-dark-xmild: $gray50;
 $text-dark-2xmild: $gray60;
 

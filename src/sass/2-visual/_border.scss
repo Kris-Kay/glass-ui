@@ -2,6 +2,7 @@
 /* Borders */
 @use "../0-base/color";
 @use "../0-base/size";
+@use "bevel";
 /* ================================== */
 
 $round: 9999px;
@@ -37,9 +38,10 @@ $round: 9999px;
 }
 
 .outline-thin-light {
-  border-left: 2px solid rgba(color.$sky99, 0.3);
-  border-right: 2px solid rgba(color.$sky99, 0.3);
+  // border-left: 1px solid rgba(color.$sky99, 0.2);
+  // border-right: 2px solid rgba(color.$sky99, 0.2);
   // border: 2px solid rgba(color.$sky99, 0.3);
-  outline: 1px solid rgba(color.$sky95, 0.3);
+  box-shadow: bevel.$bevel-lg;
+  outline: 1px solid rgba(color.$sky95, 0.15);
   outline-offset: -1px;
 }

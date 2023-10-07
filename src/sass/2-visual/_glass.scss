@@ -25,12 +25,20 @@
 }
 
 .glass-base {
-  @include glass-base;
+  @include glass-base {
+    @include bp.bp(md) {
+      box-shadow: bevel.$bevel-lg;
+    }
+  };
 }
 
 .glass-reg {
   @include fill.fill-clear;
-  @include glass-base;
+  @include glass-base {
+    @include bp.bp(md) {
+      box-shadow: bevel.$bevel-lg;
+    }
+  };
 }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
@@ -42,6 +50,10 @@
 
     @include bp.bp(sm) {
       box-shadow: bevel.$bevel-md;
+    }
+
+    @include bp.bp(md) {
+      box-shadow: bevel.$bevel-lg;
     }
   }
 }

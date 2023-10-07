@@ -43,7 +43,7 @@
 }
 
 .text-dark-mild {
-  color: rgb(46, 50, 56);
+  color: rgba(0, 17, 50, 0.8);
 }
 
 .text-dark-xmild {
@@ -89,7 +89,7 @@
 }
 
 .tint-3xdark {
-  background-color: rgba(0, 3, 10, 0.7);
+  background-color: rgba(0, 3, 10, 0.8);
 }
 
 /* ================================== */
@@ -1398,7 +1398,7 @@ pre code {
 /* Bevel */
 /* ================================== */
 .flat-bevel-sm {
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), inset 0 -3px 2px -2px rgba(0, 3, 10, 0.1), inset 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
 }
 
 /* ================================== */
@@ -1487,7 +1487,7 @@ pre code {
 }
 
 .fill-3xdark {
-  background-color: rgba(0, 3, 10, 0.7);
+  background-color: rgba(0, 3, 10, 0.8);
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
 }
@@ -1511,7 +1511,12 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+}
+@media only screen and (min-width: 40rem) {
+  .glass-base::before {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+  }
 }
 
 .glass-reg {
@@ -1531,7 +1536,12 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+}
+@media only screen and (min-width: 40rem) {
+  .glass-reg::before {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+  }
 }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
@@ -1550,12 +1560,17 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), inset 0 -3px 2px -2px rgba(0, 3, 10, 0.1), inset 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
 }
 @media only screen and (min-width: 30rem) {
   .glass--no-bevel-mobile::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  }
+}
+@media only screen and (min-width: 40rem) {
+  .glass--no-bevel-mobile::before {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
   }
 }
 
@@ -1639,9 +1654,8 @@ pre code {
 }
 
 .outline-thin-light {
-  border-left: 2px solid rgba(250, 254, 255, 0.3);
-  border-right: 2px solid rgba(250, 254, 255, 0.3);
-  outline: 1px solid rgba(230, 248, 254, 0.3);
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+  outline: 1px solid rgba(230, 248, 254, 0.15);
   outline-offset: -1px;
 }
 
@@ -1684,12 +1698,17 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), inset 0 -3px 2px -2px rgba(0, 3, 10, 0.1), inset 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
 }
 @media only screen and (min-width: 30rem) {
   .accordion__header::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  }
+}
+@media only screen and (min-width: 40rem) {
+  .accordion__header::before {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
   }
 }
 @media only screen and (min-width: 30rem) {
@@ -1810,7 +1829,7 @@ pre code {
   position: relative;
   overflow: hidden;
   box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2), inset 0 3px 6px rgba(0, 3, 10, 0.1), inset 2px 1.25px 3px rgba(0, 3, 10, 0.1), inset 1px 1px 1px rgba(0, 3, 10, 0.1);
-  background-color: rgba(0, 3, 10, 0.1);
+  background-color: rgba(0, 3, 10, 0.3);
 }
 .inset-glass-md::after {
   content: "";
@@ -1837,9 +1856,6 @@ pre code {
   z-index: -2;
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
 }
 
 /* ================================== */
@@ -2025,7 +2041,7 @@ pre code {
   display: grid;
   place-items: center;
   padding: var(--2xl);
-  border-radius: var(--md);
+  border-radius: var(--lg);
 }
 @media only screen and (min-width: 20rem) {
   .box-wide-fit {
@@ -2035,11 +2051,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-fit {
     padding: var(--space-wide);
-    border-radius: var(--lg);
-  }
-}
-@media only screen and (min-width: 64rem) {
-  .box-wide-fit {
     border-radius: var(--xl);
   }
 }
@@ -2054,7 +2065,7 @@ pre code {
   display: grid;
   place-items: center;
   padding: var(--2xl);
-  border-radius: var(--md);
+  border-radius: var(--lg);
 }
 @media only screen and (min-width: 20rem) {
   .box-wide-100 {
@@ -2064,11 +2075,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-100 {
     padding: var(--space-wide);
-    border-radius: var(--lg);
-  }
-}
-@media only screen and (min-width: 64rem) {
-  .box-wide-100 {
     border-radius: var(--xl);
   }
 }
@@ -2078,7 +2084,7 @@ pre code {
   display: grid;
   place-items: center;
   padding: var(--2xl);
-  border-radius: var(--md);
+  border-radius: var(--lg);
   border-radius: 0;
 }
 @media only screen and (min-width: 20rem) {
@@ -2089,11 +2095,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-resp {
     padding: var(--space-wide);
-    border-radius: var(--lg);
-  }
-}
-@media only screen and (min-width: 64rem) {
-  .box-wide-resp {
     border-radius: var(--xl);
   }
 }
@@ -2152,7 +2153,7 @@ pre code {
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+  text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
   border-radius: 9999px;
   z-index: 5;
   height: var(--ui-sm);
@@ -2189,7 +2190,7 @@ pre code {
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+  text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
   border-radius: 9999px;
   z-index: 5;
   height: var(--ui-md);
@@ -2226,7 +2227,7 @@ pre code {
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+  text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
   border-radius: 9999px;
   z-index: 5;
   height: var(--ui-lg);
@@ -2325,10 +2326,7 @@ pre code {
   border-radius: inherit;
   overflow: hidden;
   z-index: -1;
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 50px;
-  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.5), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
 }
 .btn-glass:hover {
   background-color: rgba(250, 254, 255, 0.1);
@@ -2357,10 +2355,7 @@ pre code {
   border-radius: inherit;
   overflow: hidden;
   z-index: -1;
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 50px;
-  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.5), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
 }
 .btn-glass-light:hover {
   background-color: rgba(250, 254, 255, 0.5);
@@ -2389,16 +2384,13 @@ pre code {
   border-radius: inherit;
   overflow: hidden;
   z-index: -1;
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 50px;
-  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.5), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
 }
 .btn-glass-dark:hover {
   background-color: rgba(0, 3, 10, 0.5);
 }
 .btn-glass-dark:active {
-  background-color: rgba(0, 3, 10, 0.7);
+  background-color: rgba(0, 3, 10, 0.8);
   color: rgb(250, 254, 255);
 }
 
@@ -2555,8 +2547,8 @@ progress {
 /* ================================== */
 :root {
   --max-w: 100%;
-  --space-thin: 1rem;
-  --space-wide: 1rem;
+  --space-thin: 0.75rem;
+  --space-wide: 1.25rem;
   --ui-sm: 1.75rem; /* 28px */
   --ui-md: 2.25rem; /* 36px */
   --ui-lg: 2.5rem; /* 40px */
@@ -2564,13 +2556,13 @@ progress {
 @media only screen and (min-width: 30rem) {
   :root {
     --max-w: calc(100vw - (var(--space-thin) * 2));
-    --space-thin: 1.25rem;
+    --space-thin: 1rem;
     --space-wide: 2.5rem;
   }
 }
 @media only screen and (min-width: 40rem) {
   :root {
-    --space-thin: 1.5rem;
+    --space-thin: 1.25rem;
     --space-wide: 3rem;
     --ui-sm: 2rem; /* 32px */
     --ui-md: 2.5rem; /* 40px */
@@ -2762,8 +2754,21 @@ input {
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+  text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
+  background-color: transparent;
+  transition: background-color 800ms ease, box-shadow 800ms ease, color 800ms ease;
+  box-shadow: none;
   border-radius: var(--tab-br);
+}
+.tab:hover {
+  background-color: rgba(250, 254, 255, 0.1);
+  color: rgb(250, 254, 255);
+  box-shadow: 1px 0.75px 1.75px -0.25px rgba(0, 3, 10, 0.06), 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.1), 4px 3px 7px -1px rgba(0, 3, 10, 0.18), 0 0 0.2px rgba(0, 3, 10, 0.08);
+}
+.tab:active {
+  background-color: rgba(250, 254, 255, 0.3);
+  color: rgb(0, 17, 50);
+  box-shadow: 1px 0.75px 1.75px -0.1px rgba(0, 3, 10, 0.18), 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.1), 0 0 0.2px rgba(0, 3, 10, 0.08);
 }
 @media only screen and (min-width: 20rem) {
   .tab {
@@ -2782,9 +2787,10 @@ input {
   }
 }
 .tab.tab-active {
-  background-color: rgba(250, 254, 255, 0.05);
-  -webkit-backdrop-filter: brightness(1.3);
-  backdrop-filter: brightness(1.3);
+  -webkit-backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(1.5);
+  background-color: rgba(250, 254, 255, 0.3);
+  color: rgba(0, 17, 50, 0.8);
   box-shadow: 0.5px 0.4px 1px rgba(0, 3, 10, 0.2), 1px 0.75px 1.75px -0.1px rgba(0, 3, 10, 0.13), 0 0 0.2px rgba(0, 3, 10, 0.08);
 }
 
@@ -2917,7 +2923,7 @@ nav {
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-md) + var(--3xs));
+  top: var(--ui-md);
   right: 0;
   padding: var(--sm);
   cursor: pointer;
@@ -2990,12 +2996,17 @@ nav {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), inset 0 -3px 2px -2px rgba(0, 3, 10, 0.1), inset 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
 }
 @media only screen and (min-width: 30rem) {
   .section__header::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  }
+}
+@media only screen and (min-width: 40rem) {
+  .section__header::before {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
   }
 }
 @media only screen and (min-width: 30rem) {
@@ -3035,10 +3046,21 @@ nav {
 /* Sizing demo */
 /* ================================== */
 .size-demo__box {
-  background-color: rgba(250, 254, 255, 0.3);
+  background-color: rgba(250, 254, 255, 0.5);
   border-radius: 0.1rem;
-  height: 2.5rem;
+  height: 2.75rem;
   margin: 0.75rem 0;
+  box-shadow: 0.5px 0.4px 1px rgba(0, 3, 10, 0.2), 1px 0.75px 1.75px -0.1px rgba(0, 3, 10, 0.13), 0 0 0.2px rgba(0, 3, 10, 0.08);
+}
+@media only screen and (min-width: 40rem) {
+  .size-demo__box {
+    border-radius: 0.16rem;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  .size-demo__box {
+    border-radius: 0.2rem;
+  }
 }
 
 /* Tint & fill demo */
@@ -3152,7 +3174,7 @@ nav {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.6), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
 }
 @media only screen and (min-width: 40rem) {
   .glass-demo__box {
@@ -3284,7 +3306,6 @@ nav {
   background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
 }
 .background.light {
-  background-image: url(/assets/bgImg/white-paper.jpg);
   background-image: image-set("/assets/bgImg/chris-lee-plant-s.jpg" 1x, "/assets/bgImg/chris-lee-plant-m.jpg" 2x, "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
 }
 .background.color {

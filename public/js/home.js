@@ -10,3 +10,10 @@
     }); 
   });
 
+  $(function () {
+    $(".js-demo").on( "click", function(event) {
+      event.preventDefault();
+      $(window).scrollTop(0);
+      $("#content").load("/demo.html");
+    }); 
+  });

@@ -16,7 +16,7 @@
 
 @mixin noise-sm {
   @include noise;
-  background-size: 50px;
+  background-size: 10px;
 }
 
 @mixin noise-md {

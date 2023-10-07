@@ -36,7 +36,7 @@ $inset-md:
   overflow: hidden;
 
   box-shadow: $inset-md;
-  background-color: $tint-dark;
+  background-color: $tint-xdark;
 
   &::after {
     @include help.pseudo;
@@ -67,7 +67,7 @@ $inset-md:
     @include help.pseudo;
     z-index: -2;
     @include fill.glass-filter;
-    @include fill.noise-md; 
+    // @include fill.noise-sm; 
   }
 }
 

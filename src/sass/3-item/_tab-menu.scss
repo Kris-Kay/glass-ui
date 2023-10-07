@@ -47,7 +47,7 @@
   font-size: var(--inner-h);
   line-height: var(--inner-h);
   @include btn.btn-text;
-
+  @include btn.btn-clear;
   border-radius: var(--tab-br);
 
   @include bp.bp(xs) {
@@ -64,9 +64,10 @@
   }
 
   &.tab-active {
-    background-color: rgba(color.$light, 0.05);
-    -webkit-backdrop-filter: brightness(1.3);
-    backdrop-filter: brightness(1.3);
+    -webkit-backdrop-filter: brightness(1.5);
+    backdrop-filter: brightness(1.5);
+    background-color: color.$tint-xlight;
+    color: color.$text-dark-mild;
     box-shadow: sha.$sha-2xs;
   }
 }
