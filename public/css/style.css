@@ -2878,7 +2878,7 @@ input {
 nav {
   position: relative;
   height: var(--nav-h);
-  z-index: 3;
+  z-index: 200;
 }
 
 .main-nav__wrap {

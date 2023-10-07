@@ -19,7 +19,7 @@
 nav {
   position: relative;
   height: var(--nav-h);
-  z-index: z.z(nav);
+  z-index: 200;
 }
 
 .main-nav__wrap {
