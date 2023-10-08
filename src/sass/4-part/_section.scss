@@ -13,10 +13,10 @@
 
 .section__wrap {
 /* layout */
-  z-index: z.z(part);
-  display: grid;
   width: 100%;
-  
+  display: grid;
+  z-index: z.z(part);
+
 /* visual */
   border-radius: 0;
   box-shadow: none;
@@ -24,7 +24,7 @@
   @include bp.bp(sm) {
     overflow: hidden;
     border-radius: var(--lg);
-    box-shadow: sha.$sha-2xl;
+    box-shadow: sha.$sha-xl;
   }
 }
 
@@ -33,13 +33,13 @@
 
   /* layout */
   display: grid;
-  // gap: size.$s1;
+  gap: size.$s2;
   padding: var(--space);
 
   /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
-  @include fill.fill-dark;
+  @include fill.fill-xdark;
   
   @include bp.bp(sm) {
     overflow: hidden;

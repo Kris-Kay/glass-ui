@@ -55,12 +55,16 @@
   @include max-w;
 }
 
-.max-w-gutter {
+@mixin max-w-gutter {
   padding: 0 var(--space-thin);
 
   @include bp.bp(sm) {
     padding: 0;
   }
+}
+
+.max-w-gutter {
+  @include max-w-gutter;
 }
 
 /* Full width */

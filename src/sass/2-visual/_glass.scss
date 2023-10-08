@@ -14,31 +14,24 @@
 /* ================================== */
 @mixin glass-base {
   position: relative;
-
+  @content;
+  
   &::before {
     @include help.pseudo;
     z-index: -2;
     @include fill.noise-md;
-    box-shadow: bevel.$bevel-md;
-    @content;
+    box-shadow: bevel.$bevel-lg;
   }
 }
 
 .glass-base {
-  @include glass-base {
-    @include bp.bp(md) {
-      box-shadow: bevel.$bevel-lg;
-    }
-  };
+  @include glass-base;
 }
 
 .glass-reg {
-  @include fill.fill-clear;
   @include glass-base {
-    @include bp.bp(md) {
-      box-shadow: bevel.$bevel-lg;
-    }
-  };
+    @include fill.fill-clear;
+  }
 }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
@@ -49,10 +42,6 @@
     box-shadow: bevel.$flat-bevel-sm;
 
     @include bp.bp(sm) {
-      box-shadow: bevel.$bevel-md;
-    }
-
-    @include bp.bp(md) {
       box-shadow: bevel.$bevel-lg;
     }
   }

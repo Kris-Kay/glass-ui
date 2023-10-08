@@ -22,6 +22,14 @@ $round: 9999px;
   }
 }
 
+@mixin br-sm {
+  border-radius: var(--md);
+
+  @include bp.bp(md) {
+    border-radius: var(--lg);
+  }
+}
+
 /* Nested border radius */  
 /* ================================== */
 @mixin outer-br ($inner-br, $padding) {

@@ -56,8 +56,8 @@ $font-weight-lg: 500;
 
 /* letter-spacing: */
 $letter-spacing-sm: 0.01em;
-$letter-spacing-md: 0.08em;
-$letter-spacing-lg: 0.125em;
+$letter-spacing-md: 0.04em;
+$letter-spacing-lg: 0.08em;
 
 /* line-height: */
 $line-height-sm: calc(0.1rem + 2ex + 0.1rem);
@@ -99,8 +99,9 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 /* ================================== */
 @mixin title-text {
   font-family: $font-family-title;
-  font-weight: $font-weight-md;
+  font-weight: $font-weight-lg;
   line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-sm;
 }
 
 .title {
@@ -243,9 +244,10 @@ pre code {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
-  line-height: $line-height-lg;
-  text-shadow: sha.$text-sha-md;
+  line-height: $line-height-sm;
+  text-shadow: sha.$text-sha-sm;
   color: color.$text-light-mild;
+  // margin-bottom: -2px;
 }
 
 .eyebrow {

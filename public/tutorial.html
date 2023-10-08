@@ -3,7 +3,7 @@
 <header class="max-w-gutter">
   <section class="max-w grid gap-xl atf">
 
-    <div class="card atf__card glass-reg sha-xl">
+    <div class="card atf__card glass-reg sha-2xl">
         <div>
           <!-- <p class="eyebrow">SCSS tutorial</p> -->
           <h1 class="title-2xl">3D Glass tutorial</h1>
@@ -21,8 +21,8 @@
           <img
           src="/assets/icons/SquareOut.svg"
           alt="open GitHub repo in new window"/>
-        </a>
-      </div> -->
+        </a> -->
+      </div>
 
     </div>
 
@@ -35,12 +35,14 @@
 
 
 <!-- The building blocks -->
-  <section>
+  <section class="grid gap-xl">
     <div class="max-w section__wrap">
 
       <div class="section__header">
-        <!-- <p class="eyebrow">First question</p> -->
-        <h2 class="section__title">The building blocks</h2>
+        <div class="grid">
+          <p class="eyebrow">Overview</p>
+          <h2 class="section__title">3D glass building blocks</h2>
+        </div>
         <p class="">This section goes into what each layer in a 3D glass material does.</p>
       </div>
 
@@ -51,16 +53,20 @@
       </div>
     </div>
 
-    <div class="max-w grid gap-3xl p-y-3xl">
+    <div class="max-w-gutter grid gap-3xl p-y-3xl">
 
       <!-- Backdrop-filter -->
       <div class="js-accordion accordion__warp">
         <!-- header -->
         <div class="accordion__header is-closed">
-          <h2 class="accordion__title">Backdrop-filter</h2>
 
-          <div class="accordion__bottom">
-            <p class="accordion__text">Blurs background</p>
+          <div class="accordion__top">
+            <p class="eyebrow">CSS property</p>
+            <h2 class="accordion__title">backdrop-filter</h2>
+          </div>
+
+          <div class="accordion__bottom full-w-fill">
+            <p class="accordion__text">Blurs if it’s not a reusable component and you don’t want it to adapt to the size of the viewport, then just drop it</p>
 
             <!-- toggle -->
             <div class="js-accordionToggle accordion__toggle is-closed">

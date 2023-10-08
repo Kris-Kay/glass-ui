@@ -294,7 +294,7 @@
 }
 
 .sha-2xl {
-  box-shadow: 2.5px 2px 4.5px -0.5px rgba(0, 3, 10, 0.03), 5px 3.75px 8.75px -1px rgba(0, 3, 10, 0.08), 10px 7.5px 17.5px -1.5px rgba(0, 3, 10, 0.13), 20px 15px 35px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
+  box-shadow: 2.5px 2px 4.5px -0.5px rgba(0, 3, 10, 0.03), 5px 3.75px 8.75px -1px rgba(0, 3, 10, 0.08), 10px 7.5px 17.5px -1.5px rgba(0, 3, 10, 0.13), 20px 15px 35px -2px rgba(0, 3, 10, 0.58), 0 0 0.4px rgba(0, 3, 10, 0.13);
 }
 
 /* Text shadows */
@@ -388,38 +388,44 @@
 .title-xs {
   font-size: var(--text-xs);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 .title-sm {
   font-size: var(--text-sm);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 .title-md {
   font-size: var(--text-md);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 .title-lg {
   font-size: var(--text-lg);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 .title-xl {
   font-size: var(--text-xl);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 .title-2xl {
   font-size: var(--text-2xl);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
 }
 
 /* Thin Title */
@@ -510,7 +516,7 @@ li {
 .label-text {
   font-weight: 400;
   font-size: var(--text-xs);
-  letter-spacing: 0.125em;
+  letter-spacing: 0.08em;
   line-height: 1;
 }
 
@@ -583,9 +589,9 @@ pre code {
   font-size: var(--text-xs);
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: calc(0.125rem + 2.5ex + 0.125rem);
-  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+  letter-spacing: 0.04em;
+  line-height: calc(0.1rem + 2ex + 0.1rem);
+  text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
   color: rgb(223, 228, 236);
 }
 
@@ -594,7 +600,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -603,7 +609,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -612,7 +618,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -621,7 +627,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -630,7 +636,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -639,7 +645,7 @@ pre code {
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -649,7 +655,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -658,7 +664,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -667,7 +673,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -676,7 +682,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -685,7 +691,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -694,7 +700,7 @@ pre code {
   text-transform: lowercase;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: calc(0.1rem + 2ex + 0.1rem);
   text-shadow: 0.25px 0.25px 0.25px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.12), 0 0 2px rgba(0, 3, 10, 0.1), 0 0 4px rgba(0, 3, 10, 0.1);
 }
@@ -1519,19 +1525,14 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-}
-@media only screen and (min-width: 40rem) {
-  .glass-base::before {
-    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
-  }
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
 .glass-reg {
+  position: relative;
   background-color: rgba(250, 254, 255, 0.01);
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
-  position: relative;
 }
 .glass-reg::before {
   content: "";
@@ -1544,18 +1545,19 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-}
-@media only screen and (min-width: 40rem) {
-  .glass-reg::before {
-    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
-  }
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
 /* ================================== */
 .glass--no-bevel-mobile {
   position: relative;
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+}
+@media only screen and (min-width: 30rem) {
+  .glass--no-bevel-mobile {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+  }
 }
 .glass--no-bevel-mobile::before {
   content: "";
@@ -1568,18 +1570,7 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
-}
-@media only screen and (min-width: 30rem) {
-  .glass--no-bevel-mobile::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  }
-}
-@media only screen and (min-width: 40rem) {
-  .glass--no-bevel-mobile::before {
-    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
-  }
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
 /* The main glass but without a bevel */
@@ -1670,156 +1661,6 @@ pre code {
 /* ================================== */
 /* Text */
 /* Items aka simple components */
-/* ================================== */
-/* UI Demo */
-/* Latout */
-/* ================================== */
-/* Text */
-/* ================================== */
-/* Accordion */
-/* ================================== */
-.accordion__warp {
-  display: grid;
-  width: 100%;
-}
-
-.accordion__header {
-  /* layout */
-  display: grid;
-  gap: var(--3xs);
-  padding: var(--space-thin);
-  /* visual */
-  border-radius: 0;
-  position: relative;
-  background-color: rgba(0, 3, 10, 0.3);
-  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
-  backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
-}
-.accordion__header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  overflow: hidden;
-  z-index: -2;
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
-}
-@media only screen and (min-width: 30rem) {
-  .accordion__header::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  }
-}
-@media only screen and (min-width: 40rem) {
-  .accordion__header::before {
-    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
-  }
-}
-@media only screen and (min-width: 30rem) {
-  .accordion__header {
-    border-radius: var(--lg) var(--lg) 0 0;
-  }
-}
-@media only screen and (min-width: 30rem) {
-  .accordion__header.is-closed {
-    overflow: hidden;
-    border-radius: var(--lg);
-  }
-}
-
-.accordion__bottom {
-  display: grid;
-  gap: var(--2xs);
-}
-@media only screen and (min-width: 40rem) {
-  .accordion__bottom {
-    display: flex;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.accordion__toggle {
-  display: flex;
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  pointer-events: auto;
-  cursor: pointer;
-  width: 100%;
-  z-index: 10;
-}
-@media only screen and (min-width: 40rem) {
-  .accordion__toggle {
-    width: fit-content;
-  }
-}
-.accordion__toggle > .see-more-btn {
-  display: none;
-}
-.accordion__toggle > .see-less-btn {
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
-  gap: var(--2xs);
-}
-.accordion__toggle.is-closed > .see-more-btn {
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
-  gap: var(--2xs);
-}
-.accordion__toggle.is-closed > .see-less-btn {
-  display: none;
-}
-
-.see-more-btn {
-  pointer-events: none;
-}
-
-.see-less-btn {
-  pointer-events: none;
-}
-
-.accordion__content {
-  /* layout */
-  width: 100%;
-  height: fit-content;
-  transition: max-height 1000ms ease;
-  /* visual */
-  background-color: rgb(0, 3, 10);
-  border-radius: 0;
-}
-@media only screen and (min-width: 30rem) {
-  .accordion__content {
-    border-radius: 0 0 var(--lg) var(--lg);
-  }
-}
-.accordion__content.is-closed {
-  height: 0;
-  display: none;
-}
-
-.accordion__title {
-  font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
-  line-height: calc(0.1rem + 2ex + 0.1rem);
-  font-size: var(--lg);
-}
-
-.accordion__text {
-  width: fit-content;
-}
-
 /* ================================== */
 /* UI Demo */
 /* ================================== */
@@ -2154,7 +1995,7 @@ pre code {
   align-items: center;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
@@ -2191,7 +2032,7 @@ pre code {
   align-items: center;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
@@ -2228,7 +2069,7 @@ pre code {
   align-items: center;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
@@ -2755,7 +2596,7 @@ input {
   line-height: var(--inner-h);
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-align: center;
   color: rgb(250, 254, 255);
   z-index: 4;
@@ -2800,6 +2641,154 @@ input {
 }
 
 /* Parts aka multi-item components */
+/* ================================== */
+/* UI Demo */
+/* Latout */
+/* ================================== */
+/* Glass */
+/* ================================== */
+/* Text */
+/* ================================== */
+/* Backgrounds */
+/* ================================== */
+/* Accordion */
+/* ================================== */
+.accordion__warp {
+  /* layout */
+  width: 100%;
+  max-width: var(--max-w);
+  display: grid;
+  margin: 0 auto;
+  z-index: 8;
+}
+
+.accordion__header {
+  /* layout */
+  display: grid;
+  z-index: 6;
+  /* visual */
+  border-radius: var(--lg);
+  position: relative;
+  background-color: rgba(0, 3, 10, 0.1);
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
+  backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
+  box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
+  overflow: hidden;
+}
+.accordion__header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: -2;
+  background-repeat: repeat;
+  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
+  background-size: 100px;
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+}
+.accordion__header.is-closed {
+  box-shadow: 2.5px 2px 4.5px -0.5px rgba(0, 3, 10, 0.03), 5px 3.75px 8.75px -1px rgba(0, 3, 10, 0.08), 10px 7.5px 17.5px -1.5px rgba(0, 3, 10, 0.13), 20px 15px 35px -2px rgba(0, 3, 10, 0.58), 0 0 0.4px rgba(0, 3, 10, 0.13);
+}
+
+.accordion__top {
+  display: grid;
+  padding: var(--space-thin);
+}
+
+.accordion__bottom {
+  display: grid;
+  place-items: center;
+  gap: 0.25rem;
+}
+.accordion__bottom.full-w-fill {
+  /* layout */
+  padding: var(--space-thin);
+  /* visual */
+  background-color: rgba(0, 3, 10, 0.3);
+  box-shadow: inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+}
+
+.accordion__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: background-color 800ms ease;
+  width: 100%;
+}
+.accordion__toggle:hover {
+  background-color: rgba(250, 254, 255, 0.1);
+}
+.accordion__toggle > .see-more-btn {
+  display: none;
+}
+.accordion__toggle > .see-less-btn {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: var(--2xs);
+}
+.accordion__toggle.is-closed > .see-more-btn {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: var(--2xs);
+}
+.accordion__toggle.is-closed > .see-less-btn {
+  display: none;
+}
+
+.see-more-btn {
+  pointer-events: none;
+}
+
+.see-less-btn {
+  pointer-events: none;
+}
+
+.accordion__content {
+  /* layout */
+  width: 99%;
+  height: fit-content;
+  padding-top: var(--2xl);
+  padding-bottom: var(--2xl);
+  margin-top: calc(-1 * var(--lg));
+  margin-left: auto;
+  margin-right: auto;
+  transition: max-height 1000ms ease;
+  /* visual */
+  background-color: rgb(0, 3, 10);
+  border-radius: 0 0 var(--lg) var(--lg);
+  box-shadow: 2.5px 2px 4.5px -0.5px rgba(0, 3, 10, 0.03), 5px 3.75px 8.75px -1px rgba(0, 3, 10, 0.08), 10px 7.5px 17.5px -1.5px rgba(0, 3, 10, 0.13), 20px 15px 35px -2px rgba(0, 3, 10, 0.58), 0 0 0.4px rgba(0, 3, 10, 0.13);
+}
+.accordion__content.is-closed {
+  height: 0;
+  display: none;
+}
+
+.accordion__title {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
+  font-size: var(--lg);
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
+}
+
+.accordion__text {
+  width: fit-content;
+  max-width: 100%;
+}
+
 /* ================================== */
 /* UI Demo */
 /* ================================== */
@@ -2948,7 +2937,7 @@ nav {
   min-width: max-content;
   width: 100%;
   color: rgba(250, 254, 255, 0.7);
-  letter-spacing: 0.125em;
+  letter-spacing: 0.08em;
   font-weight: 500;
 }
 
@@ -2963,9 +2952,9 @@ nav {
 /* ================================== */
 .section__wrap {
   /* layout */
-  z-index: 8;
-  display: grid;
   width: 100%;
+  display: grid;
+  z-index: 8;
   /* visual */
   border-radius: 0;
   box-shadow: none;
@@ -2974,7 +2963,7 @@ nav {
   .section__wrap {
     overflow: hidden;
     border-radius: var(--lg);
-    box-shadow: 2.5px 2px 4.5px -0.5px rgba(0, 3, 10, 0.03), 5px 3.75px 8.75px -1px rgba(0, 3, 10, 0.08), 10px 7.5px 17.5px -1.5px rgba(0, 3, 10, 0.13), 20px 15px 35px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
+    box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
   }
 }
 
@@ -2982,13 +2971,20 @@ nav {
   --space: var(--space-thin);
   /* layout */
   display: grid;
+  gap: 0.5rem;
   padding: var(--space);
   /* visual */
   border-radius: 0;
   position: relative;
-  background-color: rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  background-color: rgba(0, 3, 10, 0.3);
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
+}
+@media only screen and (min-width: 30rem) {
+  .section__header {
+    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
+  }
 }
 .section__header::before {
   content: "";
@@ -3001,18 +2997,7 @@ nav {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  box-shadow: inset 0 0.3px 0 rgba(250, 254, 255, 0.12), inset 0 0.7px 0.1px rgba(250, 254, 255, 0.12), 0 -3px 2px -2px rgba(0, 3, 10, 0.1), 0 -1px 0.5px -1px rgba(0, 3, 10, 0.12);
-}
-@media only screen and (min-width: 30rem) {
-  .section__header::before {
-    box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
-  }
-}
-@media only screen and (min-width: 40rem) {
-  .section__header::before {
-    box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
-  }
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 @media only screen and (min-width: 30rem) {
   .section__header {
@@ -3032,8 +3017,9 @@ nav {
 
 .section__title {
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
   font-size: var(--lg);
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.4), 1px 1px 2px rgba(0, 3, 10, 0.15), 0 0 4px rgba(0, 3, 10, 0.1), 0 0 8px rgba(0, 3, 10, 0.1);
 }
@@ -3162,8 +3148,9 @@ nav {
   flex-direction: column;
   gap: var(--3xs);
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(0.1rem + 2ex + 0.1rem);
+  letter-spacing: 0.01em;
   font-size: var(--text-sm);
   position: relative;
   border-radius: var(--sm);
@@ -3180,7 +3167,7 @@ nav {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0.5px 0.5px 0.3px rgba(250, 254, 255, 0.2), inset 2px 2px 0.8px -2.4px rgba(250, 254, 255, 0.3), inset 1px 1px 0.4px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3.1px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.5px rgba(250, 254, 255, 0.08);
+  box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 @media only screen and (min-width: 40rem) {
   .glass-demo__box {
