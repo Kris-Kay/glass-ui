@@ -2,6 +2,7 @@
 /* Sections */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
+@use "../0-base/size";
 @use "../0-base/text";
 @use "../1-layout/z-index" as z;
 @use "../2-visual/fill";
@@ -32,6 +33,7 @@
 
   /* layout */
   display: grid;
+  // gap: size.$s1;
   padding: var(--space);
 
   /* visual */
@@ -51,7 +53,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: color.$tint-dark;
+    background-color: color.$tint-xdark;
     box-shadow: in.$flat-inset-md;
   }
 }
@@ -60,4 +62,5 @@
 .section__title {
   @include text.title-text;
   font-size: var(--lg);
+  text-shadow: sha.$text-sha-md;
 }

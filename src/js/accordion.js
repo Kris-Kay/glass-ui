@@ -1,7 +1,6 @@
 /* ================================== */
 /* Accordion JS */
 /* ================================== */
-
 let $accordionToggles = document.querySelectorAll(".js-accordionToggle");
 let $toggleArray = Array.from($accordionToggles);
 console.log($toggleArray);

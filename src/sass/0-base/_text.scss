@@ -198,6 +198,14 @@ code {
   letter-spacing: $letter-spacing-sm;
 }
 
+.code {
+  font-family: $font-family-code;
+  font-size: var(--text-sm);
+  color: color.$code-class;
+  line-height: $line-height-lg;
+  letter-spacing: $letter-spacing-sm;
+}
+
 pre code {
   display: block;
   white-space: pre;
@@ -235,7 +243,7 @@ pre code {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
-  line-height: $line-height-md;
+  line-height: $line-height-lg;
   text-shadow: sha.$text-sha-md;
   color: color.$text-light-mild;
 }

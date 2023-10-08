@@ -40,9 +40,9 @@
 
 .accordion__bottom {
   display: grid;
-  gap: var(--3xs);
+  gap: var(--2xs);
 
-  @include bp.bp(sm) {
+  @include bp.bp(md) {
     @include flex.flex-c-y;
     @include flex.flex-sb;
   }
@@ -56,7 +56,7 @@
   width: 100%;
   z-index: 10;
 
-  @include bp.bp(sm) {
+  @include bp.bp(md) {
     width: fit-content;
   }
 
@@ -98,9 +98,9 @@
   /* layout */
   width: 100%;
   height: fit-content;
-  display: grid;
-  gap: var(--3xl);
-  padding: var(--space-wide);
+  // display: grid;
+  // gap: var(--3xl);
+  // padding: var(--space-wide);
   transition: max-height 1000ms ease;
 
   /* visual */
