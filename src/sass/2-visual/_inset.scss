@@ -1,34 +1,63 @@
 /* ================================== */
 /* Inset */
-@use "../0-base/color" as *;
+@use "../0-base/color";
 @use "../1-layout/layout-help" as help;
 @use "../1-layout/z-index" as z;
 @use "fill";
 @use "glass";
 @use "shadow" as sha;
 
-// for med insets 
-$inset-high-md: 
-  inset -0.5px -0.5px 0.5px  rgba($light, 0.2),  // bottom-right highlight
-  inset -1px -1px 0 rgba($light, 0.06),           // bottom-right bevel
-  inset 2px 2px 0.2px -2.6px rgba($light, 0.1),  // top-left specular highlight
-  inset -2px -2px 0.5px -2.8px rgba($light, 0.2); // bottom-right specular
+
+$inset-xs: 
+  inset -0.5px -0.5px 0 -0.1px rgba(color.$light, 0.1),    // bottom-right bevel
+  inset -0.3px -0.3px 0.2px -0.2px rgba(color.$light, 0.35), // bottom-right highlight
+  inset -1px -1px 0.2px -1.4px rgba(color.$light, 0.1),     // bottom-right specular
+
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
+
+$inset-sm: 
+  inset -0.5px -0.5px 0.5px  rgba(color.$light, 0.2),  // bottom-right highlight
+  inset -1px -1px 0 rgba(color.$light, 0.06),           // bottom-right bevel
+  inset 2px 2px 0.2px -2.6px rgba(color.$light, 0.1),  // top-left specular highlight
+  inset -2px -2px 0.5px -2.8px rgba(color.$light, 0.2), // bottom-right specular
+
+  inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
 
 
-$inset-sha-md: 
-  inset 0 3px 6px rgba($dark, 0.1), // L around
-  inset 2px 1.25px 3px rgba($dark, 0.1), // med top left
-  inset 1px 1px 1px rgba($dark, 0.1); // small around
-
-// same as above but all in one 
 $inset-md: 
-  inset -0.5px -0.5px 0.5px  rgba($light, 0.2),  // bottom-right highlight
-  inset -1px -1px 0 rgba($light, 0.06),           // bottom-right bevel
-  inset 2px 2px 0.2px -2.6px rgba($light, 0.1),  // top-left specular highlight
-  inset -2px -2px 0.5px -2.8px rgba($light, 0.2), // bottom-right specular
-  inset 0 3px 6px rgba($dark, 0.1), // L around
-  inset 2px 1.25px 3px rgba($dark, 0.1), // med top left
-  inset 1px 1px 1px rgba($dark, 0.1); // small around
+  inset -0.5px -0.5px 0.5px  rgba(color.$light, 0.2),  // bottom-right highlight
+  inset -1px -1px 0 rgba(color.$light, 0.06),           // bottom-right bevel
+  inset 2px 2px 0.2px -2.6px rgba(color.$light, 0.1),  // top-left specular highlight
+  inset -2px -2px 0.5px -2.8px rgba(color.$light, 0.2), // bottom-right specular
+
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // xl top-left shadow
+  inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
+
+
+$inset-lg: 
+  // inset  0  -0.5px 0.5px -0.5px rgba(color.$light, 0.5), // bottom highlight
+  // inset -0.8px -1px 0 rgba(color.$light, 0.15), // bottom-right bevel
+
+  inset 2px 4px 8px rgba(color.$dark, 0.1), // xl top-left shadow
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
+
+
+$inset-xl: 
+  // inset  0  -0.5px 0.5px -0.5px rgba(color.$light, 0.5), // bottom highlight
+  // inset -0.8px -1px 0 rgba(color.$light, 0.15), // bottom-right bevel
+
+  inset 3px 6px 16px rgba(color.$dark, 0.05), // xl top-left shadow
+  inset 2px 4px 8px rgba(color.$dark, 0.1), // lg top-left shadow
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // md-lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.3), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
 
 
 .inset-glass-md {
@@ -36,7 +65,7 @@ $inset-md:
   overflow: hidden;
 
   box-shadow: $inset-md;
-  background-color: $tint-xdark;
+  background-color: color.$tint-xdark;
 
   &::after {
     @include help.pseudo;
@@ -45,10 +74,10 @@ $inset-md:
     border-bottom: 0.5px solid transparent;
     background: linear-gradient(
         to right,
-        rgba($snow90, 0) 0%,
-        rgba($snow90, 0.1) 50%,
-        rgba($sky99, 0.45) 85%,
-        rgba($snow95, 0.01) 100%
+        rgba(color.$light, 0) 0%,
+        rgba(color.$light, 0.1) 50%,
+        rgba(color.$light, 0.45) 85%,
+        rgba(color.$light, 0.01) 100%
       ) border-box;
 
     -webkit-mask: 
@@ -77,113 +106,139 @@ $inset-md:
     // filter: brightness(0.1);
     // filter keeps $tint-dark & $inset-sha-md from looking washed out over dark backdrops. Can remove if using #000 for $shadow color 
 /* ================================== */
+.inset-xs {
+  box-shadow: $inset-xs;
+}
 
+.inset-sm {
+  box-shadow: $inset-sm;
+}
+
+.inset-md {
+  box-shadow: $inset-md;
+}
+
+.inset-lg {
+  box-shadow: $inset-lg;
+}
+
+.inset-xl {
+  box-shadow: $inset-xl;
+}
 
 $inset-sha-xs: 
-  // -1.4px -2.6px 1.4px -3px rgba($light, 0.2), //top left specular
-  // 1.9px 2.6px 1.4px -3px rgba($light, 0.7), //bottom right specular
-  // 0.4px 1.4px 0.8px -1px rgba($light, 0.3), //bottom highlight
-  inset 1px 1px 3px -1px rgba($dark, 0.2),
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.4);   // small top-left shadow
+
+// for med insets 
+$inset-high-md: 
+  inset -0.5px -0.5px 0.5px  rgba(color.$light, 0.2),  // bottom-right highlight
+  inset -1px -1px 0 rgba(color.$light, 0.06),           // bottom-right bevel
+  inset 2px 2px 0.2px -2.6px rgba(color.$light, 0.1),  // top-left specular highlight
+  inset -2px -2px 0.5px -2.8px rgba(color.$light, 0.2); // bottom-right specular
+
+$inset-sha-md: 
+  inset 0 3px 6px rgba(color.$dark, 0.1), // L around
+  inset 2px 1.25px 3px rgba(color.$dark, 0.1), // med top left
+  inset 1px 1px 1px rgba(color.$dark, 0.1); // small around
+
+// .inset-lg {
+//   box-shadow: $inset-md;
+// }
+
+$inset-sha-xs: 
+  // -1.4px -2.6px 1.4px -3px rgba(color.$light, 0.2), //top left specular
+  // 1.9px 2.6px 1.4px -3px rgba(color.$light, 0.7), //bottom right specular
+  // 0.4px 1.4px 0.8px -1px rgba(color.$light, 0.3), //bottom highlight
+  inset 1px 1px 3px -1px rgba(color.$dark, 0.2),
   // med top left
-  inset 3px 3px 8px -2px rgba($dark, 0.2),
+  inset 3px 3px 8px -2px rgba(color.$dark, 0.2),
   // wide top left
-  inset -0.25px -0.25px 8px -3px rgba($dark, 0.1),
+  inset -0.25px -0.25px 8px -3px rgba(color.$dark, 0.1),
   // med around
-  inset 0 0 1px -0.5px rgba($dark, 0.4); // thin around
+  inset 0 0 1px -0.5px rgba(color.$dark, 0.4); // thin around
 
 $inset-sha-s: 
-  -1.4px -2.6px 1.4px -3px rgba($light, 0.2),
+  -1.4px -2.6px 1.4px -3px rgba(color.$light, 0.2),
   //top left specular
-  1.9px 2.6px 1.4px -3px rgba($light, 0.7),
+  1.9px 2.6px 1.4px -3px rgba(color.$light, 0.7),
   //bottom right specular
-  0.4px 1.4px 0.8px -1px rgba($light, 0.3),
+  0.4px 1.4px 0.8px -1px rgba(color.$light, 0.3),
   //bottom highlight
-  inset 1px 1px 3px -1px rgba($dark, 0.2),
+  inset 1px 1px 3px -1px rgba(color.$dark, 0.2),
   // med top left
-  inset 3px 3px 8px -2px rgba($dark, 0.2),
+  inset 3px 3px 8px -2px rgba(color.$dark, 0.2),
   // wide top left
-  inset -0.25px -0.25px 8px -3px rgba($dark, 0.1),
+  inset -0.25px -0.25px 8px -3px rgba(color.$dark, 0.1),
   // med around
-  inset 0 0 1px -0.5px rgba($dark, 0.4); // thin around
+  inset 0 0 1px -0.5px rgba(color.$dark, 0.4); // thin around
 
-$inset-sha-m: -1.4px -2.6px 1.4px -3px rgba($light, 0.3),
+$inset-sha-m: -1.4px -2.6px 1.4px -3px rgba(color.$light, 0.3),
   //top left specular
-  1.9px 2.6px 1.4px -3px rgba($light, 0.8),
+  1.9px 2.6px 1.4px -3px rgba(color.$light, 0.8),
   //bottom right specular
-  0.4px 1.4px 1px -1px rgba($light, 0.4),
+  0.4px 1.4px 1px -1px rgba(color.$light, 0.4),
   //bottom highlight
-  inset 1px 1px 3px -1px rgba($dark, 0.3),
+  inset 1px 1px 3px -1px rgba(color.$dark, 0.3),
   // med top left
-  inset 3px 3px 8px -2px rgba($dark, 0.2),
+  inset 3px 3px 8px -2px rgba(color.$dark, 0.2),
   // wide top left
-  inset -0.25px -0.25px 8px -3px rgba($dark, 0.2),
+  inset -0.25px -0.25px 8px -3px rgba(color.$dark, 0.2),
   // med around
-  inset 0 0 1px -0.5px rgba($dark, 0.5); // thin around
+  inset 0 0 1px -0.5px rgba(color.$dark, 0.5); // thin around
 
 $inset-xs: 
-  inset 0px -0.8px 0.01px rgba($light, 0.12),
+  inset 0px -0.8px 0.01px rgba(color.$light, 0.12),
   //bottom bevel
-  inset -1px -2px 0 -1.74px rgba($light, 0.1),
+  inset -1px -2px 0 -1.74px rgba(color.$light, 0.1),
   //bottom specular
-  inset -2.2px 0.5px 0.1px -1px rgba($dark, 0.12),
+  inset -2.2px 0.5px 0.1px -1px rgba(color.$dark, 0.12),
   //right corner in-bevel shadow
-  inset 2px 2px 4px rgba($dark, 0.12),
+  inset 2px 2px 4px rgba(color.$dark, 0.12),
   // small top left
-  inset 0 0 6px rgba($dark, 0.2),
+  inset 0 0 6px rgba(color.$dark, 0.2),
   // med around
-  inset 0.25px 0.25px 1px rgba($dark, 0.2); // thin top left
+  inset 0.25px 0.25px 1px rgba(color.$dark, 0.2); // thin top left
 
 $inset-s: 
-  inset -1px -3px 0.05px -2.5px rgba($light, 0.5),
+  inset -1px -3px 0.05px -2.5px rgba(color.$light, 0.5),
   //bottom right specular
-  inset -2.2px 0.5px 0.1px -1px rgba($dark, 0.1),
+  inset -2.2px 0.5px 0.1px -1px rgba(color.$dark, 0.1),
   //right corner in-bevel shadow
-  inset -1px -2.6px 0.05px -1.8px rgba($light, 0.15),
+  inset -1px -2.6px 0.05px -1.8px rgba(color.$light, 0.15),
   //bottom right in-bevel s
-  inset 0 0 8px rgba($dark, 0.15),
+  inset 0 0 8px rgba(color.$dark, 0.15),
   // med top left
-  inset 2px 2px 4px rgba($dark, 0.1),
+  inset 2px 2px 4px rgba(color.$dark, 0.1),
   // wide around
-  inset 0.25px 0.25px 1px rgba($dark, 0.2); // thin top left
+  inset 0.25px 0.25px 1px rgba(color.$dark, 0.2); // thin top left
 
 $inset-l: 
-  inset -1px -3px 0.5px -2.8px rgba($light, 0.2),
+  inset -1px -3px 0.5px -2.8px rgba(color.$light, 0.2),
   //bottom right specular
-  inset -2.75px 0.5px 0.1px -1px rgba($dark, 0.1),
+  inset -2.75px 0.5px 0.1px -1px rgba(color.$dark, 0.1),
   //right corner in-bevel shadow
-  inset -1.2px -2.5px 0.1px -1.2px rgba($light, 0.2),
+  inset -1.2px -2.5px 0.1px -1.2px rgba(color.$light, 0.2),
   //bottom right in-bevel l ***
-  inset 0 0 8px rgba($dark, 0.15),
+  inset 0 0 8px rgba(color.$dark, 0.15),
   // med top left
-  inset 2px 2px 4px rgba($dark, 0.1),
+  inset 2px 2px 4px rgba(color.$dark, 0.1),
   // wide around
-  inset 0.25px 0.25px 1px rgba($dark, 0.2); // thin top left
+  inset 0.25px 0.25px 1px rgba(color.$dark, 0.2); // thin top left
 
-
- //Base inset
-// $inset-highlight-base:
-//   inset -1px -2.5px 0.4px -1.5px rgba($light, 0.5), //bottom specular
-//   inset -0.5px -1.5px 0.1px  rgba($light, 0.15); //bottom bevel
-
-// $inset-shadow-base: 
-// inset -3px -2px 0.4px -2.5px rgba($light, 0.5), //bottom specular
-//   inset 2px 2px 4px -1px rgba($dark, 0.25), // med top left
-//   inset 0 0 8px -1px rgba($dark, 0.15), // L around
-//   inset 0 0 2px  rgba($dark, 0.1), // small around
-//   inset -2px 0.5px 0.5px -1px rgba($dark, 0.15); //right corner in-bevel shadow
 
 //bold
-$inset-highlight-bold: inset -2px 0.5px 0.4px -1px rgba($dark, 0.1),
+$inset-highlight-bold: inset -2px 0.5px 0.4px -1px rgba(color.$dark, 0.1),
 //right corner in-bevel shadow
-inset -0.5px -1.5px 0.1px rgba($light, 0.15),
+inset -0.5px -1.5px 0.1px rgba(color.$light, 0.15),
 //bottom bevel
-inset -1px -2.5px 0.4px -1.5px rgba($light, 0.3); //bottom specular
+inset -1px -2.5px 0.4px -1.5px rgba(color.$light, 0.3); //bottom specular
 
-$inset-shadow-bold: inset 1px 1px 6px rgba($dark, 0.3),
+$inset-shadow-bold: inset 1px 1px 6px rgba(color.$dark, 0.3),
 // small top left
-inset 0 0 8px -2px rgba($dark, 0.25),
+inset 0 0 8px -2px rgba(color.$dark, 0.25),
 // med around
-inset 0.2px 0.2px 0.5px -1.5px rgba($dark, 0.7); // thin top left
+inset 0.2px 0.2px 0.5px -1.5px rgba(color.$dark, 0.7); // thin top left
 
 
 
@@ -192,58 +247,42 @@ inset 0.2px 0.2px 0.5px -1.5px rgba($dark, 0.7); // thin top left
 
 // for small insets 
 $inset-highlight-s: 
-// inset  0     -0.5px 0 rgba($light, 0.15), // bottom highlight
-inset -0.5px -0.8px 0 rgba($light, 0.25); // bottom-right bevel
+// inset  0     -0.5px 0 rgba(color.$light, 0.15), // bottom highlight
+inset -0.5px -0.8px 0 rgba(color.$light, 0.25); // bottom-right bevel
 
 
 $inset-shadow-s: 
-inset 0 2px 4px rgba($dark, 0.1), // L around
-inset 1.5px 1.2px 2px rgba($dark, 0.15), // med top left
-inset 0.5px 0.5px 0.5px rgba($dark, 0.1); // small around
+inset 0 2px 4px rgba(color.$dark, 0.1), // L around
+inset 1.5px 1.2px 2px rgba(color.$dark, 0.15), // med top left
+inset 0.5px 0.5px 0.5px rgba(color.$dark, 0.1); // small around
 
 
 $inset-new: 
-  inset 1px 2px 16px rgba($dark, 0.05), // L top-left shadow
-  inset 2px 1.25px 3px rgba($dark, 0.15), // M top-left shadow
-  inset 0.5px 0.5px 1px rgba($dark, 0.15), // S top-left shadow
+  inset 1px 2px 16px rgba(color.$dark, 0.05), // L top-left shadow
+  inset 2px 1.25px 3px rgba(color.$dark, 0.15), // M top-left shadow
+  inset 0.5px 0.5px 1px rgba(color.$dark, 0.15), // S top-left shadow
 
-  inset -2px -2px 0.4px -2.4px rgba($light, 0.15), // bottom-right specular
-  inset -0.8px -0.8px 0.2px rgba($light, 0.15), // bottom-right wrap bevel
-  inset 0 0 0.5px rgba($light, 0.15); // smol light all around 
+  inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.15), // bottom-right specular
+  inset -0.8px -0.8px 0.2px rgba(color.$light, 0.15), // bottom-right wrap bevel
+  inset 0 0 0.5px rgba(color.$light, 0.15); // smol light all around 
 
 
-@mixin inset-xs {
-  box-shadow: $inset-m;
-  -webkit-backdrop-filter: blur(40px) brightness(0.95);
-  backdrop-filter: blur(40px) brightness(0.95);
-}
 
-@mixin inset-s {
-  box-shadow: $inset-m;
-  -webkit-backdrop-filter: blur(40px) brightness(0.85);
-  backdrop-filter: blur(40px) brightness(0.85);
-}
-
-@mixin inset-m {
-  box-shadow: $inset-m;
-  -webkit-backdrop-filter: blur(40px) brightness(0.75);
-  backdrop-filter: blur(40px) brightness(0.75);
-}
 
 $flat-inset-sm: 
-  inset 0 -0.3px 0 rgba($light, 0.12), // bottom highlight
-  inset 0 -0.7px 0.1px rgba($light, 0.12), // bottom bevel
-  inset 0 3px 2px -2px rgba($dark, 0.1), // med top 
-  inset 0 1px 0.5px -1px rgba($dark, 0.12); // small top
+  inset 0 -0.3px 0 rgba(color.$light, 0.12), // bottom highlight
+  inset 0 -0.7px 0.1px rgba(color.$light, 0.12), // bottom bevel
+  inset 0 3px 2px -2px rgba(color.$dark, 0.1), // med top 
+  inset 0 1px 0.5px -1px rgba(color.$dark, 0.12); // small top
 
 .flat-inset-sm {
   box-shadow: $flat-inset-sm;
 }
 
 $flat-inset-md: 
-  inset 0 -0.8px 0.1px rgba($light, 0.1), // bottom bevel
-  inset 0 2px 4px rgba($dark, 0.1), // med top 
-  inset 0 0.8px 0.5px rgba($dark, 0.1); // small top
+  inset 0 -0.8px 0.1px rgba(color.$light, 0.1), // bottom bevel
+  inset 0 2px 4px rgba(color.$dark, 0.1), // med top 
+  inset 0 0.8px 0.5px rgba(color.$dark, 0.1); // small top
 
 
 
@@ -365,10 +404,10 @@ $flat-inset-md:
     border-bottom: 0.8px solid transparent;
     background: linear-gradient(
         to right,
-        rgba($snow90, 0) 0%,
-        rgba($snow90, 0.1) 50%,
-        rgba($sky99, 0.6) 85%,
-        rgba($snow95, 0.2) 100%
+        rgba(color.$light, 0) 0%,
+        rgba(color.$light, 0.1) 50%,
+        rgba(color.$light, 0.6) 85%,
+        rgba(color.$light, 0.2) 100%
       ) border-box;
 
     -webkit-mask: border-box linear-gradient(#fff, #fff),
@@ -386,7 +425,7 @@ $flat-inset-md:
     z-index: -2;
 
     box-shadow: $inset-sha-md;
-    background-color: $tint-dark;
+    background-color: color.$tint-dark;
     filter: brightness(0.01);
   }
 }
@@ -409,11 +448,11 @@ $flat-inset-md:
 
     // filter: brightness(0.1);
 
-    box-shadow: inset 0 3px 6px rgba($dark, 0.5),
+    box-shadow: inset 0 3px 6px rgba(color.$dark, 0.5),
       // L around
-      inset 2px 1.25px 3px rgba($dark, 0.5),
+      inset 2px 1.25px 3px rgba(color.$dark, 0.5),
       // med top left
-      inset 1px 1px 1px rgba($dark, 0.5); // small around;
+      inset 1px 1px 1px rgba(color.$dark, 0.5); // small around;
 
     // background-color: rgba($ink6, 0.1);
   }
@@ -425,10 +464,10 @@ $flat-inset-md:
     border-bottom: 0.8px solid transparent;
     background: linear-gradient(
         to right,
-        rgba($snow90, 0) 0%,
-        rgba($snow90, 0.1) 50%,
-        rgba($sky99, 0.6) 85%,
-        rgba($snow95, 0.2) 100%
+        rgba(color.$light, 0) 0%,
+        rgba(color.$light, 0.1) 50%,
+        rgba(color.$light, 0.6) 85%,
+        rgba(color.$light, 0.2) 100%
       )
       border-box;
 

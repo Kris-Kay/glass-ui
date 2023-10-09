@@ -28,12 +28,92 @@
 <!-- ================================== -->
 <main class="grid gap-5xl p-b-5xl">
 
+    <!-- Text input -->
+    <section class="max-w-gutter">
+      <div class="max-w box-wide-100 glass-reg grid gap-md">
+        <div class="grid gap-3xs">
+          <h3 class="box__title">Input</h3>
+        </div>
+  
+        <div class="grid">
+          <label for="text-input" class="label-text">Text input label</label>
+          <input type="text" id="text-input" name="text-input" class="text-input">
+        </div>
+  
+        <fieldset>
+          <legend>Check box legend</legend>
+          <div class="checkboxes">
+
+            <label 
+            for="op-1" 
+            class="checkbox__label">
+
+            <input type="checkbox" 
+              id="op-1" 
+              name="op-1" 
+              class="checkbox"
+              checked/>
+              Option 1
+            </label>
+
+            <label 
+              for="op-2" 
+              class="checkbox__label">
+  
+              <input type="checkbox" 
+                id="op-2" 
+                name="op-2" 
+                class="checkbox"/>
+                Option 2
+            </label>
+  
+            <label 
+            for="op-3" 
+            class="checkbox__label">
+  
+            <input type="checkbox" 
+              id="op-3" 
+              name="op-3" 
+              class="checkbox"
+              disabled/>
+              Option 3
+          </label>
+  
+          </div>
+        </fieldset>
+
+        <div class="checkboxes">
+          <div class="tint-demo__rect inset-xs">
+            <p class="title-sm text-dark-mild">inset-xs</p>
+          </div>
+
+          <div class="tint-demo__rect inset-sm">
+            <p class="title-sm text-dark-mild">inset-sm</p>
+          </div>
+
+          <div class="tint-demo__rect inset-md">
+            <p class="title-sm text-dark-mild">inset-md</p>
+          </div>
+
+          <div class="tint-demo__rect inset-lg">
+            <p class="title-sm text-dark-mild">inset-lg</p>
+          </div>
+
+          <div class="tint-demo__rect inset-xl">
+            <p class="title-sm text-dark-mild">inset-xl</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
   <!-- 3D Buttons  -->
   <section class="max-w-gutter">
     <div class="max-w box-wide-100 gap-lg glass-base fill-dark sha-xl">
 
       <div class="grid gap-3xs">
-        <h3 class="demo-header__title">Buttons</h3>
+        <h3 class="box__title">Buttons</h3>
         <p>Hover and click to see effects.</p>
       </div>
 
@@ -205,7 +285,7 @@
   <section class="max-w-gutter">
     <div class="max-w box-wide-100 glass-reg grid-center gap-md">
       <div class="grid gap-3xs">
-        <h3 class="demo-header__title">Tab menu</h3>
+        <h3 class="box__title">Tab menu</h3>
       </div>
 
       <div class="">
@@ -223,13 +303,13 @@
           </button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Accordion -->
   <section class="max-w-gutter">
     <div class="js-accordion accordion__warp">
-      <!-- header -->
       <div class="accordion__header is-closed">
 
         <div class="accordion__top">
@@ -254,7 +334,6 @@
         </div>
       </div>
 
-      <!-- content -->
       <div class="accordion__content is-closed grid gap-3xl space-wide">
 
         <div class="grid gap-3xs">
@@ -270,74 +349,74 @@
   <section class="max-w-gutter">
     <div class="max-w box-wide-fit gap-lg glass-base fill-xdark sha-xl">
       <div class="grid gap-3xs">
-        <h3 class="demo-header__title">Responsive size range</h3>
+        <h3 class="box__title">Responsive size range</h3>
         <p>Play with the viewport to see dynamic sizing.</p>
       </div>
 
       <div class="">
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-3xs"></div>
+          <div class=" js-sizeCube size-demo__rect w-3xs"></div>
           <p class="text-sm">width: var(--3xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-2xs"></div>
+          <div class=" js-sizeCube size-demo__rect w-2xs"></div>
           <p class="text-sm">width: var(--2xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-xs"></div>
+          <div class=" js-sizeCube size-demo__rect w-xs"></div>
           <p class="text-sm">width: var(--xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-sm"></div>
+          <div class=" js-sizeCube size-demo__rect w-sm"></div>
           <p class="text-sm">width: var(--sm) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-md"></div>
+          <div class=" js-sizeCube size-demo__rect w-md"></div>
           <p class="text-sm">width: var(--md) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-lg"></div>
+          <div class=" js-sizeCube size-demo__rect w-lg"></div>
           <p class="text-sm">width: var(--lg) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-xl"></div>
+          <div class=" js-sizeCube size-demo__rect w-xl"></div>
           <p class="text-sm">width: var(--xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-2xl"></div>
+          <div class=" js-sizeCube size-demo__rect w-2xl"></div>
           <p class="text-sm">width: var(--2xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-3xl"></div>
+          <div class=" js-sizeCube size-demo__rect w-3xl"></div>
           <p class="text-sm">width: var(--3xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-4xl"></div>
+          <div class=" js-sizeCube size-demo__rect w-4xl"></div>
           <p class="text-sm">width: var(--4xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__box w-5xl"></div>
+          <div class=" js-sizeCube size-demo__rect w-5xl"></div>
           <p class="text-sm">width: var(--5xl) =</p>
           <span class="title-sm"></span>
         </div>
@@ -346,54 +425,56 @@
     </div>
   </section>
 
+
+
   <!-- Glass -->
   <!-- <section class="max-w-gutter">
     <div class="max-w">
       
-      <h3 class="demo-header__title p-b-sm">Glass</h3>
+      <h3 class="box__title p-b-sm">Glass</h3>
 
       <div class="glass-demo__bin">
-        <span class="glass-demo__box fill-3xlight">
+        <span class="glass-demo__rect fill-3xlight">
           <p class=" text-dark-mild">.glass-base</p>
           <p class=" text-dark-mild">.fill-3xlight</p>
         </span>
 
-        <span class="glass-demo__box fill-2xlight">
+        <span class="glass-demo__rect fill-2xlight">
           <p class=" text-dark-mild">.glass-base</p>
           <p class=" text-dark-mild">.fill-2xlight</p>
         </span>
 
-        <span class="glass-demo__box fill-xlight">
+        <span class="glass-demo__rect fill-xlight">
           <p class=" text-dark-mild">.glass-base</p>
           <p class=" text-dark-mild">.fill-xlight</p>
         </span>
 
-        <span class="glass-demo__box fill-light">
+        <span class="glass-demo__rect fill-light">
           <p class=" text-dark-mild">.glass-base</p>
           <p class=" text-dark-mild">.fill-light</p>
         </span>
 
-        <span class="glass-demo__box fill-clear">
+        <span class="glass-demo__rect fill-clear">
           <p class="">.glass-base</p>
           <p class="">.fill-clear</p>
         </span>
 
-        <span class="glass-demo__box fill-dark">
+        <span class="glass-demo__rect fill-dark">
           <p class="">.glass-base</p>
           <p class="">.fill-dark</p>
         </span>
 
-        <span class="glass-demo__box fill-xdark">
+        <span class="glass-demo__rect fill-xdark">
           <p class="">.glass-base</p>
           <p class="">.fill-xdark</p>
         </span>
 
-        <span class="glass-demo__box fill-2xdark">
+        <span class="glass-demo__rect fill-2xdark">
           <p class="">.glass-base</p>
           <p class="">.fill-2xdark</p>
         </span>
 
-        <span class="glass-demo__box fill-3xdark">
+        <span class="glass-demo__rect fill-3xdark">
           <p class="">.glass-base</p>
           <p class="">.fill-3xdark</p>
         </span>
@@ -411,39 +492,39 @@
           <h3 class="title-lg text-c text-sha-sm">Glass tints</h3>
         </div>
         <div class="grid gap-xs">
-          <span class="tint-demo__box tint-3xlight">
+          <span class="tint-demo__rect tint-3xlight">
             <p class="title-sm text-dark-mild">.tint-3xlight</p>
           </span>
 
-          <span class="tint-demo__box tint-2xlight">
+          <span class="tint-demo__rect tint-2xlight">
             <p class="title-sm text-dark-mild">.tint-2xlight</p>
           </span>
 
-          <span class="tint-demo__box tint-xlight">
+          <span class="tint-demo__rect tint-xlight">
             <p class="title-sm text-dark-mild">.tint-xlight</p>
           </span>
 
-          <span class="tint-demo__box tint-light">
+          <span class="tint-demo__rect tint-light">
             <p class="title-sm text-dark-mild">.tint-light</p>
           </span>
 
-          <span class="tint-demo__box tint-clear">
+          <span class="tint-demo__rect tint-clear">
             <p class="title-sm text-dark-mild">.tint-clear</p>
           </span>
 
-          <span class="tint-demo__box tint-dark">
+          <span class="tint-demo__rect tint-dark">
             <p class="title-sm">.tint-dark</p>
           </span>
 
-          <span class="tint-demo__box tint-xdark">
+          <span class="tint-demo__rect tint-xdark">
             <p class="title-sm">.tint-xdark</p>
           </span>
 
-          <span class="tint-demo__box tint-2xdark">
+          <span class="tint-demo__rect tint-2xdark">
             <p class="title-sm">.tint-2xdark</p>
           </span>
 
-          <span class="tint-demo__box tint-3xdark">
+          <span class="tint-demo__rect tint-3xdark">
             <p class="title-sm">.tint-3xdark</p>
           </span>
         </div>
@@ -454,39 +535,39 @@
           <h3 class="title-lg text-c text-sha-sm">Glass fills</h3>
         </div>
         <div class="grid gap-xs">
-          <span class="tint-demo__box fill-3xlight">
+          <span class="tint-demo__rect fill-3xlight">
             <p class="title-sm text-dark-mild">.fill-3xlight</p>
           </span>
 
-          <span class="tint-demo__box fill-2xlight">
+          <span class="tint-demo__rect fill-2xlight">
             <p class="title-sm text-dark-mild">.fill-2xlight</p>
           </span>
 
-          <span class="tint-demo__box fill-xlight">
+          <span class="tint-demo__rect fill-xlight">
             <p class="title-sm text-dark-mild">.fill-xlight</p>
           </span>
 
-          <span class="tint-demo__box fill-light">
+          <span class="tint-demo__rect fill-light">
             <p class="title-sm text-dark-mild">.fill-light</p>
           </span>
 
-          <span class="tint-demo__box fill-clear">
+          <span class="tint-demo__rect fill-clear">
             <p class="title-sm text-dark-mild">.fill-clear</p>
           </span>
 
-          <span class="tint-demo__box fill-dark">
+          <span class="tint-demo__rect fill-dark">
             <p class="title-sm">.fill-dark</p>
           </span>
 
-          <span class="tint-demo__box fill-xdark">
+          <span class="tint-demo__rect fill-xdark">
             <p class="title-sm">.fill-xdark</p>
           </span>
 
-          <span class="tint-demo__box fill-2xdark">
+          <span class="tint-demo__rect fill-2xdark">
             <p class="title-sm">.fill-2xdark</p>
           </span>
 
-          <span class="tint-demo__box fill-3xdark">
+          <span class="tint-demo__rect fill-3xdark">
             <p class="title-sm">.fill-3xdark</p>
           </span>
         </div>
@@ -497,7 +578,7 @@
 
   <!-- Text shadows -->
   <!-- <section class="max-w box-wide-resp gap-xl fill-2xlight">
-    <h3 class="demo-header__title text-dark">
+    <h3 class="box__title text-dark">
       Text shadows
     </h3>
 
@@ -533,34 +614,34 @@
   <!-- <section class="max-w-gutter">
     <div class="max-w box-wide-100 glass-base fill-clear glass-filter sha-xl gap-2xl">
       
-      <h3 class="demo-header__title">Glass tints</h3>
+      <h3 class="box__title">Glass tints</h3>
 
       <div class="glass-demo-flex">
-        <span class="tint-demo__box tint-2xlight">
+        <span class="tint-demo__rect tint-2xlight">
           <p class="title-sm text-dark-mild">.tint-2xlight</p>
         </span>
 
-        <span class="tint-demo__box tint-xlight">
+        <span class="tint-demo__rect tint-xlight">
           <p class="title-sm text-dark-mild">.tint-2xlight</p>
         </span>
 
-        <span class="tint-demo__box tint-light">
+        <span class="tint-demo__rect tint-light">
           <p class="title-sm text-dark-mild">.tint-light</p>
         </span>
 
-        <span class="tint-demo__box tint-clear">
+        <span class="tint-demo__rect tint-clear">
           <p class="title-sm text-dark-mild">.tint-clear</p>
         </span>
 
-        <span class="tint-demo__box tint-dark">
+        <span class="tint-demo__rect tint-dark">
           <p class="title-sm">.tint-dark</p>
         </span>
 
-        <span class="tint-demo__box tint-xdark">
+        <span class="tint-demo__rect tint-xdark">
           <p class="title-sm">.tint-xdark</p>
         </span>
 
-        <span class="tint-demo__box tint-2xdark">
+        <span class="tint-demo__rect tint-2xdark">
           <p class="title-sm">.tint-2xdark</p>
         </span>
       </div>

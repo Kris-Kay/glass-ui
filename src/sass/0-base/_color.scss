@@ -44,6 +44,7 @@ $leaf60: rgb(180, 235, 71);
 $leaf40:  rgb(129, 184, 20);
 $leaf30: rgb(97, 138, 15);
 
+
 /* Color opacity values */
 /* ================================== */
 $light: $sky99;
@@ -60,8 +61,6 @@ $dark-50: rgba($ink2, 0.5);
 $dark-30: rgba($ink2, 0.3);
 $dark-10: rgba($ink2, 0.1);
 
-/* Semantic color values */
-/* ================================== */
 $tint-3xlight: rgba($sky99, 0.7);
 $tint-2xlight: rgba($sky99, 0.5);
 $tint-xlight:  rgba($sky99, 0.3);
@@ -71,6 +70,12 @@ $tint-dark:    rgba($ink2,  0.1);
 $tint-xdark:   rgba($ink2,  0.3);
 $tint-2xdark:  rgba($ink2,  0.5);
 $tint-3xdark:  rgba($ink2,  0.8);
+
+
+/* Semantic color values */
+/* ================================== */
+$color-prim: $sky60;
+$color-sec: $leaf40;
 
 $text-light: $sky99;
 $text-light-mild: $snow90;
@@ -91,6 +96,7 @@ $link-rest: $sky70;
 $link-hover: $sky50;
 $link-visit: $sky80;
 
+$disabled: $gray30;
 $bg-color: $sky98;
 
 // $btn-rest: rgba($sky99, 0.3);

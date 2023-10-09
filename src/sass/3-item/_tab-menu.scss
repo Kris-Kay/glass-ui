@@ -11,24 +11,20 @@
 @use "button" as btn;
 /* ================================== */
 
-.tab-menu__wrap {
-
-}
-
 .tab-menu {
   width: fit-content;
   max-width: 100%;
   height: var(--ui-md);
-  margin: auto;
+  margin: 0 auto;
   @include flex.flex-c;
-  gap: var(--3xs);
+  gap: size.$s1;
 
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
   @include br.outer-br (var(--tab-br), var(--padding));
 
-  @include bp.bp(md) {
+  @include bp.bp(sm) {
     gap: var(--3xs);
   }
 }

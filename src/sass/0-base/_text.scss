@@ -163,8 +163,6 @@ li {
 
 .label-text {
   font-weight: $font-weight-md;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-lg;
   line-height: 1;
 }
 
@@ -288,3 +286,8 @@ pre code {
   text-align: center;
 }
 
+.box__title {
+  text-align: center;
+  @include title-thin;
+  font-size: var(--text-2xl);
+}
