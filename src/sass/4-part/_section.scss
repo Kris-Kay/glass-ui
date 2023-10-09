@@ -15,6 +15,7 @@
 /* layout */
   width: 100%;
   display: grid;
+  margin: 0 auto;
   z-index: z.z(part);
 
 /* visual */
@@ -63,4 +64,12 @@
   @include text.title-text;
   font-size: var(--lg);
   text-shadow: sha.$text-sha-md;
+}
+
+.section__body {
+  /* layout */
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  padding-bottom: var(--3xl);
 }

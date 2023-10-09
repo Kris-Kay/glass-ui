@@ -36,13 +36,16 @@
 /* Wide box */
 /* ================================== */
 @mixin box-wide {
-  display: grid;
-  place-items: center;
-  padding: var(--2xl);
-  border-radius: var(--lg);
+  /* layout */
+  padding: var(--sm);
+
+  /* visual */
+  border-radius: var(--md);
+  box-shadow: sha.$sha-xl;
 
   @include bp.bp(xs) {
-    padding: var(--3xl);
+    padding: var(--lg);
+    border-radius: var(--lg);
   }
 
   @include bp.bp(md) {
@@ -54,6 +57,7 @@
 .box-wide-fit {
   width: 100%;
   @include box-wide;
+  margin: 0 auto;
 
   @include bp.bp(xs) {
     width: fit-content;
@@ -72,11 +76,11 @@
 
   @include bp.bp(sm) {
     width: fit-content;
-    border-radius: var(--md);
+    border-radius: var(--lg);
   }
 
   @include bp.bp(lg) {
-    border-radius: var(--lg);
+    border-radius: var(--xl);
   }
 }
 

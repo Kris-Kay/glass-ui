@@ -3,7 +3,7 @@
 <header class="max-w-gutter">
   <section class="max-w atf-md">
     <div class="atf__card ">
-      <div class="glass-reg sha-xl p-xl br-lg">
+      <div class="box-wide-fit glass-reg grid-center">
         <h1 class="title-xl text-c">UI demo</h1>
         <!-- <div class="flex-c">
           <a href="#" class="btn-lg btn-icon btn-glass-light">
@@ -203,7 +203,7 @@
 
   <!-- Tab menu -->
   <section class="max-w-gutter">
-    <div class="max-w box-wide-100 gap-lg glass-base fill-dark sha-xl">
+    <div class="max-w box-wide-100 glass-reg grid-center gap-md">
       <div class="grid gap-3xs">
         <h3 class="demo-header__title">Tab menu</h3>
       </div>
@@ -227,14 +227,19 @@
   </section>
 
   <!-- Accordion -->
-  <section class="">
-    <div class="max-w js-accordion accordion__warp">
+  <section class="max-w-gutter">
+    <div class="js-accordion accordion__warp">
       <!-- header -->
       <div class="accordion__header is-closed">
-        <h2 class="accordion__title">Accordion</h2>
 
-        <div class="accordion__bottom">
-          <p class="accordion__text">Show/hide extra info</p>
+        <div class="accordion__top">
+          <p class="eyebrow">eyebrow text</p>
+          <h2 class="accordion__title">Accordion title</h2>
+        </div>
+
+
+        <div class="accordion__bottom full-w-fill">
+          <p class="accordion__text">Summary text of what is inside the accordion</p>
           <!-- toggle -->
           <div class="js-accordionToggle accordion__toggle is-closed">
             <div class="see-more-btn">

@@ -66,8 +66,8 @@
   &.tab-active {
     -webkit-backdrop-filter: brightness(1.5);
     backdrop-filter: brightness(1.5);
-    background-color: color.$tint-xlight;
-    color: color.$text-dark-mild;
+    background-color: color.$tint-2xlight;
+    color: color.$text-dark;
     box-shadow: sha.$sha-2xs;
   }
 }
