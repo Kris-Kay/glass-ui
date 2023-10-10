@@ -31,10 +31,11 @@ $inset-sm:
 
 
 $inset-md: 
-  inset -1px -1px 0 -0.25px rgba(color.$light, 0.05),      // bottom-right bevel
-  inset -0.5px -0.5px 0.2px  rgba(color.$light, 0.08),  // bottom-right bevel blur
+  // inset -1px -1px 0 -0.25px rgba(color.$leaf70, 0.2),      // bottom-right bevel
+  inset -1px -1px 0 -0.25px rgba(color.$light, 0.08),      // bottom-right bevel
+  inset -0.5px -0.5px 0.5px  rgba(color.$light, 0.08),  // bottom-right bevel blur
   inset -0.3px -0.3px 0.8px -0.3px rgba(color.$light, 0.15),      // bottom-right highlight
-  inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.01),  // bottom-right specular
+  inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.05),  // bottom-right specular
 
   inset 1px 2px 4px rgba(color.$dark, 0.1), // xl top-left shadow
   inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
@@ -88,47 +89,6 @@ $inset-xl:
   box-shadow: $inset-xl;
 }
 
-/* Inset used in tab menu  */
-/* ================================== */
-.inset-glass-md {
-  position: relative;
-  overflow: hidden;
-
-  box-shadow: $inset-md;
-  background-color: color.$tint-xdark;
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-
-    border-bottom: 0.5px solid transparent;
-    background: linear-gradient(
-        to right,
-        rgba(color.$light, 0) 0%,
-        rgba(color.$light, 0.1) 50%,
-        rgba(color.$light, 0.45) 85%,
-        rgba(color.$light, 0.01) 100%
-      ) border-box;
-
-    -webkit-mask: 
-      border-box linear-gradient(#fff, #fff),
-      padding-box linear-gradient(#000, #000);
-
-    mask: 
-      border-box linear-gradient(#fff, #fff),
-      padding-box linear-gradient(#000, #000);
-
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-  }
-
-  &::before {
-    @include help.pseudo;
-    z-index: -2;
-    @include fill.glass-filter;
-    // @include fill.noise-sm; 
-  }
-}
 
 
 
@@ -191,115 +151,85 @@ $inset-shadow-sm:
   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
 
+
+// .inset-bevel-3 {
+//   position: relative;
+//   overflow: hidden;
+//   isolation: isolate;
+//   z-index: 9;
+
+//   @include fill.glass-filter;
+
+//   &::before {
+//     @include help.pseudo;
+//     z-index: -2;
+
+//     @include fill.noise-md;
+//     box-shadow: sha.$inset-sha-md;
+//     filter: brightness(0.1);
+//   }
+
+//   &::after {
+//     @include help.pseudo;
+//     z-index: -1;
+//     border-radius: inherit;
+//     box-shadow: $inset-highlight-sm;
+//   }
+// }
+
+
+/* Inset bevel */
+/* ================================== */
 .inset-bevel-sm {
   position: relative;
-  font-size: 1rem;
-  color: white;
-  box-shadow: $inset-highlight-sm;
-  -webkit-backdrop-filter: blur(10px) brightness(0.95);
-  backdrop-filter: blur(10px) brightness(0.95);
-  border-radius: 32px;
-  width: 100%;
-  height: 100%;
-
-  & svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 20;
-    top: 0;
-    left: 0;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    overflow: hidden;
-    pointer-events: none;
-    inset: 0;
-    border-radius: inherit;
-    z-index: 2;
-    @include fill.noise-md;
-    box-shadow: $inset-shadow-sm;
-    filter: brightness(0.3);
-    width: 100%;
-    height: 100%;
-  }
-    // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   overflow: hidden;
-  //   pointer-events: none;
-  //   inset: 0;
-  //   border-radius: inherit;
-  //   border-color: transparent;
-  //   border-bottom-style: solid;
-  //   border-width: 0 0 0.5px 0;
-  //   background: linear-gradient(
-  //       to right,
-  //       rgba($snow90, 0.01) 0%,
-  //       rgba($snow95, 0.2) 60%,
-  //       rgba($sky99, 0.6) 80%,
-  //       rgba($sky99, 0.4) 90%,
-  //       rgba($snow95, 0.2) 100%
-  //     )
-  //     border-box;
-
-  //   -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-  //     linear-gradient(#fff 0 0);
-  //   -webkit-mask-composite: destination-out;
-  //   mask-composite: exclude;
-  // }
-}
-
-.inset-bevel-3 {
-  position: relative;
-  overflow: hidden;
-
-  // isolation: isolate;
-  // z-index: 9;
-
-  font-size: 1rem;
-  color: white;
-
-  border-radius: 20px;
-
-  -webkit-backdrop-filter: blur(30px) brightness(0.9);
-  backdrop-filter: blur(30px) brightness(0.9);
-
-  &::before {
-    content: "";
-    position: absolute;
-    overflow: hidden;
-    pointer-events: none;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-
-    @include fill.noise-md;
-    box-shadow: sha.$inset-sha-md;
-    filter: brightness(0.1);
-  }
+  @include fill.glass-filter;
+  @include fill.noise-sm;
+  box-shadow: $inset-md;
+  background-color: color.$tint-dark;
 
   &::after {
-    content: "";
-    position: absolute;
-    overflow: hidden;
-    pointer-events: none;
-    inset: 0;
-    z-index: 30;
-    border-radius: inherit;
-    box-shadow: $inset-highlight-sm;
+    @include help.pseudo;
+    z-index: -1;
+
+    border-bottom: 0.6px solid transparent;
+    background: linear-gradient(
+        to right,
+        rgba(color.$light, 0) 0%,
+        rgba(color.$light, 0.1) 50%,
+        rgba(color.$light, 0.5) 85%,
+        rgba(color.$light, 0.3) 90%,
+        rgba(color.$light, 0.01) 100%
+      ) border-box;
+
+    -webkit-mask: 
+      border-box linear-gradient(#fff, #fff),
+      padding-box linear-gradient(#000, #000);
+
+    mask: 
+      border-box linear-gradient(#fff, #fff),
+      padding-box linear-gradient(#000, #000);
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
   }
 }
 
 .inset-glass-reg {
-  pointer-events: none;
+  // pointer-events: none;
   position: relative;
 
-  box-shadow: $inset-highlight-sm;
+  // box-shadow: $inset-highlight-sm;
   // @include fill.noise-md;
   @include fill.glass-filter;
+
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+
+    background-color: color.$tint-dark;
+    // box-shadow: sha.$inset-sha-md;
+    filter: brightness(0.1);
+  }
 
   &::after {
     @include help.pseudo;
@@ -323,47 +253,28 @@ $inset-shadow-sm:
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
   }
+}
+
+.inset-bevel-m {
+  position: relative;
+
+  // box-shadow: $inset-highlight-sm;
+  @include fill.glass-filter;
+  // backdrop-filter: blur(20px);
+
 
   &::before {
     @include help.pseudo;
     z-index: -2;
 
-    box-shadow: sha.$inset-sha-md;
+    filter: brightness(0.1);
+    // box-shadow: $inset-shadow-sm;
     background-color: color.$tint-dark;
-    filter: brightness(0.01);
-  }
-}
-
-.inset-bevel-m {
-  position: relative;
-  z-index: -3;
-
-  // box-shadow: $inset-highlight-sm;
-
-  backdrop-filter: blur(20px);
-
-  // -webkit-backdrop-filter: blur(20px) brightness(0.85);
-  // backdrop-filter: blur(20px) brightness(0.85);
-  // background-color: rgba($ink6, 0.1);
-
-  &::before {
-    @include help.pseudo;
-    z-index: -3;
-
-    // filter: brightness(0.1);
-
-    box-shadow: inset 0 3px 6px rgba(color.$dark, 0.5),
-      // L around
-      inset 2px 1.25px 3px rgba(color.$dark, 0.5),
-      // med top left
-      inset 1px 1px 1px rgba(color.$dark, 0.5); // small around;
-
-    // background-color: rgba($ink6, 0.1);
   }
 
   &::after {
     @include help.pseudo;
-    z-index: 2;
+    z-index: -1;
 
     border-bottom: 0.8px solid transparent;
     background: linear-gradient(
@@ -371,7 +282,8 @@ $inset-shadow-sm:
         rgba(color.$light, 0) 0%,
         rgba(color.$light, 0.1) 50%,
         rgba(color.$light, 0.6) 85%,
-        rgba(color.$light, 0.2) 100%
+        rgba(color.$light, 0.2) 90%,
+        rgba(color.$light, 0) 100%
       )
       border-box;
 
@@ -387,18 +299,43 @@ $inset-shadow-sm:
 }
 
 
-.inset-xxs {
-  box-shadow: $inset-highlight-sm;
+/* Inset used in tab menu  */
+/* ================================== */
+.inset-glass-md {
+  position: relative;
+  background-color: color.$tint-dark;
+  box-shadow: $inset-md;
+  @include fill.noise-sm; 
+
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+    @include fill.glass-filter;
+  }
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+
+    border-bottom: 0.6px solid transparent;
+    background: linear-gradient(
+        to right,
+        rgba(color.$light, 0) 0%,
+        rgba(color.$light, 0.1) 50%,
+        rgba(color.$light, 0.5) 85%,
+        rgba(color.$light, 0.3) 90%,
+        rgba(color.$light, 0.01) 100%
+      ) border-box;
+
+    -webkit-mask: 
+      border-box linear-gradient(#fff, #fff),
+      padding-box linear-gradient(#000, #000);
+
+    mask: 
+      border-box linear-gradient(#fff, #fff),
+      padding-box linear-gradient(#000, #000);
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
 }
-
-// .inset-s {
-//   box-shadow: $inset-s;
-// }
-
-// .inset-m {
-//   box-shadow: $inset-m;
-// }
-
-// .inset-l {
-//   box-shadow: $inset-l;
-// }
