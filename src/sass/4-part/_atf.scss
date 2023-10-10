@@ -19,7 +19,7 @@
     /* layout */
     width: min(100%, 450px);
     place-self: end center;
-
+    box-shadow: sha.$sha-xl;
     @include bp.bp(md) {
       place-self: end end;
     }

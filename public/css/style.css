@@ -2832,6 +2832,7 @@ input[type=checkbox]:disabled {
   /* layout */
   width: min(100%, 450px);
   place-self: end center;
+  box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
 }
 @media only screen and (min-width: 40rem) {
   .atf > .atf__card {
@@ -3197,7 +3198,7 @@ nav {
   padding: var(--xl) 0;
   border-radius: var(--md);
   box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 3px 2.25px 7px -1px rgba(0, 3, 10, 0.08), 6px 4.5px 10.5px -1.5px rgba(0, 3, 10, 0.13), 12px 9px 21px -2px rgba(0, 3, 10, 0.18), 0 0 0.3px rgba(0, 3, 10, 0.13);
-  background: linear-gradient(to top left, rgba(92, 100, 112, 0.6) 0%, rgba(115, 125, 140, 0.7) 70%, rgba(143, 151, 163, 0.8) 100%);
+  background: linear-gradient(to top left, rgba(92, 100, 112, 0.7) 0%, rgba(115, 125, 140, 0.8) 70%, rgba(143, 151, 163, 0.9) 100%);
 }
 
 .full-w-inset {
