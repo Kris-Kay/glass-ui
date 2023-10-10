@@ -43,14 +43,13 @@
   border-radius: var(--md);
   box-shadow: sha.$sha-xl;
 
-  @include bp.bp(xs) {
+  @include bp.bp(sm) {
     padding: var(--lg);
     border-radius: var(--lg);
   }
 
   @include bp.bp(md) {
     padding: var(--space-wide);
-    border-radius: var(--xl);
   }
 }
 

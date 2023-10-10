@@ -387,7 +387,7 @@
   /* xl: 28px → 36px */
   --text-xl: clamp(1.75rem, 3vw + 1rem, 2rem);
   /* 2xl: 32px → 48px */
-  --text-2xl: clamp(2rem, 3vw + 1rem, 3rem);
+  --text-2xl: clamp(2rem, 3vw + 1rem, 2.8rem);
 }
 
 /* Font size MAP */
@@ -1762,23 +1762,23 @@ pre code {
 /* Inset classesc */
 /* ================================== */
 .inset-xs {
-  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.4px -0.3px rgba(250, 254, 255, 0.15), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.3), inset -0.3px -0.3px 0.1px rgba(250, 254, 255, 0.1), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 .inset-sm {
-  box-shadow: inset -0.5px -0.5px 0 rgba(250, 254, 255, 0.05), inset -0.8px -0.8px 0.25px -0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.4px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.15), inset -0.6px -0.6px 0.6px -0.5px rgba(250, 254, 255, 0.25), inset -0.6px -0.6px 0.1px rgba(250, 254, 255, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 .inset-md {
-  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.08), inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.15), inset -1px -1px 1px -1px rgba(250, 254, 255, 0.25), inset -0.8px -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 .inset-lg {
-  box-shadow: inset -1px -1px 0 rgba(250, 254, 255, 0.05), inset -0.8px -0.8px 0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -2px -2px 2px -4px rgba(250, 254, 255, 0.7), inset -1px -1px 1.6px -1.5px rgba(250, 254, 255, 0.15), inset -1px -1px 1px -1px rgba(250, 254, 255, 0.25), inset -1px -1px 0.1px rgba(250, 254, 255, 0.1), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 .inset-xl {
-  box-shadow: inset -1.25px -1.25px 0 rgba(250, 254, 255, 0.05), inset -1px -1px 0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 1px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 3px 6px 16px rgba(0, 3, 10, 0.05), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.3), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -2px -2px 2px -4px rgba(250, 254, 255, 0.7), inset -1px -1px 1.6px -1.2px rgba(250, 254, 255, 0.15), inset -1.3px -1.3px 1.3px -1.3px rgba(250, 254, 255, 0.2), inset -1.3px -1.3px 0.2px rgba(250, 254, 255, 0.08), inset 3px 6px 16px rgba(0, 3, 10, 0.05), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.3), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 /* Flat inset  */
@@ -1804,7 +1804,7 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 16px;
-  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.08), inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.15), inset -1px -1px 1px -1px rgba(250, 254, 255, 0.25), inset -0.8px -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-color: rgba(0, 3, 10, 0.1);
 }
 .inset-bevel-sm::after {
@@ -1892,7 +1892,7 @@ pre code {
 .inset-glass-md {
   position: relative;
   background-color: rgba(0, 3, 10, 0.1);
-  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.08), inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.15), inset -1px -1px 1px -1px rgba(250, 254, 255, 0.25), inset -0.8px -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 16px;
@@ -1968,7 +1968,7 @@ pre code {
   box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
   margin: 0 auto;
 }
-@media only screen and (min-width: 20rem) {
+@media only screen and (min-width: 30rem) {
   .box-wide-fit {
     padding: var(--lg);
     border-radius: var(--lg);
@@ -1977,7 +1977,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-fit {
     padding: var(--space-wide);
-    border-radius: var(--xl);
   }
 }
 @media only screen and (min-width: 20rem) {
@@ -1994,7 +1993,7 @@ pre code {
   border-radius: var(--md);
   box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
 }
-@media only screen and (min-width: 20rem) {
+@media only screen and (min-width: 30rem) {
   .box-wide-100 {
     padding: var(--lg);
     border-radius: var(--lg);
@@ -2003,7 +2002,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-100 {
     padding: var(--space-wide);
-    border-radius: var(--xl);
   }
 }
 
@@ -2016,7 +2014,7 @@ pre code {
   box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
   border-radius: 0;
 }
-@media only screen and (min-width: 20rem) {
+@media only screen and (min-width: 30rem) {
   .box-wide-resp {
     padding: var(--lg);
     border-radius: var(--lg);
@@ -2025,7 +2023,6 @@ pre code {
 @media only screen and (min-width: 40rem) {
   .box-wide-resp {
     padding: var(--space-wide);
-    border-radius: var(--xl);
   }
 }
 @media only screen and (min-width: 30rem) {
@@ -2376,7 +2373,7 @@ pre code {
   line-height: calc(0.125rem + 2.3ex + 0.125rem);
   font-size: var(--text-sm);
   color: white;
-  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.08), inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.15), inset -1px -1px 1px -1px rgba(250, 254, 255, 0.25), inset -0.8px -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-color: rgba(0, 3, 10, 0.3);
 }
 
@@ -2398,7 +2395,7 @@ input[type=checkbox] {
   appearance: none;
   background-color: rgba(0, 3, 10, 0.3);
   margin: 0;
-  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 1px -2px rgba(250, 254, 255, 0.7), inset -0.3px -0.3px 0.4px -0.3px rgba(250, 254, 255, 0.15), inset -0.3px -0.3px 0.6px -0.3px rgba(250, 254, 255, 0.3), inset -0.3px -0.3px 0.1px rgba(250, 254, 255, 0.1), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   width: 1rem;
   height: 1rem;
   border-radius: 0.15rem;
@@ -3160,6 +3157,15 @@ nav {
   place-content: center start;
 }
 
+.inset-rect {
+  width: min(300px, 100%);
+  padding: var(--2xs);
+  border-radius: var(--2xs);
+  display: grid;
+  place-content: center end;
+  box-sizing: content-box;
+}
+
 /* ================================== */
 /* Home */
 /* ================================== */
@@ -3219,10 +3225,10 @@ nav {
   background-repeat: no-repeat;
 }
 .background.dark {
-  background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
+  background-color: #000;
 }
 .background.light {
-  background-image: image-set("/assets/bgImg/chris-lee-plant-s.jpg" 1x, "/assets/bgImg/chris-lee-plant-m.jpg" 2x, "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
+  background-image: url(/assets/bgImg/white-paper.jpg);
 }
 .background.color {
   background-image: url(https://images.unsplash.com/photo-1573655349936-de6bed86f839?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2820&q=80);
@@ -3250,14 +3256,16 @@ footer {
 /* ================================== */
 /* Global and reset */
 /* ================================== */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   overflow-y: auto;
   scroll-behavior: smooth;
   cursor: default;

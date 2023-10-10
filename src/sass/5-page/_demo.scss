@@ -128,6 +128,15 @@
   place-content: center start;
 }
 
+.inset-rect {
+  width: min(300px, 100%);
+  padding: var(--2xs);
+  border-radius: var(--2xs);
+  display: grid;
+  place-content: center end;
+
+  box-sizing: content-box;
+}
 
 // .xxs {
 //   grid-column: 1/3;
