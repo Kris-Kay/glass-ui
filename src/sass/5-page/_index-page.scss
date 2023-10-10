@@ -3,6 +3,9 @@
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 /* ================================== */
+body {
+  position: relative;
+}
 
 .background {
   position: fixed;
@@ -10,7 +13,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  inset: 0;
+
   z-index: -10;
   width: 100%;
   max-width: 100vw;

@@ -111,12 +111,18 @@
   gap: var(--2xl);
   margin: 0 auto;
   padding: var(--xl) 0;
-  border-radius: var(--sm);
+  border-radius: var(--md);
   box-shadow: sha.$sha-lg;
   // @include bp.bp(sm) {
   //   gap: var(--md);
   //   border-radius: var(--md);
   // }
+  background: linear-gradient(
+    to top left,
+    rgba(color.$gray40, 0.6) 0%,
+    rgba(color.$gray50, 0.7) 70%,
+    rgba(color.$gray60, 0.8) 100%
+  );
 }
 
 .full-w-inset {
@@ -129,7 +135,7 @@
 }
 
 .inset-rect {
-  width: min(300px, 100%);
+  width: min(300px, 80%);
   padding: var(--xs);
   border-radius: var(--xs);
   display: grid;

@@ -192,8 +192,14 @@
   &::after {
     @include help.pseudo;
     z-index: -1;
-    @include fill.noise-sm;
     box-shadow: bevel.$bevel-sm;
+  }
+
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+    @include fill.noise-sm;
+    opacity: 70%;
   }
 }
 

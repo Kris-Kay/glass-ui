@@ -28,7 +28,7 @@ nav {
 }
 
 .main-nav {
-  padding-top: var(--sm);
+  padding-top: var(--space-thin);
   @include flex.flex-sb;
   @include flex.flex-c-y;
   pointer-events: none;
@@ -66,14 +66,13 @@ nav {
 
 .dropdown__bg {
   position: absolute;
-  top: var(--ui-md); 
-  // top: calc(var(--ui-md) + 0.1rem); 
+  top: calc(var(--ui-lg) / 3); 
   right: 0;
   padding: var(--sm);
   // pointer-events: none;
   cursor: pointer;
 
-  border-radius: var(--md);
+  border-radius: var(--sm);
   box-shadow: sha.$sha-xl;
 }
 
@@ -91,4 +90,5 @@ nav {
   color: rgba(color.$text-light, 0.7);
   letter-spacing: text.$letter-spacing-lg;
   font-weight: text.$font-weight-lg;
+  padding: 0 var(--sm);
 }

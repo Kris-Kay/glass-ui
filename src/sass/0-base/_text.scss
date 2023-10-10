@@ -102,6 +102,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
   letter-spacing: $letter-spacing-sm;
+  text-shadow: sha.$text-sha-md;
 }
 
 .title {

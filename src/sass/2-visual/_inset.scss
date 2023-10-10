@@ -198,8 +198,8 @@ $flat-inset-md:
 
 $flat-inset-lg: 
   inset 0 -0.5px 0.1px -0.4px rgba(color.$light, 0.15), // specular
-  inset 0 -2px 1px -1.6px rgba(color.$light, 0.15),     // bevel blur
-  inset 0 -2px 0 -1.3px rgba(color.$light, 0.03),      // bevel highlight
+  inset 0 -2px 1.5px -2px rgba(color.$light, 0.5),     // bevel blur
+  inset 0 -2px 0  rgba(color.$light, 0.1),      // bevel highlight
 
   inset 0 0.5px 1px -1px rgba(color.$dark, 0.5), // small shadow
   inset 0 2px 4px -4px rgba(color.$dark, 0.5), // small shadow
@@ -377,14 +377,17 @@ $inset-shadow-sm:
 /* ================================== */
 .inset-glass-md {
   position: relative;
-  background-color: color.$tint-dark;
-  box-shadow: $inset-md;
-  @include fill.noise-sm; 
+  // background-color: color.$tint-dark;
+  @include fill.fill-xdark;
+  box-shadow: $inset-lg;
 
+  // box-sizing: content-box;
+  
   &::before {
     @include help.pseudo;
     z-index: -2;
-    @include fill.glass-filter;
+    // @include fill.glass-filter;
+    @include fill.noise-sm; 
   }
 
   &::after {
