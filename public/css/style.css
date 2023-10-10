@@ -101,7 +101,7 @@
 }
 
 .gray {
-  background-color: rgb(143, 151, 163);
+  background-color: rgb(115, 125, 140);
 }
 
 /* ================================== */
@@ -1610,7 +1610,7 @@ pre code {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
@@ -1630,7 +1630,7 @@ pre code {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
@@ -1655,7 +1655,7 @@ pre code {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 
@@ -1674,7 +1674,7 @@ pre code {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
 }
 
 /* ================================== */
@@ -2668,7 +2668,7 @@ input[type=checkbox]:disabled {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 .accordion__header.is-closed {
@@ -2682,7 +2682,6 @@ input[type=checkbox]:disabled {
 
 .accordion__bottom {
   display: grid;
-  place-items: center;
   gap: 0.25rem;
 }
 .accordion__bottom.full-w-fill {
@@ -2700,6 +2699,7 @@ input[type=checkbox]:disabled {
   pointer-events: auto;
   cursor: pointer;
   border-radius: 0.5rem;
+  padding: 0.25rem 2rem;
   background-color: transparent;
   transition: background-color 800ms ease;
   width: 100%;
@@ -2985,7 +2985,7 @@ nav {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 @media only screen and (min-width: 30rem) {
@@ -3121,7 +3121,7 @@ nav {
   z-index: -2;
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-  background-size: 100px;
+  background-size: 80px;
   box-shadow: inset 0.8px 0.8px 0.4px rgba(250, 254, 255, 0.15), inset 2px 2px 1px -2.2px rgba(250, 254, 255, 0.3), inset 1px 1px 0.6px -1px rgba(250, 254, 255, 0.1), inset -0.8px -2px 1.4px -3px rgba(250, 254, 255, 0.8), inset -1.6px -2px 0.4px -2.4px rgba(250, 254, 255, 0.08);
 }
 @media only screen and (min-width: 40rem) {
@@ -3159,10 +3159,10 @@ nav {
 
 .inset-rect {
   width: min(300px, 100%);
-  padding: var(--2xs);
-  border-radius: var(--2xs);
+  padding: var(--xs);
+  border-radius: var(--xs);
   display: grid;
-  place-content: center end;
+  place-content: center start;
   box-sizing: content-box;
 }
 
@@ -3225,10 +3225,10 @@ nav {
   background-repeat: no-repeat;
 }
 .background.dark {
-  background-color: #000;
+  background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
 }
 .background.light {
-  background-image: url(/assets/bgImg/white-paper.jpg);
+  background-image: image-set("/assets/bgImg/chris-lee-plant-s.jpg" 1x, "/assets/bgImg/chris-lee-plant-m.jpg" 2x, "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
 }
 .background.color {
   background-image: url(https://images.unsplash.com/photo-1573655349936-de6bed86f839?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2820&q=80);

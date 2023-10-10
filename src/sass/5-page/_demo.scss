@@ -130,11 +130,10 @@
 
 .inset-rect {
   width: min(300px, 100%);
-  padding: var(--2xs);
-  border-radius: var(--2xs);
+  padding: var(--xs);
+  border-radius: var(--xs);
   display: grid;
-  place-content: center end;
-
+  place-content: center start;
   box-sizing: content-box;
 }
 

@@ -58,7 +58,7 @@
 
 .accordion__bottom {
   display: grid;
-  place-items: center;
+ 
 
   gap: size.$s1;
   // @include fill.fill-xdark;
@@ -87,11 +87,10 @@
   pointer-events: auto;
   cursor: pointer;
   border-radius: size.$s2;
-  // padding: 4px 10px;
-  
+  padding: 0.25rem 2rem;
+
   background-color: transparent;
-  transition: 
-    background-color ani.$speed-slow ease;
+  transition: background-color ani.$speed-slow ease;
 
   &:hover {
     background-color: color.$tint-light;
