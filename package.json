@@ -2,7 +2,7 @@
   "name": "glass-ui-scss",
   "version": "0.1.0",
   "description": "Apple Vision Pro-inspired glassmorphism UI",
-  "main": "/src/index.html",
+  "main": "/index.html",
   "scripts": {
     "build:sass": "sass  src/sass:public/css",
     "copy:js": "copyfiles -u 1 ./src/js/* public",
