@@ -9,6 +9,7 @@
 @use "../2-visual/border" as br;
 @use "../2-visual/fill";
 @use "../2-visual/inset" as in;
+@use "../2-visual/shadow" as sha;
 /* ================================== */
 
 .text-input {
@@ -24,15 +25,30 @@
   font-size: var(--text-sm);
   color: white;
 
-  box-shadow:   
-    inset  0     -0.8px 0 rgba(color.$light, 0.2), // bottom highlight
-    inset -0.8px -1.2px 0 rgba(color.$light, 0.25), // bottom-right bevel
-    inset 0 3px 6px rgba(color.$dark, 0.1), // L around
-    inset 2px 1.25px 3px rgba(color.$dark, 0.1), // med top left
-    inset 1px 1px 1px rgba(color.$dark, 0.1); // small around
+  box-shadow: in.$inset-md;
 
-  @include fill.fill-xdark;
+  background-color: color.$tint-xdark;
 }
+
+.rect-2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+  // background-color: color.$tint-xdark;
+  // border: 1px solid white;
+}
+
+.rect-lg {
+  width: min(500px, 100%);
+  padding: var(--space-thin);
+  border-radius: var(--sm);
+  background-color: color.$tint-xdark;
+  display: grid;
+  place-content: center start;
+}
+
+
+
 
 
 input[type="checkbox"] {
@@ -40,9 +56,9 @@ input[type="checkbox"] {
   background-color: color.$tint-xdark;
   margin: 0;
   box-shadow: in.$inset-xs;
-  width: 1.15em;
-  height: 1.15em;
-  border-radius: 0.15em;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.15rem;
   // transform: translateY(-0.075em);
   display: grid;
   place-content: center;
@@ -50,12 +66,12 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   content: "";
-  width: 0.7em;
-  height: 0.7em;
+  width: 0.7rem;
+  height: 0.7rem;
   transform: scale(0);
   transition: transform ani.$speed-fast ease-in-out;
   background-color: color.$color-prim;
-  border-radius: 0.1em;
+  border-radius: 0.1rem;
 }
 
 input[type="checkbox"]:checked::before {
@@ -65,7 +81,7 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:disabled {
   color: color.$disabled;
   background-color: color.$disabled;
-  box-shadow: in.$inset-sha-xs;
+  box-shadow: sha.$inset-sha-xs;
   cursor: not-allowed;
 }
 
@@ -77,9 +93,9 @@ input[type="checkbox"]:disabled {
 .checkbox__label {
   font-weight: text.$font-weight-md;
   display: grid;
-  grid-template-columns: 1.15em auto;
+  grid-template-columns: 1rem auto;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.25rem;
 }
 
 .checkboxes {

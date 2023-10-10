@@ -103,6 +103,31 @@
 }
 
 
+/* Flat inset demo */
+/* ================================== */
+.inset-demo {
+  width: min(500px, 100%);
+  display: grid;
+  gap: var(--2xl);
+  margin: 0 auto;
+  padding: var(--xl) 0;
+  border-radius: var(--sm);
+  box-shadow: sha.$sha-lg;
+  // @include bp.bp(sm) {
+  //   gap: var(--md);
+  //   border-radius: var(--md);
+  // }
+}
+
+.full-w-inset {
+  width: 100%;
+  padding: var(--space-thin);
+  border-radius: 0;
+  // background-color: color.$tint-dark;
+  display: grid;
+  place-content: center start;
+}
+
 
 // .xxs {
 //   grid-column: 1/3;

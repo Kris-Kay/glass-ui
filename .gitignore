@@ -67,5 +67,4 @@ node_modules/
 .env
 
 public
-public/*
 .DS_Store 

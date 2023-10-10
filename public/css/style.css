@@ -100,6 +100,10 @@
   background-color: rgb(250, 254, 255);
 }
 
+.gray {
+  background-color: rgb(143, 151, 163);
+}
+
 /* ================================== */
 /* UI Demo */
 /* ================================== */
@@ -329,8 +333,40 @@
   text-shadow: 0.8px 0.8px 0.8px rgba(0, 3, 10, 0.4), 2px 2px 4px rgba(0, 3, 10, 0.2), 0 0 8px rgba(0, 3, 10, 0.15), 0 0 16px rgba(0, 3, 10, 0.1);
 }
 
+/* Flat shadow  */
+/* ================================== */
+.flat-sha-sm {
+  box-shadow: inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.7), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.3);
+}
+
 .flat-sha-md {
-  box-shadow: inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
+}
+
+.flat-sha-lg {
+  box-shadow: inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.5), inset 0 8px 16px -16px rgba(0, 3, 10, 0.3);
+}
+
+/* Inset shadows */
+/* ================================== */
+.inset-sha-xs {
+  box-shadow: inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-sha-sm {
+  box-shadow: inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-sha-md {
+  box-shadow: inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-sha-lg {
+  box-shadow: inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-sha-xl {
+  box-shadow: inset 3px 6px 16px rgba(0, 3, 10, 0.05), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.3), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
 }
 
 /* ================================== */
@@ -1721,10 +1757,36 @@ pre code {
 /* Text */
 /* ================================== */
 /* Inset */
+/* ================================== */
+/* Insets have both light and dark box-shadows to create a 3D effect */
+/* Inset classesc */
+/* ================================== */
+.inset-xs {
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-sm {
+  box-shadow: inset -0.5px -0.5px 0 rgba(250, 254, 255, 0.05), inset -0.8px -0.8px 0.25px -0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.4px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-md {
+  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.05), inset -0.5px -0.5px 0.2px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.01), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-lg {
+  box-shadow: inset -1px -1px 0 rgba(250, 254, 255, 0.05), inset -0.8px -0.8px 0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+.inset-xl {
+  box-shadow: inset -1.25px -1.25px 0 rgba(250, 254, 255, 0.05), inset -1px -1px 0.25px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 1px -0.3px rgba(250, 254, 255, 0.2), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.08), inset 3px 6px 16px rgba(0, 3, 10, 0.05), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.3), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+}
+
+/* Inset used in tab menu  */
+/* ================================== */
 .inset-glass-md {
   position: relative;
   overflow: hidden;
-  box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.05), inset -0.5px -0.5px 0.2px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.01), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-color: rgba(0, 3, 10, 0.3);
 }
 .inset-glass-md::after {
@@ -1754,45 +1816,32 @@ pre code {
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
 }
 
-/* ================================== */
-.inset-xs {
-  box-shadow: inset -0.5px -0.5px 0 -0.1px rgba(250, 254, 255, 0.1), inset -0.3px -0.3px 0.2px -0.2px rgba(250, 254, 255, 0.35), inset -1px -1px 0.2px -1.4px rgba(250, 254, 255, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
-}
-
-.inset-sm {
-  box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
-}
-
-.inset-md {
-  box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
-}
-
-.inset-lg {
-  box-shadow: inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
-}
-
-.inset-xl {
-  box-shadow: inset 3px 6px 16px rgba(0, 3, 10, 0.05), inset 2px 4px 8px rgba(0, 3, 10, 0.1), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.3), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
-}
-
-/* Bevel box-shadow */
+/* Flat inset  */
 /* ================================== */
 .flat-inset-sm {
-  box-shadow: inset 0 -0.3px 0 rgba(250, 254, 255, 0.12), inset 0 -0.7px 0.1px rgba(250, 254, 255, 0.12), inset 0 3px 2px -2px rgba(0, 3, 10, 0.1), inset 0 1px 0.5px -1px rgba(0, 3, 10, 0.12);
+  box-shadow: inset 0 -0.25px 0.1px -0.35px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -2px rgba(250, 254, 255, 0.15), inset 0 -1.5px 0.1px -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.7), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.3);
 }
 
-.inset-bevel-s {
+.flat-inset-md {
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.8px rgba(250, 254, 255, 0.15), inset 0 -1.6px 0 -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
+}
+
+.flat-inset-lg {
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.6px rgba(250, 254, 255, 0.15), inset 0 -2px 0 -1.3px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.5), inset 0 8px 16px -16px rgba(0, 3, 10, 0.3);
+}
+
+.inset-bevel-sm {
   position: relative;
   font-size: 1rem;
   color: white;
-  box-shadow: inset -0.5px -0.8px 0 rgba(250, 254, 255, 0.25);
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05);
   -webkit-backdrop-filter: blur(10px) brightness(0.95);
   backdrop-filter: blur(10px) brightness(0.95);
   border-radius: 32px;
   width: 100%;
   height: 100%;
 }
-.inset-bevel-s svg {
+.inset-bevel-sm svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1800,7 +1849,7 @@ pre code {
   top: 0;
   left: 0;
 }
-.inset-bevel-s::before {
+.inset-bevel-sm::before {
   content: "";
   position: absolute;
   overflow: hidden;
@@ -1811,7 +1860,7 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 1.5px 1.2px 2px rgba(0, 3, 10, 0.15), inset 0.5px 0.5px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   filter: brightness(0.3);
   width: 100%;
   height: 100%;
@@ -1837,7 +1886,7 @@ pre code {
   background-repeat: repeat;
   background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
   background-size: 100px;
-  box-shadow: inset 0 3px 6px rgba(0, 3, 10, 0.1), inset 2px 1.25px 3px rgba(0, 3, 10, 0.1), inset 1px 1px 1px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   filter: brightness(0.1);
 }
 .inset-bevel-3::after {
@@ -1848,13 +1897,13 @@ pre code {
   inset: 0;
   z-index: 30;
   border-radius: inherit;
-  box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2);
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05);
 }
 
 .inset-glass-reg {
   pointer-events: none;
   position: relative;
-  box-shadow: inset -0.5px -0.5px 0.5px rgba(250, 254, 255, 0.2), inset -1px -1px 0 rgba(250, 254, 255, 0.06), inset 2px 2px 0.2px -2.6px rgba(250, 254, 255, 0.1), inset -2px -2px 0.5px -2.8px rgba(250, 254, 255, 0.2);
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05);
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
 }
@@ -1881,7 +1930,7 @@ pre code {
   border-radius: inherit;
   overflow: hidden;
   z-index: -2;
-  box-shadow: inset 0 3px 6px rgba(0, 3, 10, 0.1), inset 2px 1.25px 3px rgba(0, 3, 10, 0.1), inset 1px 1px 1px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-color: rgba(0, 3, 10, 0.1);
   filter: brightness(0.01);
 }
@@ -1915,6 +1964,10 @@ pre code {
   mask: border-box linear-gradient(#fff, #fff), padding-box linear-gradient(#000, #000);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+}
+
+.inset-xxs {
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05);
 }
 
 /* ================================== */
@@ -2036,13 +2089,13 @@ pre code {
 .space-thin > .full-w-fill {
   margin-left: calc(-1 * var(--space-thin) + 0.5px);
   margin-right: calc(-1 * var(--space-thin));
-  box-shadow: inset 0 -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.8px rgba(250, 254, 255, 0.15), inset 0 -1.6px 0 -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
 }
 
 .space-wide > .full-w-fill {
   margin-left: calc(-1 * var(--space-wide) + 0.5px);
   margin-right: calc(-1 * var(--space-wide));
-  box-shadow: inset 0 -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.8px rgba(250, 254, 255, 0.15), inset 0 -1.6px 0 -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
 }
 
 /* ================================== */
@@ -2342,6 +2395,8 @@ pre code {
 /* ================================== */
 /* Backgrounds */
 /* ================================== */
+/* Text */
+/* ================================== */
 /* Inputs */
 /* ================================== */
 .text-input {
@@ -2358,32 +2413,45 @@ pre code {
   line-height: calc(0.125rem + 2.3ex + 0.125rem);
   font-size: var(--text-sm);
   color: white;
-  box-shadow: inset 0 -0.8px 0 rgba(250, 254, 255, 0.2), inset -0.8px -1.2px 0 rgba(250, 254, 255, 0.25), inset 0 3px 6px rgba(0, 3, 10, 0.1), inset 2px 1.25px 3px rgba(0, 3, 10, 0.1), inset 1px 1px 1px rgba(0, 3, 10, 0.1);
+  box-shadow: inset -1px -1px 0 -0.25px rgba(250, 254, 255, 0.05), inset -0.5px -0.5px 0.2px rgba(250, 254, 255, 0.08), inset -0.3px -0.3px 0.8px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.01), inset 1px 2px 4px rgba(0, 3, 10, 0.1), inset 0.5px 1px 2px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   background-color: rgba(0, 3, 10, 0.3);
-  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
-  backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
+}
+
+.rect-2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+}
+
+.rect-lg {
+  width: min(500px, 100%);
+  padding: var(--space-thin);
+  border-radius: var(--sm);
+  background-color: rgba(0, 3, 10, 0.3);
+  display: grid;
+  place-content: center start;
 }
 
 input[type=checkbox] {
   appearance: none;
   background-color: rgba(0, 3, 10, 0.3);
   margin: 0;
-  box-shadow: inset 0px -0.8px 0.01px rgba(250, 254, 255, 0.12), inset -1px -2px 0 -1.74px rgba(250, 254, 255, 0.1), inset -2.2px 0.5px 0.1px -1px rgba(0, 3, 10, 0.12), inset 2px 2px 4px rgba(0, 3, 10, 0.12), inset 0 0 6px rgba(0, 3, 10, 0.2), inset 0.25px 0.25px 1px rgba(0, 3, 10, 0.2);
-  width: 1.15em;
-  height: 1.15em;
-  border-radius: 0.15em;
+  box-shadow: inset -0.3px -0.3px 0 rgba(250, 254, 255, 0.05), inset -0.2px -0.2px 0.2px rgba(250, 254, 255, 0.05), inset -0.3px -0.3px 0.3px -0.3px rgba(250, 254, 255, 0.15), inset -0.5px -0.5px 0 -0.25px rgba(250, 254, 255, 0.05), inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.15rem;
   display: grid;
   place-content: center;
 }
 
 input[type=checkbox]::before {
   content: "";
-  width: 0.7em;
-  height: 0.7em;
+  width: 0.7rem;
+  height: 0.7rem;
   transform: scale(0);
   transition: transform 200ms ease-in-out;
   background-color: rgb(56, 195, 250);
-  border-radius: 0.1em;
+  border-radius: 0.1rem;
 }
 
 input[type=checkbox]:checked::before {
@@ -2391,18 +2459,18 @@ input[type=checkbox]:checked::before {
 }
 
 input[type=checkbox]:disabled {
-  color: rgb(69, 75, 84);
-  background-color: rgb(69, 75, 84);
-  box-shadow: inset 1px 1px 3px -1px rgba(0, 3, 10, 0.2), inset 3px 3px 8px -2px rgba(0, 3, 10, 0.2), inset -0.25px -0.25px 8px -3px rgba(0, 3, 10, 0.1), inset 0 0 1px -0.5px rgba(0, 3, 10, 0.4);
+  color: rgb(92, 100, 112);
+  background-color: rgb(92, 100, 112);
+  box-shadow: inset 0.25px 0.5px 1px rgba(0, 3, 10, 0.1), inset 0.25px 0.75px 1.5px -0.5px rgba(0, 3, 10, 0.25), inset 0.25px 0.25px 0.5px -0.5px rgba(0, 3, 10, 0.3);
   cursor: not-allowed;
 }
 
 .checkbox__label {
   font-weight: 400;
   display: grid;
-  grid-template-columns: 1.15em auto;
+  grid-template-columns: 1rem auto;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.25rem;
 }
 
 .checkboxes {
@@ -2663,7 +2731,7 @@ input[type=checkbox]:disabled {
   padding: var(--space-thin);
   /* visual */
   background-color: rgba(0, 3, 10, 0.3);
-  box-shadow: inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
 }
 
 .accordion__toggle {
@@ -2811,7 +2879,7 @@ input[type=checkbox]:disabled {
   margin-right: calc(-1 * var(--space));
   /* visual */
   background-color: rgba(0, 3, 10, 0.3);
-  box-shadow: inset 0 -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.8px rgba(250, 254, 255, 0.15), inset 0 -1.6px 0 -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
 }
 
 /* ================================== */
@@ -2974,7 +3042,7 @@ nav {
   margin-right: calc(-1 * var(--space));
   /* visual */
   background-color: rgba(0, 3, 10, 0.3);
-  box-shadow: inset 0 -0.8px 0.1px rgba(250, 254, 255, 0.1), inset 0 2px 4px rgba(0, 3, 10, 0.1), inset 0 0.8px 0.5px rgba(0, 3, 10, 0.1);
+  box-shadow: inset 0 -0.5px 0.1px -0.4px rgba(250, 254, 255, 0.15), inset 0 -2px 1px -1.8px rgba(250, 254, 255, 0.15), inset 0 -1.6px 0 -1px rgba(250, 254, 255, 0.03), inset 0 0.5px 1px -1px rgba(0, 3, 10, 0.5), inset 0 1px 2px -2px rgba(0, 3, 10, 0.5), inset 0 2px 4px -4px rgba(0, 3, 10, 0.5), inset 0 4px 8px -8px rgba(0, 3, 10, 0.3);
 }
 
 .section__title {
@@ -3108,6 +3176,26 @@ nav {
     border-radius: var(--md);
     font-size: var(--text-md);
   }
+}
+
+/* Flat inset demo */
+/* ================================== */
+.inset-demo {
+  width: min(500px, 100%);
+  display: grid;
+  gap: var(--2xl);
+  margin: 0 auto;
+  padding: var(--xl) 0;
+  border-radius: var(--sm);
+  box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 3px 2.25px 7px -1px rgba(0, 3, 10, 0.08), 6px 4.5px 10.5px -1.5px rgba(0, 3, 10, 0.13), 12px 9px 21px -2px rgba(0, 3, 10, 0.18), 0 0 0.3px rgba(0, 3, 10, 0.13);
+}
+
+.full-w-inset {
+  width: 100%;
+  padding: var(--space-thin);
+  border-radius: 0;
+  display: grid;
+  place-content: center start;
 }
 
 /* ================================== */
@@ -3262,6 +3350,7 @@ button {
 button,
 a,
 input {
+  appearance: none;
   background: none;
   background-color: transparent;
   border: 0;

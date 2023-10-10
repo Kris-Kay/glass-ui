@@ -96,7 +96,7 @@ $link-rest: $sky70;
 $link-hover: $sky50;
 $link-visit: $sky80;
 
-$disabled: $gray30;
+$disabled: $gray40;
 $bg-color: $sky98;
 
 // $btn-rest: rgba($sky99, 0.3);
@@ -184,4 +184,8 @@ $bg-color: $sky98;
 
 .light {
   background-color: $light;
+}
+
+.gray {
+  background-color: $gray60;
 }
