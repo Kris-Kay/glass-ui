@@ -18,21 +18,18 @@
 //* Button size & layout */
 /* ================================== */
 
-/* Button text */
-/* ================================== */
+/* Base → Button text */
 @mixin btn-text {
   font-family: text.$font-family-title;
   font-weight: text.$font-weight-sm;
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
-  // text-wrap: nowrap;
   color: color.$text-light;
   z-index: z.z(on-btn);
   text-shadow: sha.$text-sha-sm;
 }
 
-/* Button base */
-/* ================================== */
+/* Base → Button layout */
 @mixin btn-base {
   width: fit-content;
   @include flex.flex-c;
@@ -47,9 +44,9 @@
   }
 }
 
-/* Button sm */
+/* Button sizes */
 /* ================================== */
-.btn-sm {
+@mixin btn-sm {
   /* config */
   $inner-h: 0.8em; // ← set font size/line height/icon height here
   $p-t: 1px; // ← padding-top diff for every font
@@ -75,9 +72,7 @@
   }
 }
 
-/* Button md */
-/* ================================== */
-.btn-md {
+@mixin btn-md {
   /* config */
   $inner-h: 0.9em; // ← set font size/line height/icon height here
   $p-t: 1px; // ← padding-top diff for every font
@@ -103,9 +98,7 @@
   }
 }
 
-/* Button lg */
-/* ================================== */
-.btn-lg {
+@mixin btn-lg {
   /* config */
   $inner-h: 1em; // ← set font size/line height/icon height here
   $p-t: 1px; // ← padding-top diff for every font
@@ -131,8 +124,22 @@
   }
 }
 
-//* Round buttons */
+.btn-sm {
+  @include btn-sm;
+}
+
+.btn-md {
+  @include btn-md;
+}
+
+.btn-lg {
+  @include btn-lg;
+}
+
+//* Round icon buttons */
 /* ================================== */
+
+/* Base → round button */
 @mixin round-btn-base {
   @include flex.flex-c;
   border-radius: br.$round;
@@ -145,7 +152,7 @@
   }
 }
 
-.round-btn-sm {
+@mixin round-btn-sm {
   @include round-btn-base;
   width: var(--ui-sm); 
   height: var(--ui-sm); 
@@ -155,7 +162,7 @@
   }
 }
 
-.round-btn-md {
+@mixin round-btn-md {
   @include round-btn-base;
   width: var(--ui-md); 
   height: var(--ui-md); 
@@ -165,7 +172,7 @@
   }
 }
 
-.round-btn-lg {
+@mixin round-btn-lg {
   @include round-btn-base;
   width: var(--ui-lg); 
   height: var(--ui-lg); 
@@ -175,13 +182,24 @@
   }
 }
 
+.round-btn-sm {
+  @include round-btn-sm;
+}
+
+.round-btn-md {
+  @include round-btn-md;
+}
+
+.round-btn-lg {
+  @include round-btn-lg;
+}
+
 /* ================================== */
-//* Button state & styling */
+//* Button state & visual styling */
 /* ================================== */
 
-/* 3D Button material base */
-/* ================================== */
-@mixin btn-material-base {
+/* Base → 3D button glass material */
+@mixin btn-glass-base {
   position: relative;
   @include fill.glass-filter;
   transition: 
@@ -203,10 +221,9 @@
   }
 }
 
-/* 3D button glass */
-/* ================================== */
-@mixin btn-glass {
-  @include btn-material-base;
+/* Reg → 3D button glass */
+@mixin btn-glass-reg {
+  @include btn-glass-base;
   background-color: color.$tint-clear;
 
   &:hover {
@@ -220,20 +237,14 @@
   }
 }
 
-.btn-glass {
-  @include btn-glass;
-}
-
-
-/* Light 3D button glass */
-/* ================================== */
+/* Light → 3D button glass */
 @mixin btn-glass-light {
-  @include btn-material-base;
+  @include btn-glass-base;
   background-color: color.$tint-xlight;
 
   &:hover {
     background-color: color.$tint-2xlight;
-    color: color.$text-light;
+    color: color.$text-dark-mild;
   }
 
   &:active {
@@ -242,14 +253,9 @@
   }
 }
 
-.btn-glass-light {
-  @include btn-glass-light;
-}
-
-/* Dark 3D button glass */
-/* ================================== */
+/* Dark → 3D button glass */
 @mixin btn-glass-dark {
-  @include btn-material-base;
+  @include btn-glass-base;
   background-color: color.$tint-xdark;
 
   &:hover {
@@ -260,6 +266,14 @@
     background-color: color.$tint-3xdark;
     color: color.$text-light;
   }
+}
+
+.btn-glass-reg {
+  @include btn-glass-reg;
+}
+
+.btn-glass-light {
+  @include btn-glass-light;
 }
 
 .btn-glass-dark {

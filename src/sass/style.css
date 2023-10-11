@@ -2241,7 +2241,7 @@ pre code {
 /* ================================== */
 /* 3D button glass */
 /* ================================== */
-.btn-glass {
+.btn-glass-reg {
   position: relative;
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
@@ -2249,7 +2249,7 @@ pre code {
   box-shadow: 1px 0.75px 1.75px -0.25px rgba(0, 3, 10, 0.06), 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.1), 4px 3px 7px -1px rgba(0, 3, 10, 0.18), 0 0 0.2px rgba(0, 3, 10, 0.08);
   background-color: rgba(250, 254, 255, 0.01);
 }
-.btn-glass::after {
+.btn-glass-reg::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -2259,11 +2259,11 @@ pre code {
   z-index: -1;
   box-shadow: inset 0.3px 0.3px 0.2px rgba(250, 254, 255, 0.15), inset 2px 2px 0.4px -2.6px rgba(250, 254, 255, 0.5), inset 1px 1px 0.4px -1.3px rgba(250, 254, 255, 0.1), inset -0.6px -1.8px 1.4px -3.2px rgba(250, 254, 255, 0.8), inset -1.8px -2px 0.2px -2.6px rgba(250, 254, 255, 0.08);
 }
-.btn-glass:hover {
+.btn-glass-reg:hover {
   background-color: rgba(250, 254, 255, 0.1);
   color: rgb(250, 254, 255);
 }
-.btn-glass:active {
+.btn-glass-reg:active {
   background-color: rgba(250, 254, 255, 0.3);
   color: rgb(0, 17, 50);
 }
