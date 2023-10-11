@@ -6,34 +6,34 @@
   "use strict";
 
   $(function () {
-    $("#content").load("/home.html");
-    // $("#content").load("/about.html");
-    // $("#content").load("/documentation.html");
-    // $("#content").load("/demo.html");
-    // $("#content").load("/tutorial.html");
+    $("#content").load("/html/home.html");
+    // $("#content").load("/html/about.html");
+    // $("#content").load("/html/documentation.html");
+    // $("#content").load("/html/demo.html");
+    // $("#content").load("/html/tutorial.html");
 
     $("#js-home").on( "click", function(event) {
       event.preventDefault();
       $(window).scrollTop(0);
-      $("#content").load("/home.html");
+      $("#content").load("/html/home.html");
     });
 
     $("#js-about").on( "click", function(event) {
       event.preventDefault();
       $(window).scrollTop(0);
-      $("#content").load("/about.html");
+      $("#content").load("/html/about.html");
     }); 
 
     $("#js-demo").on( "click", function(event) {
       event.preventDefault();
       $(window).scrollTop(0);
-      $("#content").load("/demo.html");
+      $("#content").load("/html/demo.html");
     }); 
 
     // $("#js-tutorial").on( "click", function(event) {
     //   event.preventDefault();
     //   $(window).scrollTop(0);
-    //   $("#content").load("/tutorial.html");
+    //   $("#content").load("/html/tutorial.html");
     // }); 
   });
 })();

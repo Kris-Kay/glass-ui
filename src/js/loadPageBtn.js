@@ -5,7 +5,7 @@
   $(function () {
     $(".js-tutorial").on( "click", function(event) {
       event.preventDefault();
-      $("#content").load("/tutorial.html");
+      $("#content").load("/html/tutorial.html");
       $(window).scrollTop(0);
     }); 
   });
@@ -14,6 +14,6 @@
     $(".js-demo").on( "click", function(event) {
       event.preventDefault();
       $(window).scrollTop(0);
-      $("#content").load("/demo.html");
+      $("#content").load("/html/demo.html");
     }); 
   });
