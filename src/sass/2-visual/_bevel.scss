@@ -3,6 +3,8 @@
 @use "../0-base/color";
 /* ================================== */
 
+/* Curved bevel */
+/* ================================== */
 $bevel-xs: 
   inset 0.2px 0.2px 0.2px rgba(color.$light, 0.15),      // top-left bevel
   inset 2px 2px 0.4px -2.8px rgba(color.$light, 0.5),    // top-left specular highlight
@@ -35,20 +37,8 @@ $bevel-lg:
   inset -1.6px -2px 0.4px -2.4px rgba(color.$light, 0.08); // bottom-right specular
 
 
-
-// $bevel-md: 
-//   inset 2px 2px 1px -2.4px rgba(color.$light, 0.6),     // top-left specular highlight
-//   inset 1px 1px 0.2px rgba(color.$light, 0.15),         // top-left bevel
-//   inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.1), // bottom-right specular
-//   inset 0 -0.5px 1px -1px rgba(color.$light, 0.5);      // bottom thin highlight
-
-// $bevel-lg: 
-//   inset 3px 3px 1px -3.5px rgba(color.$light, 0.5), // top-left specular highlight
-//   inset 1.2px 1.2px 0.2px rgba(color.$light, 0.15), // top-left bevel
-//   inset -2px -2px 0.4px -2.4px rgba(color.$light, 0.08), // bottom-right specular
-//   inset 0 -0.5px 1px -1px rgba(color.$light, 0.3); // bottom thin highlight
-
-
+/* Flat bevel */
+/* ================================== */
 $flat-bevel-sm: 
   inset 0 0.3px 0 rgba(color.$light, 0.12), // top highlight
   inset 0 0.7px 0.1px rgba(color.$light, 0.12), // top bevel

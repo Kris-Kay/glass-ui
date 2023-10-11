@@ -66,82 +66,7 @@ $inset-xl:
   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $inset-xs: 
-//   // inset -0.3px -0.3px 0 rgba(color.$light, 0.05),      // bottom-right bevel
-//   // inset -0.2px -0.2px 0.2px rgba(color.$light, 0.05),      // bottom-right bevel blur
-//   inset -0.3px -0.3px 0.3px -0.3px rgba(color.$light, 0.15),      // bottom-right highlight
-//   // inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.05),  // bottom-right specular
-
-//   inset 0.25px 0.5px 1px rgba(color.$dark, 0.1),    // lg top-left shadow
-//   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
-//   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
-
-// $inset-sm: 
-//   // inset -0.5px -0.5px 0 rgba(color.$light, 0.05),  // bottom-right bevel
-//   // inset -0.8px -0.8px 0.25px -0.25px rgba(color.$light, 0.08),       // bottom-right bevel blur
-//   inset -0.3px -0.3px 0.4px -0.3px rgba(color.$light, 0.2),      // bottom-right highlight
-//   // inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.08),  // bottom-right specular
-
-//   inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
-//   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
-//   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
-
-
-// $inset-md: 
-//   // inset -1px -1px 0 -0.25px rgba(color.$leaf70, 0.2),      // bottom-right bevel
-//   // inset -1px -1px 0 -0.25px rgba(color.$light, 0.08),      // bottom-right bevel
-//   // inset -0.5px -0.5px 0.5px  rgba(color.$light, 0.08),  // bottom-right bevel blur
-//   inset -0.3px -0.3px 0.8px -0.3px rgba(color.$light, 0.15),      // bottom-right highlight
-//   // inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.05),  // bottom-right specular
-
-//   inset 1px 2px 4px rgba(color.$dark, 0.1), // xl top-left shadow
-//   inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
-//   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
-//   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
-
-
-// $inset-lg: 
-//   // inset -1px -1px 0 rgba(color.$light, 0.05), // bottom highlight
-//   // inset -0.8px -0.8px 0.25px rgba(color.$light, 0.08), // bottom-right wrap bevel
-//   inset -0.3px -0.3px 0.8px -0.3px rgba(color.$light, 0.2),      // bottom-right highlight
-//   // inset -0.5px -0.5px 0 -0.25px rgba(color.$light, 0.08),  // bottom-right specular
-  
-//   inset 2px 4px 8px rgba(color.$dark, 0.1), // xl top-left shadow
-//   inset 1px 2px 4px rgba(color.$dark, 0.1), // lg top-left shadow
-//   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
-//   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
-
-
-// $inset-xl: 
-//   // inset -1.25px -1.25px 0 rgba(color.$light, 0.05), // bottom highlight/
-//   // inset -1px    -1px 0.25px rgba(color.$light, 0.08),  // bottom-right bevel blur
-//   inset -0.3px -0.3px 1.5px -0.25px rgba(color.$light, 0.2),      // bottom-right highlight
-//   // inset -0.5px -0.5px 0.25px -0.25px rgba(color.$light, 0.08),  // bottom-right specular
-
-//   inset 3px 6px 16px rgba(color.$dark, 0.05), // xl top-left shadow
-//   inset 2px 4px 8px rgba(color.$dark, 0.1), // lg top-left shadow
-//   inset 1px 2px 4px rgba(color.$dark, 0.1), // md-lg top-left shadow
-//   inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.3), // md top-left shadow
-//   inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
-
-/* Inset classesc */
+/* Insets */
 /* ================================== */
 .inset-xs {
   box-shadow: $inset-xs;
@@ -164,9 +89,7 @@ $inset-xl:
 }
 
 
-
-
-/* Flat inset  */
+/* Flat insets  */
 /* ================================== */
 $flat-inset-sm: 
   inset 0 -0.25px 0.1px -0.35px rgba(color.$light, 0.15), // specular
@@ -180,7 +103,6 @@ $flat-inset-sm:
 .flat-inset-sm {
   box-shadow: $flat-inset-sm;
 }
-
 
 $flat-inset-md: 
   inset 0 -0.5px 0.1px -0.4px rgba(color.$light, 0.15), // specular
@@ -209,7 +131,6 @@ $flat-inset-lg:
 .flat-inset-lg {
   box-shadow: $flat-inset-lg;
 }
-
 
 
 // Highlight for small insets 
