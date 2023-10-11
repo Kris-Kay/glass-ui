@@ -39,11 +39,6 @@
   box-shadow: sha.$sha-xl;
   overflow: hidden;
 
-  // &.is-closed {
-  //   overflow: hidden;
-  //   border-radius: var(--lg);
-  // }
-
     &.is-closed {
       box-shadow: sha.$sha-2xl;
   }
@@ -58,16 +53,7 @@
 
 .accordion__bottom {
   display: grid;
- 
-
   gap: size.$s1;
-  // @include fill.fill-xdark;
-  // @include flex.flex-c;
-  // @include flex.flex-sb;
-  // @include bp.bp(md) {
-  //   @include flex.flex-c-y;
-  //   @include flex.flex-sb;
-  // }
 
   &.full-w-fill {
     /* layout */
