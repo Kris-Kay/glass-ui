@@ -28,11 +28,20 @@
   @include glass-base;
 }
 
-.glass-reg {
-  @include glass-base {
-    @include fill.fill-clear;
+/* Glass classes from $tints MAP */
+/* ================================== */
+.glass { 
+  @include color.tint-modifier('background-color') {
+    @include fill.glass-filter;
+    @include glass-base;
   }
 }
+
+// .glass-reg {
+//   @include glass-base {
+//     @include fill.fill-clear;
+//   }
+// }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
 /* ================================== */

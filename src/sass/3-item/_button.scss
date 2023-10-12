@@ -222,7 +222,7 @@
 }
 
 /* Reg → 3D button glass */
-@mixin btn-glass-reg {
+@mixin btn-glass-clear {
   @include btn-glass-base;
   background-color: color.$tint-clear;
 
@@ -268,8 +268,8 @@
   }
 }
 
-.btn-glass-reg {
-  @include btn-glass-reg;
+.btn-glass-clear {
+  @include btn-glass-clear;
 }
 
 .btn-glass-light {

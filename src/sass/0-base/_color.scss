@@ -103,6 +103,19 @@ $bg-color: $sky98;
 // $btn-hover: rgba($sky99, 0.6);
 // $btn-active: rgba($ink2, 0.2);
 
+
+.dark {
+  background-color: $dark;
+}
+
+.light {
+  background-color: $light;
+}
+
+.gray {
+  background-color: $gray50;
+}
+
 /* Text colors */
 /* ================================== */
 
@@ -142,50 +155,34 @@ $bg-color: $sky98;
 
 /* Glass tints */
 /* ================================== */
-.tint-3xlight {
-  background-color: $tint-3xlight;
+$tints: (
+  "3xlight": $tint-3xlight,
+  "2xlight": $tint-2xlight,
+  "xlight": $tint-xlight,
+  "light": $tint-light,
+  "clear": $tint-clear,
+  "dark": $tint-dark,
+  "xdark": $tint-xdark,
+  "2xdark": $tint-2xdark,
+  "3xdark": $tint-3xdark
+);
+
+/* Tint modifier mixin */
+/* ================================== */
+/* Generates .classes using $tints map */
+@mixin tint-modifier($property) {
+  @each $key, $value in $tints {
+    &-#{$key} {
+      #{$property}: $value;
+      @content;
+    }
+  }
 }
 
-.tint-2xlight {
-  background-color: $tint-2xlight;
-}
+/* Tint classes */
+/* ================================== */
+// * Generates a class for every tint color
 
-.tint-xlight {
-  background-color: $tint-xlight;
-}
-
-.tint-light {
-  background-color: $tint-light;
-}
-
-.tint-clear {
-  background-color: $tint-clear;
-}
-
-.tint-dark {
-  background-color: $tint-dark;
-}
-
-.tint-xdark {
-  background-color: $tint-xdark;
-}
-
-.tint-2xdark {
-  background-color: $tint-2xdark;
-}
-
-.tint-3xdark {
-  background-color: $tint-3xdark;
-}
-
-.dark {
-  background-color: $dark;
-}
-
-.light {
-  background-color: $light;
-}
-
-.gray {
-  background-color: $gray50;
+.tint {
+  @include tint-modifier('background-color');
 }

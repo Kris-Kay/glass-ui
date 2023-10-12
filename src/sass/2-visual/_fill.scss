@@ -110,38 +110,8 @@ $bright: 0.95;
 
 /* Glass fill classes */
 /* ================================== */
-.fill-3xlight {
-  @include fill-3xlight;
-}
-
-.fill-2xlight {
-  @include fill-2xlight;
-}
-
-.fill-xlight {
-  @include fill-xlight;
-}
-
-.fill-light {
-  @include fill-light;
-}
-
-.fill-clear {
-  @include fill-clear;
-}
-
-.fill-dark {
-  @include fill-dark;
-}
-
-.fill-xdark { 
-  @include fill-xdark;
-}
-
-.fill-2xdark { 
-  @include fill-2xdark;
-}
-
-.fill-3xdark { 
-  @include fill-3xdark;
+.fill { 
+  @include color.tint-modifier('background-color') {
+    @include glass-filter;
+  }
 }
