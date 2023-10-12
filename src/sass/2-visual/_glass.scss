@@ -37,12 +37,6 @@
   }
 }
 
-// .glass-reg {
-//   @include glass-base {
-//     @include fill.fill-clear;
-//   }
-// }
-
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
 /* ================================== */
 @mixin glass--no-bevel-mobile {

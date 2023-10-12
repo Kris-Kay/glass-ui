@@ -24,11 +24,6 @@
   background-size: 52px 52px;
 }
 
-// @mixin noise-lg {
-//   @include noise;
-//   background-size: 200px;
-// }
-
 
 /* Glass Filter */
 /* ================================== */
@@ -58,6 +53,17 @@ $bright: 0.95;
 
 .glass-filter {
   @include glass-filter;
+}
+
+/* Glass Fill mixin */
+/* ================================== */
+@mixin fill($tint) {
+  @if not map-has-key(color.$tints, $tint) {
+    @warn "Warning: `#{$tint}` is not a valid fill name.";
+  } @else {
+      background-color: map-get(color.$tints, $tint);
+      @include glass-filter;
+  }
 }
 
 

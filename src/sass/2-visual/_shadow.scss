@@ -3,17 +3,6 @@
 @use "../0-base/color";
 /* ================================== */
 
-/* Shadow Size list */
-/* ================================== */
-$shadows:
-  "2xs",
-  "xs",
-  "sm",
-  "md",
-  "lg",
-  "xl",
-  "2xl";
-
 /* Elevation shadows */
 /* ================================== */
 $sha-2xs: 
@@ -57,42 +46,35 @@ $sha-2xl:
   5px 3.75px 8.75px -1px rgba(color.$dark, 0.08),
   10px 7.5px 17.5px -1.5px rgba(color.$dark, 0.13),
   20px 15px 35px -2px rgba(color.$dark, 0.18),
-  // 20px 15px 35px -2px rgba(color.$dark, 0.18),
   0 0 0.4px rgba(color.$dark, 0.13);
 
-/* Elevation shadow classes */
-/* ================================== */
-.sha-2xs {
-  box-shadow: $sha-2xs;
+
+//* Shadow Size MAP *//
+$shadows: (
+  "2xs": $sha-2xs,
+  "xs": $sha-xs,
+  "sm": $sha-sm,
+  "md": $sha-md,
+  "lg": $sha-lg,
+  "xl": $sha-xl,
+  "2xl": $sha-2xl
+);
+
+//* Shadow class gen mixin *//
+@mixin shadow-modifier($property, $pre) {
+  @each $key, $value in $shadows {
+    &-#{$key} {
+      #{$property}: #{$pre}-#{$key};
+      // @content;
+    }
+  }
 }
 
-.sha-xs {
-  box-shadow: $sha-xs;
+//* Elevation shadow classes *//
+.sha {
+  @include shadow-modifier('box-shadow', '$sha');
 }
 
-.sha-sm {
-  box-shadow: $sha-sm;
-}
-
-.sha-sm {
-  box-shadow: $sha-sm;
-}
-
-.sha-md {
-  box-shadow: $sha-md;
-}
-
-.sha-lg {
-  box-shadow: $sha-lg;
-}
-
-.sha-xl {
-  box-shadow: $sha-xl;
-}
-
-.sha-2xl {
-  box-shadow: $sha-2xl;
-}
 
 /* Text shadows */
 /* ================================== */
@@ -138,27 +120,12 @@ $text-sha-2xl:
   0 0 10px rgba(color.$dark, 0.15), 
   0 0 20px rgba(color.$dark, 0.1); 
 
-/* Text shadow classes */
-/* ================================== */
-.text-sha-xs {
-  text-shadow: $text-sha-xs;
+
+//* Text shadow classes *//
+.text-sha {
+  @include shadow-modifier('text-shadow', '$text-sha');
 }
 
-.text-sha-sm {
-  text-shadow: $text-sha-sm;
-}
-
-.text-sha-md {
-  text-shadow: $text-sha-md;
-}
-
-.text-sha-lg {
-  text-shadow: $text-sha-lg;
-}
-
-.text-sha-xl {
-  text-shadow: $text-sha-xl;
-}
 
 /* Flat shadow  */
 /* ================================== */
