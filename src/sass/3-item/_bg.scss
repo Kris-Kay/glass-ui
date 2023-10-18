@@ -37,19 +37,23 @@
 /* ================================== */
 @mixin box-wide {
   /* layout */
-  padding: var(--sm);
+  padding: var(--xl) var(--sm);
 
   /* visual */
   border-radius: var(--md);
   box-shadow: sha.$sha-xl;
 
-  @include bp.bp(sm) {
-    padding: var(--lg);
-    border-radius: var(--lg);
+  // @include bp.bp(sm) {
+  //   padding: var(--lg) var(--space-wide);
+  //  
+  // }
+  @include bp.bp(xs) {
+    padding: var(--2xl) var(--md);
   }
 
   @include bp.bp(md) {
     padding: var(--space-wide);
+    border-radius: var(--lg);
   }
 }
 

@@ -1,8 +1,10 @@
 /* ================================== */
 /* Cards */
+@use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../2-visual/inset" as in;
 @use "../2-visual/glass";
+@use "../2-visual/shadow" as sha;
 /* ================================== */
 
 .card {
@@ -15,6 +17,8 @@
 
   /* visual */
   border-radius: var(--lg);
+  box-shadow: sha.$sha-xl;
+
 
   >.full-w-fill { 
     /* layout */
@@ -25,5 +29,24 @@
     /* visual */
     background-color: color.$tint-xdark;
     box-shadow: in.$flat-inset-lg;
+  }
+}
+
+
+.title-card {
+  /* layout */
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  place-items: center;
+  padding: var(--lg);
+
+  /* visual */
+  border-radius: var(--md);
+  box-shadow: sha.$sha-lg;
+
+  @include bp.bp(md) {
+    border-radius: var(--lg);
+    padding: var(--xl);
   }
 }

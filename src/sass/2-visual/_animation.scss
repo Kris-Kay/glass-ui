@@ -46,10 +46,6 @@ $speeds: (
 
   @include bp.bp(sm) {
     transform: perspective(5000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(15px) translateY(-20%);
-
-    // &:hover {
-    //   transform: perspective(5500px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateX(0) translateY(0);
-    // }
   }
 }
 

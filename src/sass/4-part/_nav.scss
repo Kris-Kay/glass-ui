@@ -13,7 +13,11 @@
 /* Main nav */
 /* ================================== */
 :root {
-  --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
+  --nav-h: calc(var(--ui-md) + (var(--space-thin) * 2));
+
+  @include bp.bp(sm) {
+    --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
+  }
 }
 
 nav {
@@ -32,6 +36,15 @@ nav {
   @include flex.flex-sb;
   @include flex.flex-c-y;
   pointer-events: none;
+}
+
+.main-nav__btn {
+  @include btn.round-btn-md;
+  @include btn.btn-glass-dark;
+
+  @include bp.bp(sm) {
+    @include btn.round-btn-lg;
+  }
 }
 
 .main-nav__ham {
