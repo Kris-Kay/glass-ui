@@ -17,3 +17,41 @@ $speeds: (
   "fast":  $speed-fast,
   "xfast": $speed-xfast
 );
+
+.perspective-bin {
+  position: relative;
+  perspective: 2500px;
+  // width:30rem;
+  // height:30rem;
+  width: 100%;
+  height: 100%;
+  border:3px solid #ccc;
+  padding: 2rem;
+  margin: var(--nav-h) auto 0 auto;
+  // gap: var(--md);
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.perspective {
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  gap: var(--sm);
+  place-items: center;
+  padding: var(--sm);
+
+  transform: perspective(2000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(25px) ;
+
+  transition: transform 800ms ease;
+
+  &:hover {
+    transform: perspective(2000px) rotateY(15deg) rotateX(10deg) rotateZ(-5deg) translateX(15px);
+  }
+}
+
+
+.slid-down-from-bottom {
+  transform-origin : 100% 0 0 scaleY(2);
+}
