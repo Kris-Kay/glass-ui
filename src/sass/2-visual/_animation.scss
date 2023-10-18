@@ -18,6 +18,32 @@ $speeds: (
   "xfast": $speed-xfast
 );
 
+
+.card-3d-bin {
+  position: relative;
+  perspective: 5500px;
+  width: 100%;
+  height: fit-content;
+  border:3px solid #ccc;
+  padding: 10%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.card-3d {
+  width: fit-content;
+  height: fit-content;
+
+  transform: perspective(5000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(25px) ;
+
+  transition: transform 1200ms ease-in-out;
+
+  &:hover {
+    transform: perspective(5500px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateX(0);
+  }
+}
+
 .perspective-bin {
   position: relative;
   perspective: 2500px;
@@ -28,9 +54,10 @@ $speeds: (
   border:3px solid #ccc;
   padding: 2rem;
   margin: var(--nav-h) auto 0 auto;
-  // gap: var(--md);
-  align-items: center;
-  align-content: space-around;
+  gap: var(--sm);
+  align-items: end;
+  align-content:end;
+  // align-content: space-around;
   justify-content: space-around;
 }
 
@@ -42,7 +69,7 @@ $speeds: (
   place-items: center;
   padding: var(--sm);
 
-  transform: perspective(2000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(25px) ;
+  transform: perspective(2000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg);
 
   transition: transform 800ms ease;
 

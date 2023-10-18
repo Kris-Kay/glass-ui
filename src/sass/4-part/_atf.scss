@@ -30,6 +30,20 @@
   }
 }
 
+.atf__card {
+  /* layout */
+  width: min(100%, 580px);
+  place-self: end center;
+  box-shadow: sha.$sha-xl;
+  @include bp.bp(md) {
+    place-self: end end;
+  }
+
+  // @include bp.bp(lg) {
+  //   width: 580px;
+  // }
+}
+
 
 
 .atf-md {
