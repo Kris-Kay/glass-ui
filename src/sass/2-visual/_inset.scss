@@ -7,6 +7,71 @@
 @use "glass";
 @use "shadow" as sha;
 /* ================================== */
+
+
+/* Inset → shadow only */
+/* ================================== */
+$inset-sha-xs: 
+  inset 0.25px 0.5px 1px rgba(color.$dark, 0.1),    // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
+
+$inset-sha-sm: 
+  inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // med top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // small top-left shadow
+
+
+$inset-sha-md: 
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // xl top-left shadow
+  inset 0.5px 1px 2px rgba(color.$dark, 0.1),    // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
+
+
+$inset-sha-lg: 
+  inset 2px 4px 8px rgba(color.$dark, 0.1), // xl top-left shadow
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.25), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
+
+
+$inset-sha-xl: 
+  inset 3px 6px 16px rgba(color.$dark, 0.05), // xl top-left shadow
+  inset 2px 4px 8px rgba(color.$dark, 0.1), // lg top-left shadow
+  inset 1px 2px 4px rgba(color.$dark, 0.1), // md-lg top-left shadow
+  inset 0.25px 0.75px 1.5px -0.5px rgba(color.$dark, 0.3), // md top-left shadow
+  inset 0.25px 0.25px 0.5px -0.5px rgba(color.$dark, 0.3); // sm top-left shadow
+
+
+.inset-sha-xs {
+  box-shadow: $inset-sha-xs;
+}
+
+.inset-sha-sm {
+  box-shadow: $inset-sha-sm;
+}
+
+.inset-sha-md {
+  box-shadow: $inset-sha-md;
+}
+
+.inset-sha-lg {
+  box-shadow: $inset-sha-lg;
+}
+
+.inset-sha-xl {
+  box-shadow: $inset-sha-xl;
+}
+
+
+
+
+
+
+
+
+
 /* Insets have both light and dark box-shadows to create a 3D effect */
 $inset-xs: 
   inset -1px -1px 1px -2px rgba(color.$light, 0.7),          // specular
@@ -92,9 +157,9 @@ $inset-xl:
 /* Flat insets  */
 /* ================================== */
 $flat-inset-sm: 
-  inset 0 -0.25px 0.1px -0.35px rgba(color.$light, 0.15), // specular
-  inset 0 -2px 1px -2px rgba(color.$light, 0.15),     // bevel blur
-  inset 0 -1.5px 0.1px -1px rgba(color.$light, 0.03),      // bevel highlight
+  inset 0 -0.5px 0.3px -0.4px rgba(color.$light, 0.15), // specular
+  inset 0 -1px 0.8px -1px rgba(color.$light, 0.2),     // bevel blur
+  inset 0 -1px 0 rgba(color.$light, 0.06),      // bevel
 
   inset 0 0.5px 1px -1px rgba(color.$dark, 0.7), // small shadow
   inset 0 1px 2px -2px rgba(color.$dark, 0.5), // med shadow
@@ -105,9 +170,9 @@ $flat-inset-sm:
 }
 
 $flat-inset-md: 
-  inset 0 -0.5px 0.1px -0.4px rgba(color.$light, 0.15), // specular
-  inset 0 -2px 1px -1.8px rgba(color.$light, 0.15),     // bevel blur
-  inset 0 -1.6px 0 -1px rgba(color.$light, 0.03),      // bevel highlight
+  inset 0 -0.5px 0.3px -0.4px rgba(color.$light, 0.1), // specular
+  inset 0 -1.6px 1.3px -1.6px rgba(color.$light, 0.2),     // bevel blur
+  inset 0 -1.6px 0  rgba(color.$light, 0.06),      // bevel
 
   inset 0 0.5px 1px -1px rgba(color.$dark, 0.5), // small shadow
   inset 0 1px 2px -2px rgba(color.$dark, 0.5), // small shadow
@@ -119,9 +184,9 @@ $flat-inset-md:
 }
 
 $flat-inset-lg: 
-  inset 0 -0.5px 0.1px -0.4px rgba(color.$light, 0.15), // specular
-  inset 0 -2px 1.5px -2px rgba(color.$light, 0.5),     // bevel blur
-  inset 0 -2px 0  rgba(color.$light, 0.1),      // bevel highlight
+  inset 0 -0.5px 0.3px -0.4px rgba(color.$light, 0.1), // specular
+  inset 0 -2px 1.8px -2px rgba(color.$light, 0.2),     // bevel blur
+  inset 0 -2px 0  rgba(color.$light, 0.06),      // bevel highlight
 
   inset 0 0.5px 1px -1px rgba(color.$dark, 0.5), // small shadow
   inset 0 2px 4px -4px rgba(color.$dark, 0.5), // small shadow
@@ -299,7 +364,7 @@ $inset-shadow-sm:
 .inset-glass-md {
   position: relative;
   // background-color: color.$tint-dark;
-  @include fill.fill-xdark;
+  @include fill.fill(xdark);
   box-shadow: $inset-lg;
 
   // box-sizing: content-box;

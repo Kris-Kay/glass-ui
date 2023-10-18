@@ -11,6 +11,7 @@
 @use "../2-visual/border" as br;
 @use "../2-visual/bevel";
 @use "../2-visual/fill";
+@use "../2-visual/inset" as in;
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -24,7 +25,7 @@
   font-weight: text.$font-weight-sm;
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
-  color: color.$text-light;
+  color: var(--text);
   z-index: z.z(on-btn);
   text-shadow: sha.$text-sha-sm;
 }
@@ -198,6 +199,38 @@
 //* Button state & visual styling */
 /* ================================== */
 
+/* Button hover & active */
+/* ================================== */
+@mixin btn-interactions {
+  transition: 
+    background-color ani.$speed-slow ease,
+    box-shadow ani.$speed-slow ease-out,
+    color ani.$speed-slow ease-out;
+
+  &:hover {
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
+    box-shadow: sha.$sha-md;
+    
+    transition: 
+      background-color ani.$speed-reg ease-in,
+      box-shadow ani.$speed-reg ease-in,
+      color ani.$speed-fast ease-in;
+  }
+
+  &:active {
+    background-color: var(--btn-bg-active);
+    color: var(--btn-text-active);
+    box-shadow:  in.$inset-xs;
+
+    transition: 
+      background-color ani.$speed-fast ease-in,
+      box-shadow ani.$speed-reg ease-in,
+      color ani.$speed-reg ease-in;
+  }
+}
+
+
 /* Base → 3D button glass material */
 @mixin btn-glass-base {
   position: relative;
@@ -221,20 +254,55 @@
   }
 }
 
-/* Reg → 3D button glass */
+/* light & dark → 3D button glass */
+@mixin btn-glass-both {
+  position: relative;
+
+  @include fill.glass-filter;
+  box-shadow: sha.$sha-sm;
+  background-color: var(--btn-bg-rest);
+  color: var(--btn-text-rest);
+
+  @include btn-interactions;
+
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-sm;
+  }
+
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+    @include fill.noise-sm;
+    opacity: 70%;
+  }
+}
+
+
 @mixin btn-glass-clear {
-  @include btn-glass-base;
-  background-color: color.$tint-clear;
-
-  &:hover {
-    background-color: color.$tint-light;
-    color: color.$text-light;
+  position: relative;
+  @include fill.glass-filter;
+  // transition: 
+  //   background-color ani.$speed-slow ease,
+  //   color ani.$speed-slow ease;
+  box-shadow: sha.$sha-xs;
+  // background-color: var(--btn-bg-rest);
+  
+  &::after {
+    @include help.pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel-sm;
   }
 
-  &:active {
-    background-color: color.$tint-xlight;
-    color: color.$text-dark;
+  &::before {
+    @include help.pseudo;
+    z-index: -2;
+    @include fill.noise-sm;
+    opacity: 70%;
   }
+
+  @include btn-interactions;
 }
 
 /* Light → 3D button glass */
@@ -242,15 +310,16 @@
   @include btn-glass-base;
   background-color: color.$tint-xlight;
 
-  &:hover {
-    background-color: color.$tint-2xlight;
-    color: color.$text-dark-mild;
-  }
+  @include btn-interactions;
+  // &:hover {
+  //   background-color: color.$tint-2xlight;
+  //   color: color.$text-dark-mild;
+  // }
 
-  &:active {
-    background-color: color.$tint-3xlight;
-    color: color.$text-dark;
-  }
+  // &:active {
+  //   background-color: color.$tint-3xlight;
+  //   color: color.$text-dark;
+  // }
 }
 
 /* Dark → 3D button glass */
@@ -258,14 +327,20 @@
   @include btn-glass-base;
   background-color: color.$tint-xdark;
 
-  &:hover {
-    background-color: color.$tint-2xdark;
-  }
+  @include btn-interactions;
+  
+  // &:hover {
+  //   background-color: color.$tint-2xdark;
+  // }
 
-  &:active {
-    background-color: color.$tint-3xdark;
-    color: color.$text-light;
-  }
+  // &:active {
+  //   background-color: color.$tint-3xdark;
+  //   color: color.$text-light;
+  // }
+}
+
+.btn-glass-both {
+  @include btn-glass-both;
 }
 
 .btn-glass-clear {
@@ -284,23 +359,10 @@
 /* ================================== */
 @mixin btn-clear {
   background-color: transparent;
-  transition: 
-    background-color ani.$speed-slow ease,
-    box-shadow ani.$speed-slow ease,
-    color ani.$speed-slow ease;
+  color: var(--btn-text-rest);
   box-shadow: none;
 
-  &:hover {
-    background-color: color.$tint-light;
-    color: color.$text-light;
-    box-shadow: sha.$sha-sm;
-  }
-
-  &:active {
-    background-color: color.$tint-xlight;
-    color: color.$text-dark;
-    box-shadow: sha.$sha-xs;
-  }
+  @include btn-interactions;
 }
 
 .btn-clear {

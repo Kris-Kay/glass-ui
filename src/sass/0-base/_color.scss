@@ -6,20 +6,6 @@
 /* ================================== */
 // * The number in the color name is its HSL lightness value */
 
-// * Snow
-$snow95: rgb(239, 242, 245);
-$snow90: rgb(223, 228, 236);
-$snow80: rgb(192, 202, 216);
-$snow70: rgb(160, 175, 197);
-$snow65: rgb(144, 161, 187);
-
-// * Gray
-$gray60: rgb(143, 151, 163);
-$gray50: rgb(115, 125, 140);
-$gray40: rgb(92, 100, 112);
-$gray30: rgb(69, 75, 84);
-$gray20: rgb(46, 50, 56);
-
 // * Sky
 $sky99: rgb(250, 254, 255);
 $sky98: rgb(245, 252, 255);
@@ -30,6 +16,27 @@ $sky70: rgb(106, 209, 251);
 $sky60: rgb(56, 195, 250);
 $sky50: rgb(6, 181, 249);
 
+// * Leaf H80 S80 L--
+$leaf80: rgb(218, 245, 163);
+$leaf70: rgb(199, 240, 117);
+$leaf60: rgb(180, 235, 71);
+$leaf40:  rgb(129, 184, 20);
+$leaf30: rgb(97, 138, 15);
+
+// * Snow
+$snow95: rgb(239, 242, 245);
+$snow90: rgb(223, 228, 236);
+$snow80: rgb(192, 202, 216);
+$snow70: rgb(160, 175, 197);
+$snow65: rgb(144, 161, 187);
+
+// * Ash
+$gray60: rgb(143, 151, 163);
+$gray50: rgb(115, 125, 140);
+$gray40: rgb(92, 100, 112);
+$gray30: rgb(69, 75, 84);
+$gray20: rgb(46, 50, 56);
+
 // * Ink
 $ink2:  rgb(0, 3, 10);
 $ink4: rgb(0, 7, 20);
@@ -37,12 +44,7 @@ $ink6: rgb(0, 10, 30);
 $ink8: rgb(0, 14, 40);
 $ink10: rgb(0, 17, 50);
 
-// * Leaf H80 S80 L--
-$leaf80: rgb(218, 245, 163);
-$leaf70: rgb(199, 240, 117);
-$leaf60: rgb(180, 235, 71);
-$leaf40:  rgb(129, 184, 20);
-$leaf30: rgb(97, 138, 15);
+
 
 
 /* Color opacity values */
@@ -185,4 +187,41 @@ $tints: (
 
 .tint {
   @include tint-modifier('background-color');
+}
+
+
+:root {
+  color-scheme: light dark;
+
+  // * Sky 
+  --primary-h: 197;
+  --primary-s: 95%;
+  --primary: (--primary-h), var(--primary-s);
+
+  // * Leaf 
+  --accent-h: 80;
+  --accent-s: 80%;
+  --accent: var(--accent-h), var(--accent-s);
+
+  // * Snow
+  --light-h: 200;
+  --light-s: 50%;
+  --light: var(--light-h), var(--light-s);
+
+  // * Ash
+  --gray-h: 200;
+  --gray-s: 25%;
+  --gray: var(--gray-h), var(--gray-s);
+
+  // * Ink 
+  --dark-h: 230;
+  --dark-s: 93%;
+  --dark: var(--dark-h), var(--dark-s);
+
+  --btn-bg-rest: hsla(var(--light), 50%, 1);
+  --btn-text-rest: hsla(var(--light), 80%, 1);
+  --btn-bg-hover: hsla(var(--light), 80%, 0.2);
+  --btn-text-hover: hsla(var(--light), 90%, 1);
+  --btn-bg-active: hsla(var(--light), 90%, 0.5);
+  --btn-text-active: hsla(var(--dark), 10%, 1);
 }
