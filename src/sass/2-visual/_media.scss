@@ -3,6 +3,7 @@
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "shadow" as sha;
+@use "../1-layout/grid";
 /* ================================== */
 
 /* SVG icons */
@@ -40,4 +41,30 @@
 
 img {
   max-width: 100%;
+}
+
+
+.text-over-img-bin {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  @include grid.grid-center;
+}
+
+.img-w-overlay {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: 25vh;
+  margin: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: fit-content;
+  padding: var(--space-thin);
+  background-color: color.$tint-dark;
+  border-radius: var(--sm);
 }

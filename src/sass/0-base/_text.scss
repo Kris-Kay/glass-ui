@@ -1,5 +1,6 @@
 /* ================================== */
 /* Text */
+@use "../0-base/breakpoint" as bp;
 @use "color";
 @use "size";
 @use "../2-visual/shadow" as sha;
@@ -291,4 +292,19 @@ pre code {
   text-align: center;
   @include title-thin;
   font-size: var(--text-2xl);
+}
+
+
+.thin-heading {
+  @include title-thin;
+  font-size: var(--text-md);
+  line-height: $line-height-md;
+
+  @include bp.bp(sm) {
+    font-size: var(--text-lg);
+  }
+
+  @include bp.bp(md) {
+    font-size: var(--text-xl);
+  }
 }

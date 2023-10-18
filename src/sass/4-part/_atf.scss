@@ -7,41 +7,39 @@
 .atf {
   /* layout */
   min-height: calc(100vh - var(--nav-h));
-  min-height: calc(100svh - var(--nav-h));
-  display: grid;
-  padding-bottom: var(--space-wide);
+  // min-height: calc(100svh - var(--nav-h));
+  height: fit-content;
 
-  @media (height < 500px) {
-    grid-template-rows: var(--nav-h) auto auto 1rem;
-  }
-  
-  > .atf__card {
-    /* layout */
-    width: min(100%, 450px);
-    place-self: end center;
-    box-shadow: sha.$sha-xl;
-    @include bp.bp(md) {
-      place-self: end end;
-    }
-  
-    @include bp.bp(lg) {
-      width: 580px;
-    }
+  display: grid;
+  // grid-template-rows: auto auto 1rem;
+  margin: var(--nav-h) auto 0 auto;
+  padding-bottom: var(--nav-h);
+
+  align-content: end;
+  // @media (height < 500px) {
+  //   grid-template-rows: var(--nav-h) auto auto 1rem;
+  // }
+}
+
+.atf__card-bin {
+  width: 100%;
+  height: 100%;
+  place-self: end center;
+
+  @include bp.bp(lg) {
+    place-self: end end;
   }
 }
 
 .atf__card {
   /* layout */
-  width: min(100%, 580px);
-  place-self: end center;
+  width: fit-content;
+  max-width: min(100%, 540px);
   box-shadow: sha.$sha-xl;
-  @include bp.bp(md) {
-    place-self: end end;
-  }
 
-  // @include bp.bp(lg) {
-  //   width: 580px;
-  // }
+  @include bp.bp(lg) {
+    max-width: min(100%, 580px);
+  }
 }
 
 

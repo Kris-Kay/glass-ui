@@ -34,15 +34,15 @@ $bright: 0.95;
   --blur: 20px;
 
   @include bp.bp(xs) {
-    --blur: 28px;
+    --blur: 20px;
   }
 
   @include bp.bp(md) {
-    --blur: 40px;
+    --blur: 28px;
   }
 
   @include bp.bp(lg) {
-    --blur: 64px;
+    --blur: 32px;
   }
 }
 

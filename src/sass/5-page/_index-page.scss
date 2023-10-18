@@ -30,7 +30,23 @@ body {
 
 
   &.dark {
+    // geo shapes 
     background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
+    background-blend-mode: multiply;
+    background-color: rgba(color.$ink10, 0.3);
+    //glass wall
+    // background-color: color.$ink10;
+    // background-image:  url(https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=3540);
+    // background-blend-mode: color-burn;
+
+    //cube
+    // background-image:  url(https://images.unsplash.com/photo-1677414026913-947aa348bdc7?auto=format&fit=crop&q=80&w=2358&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    // background-blend-mode: hard-light;
+
+
+    // background-image:  url(https://images.unsplash.com/photo-1677214467782-e6befd6cdd66?auto=format&fit=crop&q=80&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    // background-blend-mode: luminosity;
+
 
     // background-image: url(/assets/bgImg/geo-aqua.jpg);
     // background-image: url(/assets/bgImg/black-paper.jpg);
