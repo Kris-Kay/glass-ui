@@ -6,10 +6,10 @@
   "use strict";
 
   $(function () {
-    // $("#content").load("/html/home.html");
+    $("#content").load("/html/home.html");
     // $("#content").load("/html/about.html");
     // $("#content").load("/html/documentation.html");
-    $("#content").load("/html/demo.html");
+    // $("#content").load("/html/demo.html");
     // $("#content").load("/html/tutorial.html");
 
     $("#js-home").on( "click", function(event) {

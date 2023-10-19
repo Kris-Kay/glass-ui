@@ -172,3 +172,24 @@
   place-content: center start;
 }
 
+.color {
+  div:nth-child(1) {
+    background-color: hsl(0 0% 50%);
+  }
+  div:nth-child(2) {
+    background-color: hsl(0 20% 50%);
+  }
+  div:nth-child(3) {
+    background-color: hsl(0 40% 50%);
+  }
+  div:nth-child(4) {
+    background-color: hsl(0 60% 50%);
+  }
+  div:nth-child(5) {
+    background-color: hsl(0 80% 50%);
+  }
+  div:nth-child(6) {
+    background-color: hsl(0 100% 50%);
+  }
+}
+

@@ -9,14 +9,8 @@
   min-height: calc(100vh - var(--nav-h));
   // min-height: calc(100svh - var(--nav-h));
   display: grid;
-  // grid-template-rows: auto auto 1rem;
   margin: var(--nav-h) auto 0 auto;
   padding-bottom: var(--nav-h);
-
-  // align-content: end;
-  // @media (height < 500px) {
-  //   grid-template-rows: var(--nav-h) auto auto 1rem;
-  // }
 }
 
 .atf__title-only {
@@ -50,39 +44,3 @@
     max-width: min(100%, 580px);
   }
 }
-
-
-
-// .atf-md {
-//   /* layout */
-
-
-//   > .atf__card {
-//     /* layout */
-//     width: fit-content;
-//     place-self: center;
-//     box-shadow: sha.$sha-xl;
-
-//     --space: var(--lg); // < control padding from here
-
-//     /* layout */
-//     padding: var(--space);
-//     display: grid;
-//     gap: var(--space);
-  
-//     /* visual */
-//     border-radius: var(--md);
-  
-//     // >.full-w-fill { 
-//     //   /* layout */
-//     //   padding: var(--space);
-//     //   margin-left: calc((-1 * var(--space)) + 0.5px);
-//     //   margin-right: calc(-1 * var(--space));
-  
-//     //   /* visual */
-//     //   background-color: color.$tint-xdark;
-//     //   box-shadow: in.$flat-inset-lg;
-//     // }
-//   }
-// }
-
