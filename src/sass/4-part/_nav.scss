@@ -33,9 +33,10 @@ nav {
 
 .main-nav {
   padding-top: var(--space-thin);
-  @include flex.flex-sb;
+  @include flex.flex-r;
   @include flex.flex-c-y;
   pointer-events: none;
+  gap: var(--sm)
 }
 
 .main-nav__btn {

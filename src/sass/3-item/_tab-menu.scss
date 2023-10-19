@@ -15,7 +15,7 @@
   width: fit-content;
   max-width: 100%;
   height: var(--ui-md);
-  margin: 0 auto;
+  // margin: 0 auto;
   @include flex.flex-c;
   gap: size.$s1;
 
