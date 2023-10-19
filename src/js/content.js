@@ -24,11 +24,11 @@
       $("#content").load("/html/about.html");
     }); 
 
-    $("#js-demo").on( "click", function(event) {
-      event.preventDefault();
-      $(window).scrollTop(0);
-      $("#content").load("/html/demo.html");
-    }); 
+    // $("#js-demo").on( "click", function(event) {
+    //   event.preventDefault();
+    //   $(window).scrollTop(0);
+    //   $("#content").load("/html/demo.html");
+    // }); 
 
     // $("#js-tutorial").on( "click", function(event) {
     //   event.preventDefault();
