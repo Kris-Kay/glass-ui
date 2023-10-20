@@ -28,20 +28,34 @@ nav {
 
 .main-nav__wrap {
   position: fixed;
+  width: 100%;
   inset: 0;
 }
 
 .main-nav {
-  padding-top: var(--space-thin);
-  @include flex.flex-r;
-  @include flex.flex-c-y;
+  padding: var(--space-thin);
+  // padding-top: var(--space-thin);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
   pointer-events: none;
-  gap: var(--sm)
+  gap: var(--xs)
+}
+
+
+
+/* Dropdown */
+/* ================================== */
+.dropdown-wrap {
+  position: relative;
+  @include flex.flex-r;
 }
 
 .main-nav__btn {
   @include btn.round-btn-md;
   @include btn.btn-glass-dark;
+
 
   @include bp.bp(sm) {
     @include btn.round-btn-lg;
@@ -64,13 +78,9 @@ nav {
   }
 }
 
-/* Dropdown */
-/* ================================== */
 .main-nav__dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: z.z(menu);
-  // pointer-events: none;
+  display: block;
+  z-index: 200;
   cursor: pointer;
   
   &.isClosed {
@@ -80,10 +90,9 @@ nav {
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-lg) / 3); 
+  top: calc(var(--ui-lg) * 1.25); 
   right: 0;
   padding: var(--sm);
-  // pointer-events: none;
   cursor: pointer;
 
   border-radius: var(--sm);
@@ -99,10 +108,10 @@ nav {
 }
 
 .dropdown__item {
+  cursor: pointer;
   min-width: max-content;
   width: 100%;
   color: rgba(color.$text-light, 0.7);
   letter-spacing: text.$letter-spacing-lg;
   font-weight: text.$font-weight-lg;
-  padding: 0 var(--sm);
 }

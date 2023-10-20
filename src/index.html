@@ -32,7 +32,7 @@
 
 <!-- Nav -->
 <!-- ================================== -->
-    <nav class="max-w-gutter main-nav__wrap">
+    <nav class="main-nav__wrap">
       <div class="max-w main-nav">
         <!-- <a
           href="#top-of-page"
@@ -57,25 +57,26 @@
           </button>
         </div>
 
-    
-        <button
-          type="button"
-          id="js-dropdownToggle"
-          class="main-nav__btn"
-        >
-          <img
-            src="assets/icons/List.svg"
-            alt="Open nav dropdown"
-            id="js-navHam"
-            class="isClosed main-nav__ham"
-          />
-          <img
-            src="/assets/icons/X.svg"
-            alt="Close nav dropdown"
-            id="js-navX"
-            class="isClosed main-nav__x"
-          />
-        </button>
+        <div class="dropdown-wrap">
+        <!-- Dropdown toggle -->
+          <button
+            type="button"
+            id="js-dropdownToggle"
+            class="main-nav__btn"
+          >
+            <img
+              src="assets/icons/List.svg"
+              alt="Open nav dropdown"
+              id="js-navHam"
+              class="isClosed main-nav__ham"
+            />
+            <img
+              src="/assets/icons/X.svg"
+              alt="Close nav dropdown"
+              id="js-navX"
+              class="isClosed main-nav__x"
+            />
+          </button>
 
           <!-- Dropdown -->
           <div id="js-navDropdown" class="main-nav__dropdown isClosed">
@@ -101,10 +102,12 @@
                   class="js-dropdownItem dropdown__item btn-md btn-clear">
                   Demo
                 </a> -->
-  
+
               </div>
             </div>
           </div>
+        </div>
+
     
       </div>
     </nav>

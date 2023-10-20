@@ -29,8 +29,8 @@
     --space-wide: #{size.$s11}; // 44px
 
     --ui-sm: #{size.$s8};  /* 32px */
-    --ui-md: #{size.$s10}; /* 40px */
-    --ui-lg: #{size.$s11}; /* 44px */
+    // --ui-md: #{size.$s10}; /* 40px */
+    // --ui-lg: #{size.$s11}; /* 44px */
 
     --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
   }
