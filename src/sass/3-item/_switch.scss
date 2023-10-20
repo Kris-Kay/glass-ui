@@ -1,0 +1,84 @@
+/* ================================== */
+/* Switch */
+@use "../2-visual/animation" as ani;
+@use "../2-visual/border" as br;
+@use "../2-visual/shadow" as sha;
+@use "../2-visual/inset" as in;
+/* ================================== */
+
+
+input[type=checkbox].switch {
+  /* config */
+	--_switch-height: var(--switch-height, var(--ui-sm));
+  --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
+	--_thumb-margin: var(--thumb-margin, 3px);
+
+  /* layout */
+	display: inline-flex;
+	vertical-align: var(--_thumb-margin);
+	align-items: center;
+	width: var(--_switch-width);
+	height: var(--_switch-height);
+
+  /* visual */
+  -webkit-appearance: none;
+  background: var(--inset-sm);
+  box-shadow: in.$inset-md;
+	border-radius: br.$round;
+	cursor: pointer;
+	transition: ani.$speed-reg background ease;
+	
+	&::before {
+    /* layout */
+		content: "";
+		display: block;
+		aspect-ratio: 1 / 1;
+		margin: var(--_thumb-margin);
+		height: calc(100% - 2 * var(--_thumb-margin));
+
+    /* visual */
+		background: oklch(var(--light) / 0.7);
+    border-radius: br.$round;
+    box-shadow: sha.$sha-xs;
+		transition: margin;
+    transition-duration: inherit;
+	}
+	
+	&:checked {
+    background: oklch(var(--primary) / 0.4);
+		
+		&::before {
+			margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));
+      background: oklch(var(--light) / 0.9);
+		}
+	}
+	
+	&:disabled {
+		filter: grayscale(1);
+		opacity: .7;
+		cursor: not-allowed;
+
+    &::before {
+      background: oklch(var(--light) / 0.3);
+    }
+
+    &:focus {
+      outline: none;
+    }
+	}
+}
+
+.switch.sm {
+  --thumb-margin: 3px;
+  --switch-height: var(--ui-sm);
+}
+
+.switch.md {
+  --thumb-margin: 3.5px;
+  --switch-height: var(--ui-md);
+}
+
+.switch.lg {
+  --thumb-margin: 4px;
+  --switch-height: var(--ui-lg);
+}

@@ -64,3 +64,38 @@
     gap: var(--xl);
   }
 }
+
+
+.grid-3x3 {
+  display: grid;
+  grid-template-columns: max-content auto auto;
+  align-items: center;
+
+  >:nth-child(1) {
+    grid-row: 1;
+  }
+  
+  >:nth-child(2) {
+    grid-row: 2;
+  }
+  
+  >:nth-child(3) {
+    grid-row: 3;
+  }
+}
+
+.grid-3x3__sub {
+  display: contents;
+
+  >:nth-child(1) {
+    grid-column: 1;
+  }
+  
+  >:nth-child(2) {
+    grid-column: 2;
+  }
+  
+  >:nth-child(3) {
+    grid-column: 3;
+  }
+}
