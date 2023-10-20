@@ -14,7 +14,7 @@
 .tab-menu {
   width: fit-content;
   max-width: 100%;
-  height: var(--ui-sm);
+  height: var(--ui-md);
   margin: 0 auto;
   @include flex.flex-c;
   gap: size.$s1;
@@ -26,7 +26,10 @@
 
   @include bp.bp(xs) {
     gap: var(--3xs);
-    height: var(--ui-md);
+  }
+
+  @include bp.bp(md) {
+    height: var(--ui-lg);
   }
 }
 
