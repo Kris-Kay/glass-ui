@@ -50,54 +50,54 @@
 
 
 
-input[type="checkbox"] {
-  appearance: none;
-  background-color: color.$tint-xdark;
-  margin: 0;
-  box-shadow: in.$inset-xs;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 0.15rem;
-  // transform: translateY(-0.075em);
-  display: grid;
-  place-content: center;
-}
+// input[type="checkbox"] {
+//   appearance: none;
+//   background-color: color.$tint-xdark;
+//   margin: 0;
+//   box-shadow: in.$inset-xs;
+//   width: 1rem;
+//   height: 1rem;
+//   border-radius: 0.15rem;
+//   // transform: translateY(-0.075em);
+//   display: grid;
+//   place-content: center;
+// }
 
-input[type="checkbox"]::before {
-  content: "";
-  width: 0.7rem;
-  height: 0.7rem;
-  transform: scale(0);
-  transition: transform ani.$speed-fast ease-in-out;
-  background-color: color.$color-prim;
-  border-radius: 0.1rem;
-}
+// input[type="checkbox"]::before {
+//   content: "";
+//   width: 0.7rem;
+//   height: 0.7rem;
+//   transform: scale(0);
+//   transition: transform ani.$speed-fast ease-in-out;
+//   background-color: color.$color-prim;
+//   border-radius: 0.1rem;
+// }
 
-input[type="checkbox"]:checked::before {
-  transform: scale(1);
-}
+// input[type="checkbox"]:checked::before {
+//   transform: scale(1);
+// }
 
-input[type="checkbox"]:disabled {
-  color: color.$disabled;
-  background-color: color.$disabled;
-  box-shadow: in.$inset-sha-xs;
-  cursor: not-allowed;
-}
+// input[type="checkbox"]:disabled {
+//   color: color.$disabled;
+//   background-color: color.$disabled;
+//   box-shadow: in.$inset-sha-xs;
+//   cursor: not-allowed;
+// }
 
 
 // .checkbox {
 //   background-color: color.$dark;
 // }
 
-.checkbox__label {
-  font-weight: text.$font-weight-md;
-  display: grid;
-  grid-template-columns: 1rem auto;
-  align-items: center;
-  gap: 0.25rem;
-}
+// .checkbox__label {
+//   font-weight: text.$font-weight-md;
+//   display: grid;
+//   grid-template-columns: 1rem auto;
+//   align-items: center;
+//   gap: 0.25rem;
+// }
 
-.checkboxes {
-  display: grid;
-  gap: 0.5rem;
-}
+// .checkboxes {
+//   display: grid;
+//   gap: 0.5rem;
+// }

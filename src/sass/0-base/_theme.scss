@@ -1,0 +1,157 @@
+/* ================================== */
+/* Theme */
+/* ================================== */
+html.root-transition,
+html.root-transition *,
+html.root-transition *:before,
+html.root-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --primary-l: 70%;
+  --primary-c: 0.14;
+  --primary-h: 200;
+  --primary-ch: var(--primary-c) var(--primary-h);
+  --primary: var(--primary-l) var(--primary-c) var(--primary-h);
+
+  --accent-l: 50%;
+  --accent-c: 0.14;
+  --accent-h: 45;
+  --accent-ch: var(--accent-c) var(--accent-h);
+  --accent: var(--accent-l) var(--accent-c) var(--accent-h);
+
+  --light-l: 98%;
+  --light-c: 0.03;
+  --light-h: 210;
+  --light-ch: var(--light-c) var(--light-h);
+  --light: var(--light-l) var(--light-c) var(--light-h);
+
+  --gray-l: 50%;
+  --gray-c: 0.02;
+  --gray-h: 220;
+  --gray-ch: var(--gray-c) var(--gray-h);
+  --gray: var(--gray-l) var(--gray-c) var(--gray-h);
+
+  --dark-l: 20%;
+  --dark-c: 0.04;
+  --dark-h: 250;
+  --dark-ch: var(--dark-c) var(--dark-h);
+  --dark: var(--dark-l) var(--dark-c) var(--dark-h);
+
+/* Dark Mode */
+/* ================================== */
+  --page-bg: oklch(20% var(--dark-ch) / 1);
+  --footer-bg: oklch(15% var(--dark-ch) / 1);
+
+  --page-title: oklch(80% var(--light-ch) / 1);
+  --section-title: oklch(50% var(--accent-ch) / 1);
+  --subtitle: oklch(60% var(--light-ch) / 1);
+
+  --text-reg: oklch(80% var(--light-ch) / 1);
+  --text-mild: oklch(75% var(--gray-ch) / 1);
+  --text-xmild: oklch(70% var(--light-ch) / 1);
+
+  --link-rest: oklch(60% var(--primary-ch) / 1);
+  --link-hover: oklch(84% var(--primary-ch) / 1);
+  --link-visited: oklch(40% var(--primary-ch) / 1);
+
+  --cta-bg-rest: oklch(50% var(--primary-ch) / 1);
+  --cta-bg-hover: oklch(70% var(--primary-ch) / 1);
+  --cta-bg-active: oklch(40% var(--primary-ch) / 1);
+  --cta-text-rest: oklch(10% var(--dark-ch) / 1);
+  --cta-text-hover: oklch(10% var(--dark-ch) / 1);
+  --cta-text-active: oklch(5% var(--dark-ch) / 1);
+
+  --btn-bg-rest: oklch(80% var(--light-ch) / 0.15);
+  --btn-bg-hover: oklch(80% var(--light-ch) / 0.4);
+  --btn-bg-active: oklch(80% var(--light-ch) / 0.7);
+  --btn-text-rest: oklch(95% var(--light-ch) / 1);
+  --btn-text-hover: oklch(98% var(--light-ch) / 1);
+  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+
+  --shadow: oklch(50% var(--light-ch) / 1);
+  --highlight: oklch(98% var(--light-ch) / 1);
+
+  --inset-sm: oklch(5% var(--dark-ch) / 0.15);
+  --inset-md: oklch(5% var(--dark-ch) / 0.25);
+  --inset-lg: oklch(5% var(--dark-ch) / 0.35);
+
+  --glass-card: oklch(5% var(--dark-ch) / 0.1);
+  --bg-xmild: oklch(5% var(--dark-ch) / 0.4);
+
+  // filter values
+  --filter-bright: 0.75;
+}
+
+/* Light Mode */
+/* ================================== */
+:root[data-theme="light"] {
+
+  --page-bg: oklch(90% 0.05 var(--primary-h) / 1);
+  --footer-bg: oklch(85% var(--light-ch) / 1);
+
+  --text-reg: oklch(30% var(--dark-ch) / 1);
+  --text-mild: oklch(40%  var(--gray-ch) / 1);
+  --text-xmild: oklch(50% var(--gray-ch) / 1);
+
+  --page-title: oklch( 30% var(--dark-ch) / 1);
+  --section-title: oklch(60% var(--accent-ch) / 1);
+  --subtitle: oklch(60% var(--dark-ch) / 1);
+
+
+  --link-rest: oklch(60% var(--primary-ch) / 1);
+  --link-hover: oklch(50% var(--primary-ch) / 1);
+  --link-visited: oklch(40% var(--primary-ch) / 1);
+
+  --cta-bg-rest: oklch(50% var(--primary-ch) / 1);
+  --cta-text-rest: oklch(10% var(--dark-ch) / 1);
+  --cta-bg-hover: oklch(70% var(--primary-ch) / 1);
+  --cta-text-hover: oklch(10% var(--dark-ch) / 1);
+  --cta-bg-active: oklch(40% var(--primary-ch) / 1);
+  --cta-text-active: oklch(5% var(--dark-ch) / 1);
+
+  --btn-bg-rest: oklch(97% var(--light-ch) / 0.6);
+  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+
+  --btn-text-rest: oklch(40% var(--dark-ch) / 1);
+  --btn-text-hover: oklch(30% var(--dark-ch) / 1);
+  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+
+  --shadow: oklch(50% var(--light-ch) / 1);
+  --highlight: oklch(98% var(--light-ch) / 1);
+
+  --inset-sm: oklch(50% var(--gray-ch) / 0.1);
+  --inset-md: oklch(10% var(--gray-ch) / 0.15);
+  --inset-lg: oklch(5% var(--gray-ch) / 0.15);
+
+  --bg-xmild: oklch(95% var(--light-ch) / 0.2);
+  --glass-card: oklch(100% var(--gray-ch) / 0.1);
+
+  // filter values
+  --filter-bright: 0.98;
+};
+
+.dark {
+  background-color: oklch(var(--dark) / 1);
+}
+
+.gray {
+  background-color: oklch(var(--gray) / 1);
+}
+
+.light {
+  background-color: oklch(var(--light) / 1);
+}
+
+.primary {
+  background-color: oklch(var(--primary) / 1);
+}
+
+.accent {
+  background-color: oklch(var(--accent) / 1);
+}

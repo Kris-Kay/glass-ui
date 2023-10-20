@@ -2,6 +2,7 @@
 /* Home */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
+@use "../0-base/text";
 /* ================================== */
 
 .glassGPT__wrap {
@@ -38,4 +39,10 @@
     z-index: 1;
     pointer-events: none;
   }
+}
+
+
+.class-name {
+  @include text.title-text;
+  font-size: var(--text-md);
 }

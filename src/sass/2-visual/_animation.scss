@@ -2,10 +2,9 @@
 /* Animation */
 @use "../0-base/breakpoint" as bp;
 /* ================================== */
-
 $speed-xslow: 1000ms;
-$speed-slow:  800ms;
-$speed-reg:   500ms;
+$speed-slow:  600ms;
+$speed-reg:   400ms;
 $speed-fast:  200ms;
 $speed-xfast: 100ms;
 
@@ -18,7 +17,6 @@ $speeds: (
   "fast":  $speed-fast,
   "xfast": $speed-xfast
 );
-
 
 .card-3d-bin {
   position: relative;

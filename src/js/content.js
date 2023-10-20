@@ -36,4 +36,12 @@
     //   $("#content").load("/html/tutorial.html");
     // }); 
   });
+
+  $(function () {
+    $(".js-home").on( "click", function(event) {
+      event.preventDefault();
+      $(window).scrollTop(0);
+      $("#content").load("/html/home.html");
+    }); 
+  });
 })();
