@@ -10,14 +10,14 @@
 /* Thin box */
 /* ================================== */
 @mixin box-thin {
-  display: grid;
-  gap: var(--sm);
-  margin: 0 auto;
+  // display: grid;
+  // gap: var(--sm);
+  // margin: 0 auto;
   padding: var(--space-thin);
   border-radius: var(--sm);
 
   @include bp.bp(sm) {
-    gap: var(--md);
+    // gap: var(--md);
     border-radius: var(--md);
   }
 }

@@ -31,14 +31,14 @@ $satu: 1.3;
 $bright: 0.95;
 
 :root {
-  --blur: 20px;
+  --blur: 16px;
 
   @include bp.bp(xs) {
-    --blur: 20px;
+    --blur: 18px;
   }
 
   @include bp.bp(md) {
-    --blur: 28px;
+    --blur: 24px;
   }
 
   @include bp.bp(lg) {

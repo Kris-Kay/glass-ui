@@ -51,7 +51,7 @@
 
 .accordion__bottom {
   display: grid;
-  gap: size.$s1;
+  gap: var(--space-thin);
 
   &.full-w-fill {
     /* layout */
@@ -129,10 +129,9 @@
   margin-top: calc(-1 * var(--lg));
   margin-left: auto;
   margin-right: auto;
-  transition: max-height 1000ms ease;
+  transition: height 1000ms ease;
 
   /* visual */
-  background-color: color.$dark;
   border-radius: 0 0 var(--lg) var(--lg);
   box-shadow: sha.$sha-2xl;
 
@@ -149,6 +148,6 @@
 }
 
 .accordion__text {
-  width: fit-content;
   max-width: 100%;
+  font-size: var(--text-md);
 }

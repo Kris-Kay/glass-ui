@@ -45,7 +45,7 @@ input[type=checkbox].switch {
 	}
 	
 	&:checked {
-    background: oklch(var(--primary) / 0.5);
+    background: oklch(var(--accent) / 0.5);
 		
 		&::before {
 			margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));

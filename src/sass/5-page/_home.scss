@@ -46,3 +46,24 @@
   @include text.title-text;
   font-size: var(--text-md);
 }
+
+.demo-panelWrap {
+  height: 300px;
+  width: 100%;
+  border-radius: var(--lg);
+  overflow: hidden;
+
+  @include bp.bp(md) {
+    height: 600px;
+  }
+}
+
+.tab-demo-img {
+  // display: block;
+  // width: auto;
+  // height: 100%;
+  // object-fit: scale-down;
+  width: 100%;
+  max-width: 100%;
+  object-position: center;
+}
