@@ -1,8 +1,8 @@
 /* ================================== */
-/* Tab menu */
+/* Tab menu 2 */
 /* ================================== */
 
-// window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const $tabs = document.querySelectorAll('[role="tab"]');
   const $tabList = document.querySelector('[role="tablist"]');
 
@@ -37,16 +37,15 @@
       $tabs[$tabFocus].focus();
     }
   });
-// });
+});
 
 function changeTabs(e) {
   const $thisTab = e.target;
   const $thisTabList = $thisTab.parentNode;
-  const $thisPanelId = $thisTab.getAttribute("aria-controls");
-  const $thisPanelWrap = document.getElementById(`${$thisPanelId}`).parentNode;
-  const $panels = $thisPanelWrap.querySelectorAll('[role="tabpanel"]');
-  const $thisPanel = document.getElementById(`${$thisPanelId}`);
-  // console.log($thisPanel);
+  const $panelWrap = document.getElementById("js-panelWrap");
+  const $panels = document.querySelectorAll('[role="tabpanel"]');
+  const $panelId = $thisTab.getAttribute("aria-controls");
+  const $thisPanel = document.getElementById(`${$panelId}`);
 
   // Remove all current selected tabs
   $thisTabList
@@ -55,8 +54,7 @@ function changeTabs(e) {
 
   // Set this tab as selected
   $thisTab.setAttribute("aria-selected", true);
-  // console.log($thisTab);
-
+  console.log($thisTab);
   // Hide all tab panels
   $panels.forEach((p) => p.setAttribute("hidden", true));
 
