@@ -44,6 +44,6 @@ $round: 9999px;
 /* ================================== */
 .outline-thin-light {
   box-shadow: bevel.$bevel-lg;
-  outline: 1px solid rgba(color.$light, 0.15);
+  outline: 1px solid oklch(color.$light / 0.15);
   outline-offset: -1px;
 }

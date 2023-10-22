@@ -1,5 +1,6 @@
 /* ================================== */
 /* Switch */
+@use "../0-base/color";
 @use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
 @use "../2-visual/shadow" as sha;
@@ -22,7 +23,7 @@ input[type=checkbox].switch {
 
   /* visual */
   -webkit-appearance: none;
-  background: var(--inset-sm);
+  background-color: var( --color-inset-sm);
   box-shadow: in.$inset-md;
 	border-radius: br.$round;
 	cursor: pointer;
@@ -37,7 +38,7 @@ input[type=checkbox].switch {
 		height: calc(100% - 2 * var(--_thumb-margin));
 
     /* visual */
-		background: oklch(var(--light) / 0.7);
+		background-color: var(--color-input-control);
     border-radius: br.$round;
     box-shadow: sha.$sha-xs;
 		transition: margin;
@@ -45,11 +46,10 @@ input[type=checkbox].switch {
 	}
 	
 	&:checked {
-    background: oklch(var(--accent) / 0.5);
+    background: var(--color-checked);
 		
 		&::before {
 			margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));
-      background: oklch(var(--light) / 0.9);
 		}
 	}
 	
@@ -59,7 +59,7 @@ input[type=checkbox].switch {
 		cursor: not-allowed;
 
     &::before {
-      background: oklch(var(--light) / 0.3);
+      opacity: .5;
     }
 
     &:focus {

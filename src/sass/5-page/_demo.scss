@@ -133,9 +133,9 @@
 
   background: linear-gradient(
     to top left,
-    rgba(color.$gray40, 0.7) 0%,
-    rgba(color.$gray50, 0.8) 70%,
-    rgba(color.$gray60, 0.9) 100%
+    oklch(color.$gray / 0.7) 0%,
+    oklch(color.$gray / 0.8) 70%,
+    oklch(color.$gray / 0.9) 100%
   );
 
     // @include bp.bp(sm) {
@@ -193,3 +193,22 @@
   }
 }
 
+.primary {
+  background-color: var(--primary);
+}
+
+.accent {
+  background-color: var(--accent);
+}
+
+.light {
+  background-color: var(--light);
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.dark {
+  background-color: var(--dark);
+}

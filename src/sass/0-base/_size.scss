@@ -82,7 +82,7 @@ $sizes: (
 /* Size modifier mixin */
 /* ================================== */
 /* Generates .classes using $sizes map */
-// TODO write 1 mega modifier mixin! that can also do shadow and text and colors
+
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &-#{$key} {

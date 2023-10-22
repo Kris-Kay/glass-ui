@@ -134,7 +134,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 body {
   @include body-text;
   font-size: var(--text-sm);
-  color: color.$text-light;
+  color: var(--color-body);
 }
 
 li {
@@ -169,14 +169,14 @@ li {
 }
 
 .link {
-  color: color.$link-rest;
+  color: var(--color-link-rest);
 
   :hover {
-    color: color.$link-hover;
+    color: var(--color-link-hover);
   }
 
   :visited {
-    color: color.$link-visit;
+    color: var(--color-link-visited);
   }
 }
 
@@ -191,21 +191,6 @@ li {
 
 /* Code */ 
 /* ================================== */
-code {
-  font-family: $font-family-code;
-  font-size: var(--text-sm);
-  color: color.$code-class;
-  line-height: $line-height-lg;
-  letter-spacing: $letter-spacing-sm;
-}
-
-.code {
-  font-family: $font-family-code;
-  font-size: var(--text-sm);
-  color: color.$code-class;
-  line-height: $line-height-lg;
-  letter-spacing: $letter-spacing-sm;
-}
 
 pre code {
   display: block;
@@ -213,20 +198,32 @@ pre code {
   max-width: 100%;
 }
 
+@mixin code {
+  font-family: $font-family-code;
+  font-size: var(--text-sm);
+  color: var(--_color-code);
+  line-height: $line-height-lg;
+  letter-spacing: $letter-spacing-sm;
+}
+
+.code {
+  @include code;
+}
+
 .c-comment {
-  color: color.$text-light-mild;
+  --color-code:  oklch(75% var(--gray-ch) / 1);
 }
 
 .c-class {
-  color: color.$code-class;
+  --color-code: oklch(80% var(--accent-ch) / 1);
 }
 
 .c-prop {
-  color: color.$code-prop;
+  --color-code: oklch(70% var(--primary-ch) / 1);
 }
 
 .c-value {
-  color: color.$code-value;
+  --color-code: oklch(90% var(--primary-ch) / 1);
 }
 
 
@@ -246,8 +243,7 @@ pre code {
   letter-spacing: $letter-spacing-md;
   line-height: $line-height-sm;
   text-shadow: sha.$text-sha-sm;
-  color: color.$text-light-mild;
-  // margin-bottom: -2px;
+  color: var(--color-eyebrow);
 }
 
 .eyebrow {

@@ -1,157 +1,225 @@
 /* ================================== */
-/* Theme */
+/* Colors -> oklch */
 /* ================================== */
-html.root-transition,
-html.root-transition *,
-html.root-transition *:before,
-html.root-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}
-
-:root {
-  color-scheme: light dark;
-
-  --primary-l: 70%;
-  --primary-c: 0.15;
-  --primary-h: 235;
-  --primary-ch: var(--primary-c) var(--primary-h);
-  --primary: var(--primary-l) var(--primary-c) var(--primary-h);
-
-  --accent-l: 80%;
-  --accent-c: 0.19;
-  --accent-h: 125;
-  --accent-ch: var(--accent-c) var(--accent-h);
-  --accent: var(--accent-l) var(--accent-c) var(--accent-h);
-
-  --light-l: 98%;
-  --light-c: 0.03;
-  --light-h: 210;
-  --light-ch: var(--light-c) var(--light-h);
-  --light: var(--light-l) var(--light-c) var(--light-h);
-
-  --gray-l: 50%;
-  --gray-c: 0.02;
-  --gray-h: 220;
-  --gray-ch: var(--gray-c) var(--gray-h);
-  --gray: var(--gray-l) var(--gray-c) var(--gray-h);
-
-  --dark-l: 20%;
-  --dark-c: 0.04;
-  --dark-h: 250;
-  --dark-ch: var(--dark-c) var(--dark-h);
-  --dark: var(--dark-l) var(--dark-c) var(--dark-h);
-
-/* Dark Mode */
+/* RGB color values */
 /* ================================== */
-  --page-bg: oklch(20% var(--dark-ch) / 1);
-  --footer-bg: oklch(15% var(--dark-ch) / 1);
+// // * Sky
+// $sky99: rgb(250, 254, 255);
+// $sky98: rgb(245, 252, 255);
+// $sky95: rgb(230, 248, 254);
+// $sky90: rgb(205, 240, 254);
+// $sky80: rgb(156, 225, 252);
+// $sky70: rgb(106, 209, 251);
+// $sky60: rgb(56, 195, 250);
+// $sky50: rgb(6, 181, 249);
 
-  --page-title: oklch(80% var(--light-ch) / 1);
-  --section-title: oklch(50% var(--accent-ch) / 1);
-  --subtitle: oklch(60% var(--light-ch) / 1);
+// // * Leaf H80 S80 L--
+// $leaf80: rgb(218, 245, 163);
+// $leaf70: rgb(199, 240, 117);
+// $leaf60: rgb(180, 235, 71);
+// $leaf40:  rgb(129, 184, 20);
+// $leaf30: rgb(97, 138, 15);
 
-  --text-reg: oklch(80% var(--light-ch) / 1);
-  --text-mild: oklch(75% var(--gray-ch) / 1);
-  --text-xmild: oklch(70% var(--light-ch) / 1);
+// // * Snow
+// $snow95: rgb(239, 242, 245);
+// $snow90: rgb(223, 228, 236);
+// $snow80: rgb(192, 202, 216);
+// $snow70: rgb(160, 175, 197);
+// $snow65: rgb(144, 161, 187);
 
-  --link-rest: oklch(60% var(--primary-ch) / 1);
-  --link-hover: oklch(84% var(--primary-ch) / 1);
-  --link-visited: oklch(40% var(--primary-ch) / 1);
+// // * Ash
+// $gray60: rgb(143, 151, 163);
+// $gray50: rgb(115, 125, 140);
+// $gray40: rgb(92, 100, 112);
+// $gray30: rgb(69, 75, 84);
+// $gray20: rgb(46, 50, 56);
 
-  --cta-bg-rest: oklch(50% var(--primary-ch) / 1);
-  --cta-bg-hover: oklch(70% var(--primary-ch) / 1);
-  --cta-bg-active: oklch(40% var(--primary-ch) / 1);
-  --cta-text-rest: oklch(10% var(--dark-ch) / 1);
-  --cta-text-hover: oklch(10% var(--dark-ch) / 1);
-  --cta-text-active: oklch(5% var(--dark-ch) / 1);
+// // * Ink
+// $ink2:  rgb(0, 3, 10);
+// $ink4: rgb(0, 7, 20);
+// $ink6: rgb(0, 10, 30);
+// $ink8: rgb(0, 14, 40);
+// $ink10: rgb(0, 17, 50);
 
-  --btn-bg-rest: oklch(80% var(--light-ch) / 0.15);
-  --btn-bg-hover: oklch(80% var(--light-ch) / 0.4);
-  --btn-bg-active: oklch(80% var(--light-ch) / 0.7);
-  --btn-text-rest: oklch(95% var(--light-ch) / 1);
-  --btn-text-hover: oklch(98% var(--light-ch) / 1);
-  --btn-text-active: oklch(20% var(--dark-ch) / 1);
 
-  --shadow: oklch(50% var(--light-ch) / 1);
-  --highlight: oklch(98% var(--light-ch) / 1);
+/* Color opacity values */
+/* ================================== */
+// $light: $sky99;
+// $light-90: rgba($sky99, 0.9);
+// $light-70: rgba($sky99, 0.7);
+// $light-50: rgba($sky99, 0.5);
+// $light-30: rgba($sky99, 0.3);
+// $light-10: rgba($sky99, 0.1);
 
-  --inset-sm: oklch(5% var(--dark-ch) / 0.15);
-  --inset-md: oklch(5% var(--dark-ch) / 0.25);
-  --inset-lg: oklch(5% var(--dark-ch) / 0.35);
+// $dark: $ink2;
+// $dark-90: rgba($ink2, 0.9);
+// $dark-70: rgba($ink2, 0.7);
+// $dark-50: rgba($ink2, 0.5);
+// $dark-30: rgba($ink2, 0.3);
+// $dark-10: rgba($ink2, 0.1);
 
-  --glass-card: oklch(5% var(--dark-ch) / 0.1);
-  --bg-xmild: oklch(5% var(--dark-ch) / 0.4);
 
-  // filter values
-  --filter-bright: 0.75;
-}
+/* Glass tints RGB */
+/* ================================== */
+
+// $tint-3xlight: rgba($sky99, 0.7);
+// $tint-2xlight: rgba($sky99, 0.5);
+// $tint-xlight:  rgba($sky99, 0.3);
+// $tint-light:   rgba($sky99, 0.1);
+// $tint-clear:   rgba($sky99, 0.01);
+// $tint-dark:    rgba($ink2,  0.1);
+// $tint-xdark:   rgba($ink2,  0.3);
+// $tint-2xdark:  rgba($ink2,  0.5);
+// $tint-3xdark:  rgba($ink2,  0.8);
+
+// $page-bg: oklch(20% var(--dark-ch) / 1);
+// $page-bg-50: oklch(20% var(--dark-ch) / 0.5);
 
 /* Light Mode */
 /* ================================== */
-:root[data-theme="light"] {
+// :root[data-theme="light"] {
 
-  --page-bg: oklch(90% 0.05 var(--primary-h) / 1);
-  --footer-bg: oklch(85% var(--light-ch) / 1);
+//   --page-bg: oklch(90% 0.05 var(--primary-h) / 1);
+//   --footer-bg: oklch(85% var(--light-ch) / 1);
 
-  --text-reg: oklch(30% var(--dark-ch) / 1);
-  --text-mild: oklch(40%  var(--gray-ch) / 1);
-  --text-xmild: oklch(50% var(--gray-ch) / 1);
+//   --text-reg: oklch(30% var(--dark-ch) / 1);
+//   --text-mild: oklch(40%  var(--gray-ch) / 1);
+//   --text-xmild: oklch(50% var(--gray-ch) / 1);
 
-  --page-title: oklch( 30% var(--dark-ch) / 1);
-  --section-title: oklch(60% var(--accent-ch) / 1);
-  --subtitle: oklch(60% var(--dark-ch) / 1);
+//   --page-title: oklch( 30% var(--dark-ch) / 1);
+//   --section-title: oklch(60% var(--accent-ch) / 1);
+//   --subtitle: oklch(60% var(--dark-ch) / 1);
 
 
-  --link-rest: oklch(60% var(--primary-ch) / 1);
-  --link-hover: oklch(50% var(--primary-ch) / 1);
-  --link-visited: oklch(40% var(--primary-ch) / 1);
+//   --link-rest: oklch(60% var(--primary-ch) / 1);
+//   --link-hover: oklch(50% var(--primary-ch) / 1);
+//   --link-visited: oklch(40% var(--primary-ch) / 1);
 
-  --cta-bg-rest: oklch(50% var(--primary-ch) / 1);
-  --cta-text-rest: oklch(10% var(--dark-ch) / 1);
-  --cta-bg-hover: oklch(70% var(--primary-ch) / 1);
-  --cta-text-hover: oklch(10% var(--dark-ch) / 1);
-  --cta-bg-active: oklch(40% var(--primary-ch) / 1);
-  --cta-text-active: oklch(5% var(--dark-ch) / 1);
+//   --cta-bg-rest: oklch(50% var(--primary-ch) / 1);
+//   --cta-text-rest: oklch(10% var(--dark-ch) / 1);
+//   --cta-bg-hover: oklch(70% var(--primary-ch) / 1);
+//   --cta-text-hover: oklch(10% var(--dark-ch) / 1);
+//   --cta-bg-active: oklch(40% var(--primary-ch) / 1);
+//   --cta-text-active: oklch(5% var(--dark-ch) / 1);
 
-  --btn-bg-rest: oklch(97% var(--light-ch) / 0.6);
-  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
-  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+//   --btn-bg-rest: oklch(97% var(--light-ch) / 0.6);
+//   --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+//   --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
 
-  --btn-text-rest: oklch(40% var(--dark-ch) / 1);
-  --btn-text-hover: oklch(30% var(--dark-ch) / 1);
-  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+//   --btn-text-rest: oklch(40% var(--dark-ch) / 1);
+//   --btn-text-hover: oklch(30% var(--dark-ch) / 1);
+//   --btn-text-active: oklch(20% var(--dark-ch) / 1);
 
-  --shadow: oklch(50% var(--light-ch) / 1);
-  --highlight: oklch(98% var(--light-ch) / 1);
+//   --shadow: oklch(50% var(--light-ch) / 1);
+//   --highlight: oklch(98% var(--light-ch) / 1);
 
-  --inset-sm: oklch(50% var(--gray-ch) / 0.1);
-  --inset-md: oklch(10% var(--gray-ch) / 0.15);
-  --inset-lg: oklch(5% var(--gray-ch) / 0.15);
+//   --inset-sm: oklch(50% var(--gray-ch) / 0.1);
+//   --inset-md: oklch(10% var(--gray-ch) / 0.15);
+//   --inset-lg: oklch(5% var(--gray-ch) / 0.15);
 
-  --bg-xmild: oklch(95% var(--light-ch) / 0.2);
-  --glass-card: oklch(100% var(--gray-ch) / 0.1);
+//   --bg-xmild: oklch(95% var(--light-ch) / 0.2);
+//   --glass-card: oklch(100% var(--gray-ch) / 0.1);
+// };
 
-  // filter values
-  --filter-bright: 0.98;
-};
+//HSL fallback?
+// :root {
+//   color-scheme: light dark;
 
-.dark {
-  background-color: oklch(var(--dark) / 1);
-}
+//   // * Sky 
+//   --primary-h: 197;
+//   --primary-s: 90%;
+//   --primary: (--primary-h), var(--primary-s);
 
-.gray {
-  background-color: oklch(var(--gray) / 1);
-}
+//   // * Leaf 
+//   --accent-h: 80;
+//   --accent-s: 80%;
+//   --accent: var(--accent-h), var(--accent-s);
 
-.light {
-  background-color: oklch(var(--light) / 1);
-}
+//   // * Snow
+//   --light-h: 200;
+//   --light-s: 50%;
+//   --light: var(--light-h), var(--light-s);
 
-.primary {
-  background-color: oklch(var(--primary) / 1);
-}
+//   // * Ash
+//   --gray-h: 200;
+//   --gray-s: 25%;
+//   --gray: var(--gray-h), var(--gray-s);
 
-.accent {
-  background-color: oklch(var(--accent) / 1);
-}
+//   // * Ink 
+//   --dark-h: 230;
+//   --dark-s: 93%;
+//   --dark: var(--dark-h), var(--dark-s);
+
+//   --btn-bg-rest: hsla(var(--light), 50%, 1);
+//   --btn-text-rest: hsla(var(--light), 95%, 1);
+//   --btn-bg-hover: hsla(var(--light), 80%, 0.2);
+//   --btn-text-hover: hsla(var(--light), 95%, 1);
+//   --btn-bg-active: hsla(var(--light), 90%, 0.5);
+//   --btn-text-active: hsla(var(--dark), 10%, 1);
+// }
+
+
+/* Semantic color values */
+/* ================================== */
+// $color-prim: $sky60;
+// $color-sec: $leaf40;
+
+// $text-light: $sky99;
+// $text-light-mild: $snow90;
+// $text-light-xmild: $snow80;
+// $text-light-2xmild: $snow65;
+
+// $text-dark-bold: $ink2;
+// $text-dark: $ink10;
+// $text-dark-mild: rgba($ink10,  0.8);
+// $text-dark-xmild: $gray50;
+// $text-dark-2xmild: $gray60;
+
+// $code-class: $leaf70;
+// $code-prop: $snow70;
+// $code-value: $sky80;
+
+// $link-rest: $sky70;
+// $link-hover: $sky50;
+// $link-visit: $sky80;
+
+// $disabled: $gray40;
+// $bg-color: $sky98;
+
+
+
+/* Text colors */
+/* ================================== */
+// /* Light */
+// .text-light-reg {
+//   color: $text-light;
+// }
+
+// .text-light-mild {
+//   color: $text-light-mild;
+// }
+
+// .text-light-xmild {
+//   color: $text-light-xmild;
+// }
+
+// .text-light-2xmild {
+//   color: $text-light-2xmild;
+// }
+
+// /* Dark */
+// .text-dark {
+//   color: $text-dark;
+// }
+
+// .text-dark-mild {
+//   color: $text-dark-mild;
+// }
+
+// .text-dark-xmild {
+//   color: $text-dark-xmild;
+// }
+
+// .text-dark-2xmild {
+//   color: $text-dark-2xmild;
+// }

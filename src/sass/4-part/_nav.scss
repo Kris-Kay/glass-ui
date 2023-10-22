@@ -110,7 +110,7 @@ nav {
   cursor: pointer;
   min-width: max-content;
   width: 100%;
-  color: rgba(color.$text-light, 0.7);
+  color: color.$tint-dark;
   letter-spacing: text.$letter-spacing-lg;
   font-weight: text.$font-weight-lg;
 }

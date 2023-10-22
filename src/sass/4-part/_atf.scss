@@ -1,6 +1,7 @@
 /* ================================== */
 /* Above the fold */
 @use "../0-base/breakpoint" as bp;
+@use "../0-base/theme";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -39,8 +40,13 @@
 .atf__card {
   width: fit-content;
   max-width: min(100%, 540px);
+  // background-color: var(--primary);
 
   @include bp.bp(lg) {
     max-width: min(100%, 580px);
   }
+
+  // &:hover {
+  //   background-color: var(--primary);
+  // }
 }

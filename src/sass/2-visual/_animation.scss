@@ -85,3 +85,11 @@ $speeds: (
 // .slid-down {
 //   transform-origin : 100% 0 0 scaleY(2);
 // }
+
+html.root-transition,
+html.root-transition *,
+html.root-transition *:before,
+html.root-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
