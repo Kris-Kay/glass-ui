@@ -27,7 +27,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: color.$tint-xdark;
+    background-color: var(--tint-xdark);
     box-shadow: in.$flat-inset-lg;
   }
 }

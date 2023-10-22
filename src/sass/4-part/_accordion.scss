@@ -34,7 +34,7 @@
   // border-radius: var(--lg) var(--lg) 0 0;
   border-radius: var(--lg);
   @include glass.glass-base;
-  @include fill.fill-dark;
+  @include fill.fill(dark);
   // box-shadow: none;
   box-shadow: sha.$sha-xl;
   overflow: hidden;
@@ -61,7 +61,7 @@
     // margin-bottom: calc(-1 * var(--space-thin));
 
     /* visual */
-    background-color: color.$tint-xdark;
+    background-color: var(--tint-xdark);
     box-shadow: sha.$flat-sha-md;
   }
 }
@@ -77,7 +77,7 @@
   transition: background-color ani.$speed-slow ease;
 
   &:hover {
-    background-color: color.$tint-light;
+    background-color: var(--tint-light);
   }
 
   width: 100%;

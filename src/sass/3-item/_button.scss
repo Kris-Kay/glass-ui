@@ -25,7 +25,6 @@
   font-weight: text.$font-weight-sm;
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
-  color: var(--btn-text-rest);
   z-index: z.z(on-btn);
   text-shadow: sha.$text-sha-sm;
 }
@@ -199,13 +198,11 @@
 //* Button state & visual styling */
 /* ================================== */
 
-/* Button hover & active */
-/* ================================== */
-@mixin btn-interactions {
+@mixin btn-transitions {
   transition: 
     background-color ani.$speed-slow ease,
-    box-shadow ani.$speed-slow ease-out,
-    color ani.$speed-slow ease-out;
+    color ani.$speed-slow ease-out,
+    box-shadow ani.$speed-slow ease-out;
 
   &:hover {
     background-color: var(--btn-bg-hover);
@@ -215,7 +212,7 @@
     transition: 
       background-color ani.$speed-reg ease-in,
       box-shadow ani.$speed-reg ease-in,
-      color ani.$speed-fast ease-in;
+      color ani.$speed-reg ease-in;
   }
 
   &:active {
@@ -224,7 +221,7 @@
     box-shadow:  in.$inset-xs;
 
     transition: 
-      background-color ani.$speed-fast ease-in,
+      background-color ani.$speed-reg ease-in,
       box-shadow ani.$speed-reg ease-in,
       color ani.$speed-reg ease-in;
   }
@@ -234,11 +231,9 @@
 /* Base → 3D button glass material */
 @mixin btn-glass-base {
   position: relative;
-  @include fill.glass-filter;
-  transition: 
-    background-color ani.$speed-slow ease,
-    color ani.$speed-slow ease;
   box-shadow: sha.$sha-sm;
+  @include fill.glass-filter;
+  @include btn-transitions;
 
   &::after {
     @include help.pseudo;
@@ -252,95 +247,44 @@
     @include fill.noise-sm;
     opacity: 70%;
   }
-}
 
-/* light & dark → 3D button glass */
-@mixin btn-glass-both {
-  position: relative;
-
-  @include fill.glass-filter;
-  box-shadow: sha.$sha-sm;
-  background-color: var(--btn-bg-rest);
-  color: var(--btn-text-rest);
-
-  @include btn-interactions;
-
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-sm;
+  &:hover {
+    box-shadow: sha.$sha-md;
   }
 
-  &::before {
-    @include help.pseudo;
-    z-index: -2;
-    @include fill.noise-sm;
-    opacity: 70%;
+  &:active {
+    box-shadow:  in.$inset-xs;
   }
 }
-
 
 @mixin btn-glass-clear {
-  position: relative;
-  @include fill.glass-filter;
-  // transition: 
-  //   background-color ani.$speed-slow ease,
-  //   color ani.$speed-slow ease;
-  box-shadow: sha.$sha-xs;
-  // background-color: var(--btn-bg-rest);
-  
-  &::after {
-    @include help.pseudo;
-    z-index: -1;
-    box-shadow: bevel.$bevel-sm;
+  @include btn-glass-base;
+  background-color: var(--tint-clear);
+  color: oklch(90% var(--light-ch) / 1);
+
+  &:hover {
+    background-color: var(--tint-light);
+    color: var(--btn-text-hover);
   }
 
-  &::before {
-    @include help.pseudo;
-    z-index: -2;
-    @include fill.noise-sm;
-    opacity: 70%;
+  &:active {
+    background-color: var(--btn-bg-active);
+    color: var(--btn-text-active);
   }
-
-  @include btn-interactions;
 }
 
 /* Light → 3D button glass */
 @mixin btn-glass-light {
   @include btn-glass-base;
-  background-color: color.$tint-xlight;
-
-  @include btn-interactions;
-  // &:hover {
-  //   background-color: color.$tint-2xlight;
-  //   color: color.$text-dark-mild;
-  // }
-
-  // &:active {
-  //   background-color: color.$tint-3xlight;
-  //   color: color.$text-dark;
-  // }
+  background-color: var(--tint-xlight);
+  color: oklch(100% var(--light-ch) / 1);
 }
 
 /* Dark → 3D button glass */
 @mixin btn-glass-dark {
   @include btn-glass-base;
-  background-color: color.$tint-xdark;
-
-  @include btn-interactions;
-  
-  // &:hover {
-  //   background-color: color.$tint-2xdark;
-  // }
-
-  // &:active {
-  //   background-color: color.$tint-3xdark;
-  //   color: color.$text-light;
-  // }
-}
-
-.btn-glass-both {
-  @include btn-glass-both;
+  background-color: var(--tint-xdark);
+  color: oklch(90% var(--light-ch) / 1);
 }
 
 .btn-glass-clear {
@@ -362,7 +306,7 @@
   color: var(--btn-text-rest);
   box-shadow: none;
 
-  @include btn-interactions;
+  @include btn-transitions;
 }
 
 .btn-clear {

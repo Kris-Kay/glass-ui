@@ -245,7 +245,7 @@ $inset-shadow-sm:
   @include fill.glass-filter;
   @include fill.noise-sm;
   box-shadow: $inset-md;
-  background-color: color.$tint-dark;
+  background-color: var(--tint-dark);
 
   &::after {
     @include help.pseudo;
@@ -286,7 +286,7 @@ $inset-shadow-sm:
     @include help.pseudo;
     z-index: -2;
 
-    background-color: color.$tint-dark;
+    background-color: var(--tint-dark);
     // box-shadow: sha.$inset-sha-md;
     filter: brightness(0.1);
   }
@@ -329,7 +329,7 @@ $inset-shadow-sm:
 
     filter: brightness(0.1);
     // box-shadow: $inset-shadow-sm;
-    background-color: color.$tint-dark;
+    background-color: var(--tint-dark);
   }
 
   &::after {

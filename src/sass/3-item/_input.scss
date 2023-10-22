@@ -27,7 +27,7 @@
 
   box-shadow: in.$inset-md;
 
-  background-color: color.$tint-xdark;
+  background-color: var(--tint-xdark);
 }
 
 .rect-2xs {

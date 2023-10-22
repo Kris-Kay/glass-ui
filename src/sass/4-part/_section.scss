@@ -40,7 +40,7 @@
   /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
-  @include fill.fill-xdark;
+  @include fill.fill(xdark);
   
   @include bp.bp(sm) {
     overflow: hidden;
@@ -54,7 +54,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: color.$tint-xdark;
+    background-color: var(--tint-xdark);
     box-shadow: in.$flat-inset-md;
   }
 }

@@ -107,9 +107,7 @@
 [role="tab"][aria-selected="true"] {
   -webkit-backdrop-filter: brightness(1.5);
   backdrop-filter: brightness(1.5);
-  background-color: color.$tint-2xlight;
-  color: color.$dark-mild;
+  // background-color: color.$tint-2xlight;
+  // color: color.$dark-mild;
   box-shadow: sha.$sha-2xs;
 }
-
-

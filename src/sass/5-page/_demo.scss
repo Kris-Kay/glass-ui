@@ -16,7 +16,7 @@
 /* Sizing demo */
 /* ================================== */
 .size-demo__rect {
-  background-color: color.$tint-2xlight;
+  background-color: var(--tint-2xlight);
   border-radius: 0.1rem;
   height: size.$s11;
   margin: size.$s3 0;

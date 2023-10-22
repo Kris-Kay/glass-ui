@@ -31,55 +31,50 @@ $dark-c: 0.04;
 $dark-h: 240;
 $dark: $dark-l $dark-c $dark-h;
 
-// * Glass tints * //
-$tint-3xlight: oklch(var(--light-lch) / 0.7);
-$tint-2xlight: oklch(var(--light-lch) / 0.5);
-$tint-xlight:  oklch(var(--light-lch) / 0.3);
-$tint-light:   oklch(var(--light-lch) / 0.1);
-$tint-clear:   oklch(var(--light-lch) / 0.01);
-$tint-dark:    oklch(var(--dark-lch) / 0.1);
-$tint-xdark:   oklch(var(--dark-lch) / 0.3);
-$tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-$tint-3xdark:  oklch(var(--dark-lch) / 0.7);
 
 // * Opaque shades * //
-$light-bold: oklch(99% var(--light-ch) / 1);
-$light-reg: oklch(95% var(--light-ch) / 1);
-$light-mild: oklch(90% var(--light-ch) / 1);
-$light-xmild: oklch(85% var(--light-ch) / 1);
-$light-2xmild: oklch(75% var(--light-ch) / 1);
-$dark-2xmild: oklch(25% var(--dark-ch) / 1);
-$dark-xmild: oklch(20% var(--dark-ch) / 1);
-$dark-mild: oklch(15% var(--dark-ch) / 1);
-$dark-reg: oklch(10% var(--dark-ch) / 1);
-$dark-bold: oklch(5% var(--dark-ch) / 1);
+// $light-bold: oklch(99% var(--light-ch) / 1);
+// $light-reg: oklch(95% var(--light-ch) / 1);
+// $light-mild: oklch(90% var(--light-ch) / 1);
+// $light-xmild: oklch(85% var(--light-ch) / 1);
+// $light-2xmild: oklch(75% var(--light-ch) / 1);
+// $dark-2xmild: oklch(25% var(--dark-ch) / 1);
+// $dark-xmild: oklch(20% var(--dark-ch) / 1);
+// $dark-mild: oklch(15% var(--dark-ch) / 1);
+// $dark-reg: oklch(10% var(--dark-ch) / 1);
+// $dark-bold: oklch(5% var(--dark-ch) / 1);
 
 :root {
   // * Primary * //
   --primary-ch: #{$primary-c} #{$primary-h};
   --primary-lch: #{$primary-l} #{$primary-c} #{$primary-h};
-  // --primary: oklch(#{$primary-l} #{$primary-c} #{$primary-h} / 1);
 
   // * Accent * //
   --accent-ch: #{$accent-c} #{$accent-h};
   --accent-lch: #{$accent-l} #{$accent-c} #{$accent-h};
-  // --accent: oklch(#{$accent-l} #{$accent-c} #{$accent-h} / 1);
 
   // * Light * //
   --light-ch: #{$light-c} #{$light-h};
   --light-lch: #{$light-l} #{$light-c} #{$light-h};
-  // --light: oklch(#{$light-l} #{$light-c} #{$light-h} / 1);
 
   // * Gray * //
   --gray-ch: #{$gray-c} #{$gray-h};
   --gray-lch: #{$gray-l} #{$gray-c} #{$gray-h};
-  // --gray: oklch(#{$gray-l} #{$gray-c} #{$gray-h} / 1);
 
   // * Dark * //
   --dark-ch: #{$dark-c} #{$dark-h};
   --dark-lch: #{$dark-l} #{$dark-c} #{$dark-h};
-  // --dark: oklch(#{$dark-l} #{$dark-c} #{$dark-h} / 1);
 
+  // * Glass tints * //
+  --tint-3xlight: oklch(var(--light-lch) / 0.7);
+  --tint-2xlight: oklch(var(--light-lch) / 0.5);
+  --tint-xlight:  oklch(var(--light-lch) / 0.25);
+  --tint-light:   oklch(var(--light-lch) / 0.1);
+  --tint-clear:   oklch(var(--light-lch) / 0.01);
+  --tint-dark:    oklch(var(--dark-lch) / 0.1);
+  --tint-xdark:   oklch(var(--dark-lch) / 0.3);
+  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
+  --tint-3xdark:  oklch(var(--dark-lch) / 0.7);
 
 /* ================================== */
 /* Semantic color theme */
@@ -112,16 +107,20 @@ $dark-bold: oklch(5% var(--dark-ch) / 1);
   --color-disabled: oklch(var(--dark-lch) / 0.15);
   --color-checked: oklch(70% var(--accent-ch) / 0.3);
 
+  // * buttons * //
+  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+
+  --btn-text-rest: oklch(90% var(--light-ch) / 1);
+  --btn-text-hover: oklch(30% var(--dark-ch) / 1);
+  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+
   // * Other * //
   --color-focus: oklch(var(--primary-ch) / 0.4);
   --color-input-control: oklch(var(--light-lch) / 0.8);
 
-  // * Customizable custom properties * //
-  --_color-btn-bg: var(--btn-bg), #{$tint-light};
-  --_color-btn-text: var(--btn-text), var(--light);
-  --_color-ui-bg: var(--ui-bg), #{$tint-xdark};
-  --_color-ui-text: var(--ui-text), var(--light);
 
+  // * Customizable custom properties * //
   --_color-code: --color-code, oklch(80% var(--accent-ch) / 1);
 }
 
@@ -141,15 +140,15 @@ $dark-bold: oklch(5% var(--dark-ch) / 1);
 /* Glass tint MAP */
 /* ================================== */
 $tints: (
-  "3xlight": $tint-3xlight,
-  "2xlight": $tint-2xlight,
-  "xlight": $tint-xlight,
-  "light": $tint-light,
-  "clear": $tint-clear,
-  "dark": $tint-dark,
-  "xdark": $tint-xdark,
-  "2xdark": $tint-2xdark,
-  "3xdark": $tint-3xdark
+  "3xlight": var(--tint-3xlight),
+  "2xlight": var(--tint-2xlight),
+  "xlight": var(--tint-xlight),
+  "light": var(--tint-light),
+  "clear": var(--tint-clear),
+  "dark": var(--tint-dark),
+  "xdark": var(--tint-xdark),
+  "2xdark": var(--tint-2xdark),
+  "3xdark": var(--tint-3xdark)
 );
 
 /* Tint modifier mixin */
