@@ -198,32 +198,21 @@
 //* Button state & visual styling */
 /* ================================== */
 
-@mixin btn-transitions {
+@mixin ui-transitions {
   transition: 
-    background-color ani.$speed-slow ease,
-    color ani.$speed-slow ease-out,
-    box-shadow ani.$speed-slow ease-out;
+    background-color ani.$speed-xslow ease-out,
+    box-shadow ani.$speed-xslow ease-out;
 
-  &:hover {
-    background-color: var(--btn-bg-hover);
-    color: var(--btn-text-hover);
-    box-shadow: sha.$sha-md;
-    
+  &:hover {    
     transition: 
-      background-color ani.$speed-reg ease-in,
-      box-shadow ani.$speed-reg ease-in,
-      color ani.$speed-reg ease-in;
+      background-color ani.$speed-fast ease-in,
+      box-shadow ani.$speed-fast ease-in,
   }
 
   &:active {
-    background-color: var(--btn-bg-active);
-    color: var(--btn-text-active);
-    box-shadow:  in.$inset-xs;
-
     transition: 
-      background-color ani.$speed-reg ease-in,
-      box-shadow ani.$speed-reg ease-in,
-      color ani.$speed-reg ease-in;
+      background-color ani.$speed-reg ease-in-out,
+      box-shadow ani.$speed-reg ease-in-out,
   }
 }
 
@@ -231,9 +220,10 @@
 /* Base → 3D button glass material */
 @mixin btn-glass-base {
   position: relative;
-  box-shadow: sha.$sha-sm;
+  box-shadow: sha.$sha-xs;
   @include fill.glass-filter;
-  @include btn-transitions;
+  color: var(--btn-text-rest);
+  @include ui-transitions;
 
   &::after {
     @include help.pseudo;
@@ -249,27 +239,24 @@
   }
 
   &:hover {
-    box-shadow: sha.$sha-md;
+    box-shadow: sha.$sha-sm;
   }
 
   &:active {
-    box-shadow:  in.$inset-xs;
+    box-shadow:  sha.$sha-2xs;
   }
 }
 
 @mixin btn-glass-clear {
   @include btn-glass-base;
   background-color: var(--tint-clear);
-  color: oklch(90% var(--light-ch) / 1);
 
   &:hover {
-    background-color: var(--tint-light);
-    color: var(--btn-text-hover);
+    background-color: var(--tint-xlight);
   }
 
   &:active {
-    background-color: var(--btn-bg-active);
-    color: var(--btn-text-active);
+    background-color: var(--tint-dark);
   }
 }
 
@@ -277,14 +264,29 @@
 @mixin btn-glass-light {
   @include btn-glass-base;
   background-color: var(--tint-xlight);
-  color: oklch(100% var(--light-ch) / 1);
+  text-shadow: sha.$text-sha-md;
+
+  &:hover {
+    background-color: var(--tint-2xlight);
+  }
+
+  &:active {
+    background-color: var(--tint-dark);
+  }
 }
 
 /* Dark → 3D button glass */
 @mixin btn-glass-dark {
   @include btn-glass-base;
   background-color: var(--tint-xdark);
-  color: oklch(90% var(--light-ch) / 1);
+    
+  &:hover {
+    background-color: var(--tint-2xdark);
+  }
+
+  &:active {
+    background-color: var(--tint-3xdark);
+  }
 }
 
 .btn-glass-clear {
@@ -301,74 +303,23 @@
 
 /* 2D clear button */
 /* ================================== */
-@mixin btn-clear {
+@mixin btn-2d-base {
   background-color: transparent;
   color: var(--btn-text-rest);
   box-shadow: none;
+  @include ui-transitions;
 
-  @include btn-transitions;
+  &:hover {
+    background-color: var(--tint-xlight);
+    box-shadow: sha.$sha-xs;
+  }
+
+  &:active {
+    background-color: var(--tint-dark);
+    box-shadow:  sha.$sha-2xs;
+  }
 }
 
 .btn-clear {
-  @include btn-clear;
+  @include btn-2d-base;
 }
-
-
-
-
-// input[type=checkbox].switch {
-// 	--_switch-height: var(--switch-height, var(--ui-sm));
-//   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 2));
-// 	--_switch-color: var(--switch-color, var(--inset-sm));
-// 	--_switch-color-checked: var(--switch-color-checked, color.$sky50);
-// 	--_thumb-margin: var(--thumb-margin, 3px);
-// 	--_thumb-color: var(--thumb-color, white);
-
-// 	-webkit-appearance: none;
-// 	display: inline-flex;
-// 	vertical-align: var(--_thumb-margin);
-// 	align-items: center;
-// 	width: var(--_switch-width);
-// 	height: var(--_switch-height);
-
-//   box-shadow: in.$inset-md;
-// 	border-radius: br.$round;
-// 	--current-background: var(--_switch-color);
-// 	background: var(--current-background);
-
-// 	cursor: pointer;
-// 	transition: .3s background;
-	
-// 	&::before {
-// 		content: "";
-// 		display: block;
-// 		aspect-ratio: 1 / 1;
-// 		margin: var(--_thumb-margin);
-// 		height: calc(100% - 2 * var(--_thumb-margin));
-// 		background: var(--_thumb-color);
-// 		border-radius: 50%;
-// 		transition: margin;
-// 		transition-duration: inherit;
-// 		box-shadow: sha.$sha-xs;
-// 		// box-shadow: 0 0 0 1px var(--current-background), 0 0 var(--focus-ring, );
-// 	}
-	
-// 	&:checked {
-//     --_switch-color-checked: color.$sky50;
-// 		--current-background: var(--_switch-color-checked);
-		
-// 		&::before {
-// 			margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));
-// 		}
-// 	}
-	
-// 	&:disabled {
-// 		filter: grayscale(1);
-// 		opacity: .5;
-// 		cursor: not-allowed;
-// 	}
-	
-// 	&:focus {
-// 		outline: none;
-// 	}
-// }

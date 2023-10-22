@@ -33,45 +33,6 @@
   }
 }
 
-// .tab {
-//   --inner-h: 0.95rem; 
-
-//   width: max-content; 
-//   height: 100%;
-//   @include flex.flex-c;
-//   padding: 0 0.5rem;
-
-//   pointer-events: auto;
-//   cursor: pointer;
-
-//   font-size: var(--inner-h);
-//   line-height: var(--inner-h);
-//   @include btn.btn-text;
-//   @include btn.btn-clear;
-//   border-radius: var(--tab-br);
-
-//   @include bp.bp(xs) {
-//     padding: 0 0.9rem;
-//   }
-
-//   @include bp.bp(md) {
-//     --inner-h: 1.1rem;
-//     padding: 0 1.2rem;
-//   }
-
-//   @include bp.bp(lg) {
-//     padding: 0 1.3rem;
-//   }
-
-//   &.tab-active {
-//     -webkit-backdrop-filter: brightness(1.5);
-//     backdrop-filter: brightness(1.5);
-//     background-color: color.$tint-2xlight;
-//     color: color.$text-dark;
-//     box-shadow: sha.$sha-2xs;
-//   }
-// }
-
 
 [role="tab"] {
   --inner-h: 0.95rem; 
@@ -87,7 +48,7 @@
   font-size: var(--inner-h);
   line-height: var(--inner-h);
   @include btn.btn-text;
-  @include btn.btn-clear;
+  @include btn.btn-2d-base;;
   border-radius: var(--tab-br);
 
   @include bp.bp(xs) {
@@ -107,7 +68,7 @@
 [role="tab"][aria-selected="true"] {
   -webkit-backdrop-filter: brightness(1.5);
   backdrop-filter: brightness(1.5);
-  // background-color: color.$tint-2xlight;
-  // color: color.$dark-mild;
+  background-color: var(--tint-3xlight);
+  color: var(--tint-2xdark);
   box-shadow: sha.$sha-2xs;
 }

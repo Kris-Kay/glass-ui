@@ -69,10 +69,10 @@ $dark: $dark-l $dark-c $dark-h;
   --tint-3xlight: oklch(var(--light-lch) / 0.7);
   --tint-2xlight: oklch(var(--light-lch) / 0.5);
   --tint-xlight:  oklch(var(--light-lch) / 0.25);
-  --tint-light:   oklch(var(--light-lch) / 0.1);
+  --tint-light:   oklch(var(--light-lch) / 0.05);
   --tint-clear:   oklch(var(--light-lch) / 0.01);
-  --tint-dark:    oklch(var(--dark-lch) / 0.1);
-  --tint-xdark:   oklch(var(--dark-lch) / 0.3);
+  --tint-dark:    oklch(var(--dark-lch) / 0.05);
+  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
   --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
   --tint-3xdark:  oklch(var(--dark-lch) / 0.7);
 
@@ -91,7 +91,7 @@ $dark: $dark-l $dark-c $dark-h;
   --color-body-bold: oklch(100% var(--light-ch) / 1);
   --color-body: oklch(95% var(--gray-ch) / 1);
   --color-caption: oklch(85% var(--gray-ch) / 1);
-  --color-eyebrow: oklch(75% var(--gray-ch) / 1);
+  --color-eyebrow: oklch(90% var(--gray-ch) / 1);
   
   --color-link-rest: oklch(70% var(--primary-ch) / 1);
   --color-link-hover: oklch(50% var(--primary-ch) / 1);
@@ -111,8 +111,8 @@ $dark: $dark-l $dark-c $dark-h;
   --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
   --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
 
-  --btn-text-rest: oklch(90% var(--light-ch) / 1);
-  --btn-text-hover: oklch(30% var(--dark-ch) / 1);
+  --btn-text-rest: oklch(100% var(--light-ch) / 1);
+  --btn-text-hover: oklch(100% var(--light-ch) / 1);
   --btn-text-active: oklch(20% var(--dark-ch) / 1);
 
   // * Other * //
