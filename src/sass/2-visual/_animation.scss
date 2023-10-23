@@ -2,50 +2,23 @@
 /* Animation */
 @use "../0-base/breakpoint" as bp;
 /* ================================== */
-$speed-xslow: 1000ms;
-$speed-slow:  600ms;
+
+$speed-2xslow: 1200ms;
+$speed-xslow: 7500ms;
+$speed-slow:  500ms;
 $speed-reg:   400ms;
-$speed-fast:  200ms;
-$speed-xfast: 100ms;
+$speed-fast:  300ms;
+$speed-xfast: 200ms;
+$speed-2xfast: 100ms;
 
-/* Speed MAP */
-/* ================================== */
-$speeds: (
-  "xslow": $speed-xslow,
-  "slow":  $speed-slow,
-  "reg":   $speed-reg,
-  "fast":  $speed-fast,
-  "xfast": $speed-xfast
-);
 
-.card-3d-bin {
-  position: relative;
-  perspective: 1500px;
-  width: 100%;
-  height: fit-content;
-
-  // border:3px solid #ccc;
-
-  @include bp.bp(sm) {
-    perspective: 5500px;
-  }
-}
-
-.card-3d {
-  width: fit-content;
-  height: fit-content;
-  transition: transform 1200ms ease-in-out;
-
-  transform: perspective(1000px) rotateY(15deg) rotateX(15deg) rotateZ(-15deg) translateX(-5px) translateY(-10%);
-
-  &:hover {
-    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateX(0) translateY(0);
-  }
-
-  @include bp.bp(sm) {
-    transform: perspective(5000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(15px) translateY(-20%);
-  }
-}
+// html.root-transition,
+// html.root-transition *,
+// html.root-transition *:before,
+// html.root-transition *:after {
+//   transition: all 750ms !important;
+//   transition-delay: 0 !important;
+// }
 
 .perspective-bin {
   position: relative;
@@ -86,10 +59,3 @@ $speeds: (
 //   transform-origin : 100% 0 0 scaleY(2);
 // }
 
-html.root-transition,
-html.root-transition *,
-html.root-transition *:before,
-html.root-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}

@@ -1,2 +1,2 @@
 # glass-ui
-Apple Vision Pro-inspired glassmorphism UI library
+3D glassmorphism UI library

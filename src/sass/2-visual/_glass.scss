@@ -14,13 +14,14 @@
 /* ================================== */
 @mixin glass-base {
   position: relative;
+  @include fill.glass-filter;
   @content;
-  
-  &::before {
+
+  &::after {
     @include help.pseudo;
-    z-index: -2;
-    @include fill.noise-md;
+    z-index: -1;
     box-shadow: bevel.$bevel-lg;
+    @include fill.noise-md;
   }
 }
 
@@ -32,7 +33,6 @@
 /* ================================== */
 .glass { 
   @include color.tint-modifier('background-color') {
-    @include fill.glass-filter;
     @include glass-base;
   }
 }
@@ -41,11 +41,10 @@
 /* ================================== */
 @mixin glass--no-bevel-mobile {
   @include glass-base {
-    // box-shadow: none;
     box-shadow: bevel.$flat-bevel-sm;
 
     @include bp.bp(sm) {
-      box-shadow: bevel.$bevel-lg;
+      box-shadow: bevel.$bevel-md;
     }
   }
 }

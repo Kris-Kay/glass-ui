@@ -2,6 +2,8 @@
 /* Cards */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
+@use "../1-layout/z-index" as z;
+@use "../2-visual/animation" as ani;
 @use "../2-visual/inset" as in;
 @use "../2-visual/glass";
 @use "../2-visual/shadow" as sha;
@@ -9,7 +11,7 @@
 
 .card {
   --space: var(--lg); // < control padding from here
-
+  z-index: z.z(card);
   /* layout */
   padding: var(--space);
   display: grid;
@@ -17,18 +19,51 @@
 
   /* visual */
   border-radius: var(--lg);
-  box-shadow: sha.$sha-xl;
+  box-shadow: sha.$sha-2xl;
 
 
-  >.full-w-fill { 
+  >.full-w-fill {
     /* layout */
     padding: var(--space);
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: calc(-1 * var(--space));
-
+    z-index: z.z(on-card);
     /* visual */
-    background-color: var(--tint-xdark);
-    box-shadow: in.$flat-inset-lg;
+    background-color: var(--tint-3xdark);
+    box-shadow: in.$flat-inset-md;
+  }
+}
+
+
+.card-3d-bin {
+  position: relative;
+  perspective: 1500px;
+  width: 100%;
+  height: fit-content;
+
+    // backface-visibility: hidden;
+  // border:3px solid #ccc;
+
+  @include bp.bp(sm) {
+    perspective: 5500px;
+  }
+}
+
+.card-3d {
+  width: fit-content;
+  height: fit-content;
+  will-change: transform;
+
+  transition: transform ani.$speed-2xslow ease-in-out;
+
+  transform: perspective(1000px) rotateY(15deg) rotateX(15deg) rotateZ(-15deg) translateX(-5px) translateY(-10%);
+
+  &:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateX(0) translateY(0);
+  }
+
+  @include bp.bp(sm) {
+    transform: perspective(5000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg) translateX(15px) translateY(-20%);
   }
 }
 

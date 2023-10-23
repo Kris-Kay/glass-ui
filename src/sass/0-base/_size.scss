@@ -25,8 +25,8 @@ $s20: calc($root-size * 20); /* 80px 5rem */
 
 /* Dynamic T-shirt sizes */
 /* ================================== */
-// * Sizes scale with viewport width */
-// https://utopia.fyi/space/calculator/
+/* Sizes scale with viewport width */
+/* https://utopia.fyi/space/calculator/ */
 :root {
   /* 3xs: 4px → 6px */
   --3xs: clamp(0.25rem, 0.21rem + 0.21vw, 0.38rem);
@@ -104,21 +104,21 @@ $sizes: (
 
 /* Width classes */
 /* ================================== */
-// * Generates a .class for every T-shirt size
+// Generates a .class for every T-shirt size
 .w {
   @include size-modifiers('width');
 }
 
 /* Height classes */
 /* ================================== */
-// * Generates a .class for every T-shirt size
+// Generates a .class for every T-shirt size
 .h {
   @include size-modifiers('height');
 }
 
 /* Gap classes */
 /* ================================== */
-// * Generates a .class for every T-shirt size
+// Generates a .class for every T-shirt size
 .gap {
   @include size-modifiers('gap');
 }
