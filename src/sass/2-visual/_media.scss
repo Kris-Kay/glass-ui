@@ -30,6 +30,15 @@
   margin: auto;
 }
 
+.img-md {
+  width: min(100%, 500px);
+  margin: 0 auto;
+
+  @include bp.bp(md) {
+    width: 70%;
+  }
+}
+
 .img-lg {
   width: 100%;
   margin: auto;
