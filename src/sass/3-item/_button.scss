@@ -53,7 +53,7 @@
   $p-b: 0;
   $p-x: 0.85em;
   $p-x-icon: 0.7em;
-  
+
   &.btn-icon {
     gap: 0.25em;
     padding: $p-t $p-x-icon $p-b $p-x-icon;
@@ -61,7 +61,7 @@
 
   /* layout */
   @include btn-base;
-  height: var(--ui-sm); 
+  height: var(--ui-sm);
   font-size: $inner-h;
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
@@ -79,7 +79,7 @@
   $p-b: 0;
   $p-x: 1em;
   $p-x-icon: 0.75em;
-  
+
   &.btn-icon {
     gap: 0.3em;
     padding: $p-t $p-x-icon $p-b $p-x-icon;
@@ -87,7 +87,7 @@
 
   /* layout */
   @include btn-base;
-  height: var(--ui-md); 
+  height: var(--ui-md);
   font-size: $inner-h;
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
@@ -105,7 +105,7 @@
   $p-b: 0;
   $p-x: 1.4em;
   $p-x-icon: 1em;
-  
+
   &.btn-icon {
     gap: 0.4em;
     padding: $p-t $p-x-icon $p-b $p-x-icon;
@@ -113,7 +113,7 @@
 
   /* layout */
   @include btn-base;
-  height: var(--ui-lg); 
+  height: var(--ui-lg);
   font-size: $inner-h;
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
@@ -154,31 +154,31 @@
 
 @mixin round-btn-sm {
   @include round-btn-base;
-  width: var(--ui-sm); 
-  height: var(--ui-sm); 
+  width: var(--ui-sm);
+  height: var(--ui-sm);
 
   & img {
-    height: calc(var(--ui-sm) * 0.65); 
+    height: calc(var(--ui-sm) * 0.65);
   }
 }
 
 @mixin round-btn-md {
   @include round-btn-base;
-  width: var(--ui-md); 
-  height: var(--ui-md); 
+  width: var(--ui-md);
+  height: var(--ui-md);
 
   & img {
-    height: calc(var(--ui-md) * 0.65); 
+    height: calc(var(--ui-md) * 0.65);
   }
 }
 
 @mixin round-btn-lg {
   @include round-btn-base;
-  width: var(--ui-lg); 
-  height: var(--ui-lg); 
+  width: var(--ui-lg);
+  height: var(--ui-lg);
 
   & img {
-    height: calc(var(--ui-lg) * 0.6); 
+    height: calc(var(--ui-lg) * 0.6);
   }
 }
 
@@ -199,18 +199,18 @@
 /* ================================== */
 
 @mixin ui-transitions {
-  transition: 
-    background-color ani.$speed-xslow ease-out,
-    box-shadow ani.$speed-xslow ease-out;
+  transition:
+    background-color ani.$speed-slow ease-out,
+    box-shadow ani.$speed-slow ease-out;
 
-  &:hover {    
-    transition: 
+  &:hover {
+    transition:
       background-color ani.$speed-fast ease-in,
       box-shadow ani.$speed-fast ease-in,
   }
 
   &:active {
-    transition: 
+    transition:
       background-color ani.$speed-reg ease-in-out,
       box-shadow ani.$speed-reg ease-in-out,
   }
@@ -279,7 +279,7 @@
 @mixin btn-glass-dark {
   @include btn-glass-base;
   background-color: var(--tint-xdark);
-    
+
   &:hover {
     background-color: var(--tint-2xdark);
   }

@@ -104,7 +104,6 @@ button:disabled {
 :focus {
   outline: 1px solid var(--color-focus);
   outline-offset: 1px;
-  box-shadow: 0 0 2px oklch(color.$dark, 0.6);
 }
 
 ::-moz-focus-inner {
@@ -139,4 +138,3 @@ video,
 progress {
   vertical-align: baseline;
 }
-

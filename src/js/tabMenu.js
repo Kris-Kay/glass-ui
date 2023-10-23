@@ -2,7 +2,7 @@
 /* Tab menu */
 /* ================================== */
 
-// window.addEventListener("DOMContentLoaded", () => {
+function findTabs() {
   const $tabs = document.querySelectorAll('[role="tab"]');
   const $tabList = document.querySelector('[role="tablist"]');
 
@@ -37,7 +37,12 @@
       $tabs[$tabFocus].focus();
     }
   });
-// });
+};
+
+document.addEventListener("DOMContentLoaded", () =>
+{
+  findTabs();
+});
 
 function changeTabs(e) {
   const $thisTab = e.target;
@@ -62,4 +67,4 @@ function changeTabs(e) {
 
   // Show the selected panel
   $thisPanel.removeAttribute("hidden");
-}
+};

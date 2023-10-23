@@ -2,7 +2,7 @@
 /* Responsive size range print out */
 /* ================================== */
 
-let timeout = false; // holder for timeout id
+let timeout = false;
 let delay = 100; // delay after event is "complete" to run callback
 
 function cubeWidth() {
@@ -16,10 +16,13 @@ function cubeWidth() {
   });
 }
 
-// window.resize event listener
-window.addEventListener("resize", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
   clearTimeout(timeout);
   timeout = setTimeout(cubeWidth, delay);
 });
 
-cubeWidth();
+window.addEventListener("resize", () =>
+{
+  clearTimeout(timeout);
+  timeout = setTimeout(cubeWidth, delay);
+});

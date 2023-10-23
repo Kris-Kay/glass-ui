@@ -2,12 +2,14 @@
   "editor.foldingImportsByDefault": true,
   "editor.showFoldingControls": "always",
   "notebook.showFoldingControls": "always",
-  "workbench.colorTheme": "Abyss",
+  "workbench.colorTheme": "Vue Theme",
   "workbench.preferredDarkColorTheme": "Abyss",
   "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#010157",
-    "editor.selectionBackground": "#050646",
-    "editorGutter.foldingControlForeground": "#ff0066",
+
+
+    "editor.lineHighlightBackground": "#003551",
+    "editor.selectionBackground": "#004448",
+    "editorGutter.foldingControlForeground": "#ff00ae",
     "editorBracketMatch.background": "#caff6e",
   },
   "workbench.iconTheme": "material-icon-theme",
@@ -36,9 +38,16 @@
       ]
     },
 
+
     "[2077]": {
-          "comments": "#5a6d83",
-          "keywords": "#fff",
+      "comments": "#5a6d83",
+      "keywords": "#07a7aa",
+      "functions": "#b8ffa3",
+      "variables": "#ee52ff",
+      "numbers": "#00ff95",
+      "strings": "#92c9e4",
+      "types": "#7d19e1",
+
       "textMateRules": [
         {
           "scope": "ref.matchtext",
@@ -74,5 +83,8 @@
   "editor.semanticTokenColorCustomizations": {
 
   },
-  "editor.semanticHighlighting.enabled": false
+  "editor.semanticHighlighting.enabled": false,
+  "css.hover.documentation": false,
+  "less.hover.documentation": false,
+  "scss.hover.documentation": false
 }
