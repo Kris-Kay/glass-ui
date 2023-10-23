@@ -92,7 +92,7 @@ $dark: $dark-l $dark-c $dark-h;
   --color-body: oklch(95% var(--gray-ch) / 1);
   --color-caption: oklch(85% var(--gray-ch) / 1);
   --color-eyebrow: oklch(90% var(--gray-ch) / 1);
-  
+
   --color-link-rest: oklch(70% var(--primary-ch) / 1);
   --color-link-hover: oklch(50% var(--primary-ch) / 1);
   --color-link-visited: oklch(30% var(--primary-ch) / 1);
@@ -170,7 +170,6 @@ $tints: (
   @include tint-modifier('background-color');
 }
 
-// .text {
-//   @include tint-modifier('color');
-// }
-
+.text {
+  @include tint-modifier('color');
+}

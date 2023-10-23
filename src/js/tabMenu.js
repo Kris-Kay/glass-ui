@@ -52,7 +52,7 @@ function changeTabs(e) {
   const $panels = $thisPanelWrap.querySelectorAll('[role="tabpanel"]');
   const $thisPanel = document.getElementById(`${$thisPanelId}`);
   // console.log($thisPanel);
-
+  e.preventDefault();
   // Remove all current selected tabs
   $thisTabList
     .querySelectorAll('[aria-selected="true"]')
