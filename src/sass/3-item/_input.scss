@@ -30,23 +30,6 @@
   background-color: var(--tint-xdark);
 }
 
-.rect-2xs {
-  width: 16px;
-  height: 16px;
-  border-radius: 0.15rem;
-  // background-color: color.$tint-xdark;
-  // border: 1px solid white;
-}
-
-.rect-lg {
-  width: min(500px, 100%);
-  padding: var(--space-thin);
-  border-radius: var(--sm);
-  display: grid;
-  place-content: center start;
-}
-
-
 
 
 

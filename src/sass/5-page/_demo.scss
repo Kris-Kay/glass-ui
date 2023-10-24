@@ -13,6 +13,36 @@
 @use "../4-part" as *;
 /* ================================== */
 
+
+.label-sm {
+  @include text.title-text;
+  font-size: var(--text-sm);
+}
+
+.label-md {
+  @include text.title-text;
+  font-size: var(--text-md);
+}
+
+
+.rect-2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+  // background-color: color.$tint-xdark;
+  // border: 1px solid white;
+}
+
+.rect-lg {
+  width: min(500px, 100%);
+  padding: var(--space-thin);
+  border-radius: var(--sm);
+  display: grid;
+  place-content: center start;
+}
+
+
+
 /* Sizing demo */
 /* ================================== */
 .size-demo__rect {
@@ -64,6 +94,7 @@
     border-radius: var(--lg);
   }
 }
+
 
 
 /* Glass demo */
@@ -120,47 +151,45 @@
 }
 
 
-/* Flat inset demo */
+/*  Inset demo */
 /* ================================== */
+// weird layout because insets have to be set to `box-sizing: content-box`;
 .inset-demo {
   width: min(500px, 100%);
-  height: fit-content;
   display: grid;
-
-  padding: var(--2xl);
+  gap: var(--lg);
+  padding: var(--xl);
   border-radius: var(--lg);
   box-shadow: sha.$sha-lg;
 
-  background: linear-gradient(
-    to top left,
-    oklch(color.$gray / 0.7) 0%,
-    oklch(color.$gray / 0.8) 70%,
-    oklch(color.$gray / 0.9) 100%
-  );
-
-    // @include bp.bp(sm) {
-  //   gap: var(--md);
-  //   border-radius: var(--md);
-  // }
+  @include bp.bp(sm) {
+    gap: var(--xl);
+    padding: var(--2xl);
+    border-radius: var(--xl);
+    box-shadow: sha.$sha-xl;
+  }
 }
 
 .inset-demo-bin {
-  width: 100%;
-  height: fit-content;
   display: grid;
   place-items: center;
   gap: var(--xl);
+  width: 100%;
+  height: fit-content;
+  padding: 0 var(--xs);
 }
 
 .inset-rect {
-  // width: min(300px, 100%);
-  width: 100%;
-  padding: var(--xs);
-  border-radius: var(--xs);
+  box-sizing: content-box;
   display: grid;
   place-content: center start;
-  box-sizing: content-box;
+  width: 100%;
+  padding: var(--xs);
+  margin: 0 var(--xs);
+  border-radius: var(--xs);
 }
+
+
 
 
 .full-w-inset {
@@ -172,43 +201,27 @@
   place-content: center start;
 }
 
-.color {
-  div:nth-child(1) {
-    background-color: hsl(0 0% 50%);
-  }
-  div:nth-child(2) {
-    background-color: hsl(0 20% 50%);
-  }
-  div:nth-child(3) {
-    background-color: hsl(0 40% 50%);
-  }
-  div:nth-child(4) {
-    background-color: hsl(0 60% 50%);
-  }
-  div:nth-child(5) {
-    background-color: hsl(0 80% 50%);
-  }
-  div:nth-child(6) {
-    background-color: hsl(0 100% 50%);
-  }
-}
 
-.primary {
-  background-color: var(--primary);
-}
 
-.accent {
-  background-color: var(--accent);
-}
 
-.light {
-  background-color: var(--light);
-}
 
-.gray {
-  background-color: var(--gray);
-}
-
-.dark {
-  background-color: var(--dark);
-}
+// .color {
+//   div:nth-child(1) {
+//     background-color: hsl(0 0% 50%);
+//   }
+//   div:nth-child(2) {
+//     background-color: hsl(0 20% 50%);
+//   }
+//   div:nth-child(3) {
+//     background-color: hsl(0 40% 50%);
+//   }
+//   div:nth-child(4) {
+//     background-color: hsl(0 60% 50%);
+//   }
+//   div:nth-child(5) {
+//     background-color: hsl(0 80% 50%);
+//   }
+//   div:nth-child(6) {
+//     background-color: hsl(0 100% 50%);
+//   }
+// }

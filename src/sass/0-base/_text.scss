@@ -6,7 +6,7 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
-/* Fluidly Responsive font sizes */ 
+/* Fluidly Responsive font sizes */
 /* ================================== */
 /* credit to Adrian Bece for interactive fluid typography editor */
 /* https://modern-fluid-typography.vercel.app/ */
@@ -103,7 +103,6 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
   letter-spacing: $letter-spacing-sm;
-  text-shadow: sha.$text-sha-md;
 }
 
 .title {
@@ -119,7 +118,6 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-xs;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
-  text-shadow: sha.$text-sha-sm;
 }
 
 .title-thin {
@@ -129,7 +127,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 }
 
 
-/* Basic text styles */ 
+/* Basic text styles */
 /* ================================== */
 body {
   @include body-text;
@@ -189,7 +187,7 @@ li {
 }
 
 
-/* Code */ 
+/* Code */
 /* ================================== */
 
 pre code {
@@ -242,7 +240,7 @@ pre code {
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
   line-height: $line-height-sm;
-  text-shadow: sha.$text-sha-sm;
+  text-shadow: var(--text-sha-md);
   color: var(--color-eyebrow);
 }
 
@@ -253,24 +251,20 @@ pre code {
 .upper {
   @include text-size-modifier {
     text-transform: uppercase;
-
     font-family: $font-family-title;
     font-weight: $font-weight-sm;
     letter-spacing: $letter-spacing-md;
     line-height: $line-height-sm;
-    text-shadow: sha.$text-sha-sm;
   }
 }
 
 .lower {
   @include text-size-modifier {
     text-transform: lowercase;
-
     font-family: $font-family-title;
     font-weight: $font-weight-sm;
     letter-spacing: $letter-spacing-md;
     line-height: $line-height-sm;
-    text-shadow: sha.$text-sha-sm;
   }
 }
 
@@ -282,12 +276,6 @@ pre code {
 
 .text-c {
   text-align: center;
-}
-
-.box__title {
-  text-align: center;
-  @include title-thin;
-  font-size: var(--text-2xl);
 }
 
 

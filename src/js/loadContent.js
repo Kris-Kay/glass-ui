@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () =>
   // const $tutorialBtns = document.querySelectorAll('.js-tutorial');
 
   // Fetch the HTML content from a separate file
-  fetch('/html/home.html')
+  fetch('/html/documentation.html')
+  // fetch('/html/home.html')
     .then(response => response.text())
     .then(html => {
       // Insert the HTML content into the container element

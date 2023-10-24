@@ -173,3 +173,24 @@ $tints: (
 .text {
   @include tint-modifier('color');
 }
+
+
+.dark {
+  background-color: oklch(var(--dark-lch) / 1);
+}
+
+.gray {
+  background-color: oklch(var(--gray-lch) / 1);
+}
+
+.light {
+  background-color: oklch(var(--light-lch) / 1);
+}
+
+.primary {
+  background-color: oklch(var(--primary-lch) / 1);
+}
+
+.accent {
+  background-color: oklch(var(--accent-lch) / 1);
+}

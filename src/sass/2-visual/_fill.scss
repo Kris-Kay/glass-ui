@@ -1,5 +1,5 @@
 /* ================================== */
-/* Fill */
+/* Fill aka background ingridients */
 @use "../0-base/color";
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/size";
@@ -22,7 +22,7 @@
 }
 
 @mixin noise-md {
-  @include noise;  
+  @include noise;
   background-size: 82px;
 }
 
@@ -70,8 +70,19 @@ $bright: 0.95;
 
 /* Glass fill classes */
 /* ================================== */
-.fill { 
+.fill {
   @include color.tint-modifier('background-color') {
     @include glass-filter;
   }
+}
+
+@mixin fill-gray-linear {
+  background: linear-gradient(to top left,
+    oklch(30% var(--gray-ch) / 0.85) 0%,
+    oklch(50% var(--gray-ch) / 0.9) 70%,
+    oklch(70% var(--gray-ch) / 0.95) 100%);
+}
+
+.fill-gray-linear {
+  @include fill-gray-linear;
 }
