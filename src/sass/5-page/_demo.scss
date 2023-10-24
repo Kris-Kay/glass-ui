@@ -110,61 +110,6 @@
 }
 
 
-
-/* Glass demo */
-/* ================================== */
-.glass-demo__bin {
-  width: 100%;
-  display: grid;
-  place-content: center;
-  grid-template-columns: repeat(auto-fit, min(300px, 100%));
-  // grid-template-columns: repeat(auto-fit, minmax(min(225px, 100%), 1fr));
-  gap: var(--md);
-
-  padding-bottom: var(--2xl);
-
-  @include bp.bp(xs) {
-    grid-template-columns: repeat(auto-fit, min(150px, 100%));
-  }
-
-  @include bp.bp(md) {
-    grid-template-columns: repeat(auto-fit, min(180px, 100%));
-    gap: var(--lg);
-  }
-
-  @include bp.bp(lg) {
-    grid-template-columns: repeat(auto-fit, min(220px, 100%));
-  }
-}
-
-.glass-demo__rect {
-  width: 100%;
-  height: 100px;
-  @include flex-c;
-  flex-direction: column;
-  @include text.title-text;
-  font-size: var(--text-sm);
-
-  border-radius: var(--sm);
-  text-shadow: var(--text-sha-md);
-
-
-  @include bp.bp(xs) {
-    height: 150px;
-  }
-
-  @include bp.bp(md) {
-    height: 180px;
-  }
-
-  @include bp.bp(lg) {
-    height: 220px;
-    border-radius: var(--md);
-    font-size: var(--text-md);
-  }
-}
-
-
 /*  Inset demo */
 /* ================================== */
 // weird layout because insets have to be set to `box-sizing: content-box`;

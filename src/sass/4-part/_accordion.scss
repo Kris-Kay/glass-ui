@@ -31,16 +31,23 @@
   z-index: z.z(card);
 
   /* visual */
-  // border-radius: var(--lg) var(--lg) 0 0;
-  border-radius: var(--lg);
+  border-radius: var(--md);
   @include glass.glass-base;
   @include fill.fill(dark);
   // box-shadow: none;
   box-shadow: var(--sha-xl);
   overflow: hidden;
 
-    &.is-closed {
+  &.is-closed {
+    box-shadow: var(--sha-xl);
+
+    @include bp.bp(sm) {
       box-shadow: var(--sha-2xl);
+    }
+  }
+
+  @include bp.bp(sm) {
+    border-radius: var(--lg);
   }
 }
 
@@ -132,8 +139,13 @@
   transition: height 1000ms ease;
 
   /* visual */
-  border-radius: 0 0 var(--lg) var(--lg);
+  border-radius: 0 0 var(--md) var(--md);
+  box-shadow: var(--sha-xl);
+
+  @include bp.bp(sm) {
+    border-radius: 0 0 var(--lg) var(--lg);
     box-shadow: var(--sha-2xl);
+  };
 
   &.is-closed {
     height: 0;

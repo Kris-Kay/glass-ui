@@ -1,11 +1,24 @@
 /* ================================== */
 /* Switch */
+@use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
 @use "../2-visual/shadow" as sha;
 @use "../2-visual/inset" as in;
 /* ================================== */
+
+.switch__group {
+  display: flex;
+  align-items: center;
+  gap: var(--md);
+  justify-content: space-between;
+
+  @include bp.bp(sm) {
+    gap: var(--xs);
+    justify-content: flex-start;
+  }
+}
 
 
 input[type=checkbox].switch {

@@ -60,6 +60,28 @@ $s20: calc($root-size * 20); /* 80px 5rem */
 
   /* 5xl: 80px → 120px */
   --5xl: clamp(5.00rem, 4.17rem + 4.17vw, 7.50rem);
+
+
+
+
+
+  /* xs: 12px → 24px */
+  --xs-sm: clamp(0.75rem, 0.63rem + 0.63vw, 1.50rem);
+
+  /* sm: 16px → 30px */
+  --sm-md: clamp(1.00rem, 0.83rem + 0.83vw, 1.88rem);
+
+  /* md-lg: 20px → 36px */
+  --md-lg: clamp(1.25rem, 1.04rem + 1.04vw, 2.25rem);
+
+  /* lg-xl: 24px → 32px */
+  --lg-xl: clamp(1.50rem, 1.25rem + 1.25vw, 3rem);
+
+  /* xl-2xl: 32px → 60px */
+  --xl-2xl: clamp(2.00rem, 1.67rem + 1.67vw, 3.75rem);
+
+  /* 2xl-3xl: 40px → 72px */
+  --2xl-3xl: clamp(2.50rem, 2.08rem + 2.08vw, 4.5rem);
 }
 
 /* T-shirt Size MAP */
@@ -77,6 +99,12 @@ $sizes: (
   "3xl": --3xl,
   "4xl": --4xl,
   "5xl": --5xl,
+  "xs-sm": --xs-sm,
+  "sm-md": --sm-md,
+  "md-lg": --md-lg,
+  "lg-xl": --lg-xl,
+  "xl-2xl": --xl-2xl,
+  "2xl-3xl": --2xl-3xl,
 );
 
 /* Size modifier mixin */
