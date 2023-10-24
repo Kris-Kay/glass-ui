@@ -80,6 +80,8 @@ $dark: $dark-l $dark-c $dark-h;
 /* Semantic color theme */
 /* ================================== */
   // * Text * //
+  --color-text-dark: oklch(15% var(--dark-ch) / 1);
+
   --color-h1: oklch(95% var(--light-ch) / 1);
   --color-h2: oklch(95% var(--light-ch) / 1);
   --color-h3: oklch(95% var(--light-ch) / 1);
@@ -181,6 +183,10 @@ $tints: (
 
 .gray {
   background-color: oklch(var(--gray-lch) / 1);
+}
+
+.gray-75 {
+  background-color: oklch(75% var(--gray-ch) / 1);
 }
 
 .light {

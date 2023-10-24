@@ -8,6 +8,26 @@
 @use "../2-visual/inset" as in;
 /* ================================== */
 
+
+.box-2xl {
+  // width: 100%;
+  display: grid;
+  gap: var(--xl);
+  place-items: center;
+  padding: var(--xl);
+  border-radius: var(--lg);
+  box-shadow: var(--sha-lg);
+
+  @include bp.bp(sm) {
+    gap: var(--2xl);
+    padding: var(--2xl);
+    border-radius: var(--xl);
+    box-shadow: var(--sha-xl);
+  }
+}
+
+
+
 /* Thin box */
 /* ================================== */
 @mixin box-thin {

@@ -4,6 +4,12 @@
 /* ================================== */
 
 :root {
+
+  --sha-3xs:
+    0.5px 0.4px 1px oklch(var(--dark-lch) / 0.2),
+    0.5px 0.5px 1.5px oklch(var(--dark-lch) / 0.13),
+    0 0 0.2px oklch(var(--dark-lch) / 0.08);
+
   --sha-2xs:
     0.5px 0.4px 1px oklch(var(--dark-lch) / 0.2),
     1px 0.75px 1.75px -0.1px oklch(var(--dark-lch) / 0.13),
@@ -47,8 +53,21 @@
     20px 15px 35px -2px oklch(var(--dark-lch) / 0.18),
     0 0 0.4px oklch(var(--dark-lch) / 0.13);
 
+  --sha-3xl:
+    2.5px 2px 4.5px -0.5px oklch(var(--dark-lch) / 0.03),
+    5px 3.75px 8.75px -1px oklch(var(--dark-lch) / 0.08),
+    10px 7.5px 17.5px -1.5px oklch(var(--dark-lch) / 0.13),
+    20px 15px 35px -2px oklch(var(--dark-lch) / 0.18),
+    25px 20px 40px -2px oklch(var(--dark-lch) / 0.1),
+    0 0 0.4px oklch(var(--dark-lch) / 0.13);
+
   /* Text shadows */
   /* ================================== */
+  --text-sha-3xs:
+    0.1px 0.1px 0.1px oklch(var(--dark-lch) / 0.3),
+    0 0 0.5px oklch(var(--dark-lch) / 0.1),
+    0 0 1px oklch(var(--dark-lch) / 0.05);
+
   --text-sha-2xs:
     0.1px 0.1px 0.1px oklch(var(--dark-lch) / 0.3),
     0.25px 0.25px 0.5px  oklch(var(--dark-lch) / 0.12),
@@ -90,17 +109,26 @@
     2px 2px 4px oklch(var(--dark-lch) / 0.2),
     0 0 10px oklch(var(--dark-lch) / 0.15),
     0 0 20px oklch(var(--dark-lch) / 0.1);
+
+  --text-sha-3xl:
+    1px 1px 1px oklch(var(--dark-lch) / 0.4),
+    2px 2px 4px oklch(var(--dark-lch) / 0.2),
+    0 0 10px oklch(var(--dark-lch) / 0.15),
+    0 0 20px oklch(var(--dark-lch) / 0.1),
+    0 0 25px oklch(var(--dark-lch) / 0.05);
 }
 
 //* Shadow Size MAP *//
 $shadows: (
+  "3xs": var(--sha-3xs),
   "2xs": var(--sha-2xs),
   "xs": var(--sha-xs),
   "sm": var(--sha-sm),
   "md": var(--sha-md),
   "lg": var(--sha-lg),
   "xl": var(--sha-xl),
-  "2xl": var(--sha-2xl)
+  "2xl": var(--sha-2xl),
+  "3xl": var(--sha-3xl)
 );
 
 //* Shadow class gen mixin *//

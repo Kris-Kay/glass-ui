@@ -24,6 +24,20 @@
   font-size: var(--text-md);
 }
 
+.label-dark-sm {
+  @include text.title-text;
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  text-shadow: var(--text-sha-sm);
+}
+
+.label-dark-md {
+  @include text.title-text;
+  font-size: var(--text-md);
+  color: var(--color-text-dark);
+  text-shadow: var(--text-sha-md);
+}
+
 
 .rect-2xs {
   width: 16px;
