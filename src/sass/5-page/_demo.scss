@@ -50,7 +50,7 @@
   border-radius: 0.1rem;
   height: size.$s11;
   margin: size.$s3 0;
-  box-shadow: sha.$sha-2xs;
+  box-shadow: var(--sha-2xs);
 
   @include bp.bp(md) {
     border-radius: 0.16rem;
@@ -132,7 +132,7 @@
   font-size: var(--text-sm);
 
   border-radius: var(--sm);
-  text-shadow: sha.$text-sha-sm;
+  text-shadow: var(--text-sha-md);
 
 
   @include bp.bp(xs) {
@@ -160,13 +160,13 @@
   gap: var(--lg);
   padding: var(--xl);
   border-radius: var(--lg);
-  box-shadow: sha.$sha-lg;
+  box-shadow: var(--sha-lg);
 
   @include bp.bp(sm) {
     gap: var(--xl);
     padding: var(--2xl);
     border-radius: var(--xl);
-    box-shadow: sha.$sha-xl;
+    box-shadow: var(--sha-xl);
   }
 }
 

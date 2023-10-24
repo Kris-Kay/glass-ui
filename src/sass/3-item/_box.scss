@@ -42,7 +42,7 @@
 
   /* visual */
   border-radius: var(--md);
-  box-shadow: sha.$sha-xl;
+  box-shadow: var(--sha-xl);
 
   // @include bp.bp(sm) {
   //   padding: var(--lg) var(--space-wide);

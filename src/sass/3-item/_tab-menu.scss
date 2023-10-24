@@ -35,9 +35,9 @@
 
 
 [role="tab"] {
-  --inner-h: 0.95rem; 
+  --inner-h: 0.95rem;
 
-  width: max-content; 
+  width: max-content;
   height: 100%;
   @include flex.flex-c;
   padding: 0 0.5rem;
@@ -70,5 +70,5 @@
   backdrop-filter: brightness(1.5);
   background-color: var(--tint-3xlight);
   color: var(--tint-2xdark);
-  box-shadow: sha.$sha-2xs;
+  box-shadow: var(--sha-2xs);
 }

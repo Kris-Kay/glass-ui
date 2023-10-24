@@ -23,12 +23,13 @@ input[type=checkbox].switch {
 
   /* visual */
   -webkit-appearance: none;
+  appearance: none;
   background-color: var( --color-inset-sm);
   box-shadow: in.$inset-md;
 	border-radius: br.$round;
 	cursor: pointer;
 	transition: ani.$speed-reg background ease;
-	
+
 	&::before {
     /* layout */
 		content: "";
@@ -40,19 +41,19 @@ input[type=checkbox].switch {
     /* visual */
 		background-color: var(--color-input-control);
     border-radius: br.$round;
-    box-shadow: sha.$sha-xs;
+    box-shadow: var(--sha-xs);
 		transition: margin;
     transition-duration: inherit;
 	}
-	
+
 	&:checked {
     background: var(--color-checked);
-		
+
 		&::before {
 			margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));
 		}
 	}
-	
+
 	&:disabled {
 		filter: grayscale(1);
 		opacity: .7;

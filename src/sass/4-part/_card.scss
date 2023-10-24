@@ -19,7 +19,7 @@
 
   /* visual */
   border-radius: var(--lg);
-  box-shadow: sha.$sha-2xl;
+  box-shadow: var(--sha-2xl);
 
 
   >.full-w-fill {
@@ -78,7 +78,7 @@
 
   /* visual */
   border-radius: var(--md);
-  box-shadow: sha.$sha-lg;
+  // box-shadow: sha.$sha-lg;
 
   @include bp.bp(md) {
     border-radius: var(--lg);

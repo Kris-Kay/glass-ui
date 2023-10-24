@@ -21,11 +21,11 @@
 /* visual */
   border-radius: 0;
   box-shadow: none;
-  
+
   @include bp.bp(sm) {
     overflow: hidden;
     border-radius: var(--lg);
-    box-shadow: sha.$sha-xl;
+    box-shadow: var(--sha-xl);
   }
 }
 
@@ -41,7 +41,7 @@
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
   @include fill.fill(xdark);
-  
+
   @include bp.bp(sm) {
     overflow: hidden;
     border-radius: var(--lg) var(--lg) 0 0;
@@ -63,7 +63,7 @@
 .section__title {
   @include text.title-text;
   font-size: var(--lg);
-  text-shadow: sha.$text-sha-md;
+  text-shadow: var(--text-sha-md);
 }
 
 .section__body {

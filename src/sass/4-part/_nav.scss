@@ -81,7 +81,7 @@ nav {
   display: block;
   z-index: 200;
   cursor: pointer;
-  
+
   &.isClosed {
     display: none;
   }
@@ -89,13 +89,13 @@ nav {
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-lg) * 1.25); 
+  top: calc(var(--ui-lg) * 1.25);
   right: 0;
   padding: var(--sm);
   cursor: pointer;
 
   border-radius: var(--sm);
-  box-shadow: sha.$sha-xl;
+  box-shadow: var(--sha-xl);
 }
 
 .dropdown__bin {

@@ -26,7 +26,7 @@
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
   z-index: z.z(on-btn);
-  text-shadow: sha.$text-sha-sm;
+  // text-shadow: sha.$text-sha-sm;
 }
 
 /* Base → Button layout */
@@ -66,6 +66,8 @@
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
 
+  text-shadow: var(--text-sha-sm);
+
   & img {
     height: calc(1.1 * $inner-h);
     margin-top: calc(-1 * $p-t);
@@ -92,6 +94,8 @@
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
 
+  text-shadow: var(--text-sha-md);
+
   & img {
     height: calc(1.1 * $inner-h);
     margin-top: calc(-1 * $p-t);
@@ -117,6 +121,8 @@
   font-size: $inner-h;
   line-height: $inner-h;
   padding: $p-t $p-x $p-b $p-x;
+
+  text-shadow: var(--text-sha-md);
 
   & img {
     height: calc(1.1 * $inner-h);
@@ -220,7 +226,7 @@
 /* Base → 3D button glass material */
 @mixin btn-glass-base {
   position: relative;
-  box-shadow: sha.$sha-xs;
+   box-shadow: var(--sha-xs);
   @include fill.glass-filter;
   color: var(--btn-text-rest);
   @include ui-transitions;
@@ -239,11 +245,11 @@
   }
 
   &:hover {
-    box-shadow: sha.$sha-sm;
+    box-shadow: var(--sha-sm);
   }
 
   &:active {
-    box-shadow:  sha.$sha-2xs;
+    box-shadow: var(--sha-2xs);
   }
 }
 
@@ -264,7 +270,6 @@
 @mixin btn-glass-light {
   @include btn-glass-base;
   background-color: var(--tint-xlight);
-  text-shadow: sha.$text-sha-md;
 
   &:hover {
     background-color: var(--tint-2xlight);
@@ -311,12 +316,12 @@
 
   &:hover {
     background-color: var(--tint-xlight);
-    box-shadow: sha.$sha-xs;
+    box-shadow: var(--sha-xs);
   }
 
   &:active {
     background-color: var(--tint-dark);
-    box-shadow:  sha.$sha-2xs;
+    box-shadow: var(--sha-2xs);
   }
 }
 
