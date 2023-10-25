@@ -32,10 +32,11 @@
     // --ui-md: #{size.$s10}; /* 40px */
     // --ui-lg: #{size.$s11}; /* 44px */
 
-    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 50rem);
+    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 38rem);
   }
 
   @include bp.bp(lg) {
+    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 60rem);
     --space-thin: #{size.$s7}; // 28px
     --space-wide: #{size.$s16}; // 64px
   }

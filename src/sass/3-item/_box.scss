@@ -8,6 +8,34 @@
 @use "../2-visual/inset" as in;
 /* ================================== */
 
+@mixin box--full-w {
+  width: 100%;
+  display: grid;
+  // place-items: center;
+  // border-radius: 0;
+
+  > fit {
+    width: fit-content;
+  }
+}
+
+.box--full-w-2xl {
+  @include box--full-w;
+  gap: var(--2xl);
+  padding: var(--2xl);
+
+  // @include bp.bp(sm) {
+  //   gap: var(--xl);
+  //   padding: var(--2xl);
+  // }
+}
+
+
+
+
+
+
+
 @mixin box {
   width: 100%;
   display: grid;

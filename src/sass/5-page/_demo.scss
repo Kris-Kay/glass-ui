@@ -13,37 +13,6 @@
 @use "../4-part" as *;
 /* ================================== */
 
-.label-gray-xs {
-  font-size: var(--text-xs);
-  color: var(--tint-3xlight);
-  font-family: text.$font-family-title;
-  font-weight: text.$font-weight-sm;
-  letter-spacing: text.$letter-spacing-md;
-}
-
-.label-sm {
-  @include text.title-text;
-  font-size: var(--text-sm);
-}
-
-.label-md {
-  @include text.title-text;
-  font-size: var(--text-md);
-}
-
-.label-dark-sm {
-  @include text.title-text;
-  font-size: var(--text-sm);
-  color: var(--tint-2xdark);
-  text-shadow: var(--text-sha-sm);
-}
-
-.label-dark-md {
-  @include text.title-text;
-  font-size: var(--text-md);
-  color: var(--color-text-dark);
-  text-shadow: var(--text-sha-md);
-}
 
 
 .rect-2xs {

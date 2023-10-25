@@ -31,19 +31,6 @@ $dark-c: 0.04;
 $dark-h: 240;
 $dark: $dark-l $dark-c $dark-h;
 
-
-// * Opaque shades * //
-// $light-bold: oklch(99% var(--light-ch) / 1);
-// $light-reg: oklch(95% var(--light-ch) / 1);
-// $light-mild: oklch(90% var(--light-ch) / 1);
-// $light-xmild: oklch(85% var(--light-ch) / 1);
-// $light-2xmild: oklch(75% var(--light-ch) / 1);
-// $dark-2xmild: oklch(25% var(--dark-ch) / 1);
-// $dark-xmild: oklch(20% var(--dark-ch) / 1);
-// $dark-mild: oklch(15% var(--dark-ch) / 1);
-// $dark-reg: oklch(10% var(--dark-ch) / 1);
-// $dark-bold: oklch(5% var(--dark-ch) / 1);
-
 :root {
   // * Primary * //
   --primary-ch: #{$primary-c} #{$primary-h};
@@ -76,6 +63,17 @@ $dark: $dark-l $dark-c $dark-h;
   --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
   --tint-3xdark:  oklch(var(--dark-lch) / 0.7);
 
+// * Opaque shades * //
+  --light-bold: oklch(99% var(--light-ch) / 1);
+  --light-reg: oklch(95% var(--light-ch) / 1);
+  --light-mild: oklch(90% var(--light-ch) / 1);
+  --light-xmild: oklch(85% var(--light-ch) / 1);
+  --light-2xmild: oklch(75% var(--light-ch) / 1);
+  --dark-2xmild: oklch(25% var(--dark-ch) / 1);
+  --dark-xmild: oklch(20% var(--dark-ch) / 1);
+  --dark-mild: oklch(15% var(--dark-ch) / 1);
+  --dark-reg: oklch(10% var(--dark-ch) / 1);
+  --dark-bold: oklch(5% var(--dark-ch) / 1);
 /* ================================== */
 /* Semantic color theme */
 /* ================================== */
@@ -125,18 +123,6 @@ $dark: $dark-l $dark-c $dark-h;
   // * Customizable custom properties * //
   --_color-code: --color-code, oklch(80% var(--accent-ch) / 1);
 }
-
-// * Glass tints * //
-// ! delete
-// $tint-3xlight: var(--tint-3xlight);
-// $tint-2xlight: var(--tint-2xlight);
-// $tint-xlight:  var(--tint-xlight);
-// $tint-light:   var(--tint-light);
-// $tint-clear:   var(--tint-clear);
-// $tint-dark:    var(--tint-dark);
-// $tint-xdark:   var(--tint-xdark);
-// $tint-2xdark:  var(--tint-2xdark);
-// $tint-3xdark:  var(--tint-3xdark);
 
 
 /* Glass tint MAP */

@@ -30,7 +30,7 @@ $round: 9999px;
   }
 }
 
-/* Nested border radius */  
+/* Nested border radius */
 /* ================================== */
 @mixin outer-br ($inner-br, $padding) {
   $r: calc($inner-br + $padding);
@@ -40,10 +40,12 @@ $round: 9999px;
   border-radius: $br;
 }
 
-/* Outlines & borders */  
+/* Outlines & borders */
 /* ================================== */
 .outline-thin-light {
   box-shadow: bevel.$bevel-lg;
   outline: 1px solid oklch(color.$light / 0.15);
   outline-offset: -1px;
 }
+
+$thin-xlight: 1px solid var(--tint-xlight);
