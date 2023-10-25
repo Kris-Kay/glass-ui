@@ -2,9 +2,8 @@
 /*  Fluid typography Scale print out */
 /* ================================== */
 
-
-  let textSizeTimeout = false;
-  let textSizeDelay = 300; // delay after event is "complete" to run callback
+let textSizeTimeout = false;
+let textSizeDelay = 300; // delay after event is "complete" to run callback
 
 function textSize() {
   const $allText = document.querySelectorAll(".js-textSize");
@@ -14,21 +13,19 @@ function textSize() {
     let $size = window.getComputedStyle(text).getPropertyValue('font-size');
     let $parsedSize = parseInt($size);
     // console.log($size);
-    console.log($parsedSize);
+    // console.log($parsedSize);
     let $span = text.parentNode.querySelector("span");
-    $span.innerText = `${$parsedSize}`;
+    $span.innerText = `${$parsedSize}px`;
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   clearTimeout(textSizeTimeout);
   timeout = setTimeout(textSize, textSizeDelay);
-// textSize();
 });
 
 window.addEventListener("resize", () =>
 {
   clearTimeout(textSizeTimeout);
   timeout = setTimeout(textSize, textSizeDelay);
-// textSize();
 });
