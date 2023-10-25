@@ -204,8 +204,8 @@
   </section> -->
 
   <!-- 3D Inset -->
-  <section class="max-w-gutter">
-    <div class="max-w inset-demo fill-gray-linear glass-light">
+  <!-- <section class="max-w-gutter">
+    <div class="max-w inset-demo fill-gray-linear glass-xlight">
 
       <h3 class="box__title">3D Inset</h3>
 
@@ -231,7 +231,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Inset shadow only-->
   <!-- <section class="max-w-gutter">
@@ -307,10 +307,10 @@
   </section> -->
 
   <!-- Shadows -->
-  <section class="max-w-gutter">
-    <div class="max-w box-2xl gray-75">
+  <!-- <section class="max-w-gutter">
+    <div class="max-w box-2xl gray-linear-light glass-xlight">
 
-      <h3 class="box__title  text-3xdark">Elevation shadows</h3>
+      <h3 class="box__title  text-2xdark">Elevation shadows</h3>
 
       <div class="bento__wrap">
 
@@ -352,40 +352,67 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Text shadows -->
-  <section class="max-w box-wide-resp grid gap-2xl fill-3xlight">
-    <h3 class="box__title text-3xdark text-sha-lg">
+  <!-- <section class="max-w box-4xl mobile-full fit gray-linear-xlight fill-2xlight">
+    <h3 class="box__title text-2xdark">
       Text shadows
     </h3>
 
-    <div class="grid gap-2xs">
-      <h4 class="title-md text-dark p-b-3xs">body text + text shadows</h4>
+    <div class="grid gap-2xs full-w">
+      <h4 class="upper-sm text-3xdark">On body text</h4>
       <p class="text-sha-xs">.text-sha-xs</p>
       <p class="text-sha-sm">.text-sha-sm</p>
       <p class="text-sha-md">.text-sha-md</p>
-      <p class="text-sha-lg ">.text-sha-lg</p>
+      <p class="text-sha-lg">.text-sha-lg</p>
       <p class="text-sha-xl">.text-sha-xl</p>
     </div>
 
     <div class="grid gap-2xs full-w">
-      <h4 class="title-md text-dark p-b-3xs">.title-lg + text shadows</h4>
-      <p class="title-lg text-sha-xs">.text-sha-xs</p>
-      <p class="title-lg text-sha-sm">.text-sha-sm</p>
-      <p class="title-lg text-sha-md">.text-sha-md</p>
-      <p class="title-lg text-sha-lg">.text-sha-lg</p>
-      <p class="title-lg text-sha-xl">.text-sha-xl</p>
+      <h4 class="upper-sm text-3xdark">On title text</h4>
+      <p class="title-xl text-sha-xs">.text-sha-xs</p>
+      <p class="title-xl text-sha-sm">.text-sha-sm</p>
+      <p class="title-xl text-sha-md">.text-sha-md</p>
+      <p class="title-xl text-sha-lg">.text-sha-lg</p>
+      <p class="title-xl text-sha-xl">.text-sha-xl</p>
     </div>
-  </section>
+  </section> -->
 
   <!-- Titles -->
-  <section class="max-w box-wide-resp grid gap-xl fill-2xdark">
+  <section class="max-w box-4xl mobile-full fit fill-3xdark">
     <h3 class="box__title">
-      Text
+       Fluid typography Scale
     </h3>
 
-    <div class="flex-wrap flex-sb gap-3xl">
+    <div class="grid gap-md">
+
+      <div class="flex-c-y gap-xs">
+        <div class="flex-c-y gap-2xs">
+          <p class="lower-xs">font-size:</p>
+          <span class="title-xs bold"></span>
+        </div>
+        <p class="text-xs js-textSize">text-xs</p>
+      </div>
+
+      <div class="flex-c-y gap-xs">
+        <div class="flex-c-y gap-2xs ">
+          <p class="lower-xs">font-size:</p>
+          <span class="title-xs bold"></span>
+        </div>
+        <p class="text-md js-textSize">text-md</p>
+      </div>
+
+      <div class="flex-c-y gap-xs">
+        <div class="flex-c-y gap-2xs">
+          <p class="lower-xs">font-size:</p>
+          <span class="title-xs bold"></span>
+        </div>
+        <p class="text-3xl js-textSize">text-3xl</p>
+      </div>
+
+    </div>
+
       <div class="grid gap-2xs">
         <h4 class="text-lg text-3xlight p-b-2xs">Body text</h4>
         <p class="text-xs">.text-xs</p>
@@ -404,6 +431,7 @@
         <p class="title-lg">.title-lg</p>
         <p class="title-xl">.title-xl</p>
         <p class="title-2xl">.title-2xl</p>
+        <p class="title-3xl">.title-3xl</p>
       </div>
 
       <div class="grid gap-2xs">
@@ -414,6 +442,7 @@
         <p class="title-thin-lg">.title-thin-lg</p>
         <p class="title-thin-xl">.title-thin-xl</p>
         <p class="title-thin-2xl">.title-thin-2xl</p>
+        <p class="title-thin-3xl">.title-thin-3xl</p>
       </div>
     </div>
   </section>
@@ -513,7 +542,7 @@
   </section> -->
 
   <!-- Size range -->
-  <!-- <section class="max-w-gutter">
+  <section class="max-w-gutter">
     <div class="max-w box-wide-fit grid-center gap-xl glass-2xdark sha-xl">
       <div class="grid gap-2xs">
         <h3 class="box__title">Responsive size range</h3>
@@ -523,67 +552,67 @@
       <div class="">
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-3xs"></div>
+          <div class=" js-sizeRect size-demo__rect w-3xs"></div>
           <p class="text-sm">width: var(--3xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-2xs"></div>
+          <div class=" js-sizeRect size-demo__rect w-2xs"></div>
           <p class="text-sm">width: var(--2xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-xs"></div>
+          <div class=" js-sizeRect size-demo__rect w-xs"></div>
           <p class="text-sm">width: var(--xs) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-sm"></div>
+          <div class=" js-sizeRect size-demo__rect w-sm"></div>
           <p class="text-sm">width: var(--sm) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-md"></div>
+          <div class=" js-sizeRect size-demo__rect w-md"></div>
           <p class="text-sm">width: var(--md) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-lg"></div>
+          <div class=" js-sizeRect size-demo__rect w-lg"></div>
           <p class="text-sm">width: var(--lg) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-xl"></div>
           <p class="text-sm">width: var(--xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-2xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-2xl"></div>
           <p class="text-sm">width: var(--2xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-3xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-3xl"></div>
           <p class="text-sm">width: var(--3xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-4xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-4xl"></div>
           <p class="text-sm">width: var(--4xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-5xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-5xl"></div>
           <p class="text-sm">width: var(--5xl) =</p>
           <span class="title-sm"></span>
         </div>
@@ -591,42 +620,42 @@
         <p class="title-thin-xl text-c">2 size-up sizes</p>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-xs-sm"></div>
+          <div class=" js-sizeRect size-demo__rect w-xs-sm"></div>
           <p class="text-sm">width: var(--xs-sm) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-sm-md"></div>
+          <div class=" js-sizeRect size-demo__rect w-sm-md"></div>
           <p class="text-sm">width: var(--sm-md) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-md-lg"></div>
+          <div class=" js-sizeRect size-demo__rect w-md-lg"></div>
           <p class="text-sm">width: var(--md-lg) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-lg-xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-lg-xl"></div>
           <p class="text-sm">width: var(--lg-xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-xl-2xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-xl-2xl"></div>
           <p class="text-sm">width: var(--xl-2xl) =</p>
           <span class="title-sm"></span>
         </div>
 
         <div class="flex-c-y gap-2xs">
-          <div class=" js-sizeCube size-demo__rect w-2xl-3xl"></div>
+          <div class=" js-sizeRect size-demo__rect w-2xl-3xl"></div>
           <p class="text-sm">width: var(--2xl-3xl) =</p>
           <span class="title-sm"></span>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
 </main>
