@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () =>
       container.innerHTML = html;
       findTabs();
       findAccordions();
-      cubeWidth();
+      rectWidth();
       findCopyBtns();
+      textSize();
     })
     .catch(error => console.error(error));
 
@@ -32,8 +33,9 @@ document.addEventListener("DOMContentLoaded", () =>
         // console.log("home loaded");
         findTabs();
         findAccordions();
-        cubeWidth();
+        rectWidth();
         findCopyBtns();
+        textSize();
       })
       .catch(error => console.error(error));
   }
@@ -48,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () =>
         // Insert the HTML content into the container element
         container.innerHTML = html;
         // console.log("doc loaded");
-        cubeWidth();
+        rectWidth();
+        textSize();
       })
       .catch(error => console.error(error));
   }
