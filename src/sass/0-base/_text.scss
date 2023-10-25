@@ -37,7 +37,7 @@
 
 /* Font size MAP */
 /* ================================== */
-$font-sizes: (
+$text-sizes: (
   "xs":  var(--text-xs),
   "sm":  var(--text-sm),
   "md":  var(--text-md),
@@ -73,7 +73,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 /* ================================== */
 // * Generates a class for every font size
 @mixin text-size-modifier {
-  @each $key, $value in $font-sizes {
+  @each $key, $value in $text-sizes {
     &-#{$key} {
       font-size: $value;
       @content;
@@ -125,6 +125,37 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
     @include title-thin;
   }
 }
+
+
+/* All caps */
+/* ================================== */
+
+/* Caps style mixin */
+@mixin caps-style {
+  text-transform: uppercase;
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-lg;
+}
+
+/* Caps style + size mixin */
+@mixin caps($size) {
+  @if not map-has-key($text-sizes, $size) {
+    @warn "Warning: `#{$size}` is not a valid text size name.";
+  } @else {
+      font-size: map-get($text-sizes, $size);
+      @include caps-style;
+  }
+}
+
+/* Caps .class generator */
+.caps {
+  @include text-size-modifier {
+    @include caps-style;
+  }
+}
+
+
 
 
 /* Basic text styles */
@@ -244,24 +275,41 @@ pre code {
 }
 
 .upper {
-  @include text-size-modifier {
-    text-transform: uppercase;
-    font-family: $font-family-title;
-    font-weight: $font-weight-md;
-    letter-spacing: $letter-spacing-md;
-    line-height: $line-height-sm;
-  }
+  text-transform: uppercase;
+}
+
+
+@mixin lower {
+  text-transform: lowercase;
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-sm;
 }
 
 .lower {
-  @include text-size-modifier {
-    text-transform: lowercase;
-    font-family: $font-family-title;
-    font-weight: $font-weight-sm;
-    letter-spacing: $letter-spacing-md;
-    line-height: $line-height-sm;
-  }
+  @include lower;
 }
+
+// .upper {
+//   @include text-size-modifier {
+//     text-transform: uppercase;
+//     font-family: $font-family-title;
+//     font-weight: $font-weight-md;
+//     letter-spacing: $letter-spacing-lg;
+//     line-height: $line-height-sm;
+//   }
+// }
+
+// .lower {
+//   @include text-size-modifier {
+//     text-transform: lowercase;
+//     font-family: $font-family-title;
+//     font-weight: $font-weight-sm;
+//     letter-spacing: $letter-spacing-md;
+//     line-height: $line-height-sm;
+//   }
+// }
 
 .truncate {
   text-overflow: ellipsis;
@@ -286,4 +334,38 @@ pre code {
   @include bp.bp(md) {
     font-size: var(--text-xl);
   }
+}
+
+
+
+.label-gray-xs {
+  font-size: var(--text-xs);
+  color: var(--tint-3xlight);
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-md;
+}
+
+.label-sm {
+  @include title-text;
+  font-size: var(--text-sm);
+}
+
+.label-md {
+  @include title-text;
+  font-size: var(--text-md);
+}
+
+.label-dark-sm {
+  @include title-text;
+  font-size: var(--text-sm);
+  color: var(--tint-2xdark);
+  text-shadow: var(--text-sha-sm);
+}
+
+.label-dark-md {
+  @include title-text;
+  font-size: var(--text-md);
+  color: var(--color-text-dark);
+  text-shadow: var(--text-sha-md);
 }
