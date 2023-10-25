@@ -12,23 +12,26 @@
 /* https://modern-fluid-typography.vercel.app/ */
 /* use this tool to fine-tune your fluid typography range */
 :root {
-  /* xs: 14px → 16px */
+  // /* xs: 14px → 16px */
   --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
 
-  /* sm: 16px → 20px */
-  --text-sm: clamp(1rem, 0.35vw + 1rem, 1.25rem);
+  // /* sm: 16px → 20px */
+  --text-sm: clamp(1rem, 0.2vw + 1rem, 1.25rem);
 
-  /* md: 18px → 22px */
-  --text-md: clamp(1.125rem, 1.2vw + 1rem, 1.375rem);
+  // /* md: 20px → 24px */
+  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.5rem);;
 
-  /* lg: 24px → 28px */
-  --text-lg: clamp(1.5rem, 1.2vw + 1rem, 1.75rem);
+  // /* lg: 24px → 32px */
+  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
 
-  /* xl: 28px → 36px */
-  --text-xl: clamp(1.75rem, 3vw + 1rem, 2.25rem);
+  // /* xl: 32px → 40px */
+  --text-xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
 
-  /* 2xl: 32px → 48px */
-  --text-2xl: clamp(2rem, 3vw + 1rem, 2.8rem);
+  // /* 2xl: 40px → 48px */
+  --text-2xl: clamp(2.5rem, 3.4vw + 1rem, 3rem);
+
+  /* 3xl: 48px → 56px */
+  --text-3xl: clamp(3rem, 0.8vw + 2.85rem, 3.5rem);
 }
 
 
@@ -40,7 +43,8 @@ $font-sizes: (
   "md":  var(--text-md),
   "lg":  var(--text-lg),
   "xl":  var(--text-xl),
-  "2xl":  var(--text-2xl)
+  "2xl":  var(--text-2xl),
+  "3xl":  var(--text-3xl)
 );
 
 /* font-family: */
@@ -86,13 +90,9 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   line-height: $line-height-md;
 }
 
-%body-text {
-  @include body-text;
-}
-
 .text {
   @include text-size-modifier {
-    @extend %body-text;
+    @include body-text;
   }
 }
 
@@ -102,7 +102,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
-  letter-spacing: $letter-spacing-sm;
+  letter-spacing: $letter-spacing-md;
 }
 
 .title {
@@ -133,11 +133,6 @@ body {
   @include body-text;
   font-size: var(--text-sm);
   color: var(--color-body);
-}
-
-li {
-  @include body-text;
-  font-weight: $font-weight-sm;
 }
 
 .dot {
@@ -252,7 +247,7 @@ pre code {
   @include text-size-modifier {
     text-transform: uppercase;
     font-family: $font-family-title;
-    font-weight: $font-weight-sm;
+    font-weight: $font-weight-md;
     letter-spacing: $letter-spacing-md;
     line-height: $line-height-sm;
   }

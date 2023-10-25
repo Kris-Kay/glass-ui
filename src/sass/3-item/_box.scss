@@ -12,11 +12,23 @@
   width: 100%;
   display: grid;
   place-items: center;
-  border-radius: var(--md-lg);
-  box-shadow: var(--sha-xl);
+  box-shadow: var(--sha-3xl);
 
   &.fit {
     width: fit-content;
+  }
+
+  &.mobile-full {
+    border-radius: 0;
+    width: 100%;
+
+    @include bp.bp(sm) {
+      border-radius: var(--lg);
+
+      &.fit {
+        width: fit-content;
+      }
+    }
   }
 }
 
@@ -24,27 +36,38 @@
   @include box;
   gap: var(--md);
   padding: var(--lg);
+  border-radius: var(--lg);
 
   @include bp.bp(sm) {
     gap: var(--lg);
     padding: var(--xl);
+    border-radius: var(--lg);
   }
 }
 
 .box-2xl {
   @include box;
-  gap: var(--lg-xl);
-  padding: var(--xl-2xl);
+  gap: var(--lg);
+  padding: var(--xl);
+  border-radius: var(--lg);
+
+  @include bp.bp(sm) {
+    gap: var(--xl);
+    padding: var(--2xl);
+    border-radius: var(--xl);
+  }
 }
 
 .box-4xl {
   @include box;
   gap: var(--2xl);
   padding: var(--2xl);
+  border-radius: var(--lg);
 
   @include bp.bp(sm) {
     gap: var(--3xl);
     padding: var(--4xl);
+    border-radius: var(--xl);
   }
 }
 
@@ -86,10 +109,6 @@
   border-radius: var(--md);
   box-shadow: var(--sha-xl);
 
-  // @include bp.bp(sm) {
-  //   padding: var(--lg) var(--space-wide);
-  //
-  // }
   @include bp.bp(xs) {
     padding: var(--2xl) var(--md);
   }
@@ -133,8 +152,10 @@
 .box__title {
   text-align: center;
   @include text.title-thin;
-  font-size: var(--text-2xl);
-  line-height: 1;
+  font-size: var(--text-3xl);
+  text-shadow: var(--text-sha-md);
+  @include bp.bp(sm) {
+  }
 }
 
 

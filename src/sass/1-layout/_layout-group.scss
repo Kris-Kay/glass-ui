@@ -36,7 +36,6 @@
   @include flex.flex-c;
   flex-direction: column;
   aspect-ratio : 1 / 1;
-  height: 1fr;
   border-radius: var(--sm);
 
   @include bp.bp(md) {

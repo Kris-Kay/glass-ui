@@ -27,7 +27,7 @@
 .label-dark-sm {
   @include text.title-text;
   font-size: var(--text-sm);
-  color: var(--color-text-dark);
+  color: var(--tint-2xdark);
   text-shadow: var(--text-sha-sm);
 }
 
@@ -119,13 +119,12 @@
   gap: var(--lg);
   padding: var(--xl);
   border-radius: var(--lg);
-  box-shadow: var(--sha-lg);
+  box-shadow: var(--sha-3xl);
 
   @include bp.bp(sm) {
     gap: var(--xl);
     padding: var(--2xl);
     border-radius: var(--xl);
-    box-shadow: var(--sha-xl);
   }
 }
 
