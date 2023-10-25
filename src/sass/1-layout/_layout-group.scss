@@ -13,7 +13,7 @@
 /* ================================== */
 
 
-/* Glass demo */
+/* Bento grid */
 /* ================================== */
 .bento__wrap {
   width: 100%;
@@ -40,5 +40,26 @@
 
   @include bp.bp(md) {
     border-radius: var(--md);
+  }
+}
+
+
+/* Column flex */
+/* ================================== */
+// * bp < lg = 1 column
+// * bp >= lg = whatever fits then wrap
+
+.column-flex {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  > .column {
+  width: 100%;
+
+    @include bp.bp(lg) {
+      width: fit-content
+    }
   }
 }
