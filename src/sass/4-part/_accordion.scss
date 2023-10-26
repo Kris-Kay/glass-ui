@@ -17,7 +17,7 @@
 .accordion__warp {
   /* layout */
   width: 100%;
-  max-width: var(--max-w);
+  max-width: var(--max-w-sm);
   display: grid;
   margin: 0 auto;
   z-index: z.z(part);

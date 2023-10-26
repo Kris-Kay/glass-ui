@@ -2569,8 +2569,8 @@ input[type=checkbox]:disabled {
 
 /* Max width */
 /* ================================== */
-.max-w {
-  max-width: var(--max-w);
+.max-w-sm{
+  max-width: var(--max-w-sm;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2639,7 +2639,7 @@ input[type=checkbox]:disabled {
 .accordion__warp {
   /* layout */
   width: 100%;
-  max-width: var(--max-w);
+  max-width: var(--max-w-sm;
   display: grid;
   margin: 0 auto;
   z-index: 8;

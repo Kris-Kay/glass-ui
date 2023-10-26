@@ -30,6 +30,11 @@
   @include bp.bp(md) {
     gap: var(--xl);
   }
+
+  @include bp.bp(lg) {
+    gap: var(--2xl);
+    padding: var(--xl);
+  }
 }
 
 .bento__rect {

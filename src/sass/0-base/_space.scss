@@ -10,7 +10,8 @@
 // * thin = small change at each bp, wide= starts small and gets very big
 
 :root {
-  --max-w: 100%;
+  --max-w-sm: 100%;
+  --max-w-md: 100%;
   --space-thin: #{size.$s4}; // 16px
   --space-wide: #{size.$s4}; // 16px
 
@@ -19,24 +20,24 @@
   --ui-lg: 2.5rem; /* 40px */
 
   @include bp.bp(sm) {
-    --max-w: calc(100vw - (var(--space-thin) * 2));
+    --max-w-sm: calc(100vw - (var(--space-thin) * 2));
     --space-thin: #{size.$s5};  // 20px
     --space-wide: #{size.$s10}; // 40px
   }
 
   @include bp.bp(md) {
     --space-thin: #{size.$s6};  // 24px
-    --space-wide: #{size.$s11}; // 44px
+    --space-wide: #{size.$s13}; // 52px
 
     // --ui-sm: #{size.$s8};  /* 32px */
     // --ui-md: #{size.$s10}; /* 40px */
     // --ui-lg: #{size.$s11}; /* 44px */
 
-    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 38rem);
+    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 38rem);
   }
 
   @include bp.bp(lg) {
-    --max-w: min(calc(100vw - (var(--space-thin) * 2)), 60rem);
+    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 60rem);
     --space-thin: #{size.$s7}; // 28px
     --space-wide: #{size.$s16}; // 64px
   }
@@ -46,14 +47,14 @@
 
 /* Max width */
 /* ================================== */
-@mixin max-w {
-  max-width: var(--max-w);
+@mixin max-w-sm {
+  max-width: var(--max-w-sm);
   margin-left: auto;
   margin-right: auto;
 }
 
-.max-w {
-  @include max-w;
+.max-w-sm {
+  @include max-w-sm;
 }
 
 @mixin max-w-gutter {

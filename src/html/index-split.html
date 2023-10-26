@@ -32,14 +32,14 @@
       <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" >
         <img src="/assets/bgImg/chris-lee-plant-m.jpg" class="bg">
       </div>
- 
+
       <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" hidden>
         <img src="/assets/bgImg/dark-wave.jpg" class="bg">
       </div>
 
       <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
         <img src="/assets/bgImg/blue-wave.jpg" class="bg">
-      </div> 
+      </div>
 
     </div>
     <!-- <div id="js-bg" class="background dark"></div> -->
@@ -48,7 +48,7 @@
 <!-- Nav -->
 <!-- ================================== -->
     <nav class="main-nav__wrap max-w-gutter">
-      <div class="max-w main-nav">
+      <div class="max-w-sm main-nav">
 
         <a
           href="#"
@@ -57,27 +57,27 @@
             src="/assets/icons/CubeTransparent.svg"
             alt="back to top"/>
         </a>
-    
+
         <!-- Color tabs -->
         <!-- <div id="js-tabMenu" class="tab-menu inset-glass-md">
           <button type="button" class="tab tab-active" id="dark-tab">
             Dark
           </button>
-    
+
           <button type="button" class="tab" id="light-tab">
             Light
           </button>
-    
+
           <button type="button" class="tab" id="color-tab">
             Color
           </button>
         </div> -->
 
-              <div 
-                role="tablist" 
+              <div
+                role="tablist"
                 aria-label="Background image tabs"
                 class="js-tabMenu tab-menu inset-glass-md">
-    
+
                 <button
                   role="tab"
                   aria-selected="true"
@@ -86,7 +86,7 @@
                   tabindex="0">
                   Dark
                 </button>
-    
+
                 <button
                   role="tab"
                   aria-selected="false"
@@ -95,7 +95,7 @@
                   tabindex="-1">
                   Light
                 </button>
-    
+
                 <button
                   role="tab"
                   aria-selected="false"
@@ -105,7 +105,7 @@
                   Color
                 </button>
               </div>
-    
+
 
         <div class="dropdown-wrap">
         <!-- Dropdown toggle -->
@@ -132,22 +132,22 @@
           <div id="js-navDropdown" class="main-nav__dropdown isClosed">
             <div class="dropdown__bg glass-clear">
               <div class="dropdown__bin">
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   id="js-home"
                   class="js-home js-dropdownItem dropdown__item btn-md btn-clear">
                   Home
                 </a>
-    
-                <a 
-                  href="#" 
+
+                <a
+                  href="#"
                   id="js-about"
                   class="js-about js-dropdownItem dropdown__item btn-md btn-clear">
                   About
                 </a>
 
-                <!-- <a 
-                  href="#" 
+                <!-- <a
+                  href="#"
                   id="js-demo"
                   class="js-dropdownItem dropdown__item btn-md btn-clear">
                   Demo
@@ -158,7 +158,7 @@
           </div>
         </div>
 
-    
+
       </div>
     </nav>
 
@@ -169,10 +169,10 @@
 <!-- Footer -->
 <!-- ================================== -->
     <footer class="fill-3xdark max-w-gutter">
-      <div class="max-w flex-sb flex-c-y flex-wrap gap-4xs m-y-sm">
+      <div class="max-w-sm flex-sb flex-c-y flex-wrap gap-4xs m-y-sm">
 
         <p class="">hello@kris-kay.com</p>
-      
+
         <div class="flex-c flex-wrap gap-3xs">
           <!-- <a href="#" target="_blank" class="btn-clear round-btn-lg">
             <img
@@ -180,14 +180,14 @@
               alt="go to Instagram account"
             />
           </a> -->
-      
+
           <a href="https://www.linkedin.com/in/kris-kay/" target="_blank" class="btn-clear round-btn-lg">
             <img
               src="assets/icons/LinkedinLogo.svg"
               alt="go to LinkedIn account"
             />
           </a>
-      
+
           <a href="https://github.com/Kris-Kay" target="_blank" class="btn-clear round-btn-lg">
             <img
               src="assets/icons/GithubLogo.svg"
@@ -195,13 +195,13 @@
             />
           </a>
         </div>
-      
+
         <p class="text-light-mild text-xs">&copy; 2023 Kris Kay All Rights Reserved</p>
-      
+
       </div>
     </footer>
-    
-    </div> 
+
+    </div>
 
 <!-- Scripts -->
 <!-- ================================== -->
@@ -219,10 +219,10 @@
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-    
+
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
-    
+
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
@@ -234,7 +234,7 @@
         appId: "1:774382265185:web:11e9980ad40fba04a1db20",
         measurementId: "G-DBY7DJ9P95"
       };
-    
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
