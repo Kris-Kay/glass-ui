@@ -10,44 +10,51 @@
 // * thin = small change at each bp, wide= starts small and gets very big
 
 :root {
-  --max-w-sm: 100%;
-  --max-w-md: 100%;
-  --space-thin: #{size.$s4}; // 16px
-  --space-wide: #{size.$s4}; // 16px
-
-  --ui-sm: 1.75rem;  /* 28px */
+  --ui-sm: 1.75rem;   /* 28px */
   --ui-md: 2.125rem;  /* 34px */
-  --ui-lg: 2.5rem; /* 40px */
+  --ui-lg: 2.5rem;    /* 40px */
 
+// 320 - 431
+  --space-thin: 16px;
+  --space-wide: 20px;
+
+  --max-w-sm: calc(100vw - (var(--space-thin) * 2));
+  --max-w-md: calc(100vw - (var(--space-thin) * 2));
+  --max-w-lg: 100%;
+
+// 432 - 831
   @include bp.bp(sm) {
-    --max-w-sm: calc(100vw - (var(--space-thin) * 2));
-    --space-thin: #{size.$s5};  // 20px
-    --space-wide: #{size.$s10}; // 40px
+    --space-thin: clamp(1rem, 1.8vw + 0.5rem, 2rem);
+    --space-wide: clamp(1.25rem, 3.9vw + 0.25rem, 4rem);
+
+    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 90%);
+    --max-w-md: min(calc(100vw - (var(--space-thin) * 2)),  #{bp.$bp-md});
   }
 
+// 832 - 1023
   @include bp.bp(md) {
-    --space-thin: #{size.$s6};  // 24px
-    --space-wide: #{size.$s13}; // 52px
-
-    // --ui-sm: #{size.$s8};  /* 32px */
-    // --ui-md: #{size.$s10}; /* 40px */
-    // --ui-lg: #{size.$s11}; /* 44px */
-
-    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 38rem);
+    --max-w-sm: min(90%, 768px);
   }
 
+// 1024 - 1440
   @include bp.bp(lg) {
-    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 60rem);
-    --space-thin: #{size.$s7}; // 28px
-    --space-wide: #{size.$s16}; // 64px
+    --space-thin: 32px;
+    --space-wide: 80px;
+
+    --max-w-md: clamp( #{bp.$bp-md}, 80%, #{bp.$bp-lg});
+    --max-w-lg: clamp(#{bp.$bp-lg}, 80%, #{bp.$bp-xl});
   }
 }
+
+
+
 
 
 
 /* Max width */
 /* ================================== */
 @mixin max-w-sm {
+  width: 100%;
   max-width: var(--max-w-sm);
   margin-left: auto;
   margin-right: auto;
@@ -56,6 +63,35 @@
 .max-w-sm {
   @include max-w-sm;
 }
+
+//md
+@mixin max-w-md {
+  width: 100%;
+  max-width: var(--max-w-md);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-md {
+  @include max-w-md;
+}
+
+//lg
+@mixin max-w-lg {
+  width: 100%;
+  max-width: var(--max-w-lg);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-lg {
+  @include max-w-lg;
+}
+
+
+
+
+
 
 @mixin max-w-gutter {
   padding: 0 var(--space-thin);
@@ -120,4 +156,17 @@
 .neg-space-wide-x {
   margin-left: calc(-1 * var(--space-wide));
   margin-right: calc(-1 * var(--space-wide));
+}
+
+.space-thin-w {
+  width: var(--space-thin);
+}
+
+.space-wide-w {
+  width: var(--space-wide);
+}
+
+.box-box {
+  width: 100%;
+  height: 300px;
 }
