@@ -1,7 +1,7 @@
 <!-- Documentation Header -->
 <!-- ================================== -->
 <header class="max-w-gutter">
-  <section class="max-w-sm atf__title-only">
+  <section class="atf__title-only">
 
     <div class="atf__card title-card glass-dark">
       <h1 class="title-xl text-c">Documentation</h1>
@@ -20,48 +20,65 @@
 <!-- ================================== -->
 <main class="grid gap-5xl p-b-5xl">
 
-<div class="fill-3xdark p-2xl">
-  <div class="flex-c-y gap-2xs">
-    <div class=" js-sizeRect size-demo__rect space-thin-w"></div>
-    <p class="text-sm">var(--space-thin) =</p>
-    <span class="title-sm"></span>
+  <div class="fill-3xdark p-2xl full-w">
+    <div class="flex-c-y gap-2xs max-w-sm">
+      <div class=" js-sizeRect size-demo__rect space-thin-w"></div>
+      <p class="text-sm">var(--space-thin) =</p>
+      <span class="title-sm"></span>
+    </div>
+
+    <div class="flex-c-y gap-2xs max-w-sm">
+      <div class=" js-sizeRect size-demo__rect space-wide-w"></div>
+      <p class="text-sm">var(--space-wide) =</p>
+      <span class="title-sm"></span>
+    </div>
   </div>
 
-  <div class="flex-c-y gap-2xs">
-    <div class=" js-sizeRect size-demo__rect space-wide-w"></div>
-    <p class="text-sm">var(--space-wide) =</p>
-    <span class="title-sm"></span>
-  </div>
-</div>
-
-  <div class="full-w accent p-y-5xl">
-    <div class="max-w-lg primary p-y-5xl">
+  <div class="full-w accent p-y-5xl grid-center">
+    <div class="max-w-lg primary grid-center">
       <p>max-w-lg</p>
-      <div class="max-w-md gray p-y-5xl">
+      <div class="max-w-md gray grid-center">
         <p>max-w-md</p>
-        <div class="max-w-sm light p-y-5xl">
-          <p class="text-3xdark">max-w-sm</p>
-          <div class="dark box-box">
-          </div>
-        </div>
+          <img src="/assets/homeImg/glass-x-view-white.png" class="max-w-sm outline-thin-light">
       </div>
     </div>
   </div>
 
-  <div class="max-w-md gray p-y-5xl">
-    <div class="max-w-sm light p-y-5xl">
-      <div class="dark box-box">
-      </div>
+  <!-- <div class="full-w accent p-y-3xl grid gap-3xl">
+    <div class="gutter-from-lg primary grid-center">
+      <p>gutter-from-lg</p>
+      <img src="/assets/homeImg/glass-x-view-white.png" class="outline-thin-light dark max-w-sm">
+    </div>
+
+    <div class="gutter-from-md primary grid-center">
+      <p>gutter-from-md</p>
+      <img src="/assets/homeImg/glass-x-view-white.png" class="outline-thin-light dark max-w-sm">
+    </div>
+
+    <div class="gutter-from-sm gray grid-center">
+      <p>gutter-from-sm</p>
+      <img src="/assets/homeImg/glass-x-view-white.png" class="outline-thin-light dark max-w-sm">
+    </div>
+
+    <div class="dark gutter-all grid-center">
+      <p>gutter-all</p>
+      <img src="/assets/homeImg/glass-x-view-white.png" class="outline-thin-light dark max-w-sm">
+    </div>
+  </div> -->
+
+  <div class="gutter-from-lg">
+    <div class=" fill-3xdark br-lg grid-center m-auto-x p-y-3xl">
+      <img src="/assets/homeImg/glass-x-view-white.png" class="max-w-md outline-thin-light">
     </div>
   </div>
 
-  <div class="max-w-sm light ">
-    <div class="dark box-box">
-    </div>
-  </div>
+
+
+
+
 
   <!-- intro -->
-  <!-- <section class="max-w-sm grid">
+  <!-- <section class="max-w-md grid">
       <div class="section__header glass-base">
         <p class="upper-xs">Step one</p>
         <h2 class="title-md">Have yourself a little CPU cookout</h2>
@@ -77,7 +94,7 @@
     </section> -->
 
   <!-- GPT -->
-  <!-- <section class="max-w-sm section__wrap">
+  <!-- <section class="max-w-md section__wrap">
     <div class="section__header glass-clear">
       <p class="eyebrow">First question</p>
       <h2 class="section__title">Can chatGPT just do it?</h2>
@@ -89,7 +106,7 @@
       </div>
     </div>
 
-    <img src="/assets/homeImg/glass-gpt-code.png" class="max-w-sm"/>
+    <img src="/assets/homeImg/glass-gpt-code.png" class="max-w-md"/>
 
     <div class="section__wrap fill-xdark grid gap-2xs space-wide">
       <h3 class="title-sm">Answer: nope this ain’t it.</h3>
@@ -103,7 +120,7 @@
 <!-- WIP -->
   <!-- Text input -->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm box-wide-100 grid gap-xl ">
+    <div class="max-w-md box-wide-100 grid gap-xl ">
       <div class="">
         <h3 class="box__title">Input</h3>
       </div>
@@ -245,7 +262,7 @@
 
   <!-- 3D Inset -->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm inset-demo fill-gray-linear glass-xlight">
+    <div class="max-w-md inset-demo fill-gray-linear glass-xlight">
 
       <h3 class="box__title">3D Inset</h3>
 
@@ -275,7 +292,7 @@
 
   <!-- Inset shadow only-->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm inset-demo light">
+    <div class="max-w-md inset-demo light">
       <h3 class="box__title text-dark">Inset shadows</h3>
 
       <div class="inset-demo-bin">
@@ -305,7 +322,7 @@
   <!-- Flat inset-->
   <!-- <section class="max-w-gutter glass--no-bevel fill-clear">
 
-    <div class="max-w-sm m-y-3xl">
+    <div class="max-w-md m-y-3xl">
       <div class="gray inset-demo">
         <div class="grid gap-3xs">
           <h3 class="box__title">Edge-to-edge inset</h3>
@@ -325,7 +342,7 @@
       </div>
     </div>
 
-    <div class="max-w-sm m-y-3xl">
+    <div class="max-w-md m-y-3xl">
       <div class="gray inset-demo">
         <div class="grid gap-3xs">
           <h3 class="box__title">Edge-to-edge shadow</h3>
@@ -348,7 +365,7 @@
 
   <!-- Shadows -->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm box-2xl gray-linear-light glass-xlight">
+    <div class="max-w-md box-2xl gray-linear-light glass-xlight">
 
       <h3 class="box__title  text-2xdark">Elevation shadows</h3>
 
@@ -395,7 +412,7 @@
   </section> -->
 
   <!-- Text shadows -->
-  <!-- <section class="max-w-sm box-4xl mobile-full fit gray-linear-xlight fill-2xlight">
+  <!-- <section class="max-w-md box-4xl mobile-full fit gray-linear-xlight fill-2xlight">
     <h3 class="box__title text-2xdark">
       Text shadows
     </h3>
@@ -420,13 +437,13 @@
   </section> -->
 
   <!-- Titles -->
-  <section class="box--full-w-2xl fill-3xdark">
-  <!-- <section class="max-w-sm box-4xl mobile-full fit fill-3xdark"> -->
+  <!-- <section class="box--full-w-2xl fill-3xdark">
+  <section class="max-w-md box-4xl mobile-full fit fill-3xdark">
     <h3 class="box__title">
        Fluid typography
     </h3>
 
-    <div class="max-w-sm column-flex gap-5xl">
+    <div class="max-w-md column-flex gap-5xl">
 
       <div class="column">
         <h4 class="list-heading--light flex-r ">Text</h4>
@@ -456,7 +473,7 @@
             <p class="text-md js-textSize">text-md</p>
           </div>
 
-          <!-- <div class="text-size__group">
+          <div class="text-size__group">
             <p class="label-gray-xs">font-size:</p>
             <span class="title-xs bold"></span>
             <p class="text-lg js-textSize">text-lg</p>
@@ -478,7 +495,7 @@
             <p class="label-gray-xs">font-size:</p>
             <span class="title-xs bold"></span>
             <p class="text-3xl js-textSize">text-3xl</p>
-          </div> -->
+          </div>
 
         </div>
       </div>
@@ -606,12 +623,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Glass tints & fills -->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm">
-      <div class="max-w-sm wrap-2">
+    <div class="max-w-md">
+      <div class="max-w-md wrap-2">
 
         <div class="tint-demo__bin outline-thin-light">
           <div class="fill-clear p-sm br-xs">
@@ -704,7 +721,7 @@
 
   <!-- Size range -->
   <!-- <section class="max-w-gutter">
-    <div class="max-w-sm box-wide-fit grid-center gap-xl glass-2xdark sha-xl">
+    <div class="max-w-md box-wide-fit grid-center gap-xl glass-2xdark sha-xl">
       <div class="grid gap-2xs">
         <h3 class="box__title">Responsive size range</h3>
         <p class="text-c">Play with the viewport to see dynamic sizing.</p>

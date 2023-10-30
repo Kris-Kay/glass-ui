@@ -16,34 +16,39 @@
 
 // 320 - 431
   --space-thin: 16px;
-  --space-wide: 20px;
+  --space-wide: 16px;
+  --space-widex2: calc(var(--space-wide) * 2);
+  --space-thinx2: calc(var(--space-thin) * 2);
 
-  --max-w-sm: calc(100vw - (var(--space-thin) * 2));
-  --max-w-md: calc(100vw - (var(--space-thin) * 2));
-  --max-w-lg: 100%;
+  // --max-w-md: calc(100vw - var(--space-thinx2));
+  // --max-w-sm: calc(var(--max-w-md) - var(--space-widex2));
+  // --max-w-sm: minmax(calc(var(--max-w-md) - var(--space-widex2)), 600px);
 
 // 432 - 831
   @include bp.bp(sm) {
     --space-thin: clamp(1rem, 1.8vw + 0.5rem, 2rem);
-    --space-wide: clamp(1.25rem, 3.9vw + 0.25rem, 4rem);
+    --space-wide: clamp(1rem, 3.9vw + 0.25rem, 4rem);
 
-    --max-w-sm: min(calc(100vw - (var(--space-thin) * 2)), 90%);
-    --max-w-md: min(calc(100vw - (var(--space-thin) * 2)),  #{bp.$bp-md});
+    // --max-w-sm: min(calc(100vw - var(--space-widex2)), 90%);
+    // --max-w-md: min(calc(100vw - (var(--space-thin) * 2)),  #{bp.$bp-md});
   }
 
 // 832 - 1023
-  @include bp.bp(md) {
-    --max-w-sm: min(90%, 768px);
-  }
+  // @include bp.bp(md) {
+    // --max-w-md: minmax(calc(100vw - var(--space-thinx2)), 900px);
+
+    // --max-w-sm: min(90%, 672px);
+    // --max-w-sm: min(90%, 768px);
+  // }
 
 // 1024 - 1440
-  @include bp.bp(lg) {
-    --space-thin: 32px;
-    --space-wide: 80px;
+  // @include bp.bp(lg) {
+    // --space-thin: 32px;
+    // --space-wide: 80px;
 
-    --max-w-md: clamp( #{bp.$bp-md}, 80%, #{bp.$bp-lg});
-    --max-w-lg: clamp(#{bp.$bp-lg}, 80%, #{bp.$bp-xl});
-  }
+    // --max-w-md: clamp( #{bp.$bp-md}, 80%, #{bp.$bp-lg});
+    // --max-w-lg: clamp(#{bp.$bp-lg}, 80%, #{bp.$bp-xl});
+  // }
 }
 
 
@@ -53,11 +58,27 @@
 
 /* Max width */
 /* ================================== */
+// @mixin max-w-sm {
+//   // width: calc(100vw - var(--space-widex2));
+//   width: 100%;
+
+//   // margin-left: auto;
+//   // margin-right: auto;
+
+//   @include bp.bp(sm) {
+//     max-width: 672px;
+//     width: 100%;
+//   }
+
+//   @include bp.bp(md) {
+//     max-width: 672px;
+//   }
+// }
+
 @mixin max-w-sm {
+  // width: calc(100% - var(--space-widex2));
   width: 100%;
-  max-width: var(--max-w-sm);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 672px;
 }
 
 .max-w-sm {
@@ -65,11 +86,41 @@
 }
 
 //md
+// @mixin max-w-md {
+//   width: calc(100vw - var(--space-thinx2));
+//   max-width: calc(bp.$bp-md - var(--space-thinx2));
+//   // margin-left: auto;
+//   // margin-right: auto;
+
+//   @include bp.bp(md) {
+//   // min-width: calc(bp.$bp-md - var(--space-thinx2));
+//     // min-width: calc(bp.$bp-md - var(--space-widex2));
+//     // max-width: clamp(bp.$bp-md, calc(100vw - var(--space-widex2)), 900px);
+//     max-width: 900px;
+//   }
+
+//   // @include bp.bp(md) {
+//   //   min-width: bp.$bp-md;
+//   //   // max-width: clamp(bp.$bp-md, calc(100vw - var(--space-widex2)),900px);
+//   //   max-width: 900px;
+//   // }
+// }
+
+// @mixin max-w-md {
+//   width: calc(100% - var(--space-widex2));
+//   // max-width: 800px;
+
+//   @include bp.bp(md) {
+//   // min-width: calc(bp.$bp-md - var(--space-thinx2));
+//     // min-width: calc(bp.$bp-md - var(--space-widex2));
+//     // max-width: clamp(bp.$bp-md, calc(100vw - var(--space-widex2)), 900px);
+//     width: min(800px, calc(100% - var(--space-widex2)));
+//   }
+// }
+
 @mixin max-w-md {
   width: 100%;
-  max-width: var(--max-w-md);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 800px;
 }
 
 .max-w-md {
@@ -77,11 +128,22 @@
 }
 
 //lg
+// @mixin max-w-lg {
+//   width: calc(100% - var(--space-widex2));
+//   max-width: bp.$bp-lg;
+//   // margin-left: auto;
+//   // margin-right: auto;
+
+//   // @include bp.bp(lg) {
+//   //   // min-width: bp.$bp-lg;
+//   //   max-width: 80vw;
+//   // }
+// }
+
+
 @mixin max-w-lg {
   width: 100%;
-  max-width: var(--max-w-lg);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1024px;
 }
 
 .max-w-lg {
@@ -90,7 +152,44 @@
 
 
 
+.gutter-all {
+  width: calc(100% - var(--space-widex2));
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.gutter-from-sm {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp.bp(sm) {
+    min-width: calc(bp.$bp-sm - var(--space-widex2));
+    width: calc(100% - var(--space-widex2));
+  }
+}
+
+.gutter-from-md {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp.bp(md) {
+    min-width: calc(bp.$bp-sm - var(--space-widex2));
+    width: calc(100% - var(--space-widex2));
+  }
+}
+
+.gutter-from-lg {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp.bp(lg) {
+    min-width: calc(bp.$bp-lg - var(--space-widex2));
+    max-width: calc(100% - var(--space-widex2));
+  }
+}
 
 
 @mixin max-w-gutter {
