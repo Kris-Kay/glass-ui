@@ -6,6 +6,11 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
+body {
+  font-size: 16px;
+  color: var(--color-body);
+}
+
 /* Fluidly Responsive font sizes */
 /* ================================== */
 /* credit to Adrian Bece for interactive fluid typography editor */
@@ -96,6 +101,10 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   }
 }
 
+body {
+  @include body-text;
+}
+
 /* Title */
 /* ================================== */
 @mixin title-text {
@@ -156,15 +165,8 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 }
 
 
-
-
 /* Basic text styles */
 /* ================================== */
-body {
-  @include body-text;
-  font-size: var(--text-sm);
-  color: var(--color-body);
-}
 
 .dot {
   &::before {
@@ -204,13 +206,7 @@ body {
   }
 }
 
-.bold {
-  font-weight: $font-weight-lg;
-}
 
-.lh-1 {
-  line-height: 1;
-}
 
 
 /* Code */
@@ -278,7 +274,6 @@ pre code {
   text-transform: uppercase;
 }
 
-
 @mixin lower {
   text-transform: lowercase;
   font-family: $font-family-title;
@@ -291,26 +286,6 @@ pre code {
   @include lower;
 }
 
-// .upper {
-//   @include text-size-modifier {
-//     text-transform: uppercase;
-//     font-family: $font-family-title;
-//     font-weight: $font-weight-md;
-//     letter-spacing: $letter-spacing-lg;
-//     line-height: $line-height-sm;
-//   }
-// }
-
-// .lower {
-//   @include text-size-modifier {
-//     text-transform: lowercase;
-//     font-family: $font-family-title;
-//     font-weight: $font-weight-sm;
-//     letter-spacing: $letter-spacing-md;
-//     line-height: $line-height-sm;
-//   }
-// }
-
 .truncate {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -319,6 +294,14 @@ pre code {
 
 .text-c {
   text-align: center;
+}
+
+.bold {
+  font-weight: $font-weight-lg;
+}
+
+.lh-1 {
+  line-height: 1;
 }
 
 

@@ -31,6 +31,12 @@
   @include size.xy-size-modifiers('margin-top', 'margin-bottom');
 }
 
+.m-auto-x {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .neg-t-3xl {
   margin-top: calc(-1 * var(--3xl));
