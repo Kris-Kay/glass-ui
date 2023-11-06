@@ -2585,7 +2585,7 @@ input[type=checkbox]:disabled {
 }
 
 /* Full width */
-.full-w {
+.w-100 {
   width: 100%;
   max-width: 100vw;
 }
