@@ -6,6 +6,7 @@
 @use "../2-visual/animation" as ani;
 @use "../2-visual/inset" as in;
 @use "../2-visual/glass";
+@use "../2-visual/border";
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -20,7 +21,7 @@
   /* visual */
   border-radius: var(--lg);
   box-shadow: var(--sha-2xl);
-
+  @include border.radius-toggle;
 
   >.full-w-fill {
     /* layout */

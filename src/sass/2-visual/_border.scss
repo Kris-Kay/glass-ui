@@ -7,7 +7,7 @@
 
 $round: 9999px;
 
-.br-round {
+.radius-round {
   border-radius: $round;
   overflow: hidden;
 }
@@ -16,19 +16,31 @@ $round: 9999px;
 /* ================================== */
 // * Generates a class for every T-shirt size
 // * T-shirt size values scale with viewport width
-.br {
+.radius {
   @include size.size-modifiers('border-radius') {
     overflow: hidden;
   }
 }
 
-@mixin br-sm {
-  border-radius: var(--md);
-
-  @include bp.bp(md) {
-    border-radius: var(--lg);
+@mixin vw-radius-modifier($property) {
+  @each $key, $value in size.$sizes {
+    &-#{$key} {
+      #{$property}: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
+      overflow: hidden;
+    }
   }
 }
+
+.vw-radius {
+  @include vw-radius-modifier('border-radius');
+}
+
+/* Radius toggle */
+//remove border radius if element width = 100vw
+// border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, *max size goes here*);
+
+
+
 
 /* Nested border radius */
 /* ================================== */

@@ -1645,54 +1645,54 @@ pre code {
 /* ================================== */
 /* Borders */
 /* ================================== */
-.br-round {
+.radius-round {
   border-radius: 9999px;
   overflow: hidden;
 }
 
 /* Border radius classes */
 /* ================================== */
-.br-3xs {
+.radius-3xs {
   border-radius: var(--3xs);
   overflow: hidden;
 }
-.br-2xs {
+.radius-2xs {
   border-radius: var(--2xs);
   overflow: hidden;
 }
-.br-xs {
+.radius-xs {
   border-radius: var(--xs);
   overflow: hidden;
 }
-.br-sm {
+.radius-sm {
   border-radius: var(--sm);
   overflow: hidden;
 }
-.br-md {
+.radius-md {
   border-radius: var(--md);
   overflow: hidden;
 }
-.br-lg {
+.radius-lg {
   border-radius: var(--lg);
   overflow: hidden;
 }
-.br-xl {
+.radius-xl {
   border-radius: var(--xl);
   overflow: hidden;
 }
-.br-2xl {
+.radius-2xl {
   border-radius: var(--2xl);
   overflow: hidden;
 }
-.br-3xl {
+.radius-3xl {
   border-radius: var(--3xl);
   overflow: hidden;
 }
-.br-4xl {
+.radius-4xl {
   border-radius: var(--4xl);
   overflow: hidden;
 }
-.br-5xl {
+.radius-5xl {
   border-radius: var(--5xl);
   overflow: hidden;
 }
