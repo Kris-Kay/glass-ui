@@ -19,9 +19,9 @@
   gap: var(--space);
 
   /* visual */
-  border-radius: var(--lg);
+  // border-radius: var(--lg);
   box-shadow: var(--sha-2xl);
-  @include border.radius-toggle;
+  @extend .vw-radius-lg;
 
   >.full-w-fill {
     /* layout */

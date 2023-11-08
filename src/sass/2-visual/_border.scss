@@ -22,6 +22,12 @@ $round: 9999px;
   }
 }
 
+/* Conditional border-radius */
+/* ================================== */
+// https://ishadeed.com/article/conditional-border-radius/
+// remove border radius if element width = 100vw
+// border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, *max size goes here*);
+
 @mixin vw-radius-modifier($property) {
   @each $key, $value in size.$sizes {
     &-#{$key} {
@@ -35,12 +41,6 @@ $round: 9999px;
   @include vw-radius-modifier('border-radius');
 }
 
-/* Radius toggle */
-//remove border radius if element width = 100vw
-// border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, *max size goes here*);
-
-
-
 
 /* Nested border radius */
 /* ================================== */
@@ -51,6 +51,8 @@ $round: 9999px;
 
   border-radius: $br;
 }
+
+
 
 /* Outlines & borders */
 /* ================================== */
