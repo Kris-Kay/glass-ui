@@ -32,14 +32,22 @@ $round: 9999px;
   @each $key, $value in size.$sizes {
     &-#{$key} {
       #{$property}: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
-      overflow: hidden;
+      @content;
     }
   }
 }
 
 .vw-radius {
-  @include vw-radius-modifier('border-radius');
+  @include vw-radius-modifier('border-radius') {
+    overflow: hidden;
+  }
 }
+
+// .resp-radius {
+//   // @extend .vw-radius-lg;
+//   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 25px);
+//   // border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
+// }
 
 
 /* Nested border radius */

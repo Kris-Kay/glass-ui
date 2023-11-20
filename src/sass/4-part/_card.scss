@@ -11,17 +11,17 @@
 /* ================================== */
 
 .card {
-  --space: var(--lg); // < control padding from here
-  z-index: z.z(card);
+  --space: var(--space-thin); // < control padding from here
+
   /* layout */
-  padding: var(--space);
   display: grid;
   gap: var(--space);
+  z-index: z.z(card);
+  padding: var(--space);
 
   /* visual */
-  // border-radius: var(--lg);
-  box-shadow: var(--sha-2xl);
   @extend .vw-radius-lg;
+  box-shadow: var(--sha-2xl);
 
   >.full-w-fill {
     /* layout */
@@ -33,8 +33,34 @@
     background-color: var(--tint-xdark);
     box-shadow: in.$flat-inset-md;
   }
-}
 
+  >.full-w-img {
+    /* layout */
+    display: grid;
+    place-self: center;
+    margin-left: calc(-1 * var(--space));
+    margin-right: calc(-1 * var(--space));
+    z-index: z.z(on-card);
+  }
+
+  >.full-w-img-noBottomMargin {
+    /* layout */
+    display: grid;
+    place-self: center;
+    margin-left: calc(-1 * var(--space));
+    margin-right: calc(-1 * var(--space));
+    margin-bottom: calc(-1 * var(--space));
+    z-index: z.z(on-card);
+  }
+
+  >.full-w-img-noMargin {
+    /* layout */
+    display: grid;
+    place-self: center;
+    margin: calc(-1 * var(--space));
+    z-index: z.z(on-card);
+  }
+}
 
 .card-3d-bin {
   position: relative;

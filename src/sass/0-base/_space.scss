@@ -4,6 +4,10 @@
 @use "size";
 /* ================================== */
 
+/* Responsive UI height */
+/* ================================== */
+/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
+
 /* Responsive layout edge */
 /* ================================== */
 // * used to create consistent responsive layouts
@@ -51,8 +55,16 @@
   // }
 }
 
+/* 100% */
+/* ================================== */
+.w-100 {
+  width: 100%;
+  // max-width: 100vw;
+}
 
-
+.h-100 {
+  height: 100%;
+}
 
 
 
@@ -159,7 +171,10 @@
 }
 
 
-
+.center-x {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
@@ -203,35 +218,35 @@
 }
 
 
-@mixin max-w-gutter {
-  padding: 0 var(--space-thin);
+// @mixin max-w-gutter {
+//   padding: 0 var(--space-thin);
 
-  @include bp.bp(sm) {
-    padding: 0;
-  }
-}
+//   @include bp.bp(sm) {
+//     padding: 0;
+//   }
+// }
 
-.max-w-gutter {
-  @include max-w-gutter;
-}
+// .max-w-gutter {
+//   @include max-w-gutter;
+// }
 
-/* Full width */
-.w-100 {
-  width: 100%;
-  max-width: 100vw;
-}
 
-.h-100 {
-  height: 100%;
-  max-height: 100%;
-}
 
-/* Responsive UI height */
+/* Layout spacing classes */
 /* ================================== */
-/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
 
+/* Space thin */
 .space-thin {
   padding: var(--space-thin);
+}
+
+.space-thin-w {
+  width: var(--space-thin);
+}
+
+.space-thin-x {
+  padding-left: var(--space-thin);
+  padding-right: var(--space-thin);
 }
 
 .space-thin-y {
@@ -244,13 +259,13 @@
   margin-right: calc(-1 * var(--space-thin));
 }
 
+/* Space wide */
 .space-wide {
   padding: var(--space-wide);
 }
 
-.space-wide-y {
-  padding-top: var(--space-wide);
-  padding-bottom: var(--space-wide);
+.space-wide-w {
+  width: var(--space-wide);
 }
 
 .space-wide-x {
@@ -258,18 +273,19 @@
   padding-right: var(--space-wide);
 }
 
+.space-wide-y {
+  padding-top: var(--space-wide);
+  padding-bottom: var(--space-wide);
+}
+
 .neg-space-wide-x {
   margin-left: calc(-1 * var(--space-wide));
   margin-right: calc(-1 * var(--space-wide));
 }
 
-.space-thin-w {
-  width: var(--space-thin);
-}
 
-.space-wide-w {
-  width: var(--space-wide);
-}
+
+
 
 .box-box {
   width: 100%;
