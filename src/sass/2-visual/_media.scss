@@ -27,12 +27,12 @@
 /* ================================== */
 .img-sm {
   width: min(100%, 400px);
-  margin: auto;
+  margin: 0 auto;
 }
 
 .img-md {
   width: min(100%, 500px);
-  margin: 0 auto;
+  // margin: 0 auto;
 
   @include bp.bp(md) {
     width: 70%;
