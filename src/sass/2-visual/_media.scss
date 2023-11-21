@@ -25,6 +25,12 @@
 
 /* images */
 /* ================================== */
+
+.img-xs {
+  width: min(100%, 200px);
+  margin: 0 auto;
+}
+
 .img-sm {
   width: min(100%, 400px);
   margin: 0 auto;
