@@ -12,15 +12,21 @@
 @use "../2-visual/glass";
 @use "../2-visual/shadow" as sha;
 @use "../2-visual/inset" as in;
+@use "../3-item/button" as btn;
 /* ================================== */
 
 .accordion__warp {
   /* layout */
+  --space: var(--md);
+
   width: 100%;
-  // max-width: var(--max-w-md);
   display: grid;
   margin: 0 auto;
   z-index: z.z(part);
+
+  @include bp.bp(md) {
+    --space: var(--lg);
+  }
 }
 
 .accordion__header {
@@ -53,19 +59,20 @@
 
 .accordion__top {
   display: grid;
-  padding: var(--space-thin);
+  padding: var(--space);
 }
 
 .accordion__bottom {
   display: grid;
-  gap: var(--space-thin);
+  gap: var(--space);
 
   &.full-w-fill {
     /* layout */
-    padding: var(--space-thin);
-    // margin-left: calc((-1 * var(--space-thin)) + 0.5px);
-    // margin-right: calc(-1 * var(--space-thin));
-    // margin-bottom: calc(-1 * var(--space-thin));
+    padding: var(--md);
+
+    @include bp.bp(md) {
+      padding: var(--lg);
+    }
 
     /* visual */
     background-color: var(--tint-xdark);
@@ -74,20 +81,11 @@
 }
 
 .accordion__toggle {
-  @include flex.flex-c;
+  width: 100%;
+  display: grid;
+  place-items: center;
   pointer-events: auto;
   cursor: pointer;
-  border-radius: size.$s2;
-  padding: 0.25rem 2rem;
-
-  background-color: transparent;
-  transition: background-color ani.$speed-slow ease;
-
-  &:hover {
-    background-color: var(--tint-light);
-  }
-
-  width: 100%;
 
   // @include bp.bp(md) {
   //   width: fit-content;
@@ -99,18 +97,40 @@
 
   >.see-less-btn {
     width: fit-content;
-    @include flex.flex-r;
+    // @include flex.flex-r;
     @include flex.flex-c-y;
     gap: var(--2xs);
+
+
+    border-radius: size.$s2;
+    padding: 0.25rem 2rem;
+    background-color: var(--tint-light);
+    // transition: background-color ani.$speed-slow ease;
+    @include btn.ui-transitions;
+
+    &:hover {
+      background-color: var(--tint-xlight);
+    }
   }
 
   &.is-closed {
 
     >.see-more-btn {
       width: fit-content;
-      @include flex.flex-r;
+      // @include flex.flex-r;
       @include flex.flex-c-y;
       gap: var(--2xs);
+
+      border-radius: size.$s2;
+      padding: 0.25rem 2rem;
+
+      background-color: var(--tint-light);
+      // transition: background-color ani.$speed-slow ease;
+@include btn.ui-transitions;
+
+      &:hover {
+        background-color: var(--tint-xlight);
+      }
     }
 
     >.see-less-btn {
@@ -119,36 +139,59 @@
   }
 }
 
-.see-more-btn {
+.see-more-btn, .see-less-btn {
   pointer-events: none;
 }
 
-.see-less-btn {
-  pointer-events: none;
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
 }
 
 .accordion__content {
   /* layout */
   width: 100%;
   height: fit-content;
+  display: grid;
+  gap: var(--space);
   padding-top: var(--2xl);
-  padding-bottom: var(--2xl);
-  margin-top: calc(-1 * var(--lg));
-  margin-left: auto;
-  margin-right: auto;
-  transition: height 1000ms ease;
+  padding-bottom: var(--space);
+  padding-left: var(--space);
+  padding-right: var(--space);
+  margin-top: calc(-1 * var(--xl));
 
   /* visual */
-  border-radius: 0 0 var(--md) var(--md);
+  border-radius: 0 0 var(--space) var(--space);
   box-shadow: var(--sha-xl);
+  @include fill.fill("3xdark");
+
+  animation: slide-down 900ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 
   @include bp.bp(sm) {
-    border-radius: 0 0 var(--lg) var(--lg);
     box-shadow: var(--sha-2xl);
   };
 
   &.is-closed {
-    height: 0;
     display: none;
   }
 }
@@ -161,5 +204,5 @@
 
 .accordion__text {
   max-width: 100%;
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
 }
