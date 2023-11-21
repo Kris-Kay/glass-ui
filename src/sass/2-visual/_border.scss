@@ -43,6 +43,11 @@ $round: 9999px;
   }
 }
 
+.r-resp-lg {
+  border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
+  overflow: hidden;
+}
+
 // .resp-radius {
 //   // @extend .vw-radius-lg;
 //   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 25px);

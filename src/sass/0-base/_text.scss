@@ -24,7 +24,7 @@ body {
   --text-sm: clamp(1rem, 0.2vw + 1rem, 1.25rem);
 
   // /* md: 20px → 24px */
-  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.5rem);;
+  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);;
 
   // /* lg: 24px → 32px */
   --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
@@ -33,7 +33,7 @@ body {
   --text-xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
 
   // /* 2xl: 40px → 48px */
-  --text-2xl: clamp(2.5rem, 3.4vw + 1rem, 3rem);
+  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
 
   /* 3xl: 48px → 56px */
   --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);

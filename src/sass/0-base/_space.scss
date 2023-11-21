@@ -30,7 +30,7 @@
 
 // 432 - 831
   @include bp.bp(sm) {
-    --space-thin: clamp(1rem, 1.8vw + 0.5rem, 2rem);
+    --space-thin: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
     --space-wide: clamp(1rem, 3.9vw + 0.25rem, 4rem);
 
     // --max-w-sm: min(calc(100vw - var(--space-widex2)), 90%);
@@ -179,7 +179,7 @@
 
 
 .gutter-all {
-  width: calc(100% - var(--space-widex2));
+  width: calc(100vw - var(--space-thinx2));
   margin-left: auto;
   margin-right: auto;
 }
@@ -190,8 +190,8 @@
   margin-right: auto;
 
   @include bp.bp(sm) {
-    min-width: calc(bp.$bp-sm - var(--space-widex2));
-    width: calc(100% - var(--space-widex2));
+    min-width: calc(bp.$bp-sm - var(--space-thinx2));
+    width: calc(100% - var(--space-thinx2));
   }
 }
 
@@ -201,8 +201,8 @@
   margin-right: auto;
 
   @include bp.bp(md) {
-    min-width: calc(bp.$bp-sm - var(--space-widex2));
-    width: calc(100% - var(--space-widex2));
+    min-width: calc(bp.$bp-sm - var(--space-thinx2));
+    width: calc(100% - var(--space-thinx2));
   }
 }
 
@@ -212,8 +212,8 @@
   margin-right: auto;
 
   @include bp.bp(lg) {
-    min-width: calc(bp.$bp-lg - var(--space-widex2));
-    max-width: calc(100% - var(--space-widex2));
+    min-width: calc(bp.$bp-lg - var(--space-thinx2));
+    max-width: calc(100% - var(--space-thinx2));
   }
 }
 
