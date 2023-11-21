@@ -1,5 +1,5 @@
 /* ================================== */
-/* Text styles have background underlines etc. */
+/* Text styles used in project */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../0-base/text";
@@ -10,8 +10,29 @@
 @use "shadow" as sha;
 /* ================================== */
 
+
+
+/* Small titles */
+/* ================================== */
+
+.title-gray-xs {
+  @include text.title-bold;
+  font-size: var(--text-xs);
+  color: var(--tint-3xlight);
+  text-shadow: var(--text-sha-xs);
+}
+
+.title-dark-sm {
+  @include text.title-bold;
+  font-size: var(--text-sm);
+  color: var(--tint-2xdark);
+  text-shadow: var(--text-sha-sm);
+}
+
+
+
 .list-heading--light {
-  @include text.caps(xs);
+  @include text.eyebrow;
   color: var(--tint-2xlight);
   border-bottom: border.$thin-xlight;
 }

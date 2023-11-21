@@ -61,7 +61,7 @@
 
 
 .section__title {
-  @include text.title-text;
+  @include text.title-bold;
   font-size: var(--lg);
   text-shadow: var(--text-sha-md);
 }

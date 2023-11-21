@@ -6,51 +6,14 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
+/* ================================== */
+/* Font setup */
+/* ================================== */
+
+/* Base font size */
 body {
   font-size: 16px;
-  color: var(--color-body);
 }
-
-/* Fluidly Responsive font sizes */
-/* ================================== */
-/* credit to Adrian Bece for interactive fluid typography editor */
-/* https://modern-fluid-typography.vercel.app/ */
-/* use this tool to fine-tune your fluid typography range */
-:root {
-  // /* xs: 14px → 16px */
-  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
-
-  // /* sm: 17px → 20px */
-  --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
-
-  // /* md: 20px → 24px */
-  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);;
-
-  // /* lg: 24px → 32px */
-  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
-
-  // /* xl: 32px → 40px */
-  --text-xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
-
-  // /* 2xl: 40px → 48px */
-  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
-
-  /* 3xl: 48px → 56px */
-  --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
-}
-
-
-/* Font size MAP */
-/* ================================== */
-$text-sizes: (
-  "xs":  var(--text-xs),
-  "sm":  var(--text-sm),
-  "md":  var(--text-md),
-  "lg":  var(--text-lg),
-  "xl":  var(--text-xl),
-  "2xl":  var(--text-2xl),
-  "3xl":  var(--text-3xl)
-);
 
 /* font-family: */
 /* Google fonts added in index.HTML <head> for better performance */
@@ -74,17 +37,63 @@ $line-height-sm: calc(0.1rem + 2ex + 0.1rem);
 $line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
 $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
-/* Text size classes */
+
+/* Fluidly responsive font sizes */
 /* ================================== */
-// * Generates a class for every font size
+/* https://modern-fluid-typography.vercel.app/ */
+/* use this tool to fine-tune your fluid typography range */
+
+:root {
+  /* xs: 14px → 16px */
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+
+  /* sm: 17px → 20px */
+  --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
+
+  /* md: 20px → 24px */
+  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
+
+  /* lg: 24px → 32px */
+  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
+
+  /* xl: 32px → 40px */
+  --text-xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
+
+  /* 2xl: 40px → 48px */
+  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
+
+  /* 3xl: 48px → 56px */
+  --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
+}
+
+
+/* Text size MAP */
+/* ================================== */
+$text-sizes: (
+  "xs":  var(--text-xs),
+  "sm":  var(--text-sm),
+  "md":  var(--text-md),
+  "lg":  var(--text-lg),
+  "xl":  var(--text-xl),
+  "2xl":  var(--text-2xl),
+  "3xl":  var(--text-3xl)
+);
+
+/* Text size modifier mixin */
+/* ================================== */
+// * Generates a .class for every key in `$text-sizes` map
 @mixin text-size-modifier {
   @each $key, $value in $text-sizes {
     &-#{$key} {
       font-size: $value;
-      @content;
     }
   }
 }
+
+.text {
+  @include text-size-modifier;
+}
+
 
 /* Body text */
 /* ================================== */
@@ -93,34 +102,32 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
+  color: var(--color-text);
 }
 
-.text {
-  @include text-size-modifier {
-    @include body-text;
-  }
-}
-
-body {
+.body-text,
+body,
+input,
+textarea {
   @include body-text;
 }
 
-/* Title */
+
+/* Bold titles */
 /* ================================== */
-@mixin title-text {
+@mixin title-bold {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   line-height: $line-height-sm;
   letter-spacing: $letter-spacing-md;
 }
 
-.title {
-  @include text-size-modifier {
-    @include title-text;
-  }
+.title-bold {
+  @include title-bold;
 }
 
-/* Thin Title */
+
+/* Thin titles */
 /* ================================== */
 @mixin title-thin {
   font-family: $font-family-title;
@@ -130,70 +137,11 @@ body {
 }
 
 .title-thin {
-  @include text-size-modifier {
-    @include title-thin;
-  }
+  @include title-thin;
 }
 
-
-/* All caps */
+/* Text links */
 /* ================================== */
-
-/* Caps style mixin */
-@mixin caps-style {
-  text-transform: uppercase;
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-lg;
-}
-
-/* Caps style + size mixin */
-@mixin caps($size) {
-  @if not map-has-key($text-sizes, $size) {
-    @warn "Warning: `#{$size}` is not a valid text size name.";
-  } @else {
-      font-size: map-get($text-sizes, $size);
-      @include caps-style;
-  }
-}
-
-/* Caps .class generator */
-.caps {
-  @include text-size-modifier {
-    @include caps-style;
-  }
-}
-
-
-/* Basic text styles */
-/* ================================== */
-
-.dot {
-  &::before {
-    padding-right: 0.25em;
-    content: "•"
-  }
-}
-
-.check {
-  &::before {
-    padding-right: 0.25em;
-    content: "☐"
-  }
-}
-
-.arrow {
-  &::before {
-    padding-right: 0.25em;
-    content: "➟"
-  }
-}
-
-.label-text {
-  font-weight: $font-weight-md;
-  line-height: 1;
-}
-
 .link {
   color: var(--color-link-rest);
 
@@ -207,11 +155,40 @@ body {
 }
 
 
+/* Eyebrow text */
+/* ================================== */
+@mixin eyebrow {
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-sm;
+
+  color: var(--color-eyebrow);
+  text-shadow: var(--text-sha-md);
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+/* Labels */
+/* ================================== */
+@mixin label-text {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  line-height: 1;
+}
+
+.label-text {
+  @include label-text;
+}
 
 
 /* Code */
 /* ================================== */
-
 pre code {
   display: block;
   white-space: pre;
@@ -221,9 +198,8 @@ pre code {
 @mixin code {
   font-family: $font-family-code;
   font-size: var(--text-sm);
-  color: var(--_color-code);
   line-height: $line-height-lg;
-  letter-spacing: $letter-spacing-sm;
+  color: var(--_color-code);
 }
 
 .code {
@@ -247,43 +223,36 @@ pre code {
 }
 
 
-/* Text helpers */
+/* Bullet point decorations */
+/* ================================== */
+.dot {
+  &::before {
+    padding-right: 0.25em;
+    content: "•"
+  }
+}
+
+.check {
+  &::before {
+    padding-right: 0.25em;
+    content: "☐"
+  }
+}
+
+.arrow {
+  &::before {
+    padding-right: 0.25em;
+    content: "➟"
+  }
+}
+
+
+/* Other text utility classes */
 /* ================================== */
 .first-line-bold {
   &:first-line {
     font-weight: $font-weight-lg;
   }
-}
-
-@mixin eyebrow {
-  text-transform: uppercase;
-  font-size: var(--text-xs);
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-md;
-  line-height: $line-height-sm;
-  text-shadow: var(--text-sha-md);
-  color: var(--color-eyebrow);
-}
-
-.eyebrow {
-  @include eyebrow;
-}
-
-.upper {
-  text-transform: uppercase;
-}
-
-@mixin lower {
-  text-transform: lowercase;
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-md;
-  line-height: $line-height-sm;
-}
-
-.lower {
-  @include lower;
 }
 
 .truncate {
@@ -300,55 +269,14 @@ pre code {
   font-weight: $font-weight-lg;
 }
 
+.upper {
+  text-transform: uppercase;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
 .lh-1 {
   line-height: 1;
-}
-
-
-.thin-heading {
-  @include title-thin;
-  font-size: var(--text-md);
-  line-height: $line-height-md;
-
-  @include bp.bp(sm) {
-    font-size: var(--text-lg);
-  }
-
-  @include bp.bp(md) {
-    font-size: var(--text-xl);
-  }
-}
-
-
-
-.label-gray-xs {
-  font-size: var(--text-xs);
-  color: var(--tint-3xlight);
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-md;
-}
-
-.label-sm {
-  @include title-text;
-  font-size: var(--text-sm);
-}
-
-.label-md {
-  @include title-text;
-  font-size: var(--text-md);
-}
-
-.label-dark-sm {
-  @include title-text;
-  font-size: var(--text-sm);
-  color: var(--tint-2xdark);
-  text-shadow: var(--text-sha-sm);
-}
-
-.label-dark-md {
-  @include title-text;
-  font-size: var(--text-md);
-  color: var(--color-text-dark);
-  text-shadow: var(--text-sha-md);
 }
