@@ -1,14 +1,14 @@
 {
   "name": "glass-ui-scss",
   "version": "0.1.0",
-  "description": "Apple Vision Pro-inspired glassmorphism UI",
+  "description": "3D glass UI SCSS library",
   "main": "/index.html",
   "keywords": [
-    "glassmorphism, dev, scss, css, Apple Vision Pro, UI"
+    "3D glass ui, glassmorphism, scss, css glass, ui library"
   ],
   "author": "Kris Kay",
   "license": "MIT",
-  
+
   "scripts": {
     "build:sass": "sass  src/sass:public/css",
     "copy:js": "copyfiles -u 1 ./src/js/* public",
