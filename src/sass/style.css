@@ -2898,13 +2898,13 @@ nav {
 
 /* Dropdown */
 /* ================================== */
-.main-nav__dropdown {
+.dropdown-item__bin {
   position: relative;
   display: inline-block;
   z-index: 2;
   cursor: pointer;
 }
-.main-nav__dropdown.isClosed {
+.dropdown-item__bin.isClosed {
   display: none;
 }
 
@@ -2918,7 +2918,7 @@ nav {
   box-shadow: 2px 1.5px 3.5px -0.5px rgba(0, 3, 10, 0.03), 4px 3px 7px -1px rgba(0, 3, 10, 0.08), 8px 6px 14px -1.5px rgba(0, 3, 10, 0.13), 16px 12px 28px -2px rgba(0, 3, 10, 0.18), 0 0 0.4px rgba(0, 3, 10, 0.13);
 }
 
-.dropdown__bin {
+.dropdown-item__bin {
   width: -moz-fit-content;
   width: fit-content;
   display: grid;

@@ -57,7 +57,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
   --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
 
   /* xl: 32px → 40px */
-  --text-xl: clamp(2rem, 2.2vw + 1rem, 2.5rem);
+  --text-xl: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
 
   /* 2xl: 40px → 48px */
   --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
@@ -263,6 +263,14 @@ pre code {
 
 .text-c {
   text-align: center;
+}
+
+.text-l {
+  text-align: start;
+}
+
+.text-r {
+  text-align: end;
 }
 
 .bold {

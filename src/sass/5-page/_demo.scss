@@ -158,7 +158,7 @@
   > .js-textSize {
       line-height: 0.8;
       display: inline;
-      text-wrap: nowrap;
+      overflow-wrap: break-word;
   }
 }
 

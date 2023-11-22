@@ -96,9 +96,10 @@ Give the example
 
 
 ## Credits
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+### Hat tip to:
+*
+* Adrian Bece for interactive fluid typography editor https://modern-fluid-typography.vercel.app/
+  Use this tool to fine-tune your fluid typography range.
 
 #### Images
 

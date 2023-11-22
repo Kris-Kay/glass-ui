@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 @mixin flex-c-x {
@@ -115,4 +116,3 @@
 .flex-str-y {
   @include flex-str-y;
 }
-
