@@ -1,23 +1,35 @@
 /* ================================== */
 /* Open & Close dropdown */
 /* ================================== */
+
+const $btn = document.getElementById("js-dropdownToggle");
 const $ham = document.getElementById("js-navHam");
 const $x = document.getElementById("js-navX");
 const $dd = document.getElementById("js-navDropdown");
+const $ddBG = document.getElementById("js-dropdown__bg");
 const $ddItems = $dd.querySelectorAll(".js-dropdownItem");
-const ddArray = Array.from($ddItems);
+const $ddArray = Array.from($ddItems);
 
-document.getElementById("js-dropdownToggle").onclick = () => {
-  $ham.classList.toggle("isClosed");
-  $x.classList.toggle("isClosed");
-  $dd.classList.toggle("isClosed");
+$btn.onclick = () => {
+  $ham.classList.toggle("hidden");
+  $x.classList.toggle("hidden");
+  $ddBG.classList.toggle("hidden");
 };
 
-// on menu item click -> close dropdown
-ddArray.forEach((item) => {
+// onClick for each item -> close dropdown
+$ddArray.forEach((item) => {
   item.onclick = () => {
-    $ham.classList.add("isClosed");
-    $x.classList.add("isClosed");
-    $dd.classList.add("isClosed");
+    $ham.classList.remove("hidden");
+    $x.classList.add("hidden");
+    $ddBG.classList.add("hidden");
   };
+});
+
+// onClick outside the menu -> close dropdown
+document.addEventListener('click', (event) => {
+  if (!$ddBG.contains(event.target) && !$btn.contains(event.target)) {
+    $ham.classList.remove("hidden");
+    $x.classList.add("hidden");
+    $ddBG.classList.add("hidden");
+  }
 });

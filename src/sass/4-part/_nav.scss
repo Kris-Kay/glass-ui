@@ -43,22 +43,18 @@ nav {
 
   pointer-events: none;
   gap: var(--2xs);
-
-  // @include bp.bp(md) {
-  //     padding: var(--space-thin) 0;
-  // }
 }
 
 
 
 /* Dropdown */
 /* ================================== */
-.dropdown-wrap {
+.dropdown__wrap {
   position: relative;
-  @include flex.flex-r;
+  pointer-events: none;
 }
 
-.main-nav__btn {
+.dropdown__btn {
   @include btn.round-btn-md;
   @include btn.btn-glass-dark;
 
@@ -68,49 +64,31 @@ nav {
   }
 }
 
-.main-nav__ham {
-  display: none;
-
-  &.isClosed {
-    display: inline-block;
-  }
-}
-
-.main-nav__x {
-  display: inline-block;
-
-  &.isClosed {
-    display: none;
-  }
-}
-
-.main-nav__dropdown {
-  display: block;
-  z-index: 200;
-  cursor: pointer;
-
-  &.isClosed {
-    display: none;
-  }
+.dropdown__bin {
+  width: fit-content;
+  height: fit-content;
+  pointer-events: none;
 }
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-lg) * 1.25);
+  top: calc(var(--ui-lg) * 1.2);
   right: 0;
   padding: var(--sm);
-  cursor: pointer;
 
+  pointer-events: auto;
+  overflow: hidden;
   border-radius: var(--sm);
   box-shadow: var(--sha-xl);
 }
 
-.dropdown__bin {
+.dropdown-item__bin {
   width: fit-content;
   display: grid;
   gap: calc(var(--xs) * 0.5);
   margin: calc(var(--3xs) * -1);
-  cursor: pointer;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .dropdown__item {
