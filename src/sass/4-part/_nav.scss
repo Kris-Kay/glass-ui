@@ -88,10 +88,10 @@ nav {
   gap: calc(var(--xs) * 0.5);
   margin: calc(var(--3xs) * -1);
   pointer-events: none;
-  overflow: hidden;
 }
 
 .dropdown__item {
+  pointer-events: auto;
   cursor: pointer;
   min-width: max-content;
   width: 100%;

@@ -82,10 +82,19 @@
 
 .accordion__toggle {
   width: 100%;
-  display: grid;
-  place-items: center;
+  // display: grid;
+  // place-items: center;
+  border-radius: size.$s2;
   pointer-events: auto;
   cursor: pointer;
+  background-color: transparent;
+  @include btn.ui-transitions;
+  @include flex.flex-r;
+  padding: 0.25rem;
+
+  &:hover {
+    background-color: var(--tint-light);
+  }
 
   // @include bp.bp(md) {
   //   width: fit-content;
@@ -97,40 +106,18 @@
 
   >.see-less-btn {
     width: fit-content;
-    // @include flex.flex-r;
+    @include flex.flex-r;
     @include flex.flex-c-y;
     gap: var(--2xs);
-
-
-    border-radius: size.$s2;
-    padding: 0.25rem 2rem;
-    background-color: var(--tint-light);
-    // transition: background-color ani.$speed-slow ease;
-    @include btn.ui-transitions;
-
-    &:hover {
-      background-color: var(--tint-xlight);
-    }
   }
 
   &.is-closed {
 
     >.see-more-btn {
       width: fit-content;
-      // @include flex.flex-r;
+      @include flex.flex-r;
       @include flex.flex-c-y;
       gap: var(--2xs);
-
-      border-radius: size.$s2;
-      padding: 0.25rem 2rem;
-
-      background-color: var(--tint-light);
-      // transition: background-color ani.$speed-slow ease;
-@include btn.ui-transitions;
-
-      &:hover {
-        background-color: var(--tint-xlight);
-      }
     }
 
     >.see-less-btn {
@@ -147,7 +134,7 @@
 @keyframes slide-down {
   from {
     transform: translateY(-20%);
-    opacity: 0;
+    opacity: 0.25;
   }
   to {
     transform: translateY(0%);
@@ -155,16 +142,16 @@
   }
 }
 
-@keyframes slide-up {
-  from {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
-}
+// @keyframes slide-up {
+//   from {
+//     transform: translateY(0%);
+//     opacity: 1;
+//   }
+//   to {
+//     transform: translateY(-20%);
+//     opacity: 0;
+//   }
+// }
 
 .accordion__content {
   /* layout */
@@ -183,7 +170,7 @@
   box-shadow: var(--sha-xl);
   @include fill.fill("3xdark");
 
-  animation: slide-down 900ms;
+  animation: slide-down 300ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 
@@ -192,6 +179,10 @@
   };
 
   &.is-closed {
+    // animation: slide-up 300ms;
+    // animation-timing-function: ease-out;
+    // animation-fill-mode: forwards;
+
     display: none;
   }
 }

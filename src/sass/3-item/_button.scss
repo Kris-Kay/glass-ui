@@ -22,11 +22,11 @@
 /* Base → Button text */
 @mixin btn-text {
   font-family: text.$font-family-title;
-  font-weight: text.$font-weight-sm;
+  font-weight: text.$font-weight-md;
   letter-spacing: text.$letter-spacing-md;
   text-align: center;
   z-index: z.z(on-btn);
-  // text-shadow: sha.$text-sha-sm;
+  text-shadow: var(--text-sha-xs);
 }
 
 /* Base → Button layout */
