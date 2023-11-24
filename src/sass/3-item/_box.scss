@@ -212,6 +212,7 @@
   // margin: 0 auto;
   padding: var(--space-thin);
   border-radius: var(--sm);
+  box-shadow: var(--sha-xl);
 
   @include bp.bp(sm) {
     // gap: var(--md);
@@ -222,6 +223,7 @@
 .box-thin-fit {
   width: fit-content;
   @include box-thin;
+  margin: 0 auto;
 }
 
 .box-thin-100 {

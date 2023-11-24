@@ -57,14 +57,16 @@
 .column-flex {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+
+ width: 100%;
 
   > .column {
   width: 100%;
 
-    @include bp.bp(lg) {
-      width: fit-content
-    }
+    // @include bp.bp(lg) {
+    //   width: fit-content
+    // }
   }
 }

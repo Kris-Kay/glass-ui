@@ -107,7 +107,7 @@ $dark: $dark-l $dark-c $dark-h;
   --color-inset-md: oklch(var(--dark-lch) / 0.20);
   --color-inset-lg: oklch(var(--dark-lch) / 0.25);
   --color-disabled: oklch(var(--dark-lch) / 0.15);
-  --color-checked: oklch(70% var(--accent-ch) / 0.3);
+  --color-checked: oklch(70% var(--accent-ch) / 0.4);
 
   // * buttons * //
   --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
@@ -122,8 +122,8 @@ $dark: $dark-l $dark-c $dark-h;
   --color-input-control: oklch(var(--light-lch) / 0.8);
 
 
-  // * Customizable custom properties * //
-  --_color-code: --color-code, oklch(80% var(--accent-ch) / 1);
+  // // * Customizable custom properties * //
+  // --_color-code: --color-code, oklch(80% var(--accent-ch) / 1);
 }
 
 

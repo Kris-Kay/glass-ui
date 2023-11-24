@@ -1,4 +1,5 @@
 # 3D glass UI
+3D glass UI - a SCSS library of customisable glass components and styles.
 <img src="src/assets/homeImg/glass-x-view-white.png" width="400">
 
 ## Table of contents
@@ -13,7 +14,6 @@
 * [License](#license)
 
 ## Description
-3D glass UI - a SCSS library of customisable glass components and styles.
 
   * What your application does,
   * Why you used the technologies you used,

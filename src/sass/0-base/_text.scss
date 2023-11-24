@@ -199,7 +199,7 @@ pre code {
   font-family: $font-family-code;
   font-size: var(--text-sm);
   line-height: $line-height-lg;
-  color: var(--_color-code);
+color:  oklch(80% var(--accent-ch) / 1);
 }
 
 .code {
@@ -207,21 +207,24 @@ pre code {
 }
 
 .c-comment {
-  --color-code:  oklch(75% var(--gray-ch) / 1);
+  color: oklch(65% var(--gray-ch) / 1);
 }
 
 .c-class {
-  --color-code: oklch(80% var(--accent-ch) / 1);
+  color:  oklch(100% var(--accent-ch) / 1);
 }
 
 .c-prop {
-  --color-code: oklch(70% var(--primary-ch) / 1);
+  color: oklch(80% var(--primary-ch) / 1);
 }
 
 .c-value {
-  --color-code: oklch(90% var(--primary-ch) / 1);
+  color: oklch(100% var(--primary-ch) / 1);
 }
 
+.c-num {
+  color: oklch(80% var(--accent-ch) / 1);
+}
 
 /* Bullet point decorations */
 /* ================================== */
