@@ -13,16 +13,16 @@ function findAccordions()
 
     let $thisToggle = e.target;
 
-    let $thisHeader = e.target.parentNode.parentNode;
+    let $thisAccordion = e.target.parentNode;
 
-    let $thisContent = $thisHeader.nextElementSibling;
+    let $thisContent = $thisAccordion.nextElementSibling;
 
     console.log($thisToggle);
-    console.log($thisHeader);
+    console.log($thisAccordion);
     console.log($thisContent);
 
     $thisToggle.classList.toggle("is-closed");
-    $thisHeader.classList.toggle("is-closed");;
+    $thisAccordion.classList.toggle("is-closed");;
     $thisContent.classList.toggle("is-closed");
   };
 
