@@ -39,14 +39,13 @@
 
 .atf__card {
   width: fit-content;
-  max-width: min(100%, 540px);
-  // background-color: var(--primary);
+  max-width: min(100%, 380px);
 
-  @include bp.bp(lg) {
-    max-width: min(100%, 580px);
+  @include bp.bp(md) {
+    max-width: min(100%, 420px);
   }
 
-  // &:hover {
-  //   background-color: var(--primary);
-  // }
+  @include bp.bp(lg) {
+    max-width: min(100%, 460px);
+  }
 }
