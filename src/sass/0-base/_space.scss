@@ -140,7 +140,7 @@
 //sm 432 +
 @mixin max-w-sm {
   width: 100%;
-  max-width: 672px;
+  max-width: 512px;
 }
 
 .max-w-sm {
@@ -150,7 +150,7 @@
 //md 832+
 @mixin max-w-md {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
 }
 
 .max-w-md {
@@ -184,7 +184,7 @@
   margin-right: auto;
 }
 
-.gutter-from-sm {
+@mixin gutter-from-sm {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -194,6 +194,11 @@
     width: calc(100% - var(--space-thinx2));
   }
 }
+
+.gutter-from-sm {
+  @include gutter-from-sm;
+}
+
 
 .gutter-from-md {
   width: 100%;
