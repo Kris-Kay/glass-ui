@@ -1,6 +1,7 @@
 /* ================================== */
 /* Breakpoints */
 /* ================================== */
+
 $bp-xs: 20rem; // 320px and bigger
 $bp-sm: 28rem; // 448px and bigger
 $bp-md: 45rem; // 720px and bigger
@@ -16,15 +17,6 @@ $breakpoints: (
   "lg": $bp-lg,
   "xl": $bp-xl
 );
-
-
-// $breakpoints: (
-//   "xs": 20rem,    // 320px and bigger
-//   "sm": 30rem,    // 480px and bigger
-//   "md": 40rem,    // 640px and bigger
-//   "lg": 64rem,    // 1024px and bigger
-//   "xl": 80rem,    // 1280px and bigger
-// );
 
 /* Breakpoint mixin */
 /* ================================== */

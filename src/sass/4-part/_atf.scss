@@ -2,6 +2,7 @@
 /* Above the fold */
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/theme";
+@use "../2-visual/animation" as ani;
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
@@ -38,14 +39,76 @@
 }
 
 .atf__card {
-  width: fit-content;
-  max-width: min(100%, 380px);
+  width: 95%;
 
-  @include bp.bp(md) {
-    max-width: min(100%, 420px);
+  @include bp.bp(sm) {
+    width: min(100%, 420px);
   }
 
   @include bp.bp(lg) {
-    max-width: min(100%, 460px);
+    width: min(100%, 450px);
+  }
+}
+
+.card-3d-bin {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  perspective: 5500px;
+  // border:1px solid #ccc;
+
+  @include bp.bp(sm) {
+    place-items: end start;
+  }
+}
+
+.card-3d {
+  width: fit-content;
+  max-width: 95%;
+  height: fit-content;
+
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform ani.$speed-2xslow ease-in-out;
+
+  transform:
+    perspective(5000px)
+    rotateY(15deg)
+    rotateX(15deg)
+    rotateZ(-10deg)
+    translateX(10px)
+    translateY(-10%);
+
+  @include bp.bp(sm) {
+    transform:
+      perspective(5000px)
+      rotateY(15deg)
+      rotateX(20deg)
+      rotateZ(-15deg)
+      translateX(20px)
+      translateY(-10%);
+  }
+
+  @include bp.bp(md) {
+  transform:
+    perspective(5000px)
+    rotateY(15deg)
+    rotateX(20deg)
+    rotateZ(-15deg)
+    translateX(40px)
+    translateY(-10%);
+  }
+
+  &:hover {
+    transform:
+      perspective(5000px)
+      rotateY(0deg)
+      rotateX(0deg)
+      rotateZ(0deg)
+      translateX(0px)
+      translateY(0%);
   }
 }
