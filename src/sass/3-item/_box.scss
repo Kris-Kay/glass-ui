@@ -3,10 +3,87 @@
 @use "../0-base/breakpoint" as bp;
 @use "../0-base/color";
 @use "../0-base/text";
+@use "../0-base/space";
 @use "../2-visual/fill";
+@use "../2-visual/bevel";
 @use "../2-visual/shadow" as sha;
 @use "../2-visual/inset" as in;
 /* ================================== */
+
+@mixin bg-lg {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--md);
+  padding: var(--lg);
+  box-shadow: none;
+  border-radius: none;
+
+  @include bp.bp(sm) {
+    gap: var(--lg);
+    padding: var(--xl);
+  }
+
+  @include bp.bp(md) {
+    gap: var(--xl);
+    padding: var(--2xl);
+  }
+}
+
+.bg-lg {
+  @include bg-lg;
+  display: grid;
+  place-items: center;
+}
+
+
+@mixin box {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--md);
+  padding: var(--lg);
+  box-shadow: var(--sha-xl);
+
+  @include bp.bp(sm) {
+    gap: var(--lg);
+    padding: var(--xl);
+    border-radius: var(--lg);
+  }
+
+  @include bp.bp(md) {
+    gap: var(--xl);
+    padding: var(--2xl);
+    box-shadow: var(--sha-3xl);
+  }
+}
+
+.box--fit-content {
+  @include box;
+  width: fit-content;
+  border-radius: var(--md);
+}
+
+.box--full-w {
+  @include box;
+  @include space.gutter-from-sm;
+  border-radius: 0;
+  padding: var(--xl) var(--md);
+
+  &::after {
+    box-shadow: bevel.$flat-bevel-sm;
+
+    @include bp.bp(sm) {
+      box-shadow: bevel.$bevel-lg;
+    }
+  }
+}
+
+
+
+
+
+
 
 .bg-box-sm {
   width: 100%;
@@ -44,37 +121,6 @@
   //   gap: var(--xl);
   //   padding: var(--2xl);
   // }
-}
-
-
-
-
-
-
-
-@mixin box {
-  width: 100%;
-  height: fit-content;
-  display: grid;
-  // place-items: center;
-  box-shadow: var(--sha-3xl);
-
-  &.fit {
-    width: fit-content;
-  }
-
-  &.mobile-full {
-    border-radius: 0;
-    width: 100%;
-
-    @include bp.bp(sm) {
-      border-radius: var(--lg);
-
-      &.fit {
-        width: fit-content;
-      }
-    }
-  }
 }
 
 .box-md {
@@ -174,33 +220,8 @@
   }
 }
 
-.box-2xl {
-  @include box;
 
-  gap: var(--md);
-  padding: var(--xl);
-  border-radius: var(--md);
 
-  @include bp.bp(sm) {
-    gap: var(--lg);
-    padding: var(--2xl);
-    border-radius: var(--lg);
-  }
-
-}
-
-.box-4xl {
-  @include box;
-  gap: var(--2xl);
-  padding: var(--2xl);
-  border-radius: var(--lg);
-
-  @include bp.bp(sm) {
-    gap: var(--3xl);
-    padding: var(--4xl);
-    border-radius: var(--xl);
-  }
-}
 
 
 
@@ -292,6 +313,19 @@
     font-size: var(--text-3xl);
   }
 }
+
+
+.box__title--md {
+  text-align: center;
+  @include text.title-thin;
+  font-size: var(--text-lg);
+  text-shadow: var(--text-sha-md);
+
+  @include bp.bp(sm) {
+    font-size: var(--text-xl);
+  }
+}
+
 
 
 .space-thin > .full-w-fill {
