@@ -10,7 +10,7 @@
 @use "../3-item/button" as btn;
 /* ================================== */
 
-/* Main nav */
+/* Global nav height */
 /* ================================== */
 :root {
   --nav-h: calc(var(--ui-md) + (var(--space-thin) * 2));
@@ -20,18 +20,11 @@
   }
 }
 
-nav {
-  position: relative;
-  height: var(--nav-h);
-  z-index: 200;
-}
-
 .main-nav__wrap {
   position: fixed;
-
+  height: var(--nav-h);
+  z-index: 200;
   inset: 0;
-  display: flex;
-  justify-content: center;
 }
 
 .main-nav {
@@ -40,11 +33,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   pointer-events: none;
-  gap: var(--2xs);
+  gap: var(--3xs);
 }
-
 
 
 /* Dropdown */
@@ -57,7 +48,6 @@ nav {
 .dropdown__btn {
   @include btn.round-btn-md;
   @include btn.btn-glass-dark;
-
 
   @include bp.bp(md) {
     @include btn.round-btn-lg;
