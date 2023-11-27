@@ -45,7 +45,7 @@ $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 :root {
   /* xs: 14px → 16px */
-  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+  --text-xs: clamp(0.75rem, 4vw - 1rem, 1rem);
 
   /* sm: 17px → 20px */
   --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);

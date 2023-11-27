@@ -56,14 +56,18 @@
 .tint-demo__rect {
   width: 100%;
   height: fit-content;
-  @include flex-l;
   @include flex-c-y;
+  justify-content: flex-start;
   padding: var(--sm);
   border-radius: var(--2xs);
 
   @include bp.bp(md) {
     border-radius: var(--xs);
     padding: var(--md);
+  }
+
+  &.text-c {
+    justify-content: center;
   }
 }
 
@@ -90,7 +94,7 @@
 /* ================================== */
 // weird layout because insets have to be set to `box-sizing: content-box`;
 .inset-demo {
-  width: min(500px, 100%);
+  width: min(512px, 100%);
   display: grid;
   gap: var(--lg);
   padding: var(--xl);

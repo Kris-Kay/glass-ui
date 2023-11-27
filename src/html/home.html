@@ -31,7 +31,9 @@
 <!-- ================================== -->
 <main class="w-100 grid gap-5xl p-t-4xl">
 
-<!-- perspective-bin -->
+  <!-- WIP!!!  -->
+
+  <!-- perspective-bin -->
   <!-- <div class="perspective-bin flex-wrap space-wide">
     <div class="perspective">
       <button type="button" class="btn-sm btn-icon btn-glass-clear">
@@ -166,19 +168,55 @@
     </div>
   </div> -->
 
-  <!-- WIP!!!  -->
 
   <!-- Text input -->
-  <!-- <section class="gutter-all grid-center">
-    <div class="max-w-md box-wide-100 grid gap-xl glass-2xlight">
+  <!-- <section class="grid-center">
+    <div class="max-w-md box--full-w gray-linear-light glass-xlight">
       <div class="">
-        <h3 class="box__title">Input</h3>
+        <h3 class="box__title">Text inputs</h3>
       </div>
 
-      <div class="grid">
-        <label for="text-input" class="label-text">Text input label</label>
-        <input type="text" id="text-input" name="text-input" class="text-input">
+      <div class="input__wrap">
+        <div class="input-label__group">
+
+          <label for="text-input-example" class="input__label">Text input label</label>
+
+          <p id="aria-hint-text" class="input__hint">
+            Aria hint text
+          </p>
+        </div>
+
+        <input
+          id="text-input-example"
+          class="text-input"
+          placeholder="Placeholder text"
+          aria-describedby="aria-hint-text"
+          name="text-input"
+          type="text">
       </div>
+
+      <div class="">
+        <div class="input-label__group">
+          <label for="text-area-example" class="input__label">Textarea label</label>
+
+          <p id="aria-hint-text" class="input__hint">
+            Aria hint text
+          </p>
+        </div>
+
+        <div class="textarea__wrap">
+          <textarea
+            id="text-area-example"
+            class="textarea"
+            placeholder="Placeholder text"
+            aria-describedby="aria-hint-text"
+            name="textarea"></textarea>
+        </div>
+      </div>
+
+
+
+
 
       <fieldset>
         <legend>Check box legend</legend>
@@ -310,83 +348,14 @@
     </div>
   </section> -->
 
-  <!-- Flat inset-->
-  <!-- <section class="gutter-all glass--no-bevel fill-clear">
-
-    <div class="max-w-md m-y-3xl">
-      <div class="gray inset-demo">
-        <div class="grid gap-3xs">
-          <h3 class="box__title">Edge-to-edge inset</h3>
-        </div>
-
-        <div class="full-w-inset flat-inset-sm">
-          <p class="title-sm">.flat-inset-sm</p>
-        </div>
-
-        <div class="full-w-inset flat-inset-md">
-          <p class="title-sm">.flat-inset-md</p>
-        </div>
-
-        <div class="full-w-inset flat-inset-lg">
-          <p class="title-sm">.flat-inset-lg</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-md m-y-3xl">
-      <div class="gray inset-demo">
-        <div class="grid gap-3xs">
-          <h3 class="box__title">Edge-to-edge shadow</h3>
-        </div>
-
-        <div class="full-w-inset flat-sha-sm">
-          <p class="title-sm">.flat-sha-sm</p>
-        </div>
-
-        <div class="full-w-inset flat-sha-md">
-          <p class="title-sm">.flat-sha-md</p>
-        </div>
-
-        <div class="full-w-inset flat-sha-lg">
-          <p class="title-sm">.flat-sha-lg</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- Text shadows -->
-  <!-- <section class="max-w-md box-4xl mobile-full fit gray-linear-xlight fill-2xlight">
-    <h3 class="box__title text-2xdark">
-      Text shadows
-    </h3>
-
-    <div class="grid gap-2xs full-w">
-      <h4 class="upper-sm text-3xdark">On body text</h4>
-      <p class="text-sha-xs">.text-sha-xs</p>
-      <p class="text-sha-sm">.text-sha-sm</p>
-      <p class="text-sha-md">.text-sha-md</p>
-      <p class="text-sha-lg">.text-sha-lg</p>
-      <p class="text-sha-xl">.text-sha-xl</p>
-    </div>
-
-    <div class="grid gap-2xs full-w">
-      <h4 class="upper-sm text-3xdark">On title text</h4>
-      <p class="title-xl text-sha-xs">.text-sha-xs</p>
-      <p class="title-xl text-sha-sm">.text-sha-sm</p>
-      <p class="title-xl text-sha-md">.text-sha-md</p>
-      <p class="title-xl text-sha-lg">.text-sha-lg</p>
-      <p class="title-xl text-sha-xl">.text-sha-xl</p>
-    </div>
-  </section> -->
-
   <!-- Intro -->
   <section class="gutter-all grid-center">
-    <div class="max-w-md card glass-3xdark">
+    <div class="max-w-md box--fit-content glass-3xdark">
       <div class="space-wide grid-center gap-md">
         <img src="/assets/tutorial-img/glass-layers-no-text.png" class="img-md">
 
         <div class="grid gap-2xs">
-          <p class="title-thin text-lg text-c">Three-dimensional glass UI library with beveled and inset styles. </p>
+          <p class="title-thin text-xl text-c">Three-dimensional glass UI library. </p>
           <p class="text-sm title-bold text-c">Compatible with any CSS project or framework.</p>
         </div>
       </div>
@@ -402,7 +371,7 @@
     <div class="grid gap-4xl">
       <!-- Switches -->
       <section class="gutter-all grid-center">
-        <div class="max-w-md box-2xl fit glass-xdark">
+        <div class="box--fit-content glass-xdark">
 
           <h3 class="box__title">Switches</h3>
 
@@ -436,15 +405,15 @@
       </section>
 
       <!-- 3D Buttons  -->
-      <section class="gutter-all grid-center">
-        <div class="max-w-md box-4xl fit glass-xdark">
+      <section class="grid-center">
+        <div class="max-w-md box--full-w glass-xdark">
 
           <div class="grid gap-3xs">
             <h3 class="box__title">Buttons</h3>
             <p class="text-c">Hover and click to see effects.</p>
           </div>
 
-          <div class="flex-wrap flex-c-x gap-5xl p-b-lg">
+          <div class="flex-wrap flex-se gap-5xl w-100">
 
             <div class="grid-center gap-sm">
               <h4 class="class-name">.btn-glass-clear</h4>
@@ -484,10 +453,6 @@
               </button>
             </div>
 
-          </div>
-
-          <div class="flex-wrap flex-c-x gap-5xl">
-
             <div class="grid-center gap-sm">
               <h4 class="class-name">.btn-glass-dark</h4>
 
@@ -522,9 +487,7 @@
                 <img src="/assets/icons/CaretRight.svg"/>
               </button>
             </div>
-          </div>
 
-          <div class="flex-c-x">
             <div class="grid-center gap-sm">
               <h4 class="class-name">.round-btn</h4>
 
@@ -590,10 +553,41 @@
                 </div>
               </div>
             </div>
+
           </div>
 
         </div>
       </section>
+
+      <!-- 3D Inset -->
+      <!-- <section class="gutter-all grid-center">
+        <div class="max-w-md inset-demo fill-gray-linear glass-xlight">
+
+          <h3 class="box__title">3D Inset</h3>
+
+          <div class="inset-demo-bin">
+            <div class="inset-rect inset-xs">
+              <p class="title-bold text-sm">.inset-xs</p>
+            </div>
+
+            <div class="inset-rect inset-sm">
+              <p class="title-bold text-sm">.inset-sm</p>
+            </div>
+
+            <div class="inset-rect inset-md">
+              <p class="title-bold text-sm">.inset-md</p>
+            </div>
+
+            <div class="inset-rect inset-lg">
+              <p class="title-bold text-sm">.inset-lg</p>
+            </div>
+
+            <div class="inset-rect inset-xl">
+              <p class="title-bold text-sm">.inset-xl</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
 
       <!-- Accordion -->
       <section class="gutter-all grid-center">
@@ -639,7 +633,7 @@
 
       <!-- Tab menu -->
       <section class="gutter-all grid-center">
-        <div class="max-w-md box-xl glass-dark">
+        <div class="max-w-md box--fit-content glass-dark">
 
           <div class="">
             <h3 class="box__title">Tab menu</h3>
@@ -711,8 +705,8 @@
 
       <!-- Glass -->
       <section class="gutter-all grid-center">
-        <div class="max-w-md grid-center gap-xl">
-          <h3 class="box__title box-thin-fit glass-2xdark">Glass</h3>
+        <div class="max-w-md grid-center gap-lg">
+          <h3 class="box__title box--fit-content fill-xdark">Glass</h3>
           <div class="bento__wrap">
             <span class="bento__rect glass-3xlight">
               <p class="text-2xdark">.glass-3xlight</p>
@@ -754,13 +748,12 @@
       </section>
 
       <!-- Tints & fills -->
-      <!-- <section class="gutter-all">
-        <div class="max-w-md">
-          <div class="max-w-md wrap-2">
+      <!-- <section class="gutter-all grid-center">
+          <div class="max-w-lg wrap-2">
 
             <div class="tint-demo__bin outline-thin-light">
-              <div class="fill-clear p-sm radius-xs">
-                <h3 class="title-lg text-c text-sha-sm">Glass tints</h3>
+              <div class="tint-2xdark tint-demo__rect text-c">
+                <h3 class="box__title--md">Glass tints</h3>
               </div>
               <div class="grid gap-xs">
                 <span class="tint-demo__rect tint-3xlight">
@@ -802,8 +795,8 @@
             </div>
 
             <div class="tint-demo__bin outline-thin-light">
-              <div class="fill-clear p-sm radius-xs">
-                <h3 class="title-lg text-c text-sha-sm">Glass fills</h3>
+              <div class="fill-2xdark tint-demo__rect text-c">
+                <h3 class="box__title--md">Glass fills</h3>
               </div>
               <div class="grid gap-xs">
                 <span class="tint-demo__rect fill-3xlight">
@@ -847,39 +840,9 @@
           </div>
       </section> -->
 
-      <!-- 3D Inset -->
-      <section class="gutter-all grid-center">
-        <div class="max-w-md inset-demo fill-gray-linear glass-xlight">
-
-          <h3 class="box__title">3D Inset</h3>
-
-          <div class="inset-demo-bin">
-            <div class="inset-rect inset-xs">
-              <p class="title-bold text-sm">.inset-xs</p>
-            </div>
-
-            <div class="inset-rect inset-sm">
-              <p class="title-bold text-sm">.inset-sm</p>
-            </div>
-
-            <div class="inset-rect inset-md">
-              <p class="title-bold text-sm">.inset-md</p>
-            </div>
-
-            <div class="inset-rect inset-lg">
-              <p class="title-bold text-sm">.inset-lg</p>
-            </div>
-
-            <div class="inset-rect inset-xl">
-              <p class="title-bold text-sm">.inset-xl</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Size range -->
-      <section class="gutter-all grid-center">
-        <div class="max-w-md box-2xl fit glass-2xdark">
+      <section class="grid-center">
+        <div class="max-w-sm box--full-w  glass-2xdark">
           <div class="grid gap-2xs">
             <h3 class="box__title">Responsive size range</h3>
             <p class="text-c">Play with the viewport width to see dynamic sizing.</p>
@@ -969,62 +932,14 @@
         </div>
       </section>
 
-      <!-- Shadows -->
-      <section class="gutter-all grid-center">
-        <div class="max-w-md box-2xl gray-linear-light glass-xlight">
-
-          <h3 class="box__title  text-2xdark">Elevation shadows</h3>
-
-          <div class="bento__wrap">
-
-            <span class="bento__rect light sha-3xs">
-              <p class="title-dark-sm">.sha-3xs</p>
-            </span>
-
-            <span class="bento__rect light sha-2xs">
-              <p class="title-dark-sm">.sha-2xs</p>
-            </span>
-
-            <span class="bento__rect light sha-xs">
-              <p class="title-dark-sm">.sha-xs</p>
-            </span>
-
-            <span class="bento__rect light sha-sm">
-              <p class="title-dark-sm">.sha-sm</p>
-            </span>
-
-            <span class="bento__rect light sha-md">
-              <p class="title-dark-sm">.sha-md</p>
-            </span>
-
-            <span class="bento__rect light sha-lg">
-              <p class="title-dark-sm">.sha-lg</p>
-            </span>
-
-            <span class="bento__rect light sha-xl">
-              <p class="title-dark-sm">.sha-xl</p>
-            </span>
-
-            <span class="bento__rect light sha-2xl">
-              <p class="title-dark-sm">.sha-2xl</p>
-            </span>
-
-            <span class="bento__rect light sha-3xl">
-              <p class="title-dark-sm">.sha-3xl</p>
-            </span>
-
-          </div>
-        </div>
-      </section>
-
       <!-- Fluid typography -->
-      <section class="box--full-w-2xl fill-3xdark grid-center">
-        <div class="max-w-sm box-4xl mobile-full fit fill-3xdark">
-          <h3 class="box__title">
+      <section class="fill-3xdark">
+        <div class="grid-center bg-lg">
+          <h3 class="max-w-md box__title">
             Fluid typography
           </h3>
 
-          <div class="column-flex gap-5xl">
+          <div class="max-w-md grid gap-5xl">
 
             <div class="column">
               <h4 class="list-heading--light flex-r ">Text</h4>
@@ -1215,6 +1130,54 @@
         </div>
       </section>
 
+      <!-- Shadows -->
+      <section class="grid-center">
+        <div class="max-w-md box--full-w gray-linear-light glass-3xlight">
+
+          <h3 class="box__title  text-2xdark">Elevation shadows</h3>
+
+          <div class="bento__wrap">
+
+            <span class="bento__rect light sha-3xs">
+              <p class="title-dark-sm">.sha-3xs</p>
+            </span>
+
+            <span class="bento__rect light sha-2xs">
+              <p class="title-dark-sm">.sha-2xs</p>
+            </span>
+
+            <span class="bento__rect light sha-xs">
+              <p class="title-dark-sm">.sha-xs</p>
+            </span>
+
+            <span class="bento__rect light sha-sm">
+              <p class="title-dark-sm">.sha-sm</p>
+            </span>
+
+            <span class="bento__rect light sha-md">
+              <p class="title-dark-sm">.sha-md</p>
+            </span>
+
+            <span class="bento__rect light sha-lg">
+              <p class="title-dark-sm">.sha-lg</p>
+            </span>
+
+            <span class="bento__rect light sha-xl">
+              <p class="title-dark-sm">.sha-xl</p>
+            </span>
+
+            <span class="bento__rect light sha-2xl">
+              <p class="title-dark-sm">.sha-2xl</p>
+            </span>
+
+            <span class="bento__rect light sha-3xl">
+              <p class="title-dark-sm">.sha-3xl</p>
+            </span>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   </section>
 
@@ -1373,7 +1336,7 @@
     </section> -->
 
     <section class="gutter-all grid-center">
-      <div class="max-w-sm box-xl glass-clear gap-xl">
+      <div class="max-w-sm box--fit-content glass-clear gap-xl">
 
         <div class="flex-c">
           <img src="/assets/other img/Kris_w_Tetra_720x720.jpg" class="img-xs radius-round sha-2xl">

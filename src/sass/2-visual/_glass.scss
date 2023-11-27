@@ -20,8 +20,12 @@
   &::after {
     @include help.pseudo;
     z-index: -1;
-    box-shadow: bevel.$bevel-lg;
+    box-shadow: bevel.$bevel-md;
     @include fill.noise-md;
+
+    @include bp.bp(xs) {
+      box-shadow: bevel.$bevel-lg;
+    }
   }
 }
 
@@ -31,10 +35,15 @@
 
 /* Glass classes from $tints MAP */
 /* ================================== */
-.glass { 
+.glass {
   @include color.tint-modifier('background-color') {
     @include glass-base;
   }
+}
+
+
+.full-w-mobile {
+
 }
 
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
@@ -43,8 +52,8 @@
   @include glass-base {
     box-shadow: bevel.$flat-bevel-sm;
 
-    @include bp.bp(sm) {
-      box-shadow: bevel.$bevel-md;
+    @include bp.bp(xs) {
+      box-shadow: bevel.$bevel-lg;
     }
   }
 }

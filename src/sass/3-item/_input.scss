@@ -5,6 +5,7 @@
 @use "../0-base/size";
 @use "../0-base/text";
 @use "../1-layout/layout-help" as help;
+@use "../1-layout/flex";
 @use "../2-visual/animation" as ani;
 @use "../2-visual/border" as br;
 @use "../2-visual/fill";
@@ -12,30 +13,100 @@
 @use "../2-visual/shadow" as sha;
 /* ================================== */
 
+.input__wrap {
+  // position: relative;
+  width: min(400px, 100%);
+  height: fit-content;
+  display: grid;
+  gap: size.$s1;
+}
+
 .text-input {
   pointer-events: auto;
   cursor: text;
-  width: min(300px, 100%);
+  width: 100%;
   height: var(--ui-lg);
   border-radius: br.$round;
-  margin-top: size.$s2;
   padding: 0 size.$s4;
 
-  @include text.body-text;
-  font-size: var(--text-sm);
-  color: white;
-
   box-shadow: in.$inset-md;
-
   background-color: var(--tint-xdark);
+
+  @include bp.bp(sm) {
+    width: min(400px, 100%);
+  }
 }
+
+.input-label__group {
+  width: fit-content;
+  height: fit-content;
+}
+
+.input__label {
+  font-family: text.$font-family-title;
+  font-weight: text.$font-weight-md;
+  letter-spacing: text.$letter-spacing-sm;
+}
+
+.input__hint {
+  font-family: text.$font-family-title;
+  font-weight: text.$font-weight-sm;
+  font-size: var(--text-xs);
+  letter-spacing: text.$letter-spacing-sm;
+  line-height: 1;
+}
+
+.textarea__wrap {
+  position: relative;
+  z-index: 2;
+  @include flex.flex-c;
+  // width: fit-content;
+  width: fit-content;
+  // min-width: 100%;
+    min-width: min(400px, 100%);
+
+  height: fit-content;
+  pointer-events: none;
+  padding: size.$s4;
+
+  @include br.outer-br (var(--2xs), size.$s4);
+  box-shadow: in.$inset-md;
+  background-color: var(--tint-xdark);
+
+  // @include bp.bp(sm) {
+  //   min-width: min(400px, 100%);
+  // }
+}
+
+.textarea {
+  z-index: 3;
+  inset: 1rem;
+  pointer-events: auto;
+  cursor: text;
+
+  min-width: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 150px;
+  overflow: auto;
+
+  border-radius: var(--2xs);
+  background-color: var(--tint-xlight);
+
+  &:focus {
+    outline: 1.5px solid oklch(85% var(--primary-ch) / 0.8);;
+    outline-offset: size.$s2;
+  }
+}
+
 
 
 
 
 // input[type="checkbox"] {
 //   appearance: none;
-//   background-color: color.$tint-xdark;
+//   background-color: var(--tint-xdark);
 //   margin: 0;
 //   box-shadow: in.$inset-xs;
 //   width: 1rem;
@@ -52,7 +123,7 @@
 //   height: 0.7rem;
 //   transform: scale(0);
 //   transition: transform ani.$speed-fast ease-in-out;
-//   background-color: color.$color-prim;
+//   background-color: var(--tint-prim);
 //   border-radius: 0.1rem;
 // }
 
@@ -61,26 +132,26 @@
 // }
 
 // input[type="checkbox"]:disabled {
-//   color: color.$disabled;
-//   background-color: color.$disabled;
+//   // color: color.$disabled;
+//   background-color: var(--color-disabled);
 //   box-shadow: in.$inset-sha-xs;
 //   cursor: not-allowed;
 // }
 
 
-// .checkbox {
-//   background-color: color.$dark;
-// }
+.checkbox {
+  background-color: var(--tint-dark);
+}
 
-// .checkbox__label {
-//   font-weight: text.$font-weight-md;
-//   display: grid;
-//   grid-template-columns: 1rem auto;
-//   align-items: center;
-//   gap: 0.25rem;
-// }
+.checkbox__label {
+  font-weight: text.$font-weight-md;
+  display: grid;
+  grid-template-columns: 1rem auto;
+  align-items: center;
+  gap: 0.25rem;
+}
 
-// .checkboxes {
-//   display: grid;
-//   gap: 0.5rem;
-// }
+.checkboxes {
+  display: grid;
+  gap: 0.5rem;
+}

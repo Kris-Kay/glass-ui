@@ -69,7 +69,7 @@ textarea,
 select,
 button {
   font-synthesis: none;
-font-feature-settings: "kern";
+  font-feature-settings: "kern";
   -moz-font-feature-settings: "kern";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -78,8 +78,9 @@ font-feature-settings: "kern";
 
 button,
 a,
-input {
-  appearance: none;
+input,
+textarea {
+  // appearance: none;
   background: none;
   background-color: transparent;
   border: 0;
