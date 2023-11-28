@@ -17,7 +17,7 @@
   gap: var(--md);
   padding: var(--lg);
   box-shadow: none;
-  border-radius: none;
+  border-radius: 0;
 
   @include bp.bp(sm) {
     gap: var(--lg);
@@ -58,10 +58,15 @@
   }
 }
 
+.box {
+  @include box;
+  border-radius: var(--lg);
+}
+
 .box--fit-content {
   @include box;
   width: fit-content;
-  border-radius: var(--md);
+  border-radius: var(--lg);
 }
 
 .box--full-w {

@@ -105,39 +105,19 @@
 
         <div class="flex gap-3xl">
           <div class="grid-center gap-sm">
-            <button type="button" class="round-btn-sm btn-glass-clear">
+            <button type="button" class="btn-round-sm btn-glass-clear">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
             </button>
 
-            <button type="button" class="round-btn-md btn-glass-clear">
+            <button type="button" class="btn-round-md btn-glass-clear">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
             </button>
 
-            <button type="button" class="round-btn-lg btn-glass-clear">
-              <img
-                src="/assets/icons/CubeTransparent.svg"
-                alt="demo button"/>
-            </button>
-          </div>
-
-          <div class="grid-center gap-sm">
-            <button type="button" class="round-btn-sm btn-glass-light">
-              <img
-                src="/assets/icons/CubeTransparent.svg"
-                alt="demo button"/>
-            </button>
-
-            <button type="button" class="round-btn-md btn-glass-light">
-              <img
-                src="/assets/icons/CubeTransparent.svg"
-                alt="demo button"/>
-            </button>
-
-            <button type="button" class="round-btn-lg btn-glass-light">
+            <button type="button" class="btn-round-lg btn-glass-clear">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
@@ -145,19 +125,39 @@
           </div>
 
           <div class="grid-center gap-sm">
-            <button type="button" class="round-btn-sm btn-glass-dark">
+            <button type="button" class="btn-round-sm btn-glass-light">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
             </button>
 
-            <button type="button" class="round-btn-md btn-glass-dark">
+            <button type="button" class="btn-round-md btn-glass-light">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
             </button>
 
-            <button type="button" class="round-btn-lg btn-glass-dark">
+            <button type="button" class="btn-round-lg btn-glass-light">
+              <img
+                src="/assets/icons/CubeTransparent.svg"
+                alt="demo button"/>
+            </button>
+          </div>
+
+          <div class="grid-center gap-sm">
+            <button type="button" class="btn-round-sm btn-glass-dark">
+              <img
+                src="/assets/icons/CubeTransparent.svg"
+                alt="demo button"/>
+            </button>
+
+            <button type="button" class="btn-round-md btn-glass-dark">
+              <img
+                src="/assets/icons/CubeTransparent.svg"
+                alt="demo button"/>
+            </button>
+
+            <button type="button" class="btn-round-lg btn-glass-dark">
               <img
                 src="/assets/icons/CubeTransparent.svg"
                 alt="demo button"/>
@@ -355,7 +355,7 @@
         <img src="/assets/tutorial-img/glass-layers-no-text.png" class="img-md">
 
         <div class="grid gap-2xs">
-          <p class="title-thin text-xl text-c">Three-dimensional glass UI library. </p>
+          <p class="title-thin text-2xl text-c">3D glass UI library</p>
           <p class="text-sm title-bold text-c">Compatible with any CSS project or framework.</p>
         </div>
       </div>
@@ -363,42 +363,86 @@
   </section>
 
   <!-- Components  -->
-  <section id="components" class="grid gap-xl p-t-4xl">
+  <section id="components" class="grid gap-2xl p-t-4xl">
     <div class="title-h2__bg">
       <h2 class="title-h2 max-w-md gutter-all">components</h2>
     </div>
 
-    <div class="grid gap-4xl">
+    <div class="grid gap-5xl">
+
       <!-- Switches -->
-      <section class="gutter-all grid-center">
-        <div class="box--fit-content glass-xdark">
+      <section class="gutter-all max-w-md">
+        <div class="box glass-2xdark place-c">
 
           <h3 class="box__title">Switches</h3>
 
-          <div class="grid gap-xl">
-            <div class="grid-2x2 gap-md">
-              <div class="switch__group">
-                <label for="switch-sm">.switch.sm</label>
-                <input type="checkbox" class="switch sm" id="switch-sm">
+          <div class="flex-wrap flex-c-x gap-5xl">
+
+            <div class="grid gap-xs">
+              <p class="class-name">.switch--sm</p>
+              <div class="switch__group ui-h--lg">
+                <label for="switch-sm" class="switch__label--sm">label</label>
+                <input type="checkbox" class="switch--sm" id="switch-sm">
               </div>
 
-              <div class="switch__group">
-                <label for="switch-sm-dis">disabled</label>
-                <input type="checkbox" class="switch sm" id="switch-dis" disabled>
+              <div class="switch__group ui-h--lg">
+                <label for="switch-checked-sm" class="switch__label--sm">label</label>
+                <input type="checkbox" class="switch--sm" id="switch-checked-sm" checked>
+              </div>
+
+              <div class="switch__group ui-h--lg">
+                <label for="switch-disabled-sm" class="switch__label--sm">label</label>
+                <input type="checkbox" class="switch--sm" id="switch-disabled-sm" disabled>
               </div>
             </div>
 
-            <div class="grid-2x2 gap-md">
+            <div class="grid gap-xs">
+              <p class="class-name">.switch--md</p>
+
+              <div class="switch__group ui-h--lg">
+                <label for="switch-md" class="switch__label--md">label</label>
+                <input type="checkbox" class="switch--md" id="switch-md">
+              </div>
+
+              <div class="switch__group ui-h--lg">
+                <label for="switch-checked-md" class="switch__label--md">label</label>
+                <input type="checkbox" class="switch--md" id="switch-checked-md" checked>
+              </div>
+
+              <div class="switch__group ui-h--lg">
+                <label for="switch-disabled-md" class="switch__label--md">label</label>
+                <input type="checkbox" class="switch--md" id="switch-disabled-md" disabled>
+              </div>
+            </div>
+
+            <div class="grid gap-xs">
+              <p class="class-name">.switch--lg</p>
+
               <div class="switch__group">
-                <label for="switch-md">.switch.md</label>
-                <input type="checkbox" class="switch md" id="switch-md">
+                <label for="switch-lg" class="switch__label--lg">label</label>
+                <input type="checkbox" class="switch--lg" id="switch-lg">
               </div>
 
               <div class="switch__group">
-                <label for="switch-md-dis">disabled</label>
-                <input type="checkbox" class="switch md" id="switch-md-dis" disabled>
+                <label for="switch-checked-lg" class="switch__label--lg">label</label>
+                <input type="checkbox" class="switch--lg" id="switch-checked-lg" checked>
+              </div>
+
+              <div class="switch__group">
+                <label
+                  for="switch-disabled-lg"
+                  class="switch__label--lg">
+                  label
+                </label>
+
+                <input
+                  type="checkbox"
+                  class="switch--lg"
+                  id="switch-disabled-lg"
+                  disabled>
               </div>
             </div>
+
           </div>
 
         </div>
@@ -472,85 +516,89 @@
             <div class="grid-center gap-sm">
               <h4 class="class-name">.btn-clear</h4>
 
-              <button type="button" class="btn-sm btn-icon btn-clear">
-                Button
-                <img src="/assets/icons/CaretRight.svg"/>
-              </button>
+              <div class="grid-center gap-md">
+                <button type="button" class="btn-sm btn-icon btn-clear">
+                  Button
+                  <img src="/assets/icons/CaretRight.svg"/>
+                </button>
 
-              <button type="button" class="btn-md btn-icon btn-clear">
-                Button
-                <img src="/assets/icons/CaretRight.svg"/>
-              </button>
+                <button type="button" class="btn-md btn-icon btn-clear">
+                  Button
+                  <img src="/assets/icons/CaretRight.svg"/>
+                </button>
 
-              <button type="button" class="btn-lg btn-icon btn-clear">
-                Button
-                <img src="/assets/icons/CaretRight.svg"/>
-              </button>
+                <button type="button" class="btn-lg btn-icon btn-clear">
+                  Button
+                  <img src="/assets/icons/CaretRight.svg"/>
+                </button>
+              </div>
             </div>
 
-            <div class="grid-center gap-sm">
-              <h4 class="class-name">.round-btn</h4>
+            <div class="flex-sb max-w-sm">
+              <div class="grid-center gap-md">
+                <p class="class-name ui-h--sm flex-c-y">.btn-round-sm</p>
+                <p class="class-name ui-h--md flex-c-y">.btn-round-md</p>
+                <p class="class-name ui-h--lg flex-c-y">.btn-round-lg</p>
+              </div>
 
-              <div class="flex gap-3xl">
-                <div class="grid-center gap-sm">
-                  <button type="button" class="round-btn-sm btn-glass-clear">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+              <div class="grid-center gap-md">
+                <button type="button" class="btn-round-sm btn-glass-clear">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-md btn-glass-clear">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+                <button type="button" class="btn-round-md btn-glass-clear">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-lg btn-glass-clear">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
-                </div>
+                <button type="button" class="btn-round-lg btn-glass-clear">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
+              </div>
 
-                <div class="grid-center gap-sm">
-                  <button type="button" class="round-btn-sm btn-glass-light">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+              <div class="grid-center gap-md">
+                <button type="button" class="btn-round-sm btn-glass-light">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-md btn-glass-light">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+                <button type="button" class="btn-round-md btn-glass-light">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-lg btn-glass-light">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
-                </div>
+                <button type="button" class="btn-round-lg btn-glass-light">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
+              </div>
 
-                <div class="grid-center gap-sm">
-                  <button type="button" class="round-btn-sm btn-glass-dark">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+              <div class="grid-center gap-md">
+                <button type="button" class="btn-round-sm btn-glass-dark">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-md btn-glass-dark">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
+                <button type="button" class="btn-round-md btn-glass-dark">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
 
-                  <button type="button" class="round-btn-lg btn-glass-dark">
-                    <img
-                      src="/assets/icons/CubeTransparent.svg"
-                      alt="demo button"/>
-                  </button>
-                </div>
+                <button type="button" class="btn-round-lg btn-glass-dark">
+                  <img
+                    src="/assets/icons/CubeTransparent.svg"
+                    alt="demo button"/>
+                </button>
               </div>
             </div>
 
@@ -1131,7 +1179,7 @@
       </section>
 
       <!-- Shadows -->
-      <section class="grid-center">
+      <!-- <section class="grid-center">
         <div class="max-w-md box--full-w gray-linear-light glass-3xlight">
 
           <h3 class="box__title  text-2xdark">Elevation shadows</h3>
@@ -1176,7 +1224,7 @@
 
           </div>
         </div>
-      </section>
+      </section> -->
 
     </div>
   </section>
@@ -1360,27 +1408,27 @@
               <p class="js-textToCopy text-md">hello@kris-kay.com</p>
               <button
                 type="button"
-                class="js-copyBtn round-btn-sm btn-glass-clear">
+                class="js-copyBtn btn-round-sm btn-glass-clear">
                 <img src="/assets/icons/Copy.svg"/>
               </button>
             </div>
 
             <div class="flex-c flex-wrap gap-2xs">
-              <!-- <a href="#" target="_blank" class="btn-clear round-btn-lg">
+              <!-- <a href="#" target="_blank" class="btn-clear btn-round-lg">
                 <img
                   src="assets/icons/InstagramLogo.svg"
                   alt="Instagram account"
                 />
               </a> -->
 
-              <a href="https://www.linkedin.com/in/kris-kay/" target="_blank" class="btn-clear round-btn-lg">
+              <a href="https://www.linkedin.com/in/kris-kay/" target="_blank" class="btn-clear btn-round-lg">
                 <img
                   src="assets/icons/LinkedinLogo.svg"
                   alt="go to LinkedIn account"
                 />
               </a>
 
-              <a href="https://github.com/Kris-Kay" target="_blank" class="btn-clear round-btn-lg">
+              <a href="https://github.com/Kris-Kay" target="_blank" class="btn-clear btn-round-lg">
                 <img
                   src="assets/icons/GithubLogo.svg"
                   alt="go to GitHub account"

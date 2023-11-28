@@ -8,9 +8,9 @@ $primary-h: 235;
 $primary: $primary-l $primary-c $primary-h;
 
 // * Leaf * //
-$accent-l: 90%;
-$accent-c: 0.20;
-$accent-h: 128;
+$accent-l: 80%;
+$accent-c: 0.2;
+$accent-h: 130;
 $accent: $accent-l $accent-c $accent-h;
 
 // * Snow * //
@@ -103,11 +103,12 @@ $dark: $dark-l $dark-c $dark-h;
   --color-page-bg: oklch(80% var(--light-ch) / 1);
   // --color-card-bg: var(--tint-clear);
   // --color-text-box: var(--tint-xdark);
+
   --color-inset-sm: oklch(var(--dark-lch) / 0.15);
-  --color-inset-md: oklch(var(--dark-lch) / 0.20);
-  --color-inset-lg: oklch(var(--dark-lch) / 0.25);
-  --color-disabled: oklch(var(--dark-lch) / 0.15);
-  --color-checked: oklch(70% var(--accent-ch) / 0.4);
+  --color-inset-md: oklch(var(--dark-lch) / 0.2);
+  --color-inset-lg: oklch(var(--dark-lch) / 0.3);
+  --color-disabled: oklch(var(--gray-lch) / 0.4);
+  --color-checked: oklch(var(--accent-lch) / 0.6);
 
   // * buttons * //
   --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);

@@ -146,7 +146,7 @@
 /* ================================== */
 
 /* Base → round button */
-@mixin round-btn-base {
+@mixin btn-round-base {
   @include flex.flex-c;
   border-radius: br.$round;
   z-index: z.z(btn);
@@ -158,8 +158,8 @@
   }
 }
 
-@mixin round-btn-sm {
-  @include round-btn-base;
+@mixin btn-round-sm {
+  @include btn-round-base;
   width: var(--ui-sm);
   height: var(--ui-sm);
 
@@ -168,8 +168,8 @@
   }
 }
 
-@mixin round-btn-md {
-  @include round-btn-base;
+@mixin btn-round-md {
+  @include btn-round-base;
   width: var(--ui-md);
   height: var(--ui-md);
 
@@ -178,8 +178,8 @@
   }
 }
 
-@mixin round-btn-lg {
-  @include round-btn-base;
+@mixin btn-round-lg {
+  @include btn-round-base;
   width: var(--ui-lg);
   height: var(--ui-lg);
 
@@ -188,16 +188,16 @@
   }
 }
 
-.round-btn-sm {
-  @include round-btn-sm;
+.btn-round-sm {
+  @include btn-round-sm;
 }
 
-.round-btn-md {
-  @include round-btn-md;
+.btn-round-md {
+  @include btn-round-md;
 }
 
-.round-btn-lg {
-  @include round-btn-lg;
+.btn-round-lg {
+  @include btn-round-lg;
 }
 
 /* ================================== */

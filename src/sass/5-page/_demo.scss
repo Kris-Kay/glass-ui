@@ -13,8 +13,24 @@
 @use "../4-part" as *;
 /* ================================== */
 
+/* Switch demo */
+/* ================================== */
+.switch-demo__layout {
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // width: fit-content;
+  // max-width: 100%;
+  height: var(--ui-lg);
+
+  // @include bp.bp(sm) {
+  //   justify-content: flex-start;
+  // }
+}
 
 
+/* Sizing demo */
+/* ================================== */
 .rect-2xs {
   width: 16px;
   height: 16px;

@@ -199,7 +199,7 @@ pre code {
   font-family: $font-family-code;
   font-size: var(--text-sm);
   line-height: $line-height-lg;
-color:  oklch(80% var(--accent-ch) / 1);
+  color:  oklch(90% var(--accent-ch) / 1);
 }
 
 .code {

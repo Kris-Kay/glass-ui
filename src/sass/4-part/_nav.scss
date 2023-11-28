@@ -47,11 +47,11 @@
 }
 
 .dropdown__btn {
-  @include btn.round-btn-md;
+  @include btn.btn-round-md;
   @include btn.btn-glass-dark;
 
   @include bp.bp(md) {
-    @include btn.round-btn-lg;
+    @include btn.btn-round-lg;
   }
 }
 

@@ -53,3 +53,10 @@
   color: var(--tint-2xlight);
   border-bottom: border.$thin-xlight;
 }
+
+.class-name {
+  @include text.code;
+  font-size: var(--text-sm);
+  text-shadow: var(--text-sha-xs);
+  line-height: 1;
+}

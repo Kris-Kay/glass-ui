@@ -2181,7 +2181,7 @@ pre code {
 }
 
 /* ================================== */
-.round-btn-sm {
+.btn-round-sm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2190,16 +2190,16 @@ pre code {
   width: var(--ui-sm);
   height: var(--ui-sm);
 }
-.round-btn-sm img {
+.btn-round-sm img {
   width: auto;
   align-self: center;
   z-index: 4;
 }
-.round-btn-sm img {
+.btn-round-sm img {
   height: calc(var(--ui-sm) * 0.65);
 }
 
-.round-btn-md {
+.btn-round-md {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2208,16 +2208,16 @@ pre code {
   width: var(--ui-md);
   height: var(--ui-md);
 }
-.round-btn-md img {
+.btn-round-md img {
   width: auto;
   align-self: center;
   z-index: 4;
 }
-.round-btn-md img {
+.btn-round-md img {
   height: calc(var(--ui-md) * 0.65);
 }
 
-.round-btn-lg {
+.btn-round-lg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2226,12 +2226,12 @@ pre code {
   width: var(--ui-lg);
   height: var(--ui-lg);
 }
-.round-btn-lg img {
+.btn-round-lg img {
   width: auto;
   align-self: center;
   z-index: 4;
 }
-.round-btn-lg img {
+.btn-round-lg img {
   height: calc(var(--ui-lg) * 0.6);
 }
 
