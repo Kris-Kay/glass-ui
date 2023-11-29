@@ -24,9 +24,10 @@
     "serve": "browser-sync start --server public --files public",
     "start": "npm-run-all copy --parallel watch serve",
     "build": "npm-run-all copy:* build:*",
-    "postbuild": "postcss public/css/*.css -u autoprefixer -r"
+    "postbuild": "postcss public/css/*.css -u autoprefixer @csstools/postcss-oklab-function -r"
   },
   "devDependencies": {
+    "@csstools/postcss-oklab-function": "^3.0.7",
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.23.7",
     "copyfiles": "^2.4.1",
