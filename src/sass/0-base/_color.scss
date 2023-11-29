@@ -1,59 +1,79 @@
 /* ================================== */
-/* okLCH Colors */
+/* Oklch Colors */
 /* ================================== */
-// * Sky * //
-$primary-l: 70%;
-$primary-c: 0.15;
-$primary-h: 235;
-$primary: $primary-l $primary-c $primary-h;
+// Oklch is a good choice because...
+// 1. It has perceptually linear lightness
+// 2. No dull muddy gradients
+// 3. You get to use the “new” set of colors that modern P3 displays support!
 
-// * Leaf * //
-$accent-l: 80%;
-$accent-c: 0.2;
-$accent-h: 130;
-$accent: $accent-l $accent-c $accent-h;
-
-// * Snow * //
-$light-l: 100%;
-$light-c: 0.03;
-$light-h: 235;
-$light: $light-l $light-c $light-h;
-
-// * Ash * //
-$gray-l: 50%;
-$gray-c: 0.025;
-$gray-h: 235;
-$gray: $gray-l $gray-c $gray-h;
-
-// * Ink * //
-$dark-l: 10%;
-$dark-c: 0.04;
-$dark-h: 240;
-$dark: $dark-l $dark-c $dark-h;
+// * Config
+/* Oklch color tokens
+/* ================================== */
+// https://oklch.com/ Oklch color converter that lets you know if your browser/screen supports P3
+// l: lightness 0% to 100%
+// c: chroma 0 to 0.37
+// h: hue 0deg to 360deg
 
 :root {
-  // * Primary * //
-  --primary-ch: #{$primary-c} #{$primary-h};
-  --primary-lch: #{$primary-l} #{$primary-c} #{$primary-h};
+  // * Sky * //
+  --primary-l: 70%;
+  --primary-c: 0.14;
+  --primary-h: 235;
 
-  // * Accent * //
-  --accent-ch: #{$accent-c} #{$accent-h};
-  --accent-lch: #{$accent-l} #{$accent-c} #{$accent-h};
+  // * Leaf * //
+  --accent-l: 92%;
+  --accent-c: 0.2;
+  --accent-h: 130;
 
-  // * Light * //
-  --light-ch: #{$light-c} #{$light-h};
-  --light-lch: #{$light-l} #{$light-c} #{$light-h};
+  // * Snow * //
+  --light-l: 98%;
+  --light-c: 0.011;
+  --light-h: 235;
 
-  // * Gray * //
-  --gray-ch: #{$gray-c} #{$gray-h};
-  --gray-lch: #{$gray-l} #{$gray-c} #{$gray-h};
+  // * Ash * //
+  --gray-l: 50%;
+  --gray-c: 0.03;
+  --gray-h: 235;
 
-  // * Dark * //
-  --dark-ch: #{$dark-c} #{$dark-h};
-  --dark-lch: #{$dark-l} #{$dark-c} #{$dark-h};
+  // * Ink * //
+  --dark-l: 15%;
+  --dark-c: 0.03;
+  --dark-h: 240;
+
+  // Add here any value that makes your color venture into the P3 color space.
+  // In most cases, only the chroma value is different from the fallback.
+  @media (color-gamut: p3) {
+    :root {
+      --primary-c: 0.17;
+      --accent-c: 0.22;
+      --light-c: 0.012;
+      --dark-c: 0.042;
+    }
+  }
+}
+html {
+  --primary-ch: var(--primary-c) var(--primary-h);
+  --primary-lch: var(--primary-l) var(--primary-c) var(--primary-h);
+  --color-primary: oklch(var(--primary-lch) / 1);
+
+  --accent-ch: var(--accent-c) var(--accent-h);
+  --accent-lch: var(--accent-l) var(--accent-c) var(--accent-h);
+  --color-accent: oklch(var(--accent-lch) / 1);
+
+  --light-ch: var(--light-c) var(--light-h);
+  --light-lch: var(--light-l) var(--light-c) var(--light-h);
+  --color-light: oklch(var(--light-lch) / 1);
+
+  --gray-ch: var(--gray-c)var(--gray-h);
+  --gray-lch: var(--gray-l) var(--gray-c)var(--gray-h);
+  --color-gray: oklch(var(--gray-lch) / 1);
+
+  --dark-ch: var(--dark-c) var(--dark-h);
+  --dark-lch: var(--dark-l) var(--dark-c) var(--dark-h);
+  --color-dark: oklch(var(--dark-lch) / 1);
 
   // * Glass tints * //
-  --tint-3xlight: oklch(var(--light-lch) / 0.7);
+  --tint-3xlight: oklch(var(--light-lch) / 0.75);
   --tint-2xlight: oklch(var(--light-lch) / 0.5);
   --tint-xlight:  oklch(var(--light-lch) / 0.25);
   --tint-light:   oklch(var(--light-lch) / 0.05);
@@ -61,19 +81,19 @@ $dark: $dark-l $dark-c $dark-h;
   --tint-dark:    oklch(var(--dark-lch) / 0.05);
   --tint-xdark:   oklch(var(--dark-lch) / 0.25);
   --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-  --tint-3xdark:  oklch(var(--dark-lch) / 0.7);
+  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
 
-// * Opaque shades * //
-  --light-bold: oklch(99% var(--light-ch) / 1);
-  --light-reg: oklch(95% var(--light-ch) / 1);
-  --light-mild: oklch(90% var(--light-ch) / 1);
-  --light-xmild: oklch(85% var(--light-ch) / 1);
-  --light-2xmild: oklch(75% var(--light-ch) / 1);
-  --dark-2xmild: oklch(25% var(--dark-ch) / 1);
-  --dark-xmild: oklch(20% var(--dark-ch) / 1);
-  --dark-mild: oklch(15% var(--dark-ch) / 1);
-  --dark-reg: oklch(10% var(--dark-ch) / 1);
-  --dark-bold: oklch(5% var(--dark-ch) / 1);
+  // * Opaque shades * //
+  // --light-bold: oklch(99% var(--light-ch) / 1);
+  // --light-reg: oklch(95% var(--light-ch) / 1);
+  // --light-mild: oklch(90% var(--light-ch) / 1);
+  // --light-xmild: oklch(85% var(--light-ch) / 1);
+  // --light-2xmild: oklch(75% var(--light-ch) / 1);
+  // --dark-2xmild: oklch(25% var(--dark-ch) / 1);
+  // --dark-xmild: oklch(20% var(--dark-ch) / 1);
+  // --dark-mild: oklch(15% var(--dark-ch) / 1);
+  // --dark-reg: oklch(10% var(--dark-ch) / 1);
+  // --dark-bold: oklch(5% var(--dark-ch) / 1);
 
 
 /* ================================== */
@@ -81,12 +101,6 @@ $dark: $dark-l $dark-c $dark-h;
 /* ================================== */
   // * Text * //
   --color-text-dark: oklch(15% var(--dark-ch) / 1);
-
-  --color-h1: oklch(95% var(--light-ch) / 1);
-  --color-h2: oklch(95% var(--light-ch) / 1);
-  --color-h3: oklch(95% var(--light-ch) / 1);
-  --color-h4: oklch(95% var(--light-ch) / 1);
-  --color-h5: oklch(95% var(--light-ch) / 1);
 
   --color-title: oklch(92% var(--light-ch) / 0.95);
   --color-subtitle: oklch(90% var(--light-ch) / 1);
@@ -122,9 +136,21 @@ $dark: $dark-l $dark-c $dark-h;
   --color-focus: oklch(var(--primary-ch) / 0.4);
   --color-input-control: oklch(var(--light-lch) / 0.8);
 
+  /* Neutral  */
+  // --color-text: var(--color-neutral-800);
+  --color-text-invert: var(--color-neutral-200);
 
-  // // * Customizable custom properties * //
-  // --_color-code: --color-code, oklch(80% var(--accent-ch) / 1);
+  --color-brand-accent: var(--color-brand-700);
+  --color-brand-background: var(--color-brand-200);
+  --color-success-accent: var(--color-success-700);
+  --color-success-background: var(--color-success-200);
+  --color-warning-accent: var(--color-warning-700);
+  --color-warning-background: var(--color-warning-200);
+  --color-error-accent: var(--color-error-700);
+  --color-error-background: var(--color-error-200);
+
+  // * Customizable custom properties * //
+  --_color-code: var(--color-code, red);
 }
 
 
@@ -139,7 +165,7 @@ $tints: (
   "dark": var(--tint-dark),
   "xdark": var(--tint-xdark),
   "2xdark": var(--tint-2xdark),
-  "3xdark": var(--tint-3xdark)
+  "3xdark": var(--tint-3xdark),
 );
 
 /* Tint modifier mixin */
@@ -163,29 +189,4 @@ $tints: (
 
 .text {
   @include tint-modifier('color');
-}
-
-
-.dark {
-  background-color: oklch(var(--dark-lch) / 1);
-}
-
-.gray {
-  background-color: oklch(var(--gray-lch) / 1);
-}
-
-.gray-80 {
-  background-color: oklch(80% var(--gray-ch) / 1);
-}
-
-.light {
-  background-color: oklch(var(--light-lch) / 1);
-}
-
-.primary {
-  background-color: oklch(var(--primary-lch) / 1);
-}
-
-.accent {
-  background-color: oklch(var(--accent-lch) / 1);
 }

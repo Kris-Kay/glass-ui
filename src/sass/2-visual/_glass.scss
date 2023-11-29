@@ -10,7 +10,7 @@
 /* ================================== */
 
 
-/* Glass base */
+/* Base Glass mixin */
 /* ================================== */
 @mixin glass-base {
   position: relative;
@@ -33,7 +33,7 @@
   @include glass-base;
 }
 
-/* Glass classes from $tints MAP */
+/* Generates `.glass-` classes from color.$tints MAP */
 /* ================================== */
 .glass {
   @include color.tint-modifier('background-color') {
