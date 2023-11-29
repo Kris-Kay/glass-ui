@@ -13,6 +13,12 @@
 @use "../4-part" as *;
 /* ================================== */
 
+
+.test-oklch {
+	color: oklch(40% 0.268735435 34.568626);
+}
+
+
 /* Switch demo */
 /* ================================== */
 .switch-demo__layout {
@@ -208,3 +214,27 @@
 //     background-color: hsl(0 100% 50%);
 //   }
 // }
+
+.dark {
+  background-color: oklch(var(--dark-lch) / 1);
+}
+
+.gray {
+  background-color: oklch(var(--gray-lch) / 1);
+}
+
+.gray-80 {
+  background-color: oklch(80% var(--gray-ch) / 1);
+}
+
+.light {
+  background-color: oklch(var(--light-lch) / 1);
+}
+
+.primary {
+  background-color: oklch(var(--primary-lch) / 1);
+}
+
+.accent {
+  background-color: oklch(var(--accent-lch) / 1);
+}
