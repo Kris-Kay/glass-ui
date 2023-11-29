@@ -22,9 +22,10 @@ So I experimented with a bunch of freshly supported CSS to develop a more refine
 Includes beveled and inset glass styles whose use is demonstrated through the components and [demo site](https://3d-glass-ui.com/) included in this repo.
 
 
-#### Build with the basics so it should work with any project that uses CSS or SCSS.
+#### Build with the basics so it should work with any project that's CSS compatible.
 * HTML
-* SCSS
+* CSS (SCSS)
+* NPM
 * Vanilla JS (only used for component and demo site functionality)
 
 ### Browser compatibility
@@ -39,7 +40,7 @@ If your project requires legacy browser support or other browsers please make su
 </br>
 
 ## Project status
-#### This is an early working draft.
+#### This is an early working draft of the 3D glass UI library.
 I plan on making it into an NPM package once I get some feedback and polish up the code.
 
 </br>
@@ -53,15 +54,16 @@ I plan on making it into an NPM package once I get some feedback and polish up t
 </br>
 
 ## How to use?
-The project is set up as a design system prototyping playground. You can easily configure the design tokens and instantly see the results applied to the demo site. Then either use the project as the basis for a new site or copy and paste the SCSS into an existing one.
-*If you want to use CSS instead just search for the class name in the style.css file.
+The project is set up as a design system prototyping playground. You can easily configure the design tokens and instantly see the results applied to the demo site.
+If you only want to grab a few styles, search for a class you like the look of in the post-processed CSS file (class names are labeled on the demo site) and chuck it into  into an existing project.
 
-A word of caution!
+*hopefully available as an NPM package soon!*
 
 </br>
 
 ## Setup
-To get started: fork repo and open it in your IDE (I used VS Code). Then navigate to your local copy via command line or through IDE's built in terminal.
+To get started: fork repo and open it in your IDE (I used VS Code).
+Navigate to your local copy via command line or through IDE's built in terminal.
 
 To install devDependencies run:
 ```
