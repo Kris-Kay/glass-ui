@@ -1,9 +1,9 @@
 /* ================================== */
 /* Inputs */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/color";
-@use "../0-base/size";
-@use "../0-base/text";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
+@use "../0-config/size";
+@use "../0-config/text";
 @use "../1-layout/layout-help" as help;
 @use "../1-layout/flex";
 @use "../2-visual/animation" as ani;

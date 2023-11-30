@@ -1,7 +1,7 @@
 /* ================================== */
 /* index.html styles */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/color";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
 /* ================================== */
 body {
   position: relative;
@@ -55,7 +55,7 @@ body {
 
 
 //   &.dark {
-//     // geo shapes 
+//     // geo shapes
 //     background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
 //     background-blend-mode: multiply;
 //     background-color: rgba(color.$ink10, 0.3);
@@ -82,9 +82,9 @@ body {
 //     // background-color: #fff;
 //     // background-image: url(/assets/bgImg/clouds.jpg);
 //     // background-image: url(/assets/bgImg/white-paper.jpg);
-//     background-image: image-set( 
-//       "/assets/bgImg/chris-lee-plant-s.jpg" 1x, 
-//       "/assets/bgImg/chris-lee-plant-m.jpg" 2x, 
+//     background-image: image-set(
+//       "/assets/bgImg/chris-lee-plant-s.jpg" 1x,
+//       "/assets/bgImg/chris-lee-plant-m.jpg" 2x,
 //       "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
 //   }
 
@@ -92,9 +92,9 @@ body {
 
 
 //     // background-image: url(/assets/bgImg/black-paper.jpg);
-//     // background-image: image-set( 
-//     //   "/assets/bgImg/chris-lee-plant-s.jpg" 1x, 
-//     //   "/assets/bgImg/chris-lee-plant-m.jpg" 2x, 
+//     // background-image: image-set(
+//     //   "/assets/bgImg/chris-lee-plant-s.jpg" 1x,
+//     //   "/assets/bgImg/chris-lee-plant-m.jpg" 2x,
 //     //   "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
 //     // background-color: #000;
 //     background-image: url(/assets/bgImg/yellow.jpg);
@@ -116,4 +116,3 @@ footer {
   height: fit-content;
   align-self: end;
 }
-

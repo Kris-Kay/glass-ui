@@ -1,6 +1,6 @@
 /* ================================== */
 /* Inset */
-@use "../0-base/color";
+@use "../0-config/color";
 @use "../1-layout/layout-help" as help;
 @use "../1-layout/z-index" as z;
 @use "fill";
@@ -8,6 +8,11 @@
 @use "shadow" as sha;
 /* ================================== */
 
+html {
+  --color-inset-sm: oklch(var(--dark-lch) / 0.15);
+  --color-inset-md: oklch(var(--dark-lch) / 0.2);
+  --color-inset-lg: oklch(var(--dark-lch) / 0.3);
+}
 
 /* Inset → shadow only */
 /* ================================== */

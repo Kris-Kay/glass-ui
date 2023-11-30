@@ -1,8 +1,9 @@
-/* Base */
+/* Config */
+@forward "bg";
 @forward "breakpoint";
 @forward "color";
-@forward "global";
+@forward "reset";
 @forward "size";
 @forward "space";
 @forward "text";
-@forward "theme";
+@forward "z-index";

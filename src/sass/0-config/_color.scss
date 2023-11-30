@@ -1,0 +1,83 @@
+/* ================================== */
+/* Oklch Colors */
+/* ================================== */
+/* https://oklch.com/ */
+/* l: lightness 0%   to 100% */
+/* c: chroma    0    to 0.37 */
+/* h: hue       0deg to 360deg */
+
+/* Color tokens
+/* ==================================================================== */
+/* #Config these values */
+:root {
+  // * Sky * //
+  --primary-l: 70%;
+  --primary-c: 0.14;
+  --primary-h: 235;
+
+  // * Leaf * //
+  --accent-l: 92%;
+  --accent-c: 0.2;
+  --accent-h: 130;
+
+  // * Rose * //
+  --pop-l: 50%;
+  --pop-c: 0.21;
+  --pop-h: 345;
+
+  // * Snow * //
+  --light-l: 98%;
+  --light-c: 0.011;
+  --light-h: 235;
+
+  // * Ink * //
+  --dark-l: 15%;
+  --dark-c: 0.03;
+  --dark-h: 240;
+
+  /* Add here any value that makes your color venture into the P3 color space. */
+  @media (color-gamut: p3) {
+    :root {
+      --primary-c: 0.17;
+      --accent-c: 0.22;
+      --pop-c: 0.23;
+      --light-c: 0.012;
+      --dark-c: 0.042;
+    }
+  }
+}
+
+// use `-ch` custom property to create colors that are lighter or darker
+// use `-lch` custom property to create colors with different alpha values
+html {
+  --primary-ch: var(--primary-c) var(--primary-h);
+  --primary-lch: var(--primary-l) var(--primary-c) var(--primary-h);
+  --color-primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h) / 1);
+
+  --accent-ch: var(--accent-c) var(--accent-h);
+  --accent-lch: var(--accent-l) var(--accent-c) var(--accent-h);
+  --color-accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 1);
+
+  --pop-ch: var(--pop-c)var(--pop-h);
+  --pop-lch: var(--pop-l) var(--pop-c) var(--pop-h);
+  --color-pop: oklch(var(--pop-l) var(--pop-c) var(--pop-h) / 1);
+
+  --light-ch: var(--light-c) var(--light-h);
+  --light-lch: var(--light-l) var(--light-c) var(--light-h);
+  --color-light: oklch(var(--light-l) var(--light-c) var(--light-h) / 1);
+
+  --dark-ch: var(--dark-c) var(--dark-h);
+  --dark-lch: var(--dark-l) var(--dark-c) var(--dark-h);
+  --color-dark: oklch(var(--dark-l) var(--dark-c) var(--dark-h) / 1);
+
+  // * Other * //
+  // These are used for box-shadows, text-shadows, bevels, etc.
+  --shadow: oklch(90% var(--dark-ch) / 1);
+  --highlight: oklch(98% var(--light-ch) / 1);
+
+  // * UI * //
+  --color-focus: oklch(var(--primary-ch) / 0.4);
+  --color-disabled: oklch(var(--gray-lch) / 0.4);
+  --color-checked: oklch(var(--accent-lch) / 0.6);
+  --color-input-control: oklch(var(--light-lch) / 0.8);
+}

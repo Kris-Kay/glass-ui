@@ -1,31 +1,9 @@
 /* ================================== */
 /* Fill aka background ingridients */
-@use "../0-base/color";
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/size";
+@use "../0-config/color";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/size";
 /* ================================== */
-
-/* Noise textures */
-/* ================================== */
-// * Noise texture .png generator: https://devsdash.com/tools/noise-texture-generator
-
-@mixin noise {
-  background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-
-  // background-image: url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png);
-}
-
-@mixin noise-sm {
-  @include noise;
-  background-size: 13px;
-}
-
-@mixin noise-md {
-  @include noise;
-  background-size: 82px;
-}
-
 
 /* Glass Filter */
 /* ================================== */

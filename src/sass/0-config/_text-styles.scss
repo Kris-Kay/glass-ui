@@ -1,14 +1,20 @@
 /* ================================== */
-/* Text */
-@use "../0-base/breakpoint" as bp;
-@use "color";
-@use "size";
-@use "../2-visual/shadow" as sha;
+/* Text styles used in project */
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
+@use "../0-config/text";
+@use "../0-config/space";
+@use "../1-layout/flex";
+@use "animation" as ani;
+@use "bevel";
+@use "border";
+@use "fill";
+@use "glass";
+@use "shadow" as sha;
 /* ================================== */
 
-/* ================================== */
-/* Font setup */
-/* ================================== */
+/* Fonts */
+/* ==================================================================== */
 
 /* Base font size */
 body {
@@ -38,60 +44,52 @@ $line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
 $line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 
-/* Fluidly responsive font sizes */
+
+/* titles */
 /* ================================== */
-/* https://modern-fluid-typography.vercel.app/ */
-/* use this tool to fine-tune your fluid typography range */
 
-:root {
-  /* xs: 14px → 16px */
-  --text-xs: clamp(0.75rem, 4vw - 1rem, 1rem);
+.title-h2 {
+  @include text.title-bold;
+  font-size: var(--text-lg);
+  color: var(--color-title);
+  text-shadow: var(--text-sha-lg);
+  text-align: end;
+}
 
-  /* sm: 17px → 20px */
-  --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
+.title-h2__bg {
+  @include glass.glass--no-bevel;
+  @include flex.flex-c;
+  @include fill.fill(xdark);
+  padding: var(--xl) 0;
+}
 
-  /* md: 20px → 24px */
-  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
+.title-gray-xs {
+  @include text.title-bold;
+  font-size: var(--text-xs);
+  color: var(--tint-3xlight);
+  text-shadow: var(--text-sha-xs);
+}
 
-  /* lg: 24px → 32px */
-  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
-
-  /* xl: 32px → 40px */
-  --text-xl: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
-
-  /* 2xl: 40px → 48px */
-  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
-
-  /* 3xl: 48px → 56px */
-  --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
+.title-dark-sm {
+  @include text.title-bold;
+  font-size: var(--text-sm);
+  color: var(--tint-2xdark);
+  text-shadow: var(--text-sha-sm);
 }
 
 
-/* Text size MAP */
-/* ================================== */
-$text-sizes: (
-  "xs":  var(--text-xs),
-  "sm":  var(--text-sm),
-  "md":  var(--text-md),
-  "lg":  var(--text-lg),
-  "xl":  var(--text-xl),
-  "2xl":  var(--text-2xl),
-  "3xl":  var(--text-3xl),
-);
 
-/* Text size modifier mixin */
-/* ================================== */
-// * Generates a .class for every key in `$text-sizes` map
-@mixin text-size-modifier {
-  @each $key, $value in $text-sizes {
-    &-#{$key} {
-      font-size: $value;
-    }
-  }
+.list-heading--light {
+  @include text.eyebrow;
+  color: var(--tint-2xlight);
+  border-bottom: border.$thin-xlight;
 }
 
-.text {
-  @include text-size-modifier;
+.class-name {
+  @include text.code;
+  font-size: var(--text-sm);
+  text-shadow: var(--text-sha-xs);
+  line-height: 1;
 }
 
 

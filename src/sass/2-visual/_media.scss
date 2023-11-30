@@ -1,7 +1,7 @@
 /* ================================== */
 /* Media */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/color";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
 @use "shadow" as sha;
 @use "../1-layout/grid";
 /* ================================== */

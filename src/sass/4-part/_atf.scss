@@ -1,7 +1,7 @@
 /* ================================== */
 /* Above the fold */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/theme";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/theme";
 @use "../2-visual/animation" as ani;
 @use "../2-visual/shadow" as sha;
 /* ================================== */

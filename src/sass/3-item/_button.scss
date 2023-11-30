@@ -1,9 +1,9 @@
 /* ================================== */
 /* Buttons */
-@use "../0-base/breakpoint" as bp;
-@use "../0-base/color";
-@use "../0-base/size";
-@use "../0-base/text";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
+@use "../0-config/size";
+@use "../0-config/text";
 @use "../1-layout/flex";
 @use "../1-layout/z-index" as z;
 @use "../1-layout/layout-help" as help;
@@ -14,6 +14,17 @@
 @use "../2-visual/inset" as in;
 @use "../2-visual/shadow" as sha;
 /* ================================== */
+
+html {
+  // * Button colors * //
+  --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
+  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+
+  --btn-text-rest: oklch(100% var(--light-ch) / 1);
+  --btn-text-hover: oklch(100% var(--light-ch) / 1);
+  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+}
 
 /* ================================== */
 //* Button size & layout */
