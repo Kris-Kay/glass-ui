@@ -6,8 +6,8 @@ A SCSS library full of customisable glass components and styles built with moder
 ## Table of contents
 * [Description](#description)
 * [Screenshots](#screenshots)
-* [Project status](#project-status)
 * [Features](#features)
+* [Project status](#project-status)
 * [How to use?](#how-to-use?)
 * [Setup](#setup)
 * [Credits](#credits)
@@ -39,25 +39,24 @@ If your project requires legacy browser support or other browsers please make su
 
 </br>
 
+## Features
+* Customizable design tokens and composable styling classes. *For glass that reflects your branding.*
+* Oklch color theme with fallbacks. *For access to about 50% more colors than sRGB.*
+*
+*
+*
+
+</br>
+
 ## Project status
 #### This is an early working draft of the 3D glass UI library.
 I plan on making it into an NPM package once I get some feedback and polish up the code.
 
 </br>
 
-## Features
-* Customizable design tokens and composable styling classes. For glass that reflects your branding.
-* Oklch color theme with fallbacks. For access to about 50% more colors than sRGB.
-
-
-
-</br>
-
 ## How to use?
 The project is set up as a design system prototyping playground. You can easily configure the design tokens and instantly see the results applied to the demo site.
 If you only want to grab a few styles, search for a class you like the look of in the post-processed CSS file (class names are labeled on the demo site) and chuck it into  into an existing project.
-
-*hopefully available as an NPM package soon!*
 
 </br>
 
@@ -94,7 +93,7 @@ npm run build
 ```
 <!-- HTML -->
 
-  <span class="bento__rect sha-md glass-2xlight">
+  <span class="glass-2xlight">
     <p class="text-2xdark">.glass-2xlight</p>
   </span>
 ```
@@ -177,12 +176,11 @@ npm run build
 ## Credits
 * Stephanie Eckles for [Minimum Static Site Setup with Sass](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/)
 * Adrian Bece for [interactive fluid typography editor](https://modern-fluid-typography.vercel.app/)
-ages
 
 
 
-### Author
-* **Kris Kay**
+## Author
+**Kris Kay**
 
 
 
