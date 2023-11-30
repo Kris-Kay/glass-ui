@@ -1,19 +1,14 @@
 /* ================================== */
 /* Oklch Colors */
 /* ================================== */
-// Oklch is a good choice because...
-// 1. It has perceptually linear lightness
-// 2. No dull muddy gradients
-// 3. You get to use the “new” set of colors that modern P3 displays support!
+/* https://oklch.com/ */
+/* l: lightness 0%   to 100% */
+/* c: chroma    0    to 0.37 */
+/* h: hue       0deg to 360deg */
 
-// * Config
-/* Oklch color tokens
-/* ================================== */
-// https://oklch.com/ Oklch color converter that lets you know if your browser/screen supports P3
-// l: lightness 0% to 100%
-// c: chroma 0 to 0.37
-// h: hue 0deg to 360deg
-
+/* Color tokens
+/* ==================================================================== */
+/* #Config these values */
 :root {
   // * Sky * //
   --primary-l: 70%;
@@ -40,8 +35,7 @@
   --dark-c: 0.03;
   --dark-h: 240;
 
-  // Add here any value that makes your color venture into the P3 color space.
-  // In most cases, only the chroma value is different from the fallback.
+  /* Add here any value that makes your color venture into the P3 color space. */
   @media (color-gamut: p3) {
     :root {
       --primary-c: 0.17;
@@ -51,6 +45,8 @@
     }
   }
 }
+
+
 html {
   --primary-ch: var(--primary-c) var(--primary-h);
   --primary-lch: var(--primary-l) var(--primary-c) var(--primary-h);
@@ -72,19 +68,8 @@ html {
   --dark-lch: var(--dark-l) var(--dark-c) var(--dark-h);
   --color-dark: oklch(var(--dark-lch) / 1);
 
-  // * Glass tints * //
-  --tint-3xlight: oklch(var(--light-lch) / 0.75);
-  --tint-2xlight: oklch(var(--light-lch) / 0.5);
-  --tint-xlight:  oklch(var(--light-lch) / 0.25);
-  --tint-light:   oklch(var(--light-lch) / 0.05);
-  --tint-clear:   oklch(var(--light-lch) / 0.01);
-  --tint-dark:    oklch(var(--dark-lch) / 0.05);
-  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
-  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
-
   // * Opaque shades * //
-  // --light-bold: oklch(99% var(--light-ch) / 1);
+  // --light-bold:
   // --light-reg: oklch(95% var(--light-ch) / 1);
   // --light-mild: oklch(90% var(--light-ch) / 1);
   // --light-xmild: oklch(85% var(--light-ch) / 1);
@@ -99,94 +84,32 @@ html {
 /* ================================== */
 /* Semantic color theme */
 /* ================================== */
-  // * Text * //
-  --color-text-dark: oklch(15% var(--dark-ch) / 1);
-
-  --color-title: oklch(92% var(--light-ch) / 0.95);
-  --color-subtitle: oklch(90% var(--light-ch) / 1);
-  --color-text-bold: oklch(100% var(--light-ch) / 1);
-  --color-text: oklch(95% var(--gray-ch) / 1);
-  --color-caption: oklch(85% var(--gray-ch) / 1);
-  --color-eyebrow: oklch(90% var(--gray-ch) / 1);
-
-  --color-link-rest: oklch(70% var(--primary-ch) / 1);
-  --color-link-hover: oklch(50% var(--primary-ch) / 1);
-  --color-link-visited: oklch(30% var(--primary-ch) / 1);
 
   // * Backgrounds * //
   --color-page-bg: oklch(80% var(--light-ch) / 1);
-  // --color-card-bg: var(--tint-clear);
-  // --color-text-box: var(--tint-xdark);
 
-  --color-inset-sm: oklch(var(--dark-lch) / 0.15);
-  --color-inset-md: oklch(var(--dark-lch) / 0.2);
-  --color-inset-lg: oklch(var(--dark-lch) / 0.3);
-  --color-disabled: oklch(var(--gray-lch) / 0.4);
-  --color-checked: oklch(var(--accent-lch) / 0.6);
+  --color-bg-bold: oklch(98% var(--light-ch) / 1);
+  --color-bg-base: oklch(90% var(--light-ch) / 1);
+  --color-bg-mild: oklch(85% var(--light-ch) / 1);
+  --color-bg-milder: oklch(75% var(--light-ch) / 1);
+  --color-bg-mildest: oklch(65% var(--light-ch) / 1);
 
-  // * buttons * //
-  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
-  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+  --color-bg-contrast: oklch(50% var(--primary-ch) / 1);
 
-  --btn-text-rest: oklch(100% var(--light-ch) / 1);
-  --btn-text-hover: oklch(100% var(--light-ch) / 1);
-  --btn-text-active: oklch(20% var(--dark-ch) / 1);
+  --color-bg-invert-bold: oklch(10% var(--dark-ch) / 1);
+  --color-bg-invert-base: oklch(15% var(--dark-ch) / 1);
+  --color-bg-invert-mild: oklch(25% var(--dark-ch) / 1);
+  --color-bg-invert-milder: oklch(35% var(--dark-ch) / 1);
+  --color-bg-invert-mildest: oklch(45% var(--dark-ch) / 1);
 
   // * Other * //
+  // These are used for box-shadows, bevels, insets, etc.
+  --shadow: oklch(90% var(--dark-ch) / 1);
+  --highlight: oklch(98% var(--light-ch) / 1);
+
+  // * UI * //
   --color-focus: oklch(var(--primary-ch) / 0.4);
+  --color-disabled: oklch(var(--gray-lch) / 0.4);
+  --color-checked: oklch(var(--accent-lch) / 0.6);
   --color-input-control: oklch(var(--light-lch) / 0.8);
-
-  /* Neutral  */
-  // --color-text: var(--color-neutral-800);
-  --color-text-invert: var(--color-neutral-200);
-
-  --color-brand-accent: var(--color-brand-700);
-  --color-brand-background: var(--color-brand-200);
-  --color-success-accent: var(--color-success-700);
-  --color-success-background: var(--color-success-200);
-  --color-warning-accent: var(--color-warning-700);
-  --color-warning-background: var(--color-warning-200);
-  --color-error-accent: var(--color-error-700);
-  --color-error-background: var(--color-error-200);
-
-  // * Customizable custom properties * //
-  --_color-code: var(--color-code, red);
-}
-
-
-/* Glass tint MAP */
-/* ================================== */
-$tints: (
-  "3xlight": var(--tint-3xlight),
-  "2xlight": var(--tint-2xlight),
-  "xlight": var(--tint-xlight),
-  "light": var(--tint-light),
-  "clear": var(--tint-clear),
-  "dark": var(--tint-dark),
-  "xdark": var(--tint-xdark),
-  "2xdark": var(--tint-2xdark),
-  "3xdark": var(--tint-3xdark),
-);
-
-/* Tint modifier mixin */
-/* ================================== */
-/* Generates .classes using $tints map */
-@mixin tint-modifier($property) {
-  @each $key, $value in $tints {
-    &-#{$key} {
-      #{$property}: $value;
-      @content;
-    }
-  }
-}
-
-/* Tint classes */
-/* ================================== */
-// * Generates a class for every tint color
-.tint {
-  @include tint-modifier('background-color');
-}
-
-.text {
-  @include tint-modifier('color');
 }
