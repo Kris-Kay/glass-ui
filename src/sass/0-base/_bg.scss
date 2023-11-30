@@ -18,9 +18,11 @@ html {
   --color-bg-xmild: oklch(75% var(--light-ch) / 1);
   --color-bg-2xmild: oklch(65% var(--light-ch) / 1);
 
-  --color-bg-contrast-bold: oklch(50% var(--primary-ch) / 1);
+  --color-bg-contrast-bold: oklch(60% var(--primary-ch) / 1);
   --color-bg-contrast-base: oklch(50% var(--primary-ch) / 1);
-  --color-bg-contrast-mild: oklch(50% var(--primary-ch) / 1);
+  --color-bg-contrast-mild: oklch(45% var(--primary-ch) / 1);
+  --color-bg-contrast-xmild: oklch(40% var(--primary-ch) / 1);
+  --color-bg-contrast-2xmild: oklch(35% var(--primary-ch) / 1);
 
   --color-bg-invert-bold: oklch(10% var(--dark-ch) / 1);
   --color-bg-invert-base: oklch(15% var(--dark-ch) / 1);
@@ -29,7 +31,7 @@ html {
   --color-bg-invert-2xmild: oklch(45% var(--dark-ch) / 1);
 }
 
-/* Background color intensity MAP */
+/* Background color MAP */
 /* ==================================================================== */
 $bg-colors: (
   "bold":  var(--color-bg-bold),
@@ -38,8 +40,6 @@ $bg-colors: (
   "xmild":  var(--color-bg-xmild),
   "2xmild":  var(--color-bg-2xmild),
 
-  "contrast-2xbold":  var(--color-bg-contrast-2xbold),
-  "contrast-xbold":  var(--color-bg-contrast-xbold),
   "contrast-bold":  var(--color-bg-contrast-bold),
   "contrast-base":  var(--color-bg-contrast-base),
   "contrast-mild":  var(--color-bg-contrast-mild),
@@ -52,3 +52,22 @@ $bg-colors: (
   "invert-xmild":  var(--color-bg-invert-xmild),
   "invert-2xmild":  var(--color-bg-invert-2xmild),
 );
+
+/* Background color modifier mixin */
+/* ==================================================================== */
+/* Generates classes using `$bg-colors` MAP */
+@mixin bg-color-modifier($property: background-color) {
+  @each $key, $value in $tints {
+    &-#{$key} {
+      #{$property}: $value;
+      @content;
+    }
+  }
+}
+
+/* Background color classes */
+/* ==================================================================== */
+/* Generates a class for every color in `$bg-colors` MAP */
+.bg {
+  @include bg-color-modifier('background-color');
+}
