@@ -1,30 +1,39 @@
 /* ================================== */
-/* Breakpoints */
+/* Mobile first breakpoints */
+@use "sass:map";
 /* ================================== */
-$bp-xs: 20rem !default; // 320px and bigger
-$bp-sm: 28rem !default; // 448px and bigger
-$bp-md: 45rem !default; // 720px and bigger
-$bp-lg: 64rem !default; // 1024px and bigger
-$bp-xl: 90rem !default; // 1440px and bigger
 
-/* Mobile first breakpoint MAP */
-/* ================================== */
+/* Breakpoints MAP */
+/* ==================================================================== */
+/* #Config these values */
 $breakpoints: (
-  "xs": $bp-xs,
-  "sm": $bp-sm,
-  "md": $bp-md,
-  "lg": $bp-lg,
-  "xl": $bp-xl
+  "xs": 20rem, /* 320px  and bigger */
+  "sm": 28rem, /* 448px  and bigger */
+  "md": 45rem, /* 720px  and bigger */
+  "lg": 64rem, /* 1024px and bigger */
+  "xl": 90rem, /* 1440px and bigger */
 );
 
-/* Breakpoint mixin */
-/* ================================== */
-@mixin bp($name) {
-  @if not map-has-key($breakpoints, $name) {
-    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+/* Breakpoints mixin */
+/* ==================================================================== */
+/* Thank you to James Steinbach for this mixin. */
+/* https://jdsteinbach.com/css/sass-maps-breakpoint-mixin/ */
+
+@mixin bp($key) {
+  @if not map-has-key($breakpoints, $key) {
+    @warn "Warning: `#{$key}` is not a valid breakpoint.";
   } @else {
-    @media only screen and (min-width: map-get($breakpoints, $name)) {
+    @media only screen and (min-width: map-get($breakpoints, $key)) {
       @content;
     }
   }
 }
+
+/* Example */
+//.class {
+//  padding: var(--sm);
+//
+//  @include bp.bp(md) {
+//    padding: var(--md);
+//  }
+//}
