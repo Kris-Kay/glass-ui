@@ -1,0 +1,196 @@
+/* ================================== */
+/* Text */
+@use 'sass:map';
+/* ================================== */
+
+/* Fluid font sizes */
+/* ==================================================================== */
+/* https://modern-fluid-typography.vercel.app/ */
+/* use this tool to fine-tune your fluid typography range */
+:root {
+  /* xs: 14px → 16px */
+  --text-xs: clamp(0.75rem, 4vw - 1rem, 1rem);
+
+  /* sm: 17px → 20px */
+  --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
+
+  /* md: 20px → 24px */
+  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
+
+  /* lg: 24px → 32px */
+  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
+
+  /* xl: 32px → 40px */
+  --text-xl: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
+
+  /* 2xl: 40px → 48px */
+  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
+
+  /* 3xl: 48px → 56px */
+  --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
+}
+
+/* Text size MAP */
+/* ==================================================================== */
+$text-sizes: (
+  "xs":  var(--text-xs),
+  "sm":  var(--text-sm),
+  "md":  var(--text-md),
+  "lg":  var(--text-lg),
+  "xl":  var(--text-xl),
+  "2xl":  var(--text-2xl),
+  "3xl":  var(--text-3xl),
+);
+
+/* Text size modifier mixin */
+/* ==================================================================== */
+/* Generates a classes using `$text-sizes` MAP */
+@mixin text-size-modifier {
+  @each $key, $value in $text-sizes {
+    &-#{$key} {
+      font-size: $value;
+    }
+  }
+}
+
+/* Text size classes */
+/* ==================================================================== */
+/* Generates a class for every size in `$text-sizes` MAP */
+.text {
+  @include text-size-modifier;
+}
+
+
+/* ================================== */
+/* Text colors */
+/* ================================== */
+/* bold = more contrast against theme background e.g. lighter in dark mode
+/* mild = less contrast against theme background e.g. darker in dark mode
+
+/* #Config these values */
+/* if you add or remove any then update the MAP below to match. */
+html {
+/* Text | Title | Label */
+  --color-text-2xbold: oklch(99% var(--light-ch) / 1);
+  --color-text-xbold: oklch(95% var(--light-ch) / 1);
+  --color-text-bold: oklch(98% var(--light-ch) / 1);
+  --color-text-base: oklch(90% var(--light-ch) / 1);
+  --color-text-mild: oklch(85% var(--light-ch) / 1);
+  --color-text-xmild: oklch(75% var(--light-ch) / 1);
+  --color-text-2xmild: oklch(65% var(--light-ch) / 1);
+
+  --color-text-contrast-2xbold: oklch(60% var(--accent-ch) / 1);
+  --color-text-contrast-xbold: oklch(55% var(--accent-ch) / 1);
+  --color-text-contrast-bold: oklch(50% var(--accent-ch) / 1);
+  --color-text-contrast-base: oklch(45% var(--accent-ch) / 1);
+  --color-text-contrast-mild: oklch(40% var(--accent-ch) / 1);
+  --color-text-contrast-xmild: oklch(45% var(--accent-ch) / 1);
+  --color-text-contrast-2xmild: oklch(40% var(--accent-ch) / 1);
+
+  --color-text-invert-2xbold: oklch(5% var(--dark-ch) / 1);
+  --color-text-invert-xbold: oklch(10% var(--dark-ch) / 1);
+  --color-text-invert-bold: oklch(15% var(--dark-ch) / 1);
+  --color-text-invert-base: oklch(20% var(--dark-ch) / 1);
+  --color-text-invert-mild: oklch(25% var(--dark-ch) / 1);
+  --color-text-invert-xmild: oklch(35% var(--dark-ch) / 1);
+  --color-text-invert-2xmild: oklch(45% var(--dark-ch) / 1);
+
+/* Link */
+  --color-link-rest: oklch(70% var(--primary-ch) / 1);
+  --color-link-hover: oklch(50% var(--primary-ch) / 1);
+  --color-link-visited: oklch(30% var(--primary-ch) / 1);
+
+/* Code */
+  --color-code-base: oklch(90% var(--accent-ch) / 1);
+  --color-code-comment: oklch(65% var(--gray-ch) / 1);
+  --color-code-class: oklch(100% var(--accent-ch) / 1);
+  --color-code-property: oklch(80% var(--primary-ch) / 1);
+  --color-code-value: oklch(100% var(--primary-ch) / 1);
+  --color-code-num: oklch(80% var(--accent-ch) / 1);
+}
+
+/* Text color intensity MAP */
+/* ==================================================================== */
+$text-colors: (
+  "2xbold":  var(--color-text-2xbold),
+  "xbold":  var(--color-text-xbold),
+  "bold":  var(--color-text-bold),
+  "base":  var(--color-text-base),
+  "mild":  var(--color-text-mild),
+  "xmild":  var(--color-text-xmild),
+  "2xmild":  var(--color-text-2xmild),
+
+  "contrast-2xbold":  var(--color-text-contrast-2xbold),
+  "contrast-xbold":  var(--color-text-contrast-xbold),
+  "contrast-bold":  var(--color-text-contrast-bold),
+  "contrast-base":  var(--color-text-contrast-base),
+  "contrast-mild":  var(--color-text-contrast-mild),
+  "contrast-xmild":  var(--color-text-contrast-xmild),
+  "contrast-2xmild":  var(--color-text-contrast-2xmild),
+
+  "invert-2xbold":  var(--color-text-invert-2xbold),
+  "invert-xbold":  var(--color-text-invert-xbold),
+  "invert-bold":  var(--color-text-invert-bold),
+  "invert-base":  var(--color-text-invert-base),
+  "invert-mild":  var(--color-text-invert-mild),
+  "invert-xmild":  var(--color-text-invert-xmild),
+  "invert-2xmild":  var(--color-text-invert-2xmild),
+);
+
+/* Text color modifier mixin */
+/* ==================================================================== */
+/* Generates classes using `$text-colors` MAP */
+@mixin text-color-modifier {
+  @each $key, $value in $text-colors {
+    &-#{$key} {
+      color: $value;
+      @content;
+    }
+  }
+}
+
+/* Text color classes */
+/* ==================================================================== */
+/* Generates a class for every color in `$text-colors` MAP */
+.text {
+  @include text-color-modifier;
+}
+
+.title {
+  @include text-color-modifier;
+}
+
+.label {
+  @include text-color-modifier;
+}
+
+
+/* Fonts */
+/* ==================================================================== */
+
+/* Base font size */
+body {
+  font-size: 16px;
+}
+
+/* font-family: */
+/* Google fonts added in index.HTML <head> for better performance */
+$font-family-title: ('Poppins', 'Arial', sans-serif);
+$font-family-body: ('Nunito Sans', 'Arial', sans-serif);
+$font-family-code: ('Fragment Mono', 'Courier', monospace);
+
+/* font-weight: */
+$font-weight-xs: 200;
+$font-weight-sm: 300;
+$font-weight-md: 400;
+$font-weight-lg: 500;
+
+/* letter-spacing: */
+$letter-spacing-sm: 0.01em;
+$letter-spacing-md: 0.04em;
+$letter-spacing-lg: 0.08em;
+
+/* line-height: */
+$line-height-sm: calc(0.1rem + 2ex + 0.1rem);
+$line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
+$line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);

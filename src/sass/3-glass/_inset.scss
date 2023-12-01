@@ -1,11 +1,12 @@
 /* ================================== */
 /* Inset */
 @use "../0-config/color";
-@use "../1-layout/layout-help" as help;
-@use "../1-layout/z-index" as z;
-@use "fill";
+@use "../0-config/shadow" as sha;
+@use "../2-utilities/layout-help" as help;
+@use "filter";
 @use "glass";
-@use "shadow" as sha;
+@use "tint";
+@use "texture" as tex;
 /* ================================== */
 
 html {
@@ -247,8 +248,8 @@ $inset-shadow-sm:
 /* ================================== */
 .inset-bevel-sm {
   position: relative;
-  @include fill.glass-filter;
-  @include fill.noise-sm;
+  @include filter.glass-filter;
+  @include tex.noise-sm;
   box-shadow: $inset-md;
   background-color: var(--tint-dark);
 
@@ -285,7 +286,7 @@ $inset-shadow-sm:
 
   // box-shadow: $inset-highlight-sm;
   // @include fill.noise-md;
-  @include fill.glass-filter;
+  @include filter.glass-filter;
 
   &::before {
     @include help.pseudo;
@@ -324,7 +325,7 @@ $inset-shadow-sm:
   position: relative;
 
   // box-shadow: $inset-highlight-sm;
-  @include fill.glass-filter;
+  @include filter.glass-filter;
   // backdrop-filter: blur(20px);
 
 
@@ -369,7 +370,7 @@ $inset-shadow-sm:
 .inset-glass-md {
   position: relative;
   // background-color: color.$tint-dark;
-  @include fill.fill(xdark);
+  @include filter.fill(xdark);
   box-shadow: $inset-lg;
 
   // box-sizing: content-box;
@@ -378,7 +379,7 @@ $inset-shadow-sm:
     @include help.pseudo;
     z-index: -2;
     // @include fill.glass-filter;
-    @include fill.noise-sm;
+    @include tex.noise-sm;
   }
 
   &::after {

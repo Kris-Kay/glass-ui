@@ -72,8 +72,8 @@ html {
 
   // * Other * //
   // These are used for box-shadows, text-shadows, bevels, etc.
-  --shadow: oklch(90% var(--dark-ch) / 1);
-  --highlight: oklch(98% var(--light-ch) / 1);
+  --shadow: var(--dark-lch);
+  --highlight: var(--light-lch);
 
   // * UI * //
   --color-focus: oklch(var(--primary-ch) / 0.4);

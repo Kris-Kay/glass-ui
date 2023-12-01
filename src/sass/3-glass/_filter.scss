@@ -1,0 +1,88 @@
+/* ================================== */
+/* Glass filters */
+@use "../0-config/color";
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/size";
+@use "tint";
+/* ================================== */
+
+
+$satu: 1.3;
+$bright: 0.95;
+
+:root {
+  --blur: 24px;
+
+  @include bp.bp(xs) {
+    --blur: 28px;
+  }
+
+  @include bp.bp(md) {
+    --blur: 32px;
+  }
+
+  @include bp.bp(lg) {
+    --blur: 48px;
+  }
+}
+
+@mixin glass-filter {
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness($bright) saturate($satu);
+  backdrop-filter: blur(var(--blur)) brightness($bright) saturate($satu);
+}
+
+.glass-filter {
+  @include glass-filter;
+}
+
+/* Glass Fill mixin */
+/* ================================== */
+@mixin fill($tint) {
+  @if not map-has-key(tint.$tints, $tint) {
+    @warn "Warning: `#{$tint}` is not a valid fill name.";
+  } @else {
+      background-color: map-get(tint.$tints, $tint);
+      @include glass-filter;
+  }
+}
+
+/* Glass fill classes */
+/* ================================== */
+.fill {
+  @include tint.tint-modifier('background-color') {
+    @include glass-filter;
+  }
+}
+
+@mixin gray-linear-xlight {
+  background: linear-gradient(to top left,
+    oklch(75% var(--gray-ch) / 0.85) 0%,
+    oklch(95% var(--gray-ch) / 0.9) 70%,
+    oklch(98% var(--gray-ch) / 0.95) 100%);
+}
+
+.gray-linear-xlight {
+  @include gray-linear-xlight;
+}
+
+@mixin gray-linear-light {
+  background: linear-gradient(to top left,
+    oklch(60% var(--gray-ch) / 0.85) 0%,
+    oklch(80% var(--gray-ch) / 0.9) 70%,
+    oklch(90% var(--gray-ch) / 0.95) 100%);
+}
+
+.gray-linear-light {
+  @include gray-linear-light;
+}
+
+@mixin fill-gray-linear {
+  background: linear-gradient(to top left,
+    oklch(30% var(--gray-ch) / 0.85) 0%,
+    oklch(50% var(--gray-ch) / 0.9) 70%,
+    oklch(70% var(--gray-ch) / 0.95) 100%);
+}
+
+.fill-gray-linear {
+  @include fill-gray-linear;
+}

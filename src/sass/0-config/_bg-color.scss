@@ -1,0 +1,74 @@
+/* ================================== */
+/* Background colors */
+@use "sass:map";
+/* ================================== */
+
+/* Background colors */
+/* ==================================================================== */
+/* bold = lighter e.g. whiter in light mode and lighter dark-gray in dark mode
+/* mild = darker e.g. darker light-gray in light mode and darker dark-gray in dark mode
+/* invert-bold = more contrast against theme background e.g. lighter in dark mode
+/* invert-mild = less contrast against theme background e.g. darker in dark mode
+
+/* #Config these values */
+/* if you add or remove any then update the MAP below to match. */
+html {
+  --color-bg-bold: oklch(98% var(--light-ch) / 1);
+  --color-bg-base: oklch(90% var(--light-ch) / 1);
+  --color-bg-mild: oklch(85% var(--light-ch) / 1);
+  --color-bg-xmild: oklch(75% var(--light-ch) / 1);
+  --color-bg-2xmild: oklch(65% var(--light-ch) / 1);
+
+  --color-bg-contrast-bold: oklch(60% var(--primary-ch) / 1);
+  --color-bg-contrast-base: oklch(50% var(--primary-ch) / 1);
+  --color-bg-contrast-mild: oklch(45% var(--primary-ch) / 1);
+  --color-bg-contrast-xmild: oklch(40% var(--primary-ch) / 1);
+  --color-bg-contrast-2xmild: oklch(35% var(--primary-ch) / 1);
+
+  --color-bg-invert-bold: oklch(10% var(--dark-ch) / 1);
+  --color-bg-invert-base: oklch(15% var(--dark-ch) / 1);
+  --color-bg-invert-mild: oklch(25% var(--dark-ch) / 1);
+  --color-bg-invert-xmild: oklch(35% var(--dark-ch) / 1);
+  --color-bg-invert-2xmild: oklch(45% var(--dark-ch) / 1);
+}
+
+/* Background color MAP */
+/* ==================================================================== */
+$bg-colors: (
+  "bold":  var(--color-bg-bold),
+  "base":  var(--color-bg-base),
+  "mild":  var(--color-bg-mild),
+  "xmild":  var(--color-bg-xmild),
+  "2xmild":  var(--color-bg-2xmild),
+
+  "contrast-bold":  var(--color-bg-contrast-bold),
+  "contrast-base":  var(--color-bg-contrast-base),
+  "contrast-mild":  var(--color-bg-contrast-mild),
+  "contrast-xmild":  var(--color-bg-contrast-xmild),
+  "contrast-2xmild":  var(--color-bg-contrast-2xmild),
+
+  "invert-bold":  var(--color-bg-invert-bold),
+  "invert-base":  var(--color-bg-invert-base),
+  "invert-mild":  var(--color-bg-invert-mild),
+  "invert-xmild":  var(--color-bg-invert-xmild),
+  "invert-2xmild":  var(--color-bg-invert-2xmild),
+);
+
+/* Background color modifier mixin */
+/* ==================================================================== */
+/* Generates classes using `$bg-colors` MAP */
+@mixin bg-color-modifier($property: background-color) {
+  @each $key, $value in $bg-colors {
+    &-#{$key} {
+      #{$property}: $value;
+      @content;
+    }
+  }
+}
+
+/* Background color classes */
+/* ==================================================================== */
+/* Generates a class for every color in `$bg-colors` MAP */
+.bg {
+  @include bg-color-modifier('background-color');
+}

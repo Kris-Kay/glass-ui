@@ -1,12 +1,14 @@
 /* ================================== */
 /* Glass */
+@use "../0-config/animation" as ani;
 @use "../0-config/breakpoint" as bp;
 @use "../0-config/color";
-@use "../1-layout/layout-help" as help;
-@use "animation" as ani;
+@use "../0-config/shadow" as sha;
+@use "../2-utilities/layout-help" as help;
 @use "bevel";
-@use "fill";
-@use "shadow" as sha;
+@use "filter";
+@use "texture" as tex;
+@use "tint";
 /* ================================== */
 
 
@@ -14,14 +16,14 @@
 /* ================================== */
 @mixin glass-base {
   position: relative;
-  @include fill.glass-filter;
+  @include filter.glass-filter;
   @content;
 
   &::after {
     @include help.pseudo;
     z-index: -1;
     box-shadow: bevel.$bevel-md;
-    @include fill.noise-md;
+    @include tex.noise-md;
 
     @include bp.bp(xs) {
       box-shadow: bevel.$bevel-lg;
@@ -36,7 +38,7 @@
 /* Generates `.glass-` classes from color.$tints MAP */
 /* ================================== */
 .glass {
-  @include color.tint-modifier('background-color') {
+  @include tint.tint-modifier('background-color') {
     @include glass-base;
   }
 }
@@ -70,7 +72,7 @@
   &::before {
     @include help.pseudo;
     z-index: -2;
-    @include fill.noise-md;
+    @include tex.noise-md;
   }
 }
 

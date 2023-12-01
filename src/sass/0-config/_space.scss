@@ -1,8 +1,16 @@
 /* ================================== */
 /* Space */
+@use "sass:map";
 @use "breakpoint" as bp;
+@forward "breakpoint";
 @use "size";
+@forward "size";
 /* ================================== */
+
+$bp-sm: map.get(bp.$breakpoints, sm);
+$bp-lg: map.get(bp.$breakpoints, lg);
+$bp-xl: map.get(bp.$breakpoints, xl);
+
 
 /* Responsive UI height */
 /* ================================== */
@@ -173,7 +181,7 @@
   width: 100%;
 
   @include bp.bp(lg) {
-    max-width: clamp(bp.$bp-lg, 85vw, bp.$bp-xl);
+    max-width: clamp($bp-lg, 85vw, $bp-xl);
   }
 }
 
@@ -195,13 +203,14 @@
   margin-right: auto;
 }
 
+
 @mixin gutter-from-sm {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @include bp.bp(sm) {
-    min-width: calc(bp.$bp-sm - var(--space-thinx2));
+    min-width: calc($bp-sm - var(--space-thinx2));
     width: calc(100% - var(--space-thinx2));
   }
 }
@@ -217,7 +226,7 @@
   margin-right: auto;
 
   @include bp.bp(md) {
-    min-width: calc(bp.$bp-sm - var(--space-thinx2));
+    min-width: calc($bp-sm - var(--space-thinx2));
     width: calc(100% - var(--space-thinx2));
   }
 }
@@ -228,7 +237,7 @@
   margin-right: auto;
 
   @include bp.bp(lg) {
-    min-width: calc(bp.$bp-lg - var(--space-thinx2));
+    min-width: calc($bp-lg - var(--space-thinx2));
     max-width: calc(100% - var(--space-thinx2));
   }
 }

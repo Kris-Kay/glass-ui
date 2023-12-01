@@ -1,0 +1,77 @@
+/* ================================== */
+/* Tab menu */
+@use "../0-config/animation" as ani;
+@use "../0-config/breakpoint" as bp;
+@use "../0-config/color";
+@use "../0-config/size";
+@use "../0-config/text" as t;
+@use "../0-config/shadow" as sha;
+@use "../0-config/z-index" as z;
+@use "../2-utilities/flex";
+@use "../2-utilities/layout-help" as help;
+@use "../2-utilities/radius" as br;
+@use "../3-glass/index" as glass;
+@use "button" as btn;
+/* ================================== */
+
+.tab-menu {
+  width: fit-content;
+  max-width: 100%;
+  height: var(--ui-md);
+  margin: 0 auto;
+  @include flex.flex-c;
+  gap: size.$s1;
+
+  --tab-br: 8px;
+  --padding: 3px;
+  padding: var(--padding);
+  @include br.outer-br (var(--tab-br), var(--padding));
+
+  @include bp.bp(xs) {
+    gap: var(--3xs);
+  }
+
+  @include bp.bp(md) {
+    height: var(--ui-lg);
+  }
+}
+
+
+[role="tab"] {
+  --inner-h: 0.95rem;
+
+  width: max-content;
+  height: 100%;
+  @include flex.flex-c;
+  padding: 0 0.5rem;
+
+  pointer-events: auto;
+  cursor: pointer;
+
+  font-size: var(--inner-h);
+  line-height: var(--inner-h);
+  @include btn.btn-text;
+  @include btn.btn-2d-base;;
+  border-radius: var(--tab-br);
+
+  @include bp.bp(xs) {
+    padding: 0 0.9rem;
+  }
+
+  @include bp.bp(md) {
+    --inner-h: 1.1rem;
+    padding: 0 1.2rem;
+  }
+
+  @include bp.bp(lg) {
+    padding: 0 1.3rem;
+  }
+}
+
+[role="tab"][aria-selected="true"] {
+  -webkit-backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(1.5);
+  background-color: var(--tint-3xlight);
+  color: var(--tint-2xdark);
+  box-shadow: var(--sha-2xs);
+}

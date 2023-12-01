@@ -1,0 +1,36 @@
+/* ================================== */
+/* Gradient styles */
+/* ================================== */
+
+@mixin light-linear-xlight {
+  background: linear-gradient(to top left,
+    oklch(75% var(--light-ch) / 0.85) 0%,
+    oklch(95% var(--light-ch) / 0.9) 70%,
+    oklch(98% var(--light-ch) / 0.95) 100%);
+}
+
+.light-linear-xlight {
+  @include light-linear-xlight;
+}
+
+@mixin light-linear-light {
+  background: linear-gradient(to top left,
+    oklch(60% var(--light-ch) / 0.85) 0%,
+    oklch(80% var(--light-ch) / 0.9) 70%,
+    oklch(90% var(--light-ch) / 0.95) 100%);
+}
+
+.light-linear-light {
+  @include light-linear-light;
+}
+
+@mixin fill-light-linear {
+  background: linear-gradient(to top left,
+    oklch(30% var(--light-ch) / 0.85) 0%,
+    oklch(50% var(--light-ch) / 0.9) 70%,
+    oklch(70% var(--light-ch) / 0.95) 100%);
+}
+
+.fill-light-linear {
+  @include fill-light-linear;
+}

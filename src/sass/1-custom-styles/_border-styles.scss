@@ -1,0 +1,15 @@
+/* ================================== */
+/* Border custom styles */
+@use "../3-glass/bevel";
+@forward "../3-glass/bevel";
+/* ================================== */
+
+/* Outlines & borders */
+/* ================================== */
+.outline-thin-light {
+  box-shadow: bevel.$bevel-lg;
+  outline: 1px solid oklch(var(--highlight) / 0.15);
+  outline-offset: -1px;
+}
+
+$thin-xlight: 1px solid var(--tint-xlight);
