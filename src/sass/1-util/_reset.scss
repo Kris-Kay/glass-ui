@@ -1,0 +1,158 @@
+/* ================================== */
+/* Reset */
+/* ================================== */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  cursor: default;
+  vertical-align: baseline;
+}
+
+// html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   font-style: inherit;
+//   vertical-align: baseline;
+//   background: transparent;
+// }
+
+
+main, article, aside, figure, footer, header, nav, section, details, summary {
+  display: block;
+}
+
+a,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+p,
+blockquote,
+figure,
+form,
+fieldset,
+input,
+legend,
+pre,
+abbr,
+button,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+body,
+input,
+textarea,
+select,
+button {
+  font-synthesis: none;
+  font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+}
+
+button,
+a,
+input,
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-style: none;
+  border-radius: 0;
+  text-decoration: none;
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a, button {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+// button {
+//   -webkit-box-sizing: content-box;
+//   box-sizing: content-box;
+// }
+
+button:disabled {
+  cursor: default;
+}
+
+:focus {
+  outline: 1px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+p {
+  text-align: left;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset,
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+audio,
+canvas,
+video,
+progress {
+  vertical-align: baseline;
+}
+
+
+// reset user agent style
+@mixin reset {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  appearance: none;
+}

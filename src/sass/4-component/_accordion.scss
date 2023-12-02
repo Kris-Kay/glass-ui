@@ -1,0 +1,149 @@
+/* ================================== */
+/* Accordion */
+@use "../config" as *;
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+@use "button" as btn;
+/* ================================== */
+
+.accordion__warp {
+  --space: var(--md);
+
+  @include bp(md) {
+    --space: var(--lg);
+  }
+}
+
+.accordion__body {
+  /* layout */
+  position: relative;
+  z-index: 5;
+  display: grid;
+
+  /* visual */
+  @include glass.glass-base;
+  @include glass.fill(dark);
+  box-shadow: var(--sha-xl);
+  border-radius: var(--space);
+  overflow: hidden;
+}
+
+.accordion__header {
+  display: grid;
+  padding: var(--space);
+}
+
+.accordion__summary {
+  display: grid;
+  gap: var(--space);
+
+  &.full-w-fill {
+    /* layout */
+    padding: var(--space);
+
+    /* visual */
+    background-color: var(--tint-xdark);
+    box-shadow: $flat-sha-md;
+  }
+}
+
+.see-more-btn, .see-less-btn {
+  pointer-events: none;
+  text-shadow: var(--text-sha-sm);
+}
+
+.accordion__toggle {
+  /* layout */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space);
+
+  /* visual */
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: transparent;
+  @include btn.ui-transitions;
+
+  &:hover {
+    background-color: var(--tint-xlight);
+  }
+
+  >.see-more-btn {
+    display: none;
+  }
+
+  >.see-less-btn {
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--3xs);
+  }
+
+  &.is-closed {
+
+    >.see-more-btn {
+      width: fit-content;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: var(--3xs);
+    }
+
+    >.see-less-btn {
+      display: none;
+    }
+  }
+}
+
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-20%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.accordion__content {
+  /* layout */
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--space);
+  padding-top: var(--2xl);
+  padding-bottom: var(--space);
+  padding-left: var(--space);
+  padding-right: var(--space);
+  margin-top: calc(-1 * var(--xl));
+
+  /* visual */
+  border-radius: 0 0 var(--space) var(--space);
+  box-shadow: var(--sha-xl);
+  @include glass.fill("3xdark");
+
+  animation: slide-down 300ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+
+  &.is-closed {
+    display: none;
+    height: 0;
+  }
+}
+
+.accordion__title {
+  @include title-bold;
+  font-size: var(--lg);
+  text-shadow: var(--text-sha-md);
+}
+
+.accordion__text {
+  max-width: 100%;
+  font-size: var(--text-sm);
+}

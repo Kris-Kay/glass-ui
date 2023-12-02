@@ -1,8 +1,8 @@
 /* ================================== */
 /* Sizes */
 @use "sass:map";
-@use "breakpoint" as bp;
 @forward "breakpoint";
+@use "breakpoint" as bp;
 /* ================================== */
 
 /* Static Size Values */

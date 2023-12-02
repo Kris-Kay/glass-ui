@@ -1,7 +1,6 @@
-@forward "./0-config/index";
-@forward "./1-custom-styles/index";
-@forward "./2-utilities/index";
-@forward "./3-glass/index";
-@forward "./4-item/index";
-@forward "./5-part/index";
-@forward "./6-page/home";
+@forward "component";
+@forward "config";
+@forward "custom";
+@forward "glass";
+@forward "util";
+@forward "./5-page/demo-site";

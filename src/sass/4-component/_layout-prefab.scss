@@ -1,0 +1,67 @@
+/* ================================== */
+/* Layout groups */
+@use "../config" as *;
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+@use "button" as btn;
+/* ================================== */
+
+
+/* Bento grid */
+/* ================================== */
+.bento__wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--lg);
+  }
+
+  @include bp(md) {
+    gap: var(--xl);
+  }
+
+  @include bp(lg) {
+    gap: var(--2xl);
+    padding: var(--xl);
+  }
+}
+
+.bento__rect {
+  @include flex-c;
+  flex-direction: column;
+  aspect-ratio : 1 / 1;
+  border-radius: var(--sm);
+
+  @include bp(md) {
+    border-radius: var(--md);
+  }
+}
+
+
+/* Column flex */
+/* ================================== */
+// * bp < lg = 1 column
+// * bp >= lg = whatever fits then wrap
+
+.column-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+ width: 100%;
+
+  > .column {
+  width: 100%;
+
+    // @include bp(lg) {
+    //   width: fit-content
+    // }
+  }
+}

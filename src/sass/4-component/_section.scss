@@ -1,0 +1,71 @@
+/* ================================== */
+/* Sections */
+@use "../config" as *;
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+@use "button" as btn;
+/* ================================== */
+
+.section__wrap {
+/* layout */
+  // width: 100%;
+  display: grid;
+  margin: 0 auto;
+  // z-index: z.z();
+
+/* visual */
+  border-radius: 0;
+  box-shadow: none;
+
+  @include bp(sm) {
+    overflow: hidden;
+    border-radius: var(--lg);
+    box-shadow: var(--sha-xl);
+  }
+}
+
+.section__header {
+  --space: var(--space-thin); // < control padding from here
+
+  /* layout */
+  display: grid;
+  gap: $s2;
+  padding: var(--space);
+
+  /* visual */
+  border-radius: 0;
+  @include glass.glass--no-bevel-mobile;
+  @include glass.fill(xdark);
+
+  @include bp(sm) {
+    overflow: hidden;
+    border-radius: var(--lg) var(--lg) 0 0;
+  }
+
+  >.full-w-fill {
+    /* layout */
+    padding: var(--space);
+    margin-left: calc((-1 * var(--space)) + 0.5px);
+    margin-right: calc(-1 * var(--space));
+
+    /* visual */
+    background-color: var(--tint-xdark);
+    box-shadow: glass.$flat-inset-md;
+  }
+}
+
+
+.section__title {
+  @include title-bold;
+  font-size: var(--lg);
+  text-shadow: var(--text-sha-md);
+}
+
+.section__body {
+  /* layout */
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  padding-bottom: var(--3xl);
+}

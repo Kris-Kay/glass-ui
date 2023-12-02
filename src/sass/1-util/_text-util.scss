@@ -1,0 +1,68 @@
+/* ================================== */
+/* Text utilities */
+@forward "../0-config/text";
+@use "../0-config/text";
+/* ================================== */
+
+.first-line-bold {
+  &:first-line {
+    font-weight: text.$font-weight-lg;
+  }
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* text-align: */
+.text-c { text-align: center; }
+.text-l { text-align: start; }
+.text-r { text-align: end; }
+.text-j { text-align: justify; }
+
+.text-bold { font-weight: text.$font-weight-lg; }
+.text-ital { font-style: italic; }
+
+.text-cap { text-transform: capitalize; }
+.text-allcap { text-transform: uppercase; }
+.text-lower { text-transform: lowercase; }
+
+
+/* text-decoration: */
+.text-line-through { text-decoration: line-through; }
+.text-underline { text-decoration: underline; }
+
+
+
+.lh-1 { line-height: 1; }
+
+
+/* Bullet point decorations */
+/* ================================== */
+.dot {
+  &::before {
+    padding-right: 0.25em;
+    content: "•"
+  }
+}
+
+.check {
+  &::before {
+    padding-right: 0.25em;
+    content: "☐"
+  }
+}
+
+.arrow {
+  &::before {
+    padding-right: 0.25em;
+    content: "➟"
+  }
+}

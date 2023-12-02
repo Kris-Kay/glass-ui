@@ -1,10 +1,10 @@
 /* ================================== */
 /* Space */
 @use "sass:map";
-@use "breakpoint" as bp;
-@forward "breakpoint";
-@use "size";
 @forward "size";
+@forward "breakpoint";
+@use "breakpoint" as bp;
+@use "size";
 /* ================================== */
 
 $bp-sm: map.get(bp.$breakpoints, sm);

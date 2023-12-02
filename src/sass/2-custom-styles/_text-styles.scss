@@ -1,0 +1,192 @@
+/* ================================== */
+/* Text styles used in project */
+@use "../config" as *;
+@use "../util" as *;
+@use "../2-custom-styles/border-styles" as border;
+@use "../glass" as glass;
+/* ================================== */
+
+
+/* titles */
+/* ================================== */
+
+.title-h2 {
+  // @include title-bold;
+  font-size: var(--text-lg);
+  color: var(--color-title);
+  text-shadow: var(--text-sha-lg);
+  text-align: end;
+}
+
+.title-h2__bg {
+  @include glass.glass--no-bevel;
+  @include flex-c;
+  @include glass.fill(xdark);
+  padding: var(--xl) 0;
+}
+
+// .title-gray-xs {
+//   @include title-bold;
+//   font-size: var(--text-xs);
+//   color: var(--tint-3xlight);
+//   text-shadow: var(--text-sha-xs);
+// }
+
+// .title-dark-sm {
+//   @include title-bold;
+//   font-size: var(--text-sm);
+//   color: var(--tint-2xdark);
+//   text-shadow: var(--text-sha-sm);
+// }
+
+
+
+
+
+/* Body text */
+/* ================================== */
+@mixin body-text {
+  font-family: $font-family-body;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-md;
+  color: var(--color-text-base);
+}
+
+.body-text,
+body,
+input,
+textarea {
+  @include body-text;
+}
+
+
+/* Bold titles */
+/* ================================== */
+@mixin title-bold {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-md;
+}
+
+.title-bold {
+  @include title-bold;
+}
+
+
+/* Thin titles */
+/* ================================== */
+@mixin title-thin {
+  font-family: $font-family-title;
+  font-weight: $font-weight-xs;
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-md;
+}
+
+.title-thin {
+  @include title-thin;
+}
+
+/* Text links */
+/* ================================== */
+.link {
+  color: var(--color-link-rest);
+
+  :hover {
+    color: var(--color-link-hover);
+  }
+
+  :visited {
+    color: var(--color-link-visited);
+  }
+}
+
+
+/* Eyebrow text */
+/* ================================== */
+@mixin eyebrow {
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-sm;
+
+  color: var(--color-text-xmild);
+  text-shadow: var(--text-sha-md);
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+/* Labels */
+/* ================================== */
+@mixin label-text {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  line-height: 1;
+}
+
+.label-text {
+  @include label-text;
+}
+
+
+/* Code */
+/* ================================== */
+pre code {
+  display: block;
+  white-space: pre;
+  max-width: 100%;
+}
+
+@mixin code {
+  font-family: $font-family-code;
+  font-size: var(--text-sm);
+  line-height: $line-height-lg;
+  color:  oklch(90% var(--accent-ch) / 1);
+}
+
+.code {
+  @include code;
+}
+
+.c-comment {
+  color: oklch(65% var(--dark-ch) / 1);
+}
+
+.c-class {
+  color:  oklch(100% var(--accent-ch) / 1);
+}
+
+.c-prop {
+  color: oklch(80% var(--primary-ch) / 1);
+}
+
+.c-value {
+  color: oklch(100% var(--primary-ch) / 1);
+}
+
+.c-num {
+  color: oklch(80% var(--accent-ch) / 1);
+}
+
+
+
+
+
+.list-heading--light {
+  @include eyebrow;
+  color: var(--tint-2xlight);
+  border-bottom: border.$thin-xlight;
+}
+
+.class-name {
+  @include code;
+  font-size: var(--text-sm);
+  text-shadow: var(--text-sha-xs);
+  line-height: 1;
+}

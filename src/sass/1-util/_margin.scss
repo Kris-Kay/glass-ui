@@ -1,0 +1,44 @@
+/* ================================== */
+/* Margins */
+@forward "../0-config/size";
+@use "../0-config/size";
+/* ================================== */
+// don't modify this file -> edit .scss to create your custom elements
+.m {
+  @include size.size-modifiers('margin');
+}
+
+.m-t {
+  @include size.size-modifiers('margin-top');
+}
+
+.m-b {
+  @include size.size-modifiers('margin-bottom');
+}
+
+.m-l {
+  @include size.size-modifiers('margin-left');
+}
+
+.m-r {
+  @include size.size-modifiers('margin-right');
+}
+
+.m-x {
+  @include size.xy-size-modifiers('margin-right', 'margin-left');
+}
+
+.m-y {
+  @include size.xy-size-modifiers('margin-top', 'margin-bottom');
+}
+
+.m-auto-x {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.neg-t-3xl {
+  margin-top: calc(-1 * var(--3xl));
+}

@@ -1,0 +1,65 @@
+/* ================================== */
+/* Border Radius */
+@forward "../0-config/size";
+@use "../0-config/size";
+/* ================================== */
+
+$round: 9999px;
+
+.radius-round {
+  border-radius: $round;
+  overflow: hidden;
+}
+
+/* Border radius classes */
+/* ================================== */
+// * Generates a class for every T-shirt size
+// * T-shirt size values scale with viewport width
+.radius {
+  @include size.size-modifiers('border-radius') {
+    overflow: hidden;
+  }
+}
+
+/* Conditional border-radius */
+/* ================================== */
+// https://ishadeed.com/article/conditional-border-radius/
+// remove border radius if element width = 100vw
+// border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, *max size goes here*);
+
+@mixin vw-radius-modifier($property) {
+  @each $key, $value in size.$sizes {
+    &-#{$key} {
+      #{$property}: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
+      @content;
+    }
+  }
+}
+
+.vw-radius {
+  @include vw-radius-modifier('border-radius') {
+    overflow: hidden;
+  }
+}
+
+.r-resp-lg {
+  border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
+  overflow: hidden;
+}
+
+// .resp-radius {
+//   // @extend .vw-radius-lg;
+//   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 25px);
+//   // border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
+// }
+
+
+/* Nested border radius */
+/* ================================== */
+@mixin outer-br ($inner-br, $padding) {
+  $r: calc($inner-br + $padding);
+  $f: calc(($r * 3) / 100);
+  $br: calc($r - $f);
+
+  border-radius: $br;
+}

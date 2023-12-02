@@ -1,0 +1,115 @@
+/* ================================== */
+/* Above the fold */
+@use "../config" as *;
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+@use "button" as btn;
+/* ================================== */
+
+.atf-100 {
+  height: fit-content;
+  min-height: calc(100vh - var(--nav-h));
+  // min-height: calc(100svh - var(--nav-h));
+  display: grid;
+  margin: var(--nav-h) auto 0 auto;
+  padding-bottom: var(--nav-h);
+}
+
+.atf__title-only {
+  min-height: 30vh;
+  margin-top: var(--nav-h);
+  display: grid;
+  place-items: center;
+}
+
+.atf__title-img {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  place-items: center;
+}
+
+.atf__card-only {
+  width: fit-content;
+  height: fit-content;
+  place-self: end center;
+
+  @include bp(lg) {
+    place-self: end start;
+  }
+}
+
+.atf__card {
+  width: 95%;
+
+  @include bp(sm) {
+    width: min(100%, 420px);
+  }
+
+  @include bp(lg) {
+    width: min(100%, 450px);
+  }
+}
+
+.card-3d-bin {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  perspective: 5500px;
+  // border:1px solid #ccc;
+
+  @include bp(sm) {
+    place-items: end start;
+  }
+}
+
+.card-3d {
+  width: fit-content;
+  max-width: 95%;
+  height: fit-content;
+
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform $speed-2xslow ease-in-out;
+
+  transform:
+    perspective(5000px)
+    rotateY(15deg)
+    rotateX(15deg)
+    rotateZ(-10deg)
+    translateX(10px)
+    translateY(-10%);
+
+  @include bp(sm) {
+    transform:
+      perspective(5000px)
+      rotateY(15deg)
+      rotateX(20deg)
+      rotateZ(-15deg)
+      translateX(20px)
+      translateY(-10%);
+  }
+
+  @include bp(md) {
+  transform:
+    perspective(5000px)
+    rotateY(15deg)
+    rotateX(20deg)
+    rotateZ(-15deg)
+    translateX(40px)
+    translateY(-10%);
+  }
+
+  &:hover {
+    transform:
+      perspective(5000px)
+      rotateY(0deg)
+      rotateX(0deg)
+      rotateZ(0deg)
+      translateX(0px)
+      translateY(0%);
+  }
+}
