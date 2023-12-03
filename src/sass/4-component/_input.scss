@@ -22,7 +22,7 @@
   border-radius: $round;
   padding: 0 $s4;
 
-  box-shadow: glass.$inset-md;
+  box-shadow: var(--inset-md);
   background-color: var(--tint-xdark);
 
   @include bp(sm) {
@@ -62,8 +62,8 @@
   pointer-events: none;
   padding: $s4;
 
-  @include outer-br (var(--2xs), $s4);
-  box-shadow: glass.$inset-md;
+  @include outer-radius (var(--2xs), $s4);
+  box-shadow: var(--inset-md);
   background-color: var(--tint-xdark);
 
   // @include bp(sm) {
