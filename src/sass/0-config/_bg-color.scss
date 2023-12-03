@@ -14,10 +14,10 @@
 /* if you add or remove any then update the MAP below to match. */
 html {
   --color-bg-bold: oklch(98% var(--light-ch) / 1);
-  --color-bg-base: oklch(90% var(--light-ch) / 1);
-  --color-bg-mild: oklch(85% var(--light-ch) / 1);
-  --color-bg-xmild: oklch(75% var(--light-ch) / 1);
-  --color-bg-2xmild: oklch(65% var(--light-ch) / 1);
+  --color-bg-base: oklch(95% var(--light-ch) / 1);
+  --color-bg-mild: oklch(90% var(--light-ch) / 1);
+  --color-bg-xmild: oklch(85% var(--light-ch) / 1);
+  --color-bg-2xmild: oklch(80% var(--light-ch) / 1);
 
   --color-bg-contrast-bold: oklch(60% var(--primary-ch) / 1);
   --color-bg-contrast-base: oklch(50% var(--primary-ch) / 1);
@@ -25,11 +25,11 @@ html {
   --color-bg-contrast-xmild: oklch(40% var(--primary-ch) / 1);
   --color-bg-contrast-2xmild: oklch(35% var(--primary-ch) / 1);
 
-  --color-bg-invert-bold: oklch(10% var(--dark-ch) / 1);
-  --color-bg-invert-base: oklch(15% var(--dark-ch) / 1);
-  --color-bg-invert-mild: oklch(25% var(--dark-ch) / 1);
-  --color-bg-invert-xmild: oklch(35% var(--dark-ch) / 1);
-  --color-bg-invert-2xmild: oklch(45% var(--dark-ch) / 1);
+  --color-bg-invert-bold: oklch(12% var(--dark-ch) / 1);
+  --color-bg-invert-base: oklch(35% var(--dark-ch) / 1);
+  --color-bg-invert-mild: oklch(45% var(--dark-ch) / 1);
+  --color-bg-invert-xmild: oklch(55% var(--dark-ch) / 1);
+  --color-bg-invert-2xmild: oklch(65% var(--dark-ch) / 1);
 }
 
 /* Background color MAP */

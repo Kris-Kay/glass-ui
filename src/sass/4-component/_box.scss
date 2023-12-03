@@ -32,23 +32,22 @@
   place-items: center;
 }
 
-
 @mixin box {
   width: 100%;
   height: fit-content;
   display: grid;
-  gap: var(--md);
+  gap: var(--lg);
   padding: var(--lg);
   box-shadow: var(--sha-xl);
 
   @include bp(sm) {
-    gap: var(--lg);
+    gap: var(--xl);
     padding: var(--xl);
     border-radius: var(--lg);
   }
 
   @include bp(md) {
-    gap: var(--xl);
+    gap: var(--2xl);
     padding: var(--2xl);
     box-shadow: var(--sha-3xl);
   }

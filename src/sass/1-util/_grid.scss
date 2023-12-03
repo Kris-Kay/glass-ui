@@ -18,13 +18,13 @@
   grid-gap: var(--gutter-width);
 }
 
-@mixin grid-center {
+@mixin grid-c {
   display: grid;
   place-items: center;
 }
 
-.grid-center {
-  @include grid-center;
+.grid-c {
+  @include grid-c;
 }
 
 .grid-12 {

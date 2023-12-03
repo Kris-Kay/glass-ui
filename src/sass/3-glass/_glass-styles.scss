@@ -1,10 +1,8 @@
 /* ================================== */
 /* Glass */
-@use "../0-config/animation" as ani;
-@use "../0-config/breakpoint" as bp;
-@use "../0-config/color";
-@use "../0-config/shadow" as sha;
-@use "../1-util/layout-help" as *;
+@use "../config" as *;
+@use "../custom" as *;
+@use "../util" as *;
 @use "bevel";
 @use "filter";
 @use "texture" as tex;
@@ -25,7 +23,7 @@
     box-shadow: bevel.$bevel-md;
     @include tex.noise-md;
 
-    @include bp.bp(xs) {
+    @include bp(xs) {
       box-shadow: bevel.$bevel-lg;
     }
   }
@@ -54,7 +52,7 @@
   @include glass-base {
     box-shadow: bevel.$flat-bevel-sm;
 
-    @include bp.bp(xs) {
+    @include bp(xs) {
       box-shadow: bevel.$bevel-lg;
     }
   }

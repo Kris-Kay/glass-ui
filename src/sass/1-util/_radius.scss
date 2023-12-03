@@ -56,8 +56,8 @@ $round: 9999px;
 
 /* Nested border radius */
 /* ================================== */
-@mixin outer-br ($inner-br, $padding) {
-  $r: calc($inner-br + $padding);
+@mixin outer-radius ($inner-radius, $padding) {
+  $r: calc($inner-radius + $padding);
   $f: calc(($r * 3) / 100);
   $br: calc($r - $f);
 

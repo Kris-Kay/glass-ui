@@ -80,4 +80,8 @@ html {
   --color-disabled: oklch(var(--gray-lch) / 0.4);
   --color-checked: oklch(var(--accent-lch) / 0.6);
   --color-input-control: oklch(var(--light-lch) / 0.8);
+
+  --color-inset-dark: oklch(var(--dark-lch) / 0.1);
+  --color-inset-darker: oklch(var(--dark-lch) / 0.2);
+  --color-inset-darkest: oklch(var(--dark-lch) / 0.3);
 }

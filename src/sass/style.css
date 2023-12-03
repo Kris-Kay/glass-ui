@@ -820,7 +820,7 @@ pre code {
   grid-gap: var(--gutter-width);
 }
 
-.grid-center {
+.grid-c {
   display: grid;
   place-items: center;
 }

@@ -3,7 +3,6 @@
 @use "../config" as *;
 @use "../util" as *;
 @use "../2-custom-styles/border-styles" as border;
-@use "../glass" as glass;
 /* ================================== */
 
 
@@ -18,12 +17,6 @@
   text-align: end;
 }
 
-.title-h2__bg {
-  @include glass.glass--no-bevel;
-  @include flex-c;
-  @include glass.fill(xdark);
-  padding: var(--xl) 0;
-}
 
 // .title-gray-xs {
 //   @include title-bold;

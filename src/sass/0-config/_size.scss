@@ -35,34 +35,34 @@ $s20: calc($root-size * 20); /* 80px 5rem */
   --3xs: clamp(0.25rem, 0.21rem + 0.21vw, 0.38rem);
 
   /* 2xs: 8px → 12px */
-  --2xs: clamp(0.50rem, 0.42rem + 0.42vw, 0.75rem);
+  --2xs: clamp(0.5rem, 0.42rem + 0.42vw, 0.75rem);
 
   /* xs: 12px → 18px */
   --xs: clamp(0.75rem, 0.63rem + 0.63vw, 1.13rem);
 
   /* sm: 16px → 24px */
-  --sm: clamp(1.00rem, 0.83rem + 0.83vw, 1.50rem);
+  --sm: clamp(1rem, 0.83rem + 0.83vw, 1.5rem);
 
   /* md: 20px → 30px */
   --md: clamp(1.25rem, 1.04rem + 1.04vw, 1.88rem);
 
   /* lg: 24px → 36px */
-  --lg: clamp(1.50rem, 1.25rem + 1.25vw, 2.25rem);
+  --lg: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
 
   /* xl: 32px → 48px */
-  --xl: clamp(2.00rem, 1.67rem + 1.67vw, 3.00rem);
+  --xl: clamp(2rem, 1.67rem + 1.67vw, 3rem);
 
   /* 2xl: 40px → 60px */
-  --2xl: clamp(2.50rem, 2.08rem + 2.08vw, 3.75rem);
+  --2xl: clamp(2.5rem, 2.08rem + 2.08vw, 3.75rem);
 
   /* 3xl: 48px → 72px */
-  --3xl: clamp(3.00rem, 2.50rem + 2.50vw, 4.50rem);
+  --3xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
 
   /* 4xl: 64px → 96px */
-  --4xl: clamp(4.00rem, 3.33rem + 3.33vw, 6.00rem);
+  --4xl: clamp(4rem, 3.33rem + 3.33vw, 6rem);
 
   /* 5xl: 80px → 120px */
-  --5xl: clamp(5.00rem, 4.17rem + 4.17vw, 7.50rem);
+  --5xl: clamp(5rem, 4.17rem + 4.17vw, 7.5rem);
 
 
 

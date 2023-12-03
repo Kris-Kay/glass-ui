@@ -18,7 +18,7 @@
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
-  @include outer-br (var(--tab-br), var(--padding));
+  @include outer-radius (var(--tab-br), var(--padding));
 
   @include bp(xs) {
     gap: var(--3xs);

@@ -165,7 +165,7 @@ footer {
   // max-width: 100%;
   height: var(--ui-lg);
 
-  // @include bp.bp(sm) {
+  // @include bp(sm) {
   //   justify-content: flex-start;
   // }
 }
@@ -248,44 +248,15 @@ footer {
 }
 
 
-/*  Inset demo */
+/*  Insets demo */
 /* ================================== */
-// weird layout because insets have to be set to `box-sizing: content-box`;
-.inset-demo {
-  width: min(512px, 100%);
-  display: grid;
-  gap: var(--lg);
-  padding: var(--xl);
-  border-radius: var(--lg);
-  box-shadow: var(--sha-3xl);
-
-  @include bp(sm) {
-    gap: var(--xl);
-    padding: var(--2xl);
-    border-radius: var(--xl);
-  }
-}
-
-.inset-demo-bin {
-  display: grid;
-  place-items: center;
-  gap: var(--xl);
-  width: 100%;
-  height: fit-content;
-  padding: 0 var(--xs);
-}
-
 .inset-rect {
-  box-sizing: content-box;
-  display: grid;
-  place-content: center start;
   width: 100%;
+// height: 200px;
   padding: var(--xs);
-  margin: 0 var(--xs);
   border-radius: var(--xs);
+  background-color: var(--color-inset-dark);
 }
-
-
 
 
 .full-w-inset {
@@ -377,4 +348,12 @@ footer {
 
 .test-oklch {
 	color: oklch(40% 0.268735435 34.568626);
+}
+
+
+.title-h2__bg {
+  @include glass.glass--no-bevel;
+  @include flex-c;
+  @include glass.fill(xdark);
+  padding: var(--xl) 0;
 }

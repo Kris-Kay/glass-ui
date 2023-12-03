@@ -1,8 +1,7 @@
 /* ================================== */
 /* Glass filters */
-@use "../0-config/color";
-@use "../0-config/breakpoint" as bp;
-@use "../0-config/size";
+@use "../config" as *;
+@use "../util" as *;
 @use "tint";
 /* ================================== */
 
@@ -13,15 +12,15 @@ $bright: 0.95;
 :root {
   --blur: 24px;
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     --blur: 28px;
   }
 
-  @include bp.bp(md) {
+  @include bp(md) {
     --blur: 32px;
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     --blur: 48px;
   }
 }

@@ -46,7 +46,7 @@
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--color-inset-md);
-  box-shadow: glass.$inset-sm;
+  box-shadow: var(--inset-sm);
   border-radius: $round;
   cursor: pointer;
   transition: $speed-fast background ease;
