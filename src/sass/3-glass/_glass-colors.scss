@@ -1,7 +1,17 @@
 /* ================================== */
-/* Glass tints */
+/* Glass colors */
 @use "sass:map";
 /* ================================== */
+
+/* Glass inset background colors */
+/* ==================================================================== */
+/* Used for text inputs, checkboxes, etc. */
+/* #Config these values */
+html {
+  --color-inset-base: oklch(var(--dark-lch) / 0.1);
+  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
+  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
+}
 
 /* Translucent glass tint colors */
 /* ==================================================================== */
