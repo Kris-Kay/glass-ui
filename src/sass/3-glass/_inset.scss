@@ -5,7 +5,7 @@
 @use "../util" as *;
 @use "filter";
 @use "glass-styles";
-@use "tint";
+@use "glass-colors" as color;
 @use "texture" as tex;
 
 /* ================================================ */
@@ -114,7 +114,6 @@ $inset-xs:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.1),      // specular
   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.25), // bevel blur
   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),        // bevel
-
   inset 2px 2px 8px -1px oklch(var(--shadow) / 0.02), // lg top-left shadow
   inset 1px 1px 4px -1px oklch(var(--shadow) / 0.2), // blury top-left shadow
   inset 0.75px 0.75px 1.5px -0.25px oklch(var(--shadow) / 0.12), // cut top-left shadow

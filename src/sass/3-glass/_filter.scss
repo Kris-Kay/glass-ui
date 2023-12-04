@@ -2,7 +2,7 @@
 /* Glass filters */
 @use "../config" as *;
 @use "../util" as *;
-@use "tint";
+@use "glass-colors" as color;
 /* ================================== */
 
 
@@ -37,10 +37,10 @@ $bright: 0.95;
 /* Glass Fill mixin */
 /* ================================== */
 @mixin fill($tint) {
-  @if not map-has-key(tint.$tints, $tint) {
+  @if not map-has-key(color.$tints, $tint) {
     @warn "Warning: `#{$tint}` is not a valid fill name.";
   } @else {
-      background-color: map-get(tint.$tints, $tint);
+      background-color: map-get(color.$tints, $tint);
       @include glass-filter;
   }
 }
@@ -48,7 +48,7 @@ $bright: 0.95;
 /* Glass fill classes */
 /* ================================== */
 .fill {
-  @include tint.tint-modifier('background-color') {
+  @include color.tint-modifier('background-color') {
     @include glass-filter;
   }
 }
