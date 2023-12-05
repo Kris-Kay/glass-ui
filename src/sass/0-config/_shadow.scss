@@ -3,7 +3,7 @@
 @use "sass:map";
 /* ================================== */
 
-:html {
+html {
   --sha-3xs:
     0.5px 0.4px 1px oklch(var(--shadow) / 0.2),
     0.5px 0.5px 1.5px oklch(var(--shadow) / 0.13),
