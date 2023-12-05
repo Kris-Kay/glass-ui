@@ -82,9 +82,6 @@
 
 
 
-
-
-
 .bg-box-sm {
   width: 100%;
   height: fit-content;
@@ -221,10 +218,6 @@
 }
 
 
-
-
-
-
 /* Thin box */
 /* ================================== */
 @mixin box-thin {
@@ -308,10 +301,7 @@
   @include title-thin;
   font-size: var(--text-2xl);
   text-shadow: var(--text-sha-md);
-
-  @include bp(sm) {
-    font-size: var(--text-3xl);
-  }
+  color: var(--text-bold);
 }
 
 
@@ -320,12 +310,12 @@
   @include title-thin;
   font-size: var(--text-lg);
   text-shadow: var(--text-sha-md);
+  color: var(--text-bold);
 
   @include bp(sm) {
     font-size: var(--text-xl);
   }
 }
-
 
 
 .space-thin > .full-w-fill {

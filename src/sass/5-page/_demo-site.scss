@@ -7,6 +7,29 @@
 @use "../component" as *;
 /* ================================== */
 
+
+.page-bg {
+  background-color: var(--page-bg);
+}
+
+.b {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: var(--lg);
+  border-radius: var(--md);
+
+  > p {
+    font-weight: var(--font-weight-lg);
+    font-family: $font-family-title;
+    font-size: var(--sm);
+    padding: var(--md);
+  }
+}
+
+
+
+
 body {
   position: relative;
 }
@@ -255,7 +278,7 @@ footer {
 // height: 200px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--color-inset-dark);
+  background-color: var(--color-inset-base);
 }
 
 

@@ -1,6 +1,16 @@
 /* ================================== */
 /* Animation config */
 /* ================================== */
+
+html.root-transition,
+html.root-transition *,
+html.root-transition *:before,
+html.root-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+
 $speed-2xslow: 1200ms;
 $speed-xslow: 750ms;
 $speed-slow:  500ms;
