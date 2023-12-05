@@ -31,6 +31,41 @@
 <!-- ================================== -->
 <main class="w-100 grid gap-5xl p-t-4xl">
 
+  <section class="w-100 grid grid-c p-lg page-bg gap-5xl">
+    <div class="b bg-2xmild">
+      <p class="text-2xmild">.bg-2xmild & .text-2xmild</p>
+      <div class="b bg-xmild">
+        <p class="text-xmild">.bg-xmild & .text-xmild</p>
+        <div class="b bg-mild">
+          <p class="text-mild">.bg-mild & .text-mild</p>
+          <div class="b bg-base">
+            <p class="text-base">.bg-base & .text-base</p>
+            <div class="b bg-bold">
+              <p class="text-bold">.bg-bold & .text-bold</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="b bg-contrast-2xmild">
+      <p class="text-2xmild">.bg-contrast-2xmild & .text-2xmild</p>
+      <div class="b bg-contrast-xmild">
+        <p class="text-xmild">.bg-contrast-xmild & .text-xmild</p>
+        <div class="b bg-contrast-mild">
+          <p class="text-mild">.bg-contrast-mild & .text-mild</p>
+          <div class="b bg-contrast-base">
+            <p class="text-base">.bg-contrast-base & .text-base</p>
+            <div class="b bg-contrast-bold">
+              <p class="text-bold">.bg-contrast-bold & .text-bold</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- WIP!!!  -->
 
   <!-- Text inputs -->
@@ -118,67 +153,219 @@
   </section> -->
 
 
-  <!-- Check boxes -->
   <section class="gutter-all grid-c">
-    <div class="max-w-sm box gradient--mid-gray glass-2xlight">
-
+    <div class="max-w-md box bg-base">
       <div class="">
-        <h3 class="box__title">Check boxes</h3>
+        <h3 class="box__title">Inputs</h3>
       </div>
 
-      <fieldset class="checkbox__fieldset">
-        <legend class="checkbox__legend">Check box legend</legend>
+      <div class="flex flex-wrap flex-c-x gap-5xl">
 
-        <div class="checkbox__group">
+        <div class="grid gap-2xs p-b-sm">
+          <!-- <h4 class="title-bold text-md">Checkboxes</h4> -->
+          <fieldset class="input__fieldset">
+            <legend class="input__legend">.checkbox</legend>
 
-          <div class="checkbox__wrap">
-            <label
-              for="op-1"
-              class="checkbox__label">
-              Option 1
-            </label>
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                id="op-2"
+                name="options"
+                value="option 2"
+                class="checkbox"
+              />
+              <label
+                for="op-2"
+                class="input__label--sm">
+                Unchecked
+              </label>
+            </div>
 
-            <input type="checkbox"
-              id="op-1"
-              name="options"
-              value="option 1"
-              class="checkbox-style"
-              checked
-            />
-          </div>
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                id="op-1"
+                name="options"
+                value="option 1"
+                class="checkbox"
+                checked
+              />
+              <label
+                for="op-1"
+                class="input__label--sm">
+                Checked
+              </label>
+            </div>
 
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                id="op-3"
+                name="options"
+                value="option 3"
+                class="checkbox"
+                disabled
+              />
+              <label
+                for="op-3"
+                class="input__label--sm">
+                Disabled
+              </label>
+            </div>
 
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                id="op-4"
+                name="options"
+                value="option 4"
+                class="checkbox"
+                checked disabled
+              />
+              <label
+                for="op-4"
+                class="input__label--sm">
+                Disabled & checked
+              </label>
+            </div>
 
-
-          <label
-            for="op-2"
-            class="checkbox__label">
-
-            <input type="checkbox"
-              id="op-2"
-              name="op-2"
-              class="checkbox"/>
-              Option 2
-          </label>
-
-          <label
-          for="op-3"
-          class="checkbox__label">
-
-          <input type="checkbox"
-            id="op-3"
-            name="op-3"
-            class="checkbox"
-            disabled/>
-            Option 3
-        </label>
-
+          </fieldset>
         </div>
-      </fieldset>
+
+        <div class="grid gap-2xs p-b-sm">
+          <!-- <h4 class="title-bold text-md">Radio buttons</h4> -->
+          <fieldset class="input__fieldset">
+            <legend class="input__legend">.radio</legend>
+
+            <div class="input__wrap">
+              <input
+                type="radio"
+                id="r-2"
+                name="options-r"
+                value="option 2"
+                class="radio"
+              />
+              <label
+                for="r-2"
+                class="input__label--sm">
+                Unchecked
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="radio"
+                id="r-1"
+                name="options-t"
+                value="option 1"
+                class="radio"
+                checked
+              />
+              <label
+                for="r-1"
+                class="input__label--sm">
+                Checked
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="radio"
+                id="r-3"
+                name="options-q"
+                value="option 3"
+                class="radio-style"
+                disabled
+              />
+              <label
+                for="r-3"
+                class="input__label--sm">
+                Disabled
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="radio"
+                id="r-4"
+                name="options-w"
+                value="option 4"
+                class="radio"
+                checked disabled
+              />
+              <label
+                for="r-4"
+                class="input__label--sm">
+                Disabled & checked
+              </label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="grid gap-2xs p-b-sm">
+          <!-- <h4 class="title-bold text-md">Switches</h4> -->
+          <fieldset class="input__fieldset">
+            <legend class="input__legend">.switch--sm</legend>
+
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                class="switch switch--sm"
+                id="switch-sm" >
+              <label
+                for="switch-sm"
+                class="input__label--sm">
+                Unchecked
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                class="switch switch--sm"
+                id="switch-checked-sm"
+                checked >
+              <label
+                for="switch-checked-sm"
+                class="input__label--sm">
+                Checked
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                class="switch switch--sm"
+                id="switch-disabled-sm"
+                disabled >
+              <label
+                for="switch-disabled-sm"
+                class="input__label--sm">
+                Disabled
+              </label>
+            </div>
+
+            <div class="input__wrap">
+              <input
+                type="checkbox"
+                class="switch switch--sm"
+                id="s-4"
+                disabled checked >
+              <label
+                for="s-4"
+                class="input__label--sm">
+                Disabled & checked
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
 
     </div>
   </section>
-
 
   <!-- Intro -->
   <section class="gutter-all grid-c">

@@ -1,13 +1,15 @@
-/* ================================== */
+/* ================================================ */
 /* Oklch Colors */
-/* ================================== */
+@use "sass:map";
+/* ================================================ */
+
+/* Color tokens
+/* ================================================ */
 /* https://oklch.com/ */
 /* l: lightness 0%   to 100% */
 /* c: chroma    0    to 0.37 */
 /* h: hue       0deg to 360deg */
 
-/* Color tokens
-/* ==================================================================== */
 /* #Config these values */
 :root {
   // * Sky * //
@@ -45,39 +47,272 @@
       --dark-c: 0.042;
     }
   }
-}
 
-// use `-ch` custom property to create colors that are lighter or darker
-// use `-lch` custom property to create colors with different alpha values
-html {
+  /* use `-ch` custom property to create colors that are lighter or darker */
+  /* use `-lch` custom property to create colors with different alpha values */
   --primary-ch: var(--primary-c) var(--primary-h);
   --primary-lch: var(--primary-l) var(--primary-c) var(--primary-h);
-  --color-primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h) / 1);
+  --primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h) / 1);
 
   --accent-ch: var(--accent-c) var(--accent-h);
   --accent-lch: var(--accent-l) var(--accent-c) var(--accent-h);
-  --color-accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 1);
+  --accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 1);
 
   --pop-ch: var(--pop-c)var(--pop-h);
   --pop-lch: var(--pop-l) var(--pop-c) var(--pop-h);
-  --color-pop: oklch(var(--pop-l) var(--pop-c) var(--pop-h) / 1);
+  --pop: oklch(var(--pop-l) var(--pop-c) var(--pop-h) / 1);
 
   --light-ch: var(--light-c) var(--light-h);
   --light-lch: var(--light-l) var(--light-c) var(--light-h);
-  --color-light: oklch(var(--light-l) var(--light-c) var(--light-h) / 1);
+  --light: oklch(var(--light-l) var(--light-c) var(--light-h) / 1);
 
   --dark-ch: var(--dark-c) var(--dark-h);
   --dark-lch: var(--dark-l) var(--dark-c) var(--dark-h);
-  --color-dark: oklch(var(--dark-l) var(--dark-c) var(--dark-h) / 1);
+  --dark: oklch(var(--dark-l) var(--dark-c) var(--dark-h) / 1);
+}
 
-  // * Other * //
+/* Dark Mode */
+/* ================================================ */
+/* #Config these values */
+:root, [data-theme=default] {
+  // color-scheme: dark light;
+
+  /* Text | Title | Label */
+  --text-bold: oklch(95% var(--light-ch) / 1);
+  --text-base: oklch(85% var(--light-ch) / 1);
+  --text-mild: oklch(75% var(--light-ch) / 1);
+  --text-xmild: oklch(65% var(--light-ch) / 1);
+  --text-2xmild: oklch(55% var(--light-ch) / 1);
+
+  --text-contrast-bold: oklch(95% var(--primary-ch) / 1);
+  --text-contrast-base: oklch(85% var(--primary-ch) / 1);
+  --text-contrast-mild: oklch(75% var(--primary-ch) / 1);
+
+  --text-invert-bold: oklch(20% var(--dark-ch) / 1);
+  --text-invert-base: oklch(35% var(--dark-ch) / 1);
+  --text-invert-mild: oklch(40% var(--dark-ch) / 1);
+  --text-invert-xmild: oklch(45% var(--dark-ch) / 1);
+  --text-invert-2xmild: oklch(50% var(--dark-ch) / 1);
+
+/* Link */
+  --link-rest: oklch(70% var(--primary-ch) / 1);
+  --link-hover: oklch(50% var(--primary-ch) / 1);
+  --link-visited: oklch(30% var(--primary-ch) / 1);
+
+/* Code */
+  --code-base: oklch(90% var(--accent-ch) / 1);
+  --code-comment: oklch(65% var(--gray-ch) / 1);
+  --code-class: oklch(100% var(--accent-ch) / 1);
+  --code-property: oklch(80% var(--primary-ch) / 1);
+  --code-value: oklch(100% var(--primary-ch) / 1);
+  --code-num: oklch(80% var(--accent-ch) / 1);
+
+/* light text on a dark bg looks much thicker so it's adjusted for here */
+  --font-weight-xs: 100;
+  --font-weight-sm: 200;
+  --font-weight-md: 300;
+  --font-weight-lg: 400;
+
+/* Background colors */
+/* ================================================ */
+/* bold = lighter e.g. whiter in light mode and lighter dark-gray in dark mode */
+/* mild = darker e.g. darker light-gray in light mode and darker dark-gray in dark mode */
+/* invert-bold = more contrast against theme background e.g. lighter in dark mode */
+/* invert-mild = less contrast against theme background e.g. darker in dark mode */
+  --page-bg: oklch(10% var(--dark-ch) / 1);
+
+  --bg-bold: oklch(35% var(--dark-ch) / 1);
+  --bg-base: oklch(30% var(--dark-ch) / 1);
+  --bg-mild: oklch(25% var(--dark-ch) / 1);
+  --bg-xmild: oklch(20% var(--dark-ch) / 1);
+  --bg-2xmild: oklch(15% var(--dark-ch) / 1);
+
+  --bg-contrast-bold: oklch(25% var(--primary-ch) / 1);
+  --bg-contrast-base: oklch(20% var(--primary-ch) / 1);
+  --bg-contrast-mild: oklch(15% var(--primary-ch) / 1);
+  --bg-contrast-xmild: oklch(10% var(--primary-ch) / 1);
+  --bg-contrast-2xmild: oklch(5% var(--primary-ch) / 1);
+
+  /* Used for box-shadows, text-shadows, bevels, etc. */
+  --shadow: var(--dark-lch);
+  --highlight: var(--light-lch);
+
+  // * UI * //
+  --ui-focus: oklch(var(--primary-lch) / 0.4);
+  --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
+  --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
+  --ui-rest-knob: oklch(var(--light-lch) / 1);
+  --ui-active-bg: oklch(var(--primary-lch) / 0.9);
+  --ui-active-hover-bg: oklch(65% var(--primary-ch) / 0.9);
+  --ui-active-knob: oklch(var(--light-lch) / 1);
+  --ui-disabled-bg: oklch(var(--dark-lch) / 0.15);
+  --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary-h) / 1);
+  --ui-disabled-knob: oklch(var(--light-lch) / 0.4);
+  --ui-disabled-text: oklch(65% var(--light-ch) / 1);
+}
+
+/* Light Mode */
+/* ================================================ */
+/* #Config these values */
+[data-theme="light"] {
+
+/* Text colors */
+/* ================================================ */
+/* bold = more contrast against theme background
+/* mild = less contrast against theme background
+
+  /* Text | Title | Label */
+  --text-bold: oklch(20% var(--dark-ch) / 1);
+  --text-base: oklch(35% var(--dark-ch) / 1);
+  --text-mild: oklch(40% var(--dark-ch) / 1);
+  --text-xmild: oklch(45% var(--dark-ch) / 1);
+  --text-2xmild: oklch(50% var(--dark-ch) / 1);
+
+  --text-contrast-bold: oklch(70% var(--primary-ch) / 1);
+  --text-contrast-base: oklch(60% var(--primary-ch) / 1);
+  --text-contrast-mild: oklch(50% var(--primary-ch) / 1);
+
+  --text-invert-bold: oklch(95% var(--light-ch) / 1);
+  --text-invert-base: oklch(85% var(--light-ch) / 1);
+  --text-invert-mild: oklch(75% var(--light-ch) / 1);
+  --text-invert-xmild: oklch(65% var(--light-ch) / 1);
+  --text-invert-2xmild: oklch(55% var(--light-ch) / 1);
+
+  /* Link */
+  --link-rest: oklch(70% var(--primary-ch) / 1);
+  --link-hover: oklch(50% var(--primary-ch) / 1);
+  --link-visited: oklch(30% var(--primary-ch) / 1);
+
+  /* Code */
+  --code-base: oklch(90% var(--accent-ch) / 1);
+  --code-comment: oklch(65% var(--gray-ch) / 1);
+  --code-class: oklch(100% var(--accent-ch) / 1);
+  --code-property: oklch(80% var(--primary-ch) / 1);
+  --code-value: oklch(100% var(--primary-ch) / 1);
+  --code-num: oklch(80% var(--accent-ch) / 1);
+
+/* Dark text on a light bg looks thinner so it's adjusted for here */
+  --font-weight-xs: 200;
+  --font-weight-sm: 300;
+  --font-weight-md: 400;
+  --font-weight-lg: 500;
+
+
+/* Background colors */
+/* ================================================ */
+  --page-bg: oklch(70% var(--light-ch) / 1);
+
+  --bg-bold: oklch(97% var(--light-ch) / 1);
+  --bg-base: oklch(92% var(--light-ch) / 1);
+  --bg-mild: oklch(85% var(--light-ch) / 1);
+  --bg-xmild: oklch(80% var(--light-ch) / 1);
+  --bg-2xmild: oklch(75% var(--light-ch) / 1);
+
+  --bg-contrast-bold: oklch(95% var(--primary-ch) / 0.7);
+  --bg-contrast-base: oklch(90% var(--primary-ch) / 0.7);
+  --bg-contrast-mild: oklch(85% var(--primary-ch) / 0.7);
+  --bg-contrast-xmild: oklch(80% var(--primary-ch) / 0.7);
+  --bg-contrast-2xmild: oklch(75% var(--primary-ch) / 0.7);
+
+
   // These are used for box-shadows, text-shadows, bevels, etc.
   --shadow: var(--dark-lch);
   --highlight: var(--light-lch);
 
   // * UI * //
-  --color-focus: oklch(var(--primary-ch) / 0.4);
-  --color-disabled: oklch(var(--gray-lch) / 0.4);
-  --color-checked: oklch(var(--accent-lch) / 0.6);
-  --color-input-control: oklch(var(--light-lch) / 0.8);
+  --ui-focus: oklch(var(--primary-lch) / 0.4);
+  --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
+  --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
+  --ui-rest-knob: oklch(var(--light-lch) / 1);
+  --ui-active-bg: oklch(var(--primary-lch) / 0.9);
+  --ui-active-hover-bg: oklch(65% var(--primary-ch) / 0.9);
+  --ui-active-knob: oklch(var(--light-lch) / 1);
+  --ui-disabled-bg: oklch(var(--dark-lch) / 0.15);
+  --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary-h) / 1);
+  --ui-disabled-knob: oklch(var(--light-lch) / 0.4);
+  --ui-disabled-text: oklch(65% var(--light-ch) / 1);
+}
+
+
+/* Background color MAP */
+/* ================================================ */
+$bg-colors: (
+  "bold":  var(--bg-bold),
+  "base":  var(--bg-base),
+  "mild":  var(--bg-mild),
+  "xmild":  var(--bg-xmild),
+  "2xmild":  var(--bg-2xmild),
+
+  "contrast-bold":  var(--bg-contrast-bold),
+  "contrast-base":  var(--bg-contrast-base),
+  "contrast-mild":  var(--bg-contrast-mild),
+  "contrast-xmild":  var(--bg-contrast-xmild),
+  "contrast-2xmild":  var(--bg-contrast-2xmild),
+);
+
+/* Background color modifier mixin */
+/* ================================================ */
+/* Generates classes using `$bg-colors` MAP */
+@mixin bg-color-modifier($property: background-color) {
+  @each $key, $value in $bg-colors {
+    &-#{$key} {
+      #{$property}: $value;
+      @content;
+    }
+  }
+}
+
+/* Background color classes */
+/* ================================================ */
+/* Generates a class for every color in `$bg-colors` MAP */
+.bg {
+  @include bg-color-modifier('background-color');
+}
+
+
+/* Text color MAP */
+/* ================================================ */
+$text-colors: (
+  "bold":  var(--text-bold),
+  "base":  var(--text-base),
+  "mild":  var(--text-mild),
+  "xmild":  var(--text-xmild),
+  "2xmild":  var(--text-2xmild),
+
+  "contrast-bold":  var(--text-contrast-bold),
+  "contrast-base":  var(--text-contrast-base),
+  "contrast-mild":  var(--text-contrast-mild),
+
+  "invert-bold":  var(--text-invert-bold),
+  "invert-base":  var(--text-invert-base),
+  "invert-mild":  var(--text-invert-mild),
+  "invert-xmild":  var(--text-invert-xmild),
+  "invert-2xmild":  var(--text-invert-2xmild),
+);
+
+/* Text color modifier mixin */
+/* ================================================ */
+/* Generates classes using `$text-colors` MAP */
+@mixin text-color-modifier {
+  @each $key, $value in $text-colors {
+    &-#{$key} {
+      color: $value;
+      @content;
+    }
+  }
+}
+
+/* Text color classes */
+/* ================================================ */
+/* Generates a class for every color in `$text-colors` MAP */
+.text {
+  @include text-color-modifier;
+}
+
+.title {
+  @include text-color-modifier;
+}
+
+.label {
+  @include text-color-modifier;
 }
