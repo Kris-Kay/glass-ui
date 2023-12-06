@@ -110,10 +110,10 @@
   --code-num: oklch(80% var(--accent-ch) / 1);
 
 /* light text on a dark bg looks much thicker so it's adjusted for here */
-  --font-weight-xs: 100;
-  --font-weight-sm: 200;
-  --font-weight-md: 300;
-  --font-weight-lg: 400;
+  --font-weight--xs: 100;
+  --font-weight--sm: 200;
+  --font-weight--md: 300;
+  --font-weight--lg: 400;
 
 /* Background colors */
 /* ================================================ */
@@ -145,9 +145,9 @@
   --tint-2xmild:  oklch(var(--dark-lch) / 0.4);
   --tint-3xmild:  oklch(var(--dark-lch) / 0.7);
 
-  --tint-3xlight: oklch(var(--light-lch) / 0.75);
-  --tint-2xlight: oklch(var(--light-lch) / 0.5);
-  --tint-xlight:  oklch(var(--light-lch) / 0.25);
+  --tint--3xlight: oklch(var(--light-lch) / 0.75);
+  --tint--2xlight: oklch(var(--light-lch) / 0.5);
+  --tint--xlight:  oklch(var(--light-lch) / 0.25);
   --tint-light:   oklch(var(--light-lch) / 0.05);
   --tint-clear:   oklch(var(--light-lch) / 0.01);
   --tint-dark:    oklch(var(--dark-lch) / 0.05);
@@ -233,10 +233,10 @@
   --code-num: oklch(80% var(--accent-ch) / 1);
 
 /* Dark text on a light bg looks thinner so it's adjusted for here */
-  --font-weight-xs: 200;
-  --font-weight-sm: 300;
-  --font-weight-md: 400;
-  --font-weight-lg: 500;
+  --font-weight--xs: 200;
+  --font-weight--sm: 300;
+  --font-weight--md: 400;
+  --font-weight--lg: 500;
 
 
 /* Background colors */
@@ -266,9 +266,9 @@
   --tint-2xmild:  oklch(var(--light-lch) / 0.4);
   --tint-3xmild:  oklch(var(--light-lch) / 0.5);
 
-  --tint-3xlight: oklch(var(--light-lch) / 0.75);
-  --tint-2xlight: oklch(var(--light-lch) / 0.5);
-  --tint-xlight:  oklch(var(--light-lch) / 0.25);
+  --tint--3xlight: oklch(var(--light-lch) / 0.75);
+  --tint--2xlight: oklch(var(--light-lch) / 0.5);
+  --tint--xlight:  oklch(var(--light-lch) / 0.25);
   --tint-light:   oklch(var(--light-lch) / 0.05);
   --tint-clear:   oklch(var(--light-lch) / 0.01);
   --tint-dark:    oklch(var(--dark-lch) / 0.05);

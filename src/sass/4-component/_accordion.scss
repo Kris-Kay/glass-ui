@@ -24,7 +24,7 @@
   /* visual */
   @include glass.glass-base;
   @include glass.fill(dark);
-  box-shadow: var(--sha-xl);
+  box-shadow: var(--sha--xl);
   border-radius: var(--space);
   overflow: hidden;
 }
@@ -44,13 +44,13 @@
 
     /* visual */
     background-color: var(--color-inset-deep);
-    box-shadow: $flat-sha-md;
+    box-shadow: $flat-sha--md;
   }
 }
 
 .see-more-btn, .see-less-btn {
   pointer-events: none;
-  text-shadow: var(--text-sha-sm);
+  text-shadow: var(--text-sha--sm);
 }
 
 .accordion__toggle {
@@ -124,7 +124,7 @@
 
   /* visual */
   border-radius: 0 0 var(--space) var(--space);
-  box-shadow: var(--sha-xl);
+  box-shadow: var(--sha--xl);
   @include glass.fill("3xdark");
 
 
@@ -141,10 +141,10 @@
 .accordion__title {
   @include title-thick;
   font-size: var(--lg);
-  text-shadow: var(--text-sha-md);
+  text-shadow: var(--text-sha--md);
 }
 
 .accordion__text {
   max-width: 100%;
-  font-size: var(--text-sm);
+  font-size: var(--text--sm);
 }

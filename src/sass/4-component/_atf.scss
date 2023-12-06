@@ -73,7 +73,7 @@
 
   backface-visibility: hidden;
   will-change: transform;
-  transition: transform $speed-2xslow ease-in-out;
+  transition: transform $speed--2xslow ease-in-out;
 
   transform:
     perspective(5000px)

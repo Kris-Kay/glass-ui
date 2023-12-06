@@ -58,7 +58,7 @@ button,
 body {
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font--smoothing: subpixel-antialiased;
 }
 
 
@@ -70,8 +70,8 @@ button {
   font-synthesis: none;
   -moz-font-feature-settings: "kern";
   font-feature-settings: "kern";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font--smoothing: antialiased;
+  -moz-osx-font--smoothing: grayscale;
   direction: ltr;
 }
 

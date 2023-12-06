@@ -7,35 +7,35 @@
 
 /* SVG icons */
 /* ================================== */
-.icon-sm {
-  height: var(--ui-sm);
+.icon--sm {
+  height: var(--ui--sm);
   width: auto;
 }
 
-.icon-md {
-  height: var(--ui-md);
+.icon--md {
+  height: var(--ui--md);
   width: auto;
 }
 
-.icon-lg {
-  height: var(--ui-lg);
+.icon--lg {
+  height: var(--ui--lg);
   width: auto;
 }
 
 /* images */
 /* ================================== */
 
-.img-xs {
+.img--xs {
   width: min(100%, 200px);
   margin: 0 auto;
 }
 
-.img-sm {
+.img--sm {
   width: min(100%, 400px);
   margin: 0 auto;
 }
 
-.img-md {
+.img--md {
   width: min(100%, 500px);
   // margin: 0 auto;
 
@@ -44,7 +44,7 @@
   }
 }
 
-.img-lg {
+.img--lg {
   width: 100%;
   margin: auto;
 

@@ -18,11 +18,11 @@
   pointer-events: auto;
   cursor: text;
   width: 100%;
-  height: var(--ui-lg);
+  height: var(--ui--lg);
   border-radius: $round;
   padding: 0 $s4;
 
-  box-shadow: var(--inset-md);
+  box-shadow: var(--inset--md);
   background-color: var(--color-inset-deep);
 
   @include bp(sm) {
@@ -37,15 +37,15 @@
 
 .text-input__label {
   font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing--sm;
 }
 
 .text-input__hint {
   font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight--sm;
+  font-size: var(--text--xs);
+  letter-spacing: $letter-spacing--sm;
   line-height: 1;
 }
 
@@ -63,7 +63,7 @@
   padding: $s4;
 
   @include outer-radius (var(--2xs), $s4);
-  box-shadow: var(--inset-md);
+  box-shadow: var(--inset--md);
   background-color: var(--color-inset-deep);
 
   // @include bp(sm) {

@@ -10,7 +10,7 @@
 .tab-menu {
   width: fit-content;
   max-width: 100%;
-  height: var(--ui-md);
+  height: var(--ui--md);
   margin: 0 auto;
   @include flex-c;
   gap: $s1;
@@ -25,7 +25,7 @@
   }
 
   @include bp(md) {
-    height: var(--ui-lg);
+    height: var(--ui--lg);
   }
 }
 
@@ -66,5 +66,5 @@
   backdrop-filter: brightness(1.5);
   background-color: var(--color-inset-deep);
   color: var(--color-text-bold);
-  box-shadow: var(--sha-2xs);
+  box-shadow: var(--sha--2xs);
 }

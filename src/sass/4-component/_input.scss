@@ -12,7 +12,7 @@
 }
 
 .input__legend {
-  font-weight: var(--font-weight-md);
+  font-weight: var(--font-weight--md);
   font-size: var(--sm);
   padding-bottom: var(--2xs);
   color: var(--color-text-contrast-base);
@@ -52,10 +52,10 @@
   --focus: 2px var(--ui-focus);
   --border: transparent;
 
-  --active-knob-sha: var(--sha-2xs);
-  --disabled-knob-sha: var(--sha-2xs);
-  --active-inset: #{glass.$inset-2xs};
-  --disabled-inset: #{glass.$inset-2xs-mild};
+  --active-knob-sha: var(--sha--2xs);
+  --disabled-knob-sha: var(--sha--2xs);
+  --active-inset: #{glass.$inset--2xs};
+  --disabled-inset: #{glass.$inset--2xs-mild};
   --active-opacity: 1;
   --disabled-opacity: 0.8;
 
@@ -100,7 +100,7 @@
 
 /* Switches */
 input[type='checkbox'].switch {
-  --_switch-height: var(--switch-height, var(--ui-sm));
+  --_switch-height: var(--switch-height, var(--ui--sm));
   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
   --_thumb-margin: var(--thumb-margin, 3px);
 
@@ -152,17 +152,17 @@ input[type='checkbox'].switch {
 
   &.switch--sm {
     --thumb-margin: 3px;
-    --switch-height: var(--ui-sm);
+    --switch-height: var(--ui--sm);
   }
 
   &.switch--md {
     --thumb-margin: 3.5px;
-    --switch-height: var(--ui-md);
+    --switch-height: var(--ui--md);
   }
 
   &.switch--lg {
     --thumb-margin: 4px;
-    --switch-height: var(--ui-lg);
+    --switch-height: var(--ui--lg);
   }
 }
 
@@ -304,7 +304,7 @@ so the default input styles will be shown. */
 //     cursor: pointer;
 
 //     background-color: var(--rest-bg);
-//     box-shadow: glass.$inset-sm;
+//     box-shadow: glass.$inset--sm;
 //     transition:
 //       background-color $speed-base ease-in-out,
 //       box-shadow $speed-base ease-in-out;
@@ -324,7 +324,7 @@ so the default input styles will be shown. */
 
 //         &::after {
 //           background-color: var(--rest-knob);
-//           box-shadow: var(--sha-xs);
+//           box-shadow: var(--sha--xs);
 //         }
 
 //         &:hover {
@@ -335,7 +335,7 @@ so the default input styles will be shown. */
 
 //     &:disabled {
 //       background-color: var(--disabled-bg);
-//       // box-shadow: glass.$inset-xs;
+//       // box-shadow: glass.$inset--xs;
 //       opacity: .8;
 //       cursor: not-allowed;
 
@@ -349,7 +349,7 @@ so the default input styles will be shown. */
 
 //         &::after {
 //           background-color: var(--disabled-knob);
-//           box-shadow: var(--sha-sm);
+//           box-shadow: var(--sha--sm);
 //         }
 //       }
 
@@ -409,7 +409,7 @@ so the default input styles will be shown. */
 //   input[type='checkbox'] {
 //     &.switch {
 //       /* config */
-//       --_switch-height: var(--switch-height, var(--ui-sm));
+//       --_switch-height: var(--switch-height, var(--ui--sm));
 //       --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
 //       --_thumb-margin: var(--thumb-margin, 3px);
 
@@ -428,7 +428,7 @@ so the default input styles will be shown. */
 //         height: calc(100% - 2 * var(--_thumb-margin));
 
 //         background-color: var(--rest-knob);
-//         box-shadow: var(--sha-xs);
+//         box-shadow: var(--sha--xs);
 //         border-radius: $round;
 //         transition: margin;
 //         transition-duration: inherit;
@@ -445,7 +445,7 @@ so the default input styles will be shown. */
 
 //         &::after {
 //           background-color: var(--disabled-knob);
-//           box-shadow: var(--sha-2xs);
+//           box-shadow: var(--sha--2xs);
 //         }
 //       }
 //     }

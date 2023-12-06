@@ -19,7 +19,7 @@
 // /* ================================================ */
 // /* → for replaced elements such as: <button> <input> <textarea> */
 
-// --inset-xs:
+// --inset--xs:
 //   inset -1px -1px 1px -2px oklch(var(--highlight) / 0.7),
 //   inset -0.3px -0.3px 0.4px -0.3px oklch(var(--highlight) / 0.15),
 //   inset -0.3px -0.3px 0.6px -0.3px oklch(var(--highlight) / 0.3),
@@ -29,7 +29,7 @@
 //   inset 0.25px 0.75px 1.5px -0.5px oklch(var(--shadow) / 0.25),
 //   inset 0.25px 0.25px 0.5px -0.5px oklch(var(--shadow) / 0.3);
 
-// --inset-sm:
+// --inset--sm:
 //   inset -1px -1px 1px -2px oklch(var(--highlight) / 0.7),
 //   inset -0.3px -0.3px 0.6px -0.3px oklch(var(--highlight) / 0.15),
 //   inset -0.6px -0.6px 0.6px -0.5px oklch(var(--highlight) / 0.25),
@@ -40,7 +40,7 @@
 //   inset 0.25px 0.25px 0.5px -0.5px oklch(var(--shadow) / 0.3);
 
 
-// --inset-md:
+// --inset--md:
 //   inset -1px -1px 1px -2px oklch(var(--highlight) / 0.7),
 //   inset -0.3px -0.3px 0.6px -0.3px oklch(var(--highlight) / 0.15),
 //   inset -1px -1px 1px -1px oklch(var(--highlight) / 0.25),
@@ -52,7 +52,7 @@
 //   inset 0.25px 0.25px 0.5px -0.5px oklch(var(--shadow) / 0.3);
 
 
-// --inset-lg:
+// --inset--lg:
 //   inset -2px -2px 2px -4px oklch(var(--highlight) / 0.7),
 //   inset -1px -1px 1.6px -1.5px oklch(var(--highlight) / 0.15),
 //   inset -1px -1px 1px -1px oklch(var(--highlight) / 0.25),
@@ -65,7 +65,7 @@
 //   inset 0.25px 0.25px 0.5px -0.5px oklch(var(--shadow) / 0.3);
 
 
-// --inset-xl:
+// --inset--xl:
 //   inset -2px -2px 2px -4px oklch(var(--highlight) / 0.7),
 //   inset -1px -1px 1.6px -1.2px oklch(var(--highlight) / 0.15),
 //   inset -1.3px -1.3px 1.3px -1.3px oklch(var(--highlight) / 0.2),
@@ -82,11 +82,11 @@
 // /* Insets MAP */
 // /* ================================== */
 // $insets: (
-//   "xs": var(--inset-xs),
-//   "sm": var(--inset-sm),
-//   "md": var(--inset-md),
-//   "lg": var(--inset-lg),
-//   "xl": var(--inset-xl),
+//   "xs": var(--inset--xs),
+//   "sm": var(--inset--sm),
+//   "md": var(--inset--md),
+//   "lg": var(--inset--lg),
+//   "xl": var(--inset--xl),
 // );
 
 
@@ -109,7 +109,7 @@
 // }
 
 /* Insets have both light and dark box-shadows to create a 3D effect */
-$inset-2xs-mild:
+$inset--2xs-mild:
   inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),      // specular
   inset -0.3px -0.3px 0.5px -0.5px oklch(var(--highlight) / 0.1), // bevel blur
   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.08),        // bevel
@@ -118,7 +118,7 @@ $inset-2xs-mild:
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.3), // blur xs shadow
   inset 0.25px 0.25px 0.25px oklch(var(--shadow) / 0.15); // cut sm shadow
 
-$inset-2xs:
+$inset--2xs:
   inset -2px -2px 1px -3px oklch(var(--highlight) / 0.3),      // specular
   inset -0.3px -0.3px 0.5px -0.5px oklch(var(--highlight) / 0.2), // bevel blur
   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.15),        // bevel
@@ -127,7 +127,7 @@ $inset-2xs:
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.5), // blur xs shadow
   inset 0.25px 0.25px 0.25px oklch(var(--shadow) / 0.15); // cut sm shadow
 
-$inset-xs:
+$inset--xs:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.1),      // specular
   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.25), // bevel blur
   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),        // bevel
@@ -136,7 +136,7 @@ $inset-xs:
   inset 0.75px 0.75px 1.5px -0.25px oklch(var(--shadow) / 0.12), // cut top-left shadow
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // cut top-left shadow
 
-$inset-sm:
+$inset--sm:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.3),      // specular
   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.35), // bevel blur
   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),        // bevel
@@ -147,7 +147,7 @@ $inset-sm:
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // cut top-left shadow
 
 
-$inset-md:
+$inset--md:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),      // specular
   inset -1px -1px 1.1px -1px oklch(var(--highlight) / 0.35),      // bevel blur
   inset -0.8px -0.8px 0 oklch(var(--highlight) / 0.07),          // bevel
@@ -159,7 +159,7 @@ $inset-md:
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // cut top-left shadow
 
 
-$inset-lg:
+$inset--lg:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),      // specular
   inset -1px -1px 1.7px -1px oklch(var(--highlight) / 0.35),      // bevel blur
   inset -1px -1px 0 oklch(var(--highlight) / 0.07),         // bevel
@@ -171,7 +171,7 @@ $inset-lg:
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // cut top-left shadow
 
 
-$inset-xl:
+$inset--xl:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),      // specular
   inset -1.25px -1.25px 2px -1.2px oklch(var(--highlight) / 0.35), // bevel blur
   inset -1.25px -1.25px 0  oklch(var(--highlight) / 0.07),       // bevel
@@ -186,7 +186,7 @@ $inset-xl:
 
 
 // /* Insets have both light and dark box-shadows to create a 3D effect */
-// $inset-xs:
+// $inset--xs:
 //   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.3),      // specular
 //   inset -0.25px -0.25px 0.3px -0.2px oklch(var(--highlight) / 0.3),  // bevel blur
 //   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.1),         // bevel
@@ -196,7 +196,7 @@ $inset-xl:
 //   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // xs top-left shadow
 
 
-// $inset-sm:
+// $inset--sm:
 //   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.5),      // specular
 //   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.3), // bevel blur
 //   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),        // bevel
@@ -207,7 +207,7 @@ $inset-xl:
 //   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // xs top-left shadow
 
 
-// $inset-md:
+// $inset--md:
 //   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.5),      // specular
 //   inset -1px -1px 1.25px -1px oklch(var(--highlight) / 0.3),      // bevel blur
 //   inset -0.8px -0.8px 0 oklch(var(--highlight) / 0.1),          // bevel
@@ -218,7 +218,7 @@ $inset-xl:
 //   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // xs top-left shadow
 
 
-// $inset-lg:
+// $inset--lg:
 //   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.5),      // specular
 //   inset -1px -1px 1.7px -1px oklch(var(--highlight) / 0.3),      // bevel blur
 //   inset -1px -1px 0 oklch(var(--highlight) / 0.1),         // bevel
@@ -230,7 +230,7 @@ $inset-xl:
 //   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1); // xs top-left shadow
 
 
-// $inset-xl:
+// $inset--xl:
 //   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.5),      // specular
 //   inset -1.25px -1.25px 2px -1.25px oklch(var(--highlight) / 0.3), // bevel blur
 //   inset -1.25px -1.25px 0  oklch(var(--highlight) / 0.1),       // bevel
@@ -244,24 +244,24 @@ $inset-xl:
 
 /* Insets */
 /* ================================== */
-.inset-xs {
-  box-shadow: $inset-xs;
+.inset--xs {
+  box-shadow: $inset--xs;
 }
 
-.inset-sm {
-  box-shadow: $inset-sm;
+.inset--sm {
+  box-shadow: $inset--sm;
 }
 
-.inset-md {
-  box-shadow: $inset-md;
+.inset--md {
+  box-shadow: $inset--md;
 }
 
-.inset-lg {
-  box-shadow: $inset-lg;
+.inset--lg {
+  box-shadow: $inset--lg;
 }
 
-.inset-xl {
-  box-shadow: $inset-xl;
+.inset--xl {
+  box-shadow: $inset--xl;
 }
 
 
@@ -274,7 +274,7 @@ $inset-xl:
 
 /* Flat insets  */
 /* ================================== */
-$flat-inset-sm:
+$flat-inset--sm:
   inset 0 -0.5px 0.3px -0.4px oklch(var(--highlight) / 0.15), // specular
   inset 0 -1px 0.8px -1px oklch(var(--highlight) / 0.2),     // bevel blur
   inset 0 -1px 0 oklch(var(--highlight) / 0.06),      // bevel
@@ -283,11 +283,11 @@ $flat-inset-sm:
   inset 0 1px 2px -2px oklch(var(--shadow) / 0.5), // med shadow
   inset 0 2px 4px -4px oklch(var(--shadow) / 0.3);    // lg shadow
 
-.flat-inset-sm {
-  box-shadow: $flat-inset-sm;
+.flat-inset--sm {
+  box-shadow: $flat-inset--sm;
 }
 
-$flat-inset-md:
+$flat-inset--md:
   inset 0 -0.5px 0.3px -0.4px oklch(var(--highlight) / 0.1), // specular
   inset 0 -1.6px 1.3px -1.6px oklch(var(--highlight) / 0.2),     // bevel blur
   inset 0 -1.6px 0  oklch(var(--highlight) / 0.06),      // bevel
@@ -297,11 +297,11 @@ $flat-inset-md:
   inset 0 2px 4px -4px oklch(var(--shadow) / 0.5), // med shadow
   inset 0 4px 8px -8px oklch(var(--shadow) / 0.3);    // lg shadow
 
-.flat-inset-md {
-  box-shadow: $flat-inset-md;
+.flat-inset--md {
+  box-shadow: $flat-inset--md;
 }
 
-$flat-inset-lg:
+$flat-inset--lg:
   inset 0 -0.5px 0.3px -0.4px oklch(var(--highlight) / 0.1), // specular
   inset 0 -2px 1.8px -2px oklch(var(--highlight) / 0.2),     // bevel blur
   inset 0 -2px 0  oklch(var(--highlight) / 0.06),      // bevel highlight
@@ -311,20 +311,20 @@ $flat-inset-lg:
   inset 0 4px 8px -8px oklch(var(--shadow) / 0.5), // med shadow
   inset 0 8px 16px -16px oklch(var(--shadow) / 0.3);    // lg shadow
 
-.flat-inset-lg {
-  box-shadow: $flat-inset-lg;
+.flat-inset--lg {
+  box-shadow: $flat-inset--lg;
 }
 
 
 // Highlight for small insets
-$inset-highlight-sm:
+$inset-highlight--sm:
   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.05),      // bottom-right bevel
   inset -0.2px -0.2px 0.2px oklch(var(--highlight) / 0.05),      // bottom-right bevel blur
   inset -0.3px -0.3px 0.3px -0.3px oklch(var(--highlight) / 0.15),      // bottom-right highlight
   inset -0.5px -0.5px 0 -0.25px oklch(var(--highlight) / 0.05);  // bottom-right specular
 
 // Shadow for small insets
-$inset-shadow-sm:
+$inset-shadow--sm:
   inset 0.5px 1px 2px oklch(var(--shadow) / 0.1),    // lg top-left shadow
   inset 0.25px 0.75px 1.5px -0.5px oklch(var(--shadow) / 0.25), // med top-left shadow
   inset 0.25px 0.25px 0.5px -0.5px oklch(var(--shadow) / 0.3); // small top-left shadow
@@ -342,8 +342,8 @@ $inset-shadow-sm:
 //     @include pseudo;
 //     z-index: -2;
 
-//     @include fill.noise-md;
-//     box-shadow: sha.$inset-sha-md;
+//     @include fill.noise--md;
+//     box-shadow: sha.$inset-sha--md;
 //     filter: brightness(0.1);
 //   }
 
@@ -351,18 +351,18 @@ $inset-shadow-sm:
 //     @include pseudo;
 //     z-index: -1;
 //     border-radius: inherit;
-//     box-shadow: $inset-highlight-sm;
+//     box-shadow: $inset-highlight--sm;
 //   }
 // }
 
 
 /* Beveled Insets */
 /* ================================== */
-.inset-bevel-sm {
+.inset-bevel--sm {
   position: relative;
   @include filter.glass-filter;
-  @include tex.noise-sm;
-  box-shadow: var(--inset-md);
+  @include tex.noise--sm;
+  box-shadow: var(--inset--md);
   background-color: var(--color-inset-deep);
 
   &::after {
@@ -396,8 +396,8 @@ $inset-shadow-sm:
   // pointer-events: none;
   position: relative;
 
-  // box-shadow: $inset-highlight-sm;
-  // @include fill.noise-md;
+  // box-shadow: $inset-highlight--sm;
+  // @include fill.noise--md;
   @include filter.glass-filter;
 
   &::before {
@@ -405,7 +405,7 @@ $inset-shadow-sm:
     z-index: -2;
 
     background-color: var(--color-inset-base);
-    // box-shadow: sha.$inset-sha-md;
+    // box-shadow: sha.$inset-sha--md;
     filter: brightness(0.1);
   }
 
@@ -436,7 +436,7 @@ $inset-shadow-sm:
 .inset-bevel-m {
   position: relative;
 
-  // box-shadow: $inset-highlight-sm;
+  // box-shadow: $inset-highlight--sm;
   @include filter.glass-filter;
   // backdrop-filter: blur(20px);
 
@@ -446,7 +446,7 @@ $inset-shadow-sm:
     z-index: -2;
 
     filter: brightness(0.1);
-    // box-shadow: $inset-shadow-sm;
+    // box-shadow: $inset-shadow--sm;
     background-color: var(--color-inset-deep);
   }
 
@@ -479,13 +479,13 @@ $inset-shadow-sm:
 
 /* Inset used in tab menu  */
 /* ================================== */
-.inset-glass-md {
+.inset-glass--md {
   position: relative;
   background-color: var(--color-inset-xdeep);
   @include filter.glass-filter;
   // @include filter.fill();
-  box-shadow: $inset-lg;
-  // box-shadow: var(--inset-lg);
+  box-shadow: $inset--lg;
+  // box-shadow: var(--inset--lg);
 
   // box-sizing: content-box;
 
@@ -493,7 +493,7 @@ $inset-shadow-sm:
     @include pseudo;
     z-index: -2;
     // @include filter.glass-filter;
-    // @include tex.noise-sm;
+    // @include tex.noise--sm;
   }
 
   &::after {

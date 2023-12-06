@@ -21,7 +21,7 @@
   @include bp(sm) {
     overflow: hidden;
     border-radius: var(--lg);
-    box-shadow: var(--sha-xl);
+    box-shadow: var(--sha--xl);
   }
 }
 
@@ -51,7 +51,7 @@
 
     /* visual */
     background-color: var(--color-inset-deep);
-    box-shadow: glass.$flat-inset-md;
+    box-shadow: glass.$flat-inset--md;
   }
 }
 
@@ -59,7 +59,7 @@
 .section__title {
   @include title-thick;
   font-size: var(--lg);
-  text-shadow: var(--text-sha-md);
+  text-shadow: var(--text-sha--md);
 }
 
 .section__body {

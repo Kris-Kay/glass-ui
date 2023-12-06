@@ -29,7 +29,7 @@ $round: 9999px;
 
 @mixin vw-radius-modifier($property) {
   @each $key, $value in size.$sizes {
-    &-#{$key} {
+    &--#{$key} {
       #{$property}: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
       @content;
     }
@@ -42,13 +42,13 @@ $round: 9999px;
   }
 }
 
-.r-resp-lg {
+.r-resp--lg {
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
   overflow: hidden;
 }
 
 // .resp-radius {
-//   // @extend .vw-radius-lg;
+//   // @extend .vw-radius--lg;
 //   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 25px);
 //   // border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--lg));
 // }

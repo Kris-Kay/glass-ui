@@ -116,7 +116,7 @@ $sizes: (
 
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
-    &-#{$key} {
+    &--#{$key} {
       #{$property}: var($value);
       @content;
     }
@@ -126,7 +126,7 @@ $sizes: (
 @mixin xy-size-modifiers($property1, $property2) {
   @each $key, $value in $sizes {
 
-    &-#{$key} {
+    &--#{$key} {
       #{$property1}: var($value);
       #{$property2}: var($value);
     }

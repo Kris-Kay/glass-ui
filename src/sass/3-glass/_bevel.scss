@@ -4,7 +4,7 @@
 
 /* Curved bevel */
 /* ================================== */
-$bevel-xs:
+$bevel--xs:
   inset 0.2px 0.2px 0.2px oklch(var(--highlight) / 0.15),      // top-left bevel
   inset 2px 2px 0.4px -2.8px oklch(var(--highlight) / 0.5),    // top-left specular highlight
   inset 1px 1px 0.4px -1.4px oklch(var(--highlight) / 0.1),      // top-left highlight
@@ -12,7 +12,7 @@ $bevel-xs:
   inset -2px -2px 0.2px -2.8px oklch(var(--highlight) / 0.08); // bottom-right specular
 
 
-$bevel-sm:
+$bevel--sm:
   inset 0.3px 0.3px 0.2px oklch(var(--highlight) / 0.15),      // top-left bevel
   inset 2px 2px 0.4px -2.6px oklch(var(--highlight) / 0.5),    // top-left specular highlight
   inset 1px 1px 0.4px -1.3px oklch(var(--highlight) / 0.1),      // top-left highlight
@@ -20,7 +20,7 @@ $bevel-sm:
   inset -1.8px -2px 0.2px -2.6px oklch(var(--highlight) / 0.08); // bottom-right specular
 
 
-$bevel-md:
+$bevel--md:
   inset 0.5px 0.5px 0.3px oklch(var(--highlight) / 0.2),         // top-left bevel
   inset 2px 2px 0.8px -2.4px oklch(var(--highlight) / 0.3),    // top-left specular highlight
   inset 1px 1px 0.4px -1px oklch(var(--highlight) / 0.1),      // top-left highlight
@@ -28,7 +28,7 @@ $bevel-md:
   inset -1.8px -2px 0.2px -2.5px oklch(var(--highlight) / 0.08); // bottom-right specular
 
 
-$bevel-lg:
+$bevel--lg:
   inset 0.8px 0.8px 0.4px oklch(var(--highlight) / 0.15), // top-left bevel
   inset 2px 2px 1px -2.2px oklch(var(--highlight) / 0.3),    // top-left specular highlight
   inset 1px 1px 0.6px -1px oklch(var(--highlight) / 0.1), // top-left highlight
@@ -38,12 +38,12 @@ $bevel-lg:
 
 /* Flat bevel */
 /* ================================== */
-$flat-bevel-sm:
+$flat-bevel--sm:
   inset 0 0.3px 0 oklch(var(--highlight) / 0.12), // top highlight
   inset 0 0.7px 0.1px oklch(var(--highlight) / 0.12), // top bevel
   0 -3px 2px -2px oklch(var(--shadow) / 0.1), // med shadow bottom
   0 -1px 0.5px -1px oklch(var(--shadow) / 0.12); // small  shadow bottom
 
-.flat-bevel-sm {
-  box-shadow: $flat-bevel-sm;
+.flat-bevel--sm {
+  box-shadow: $flat-bevel--sm;
 }

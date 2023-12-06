@@ -53,15 +53,15 @@ $bright: 0.95;
   }
 }
 
-@mixin gray-linear-xlight {
+@mixin gray-linear--xlight {
   background: linear-gradient(to top left,
     oklch(75% var(--gray-ch) / 0.85) 0%,
     oklch(95% var(--gray-ch) / 0.9) 70%,
     oklch(98% var(--gray-ch) / 0.95) 100%);
 }
 
-.gray-linear-xlight {
-  @include gray-linear-xlight;
+.gray-linear--xlight {
+  @include gray-linear--xlight;
 }
 
 @mixin gray-linear-light {

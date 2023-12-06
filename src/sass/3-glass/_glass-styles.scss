@@ -20,11 +20,11 @@
   &::after {
     @include pseudo;
     z-index: -1;
-    box-shadow: bevel.$bevel-md;
-    @include tex.noise-md;
+    box-shadow: bevel.$bevel--md;
+    @include tex.noise--md;
 
     @include bp(xs) {
-      box-shadow: bevel.$bevel-lg;
+      box-shadow: bevel.$bevel--lg;
     }
   }
 }
@@ -50,10 +50,10 @@
 /* ================================== */
 @mixin glass--no-bevel-mobile {
   @include glass-base {
-    box-shadow: bevel.$flat-bevel-sm;
+    box-shadow: bevel.$flat-bevel--sm;
 
     @include bp(xs) {
-      box-shadow: bevel.$bevel-lg;
+      box-shadow: bevel.$bevel--lg;
     }
   }
 }
@@ -70,7 +70,7 @@
   &::before {
     @include pseudo;
     z-index: -2;
-    @include tex.noise-md;
+    @include tex.noise--md;
   }
 }
 

@@ -11,37 +11,37 @@
 /* use this tool to fine-tune your fluid typography range */
 :root {
   /* xs: 14px → 16px */
-  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+  --text--xs: clamp(0.875rem, 4vw - 1rem, 1rem);
 
   /* sm: 17px → 20px */
-  --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
+  --text--sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
 
   /* md: 20px → 24px */
-  --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
+  --text--md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
 
   /* lg: 28px → 36px */
-  --text-lg: clamp(1.75rem, 1.5vw + 1rem, 2.25rem);
+  --text--lg: clamp(1.75rem, 1.5vw + 1rem, 2.25rem);
 
   /* xl: 36px → 40px */
-  --text-xl: clamp(2.25rem, 2.2vw + 1rem, 2.75rem);
+  --text--xl: clamp(2.25rem, 2.2vw + 1rem, 2.75rem);
 
   /* 2xl: 40px → 48px */
-  --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
+  --text--2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
 
   /* 3xl: 48px → 56px */
-  --text-3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
+  --text--3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
 }
 
 /* Text size MAP */
 /* ==================================================================== */
 $text-sizes: (
-  "xs":  var(--text-xs),
-  "sm":  var(--text-sm),
-  "md":  var(--text-md),
-  "lg":  var(--text-lg),
-  "xl":  var(--text-xl),
-  "2xl":  var(--text-2xl),
-  "3xl":  var(--text-3xl),
+  "xs":  var(--text--xs),
+  "sm":  var(--text--sm),
+  "md":  var(--text--md),
+  "lg":  var(--text--lg),
+  "xl":  var(--text--xl),
+  "2xl":  var(--text--2xl),
+  "3xl":  var(--text--3xl),
 );
 
 /* Text size modifier mixin */
@@ -77,74 +77,74 @@ $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $font-family-code: ('Fragment Mono', 'Courier', monospace);
 
 /* font-weight: */
-$font-weight-xs: 200;
-$font-weight-sm: 300;
-$font-weight-md: 400;
-$font-weight-lg: 500;
+$font-weight--xs: 200;
+$font-weight--sm: 300;
+$font-weight--md: 400;
+$font-weight--lg: 500;
 
 /* letter-spacing: */
-$letter-spacing-sm: 0.01em;
-$letter-spacing-md: 0.04em;
-$letter-spacing-lg: 0.08em;
+$letter-spacing--sm: 0.01em;
+$letter-spacing--md: 0.04em;
+$letter-spacing--lg: 0.08em;
 
 /* line-height: */
-$line-height-sm: calc(0.1rem + 2ex + 0.1rem);
-$line-height-md: calc(0.125rem + 2.3ex + 0.125rem);
-$line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
+$line-height--sm: calc(0.1rem + 2ex + 0.1rem);
+$line-height--md: calc(0.125rem + 2.3ex + 0.125rem);
+$line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 
 
   /* Text shadows */
   /* ================================== */
 html {
-  --text-sha-3xs:
+  --text-sha--3xs:
     0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
     0 0 0.5px oklch(var(--shadow) / 0.1),
     0 0 1px oklch(var(--shadow) / 0.05);
 
-  --text-sha-2xs:
+  --text-sha--2xs:
     0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
     0.25px 0.25px 0.5px  oklch(var(--shadow) / 0.12),
     0 0 0.5px oklch(var(--shadow) / 0.1),
     0 0 1px oklch(var(--shadow) / 0.05);
 
-  --text-sha-xs:
+  --text-sha--xs:
     0.2px 0.2px 0.2px oklch(var(--shadow) / 0.3),
     0.5px 0.5px 1px  oklch(var(--shadow) / 0.12),
     0 0 1px oklch(var(--shadow) / 0.1),
     0 0 2px oklch(var(--shadow) / 0.05);
 
-  --text-sha-sm:
+  --text-sha--sm:
     0.25px 0.25px 0.25px oklch(var(--shadow) / 0.4),
     1px 1px 2px oklch(var(--shadow) / 0.12),
     0 0 2px oklch(var(--shadow) / 0.1),
     0 0 4px oklch(var(--shadow) / 0.1);
 
-  --text-sha-md:
+  --text-sha--md:
     0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
     1px 1px 2px oklch(var(--shadow) / 0.15),
     0 0 4px oklch(var(--shadow) / 0.1),
     0 0 8px oklch(var(--shadow) / 0.1);
 
-  --text-sha-lg:
+  --text-sha--lg:
     0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
     1px 1px 2px oklch(var(--shadow) / 0.2),
     0 0 6px oklch(var(--shadow) / 0.15),
     0 0 12px oklch(var(--shadow) / 0.1);
 
-  --text-sha-xl:
+  --text-sha--xl:
     0.8px 0.8px 0.8px oklch(var(--shadow) / 0.4),
     2px 2px 4px oklch(var(--shadow) / 0.2),
     0 0 8px oklch(var(--shadow) / 0.15),
     0 0 16px oklch(var(--shadow) / 0.1);
 
-  --text-sha-2xl:
+  --text-sha--2xl:
     1px 1px 1px oklch(var(--shadow) / 0.4),
     2px 2px 4px oklch(var(--shadow) / 0.2),
     0 0 10px oklch(var(--shadow) / 0.15),
     0 0 20px oklch(var(--shadow) / 0.1);
 
-  --text-sha-3xl:
+  --text-sha--3xl:
     1px 1px 1px oklch(var(--shadow) / 0.4),
     2px 2px 4px oklch(var(--shadow) / 0.2),
     0 0 10px oklch(var(--shadow) / 0.15),

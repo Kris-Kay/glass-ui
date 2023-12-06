@@ -12,9 +12,9 @@
 /* #Config these values */
 /* if you add or remove any then update the `$tints` MAP below to match. */
 // html {
-//   --tint-3xlight: oklch(var(--light-lch) / 0.75);
-//   --tint-2xlight: oklch(var(--light-lch) / 0.5);
-//   --tint-xlight:  oklch(var(--light-lch) / 0.25);
+//   --tint--3xlight: oklch(var(--light-lch) / 0.75);
+//   --tint--2xlight: oklch(var(--light-lch) / 0.5);
+//   --tint--xlight:  oklch(var(--light-lch) / 0.25);
 //   --tint-light:   oklch(var(--light-lch) / 0.05);
 //   --tint-clear:   oklch(var(--light-lch) / 0.01);
 //   --tint-dark:    oklch(var(--dark-lch) / 0.05);
@@ -26,9 +26,9 @@
 /* Glass tint MAP */
 /* ==================================================================== */
 // $tints: (
-//   "3xlight": var(--tint-3xlight),
-//   "2xlight": var(--tint-2xlight),
-//   "xlight": var(--tint-xlight),
+//   "3xlight": var(--tint--3xlight),
+//   "2xlight": var(--tint--2xlight),
+//   "xlight": var(--tint--xlight),
 //   "light": var(--tint-light),
 //   "clear": var(--tint-clear),
 //   "dark": var(--tint-dark),
@@ -38,9 +38,9 @@
 // );
 
 $tints: (
-  "3xlight": var(--tint-3xlight),
-  "2xlight": var(--tint-2xlight),
-  "xlight": var(--tint-xlight),
+  "3xlight": var(--tint--3xlight),
+  "2xlight": var(--tint--2xlight),
+  "xlight": var(--tint--xlight),
   "light": var(--tint-light),
   "clear": var(--tint-clear),
   "dark": var(--tint-dark),

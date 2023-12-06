@@ -10,10 +10,10 @@
 /* Global nav height */
 /* ================================== */
 :root {
-  --nav-h: calc(var(--ui-md) + (var(--space-thin) * 2));
+  --nav-h: calc(var(--ui--md) + (var(--space-thin) * 2));
 
   @include bp(md) {
-    --nav-h: calc(var(--ui-lg) + (var(--space-thin) * 2));
+    --nav-h: calc(var(--ui--lg) + (var(--space-thin) * 2));
   }
 }
 
@@ -36,7 +36,7 @@
 }
 
 // .theme-toggle {
-//   @include btn.round-btn-sm;
+//   @include btn.round-btn--sm;
 //   @include btn.btn-clear;
 
 //   &.js-navLinkBg {
@@ -53,11 +53,11 @@
 }
 
 .dropdown__btn {
-  @include btn.btn-round-md;
+  @include btn.btn-round--md;
   @include btn.btn-glass-dark;
 
   @include bp(md) {
-    @include btn.btn-round-lg;
+    @include btn.btn-round--lg;
   }
 }
 
@@ -69,14 +69,14 @@
 
 .dropdown__bg {
   position: absolute;
-  top: calc(var(--ui-lg) * 1.2);
+  top: calc(var(--ui--lg) * 1.2);
   right: 0;
   padding: var(--sm);
 
   pointer-events: auto;
   overflow: hidden;
   border-radius: var(--sm);
-  box-shadow: var(--sha-xl);
+  box-shadow: var(--sha--xl);
 }
 
 .dropdown-item__bin {
@@ -92,6 +92,6 @@
   cursor: pointer;
   min-width: max-content;
   width: 100%;
-  letter-spacing: $letter-spacing-lg;
-  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing--lg;
+  font-weight: $font-weight--md;
 }
