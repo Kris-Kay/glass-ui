@@ -23,7 +23,7 @@
   padding: 0 $s4;
 
   box-shadow: var(--inset-md);
-  background-color: var(--tint-xdark);
+  background-color: var(--color-inset-deep);
 
   @include bp(sm) {
     width: min(400px, 100%);
@@ -64,7 +64,7 @@
 
   @include outer-radius (var(--2xs), $s4);
   box-shadow: var(--inset-md);
-  background-color: var(--tint-xdark);
+  background-color: var(--color-inset-deep);
 
   // @include bp(sm) {
   //   min-width: min(400px, 100%);
@@ -85,7 +85,7 @@
   overflow: auto;
 
   border-radius: var(--2xs);
-  background-color: var(--tint-xlight);
+  background-color: var(--color-inset-deep);
 
   &:focus {
     outline: 1.5px solid oklch(85% var(--primary-ch) / 0.8);;

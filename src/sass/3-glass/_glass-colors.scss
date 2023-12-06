@@ -5,32 +5,38 @@
 
 /* Glass inset background colors */
 /* ==================================================================== */
-/* Used for text inputs, checkboxes, etc. */
-/* #Config these values */
-html {
-  --color-inset-base: oklch(var(--dark-lch) / 0.1);
-  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
-  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
-}
+
 
 /* Translucent glass tint colors */
 /* ==================================================================== */
 /* #Config these values */
 /* if you add or remove any then update the `$tints` MAP below to match. */
-html {
-  --tint-3xlight: oklch(var(--light-lch) / 0.75);
-  --tint-2xlight: oklch(var(--light-lch) / 0.5);
-  --tint-xlight:  oklch(var(--light-lch) / 0.25);
-  --tint-light:   oklch(var(--light-lch) / 0.05);
-  --tint-clear:   oklch(var(--light-lch) / 0.01);
-  --tint-dark:    oklch(var(--dark-lch) / 0.05);
-  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
-  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
-}
+// html {
+//   --tint-3xlight: oklch(var(--light-lch) / 0.75);
+//   --tint-2xlight: oklch(var(--light-lch) / 0.5);
+//   --tint-xlight:  oklch(var(--light-lch) / 0.25);
+//   --tint-light:   oklch(var(--light-lch) / 0.05);
+//   --tint-clear:   oklch(var(--light-lch) / 0.01);
+//   --tint-dark:    oklch(var(--dark-lch) / 0.05);
+//   --tint-xdark:   oklch(var(--dark-lch) / 0.25);
+//   --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
+//   --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
+// }
 
 /* Glass tint MAP */
 /* ==================================================================== */
+// $tints: (
+//   "3xlight": var(--tint-3xlight),
+//   "2xlight": var(--tint-2xlight),
+//   "xlight": var(--tint-xlight),
+//   "light": var(--tint-light),
+//   "clear": var(--tint-clear),
+//   "dark": var(--tint-dark),
+//   "xdark": var(--tint-xdark),
+//   "2xdark": var(--tint-2xdark),
+//   "3xdark": var(--tint-3xdark),
+// );
+
 $tints: (
   "3xlight": var(--tint-3xlight),
   "2xlight": var(--tint-2xlight),
@@ -41,7 +47,18 @@ $tints: (
   "xdark": var(--tint-xdark),
   "2xdark": var(--tint-2xdark),
   "3xdark": var(--tint-3xdark),
+
+  "3xbold": var(--tint-3xbold),
+  "2xbold": var(--tint-2xbold),
+  "xbold": var(--tint-xbold),
+  "bold":  var(--tint-bold),
+  "base":  var(--tint-base),
+  "mild":  var(--tint-mild),
+  "xmild":  var(--tint-xmild),
+  "2xmild":  var(--tint-2xmild),
+  "3xmild": var(--tint-3xmild),
 );
+
 
 /* Tint modifier mixin */
 /* ==================================================================== */

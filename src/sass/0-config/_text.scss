@@ -11,7 +11,7 @@
 /* use this tool to fine-tune your fluid typography range */
 :root {
   /* xs: 14px → 16px */
-  --text-xs: clamp(0.75rem, 4vw - 1rem, 1rem);
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
 
   /* sm: 17px → 20px */
   --text-sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
@@ -19,11 +19,11 @@
   /* md: 20px → 24px */
   --text-md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
 
-  /* lg: 24px → 32px */
-  --text-lg: clamp(1.5rem, 1.5vw + 1rem, 2rem);
+  /* lg: 28px → 36px */
+  --text-lg: clamp(1.75rem, 1.5vw + 1rem, 2.25rem);
 
-  /* xl: 32px → 40px */
-  --text-xl: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
+  /* xl: 36px → 40px */
+  --text-xl: clamp(2.25rem, 2.2vw + 1rem, 2.75rem);
 
   /* 2xl: 40px → 48px */
   --text-2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);

@@ -6,17 +6,6 @@
 @use "../glass" as glass;
 /* ================================== */
 
-html {
-  // * Button colors * //
-  --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
-  --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
-  --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
-
-  --btn-text-rest: oklch(100% var(--light-ch) / 1);
-  --btn-text-hover: oklch(100% var(--light-ch) / 1);
-  --btn-text-active: oklch(20% var(--dark-ch) / 1);
-}
-
 /* ================================== */
 //* Button size & layout */
 /* ================================== */
@@ -257,42 +246,42 @@ html {
 
 @mixin btn-glass-clear {
   @include btn-glass-base;
-  background-color: var(--tint-clear);
+  background-color: var(--tint-base);
 
   &:hover {
-    background-color: var(--tint-xlight);
+    background-color: var(--tint-xmild);
   }
 
   &:active {
-    background-color: var(--tint-dark);
+    background-color: var(--tint-bold);
   }
 }
 
 /* Light → 3D button glass */
 @mixin btn-glass-light {
   @include btn-glass-base;
-  background-color: var(--tint-xlight);
+  background-color: var(--tint-xbold);
 
   &:hover {
-    background-color: var(--tint-2xlight);
+    background-color: var(--tint-mild);
   }
 
   &:active {
-    background-color: var(--tint-dark);
+    background-color: var(--tint-2xmild);
   }
 }
 
 /* Dark → 3D button glass */
 @mixin btn-glass-dark {
   @include btn-glass-base;
-  background-color: var(--tint-xdark);
+  background-color: var(--tint-base);
 
   &:hover {
-    background-color: var(--tint-2xdark);
+    background-color: var(--tint-bold);
   }
 
   &:active {
-    background-color: var(--tint-3xdark);
+    background-color: var(--tint-xbold);
   }
 }
 
@@ -317,12 +306,12 @@ html {
   @include ui-transitions;
 
   &:hover {
-    background-color: var(--tint-xlight);
+    background-color: var(--tint-xmild);
     box-shadow: var(--sha-xs);
   }
 
   &:active {
-    background-color: var(--tint-dark);
+    background-color: var(--tint-xbold);
     box-shadow: var(--sha-2xs);
   }
 }

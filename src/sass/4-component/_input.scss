@@ -15,7 +15,7 @@
   font-weight: var(--font-weight-md);
   font-size: var(--sm);
   padding-bottom: var(--2xs);
-  color: var(--text-contrast-base);
+  color: var(--color-text-contrast-base);
 }
 
 .input__wrap {
@@ -26,12 +26,12 @@
 
 .input__label--sm {
   width: fit-content;
-  color: var(--text-base);
+  color: var(--color-text-base);
 }
 
 .input__label--md {
   width: fit-content;
-  color: var(--text-base);
+  color: var(--color-text-base);
 }
 
 @mixin input-base {
@@ -85,7 +85,7 @@
     opacity: var(--disabled-opacity);
 
     & + label {
-      color: var(--text-xmild);
+      color: var(--color-text-xmild);
     }
   }
 

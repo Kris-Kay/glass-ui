@@ -43,7 +43,7 @@
     padding: var(--space);
 
     /* visual */
-    background-color: var(--tint-xdark);
+    background-color: var(--color-inset-deep);
     box-shadow: $flat-sha-md;
   }
 }
@@ -67,7 +67,7 @@
   @include btn.ui-transitions;
 
   &:hover {
-    background-color: var(--tint-xlight);
+    background-color: var(--tint-mild);
   }
 
   >.see-more-btn {
@@ -127,6 +127,7 @@
   box-shadow: var(--sha-xl);
   @include glass.fill("3xdark");
 
+
   animation: slide-down 300ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
@@ -138,7 +139,7 @@
 }
 
 .accordion__title {
-  @include title-bold;
+  @include title-thick;
   font-size: var(--lg);
   text-shadow: var(--text-sha-md);
 }

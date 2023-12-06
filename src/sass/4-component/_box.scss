@@ -6,6 +6,22 @@
 @use "../glass" as glass;
 /* ================================== */
 
+/* Rounded rectangles */
+/* ================================== */
+
+.rect-2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+}
+
+.rect-lg {
+  width: min(var(--max-w-lg), 100%);
+  border-radius: var(--lg);
+}
+
+
+
 @mixin bg-lg {
   width: 100%;
   height: fit-content;
@@ -198,7 +214,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--tint-2xdark);
+    background-color: var(--tint-xbold);
     box-shadow: glass.$flat-inset-md;
   }
 
@@ -301,7 +317,7 @@
   @include title-thin;
   font-size: var(--text-2xl);
   text-shadow: var(--text-sha-md);
-  color: var(--text-bold);
+  color: var(--color-text-bold);
 }
 
 
@@ -310,7 +326,7 @@
   @include title-thin;
   font-size: var(--text-lg);
   text-shadow: var(--text-sha-md);
-  color: var(--text-bold);
+  color: var(--color-text-bold);
 
   @include bp(sm) {
     font-size: var(--text-xl);

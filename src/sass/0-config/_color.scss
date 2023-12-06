@@ -75,24 +75,26 @@
 /* ================================================ */
 /* #Config these values */
 :root, [data-theme=default] {
-  // color-scheme: dark light;
 
   /* Text | Title | Label */
-  --text-bold: oklch(95% var(--light-ch) / 1);
-  --text-base: oklch(85% var(--light-ch) / 1);
-  --text-mild: oklch(75% var(--light-ch) / 1);
-  --text-xmild: oklch(65% var(--light-ch) / 1);
-  --text-2xmild: oklch(55% var(--light-ch) / 1);
+  --color-text-xbold: oklch(95% var(--light-ch) / 1);
+  --color-text-bold: oklch(90% var(--light-ch) / 1);
+  --color-text-base: oklch(85% var(--light-ch) / 1);
+  --color-text-mild: oklch(75% var(--light-ch) / 1);
+  --color-text-xmild: oklch(65% var(--light-ch) / 1);
 
-  --text-contrast-bold: oklch(95% var(--primary-ch) / 1);
-  --text-contrast-base: oklch(85% var(--primary-ch) / 1);
-  --text-contrast-mild: oklch(75% var(--primary-ch) / 1);
 
-  --text-invert-bold: oklch(20% var(--dark-ch) / 1);
-  --text-invert-base: oklch(35% var(--dark-ch) / 1);
-  --text-invert-mild: oklch(40% var(--dark-ch) / 1);
-  --text-invert-xmild: oklch(45% var(--dark-ch) / 1);
-  --text-invert-2xmild: oklch(50% var(--dark-ch) / 1);
+  --color-text-contrast-xbold: oklch(95% var(--primary-ch) / 1);
+  --color-text-contrast-bold: oklch(90% var(--primary-ch) / 1);
+  --color-text-contrast-base: oklch(80% var(--primary-ch) / 1);
+  --color-text-contrast-mild: oklch(75% var(--primary-ch) / 1);
+  --color-text-contrast-xmild: oklch(65% var(--primary-ch) / 1);
+
+  --color-text-flip-xbold: oklch(10% var(--dark-ch) / 1);
+  --color-text-flip-bold: oklch(20% var(--dark-ch) / 1);
+  --color-text-flip-base: oklch(35% var(--dark-ch) / 1);
+  --color-text-flip-mild: oklch(40% var(--dark-ch) / 1);
+  --color-text-flip-xmild: oklch(45% var(--dark-ch) / 1);
 
 /* Link */
   --link-rest: oklch(70% var(--primary-ch) / 1);
@@ -117,27 +119,64 @@
 /* ================================================ */
 /* bold = lighter e.g. whiter in light mode and lighter dark-gray in dark mode */
 /* mild = darker e.g. darker light-gray in light mode and darker dark-gray in dark mode */
-/* invert-bold = more contrast against theme background e.g. lighter in dark mode */
-/* invert-mild = less contrast against theme background e.g. darker in dark mode */
-  --page-bg: oklch(10% var(--dark-ch) / 1);
+/* flip-bold = more contrast against theme background e.g. lighter in dark mode */
+/* flip-mild = less contrast against theme background e.g. darker in dark mode */
+  --page-bg: oklch(10% var(--dark-ch) / 0.07);
 
+  --bg-xbold: oklch(25% var(--dark-ch) / 1);
   --bg-bold: oklch(35% var(--dark-ch) / 1);
   --bg-base: oklch(30% var(--dark-ch) / 1);
   --bg-mild: oklch(25% var(--dark-ch) / 1);
   --bg-xmild: oklch(20% var(--dark-ch) / 1);
-  --bg-2xmild: oklch(15% var(--dark-ch) / 1);
 
+  --bg-contrast-xbold: oklch(15% var(--primary-ch) / 1);
   --bg-contrast-bold: oklch(25% var(--primary-ch) / 1);
   --bg-contrast-base: oklch(20% var(--primary-ch) / 1);
   --bg-contrast-mild: oklch(15% var(--primary-ch) / 1);
   --bg-contrast-xmild: oklch(10% var(--primary-ch) / 1);
-  --bg-contrast-2xmild: oklch(5% var(--primary-ch) / 1);
 
-  /* Used for box-shadows, text-shadows, bevels, etc. */
+  --tint-3xbold:  oklch(var(--light-lch) / 0.5);
+  --tint-2xbold:  oklch(var(--light-lch) / 0.4);
+  --tint-xbold:   oklch(var(--light-lch) / 0.3);
+  --tint-bold:    oklch(var(--light-lch) / 0.2);
+  --tint-base:    oklch(var(--dark-lch) / 0.15);
+  --tint-mild:    oklch(var(--dark-lch) / 0.2);
+  --tint-xmild:   oklch(var(--dark-lch) / 0.3);
+  --tint-2xmild:  oklch(var(--dark-lch) / 0.4);
+  --tint-3xmild:  oklch(var(--dark-lch) / 0.7);
+
+  --tint-3xlight: oklch(var(--light-lch) / 0.75);
+  --tint-2xlight: oklch(var(--light-lch) / 0.5);
+  --tint-xlight:  oklch(var(--light-lch) / 0.25);
+  --tint-light:   oklch(var(--light-lch) / 0.05);
+  --tint-clear:   oklch(var(--light-lch) / 0.01);
+  --tint-dark:    oklch(var(--dark-lch) / 0.05);
+  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
+  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
+  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
+
+
+  /* Used in box-shadows, text-shadows, bevels, etc. */
   --shadow: var(--dark-lch);
   --highlight: var(--light-lch);
 
+  // * Button colors * //
+  // --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
+  // --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+  // --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+  --btn-bg-rest: var(--tint-base);
+  --btn-bg-hover: var(--tint-bold);
+  --btn-bg-active: var(--tint-2xbold);
+  --btn-text-rest: var(--color-text-);
+  --btn-text-hover: var(--color-text-bold);
+  --btn-text-active: var(--color-text-flip-bold);
+
+
   // * UI * //
+  --color-inset-base: oklch(var(--dark-lch) / 0.1);
+  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
+  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
+
   --ui-focus: oklch(var(--primary-lch) / 0.4);
   --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
   --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
@@ -162,21 +201,23 @@
 /* mild = less contrast against theme background
 
   /* Text | Title | Label */
-  --text-bold: oklch(20% var(--dark-ch) / 1);
-  --text-base: oklch(35% var(--dark-ch) / 1);
-  --text-mild: oklch(40% var(--dark-ch) / 1);
-  --text-xmild: oklch(45% var(--dark-ch) / 1);
-  --text-2xmild: oklch(50% var(--dark-ch) / 1);
+  --color-text-xbold: oklch(10% var(--dark-ch) / 1);
+  --color-text-bold: oklch(20% var(--dark-ch) / 1);
+  --color-text-base: oklch(35% var(--dark-ch) / 1);
+  --color-text-mild: oklch(40% var(--dark-ch) / 1);
+  --color-text-xmild: oklch(45% var(--dark-ch) / 1);
 
-  --text-contrast-bold: oklch(70% var(--primary-ch) / 1);
-  --text-contrast-base: oklch(60% var(--primary-ch) / 1);
-  --text-contrast-mild: oklch(50% var(--primary-ch) / 1);
+  --color-text-contrast-xbold: oklch(80% var(--primary-ch) / 1);
+  --color-text-contrast-bold: oklch(70% var(--primary-ch) / 1);
+  --color-text-contrast-base: oklch(60% var(--primary-ch) / 1);
+  --color-text-contrast-mild: oklch(50% var(--primary-ch) / 1);
+  --color-text-contrast-xmild: oklch(40% var(--primary-ch) / 1);
 
-  --text-invert-bold: oklch(95% var(--light-ch) / 1);
-  --text-invert-base: oklch(85% var(--light-ch) / 1);
-  --text-invert-mild: oklch(75% var(--light-ch) / 1);
-  --text-invert-xmild: oklch(65% var(--light-ch) / 1);
-  --text-invert-2xmild: oklch(55% var(--light-ch) / 1);
+  --color-text-flip-xbold: oklch(95% var(--light-ch) / 1);
+  --color-text-flip-bold: oklch(90% var(--light-ch) / 1);
+  --color-text-flip-base: oklch(85% var(--light-ch) / 1);
+  --color-text-flip-mild: oklch(75% var(--light-ch) / 1);
+  --color-text-flip-xmild: oklch(65% var(--light-ch) / 1);
 
   /* Link */
   --link-rest: oklch(70% var(--primary-ch) / 1);
@@ -200,26 +241,63 @@
 
 /* Background colors */
 /* ================================================ */
-  --page-bg: oklch(70% var(--light-ch) / 1);
+  --page-bg: oklch(70% var(--light-ch) / 0.08);
 
-  --bg-bold: oklch(97% var(--light-ch) / 1);
+  --bg-xbold: oklch(97% var(--light-ch) / 1);
+  --bg-bold: oklch(95% var(--light-ch) / 1);
   --bg-base: oklch(92% var(--light-ch) / 1);
   --bg-mild: oklch(85% var(--light-ch) / 1);
   --bg-xmild: oklch(80% var(--light-ch) / 1);
-  --bg-2xmild: oklch(75% var(--light-ch) / 1);
 
-  --bg-contrast-bold: oklch(95% var(--primary-ch) / 0.7);
-  --bg-contrast-base: oklch(90% var(--primary-ch) / 0.7);
-  --bg-contrast-mild: oklch(85% var(--primary-ch) / 0.7);
-  --bg-contrast-xmild: oklch(80% var(--primary-ch) / 0.7);
-  --bg-contrast-2xmild: oklch(75% var(--primary-ch) / 0.7);
+  --bg-contrast-xbold: oklch(95% var(--primary-ch) / 0.8);
+  --bg-contrast-bold: oklch(90% var(--primary-ch) / 0.8);
+  --bg-contrast-base: oklch(85% var(--primary-ch) / 0.8);
+  --bg-contrast-mild: oklch(80% var(--primary-ch) / 0.8);
+  --bg-contrast-xmild: oklch(75% var(--primary-ch) / 0.8);
+  --bg-contrast-2xmild: oklch(70% var(--primary-ch) / 0.8);
+
+  --tint-3xbold:  oklch(var(--dark-lch) / 0.5);
+  --tint-2xbold:  oklch(var(--dark-lch) / 0.4);
+  --tint-xbold:   oklch(var(--dark-lch) / 0.3);
+  --tint-bold:    oklch(var(--dark-lch) / 0.2);
+  --tint-base:    oklch(var(--dark-lch) / 0.15);
+  --tint-mild:    oklch(var(--light-lch) / 0.2);
+  --tint-xmild:   oklch(var(--light-lch) / 0.3);
+  --tint-2xmild:  oklch(var(--light-lch) / 0.4);
+  --tint-3xmild:  oklch(var(--light-lch) / 0.5);
+
+  --tint-3xlight: oklch(var(--light-lch) / 0.75);
+  --tint-2xlight: oklch(var(--light-lch) / 0.5);
+  --tint-xlight:  oklch(var(--light-lch) / 0.25);
+  --tint-light:   oklch(var(--light-lch) / 0.05);
+  --tint-clear:   oklch(var(--light-lch) / 0.01);
+  --tint-dark:    oklch(var(--dark-lch) / 0.05);
+  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
+  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
+  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
 
 
-  // These are used for box-shadows, text-shadows, bevels, etc.
+  // Used in box-shadows, text-shadows, bevels, etc.
   --shadow: var(--dark-lch);
   --highlight: var(--light-lch);
 
+  // * Button colors * //
+  // --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
+  // --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
+  // --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
+  --btn-bg-rest: var(--tint-base);
+  --btn-bg-hover: var(--tint-bold);
+  --btn-bg-active: var(--tint-2xbold);
+
+  --btn-text-rest: var(--color-text-base);
+  --btn-text-hover: var(--color-text-bold);
+  --btn-text-active: var(--color-text-flip-bold);
+
   // * UI * //
+  --color-inset-base: oklch(var(--dark-lch) / 0.1);
+  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
+  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
+
   --ui-focus: oklch(var(--primary-lch) / 0.4);
   --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
   --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
@@ -273,21 +351,23 @@ $bg-colors: (
 /* Text color MAP */
 /* ================================================ */
 $text-colors: (
-  "bold":  var(--text-bold),
-  "base":  var(--text-base),
-  "mild":  var(--text-mild),
-  "xmild":  var(--text-xmild),
-  "2xmild":  var(--text-2xmild),
+  "xbold":  var(--color-text-xbold),
+  "bold":  var(--color-text-bold),
+  "base":  var(--color-text-base),
+  "mild":  var(--color-text-mild),
+  "xmild":  var(--color-text-xmild),
 
-  "contrast-bold":  var(--text-contrast-bold),
-  "contrast-base":  var(--text-contrast-base),
-  "contrast-mild":  var(--text-contrast-mild),
+  "contrast-xbold":  var(--color-text-contrast-xbold),
+  "contrast-bold":  var(--color-text-contrast-bold),
+  "contrast-base":  var(--color-text-contrast-base),
+  "contrast-mild":  var(--color-text-contrast-mild),
+  "contrast-xmild":  var(--color-text-contrast-xmild),
 
-  "invert-bold":  var(--text-invert-bold),
-  "invert-base":  var(--text-invert-base),
-  "invert-mild":  var(--text-invert-mild),
-  "invert-xmild":  var(--text-invert-xmild),
-  "invert-2xmild":  var(--text-invert-2xmild),
+  "flip-xbold":  var(--color-text-flip-xbold),
+  "flip-bold":  var(--color-text-flip-bold),
+  "flip-base":  var(--color-text-flip-base),
+  "flip-mild":  var(--color-text-flip-mild),
+  "flip-xmild":  var(--color-text-flip-xmild),
 );
 
 /* Text color modifier mixin */
@@ -306,13 +386,5 @@ $text-colors: (
 /* ================================================ */
 /* Generates a class for every color in `$text-colors` MAP */
 .text {
-  @include text-color-modifier;
-}
-
-.title {
-  @include text-color-modifier;
-}
-
-.label {
   @include text-color-modifier;
 }

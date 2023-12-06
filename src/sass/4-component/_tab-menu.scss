@@ -64,7 +64,7 @@
 [role="tab"][aria-selected="true"] {
   -webkit-backdrop-filter: brightness(1.5);
   backdrop-filter: brightness(1.5);
-  background-color: var(--tint-3xlight);
-  color: var(--tint-2xdark);
+  background-color: var(--color-inset-deep);
+  color: var(--color-text-bold);
   box-shadow: var(--sha-2xs);
 }

@@ -4,7 +4,7 @@
 @use "../custom" as *;
 @use "../util" as *;
 @use "filter";
-@use "glass-styles";
+@use "glass-styles" as glass;
 @use "glass-colors" as color;
 @use "texture" as tex;
 /* ================================================ */
@@ -363,7 +363,7 @@ $inset-shadow-sm:
   @include filter.glass-filter;
   @include tex.noise-sm;
   box-shadow: var(--inset-md);
-  background-color: var(--tint-dark);
+  background-color: var(--color-inset-deep);
 
   &::after {
     @include pseudo;
@@ -404,7 +404,7 @@ $inset-shadow-sm:
     @include pseudo;
     z-index: -2;
 
-    background-color: var(--tint-dark);
+    background-color: var(--color-inset-base);
     // box-shadow: sha.$inset-sha-md;
     filter: brightness(0.1);
   }
@@ -447,7 +447,7 @@ $inset-shadow-sm:
 
     filter: brightness(0.1);
     // box-shadow: $inset-shadow-sm;
-    background-color: var(--tint-dark);
+    background-color: var(--color-inset-deep);
   }
 
   &::after {
@@ -481,9 +481,10 @@ $inset-shadow-sm:
 /* ================================== */
 .inset-glass-md {
   position: relative;
-  // background-color: color.$tint-dark;
-  @include filter.fill(dark);
-  box-shadow: $inset-md;
+  background-color: var(--color-inset-xdeep);
+  @include filter.glass-filter;
+  // @include filter.fill();
+  box-shadow: $inset-lg;
   // box-shadow: var(--inset-lg);
 
   // box-sizing: content-box;

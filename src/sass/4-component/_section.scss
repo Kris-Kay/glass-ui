@@ -50,14 +50,14 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--tint-xdark);
+    background-color: var(--color-inset-deep);
     box-shadow: glass.$flat-inset-md;
   }
 }
 
 
 .section__title {
-  @include title-bold;
+  @include title-thick;
   font-size: var(--lg);
   text-shadow: var(--text-sha-md);
 }
