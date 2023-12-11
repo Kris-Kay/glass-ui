@@ -37,13 +37,13 @@
 
 .text-input__label {
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
+  font-weight: var(--font-weight--md);
   letter-spacing: $letter-spacing--sm;
 }
 
 .text-input__hint {
   font-family: $font-family-title;
-  font-weight: $font-weight--sm;
+  font-weight: var(--font-weight--sm);
   font-size: var(--text--xs);
   letter-spacing: $letter-spacing--sm;
   line-height: 1;

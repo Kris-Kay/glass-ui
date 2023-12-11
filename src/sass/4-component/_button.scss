@@ -13,7 +13,7 @@
 /* Base → Button text */
 @mixin btn-text {
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
+  font-weight: var(--font-weight--md);
   letter-spacing: $letter-spacing--md;
   text-align: center;
   // z-index: z.z(on-btn);

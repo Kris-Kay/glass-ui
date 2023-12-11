@@ -5,8 +5,25 @@
 @use "../0-config/shadow" as sha;
 /* ================================== */
 
-/* Fluid font sizes */
+/* font-weight: */
 /* ==================================================================== */
+/* Compensate for light text over a dark background looking thicker */
+:root, [data-theme=default] {
+  --font-weight--xs: 100;
+  --font-weight--sm: 200;
+  --font-weight--md: 300;
+  --font-weight--lg: 400;
+}
+
+[data-theme="light"] {
+  --font-weight--xs: 200;
+  --font-weight--sm: 300;
+  --font-weight--md: 400;
+  --font-weight--lg: 500;
+}
+
+/* Fluid font sizes */
+
 /* https://modern-fluid-typography.vercel.app/ */
 /* use this tool to fine-tune your fluid typography range */
 :root {
@@ -75,12 +92,6 @@ body {
 $font-family-title: ('Poppins', 'Arial', sans-serif);
 $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $font-family-code: ('Fragment Mono', 'Courier', monospace);
-
-/* font-weight: */
-$font-weight--xs: 200;
-$font-weight--sm: 300;
-$font-weight--md: 400;
-$font-weight--lg: 500;
 
 /* letter-spacing: */
 $letter-spacing--sm: 0.01em;

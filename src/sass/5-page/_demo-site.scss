@@ -313,7 +313,7 @@ footer {
     font-family: $font-family-title;
     letter-spacing: $letter-spacing--md;
     font-size: var(--text--xs);
-    font-weight: $font-weight--lg;
+    font-weight: var(--font-weight--lg);
     padding-right: var(--2xs);
     // line-height: 0.9;
   }

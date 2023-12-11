@@ -93,5 +93,5 @@
   min-width: max-content;
   width: 100%;
   letter-spacing: $letter-spacing--lg;
-  font-weight: $font-weight--md;
+  font-weight: var(--font-weight--md);
 }

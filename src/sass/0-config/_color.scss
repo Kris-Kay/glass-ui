@@ -83,12 +83,9 @@
   --color-text-mild: oklch(75% var(--light-ch) / 1);
   --color-text-xmild: oklch(65% var(--light-ch) / 1);
 
-
-  --color-text-contrast-xbold: oklch(95% var(--primary-ch) / 1);
   --color-text-contrast-bold: oklch(90% var(--primary-ch) / 1);
   --color-text-contrast-base: oklch(80% var(--primary-ch) / 1);
   --color-text-contrast-mild: oklch(75% var(--primary-ch) / 1);
-  --color-text-contrast-xmild: oklch(65% var(--primary-ch) / 1);
 
   --color-text-flip-xbold: oklch(10% var(--dark-ch) / 1);
   --color-text-flip-bold: oklch(20% var(--dark-ch) / 1);
@@ -109,11 +106,7 @@
   --code-value: oklch(100% var(--primary-ch) / 1);
   --code-num: oklch(80% var(--accent-ch) / 1);
 
-/* light text on a dark bg looks much thicker so it's adjusted for here */
-  --font-weight--xs: 100;
-  --font-weight--sm: 200;
-  --font-weight--md: 300;
-  --font-weight--lg: 400;
+
 
 /* Background colors */
 /* ================================================ */
@@ -232,11 +225,7 @@
   --code-value: oklch(100% var(--primary-ch) / 1);
   --code-num: oklch(80% var(--accent-ch) / 1);
 
-/* Dark text on a light bg looks thinner so it's adjusted for here */
-  --font-weight--xs: 200;
-  --font-weight--sm: 300;
-  --font-weight--md: 400;
-  --font-weight--lg: 500;
+
 
 
 /* Background colors */

@@ -21,7 +21,7 @@
 /* ================================== */
 @mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight--sm;
+  font-weight: var(--font-weight--sm);
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
   color: var(--text-base);
@@ -39,7 +39,7 @@ textarea {
 /* ================================== */
 @mixin title-thick {
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
+  font-weight: var(--font-weight--md);
   line-height: $line-height--sm;
   letter-spacing: $letter-spacing--md;
 }
@@ -53,7 +53,7 @@ textarea {
 /* ================================== */
 @mixin title-thin {
   font-family: $font-family-title;
-  font-weight: $font-weight--xs;
+  font-weight: var(--font-weight--xs);
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
 }
@@ -158,7 +158,7 @@ pre code {
 /* ================================== */
 @mixin label-text {
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
+  font-weight: var(--font-weight--md);
   letter-spacing: $letter-spacing--sm;
   line-height: 1;
 }
