@@ -66,7 +66,7 @@ $text-sizes: (
 /* Generates a classes using `$text-sizes` MAP */
 @mixin text-size-modifier {
   @each $key, $value in $text-sizes {
-    &-#{$key} {
+    &--#{$key} {
       font-size: $value;
     }
   }
@@ -109,58 +109,58 @@ $line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
   /* ================================== */
 html {
   --text-sha--3xs:
-    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
-    0 0 0.5px oklch(var(--shadow) / 0.1),
-    0 0 1px oklch(var(--shadow) / 0.05);
+    0.1px 0.1px 0.1px oklch(var(--color-shadow) / 0.3),
+    0 0 0.5px oklch(var(--color-shadow) / 0.1),
+    0 0 1px oklch(var(--color-shadow) / 0.05);
 
   --text-sha--2xs:
-    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
-    0.25px 0.25px 0.5px  oklch(var(--shadow) / 0.12),
-    0 0 0.5px oklch(var(--shadow) / 0.1),
-    0 0 1px oklch(var(--shadow) / 0.05);
+    0.1px 0.1px 0.1px oklch(var(--color-shadow) / 0.3),
+    0.25px 0.25px 0.5px  oklch(var(--color-shadow) / 0.12),
+    0 0 0.5px oklch(var(--color-shadow) / 0.1),
+    0 0 1px oklch(var(--color-shadow) / 0.05);
 
   --text-sha--xs:
-    0.2px 0.2px 0.2px oklch(var(--shadow) / 0.3),
-    0.5px 0.5px 1px  oklch(var(--shadow) / 0.12),
-    0 0 1px oklch(var(--shadow) / 0.1),
-    0 0 2px oklch(var(--shadow) / 0.05);
+    0.2px 0.2px 0.2px oklch(var(--color-shadow) / 0.3),
+    0.5px 0.5px 1px  oklch(var(--color-shadow) / 0.12),
+    0 0 1px oklch(var(--color-shadow) / 0.1),
+    0 0 2px oklch(var(--color-shadow) / 0.05);
 
   --text-sha--sm:
-    0.25px 0.25px 0.25px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.12),
-    0 0 2px oklch(var(--shadow) / 0.1),
-    0 0 4px oklch(var(--shadow) / 0.1);
+    0.25px 0.25px 0.25px oklch(var(--color-shadow) / 0.4),
+    1px 1px 2px oklch(var(--color-shadow) / 0.12),
+    0 0 2px oklch(var(--color-shadow) / 0.1),
+    0 0 4px oklch(var(--color-shadow) / 0.1);
 
   --text-sha--md:
-    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.15),
-    0 0 4px oklch(var(--shadow) / 0.1),
-    0 0 8px oklch(var(--shadow) / 0.1);
+    0.5px 0.5px 0.5px oklch(var(--color-shadow) / 0.4),
+    1px 1px 2px oklch(var(--color-shadow) / 0.15),
+    0 0 4px oklch(var(--color-shadow) / 0.1),
+    0 0 8px oklch(var(--color-shadow) / 0.1);
 
   --text-sha--lg:
-    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.2),
-    0 0 6px oklch(var(--shadow) / 0.15),
-    0 0 12px oklch(var(--shadow) / 0.1);
+    0.5px 0.5px 0.5px oklch(var(--color-shadow) / 0.4),
+    1px 1px 2px oklch(var(--color-shadow) / 0.2),
+    0 0 6px oklch(var(--color-shadow) / 0.15),
+    0 0 12px oklch(var(--color-shadow) / 0.1);
 
   --text-sha--xl:
-    0.8px 0.8px 0.8px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 8px oklch(var(--shadow) / 0.15),
-    0 0 16px oklch(var(--shadow) / 0.1);
+    0.8px 0.8px 0.8px oklch(var(--color-shadow) / 0.4),
+    2px 2px 4px oklch(var(--color-shadow) / 0.2),
+    0 0 8px oklch(var(--color-shadow) / 0.15),
+    0 0 16px oklch(var(--color-shadow) / 0.1);
 
   --text-sha--2xl:
-    1px 1px 1px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 10px oklch(var(--shadow) / 0.15),
-    0 0 20px oklch(var(--shadow) / 0.1);
+    1px 1px 1px oklch(var(--color-shadow) / 0.4),
+    2px 2px 4px oklch(var(--color-shadow) / 0.2),
+    0 0 10px oklch(var(--color-shadow) / 0.15),
+    0 0 20px oklch(var(--color-shadow) / 0.1);
 
   --text-sha--3xl:
-    1px 1px 1px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 10px oklch(var(--shadow) / 0.15),
-    0 0 20px oklch(var(--shadow) / 0.1),
-    0 0 25px oklch(var(--shadow) / 0.05);
+    1px 1px 1px oklch(var(--color-shadow) / 0.4),
+    2px 2px 4px oklch(var(--color-shadow) / 0.2),
+    0 0 10px oklch(var(--color-shadow) / 0.15),
+    0 0 20px oklch(var(--color-shadow) / 0.1),
+    0 0 25px oklch(var(--color-shadow) / 0.05);
 }
 
 //* Text shadow classes *//

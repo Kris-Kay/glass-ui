@@ -2,7 +2,6 @@
 /* Glass filters */
 @use "../config" as *;
 @use "../util" as *;
-@use "glass-colors" as color;
 /* ================================== */
 
 
@@ -34,54 +33,21 @@ $bright: 0.95;
   @include glass-filter;
 }
 
-/* Glass Fill mixin */
-/* ================================== */
-@mixin fill($tint) {
-  @if not map-has-key(color.$tints, $tint) {
-    @warn "Warning: `#{$tint}` is not a valid fill name.";
-  } @else {
-      background-color: map-get(color.$tints, $tint);
-      @include glass-filter;
-  }
-}
+// /* Glass Fill mixin */
+// /* ================================== */
+// @mixin fill($tint) {
+//   @if not map-has-key($tints, $tint) {
+//     @warn "Warning: `#{$tint}` is not a valid fill name.";
+//   } @else {
+//       background-color: map-get($tints, $tint);
+//       @include glass-filter;
+//   }
+// }
 
-/* Glass fill classes */
-/* ================================== */
-.fill {
-  @include color.tint-modifier('background-color') {
-    @include glass-filter;
-  }
-}
-
-@mixin gray-linear--xlight {
-  background: linear-gradient(to top left,
-    oklch(75% var(--gray-ch) / 0.85) 0%,
-    oklch(95% var(--gray-ch) / 0.9) 70%,
-    oklch(98% var(--gray-ch) / 0.95) 100%);
-}
-
-.gray-linear--xlight {
-  @include gray-linear--xlight;
-}
-
-@mixin gray-linear-light {
-  background: linear-gradient(to top left,
-    oklch(60% var(--gray-ch) / 0.85) 0%,
-    oklch(80% var(--gray-ch) / 0.9) 70%,
-    oklch(90% var(--gray-ch) / 0.95) 100%);
-}
-
-.gray-linear-light {
-  @include gray-linear-light;
-}
-
-@mixin fill-gray-linear {
-  background: linear-gradient(to top left,
-    oklch(30% var(--gray-ch) / 0.85) 0%,
-    oklch(50% var(--gray-ch) / 0.9) 70%,
-    oklch(70% var(--gray-ch) / 0.95) 100%);
-}
-
-.fill-gray-linear {
-  @include fill-gray-linear;
-}
+// /* Glass fill classes */
+// /* ================================== */
+// .fill {
+//   @include tint-modifier('background-color') {
+//     @include glass-filter;
+//   }
+// }

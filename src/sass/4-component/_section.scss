@@ -36,7 +36,7 @@
   /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
-  @include glass.fill(xdark);
+  background-color: var(--color-bg--base);
 
   @include bp(sm) {
     overflow: hidden;
@@ -50,7 +50,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--color-inset-deep);
+    background-color: var(--color-inset--deep);
     box-shadow: glass.$flat-inset--md;
   }
 }

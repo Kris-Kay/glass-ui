@@ -1,21 +1,22 @@
-/* ================================================ */
+/* ==================================================================== */
 /* Oklch Colors */
 @use "sass:map";
-/* ================================================ */
+/* ==================================================================== */
 
-/* Color tokens
-/* ================================================ */
-/* https://oklch.com/ */
-/* l: lightness 0%   to 100% */
-/* c: chroma    0    to 0.37 */
-/* h: hue       0deg to 360deg */
-
+/* Color tokens */
+/* ==================================================================== */
 /* #Config these values */
+/* l = lightness 0%   to 100% */
+/* c = chroma    0    to 0.37 */
+/* h = hue       0deg to 360deg */
+/* Use the OKLCH Color Picker & Converter to find fallback values for P3 colors */
+/* https://oklch.com/ */
 :root {
+/* Fallback colors go here */
   // * Sky * //
   --primary-l: 70%;
-  --primary-c: 0.14;
-  --primary-h: 235;
+  --primary-c: 0.12;
+  --primary-h: 220;
 
   // * Leaf * //
   --accent-l: 92%;
@@ -24,23 +25,24 @@
 
   // * Rose * //
   --pop-l: 50%;
-  --pop-c: 0.21;
+  --pop-c: 0.2;
   --pop-h: 345;
 
   // * Snow * //
-  --light-l: 98%;
-  --light-c: 0.011;
-  --light-h: 235;
+  --light-l: 100%;
+  --light-c: 0.01;
+  --light-h: 250;
 
   // * Ink * //
-  --dark-l: 15%;
-  --dark-c: 0.03;
-  --dark-h: 240;
+  --dark-l: 5%;
+  --dark-c: 0.02;
+  --dark-h: 250;
 
-  /* Add here any value that makes your color venture into the P3 color space. */
   @media (color-gamut: p3) {
+  /* P3 color space values go */
+  /* These will only be visible if both the display and browser support the P3 color space */
     :root {
-      --primary-c: 0.17;
+      --primary-c: 0.15;
       --accent-c: 0.22;
       --pop-c: 0.23;
       --light-c: 0.012;
@@ -48,273 +50,221 @@
     }
   }
 
-  /* use `-ch` custom property to create colors that are lighter or darker */
-  /* use `-lch` custom property to create colors with different alpha values */
-  --primary-ch: var(--primary-c) var(--primary-h);
-  --primary-lch: var(--primary-l) var(--primary-c) var(--primary-h);
-  --primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h) / 1);
+  /* Base color values */
+  /* use `-ch` custom properties to create colors that are lighter or darker */
+  /* use `-lch` custom properties to create colors with different alpha values */
+  --primary--ch: var(--primary-c) var(--primary-h);
+  --primary--lch: var(--primary-l) var(--primary-c) var(--primary-h);
 
-  --accent-ch: var(--accent-c) var(--accent-h);
-  --accent-lch: var(--accent-l) var(--accent-c) var(--accent-h);
-  --accent: oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 1);
+  --accent--ch: var(--accent-c) var(--accent-h);
+  --accent--lch: var(--accent-l) var(--accent-c) var(--accent-h);
 
-  --pop-ch: var(--pop-c)var(--pop-h);
-  --pop-lch: var(--pop-l) var(--pop-c) var(--pop-h);
-  --pop: oklch(var(--pop-l) var(--pop-c) var(--pop-h) / 1);
+  --pop--ch: var(--pop-c)var(--pop-h);
+  --pop--lch: var(--pop-l) var(--pop-c) var(--pop-h);
 
-  --light-ch: var(--light-c) var(--light-h);
-  --light-lch: var(--light-l) var(--light-c) var(--light-h);
-  --light: oklch(var(--light-l) var(--light-c) var(--light-h) / 1);
+  --light--ch: var(--light-c) var(--light-h);
+  --light--lch: var(--light-l) var(--light-c) var(--light-h);
 
-  --dark-ch: var(--dark-c) var(--dark-h);
-  --dark-lch: var(--dark-l) var(--dark-c) var(--dark-h);
-  --dark: oklch(var(--dark-l) var(--dark-c) var(--dark-h) / 1);
+  --dark--ch: var(--dark-c) var(--dark-h);
+  --dark--lch: var(--dark-l) var(--dark-c) var(--dark-h);
+
+  /* Translucent tints that do not change with theme */
+  --tint--3xlight: oklch(var(--light--lch) / 0.8);
+  --tint--2xlight: oklch(var(--light--lch) / 0.5);
+  --tint--xlight:  oklch(var(--light--lch) / 0.25);
+  --tint--light:   oklch(var(--light--lch) / 0.05);
+  --tint--clear:   oklch(var(--light--lch) / 0.01);
+  --tint--dark:    oklch(var(--dark--lch) / 0.05);
+  --tint--xdark:   oklch(var(--dark--lch) / 0.25);
+  --tint--2xdark:  oklch(var(--dark--lch) / 0.5);
+  --tint--3xdark:  oklch(var(--dark--lch) / 0.8);
 }
 
-/* Dark Mode */
-/* ================================================ */
+/* Dark Mode Theme */
+/* ==================================================================== */
 /* #Config these values */
 :root, [data-theme=default] {
-
   /* Text | Title | Label */
-  --color-text-xbold: oklch(95% var(--light-ch) / 1);
-  --color-text-bold: oklch(90% var(--light-ch) / 1);
-  --color-text-base: oklch(85% var(--light-ch) / 1);
-  --color-text-mild: oklch(75% var(--light-ch) / 1);
-  --color-text-xmild: oklch(65% var(--light-ch) / 1);
+  --color-text--xbold: oklch(95% var(--light--ch) / 1);
+  --color-text--bold:  oklch(90% var(--light--ch) / 1);
+  --color-text--base:  oklch(85% var(--light--ch) / 1);
+  --color-text--mild:  oklch(80% var(--light--ch) / 1);
+  --color-text--xmild: oklch(75% var(--light--ch) / 1);
 
-  --color-text-contrast-bold: oklch(90% var(--primary-ch) / 1);
-  --color-text-contrast-base: oklch(80% var(--primary-ch) / 1);
-  --color-text-contrast-mild: oklch(75% var(--primary-ch) / 1);
+  --color-text-contrast--bold: oklch(90% var(--primary--ch) / 1);
+  --color-text-contrast--base: oklch(80% var(--primary--ch) / 1);
+  --color-text-contrast--mild: oklch(75% var(--primary--ch) / 1);
 
-  --color-text-flip-xbold: oklch(10% var(--dark-ch) / 1);
-  --color-text-flip-bold: oklch(20% var(--dark-ch) / 1);
-  --color-text-flip-base: oklch(35% var(--dark-ch) / 1);
-  --color-text-flip-mild: oklch(40% var(--dark-ch) / 1);
-  --color-text-flip-xmild: oklch(45% var(--dark-ch) / 1);
+  --color-text-flip--xbold: oklch(10% var(--dark--ch) / 1);
+  --color-text-flip--bold: oklch(20% var(--dark--ch) / 1);
+  --color-text-flip--base: oklch(35% var(--dark--ch) / 1);
+  --color-text-flip--mild: oklch(40% var(--dark--ch) / 1);
+  --color-text-flip--xmild: oklch(45% var(--dark--ch) / 1);
 
 /* Link */
-  --link-rest: oklch(70% var(--primary-ch) / 1);
-  --link-hover: oklch(50% var(--primary-ch) / 1);
-  --link-visited: oklch(30% var(--primary-ch) / 1);
-
-/* Code */
-  --code-base: oklch(90% var(--accent-ch) / 1);
-  --code-comment: oklch(65% var(--gray-ch) / 1);
-  --code-class: oklch(100% var(--accent-ch) / 1);
-  --code-property: oklch(80% var(--primary-ch) / 1);
-  --code-value: oklch(100% var(--primary-ch) / 1);
-  --code-num: oklch(80% var(--accent-ch) / 1);
-
-
+  --color-link--base: oklch(70% var(--primary--ch) / 1);
+  --color-link--hover: oklch(50% var(--primary--ch) / 1);
+  --color-link--visit: oklch(30% var(--primary--ch) / 1);
 
 /* Background colors */
-/* ================================================ */
+/* ==================================================================== */
 /* bold = lighter e.g. whiter in light mode and lighter dark-gray in dark mode */
 /* mild = darker e.g. darker light-gray in light mode and darker dark-gray in dark mode */
-/* flip-bold = more contrast against theme background e.g. lighter in dark mode */
-/* flip-mild = less contrast against theme background e.g. darker in dark mode */
-  --page-bg: oklch(10% var(--dark-ch) / 0.07);
+/* flip--bold = more contrast against theme background e.g. lighter in dark mode */
+/* flip--mild = less contrast against theme background e.g. darker in dark mode */
+  --color-page-bg: black;
+  // --color-page-bg: oklch(5% var(--dark--ch) / 0.99);
 
-  --bg-xbold: oklch(25% var(--dark-ch) / 1);
-  --bg-bold: oklch(35% var(--dark-ch) / 1);
-  --bg-base: oklch(30% var(--dark-ch) / 1);
-  --bg-mild: oklch(25% var(--dark-ch) / 1);
-  --bg-xmild: oklch(20% var(--dark-ch) / 1);
+  --color-bg--xbold: oklch(30% var(--dark--ch) / 0.5);
+  --color-bg--bold: oklch(25% var(--dark--ch) / 0.5);
+  --color-bg--base: oklch(20% var(--dark--ch) / 0.5);
+  --color-bg--mild: oklch(15% var(--dark--ch) / 0.5);
+  --color-bg--xmild: oklch(10% var(--dark--ch) / 0.5);
 
-  --bg-contrast-xbold: oklch(15% var(--primary-ch) / 1);
-  --bg-contrast-bold: oklch(25% var(--primary-ch) / 1);
-  --bg-contrast-base: oklch(20% var(--primary-ch) / 1);
-  --bg-contrast-mild: oklch(15% var(--primary-ch) / 1);
-  --bg-contrast-xmild: oklch(10% var(--primary-ch) / 1);
-
-  --tint-3xbold:  oklch(var(--light-lch) / 0.5);
-  --tint-2xbold:  oklch(var(--light-lch) / 0.4);
-  --tint-xbold:   oklch(var(--light-lch) / 0.3);
-  --tint-bold:    oklch(var(--light-lch) / 0.2);
-  --tint-base:    oklch(var(--dark-lch) / 0.15);
-  --tint-mild:    oklch(var(--dark-lch) / 0.2);
-  --tint-xmild:   oklch(var(--dark-lch) / 0.3);
-  --tint-2xmild:  oklch(var(--dark-lch) / 0.4);
-  --tint-3xmild:  oklch(var(--dark-lch) / 0.7);
-
-  --tint--3xlight: oklch(var(--light-lch) / 0.75);
-  --tint--2xlight: oklch(var(--light-lch) / 0.5);
-  --tint--xlight:  oklch(var(--light-lch) / 0.25);
-  --tint-light:   oklch(var(--light-lch) / 0.05);
-  --tint-clear:   oklch(var(--light-lch) / 0.01);
-  --tint-dark:    oklch(var(--dark-lch) / 0.05);
-  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
-  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
-
+  --color-bg-contrast--xbold: oklch(40% var(--primary--ch) / 0.5);
+  --color-bg-contrast--bold: oklch(35% var(--primary--ch) / 0.5);
+  --color-bg-contrast--base: oklch(30% var(--primary--ch) / 0.5);
+  --color-bg-contrast--mild: oklch(25% var(--primary--ch) / 0.5);
+  --color-bg-contrast--xmild: oklch(20% var(--primary--ch) / 0.5);
 
   /* Used in box-shadows, text-shadows, bevels, etc. */
-  --shadow: var(--dark-lch);
-  --highlight: var(--light-lch);
-
-  // * Button colors * //
-  // --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
-  // --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
-  // --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
-  --btn-bg-rest: var(--tint-base);
-  --btn-bg-hover: var(--tint-bold);
-  --btn-bg-active: var(--tint-2xbold);
-  --btn-text-rest: var(--color-text-);
-  --btn-text-hover: var(--color-text-bold);
-  --btn-text-active: var(--color-text-flip-bold);
+  --color-shadow: var(--dark--lch);
+  --color-highlight: var(--light--lch);
 
 
   // * UI * //
-  --color-inset-base: oklch(var(--dark-lch) / 0.1);
-  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
-  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
 
-  --ui-focus: oklch(var(--primary-lch) / 0.4);
-  --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
-  --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
-  --ui-rest-knob: oklch(var(--light-lch) / 1);
-  --ui-active-bg: oklch(var(--primary-lch) / 0.9);
-  --ui-active-hover-bg: oklch(65% var(--primary-ch) / 0.9);
-  --ui-active-knob: oklch(var(--light-lch) / 1);
-  --ui-disabled-bg: oklch(var(--dark-lch) / 0.15);
+  // * Button colors * //
+  --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+  --btn-bg--hover: red;
+  // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+  --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+  // --btn-bg--base: var(--tint--base);
+  // --btn-bg--hover: var(--tint--bold);
+  // --btn-bg--active: var(--tint--2xbold);
+  --btn-text--base: var(--color-text-base);
+  --btn-text--hover: var(--color-text--bold);
+  --btn-text--active: var(--color-text--xbold);
+
+
+  --color-inset--base: oklch(var(--dark--lch) / 0.1);
+  --color-inset--deep: oklch(var(--dark--lch) / 0.2);
+  --color-inset--xdeep: oklch(var(--dark--lch) / 0.3);
+
+  --ui-focus: oklch(var(--primary--lch) / 0.4);
+  --ui-rest-bg: oklch(45% var(--dark--ch) / 1);
+  --ui-rest-hover-bg: oklch(40% var(--dark--ch) / 1);
+  --ui-rest-knob: oklch(var(--light--lch) / 1);
+  --ui-active-bg: oklch(var(--primary--lch) / 0.9);
+  --ui-active-hover-bg: oklch(65% var(--primary--ch) / 0.9);
+  --ui-active-knob: oklch(var(--light--lch) / 1);
+  --ui-disabled-bg: oklch(var(--dark--lch) / 0.15);
   --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary-h) / 1);
-  --ui-disabled-knob: oklch(var(--light-lch) / 0.4);
-  --ui-disabled-text: oklch(65% var(--light-ch) / 1);
+  --ui-disabled-knob: oklch(var(--light--lch) / 0.4);
+  --ui-disabled-text: oklch(65% var(--light--ch) / 1);
 }
 
 /* Light Mode */
-/* ================================================ */
+/* ====================================================================== */
 /* #Config these values */
 [data-theme="light"] {
-
 /* Text colors */
-/* ================================================ */
+/* ========================================== */
 /* bold = more contrast against theme background
 /* mild = less contrast against theme background
 
-  /* Text | Title | Label */
-  --color-text-xbold: oklch(10% var(--dark-ch) / 1);
-  --color-text-bold: oklch(20% var(--dark-ch) / 1);
-  --color-text-base: oklch(35% var(--dark-ch) / 1);
-  --color-text-mild: oklch(40% var(--dark-ch) / 1);
-  --color-text-xmild: oklch(45% var(--dark-ch) / 1);
+  /* body text | headings | labels */
+  --color-text--xbold: oklch(20% var(--dark--ch) / 1);
+  --color-text--bold: oklch(25% var(--dark--ch) / 1);
+  --color-text--base: oklch(30% var(--dark--ch) / 1);
+  --color-text--mild: oklch(40% var(--dark--ch) / 1);
+  --color-text--xmild: oklch(50% var(--dark--ch) / 1);
 
-  --color-text-contrast-xbold: oklch(80% var(--primary-ch) / 1);
-  --color-text-contrast-bold: oklch(70% var(--primary-ch) / 1);
-  --color-text-contrast-base: oklch(60% var(--primary-ch) / 1);
-  --color-text-contrast-mild: oklch(50% var(--primary-ch) / 1);
-  --color-text-contrast-xmild: oklch(40% var(--primary-ch) / 1);
+  --color-text-contrast--bold: oklch(50% var(--primary--ch) / 1);
+  --color-text-contrast--base: oklch(40% var(--primary--ch) / 1);
+  --color-text-contrast--mild: oklch(30% var(--primary--ch) / 1);
 
-  --color-text-flip-xbold: oklch(95% var(--light-ch) / 1);
-  --color-text-flip-bold: oklch(90% var(--light-ch) / 1);
-  --color-text-flip-base: oklch(85% var(--light-ch) / 1);
-  --color-text-flip-mild: oklch(75% var(--light-ch) / 1);
-  --color-text-flip-xmild: oklch(65% var(--light-ch) / 1);
+ /* light text for light mode + --color-bg-contrast */
+  --color-text-flip--xbold: oklch(95% var(--light--ch) / 1);
+  --color-text-flip--bold: oklch(90% var(--light--ch) / 1);
+  --color-text-flip--base: oklch(85% var(--light--ch) / 1);
+  --color-text-flip--mild: oklch(75% var(--light--ch) / 1);
+  --color-text-flip--xmild: oklch(65% var(--light--ch) / 1);
 
-  /* Link */
-  --link-rest: oklch(70% var(--primary-ch) / 1);
-  --link-hover: oklch(50% var(--primary-ch) / 1);
-  --link-visited: oklch(30% var(--primary-ch) / 1);
-
-  /* Code */
-  --code-base: oklch(90% var(--accent-ch) / 1);
-  --code-comment: oklch(65% var(--gray-ch) / 1);
-  --code-class: oklch(100% var(--accent-ch) / 1);
-  --code-property: oklch(80% var(--primary-ch) / 1);
-  --code-value: oklch(100% var(--primary-ch) / 1);
-  --code-num: oklch(80% var(--accent-ch) / 1);
-
-
+  /* text links */
+  --color-link--base: oklch(70% var(--primary--ch) / 1);
+  --color-link--hover: oklch(50% var(--primary--ch) / 1);
+  --color-link--visit: oklch(30% var(--primary--ch) / 1);
 
 
 /* Background colors */
 /* ================================================ */
-  --page-bg: oklch(70% var(--light-ch) / 0.08);
+  --color-page-bg: white;
+  // --color-page-bg: oklch(90% var(--light--ch) / 0.99);
 
-  --bg-xbold: oklch(97% var(--light-ch) / 1);
-  --bg-bold: oklch(95% var(--light-ch) / 1);
-  --bg-base: oklch(92% var(--light-ch) / 1);
-  --bg-mild: oklch(85% var(--light-ch) / 1);
-  --bg-xmild: oklch(80% var(--light-ch) / 1);
+  --color-bg--xbold: oklch(100% var(--light--ch) / 0.6);
+  --color-bg--bold: oklch(95% var(--light--ch) / 0.6);
+  --color-bg--base: oklch(90% var(--light--ch) / 0.5);
+  --color-bg--mild: oklch(85% var(--light--ch) / 0.6);
+  --color-bg--xmild: oklch(80% var(--light--ch) / 0.6);
 
-  --bg-contrast-xbold: oklch(95% var(--primary-ch) / 0.8);
-  --bg-contrast-bold: oklch(90% var(--primary-ch) / 0.8);
-  --bg-contrast-base: oklch(85% var(--primary-ch) / 0.8);
-  --bg-contrast-mild: oklch(80% var(--primary-ch) / 0.8);
-  --bg-contrast-xmild: oklch(75% var(--primary-ch) / 0.8);
-  --bg-contrast-2xmild: oklch(70% var(--primary-ch) / 0.8);
+  --color-bg-contrast--xbold: oklch(90% var(--primary--ch) / 0.5);
+  --color-bg-contrast--bold: oklch(85% var(--primary--ch) / 0.5);
+  --color-bg-contrast--base: oklch(80% var(--primary--ch) / 0.5);
+  --color-bg-contrast--mild: oklch(75% var(--primary--ch) / 0.5);
+  --color-bg-contrast--xmild: oklch(70% var(--primary--ch) / 0.5);
 
-  --tint-3xbold:  oklch(var(--dark-lch) / 0.5);
-  --tint-2xbold:  oklch(var(--dark-lch) / 0.4);
-  --tint-xbold:   oklch(var(--dark-lch) / 0.3);
-  --tint-bold:    oklch(var(--dark-lch) / 0.2);
-  --tint-base:    oklch(var(--dark-lch) / 0.15);
-  --tint-mild:    oklch(var(--light-lch) / 0.2);
-  --tint-xmild:   oklch(var(--light-lch) / 0.3);
-  --tint-2xmild:  oklch(var(--light-lch) / 0.4);
-  --tint-3xmild:  oklch(var(--light-lch) / 0.5);
+  /* box-shadow | text-shadow | drop-shadow */
+  --color-shadow: var(--dark--lch);
+  --color-highlight: var(--light--lch);
 
-  --tint--3xlight: oklch(var(--light-lch) / 0.75);
-  --tint--2xlight: oklch(var(--light-lch) / 0.5);
-  --tint--xlight:  oklch(var(--light-lch) / 0.25);
-  --tint-light:   oklch(var(--light-lch) / 0.05);
-  --tint-clear:   oklch(var(--light-lch) / 0.01);
-  --tint-dark:    oklch(var(--dark-lch) / 0.05);
-  --tint-xdark:   oklch(var(--dark-lch) / 0.25);
-  --tint-2xdark:  oklch(var(--dark-lch) / 0.5);
-  --tint-3xdark:  oklch(var(--dark-lch) / 0.75);
-
-
-  // Used in box-shadows, text-shadows, bevels, etc.
-  --shadow: var(--dark-lch);
-  --highlight: var(--light-lch);
+  /* Insets */
+  --color-inset--base: oklch(var(--dark--lch) / 0.1);
+  --color-inset--deep: oklch(var(--dark--lch) / 0.2);
+  --color-inset--xdeep: oklch(var(--dark--lch) / 0.35);
 
   // * Button colors * //
-  // --btn-bg-rest: oklch(99% var(--light-ch) / 0.9);
-  // --btn-bg-hover: oklch(99% var(--light-ch) / 0.9);
-  // --btn-bg-active: oklch(50% var(--gray-ch) / 0.1);
-  --btn-bg-rest: var(--tint-base);
-  --btn-bg-hover: var(--tint-bold);
-  --btn-bg-active: var(--tint-2xbold);
+  --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+  --btn-bg--hover: red;
+  // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+  --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+  // --btn-bg--base: var(--tint--base);
+  // --btn-bg--hover: var(--tint--bold);
+  // --btn-bg--active: var(--tint--2xbold);
+  --btn-text--base: var(--color-text-base);
+  --btn-text--hover: var(--color-text--bold);
+  --btn-text--active: var(--color-text--xbold);
 
-  --btn-text-rest: var(--color-text-base);
-  --btn-text-hover: var(--color-text-bold);
-  --btn-text-active: var(--color-text-flip-bold);
 
-  // * UI * //
-  --color-inset-base: oklch(var(--dark-lch) / 0.1);
-  --color-inset-deep: oklch(var(--dark-lch) / 0.2);
-  --color-inset-xdeep: oklch(var(--dark-lch) / 0.3);
 
-  --ui-focus: oklch(var(--primary-lch) / 0.4);
-  --ui-rest-bg: oklch(45% var(--dark-ch) / 1);
-  --ui-rest-hover-bg: oklch(40% var(--dark-ch) / 1);
-  --ui-rest-knob: oklch(var(--light-lch) / 1);
-  --ui-active-bg: oklch(var(--primary-lch) / 0.9);
-  --ui-active-hover-bg: oklch(65% var(--primary-ch) / 0.9);
-  --ui-active-knob: oklch(var(--light-lch) / 1);
-  --ui-disabled-bg: oklch(var(--dark-lch) / 0.15);
+  --ui-focus: oklch(var(--primary--lch) / 0.4);
+  --ui-rest-bg: oklch(45% var(--dark--ch) / 1);
+  --ui-rest-hover-bg: oklch(40% var(--dark--ch) / 1);
+  --ui-rest-knob: oklch(var(--light--lch) / 1);
+  --ui-active-bg: oklch(var(--primary--lch) / 0.9);
+  --ui-active-hover-bg: oklch(65% var(--primary--ch) / 0.9);
+  --ui-active-knob: oklch(var(--light--lch) / 1);
+  --ui-disabled-bg: oklch(var(--dark--lch) / 0.15);
   --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary-h) / 1);
-  --ui-disabled-knob: oklch(var(--light-lch) / 0.4);
-  --ui-disabled-text: oklch(65% var(--light-ch) / 1);
+  --ui-disabled-knob: oklch(var(--light--lch) / 0.4);
+  --ui-disabled-text: oklch(65% var(--light--ch) / 1);
 }
 
 
 /* Background color MAP */
 /* ================================================ */
 $bg-colors: (
-  "bold":  var(--bg-bold),
-  "base":  var(--bg-base),
-  "mild":  var(--bg-mild),
-  "xmild":  var(--bg-xmild),
-  "2xmild":  var(--bg-2xmild),
+  "-xbold":  var(--color-bg--xbold),
+  "-bold":  var(--color-bg--bold),
+  "-base":  var(--color-bg--base),
+  "-mild":  var(--color-bg--mild),
+  "-xmild":  var(--color-bg--xmild),
 
-  "contrast-bold":  var(--bg-contrast-bold),
-  "contrast-base":  var(--bg-contrast-base),
-  "contrast-mild":  var(--bg-contrast-mild),
-  "contrast-xmild":  var(--bg-contrast-xmild),
-  "contrast-2xmild":  var(--bg-contrast-2xmild),
+  "contrast--xbold":  var(--color-bg-contrast--xbold),
+  "contrast--bold":  var(--color-bg-contrast--bold),
+  "contrast--base":  var(--color-bg-contrast--base),
+  "contrast--mild":  var(--color-bg-contrast--mild),
+  "contrast--xmild":  var(--color-bg-contrast--xmild),
 );
 
 /* Background color modifier mixin */
@@ -340,23 +290,26 @@ $bg-colors: (
 /* Text color MAP */
 /* ================================================ */
 $text-colors: (
-  "xbold":  var(--color-text-xbold),
-  "bold":  var(--color-text-bold),
-  "base":  var(--color-text-base),
-  "mild":  var(--color-text-mild),
-  "xmild":  var(--color-text-xmild),
+  "-xbold":  var(--color-text--xbold),
+  "-bold":  var(--color-text--bold),
+  "-base":  var(--color-text--base),
+  "-mild":  var(--color-text--mild),
+  "-xmild":  var(--color-text--xmild),
 
-  "contrast-xbold":  var(--color-text-contrast-xbold),
-  "contrast-bold":  var(--color-text-contrast-bold),
-  "contrast-base":  var(--color-text-contrast-base),
-  "contrast-mild":  var(--color-text-contrast-mild),
-  "contrast-xmild":  var(--color-text-contrast-xmild),
+  "contrast--bold":  var(--color-text-contrast--bold),
+  "contrast--base":  var(--color-text-contrast--base),
+  "contrast--mild":  var(--color-text-contrast--mild),
 
-  "flip-xbold":  var(--color-text-flip-xbold),
-  "flip-bold":  var(--color-text-flip-bold),
-  "flip-base":  var(--color-text-flip-base),
-  "flip-mild":  var(--color-text-flip-mild),
-  "flip-xmild":  var(--color-text-flip-xmild),
+  "flip--xbold":  var(--color-text-flip--xbold),
+  "flip--bold":  var(--color-text-flip--bold),
+  "flip--base":  var(--color-text-flip--base),
+  "flip--mild":  var(--color-text-flip--mild),
+  "flip--xmild":  var(--color-text-flip--xmild),
+
+  "-xlight": oklch(90% var(--light--ch) / 1),
+  "-light": oklch(70% var(--light--ch) / 1),
+  "-dark": oklch(20% var(--dark--ch) / 1),
+  "-xdark": oklch(10% var(--dark--ch) / 1),
 );
 
 /* Text color modifier mixin */
@@ -366,7 +319,6 @@ $text-colors: (
   @each $key, $value in $text-colors {
     &-#{$key} {
       color: $value;
-      @content;
     }
   }
 }
@@ -376,4 +328,38 @@ $text-colors: (
 /* Generates a class for every color in `$text-colors` MAP */
 .text {
   @include text-color-modifier;
+}
+
+/* Tint color MAP */
+/* ==================================================================== */
+$tints: (
+  "3xlight": var(--tint--3xlight),
+  "2xlight": var(--tint--2xlight),
+  "xlight": var(--tint--xlight),
+  "light": var(--tint--light),
+  "clear": var(--tint--clear),
+  "dark": var(--tint--dark),
+  "xdark": var(--tint--xdark),
+  "2xdark": var(--tint--2xdark),
+  "3xdark": var(--tint--3xdark),
+);
+
+
+/* Tint modifier mixin */
+/* ==================================================================== */
+/* Generates classes using `$tints` MAP */
+@mixin tint-modifier($property: background-color) {
+  @each $key, $value in $tints {
+    &--#{$key} {
+      #{$property}: $value;
+      @content;
+    }
+  }
+}
+
+/* Tint classes */
+/* ==================================================================== */
+/* Generates a class for every tint in `$tints` MAP */
+.tint {
+  @include tint-modifier('background-color');
 }

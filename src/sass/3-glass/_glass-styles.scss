@@ -6,13 +6,12 @@
 @use "bevel";
 @use "filter";
 @use "texture" as tex;
-@use "glass-colors" as color;
 /* ================================== */
 
 
 /* Base Glass mixin */
 /* ================================== */
-@mixin glass-base {
+@mixin glass--base {
   position: relative;
   @include filter.glass-filter;
   @content;
@@ -29,18 +28,23 @@
   }
 }
 
-.glass-base {
-  @include glass-base;
+.glass--base {
+  @include glass--base;
 }
 
-/* Generates `.glass-` classes from color.$tints MAP */
+/* Generates `.glass-` classes from `$tints` MAP */
 /* ================================== */
 .glass {
-  @include color.tint-modifier('background-color') {
-    @include glass-base;
+  @include tint-modifier('background-color') {
+    @include glass--base;
   }
 }
 
+.glass-bg {
+  @include bg-color-modifier('background-color') {
+    @include glass--base;
+  }
+}
 
 .full-w-mobile {
 
@@ -49,7 +53,7 @@
 /* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
 /* ================================== */
 @mixin glass--no-bevel-mobile {
-  @include glass-base {
+  @include glass--base {
     box-shadow: bevel.$flat-bevel--sm;
 
     @include bp(xs) {
@@ -66,6 +70,7 @@
 /* ================================== */
 @mixin glass--no-bevel {
   position: relative;
+  @include filter.glass-filter;
 
   &::before {
     @include pseudo;

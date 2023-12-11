@@ -4,7 +4,7 @@
 @use "../0-config/text";
 /* ================================== */
 
-.first-line-bold {
+.first-line--bold {
   &:first-line {
     font-weight: var(--font-weight--lg);
   }

@@ -16,22 +16,19 @@
   font-weight: var(--font-weight--md);
   letter-spacing: $letter-spacing--md;
   text-align: center;
-  // z-index: z.z(on-btn);
   text-shadow: var(--text-sha--xs);
 }
 
 /* Base → Button layout */
-@mixin btn-base {
+@mixin btn--base {
   width: fit-content;
   @include flex-c;
   @include btn-text;
   border-radius: $round;
-  // z-index: z.z(btn);
 
   & img {
     width: auto;
     align-self: center;
-    // z-index: z.z(on-btn);
   }
 }
 
@@ -51,7 +48,7 @@
   }
 
   /* layout */
-  @include btn-base;
+  @include btn--base;
   height: var(--ui--sm);
   font-size: $inner-h;
   line-height: $inner-h;
@@ -79,7 +76,7 @@
   }
 
   /* layout */
-  @include btn-base;
+  @include btn--base;
   height: var(--ui--md);
   font-size: $inner-h;
   line-height: $inner-h;
@@ -107,7 +104,7 @@
   }
 
   /* layout */
-  @include btn-base;
+  @include btn--base;
   height: var(--ui--lg);
   font-size: $inner-h;
   line-height: $inner-h;
@@ -137,7 +134,7 @@
 /* ================================== */
 
 /* Base → round button */
-@mixin btn-round-base {
+@mixin btn-round--base {
   @include flex-c;
   border-radius: $round;
   // z-index: z.z(btn);
@@ -150,7 +147,7 @@
 }
 
 @mixin btn-round--sm {
-  @include btn-round-base;
+  @include btn-round--base;
   width: var(--ui--sm);
   height: var(--ui--sm);
 
@@ -160,7 +157,7 @@
 }
 
 @mixin btn-round--md {
-  @include btn-round-base;
+  @include btn-round--base;
   width: var(--ui--md);
   height: var(--ui--md);
 
@@ -170,7 +167,7 @@
 }
 
 @mixin btn-round--lg {
-  @include btn-round-base;
+  @include btn-round--base;
   width: var(--ui--lg);
   height: var(--ui--lg);
 
@@ -208,18 +205,18 @@
 
   &:active {
     transition:
-      background-color $speed-base ease-in-out,
-      box-shadow $speed-base ease-in-out,
+      background-color $speed--base ease-in-out,
+      box-shadow $speed--base ease-in-out,
   }
 }
 
 
 /* Base → 3D button glass material */
-@mixin btn-glass-base {
+@mixin btn-glass--base {
   position: relative;
    box-shadow: var(--sha--xs);
   @include glass.glass-filter;
-  color: var(--btn-text-rest);
+  color: var(--btn-text--base);
   @include ui-transitions;
 
   &::after {
@@ -245,43 +242,43 @@
 }
 
 @mixin btn-glass-clear {
-  @include btn-glass-base;
-  background-color: var(--tint-base);
+  @include btn-glass--base;
+  background-color: var(--tint--base);
 
   &:hover {
-    background-color: var(--tint-xmild);
+    background-color: var(--tint--xmild);
   }
 
   &:active {
-    background-color: var(--tint-bold);
+    background-color: var(--tint--bold);
   }
 }
 
 /* Light → 3D button glass */
 @mixin btn-glass-light {
-  @include btn-glass-base;
-  background-color: var(--tint-xbold);
+  @include btn-glass--base;
+  background-color: var(--tint--xbold);
 
   &:hover {
-    background-color: var(--tint-mild);
+    background-color: var(--tint--mild);
   }
 
   &:active {
-    background-color: var(--tint-2xmild);
+    background-color: var(--tint--2xmild);
   }
 }
 
 /* Dark → 3D button glass */
 @mixin btn-glass-dark {
-  @include btn-glass-base;
-  background-color: var(--tint-base);
+  @include btn-glass--base;
+  background-color: var(--tint--base);
 
   &:hover {
-    background-color: var(--tint-bold);
+    background-color: var(--tint--bold);
   }
 
   &:active {
-    background-color: var(--tint-xbold);
+    background-color: var(--tint--xbold);
   }
 }
 
@@ -299,23 +296,23 @@
 
 /* 2D clear button */
 /* ================================== */
-@mixin btn-2d-base {
+@mixin btn-2d--base {
   background-color: transparent;
-  color: var(--btn-text-rest);
+  color: var(--btn-text--base);
   box-shadow: none;
   @include ui-transitions;
 
   &:hover {
-    background-color: var(--tint-xmild);
+    background-color: var(--tint--xmild);
     box-shadow: var(--sha--xs);
   }
 
   &:active {
-    background-color: var(--tint-xbold);
+    background-color: var(--tint--xbold);
     box-shadow: var(--sha--2xs);
   }
 }
 
 .btn-clear {
-  @include btn-2d-base;
+  @include btn-2d--base;
 }

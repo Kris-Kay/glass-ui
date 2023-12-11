@@ -15,6 +15,12 @@
   border-radius: 0.15rem;
 }
 
+.rect--md {
+  width: min(var(--max-w--md), 100%);
+  border-radius: var(--md);
+  padding: var(--md);
+}
+
 .rect--lg {
   width: min(var(--max-w--lg), 100%);
   border-radius: var(--lg);
@@ -47,6 +53,8 @@
   display: grid;
   place-items: center;
 }
+
+
 
 @mixin box {
   width: 100%;
@@ -214,7 +222,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--tint-xbold);
+    background-color: var(--tint--xbold);
     box-shadow: glass.$flat-inset--md;
   }
 
@@ -316,8 +324,7 @@
   text-align: center;
   @include title-thin;
   font-size: var(--text--2xl);
-  text-shadow: var(--text-sha--md);
-  color: var(--color-text-bold);
+  text-shadow: var(--text-sha--xs);
 }
 
 
@@ -326,7 +333,6 @@
   @include title-thin;
   font-size: var(--text--lg);
   text-shadow: var(--text-sha--md);
-  color: var(--color-text-bold);
 
   @include bp(sm) {
     font-size: var(--text--xl);

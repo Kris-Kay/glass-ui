@@ -2,56 +2,37 @@
 /* Gradient styles */
 /* ================================== */
 
-@mixin light-linear--xlight {
+.gradient--xlight-gray {
   background: linear-gradient(to top left,
-    oklch(75% var(--light-ch) / 0.85) 0%,
-    oklch(95% var(--light-ch) / 0.9) 70%,
-    oklch(98% var(--light-ch) / 0.95) 100%);
+    oklch(80% var(--dark--ch) / 0.95) 0%,
+    oklch(85% var(--dark--ch) / 0.9) 70%,
+    oklch(90% var(--dark--ch) / 0.95) 100%);
 }
 
-.light-linear--xlight {
-  @include light-linear--xlight;
-}
-
-@mixin light-linear-light {
+.gradient--light-gray {
   background: linear-gradient(to top left,
-    oklch(60% var(--light-ch) / 0.85) 0%,
-    oklch(80% var(--light-ch) / 0.9) 70%,
-    oklch(90% var(--light-ch) / 0.95) 100%);
-}
-
-.light-linear-light {
-  @include light-linear-light;
-}
-
-@mixin fill-light-linear {
-  background: linear-gradient(to top left,
-    oklch(30% var(--light-ch) / 0.85) 0%,
-    oklch(50% var(--light-ch) / 0.9) 70%,
-    oklch(70% var(--light-ch) / 0.95) 100%);
-}
-
-.fill-light-linear {
-  @include fill-light-linear;
+    oklch(50% var(--dark--ch) / 0.95) 0%,
+    oklch(60% var(--dark--ch) / 0.9) 70%,
+    oklch(80% var(--dark--ch) / 0.95) 100%);
 }
 
 .gradient--mid-gray {
   background: linear-gradient(to top left,
-  oklch(30% var(--dark-ch) / 0.85) 0%,
-  oklch(50% var(--dark-ch) / 0.9) 70%,
-  oklch(70% var(--dark-ch) / 0.95) 100%);
+    oklch(40% var(--dark--ch) / 0.85) 0%,
+    oklch(50% var(--dark--ch) / 0.9) 70%,
+    oklch(60% var(--dark--ch) / 0.95) 100%);
 }
 
 .gradient--dark-gray {
   background: linear-gradient(to top left,
-  oklch(35% var(--dark-ch) / 0.95) 0%,
-  oklch(40% var(--dark-ch) / 0.9) 70%,
-  oklch(50% var(--dark-ch) / 0.95) 100%);
+    oklch(30% var(--dark--ch) / 0.95) 0%,
+    oklch(40% var(--dark--ch) / 0.9) 70%,
+    oklch(50% var(--dark--ch) / 0.95) 100%);
 }
 
 .gradient--xdark-gray {
   background: linear-gradient(to top left,
-  oklch(15% var(--dark-ch) / 0.95) 0%,
-  oklch(30% var(--dark-ch) / 0.9) 70%,
-  oklch(40% var(--dark-ch) / 0.95) 100%);
+    oklch(20% var(--dark--ch) / 0.95) 0%,
+    oklch(30% var(--dark--ch) / 0.9) 70%,
+    oklch(40% var(--dark--ch) / 0.95) 100%);
 }

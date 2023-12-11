@@ -34,7 +34,7 @@
 .flex-t { align-items: flex-start; }
 .flex-b { align-items: flex-end; }
 .flex-c-y { align-items: center; }
-.flex-base-y { align-items: baseline; }
+.flex--base-y { align-items: baseline; }
 .flex-str-y { align-items: stretch; }
 
 /* align-content: */
@@ -58,7 +58,7 @@
 .flex-i-t { align-self: flex-start; }
 .flex-i-b { align-self: flex-end; }
 .flex-i-c-y { align-self: center; }
-.flex-i-base-y { align-self: baseline; }
+.flex-i--base-y { align-self: baseline; }
 .flex-i-str-y { align-self: stretch; }
 
 

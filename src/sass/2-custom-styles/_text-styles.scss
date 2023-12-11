@@ -24,7 +24,7 @@
   font-weight: var(--font-weight--sm);
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
-  color: var(--text-base);
+  color: var(--color-text--base);
 }
 
 .body-text,
@@ -87,8 +87,8 @@ textarea {
   letter-spacing: $letter-spacing--md;
   line-height: $line-height--sm;
 
-  color: var(--color-text-xmild);
-  text-shadow: var(--text-sha--md);
+  color: var(--color-text--mild);
+  text-shadow: var(--text-sha--xs);
 }
 
 .eyebrow {
@@ -109,7 +109,7 @@ pre code {
   font-family: $font-family-code;
   font-size: var(--text--sm);
   line-height: $line-height--lg;
-  color:  oklch(90% var(--accent-ch) / 1);
+  color:  oklch(90% var(--accent--ch) / 1);
 }
 
 .code {
@@ -117,30 +117,32 @@ pre code {
 }
 
 .c-comment {
-  color: oklch(65% var(--dark-ch) / 1);
+  color: oklch(65% var(--dark--ch) / 1);
 }
 
 .c-class {
-  color:  oklch(100% var(--accent-ch) / 1);
+  color:  oklch(100% var(--accent--ch) / 1);
 }
 
 .c-prop {
-  color: oklch(80% var(--primary-ch) / 1);
+  color: oklch(80% var(--primary--ch) / 1);
 }
 
 .c-value {
-  color: oklch(100% var(--primary-ch) / 1);
+  color: oklch(100% var(--primary--ch) / 1);
 }
 
 .c-num {
-  color: oklch(80% var(--accent-ch) / 1);
+  color: oklch(80% var(--accent--ch) / 1);
 }
 
+// .text--dark {
+//   color: oklch(var(--dark--lch) / 1);
+// }
 
-
-
-
-
+// .text--light {
+//   color: oklch(var(--light--lch) / 1);
+// }
 
 .class-name {
   @include code;
@@ -192,19 +194,4 @@ pre code {
   @include title-thick;
   font-size: var(--text--lg);
   text-shadow: var(--text-sha--sm);
-}
-
-
-.heading--xs{
-  @include eyebrow;
-  color: var(--color-text-xbold);
-  border-bottom: 1px solid var(--tint-xbold);
-}
-
-.heading--lg {
-  @include title-thick;
-  font-size: var(--text--lg);
-  color: var(--color-text-xbold);
-  text-shadow: var(--text-sha--lg);
-  text-align: end;
 }

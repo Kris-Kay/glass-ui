@@ -31,8 +31,9 @@
     margin-right: var(--neg-space);
 
     /* visual */
-    background-color: var(-color-inset-deep);
-    box-shadow: glass.$flat-inset--md;
+    background-color: var(--color-inset--xdeep);
+    box-shadow: glass.$flat-inset--lg;
+    color: var(--tint--3xlight);
   }
 
   >.full-w-img {

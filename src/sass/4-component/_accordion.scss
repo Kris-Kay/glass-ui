@@ -22,8 +22,9 @@
   display: grid;
 
   /* visual */
-  @include glass.glass-base;
-  @include glass.fill(dark);
+  @include glass.glass--base;
+  background-color: var(--color-bg--base);
+
   box-shadow: var(--sha--xl);
   border-radius: var(--space);
   overflow: hidden;
@@ -43,14 +44,14 @@
     padding: var(--space);
 
     /* visual */
-    background-color: var(--color-inset-deep);
+    background-color: var(--color-inset--deep);
     box-shadow: $flat-sha--md;
   }
 }
 
 .see-more-btn, .see-less-btn {
   pointer-events: none;
-  text-shadow: var(--text-sha--sm);
+  color: var(--color-text--mild);
 }
 
 .accordion__toggle {
@@ -67,7 +68,7 @@
   @include btn.ui-transitions;
 
   &:hover {
-    background-color: var(--tint-mild);
+    background-color: var(--tint--mild);
   }
 
   >.see-more-btn {
@@ -125,8 +126,9 @@
   /* visual */
   border-radius: 0 0 var(--space) var(--space);
   box-shadow: var(--sha--xl);
-  @include glass.fill("3xdark");
-
+  @include glass.glass-filter;
+  background-color: var(--tint--3xdark);
+  color: var(--tint--3xlight);
 
   animation: slide-down 300ms;
   animation-timing-function: ease-in;
@@ -141,7 +143,8 @@
 .accordion__title {
   @include title-thick;
   font-size: var(--lg);
-  text-shadow: var(--text-sha--md);
+  text-shadow: var(--text-sha--xs);
+  color: var(--color-text--base);
 }
 
 .accordion__text {

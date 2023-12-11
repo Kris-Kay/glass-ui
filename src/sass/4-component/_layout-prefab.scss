@@ -19,7 +19,6 @@
 
   @include bp(sm) {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--lg);
   }
 
   @include bp(md) {
@@ -28,7 +27,7 @@
 
   @include bp(lg) {
     gap: var(--2xl);
-    padding: var(--xl);
+    // padding: var(--xl);
   }
 }
 
@@ -37,9 +36,18 @@
   flex-direction: column;
   aspect-ratio : 1 / 1;
   border-radius: var(--sm);
+  @include title-thick;
+  font-size: var(--text--xs);
+  text-shadow: var(--text-sha--sm);
 
   @include bp(md) {
+    font-size: var(--text--sm);
     border-radius: var(--md);
+    text-shadow: var(--text-sha--md);
+  }
+
+  & > .text--dark {
+    text-shadow: 0;
   }
 }
 

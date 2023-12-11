@@ -14,7 +14,7 @@
   margin: 0 auto;
   @include flex-c;
   gap: $s1;
-
+  background-color: var(--color-inset--deep);
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
@@ -44,8 +44,10 @@
   font-size: var(--inner-h);
   line-height: var(--inner-h);
   @include btn.btn-text;
-  @include btn.btn-2d-base;;
+  @include btn.btn-2d--base;
   border-radius: var(--tab-br);
+  color: oklch(var(--light--lch));
+  background-color: transparent;
 
   @include bp(xs) {
     padding: 0 0.9rem;
@@ -59,12 +61,15 @@
   @include bp(lg) {
     padding: 0 1.3rem;
   }
+
+  &:hover {
+    background-color: var(--tint--xlight);
+    box-shadow: 0;
+  }
 }
 
 [role="tab"][aria-selected="true"] {
-  -webkit-backdrop-filter: brightness(1.5);
-  backdrop-filter: brightness(1.5);
-  background-color: var(--color-inset-deep);
-  color: var(--color-text-bold);
+  background-color: var(--tint--2xlight);
+  color: var(--tint--xdark);
   box-shadow: var(--sha--2xs);
 }
