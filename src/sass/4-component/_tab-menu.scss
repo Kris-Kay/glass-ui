@@ -14,7 +14,7 @@
   margin: 0 auto;
   @include flex-c;
   gap: $s1;
-  background-color: var(--inset--deep);
+  background-color: var(--bg--l-2);
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);

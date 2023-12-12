@@ -363,7 +363,7 @@ $inset-shadow--sm:
   @include filter.glass-filter;
   @include tex.noise--sm;
   box-shadow: var(--inset--md);
-  background-color: var(--inset--deep);
+  background-color: var(--bg--l-2);
 
   &::after {
     @include pseudo;
@@ -404,7 +404,7 @@ $inset-shadow--sm:
     @include pseudo;
     z-index: -2;
 
-    background-color: var(--inset--base);
+    background-color: var(--bg--l-1);
     // box-shadow: sha.$inset-sha--md;
     filter: brightness(0.1);
   }
@@ -447,7 +447,7 @@ $inset-shadow--sm:
 
     filter: brightness(0.1);
     // box-shadow: $inset-shadow--sm;
-    background-color: var(--inset--deep);
+    background-color: var(--bg--l-2);
   }
 
   &::after {
@@ -481,7 +481,7 @@ $inset-shadow--sm:
 /* ========================================== */
 .inset-glass--md {
   position: relative;
-  background-color: var(--inset--xdeep);
+  background-color: var(--bg--l-3);
   @include filter.glass-filter;
   // @include filter.fill();
   box-shadow: $inset--lg;

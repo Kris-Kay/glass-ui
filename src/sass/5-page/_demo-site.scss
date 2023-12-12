@@ -307,7 +307,7 @@ footer {
 // height: 200px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--inset--base);
+  background-color: var(--bg--l-1);
 }
 
 
@@ -315,7 +315,7 @@ footer {
   width: 100%;
   padding: var(--space-thin);
   border-radius: 0;
-  background-color: var(--inset--deep);
+  background-color: var(--bg--l-2);
   display: grid;
   place-content: center start;
 }

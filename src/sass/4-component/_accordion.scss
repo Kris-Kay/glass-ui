@@ -44,7 +44,7 @@
     padding: var(--space);
 
     /* visual */
-    background-color: var(--inset--deep);
+    background-color: var(--bg--l-2);
     box-shadow: $flat-sha--md;
   }
 }
@@ -52,6 +52,9 @@
 .see-more-btn, .see-less-btn {
   pointer-events: none;
   color: var(--text--mild);
+  @include scrim-base {
+    background-color: var(--scrim--2xdark);
+  }
 }
 
 .accordion__toggle {
