@@ -8,7 +8,7 @@
 @use "texture" as tex;
 /* ========================================== */
 
-/* Base Glass mixin */
+/* Base Glass */
 /* ========================================== */
 @mixin glass--base {
   position: relative;
@@ -32,53 +32,57 @@
   @include glass--base;
 }
 
-/* Generates `.glass-` classes from `$tints` MAP */
+/* Glass classes */
 /* ========================================== */
 .glass {
-  @include tint-modifier('background-color') {
+  @include color-class-mixin($tints, 'background-color'){
     @include glass--base;
   }
 }
 
 .glass-bg {
-  @include bg-color-modifier('background-color') {
+  @include color-class-mixin($bg-colors, 'background-color'){
     @include glass--base;
   }
 }
 
-.full-w-mobile {
 
-}
-
-/* The main glass with the bevel removed when the layout switches to edge-to-edge on mobile */
-/* ========================================== */
-@mixin glass--no-bevel-mobile {
-  @include glass--base {
-    box-shadow: bevel.$flat-bevel--sm;
-
-    @include bp(xs) {
-      box-shadow: bevel.$bevel--lg;
-    }
-  }
-}
-
-.glass--no-bevel-mobile {
-  @include glass--no-bevel-mobile;
-}
-
-/* The main glass but without a bevel */
+/* Glass with no bevel */
 /* ========================================== */
 @mixin glass--no-bevel {
   position: relative;
   @include filter.glass-filter;
+  @content;
 
-  &::before {
+  &::after {
     @include pseudo;
-    z-index: -2;
+    z-index: -1;
     @include tex.noise--md;
   }
 }
 
 .glass--no-bevel {
   @include glass--no-bevel;
+}
+
+/* Flat bevel on mobile */
+/* ========================================== */
+/* For components that switch to edge-to-edge on mobile */
+@mixin glass--flat-bevel-xs {
+  @include glass--base {
+    &::after {
+      @include pseudo;
+      z-index: -1;
+      box-shadow: bevel.$flat-bevel--sm;
+      @include tex.noise--md;
+
+      @include bp(xs) {
+        box-shadow: bevel.$bevel--lg;
+      }
+    }
+  }
+}
+
+.glass--flat-bevel-xs {
+  @include glass--flat-bevel-xs;
 }
