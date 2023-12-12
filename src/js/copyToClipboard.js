@@ -1,14 +1,13 @@
 /* ================================== */
 /* Copy to clipboard */
 /* ================================== */
-function findCopyBtns()
-{
+function findCopyBtns() {
   let $copyBtns = document.querySelectorAll(".js-copyBtn");
   let $copyBtnsArray = Array.from($copyBtns);
   // console.log($copyBtnsArray);
 
-  copyToClipboard = (event) => {
-    let $thisBtn = event.target;
+  copyToClipboard = (e) => {
+    let $thisBtn = e.target;
     let $thisText = $thisBtn.parentNode.parentNode.querySelector(".js-textToCopy");
 
     // console.log($thisText);
@@ -25,7 +24,6 @@ function findCopyBtns()
   });
 };
 
-document.addEventListener("DOMContentLoaded", () =>
-{
+document.addEventListener("DOMContentLoaded", () => {
   findCopyBtns();
 });

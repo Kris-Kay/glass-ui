@@ -1,11 +1,11 @@
-/* ================================== */
+/* ========================================== */
 /* Sections */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ================================== */
+/* ========================================== */
 
 .section__wrap {
 /* layout */
@@ -36,7 +36,7 @@
   /* visual */
   border-radius: 0;
   @include glass.glass--no-bevel-mobile;
-  background-color: var(--color-bg--base);
+  background-color: var(--bg--base);
 
   @include bp(sm) {
     overflow: hidden;
@@ -50,7 +50,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--color-inset--deep);
+    background-color: var(--inset--deep);
     box-shadow: glass.$flat-inset--md;
   }
 }

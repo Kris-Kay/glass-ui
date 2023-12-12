@@ -1,11 +1,11 @@
-/* ================================== */
+/* ========================================== */
 /* Cards */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ================================== */
+/* ========================================== */
 
 .card {
   --space: var(--lg); // < control padding from here
@@ -31,7 +31,7 @@
     margin-right: var(--neg-space);
 
     /* visual */
-    background-color: var(--color-inset--xdeep);
+    background-color: var(--inset--xdeep);
     box-shadow: glass.$flat-inset--lg;
     color: var(--tint--3xlight);
   }

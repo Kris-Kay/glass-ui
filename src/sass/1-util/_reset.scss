@@ -1,6 +1,6 @@
-/* ================================== */
+/* ========================================== */
 /* Reset */
-/* ================================== */
+/* ========================================== */
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
@@ -108,7 +108,7 @@ button:disabled {
 }
 
 :focus {
-  outline: 1px solid var(--color-focus);
+  outline: 1px solid var(--focus);
   outline-offset: 1px;
 }
 

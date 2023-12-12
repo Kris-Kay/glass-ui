@@ -1,11 +1,11 @@
-/* ================================== */
+/* ========================================== */
 /* Tab menu */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ================================== */
+/* ========================================== */
 
 .tab-menu {
   width: fit-content;
@@ -14,7 +14,7 @@
   margin: 0 auto;
   @include flex-c;
   gap: $s1;
-  background-color: var(--color-inset--deep);
+  background-color: var(--inset--deep);
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);

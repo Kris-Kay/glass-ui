@@ -1,11 +1,11 @@
-/* ================================== */
+/* ========================================== */
 /* Accordion */
 @use "../config" as *;
 @use "../util" as *;
 @use "../custom" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ================================== */
+/* ========================================== */
 
 .accordion__warp {
   --space: var(--md);
@@ -23,7 +23,7 @@
 
   /* visual */
   @include glass.glass--base;
-  background-color: var(--color-bg--base);
+  background-color: var(--bg--base);
 
   box-shadow: var(--sha--xl);
   border-radius: var(--space);
@@ -44,14 +44,14 @@
     padding: var(--space);
 
     /* visual */
-    background-color: var(--color-inset--deep);
+    background-color: var(--inset--deep);
     box-shadow: $flat-sha--md;
   }
 }
 
 .see-more-btn, .see-less-btn {
   pointer-events: none;
-  color: var(--color-text--mild);
+  color: var(--text--mild);
 }
 
 .accordion__toggle {
@@ -144,7 +144,7 @@
   @include title-thick;
   font-size: var(--lg);
   text-shadow: var(--text-sha--xs);
-  color: var(--color-text--base);
+  color: var(--text--base);
 }
 
 .accordion__text {

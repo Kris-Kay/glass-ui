@@ -1,10 +1,10 @@
-/* ==================================================================== */
+/* ========================================== */
 /* Oklch Colors */
 @use "sass:map";
-/* ==================================================================== */
+/* ========================================== */
 
 /* Color tokens */
-/* ==================================================================== */
+/* ====================================================================== */
 /* #Config these values */
 /* l = lightness 0%   to 100% */
 /* c = chroma    0    to 0.37 */
@@ -69,67 +69,89 @@
   --dark--lch: var(--dark-l) var(--dark-c) var(--dark-h);
 
   /* Translucent tints that do not change with theme */
-  --tint--3xlight: oklch(var(--light--lch) / 0.8);
+  --tint--3xlight: oklch(var(--light--lch) / 0.75);
   --tint--2xlight: oklch(var(--light--lch) / 0.5);
-  --tint--xlight:  oklch(var(--light--lch) / 0.25);
-  --tint--light:   oklch(var(--light--lch) / 0.05);
+  --tint--xlight:  oklch(var(--light--lch) / 0.2);
+  --tint--light:   oklch(var(--light--lch) / 0.1);
   --tint--clear:   oklch(var(--light--lch) / 0.01);
-  --tint--dark:    oklch(var(--dark--lch) / 0.05);
-  --tint--xdark:   oklch(var(--dark--lch) / 0.25);
+  --tint--dark:    oklch(var(--dark--lch) / 0.1);
+  --tint--xdark:   oklch(var(--dark--lch) / 0.2);
   --tint--2xdark:  oklch(var(--dark--lch) / 0.5);
-  --tint--3xdark:  oklch(var(--dark--lch) / 0.8);
+  --tint--3xdark:  oklch(var(--dark--lch) / 0.75);
 }
 
-/* Dark Mode Theme */
-/* ==================================================================== */
+
+/* DefaultTheme */
+/* ====================================================================== */
 /* #Config these values */
 :root, [data-theme=default] {
-  /* Text | Title | Label */
-  --color-text--xbold: oklch(95% var(--light--ch) / 1);
-  --color-text--bold:  oklch(90% var(--light--ch) / 1);
-  --color-text--base:  oklch(85% var(--light--ch) / 1);
-  --color-text--mild:  oklch(80% var(--light--ch) / 1);
-  --color-text--xmild: oklch(75% var(--light--ch) / 1);
-
-  --color-text-contrast--bold: oklch(90% var(--primary--ch) / 1);
-  --color-text-contrast--base: oklch(80% var(--primary--ch) / 1);
-  --color-text-contrast--mild: oklch(75% var(--primary--ch) / 1);
-
-  --color-text-flip--xbold: oklch(10% var(--dark--ch) / 1);
-  --color-text-flip--bold: oklch(20% var(--dark--ch) / 1);
-  --color-text-flip--base: oklch(35% var(--dark--ch) / 1);
-  --color-text-flip--mild: oklch(40% var(--dark--ch) / 1);
-  --color-text-flip--xmild: oklch(45% var(--dark--ch) / 1);
-
-/* Link */
-  --color-link--base: oklch(70% var(--primary--ch) / 1);
-  --color-link--hover: oklch(50% var(--primary--ch) / 1);
-  --color-link--visit: oklch(30% var(--primary--ch) / 1);
-
 /* Background colors */
-/* ==================================================================== */
+/* ====================================================================== */
 /* bold = lighter e.g. whiter in light mode and lighter dark-gray in dark mode */
 /* mild = darker e.g. darker light-gray in light mode and darker dark-gray in dark mode */
 /* flip--bold = more contrast against theme background e.g. lighter in dark mode */
 /* flip--mild = less contrast against theme background e.g. darker in dark mode */
-  --color-page-bg: black;
-  // --color-page-bg: oklch(5% var(--dark--ch) / 0.99);
+  --page-bg: black;
+  // --page-bg: oklch(5% var(--dark--ch) / 0.99);
 
-  --color-bg--xbold: oklch(30% var(--dark--ch) / 0.5);
-  --color-bg--bold: oklch(25% var(--dark--ch) / 0.5);
-  --color-bg--base: oklch(20% var(--dark--ch) / 0.5);
-  --color-bg--mild: oklch(15% var(--dark--ch) / 0.5);
-  --color-bg--xmild: oklch(10% var(--dark--ch) / 0.5);
+  // --bg--xbold: oklch(30% var(--dark--ch) / 0.5);
+  // --bg--bold: oklch(25% var(--dark--ch) / 0.5);
+  // --bg--base: oklch(20% var(--dark--ch) / 0.5);
+  // --bg--mild: oklch(15% var(--dark--ch) / 0.5);
+  // --bg--xmild: oklch(10% var(--dark--ch) / 0.5);
 
-  --color-bg-contrast--xbold: oklch(40% var(--primary--ch) / 0.5);
-  --color-bg-contrast--bold: oklch(35% var(--primary--ch) / 0.5);
-  --color-bg-contrast--base: oklch(30% var(--primary--ch) / 0.5);
-  --color-bg-contrast--mild: oklch(25% var(--primary--ch) / 0.5);
-  --color-bg-contrast--xmild: oklch(20% var(--primary--ch) / 0.5);
+  --bg--xbold: oklch(50% var(--dark--ch) / 0.4);
+  --bg--bold: oklch(45% var(--dark--ch) / 0.35);
+  --bg--base: oklch(40% var(--dark--ch) / 0.3);
+  --bg--mild: oklch(35% var(--dark--ch) / 0.25);
+  --bg--xmild: oklch(30% var(--dark--ch) / 0.2);
+
+  --scrim--dark: oklch(var(--dark--lch) / 0.3);
+  --scrim--xdark: oklch(var(--dark--lch) / 0.4);
+  --scrim--2xdark: oklch(var(--dark--lch) / 0.5);
+
+  // --bg--xbold: var(--tint--light);
+  // --bg--bold: var(--tint--dark);
+  // --bg--base: var(--tint--xdark);
+  // --bg--mild: var(--tint--2xdark);
+  // --bg--xmild: var(--tint--3xdark);
+
+  --bg-contrast--xbold: oklch(40% var(--primary--ch) / 0.5);
+  --bg-contrast--bold: oklch(35% var(--primary--ch) / 0.5);
+  --bg-contrast--base: oklch(30% var(--primary--ch) / 0.5);
+  --bg-contrast--mild: oklch(25% var(--primary--ch) / 0.5);
+  --bg-contrast--xmild: oklch(20% var(--primary--ch) / 0.5);
+
+/* Text colors */
+/* ========================================== */
+/* bold = more contrast against theme background
+/* mild = less contrast against theme background
+  /* Text | Title | Label */
+  --text--xbold: oklch(95% var(--light--ch) / 1);
+  --text--bold:  oklch(90% var(--light--ch) / 1);
+  --text--base:  oklch(85% var(--light--ch) / 1);
+  --text--mild:  oklch(80% var(--light--ch) / 1);
+  --text--xmild: oklch(75% var(--light--ch) / 1);
+
+  --text-contrast--bold: oklch(90% var(--primary--ch) / 1);
+  --text-contrast--base: oklch(80% var(--primary--ch) / 1);
+  --text-contrast--mild: oklch(75% var(--primary--ch) / 1);
+
+  --text-flip--xbold: oklch(10% var(--dark--ch) / 1);
+  --text-flip--bold: oklch(20% var(--dark--ch) / 1);
+  --text-flip--base: oklch(35% var(--dark--ch) / 1);
+  --text-flip--mild: oklch(40% var(--dark--ch) / 1);
+  --text-flip--xmild: oklch(45% var(--dark--ch) / 1);
+
+/* Link */
+  --link--base: oklch(70% var(--primary--ch) / 1);
+  --link--hover: oklch(50% var(--primary--ch) / 1);
+  --link--visit: oklch(30% var(--primary--ch) / 1);
+
 
   /* Used in box-shadows, text-shadows, bevels, etc. */
-  --color-shadow: var(--dark--lch);
-  --color-highlight: var(--light--lch);
+  --shadow: var(--dark--lch);
+  --highlight: var(--light--lch);
 
 
   // * UI * //
@@ -142,14 +164,14 @@
   // --btn-bg--base: var(--tint--base);
   // --btn-bg--hover: var(--tint--bold);
   // --btn-bg--active: var(--tint--2xbold);
-  --btn-text--base: var(--color-text-base);
-  --btn-text--hover: var(--color-text--bold);
-  --btn-text--active: var(--color-text--xbold);
+  --btn-text--base: var(--text-base);
+  --btn-text--hover: var(--text--bold);
+  --btn-text--active: var(--text--xbold);
 
 
-  --color-inset--base: oklch(var(--dark--lch) / 0.1);
-  --color-inset--deep: oklch(var(--dark--lch) / 0.2);
-  --color-inset--xdeep: oklch(var(--dark--lch) / 0.3);
+  --inset--base: oklch(var(--dark--lch) / 0.1);
+  --inset--deep: oklch(var(--dark--lch) / 0.2);
+  --inset--xdeep: oklch(var(--dark--lch) / 0.3);
 
   --ui-focus: oklch(var(--primary--lch) / 0.4);
   --ui-rest-bg: oklch(45% var(--dark--ch) / 1);
@@ -164,64 +186,69 @@
   --ui-disabled-text: oklch(65% var(--light--ch) / 1);
 }
 
-/* Light Mode */
+/* High-contrast Theme */
 /* ====================================================================== */
 /* #Config these values */
-[data-theme="light"] {
+[data-theme="high-contrast"] {
+
+/* Background colors */
+/* ========================================== */
+  --page-bg: white;
+  // --page-bg: oklch(90% var(--light--ch) / 0.99);
+
+  // --bg--xbold: oklch(100% var(--light--ch) / 0.6);
+  // --bg--bold: oklch(95% var(--light--ch) / 0.6);
+  // --bg--base: oklch(90% var(--light--ch) / 0.5);
+  // --bg--mild: oklch(85% var(--light--ch) / 0.6);
+  // --bg--xmild: oklch(80% var(--light--ch) / 0.6);
+
+  --bg--xbold: var(--tint--light);
+  --bg--bold: var(--tint--dark);
+  --bg--base: var(--tint--xdark);
+  --bg--mild: var(--tint--2xdark);
+  --bg--xmild: var(--tint--3xdark);
+
+  --bg-contrast--xbold: oklch(90% var(--primary--ch) / 0.5);
+  --bg-contrast--bold: oklch(85% var(--primary--ch) / 0.5);
+  --bg-contrast--base: oklch(80% var(--primary--ch) / 0.5);
+  --bg-contrast--mild: oklch(75% var(--primary--ch) / 0.5);
+  --bg-contrast--xmild: oklch(70% var(--primary--ch) / 0.5);
+
 /* Text colors */
 /* ========================================== */
 /* bold = more contrast against theme background
 /* mild = less contrast against theme background
-
   /* body text | headings | labels */
-  --color-text--xbold: oklch(20% var(--dark--ch) / 1);
-  --color-text--bold: oklch(25% var(--dark--ch) / 1);
-  --color-text--base: oklch(30% var(--dark--ch) / 1);
-  --color-text--mild: oklch(40% var(--dark--ch) / 1);
-  --color-text--xmild: oklch(50% var(--dark--ch) / 1);
+  // --text--xbold: oklch(20% var(--dark--ch) / 1);
+  // --text--bold: oklch(25% var(--dark--ch) / 1);
+  // --text--base: oklch(30% var(--dark--ch) / 1);
+  // --text--mild: oklch(40% var(--dark--ch) / 1);
+  // --text--xmild: oklch(50% var(--dark--ch) / 1);
 
-  --color-text-contrast--bold: oklch(50% var(--primary--ch) / 1);
-  --color-text-contrast--base: oklch(40% var(--primary--ch) / 1);
-  --color-text-contrast--mild: oklch(30% var(--primary--ch) / 1);
+  --text-contrast--bold: oklch(50% var(--primary--ch) / 1);
+  --text-contrast--base: oklch(40% var(--primary--ch) / 1);
+  --text-contrast--mild: oklch(30% var(--primary--ch) / 1);
 
- /* light text for light mode + --color-bg-contrast */
-  --color-text-flip--xbold: oklch(95% var(--light--ch) / 1);
-  --color-text-flip--bold: oklch(90% var(--light--ch) / 1);
-  --color-text-flip--base: oklch(85% var(--light--ch) / 1);
-  --color-text-flip--mild: oklch(75% var(--light--ch) / 1);
-  --color-text-flip--xmild: oklch(65% var(--light--ch) / 1);
+ /* light text for light mode + --bg-contrast */
+  --text-flip--xbold: oklch(95% var(--light--ch) / 1);
+  --text-flip--bold: oklch(90% var(--light--ch) / 1);
+  --text-flip--base: oklch(85% var(--light--ch) / 1);
+  --text-flip--mild: oklch(75% var(--light--ch) / 1);
+  --text-flip--xmild: oklch(65% var(--light--ch) / 1);
 
   /* text links */
-  --color-link--base: oklch(70% var(--primary--ch) / 1);
-  --color-link--hover: oklch(50% var(--primary--ch) / 1);
-  --color-link--visit: oklch(30% var(--primary--ch) / 1);
-
-
-/* Background colors */
-/* ================================================ */
-  --color-page-bg: white;
-  // --color-page-bg: oklch(90% var(--light--ch) / 0.99);
-
-  --color-bg--xbold: oklch(100% var(--light--ch) / 0.6);
-  --color-bg--bold: oklch(95% var(--light--ch) / 0.6);
-  --color-bg--base: oklch(90% var(--light--ch) / 0.5);
-  --color-bg--mild: oklch(85% var(--light--ch) / 0.6);
-  --color-bg--xmild: oklch(80% var(--light--ch) / 0.6);
-
-  --color-bg-contrast--xbold: oklch(90% var(--primary--ch) / 0.5);
-  --color-bg-contrast--bold: oklch(85% var(--primary--ch) / 0.5);
-  --color-bg-contrast--base: oklch(80% var(--primary--ch) / 0.5);
-  --color-bg-contrast--mild: oklch(75% var(--primary--ch) / 0.5);
-  --color-bg-contrast--xmild: oklch(70% var(--primary--ch) / 0.5);
+  --link--base: oklch(70% var(--primary--ch) / 1);
+  --link--hover: oklch(50% var(--primary--ch) / 1);
+  --link--visit: oklch(30% var(--primary--ch) / 1);
 
   /* box-shadow | text-shadow | drop-shadow */
-  --color-shadow: var(--dark--lch);
-  --color-highlight: var(--light--lch);
+  --shadow: var(--dark--lch);
+  --highlight: var(--light--lch);
 
   /* Insets */
-  --color-inset--base: oklch(var(--dark--lch) / 0.1);
-  --color-inset--deep: oklch(var(--dark--lch) / 0.2);
-  --color-inset--xdeep: oklch(var(--dark--lch) / 0.35);
+  --inset--base: oklch(var(--dark--lch) / 0.1);
+  --inset--deep: oklch(var(--dark--lch) / 0.2);
+  --inset--xdeep: oklch(var(--dark--lch) / 0.35);
 
   // * Button colors * //
   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
@@ -231,11 +258,9 @@
   // --btn-bg--base: var(--tint--base);
   // --btn-bg--hover: var(--tint--bold);
   // --btn-bg--active: var(--tint--2xbold);
-  --btn-text--base: var(--color-text-base);
-  --btn-text--hover: var(--color-text--bold);
-  --btn-text--active: var(--color-text--xbold);
-
-
+  --btn-text--base: var(--text-base);
+  --btn-text--hover: var(--text--bold);
+  --btn-text--active: var(--text--xbold);
 
   --ui-focus: oklch(var(--primary--lch) / 0.4);
   --ui-rest-bg: oklch(45% var(--dark--ch) / 1);
@@ -252,23 +277,23 @@
 
 
 /* Background color MAP */
-/* ================================================ */
+/* ========================================== */
 $bg-colors: (
-  "-xbold":  var(--color-bg--xbold),
-  "-bold":  var(--color-bg--bold),
-  "-base":  var(--color-bg--base),
-  "-mild":  var(--color-bg--mild),
-  "-xmild":  var(--color-bg--xmild),
+  "-xbold":  var(--bg--xbold),
+  "-bold":  var(--bg--bold),
+  "-base":  var(--bg--base),
+  "-mild":  var(--bg--mild),
+  "-xmild":  var(--bg--xmild),
 
-  "contrast--xbold":  var(--color-bg-contrast--xbold),
-  "contrast--bold":  var(--color-bg-contrast--bold),
-  "contrast--base":  var(--color-bg-contrast--base),
-  "contrast--mild":  var(--color-bg-contrast--mild),
-  "contrast--xmild":  var(--color-bg-contrast--xmild),
+  "contrast--xbold":  var(--bg-contrast--xbold),
+  "contrast--bold":  var(--bg-contrast--bold),
+  "contrast--base":  var(--bg-contrast--base),
+  "contrast--mild":  var(--bg-contrast--mild),
+  "contrast--xmild":  var(--bg-contrast--xmild),
 );
 
 /* Background color modifier mixin */
-/* ================================================ */
+/* ========================================== */
 /* Generates classes using `$bg-colors` MAP */
 @mixin bg-color-modifier($property: background-color) {
   @each $key, $value in $bg-colors {
@@ -280,7 +305,7 @@ $bg-colors: (
 }
 
 /* Background color classes */
-/* ================================================ */
+/* ========================================== */
 /* Generates a class for every color in `$bg-colors` MAP */
 .bg {
   @include bg-color-modifier('background-color');
@@ -288,23 +313,23 @@ $bg-colors: (
 
 
 /* Text color MAP */
-/* ================================================ */
+/* ========================================== */
 $text-colors: (
-  "-xbold":  var(--color-text--xbold),
-  "-bold":  var(--color-text--bold),
-  "-base":  var(--color-text--base),
-  "-mild":  var(--color-text--mild),
-  "-xmild":  var(--color-text--xmild),
+  "-xbold":  var(--text--xbold),
+  "-bold":  var(--text--bold),
+  "-base":  var(--text--base),
+  "-mild":  var(--text--mild),
+  "-xmild":  var(--text--xmild),
 
-  "contrast--bold":  var(--color-text-contrast--bold),
-  "contrast--base":  var(--color-text-contrast--base),
-  "contrast--mild":  var(--color-text-contrast--mild),
+  "contrast--bold":  var(--text-contrast--bold),
+  "contrast--base":  var(--text-contrast--base),
+  "contrast--mild":  var(--text-contrast--mild),
 
-  "flip--xbold":  var(--color-text-flip--xbold),
-  "flip--bold":  var(--color-text-flip--bold),
-  "flip--base":  var(--color-text-flip--base),
-  "flip--mild":  var(--color-text-flip--mild),
-  "flip--xmild":  var(--color-text-flip--xmild),
+  "flip--xbold":  var(--text-flip--xbold),
+  "flip--bold":  var(--text-flip--bold),
+  "flip--base":  var(--text-flip--base),
+  "flip--mild":  var(--text-flip--mild),
+  "flip--xmild":  var(--text-flip--xmild),
 
   "-xlight": oklch(90% var(--light--ch) / 1),
   "-light": oklch(70% var(--light--ch) / 1),
@@ -313,7 +338,7 @@ $text-colors: (
 );
 
 /* Text color modifier mixin */
-/* ================================================ */
+/* ========================================== */
 /* Generates classes using `$text-colors` MAP */
 @mixin text-color-modifier {
   @each $key, $value in $text-colors {
@@ -324,14 +349,14 @@ $text-colors: (
 }
 
 /* Text color classes */
-/* ================================================ */
+/* ========================================== */
 /* Generates a class for every color in `$text-colors` MAP */
 .text {
   @include text-color-modifier;
 }
 
 /* Tint color MAP */
-/* ==================================================================== */
+/* ====================================================================== */
 $tints: (
   "3xlight": var(--tint--3xlight),
   "2xlight": var(--tint--2xlight),
@@ -346,7 +371,7 @@ $tints: (
 
 
 /* Tint modifier mixin */
-/* ==================================================================== */
+/* ====================================================================== */
 /* Generates classes using `$tints` MAP */
 @mixin tint-modifier($property: background-color) {
   @each $key, $value in $tints {
@@ -358,7 +383,7 @@ $tints: (
 }
 
 /* Tint classes */
-/* ==================================================================== */
+/* ====================================================================== */
 /* Generates a class for every tint in `$tints` MAP */
 .tint {
   @include tint-modifier('background-color');

@@ -26,8 +26,8 @@ $ddArray.forEach((item) => {
 });
 
 // onClick outside the menu -> close dropdown
-document.addEventListener('click', (event) => {
-  if (!$ddBG.contains(event.target) && !$btn.contains(event.target)) {
+document.addEventListener('click', (e) => {
+  if (!$ddBG.contains(e.target) && !$btn.contains(e.target)) {
     $ham.classList.remove("hidden");
     $x.classList.add("hidden");
     $ddBG.classList.add("hidden");

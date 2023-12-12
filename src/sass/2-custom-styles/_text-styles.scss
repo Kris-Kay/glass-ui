@@ -1,42 +1,31 @@
-/* ================================== */
+/* ========================================== */
 /* Text styles used in project */
 @use "../config" as *;
 @use "../util" as *;
 @use "../2-custom-styles/border-styles" as border;
-/* ================================== */
-
-
-/* titles */
-/* ================================== */
-
-
-
-
-
-
-
+/* ========================================== */
 
 
 /* Body text */
-/* ================================== */
+/* ========================================== */
 @mixin body-text {
   font-family: $font-family-body;
   font-weight: var(--font-weight--sm);
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
-  color: var(--color-text--base);
+  color: var(--text--base);
 }
 
-.body-text,
 body,
+p,
 input,
 textarea {
   @include body-text;
 }
 
 
-/* Bold titles */
-/* ================================== */
+/* Thick titles */
+/* ========================================== */
 @mixin title-thick {
   font-family: $font-family-title;
   font-weight: var(--font-weight--md);
@@ -50,10 +39,10 @@ textarea {
 
 
 /* Thin titles */
-/* ================================== */
+/* ========================================== */
 @mixin title-thin {
   font-family: $font-family-title;
-  font-weight: var(--font-weight--xs);
+  font-weight: var(--font-weight--sm);
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
 }
@@ -63,22 +52,22 @@ textarea {
 }
 
 /* Text links */
-/* ================================== */
+/* ========================================== */
 .link {
-  color: var(--color-link-rest);
+  color: var(--link-rest);
 
   :hover {
-    color: var(--color-link-hover);
+    color: var(--link-hover);
   }
 
   :visited {
-    color: var(--color-link-visited);
+    color: var(--link-visited);
   }
 }
 
 
 /* Eyebrow text */
-/* ================================== */
+/* ========================================== */
 @mixin eyebrow {
   text-transform: uppercase;
   font-size: var(--text--xs);
@@ -87,7 +76,7 @@ textarea {
   letter-spacing: $letter-spacing--md;
   line-height: $line-height--sm;
 
-  color: var(--color-text--mild);
+  color: var(--text--mild);
   text-shadow: var(--text-sha--xs);
 }
 
@@ -98,7 +87,7 @@ textarea {
 
 
 /* Code */
-/* ================================== */
+/* ========================================== */
 pre code {
   display: block;
   white-space: pre;
@@ -153,11 +142,11 @@ pre code {
 
 
 /* Demo website text styles */
-/* ================================================ */
+/* ========================================== */
 
 
 /* Labels */
-/* ================================== */
+/* ========================================== */
 @mixin label-text {
   font-family: $font-family-title;
   font-weight: var(--font-weight--md);

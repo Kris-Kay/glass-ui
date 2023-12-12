@@ -1,10 +1,10 @@
-/* ================================== */
+/* ========================================== */
 /* Inputs */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-/* ================================== */
+/* ========================================== */
 
 .input__fieldset {
   display: grid;
@@ -15,7 +15,7 @@
   font-weight: var(--font-weight--md);
   font-size: var(--sm);
   padding-bottom: var(--2xs);
-  color: var(--color-text-contrast--base);
+  color: var(--text-contrast--base);
 }
 
 .input__wrap {
@@ -26,12 +26,12 @@
 
 .input__label--sm {
   width: fit-content;
-  color: var(--color-text--base);
+  color: var(--text--base);
 }
 
 .input__label--md {
   width: fit-content;
-  color: var(--color-text--base);
+  color: var(--text--base);
 }
 
 @mixin input--base {
@@ -85,7 +85,7 @@
     opacity: var(--disabled-opacity);
 
     & + label {
-      color: var(--color-text--xmild);
+      color: var(--text--xmild);
     }
   }
 

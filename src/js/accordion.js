@@ -2,8 +2,7 @@
 /* Accordion JS */
 /* ================================== */
 
-function findAccordions()
-{
+function findAccordions() {
   let $accordionToggles = document.querySelectorAll(".js-accordionToggle");
   let $toggleArray = Array.from($accordionToggles);
   // console.log($toggleArray);
@@ -12,14 +11,12 @@ function findAccordions()
     e.preventDefault();
 
     let $thisToggle = e.target;
-
     let $thisAccordion = e.target.parentNode;
-
     let $thisContent = $thisAccordion.nextElementSibling;
 
-    console.log($thisToggle);
-    console.log($thisAccordion);
-    console.log($thisContent);
+    // console.log($thisToggle);
+    // console.log($thisAccordion);
+    // console.log($thisContent);
 
     $thisToggle.classList.toggle("is-closed");
     $thisAccordion.classList.toggle("is-closed");;
@@ -31,7 +28,6 @@ function findAccordions()
   });
 };
 
-document.addEventListener("DOMContentLoaded", () =>
-{
+document.addEventListener("DOMContentLoaded", () => {
   findAccordions();
 });

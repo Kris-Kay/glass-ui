@@ -1,15 +1,14 @@
-/* ================================== */
+/* ========================================== */
 /* Home */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "../component" as *;
-/* ================================== */
-
+/* ========================================== */
 
 // .color-page-bg {
-//   background-color: var(--color-page-bg);
+//   background-color: var(--page-bg);
 // }
 
 
@@ -31,7 +30,7 @@
     font-family: $font-family-title;
     font-size: var(--xs);
     // padding: var(--md);
-    color: var(--color-text--base);
+    color: var(--text--base);
 
     @include bp(sm) {
       font-size: var(--sm);
@@ -73,7 +72,7 @@ body {
   left: 0;
   right: 0;
 
-  z-index: -1;
+  z-index: -10;
   width: 100%;
   max-width: 100vw;
   height: 100vh;
@@ -210,7 +209,7 @@ footer {
 
 
 /* Switch demo */
-/* ================================== */
+/* ========================================== */
 .switch-demo__layout {
   // display: flex;
   // align-items: center;
@@ -245,7 +244,7 @@ footer {
 
 
 /* Sizing demo */
-/* ================================== */
+/* ========================================== */
 .size-demo__rect {
   background-color: var(--tint--2xlight);
   border-radius: 0.1rem;
@@ -263,7 +262,7 @@ footer {
 }
 
 /* Tint & fill demo */
-/* ================================== */
+/* ========================================== */
 .tint-demo__rect {
   width: 100%;
   height: fit-content;
@@ -302,13 +301,13 @@ footer {
 
 
 /*  Insets demo */
-/* ================================== */
+/* ========================================== */
 .inset-rect {
   width: 100%;
 // height: 200px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--color-inset--base);
+  background-color: var(--inset--base);
 }
 
 
@@ -316,7 +315,7 @@ footer {
   width: 100%;
   padding: var(--space-thin);
   border-radius: 0;
-  background-color: var(--color-inset--deep);
+  background-color: var(--inset--deep);
   display: grid;
   place-content: center start;
 }
@@ -422,7 +421,7 @@ footer {
 .heading--md {
   @include title-thin;
   font-size: var(--text--lg);
-  color: var(--color-text--bold);
+  color: var(--text--bold);
   text-shadow: var(--text-sha--md);
   text-align: end;
 }
@@ -431,7 +430,7 @@ footer {
   width: 100%;
   @include glass.glass-filter;
   @include flex-c;
-  background-color: var(--color-bg--bold);
+  background-color: var(--bg--bold);
   padding: var(--lg) 0;
 }
 
@@ -447,6 +446,6 @@ footer {
   width: 100%;
   @include glass.glass--no-bevel;
   @include flex-c;
-  background-color: var(--color-bg--base);
+  background-color: var(--bg--base);
   padding: var(--xl) 0;
 }
