@@ -4,8 +4,7 @@
 @use "../custom" as *;
 @use "../util" as *;
 @use "filter";
-@use "glass-styles" as glass;
-@use "glass-colors" as color;
+@use "glass-material" as glass;
 @use "texture" as tex;
 /* ========================================== */
 /* Insets → for replaced elements such as: <button> <input> <textarea> etc. */

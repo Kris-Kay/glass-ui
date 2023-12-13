@@ -10,27 +10,6 @@
 
 /* Bento grid */
 /* ========================================== */
-.bento__wrap {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-content: center;
-  gap: var(--md);
-
-  @include bp(sm) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @include bp(md) {
-    gap: var(--xl);
-  }
-
-  @include bp(lg) {
-    gap: var(--2xl);
-    // padding: var(--xl);
-  }
-}
-
 .bento__rect {
   @include flex-c;
   flex-direction: column;
@@ -51,6 +30,51 @@
   }
 }
 
+.bento__wrap--2to3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--xl);
+  }
+
+  @include bp(lg) {
+    gap: var(--2xl);
+  }
+}
+
+.bento__wrap--1to5 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--lg);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include bp(lg) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
 
 /* Column flex */
 /* ========================================== */
@@ -60,10 +84,11 @@
 .column-flex {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
 
- width: 100%;
+//  width: fit-content;
+//  width: 100%;
 
   > .column {
   width: 100%;

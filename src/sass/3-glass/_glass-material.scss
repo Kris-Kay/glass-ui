@@ -22,7 +22,7 @@
     box-shadow: bevel.$bevel--md;
     @include tex.noise--md;
 
-    @include bp(xs) {
+    @include bp(sm) {
       box-shadow: bevel.$bevel--lg;
     }
   }
@@ -68,7 +68,7 @@
 /* Flat bevel on mobile */
 /* ========================================== */
 /* For components that switch to edge-to-edge on mobile */
-@mixin glass--flat-bevel-xs {
+@mixin glass--flat-bevel-mobile {
   @include glass--base {
     &::after {
       @include pseudo;
@@ -76,13 +76,13 @@
       box-shadow: bevel.$flat-bevel--sm;
       @include tex.noise--md;
 
-      @include bp(xs) {
+      @include bp(sm) {
         box-shadow: bevel.$bevel--lg;
       }
     }
   }
 }
 
-.glass--flat-bevel-xs {
-  @include glass--flat-bevel-xs;
+.glass--flat-bevel-mobile {
+  @include glass--flat-bevel-mobile;
 }

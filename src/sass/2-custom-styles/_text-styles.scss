@@ -133,12 +133,7 @@ pre code {
 //   color: oklch(var(--light--lch) / 1);
 // }
 
-.class-name {
-  @include code;
-  font-size: var(--text--sm);
-  text-shadow: var(--text-sha--xs);
-  line-height: 1;
-}
+
 
 
 /* Demo website text styles */
@@ -183,4 +178,23 @@ pre code {
   @include title-thick;
   font-size: var(--text--lg);
   text-shadow: var(--text-sha--sm);
+}
+
+
+.class-name--sm {
+  font-weight: var(--font-weight--md);
+  font-family: $font-family-title;
+  font-size: var(--xs);
+  letter-spacing: $letter-spacing--lg;
+  color: var(--text--bold);
+  padding: var(--xs);
+  text-shadow: var(--text-sha--sm);
+
+  @include scrim-base($scrim--dark) {
+    filter: blur(0.75em);
+  }
+
+  @include bp(sm) {
+    font-size: var(--sm);
+  }
 }

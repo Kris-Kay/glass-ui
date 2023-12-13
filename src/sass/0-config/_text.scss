@@ -56,8 +56,8 @@ html {
   /* md: 20px → 24px */
   --text--md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
 
-  /* lg: 28px → 36px */
-  --text--lg: clamp(1.75rem, 1.5vw + 1rem, 2.25rem);
+  /* lg: 24px → 32px */
+  --text--lg: clamp(1.35rem, 1.5vw + 1rem, 2rem);
 
   /* xl: 36px → 40px */
   --text--xl: clamp(2.25rem, 2.2vw + 1rem, 2.75rem);

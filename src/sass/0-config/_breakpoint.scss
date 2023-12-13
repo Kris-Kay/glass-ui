@@ -6,7 +6,6 @@
 /* Breakpoints MAP */
 /* ====================================================================== */
 /* #Config these values */
-
 $breakpoints: (
   "xs": 20rem, /* 320px  and bigger */
   "sm": 28rem, /* 448px  and bigger */
@@ -17,9 +16,8 @@ $breakpoints: (
 
 /* Breakpoints mixin */
 /* ====================================================================== */
-/* Thank you to James Steinbach for this mixin. */
+/* Credit: James Steinbach */
 /* https://jdsteinbach.com/css/sass-maps-breakpoint-mixin/ */
-
 @mixin bp($key) {
   @if not map-has-key($breakpoints, $key) {
     @warn "Warning: `#{$key}` is not a valid breakpoint.";

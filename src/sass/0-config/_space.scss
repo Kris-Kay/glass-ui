@@ -190,7 +190,7 @@ html {
 
 
 
-.gutter-all {
+.gutter--all {
   width: calc(100vw - var(--space-thinx2));
   margin-left: auto;
   margin-right: auto;
@@ -236,7 +236,7 @@ html {
 }
 
 
-// @mixin gutter-all {
+// @mixin gutter--all {
 //   padding: 0 var(--space-thin);
 
 //   @include bp.bp(sm) {
@@ -244,8 +244,8 @@ html {
 //   }
 // }
 
-// .gutter-all {
-//   @include gutter-all;
+// .gutter--all {
+//   @include gutter--all;
 // }
 
 
