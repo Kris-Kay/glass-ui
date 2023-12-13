@@ -341,19 +341,22 @@
 /* Rounded rectangles */
 /* ========================================== */
 .rect--sm {
-  width: min(var(--max-w--sm), 100%);
+  // width: min(var(--max-w--sm), 100%);
+  width: fit-content;
   border-radius: var(--md);
   padding: var(--sm);
 }
 
 .rect--md {
-  width: min(var(--max-w--md), 100%);
+  // width: min(var(--max-w--md), 100%);
+  width: fit-content;
   border-radius: var(--md);
   padding: var(--md);
 }
 
 .rect--lg {
-  width: min(var(--max-w--lg), 100%);
+  // width: min(var(--max-w--lg), 100%);
+  width: fit-content;
   border-radius: var(--lg);
   padding: var(--lg);
 }

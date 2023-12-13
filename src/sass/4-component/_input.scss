@@ -13,9 +13,12 @@
 
 .input__legend {
   font-weight: var(--font-weight--md);
+  font-family: $font-family-title;
   font-size: var(--sm);
-  padding-bottom: var(--2xs);
-  color: var(--text-contrast--base);
+  letter-spacing: $letter-spacing--md;
+  padding-bottom: var(--xs);
+  color: var(--text--xbold);
+  text-shadow: var(--text-sha--2xs);
 }
 
 .input__wrap {
@@ -26,12 +29,12 @@
 
 .input__label--sm {
   width: fit-content;
-  color: var(--text--base);
+  color: var(--text--bold);
 }
 
 .input__label--md {
   width: fit-content;
-  color: var(--text--base);
+  color: var(--text--bold);
 }
 
 @mixin input--base {

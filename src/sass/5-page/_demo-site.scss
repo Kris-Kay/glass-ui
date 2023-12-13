@@ -333,10 +333,10 @@ footer {
 /* ========================================== */
 .inset-rect {
   width: 100%;
-// height: 200px;
+  // height: 80px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--bg--l-1);
+  background-color: var(--bg--inset1);
 }
 
 
@@ -344,7 +344,7 @@ footer {
   width: 100%;
   padding: var(--space-thin);
   border-radius: 0;
-  background-color: var(--bg--l-2);
+  background-color: var(--bg--inset2);
   display: grid;
   place-content: center start;
 }
@@ -453,8 +453,9 @@ footer {
 .heading--lg {
   @include title-thin;
   font-size: var(--text--lg);
+  // color: var(--text--gray);
   color: var(--text--bold);
-  text-shadow: var(--text-sha--md);
+  text-shadow: var(--text-sha--sm);
 }
 
 .heading__bg--lg {
@@ -466,9 +467,10 @@ footer {
   border-radius: var(--sm) 0 0 var(--sm);
 
   @include glass.glass--no-bevel;
-  background-color: var(--tint--2xdark);
-  padding: var(--sm) 0;
-  margin-bottom: var(--md);
+  // background-color: var(--tint--2xlight);
+  background-color: var(--tint--xdark);
+  padding: var(--xs) 0;
+  margin-bottom: var(--xl);
 
   @include bp(lg) {
     width: 40%;
@@ -496,6 +498,7 @@ footer {
   @include flex-c;
   background-color: var(--bg--0);
   padding: var(--lg) 0;
+  margin-bottom: var(--3xl);
 
   & > .heading--xl {
     text-align: end;
