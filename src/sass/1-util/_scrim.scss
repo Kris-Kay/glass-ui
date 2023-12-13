@@ -8,11 +8,10 @@
 
 /* Scrim colors */
 /* ========================================== */
-// $scrim--dark: rgba(255 0 0 / 0.1);
 $scrim--dark: oklch(var(--dark--lch) / 0.08);
-$scrim--xdark: oklch(var(--dark--lch) / 0.1);
+$scrim--xdark: oklch(var(--dark--lch) / 0.12);
 
-@mixin scrim-base ($color: '$scrim--dark') {
+@mixin scrim-base ($color: '$scrim--dark', $blur: '0.75em') {
   position: relative;
   width: fit-content;
   height: fit-content;
@@ -20,41 +19,35 @@ $scrim--xdark: oklch(var(--dark--lch) / 0.1);
   &::before {
     @include help.pseudo;
     z-index: -1;
-    @content;
     border-radius: r.$round;
-
+    padding: 0 0.25em;
     background-color: #{$color};
-    // -webkit-filter: blur(#{$blur});
-    // filter: blur(#{$blur});
+    -webkit-filter: blur(#{$blur});
+    filter: blur(#{$blur});
   }
 }
 
 .scrim--dark--sm {
-  @include scrim-base($scrim--dark) {
-    // background-color: $scrim--dark;
-    -webkit-filter: blur(0.75em);
-    filter: blur(0.75em);
+  @supports (filter: blur(1px)) or (-webkit-filter: blur(1px)) {
+    @include scrim-base($scrim--dark, 0.75em);
   }
 }
 
 .scrim--dark--md {
-  @include scrim-base($scrim--dark) {
-    // background-color: $scrim--dark;
-    filter: blur(1.25em);
+  @supports (filter: blur(1px)) or (-webkit-filter: blur(1px)) {
+    @include scrim-base($scrim--dark, 1.25em);
   }
 }
 
 
 .scrim--xdark--sm {
-  @include scrim-base($scrim--xdark) {
-    // background-color: $scrim--xdark;
-    filter: blur(0.75em);
+  @supports (filter: blur(1px)) or (-webkit-filter: blur(1px)) {
+    @include scrim-base($scrim--xdark, 0.75em);
   }
 }
 
 .scrim--xdark--md {
-  @include scrim-base($scrim--xdark) {
-    // background-color: $scrim--xdark;
-    filter: blur(1.25em);
+  @supports (filter: blur(1px)) or (-webkit-filter: blur(1px)) {
+    @include scrim-base($scrim--xdark, 1.25em);
   }
 }

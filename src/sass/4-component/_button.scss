@@ -79,6 +79,10 @@
   text-shadow: var(--text-sha--xs);
 }
 
+// .btn-text {
+//   @include btn-text;
+// }
+
 /* Base → Button layout */
 @mixin btn--base {
   width: fit-content;

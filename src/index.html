@@ -27,7 +27,7 @@
   <body id="top-of-page">
     <div class="bg-panelWrap">
 
-      <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" >
+      <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" hidden>
         <!-- <img src="/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg" alt="background image" class="bg"> -->
         <img src="/assets/bgImg/black-paper.jpg" alt="background image" class="bg">
       </div>
@@ -37,7 +37,7 @@
         <img src="/assets/bgImg/white-paper.jpg" alt="background image" class="bg">
       </div>
 
-      <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
+      <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" >
         <img src="/assets/bgImg/yellow.jpg" alt="background image" class="bg">
       </div>
 
@@ -79,10 +79,10 @@
 
           <button
             role="tab"
-            aria-selected="true"
+            aria-selected="false"
             aria-controls="panel-1"
             id="tab-1"
-            tabindex="0">
+            tabindex="-1">
             Dark
           </button>
 
@@ -97,10 +97,10 @@
 
           <button
             role="tab"
-            aria-selected="false"
+            aria-selected="true"
             aria-controls="panel-3"
             id="tab-3"
-            tabindex="-1">
+            tabindex="0">
             Color
           </button>
         </div>

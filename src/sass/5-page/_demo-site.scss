@@ -7,39 +7,34 @@
 @use "../component" as *;
 /* ========================================== */
 
-// .color-page-bg {
-//   background-color: var(--page-bg);
-// }
-
-
-// bg-demo-wrap {
-
-// }
-
-
+// Glass-bg demo
 .telescope-rect--lower-r {
   width: 100%;
   margin-top: var(--xs);
   padding: 8% 4% 6% 12%;
   border-radius: var(--md);
-  @include glass.glass--base;
   will-change: transform;
   transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
 
   &:hover {
-    padding: 4% 2% 3% 6%;
+    padding: 6% 3% 4% 8%;
+  }
+
+  & > p {
+    padding: 0.5em;
   }
 }
 
 .overlap_rect--md {
-  width: 100%;
-  padding: var(--md);
-  border-radius: var(--lg);
-  @include glass.glass--base;
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--lg);
+  border-radius: var(--md);
 }
 
 .overlap_wrap {
   display: grid;
+  place-items: center;
   gap: var(--3xs);
 
   & > div {
@@ -77,9 +72,6 @@
   }
 }
 
-body {
-  position: relative;
-}
 
 
 .bg {
@@ -103,6 +95,26 @@ body {
   // background-size: cover;
   // background-position: center;
   // background-repeat: no-repeat;
+}
+
+.section-gap {
+  --space: 6rem;
+
+  gap: var(--space);
+  // margin-top: var(--space);
+  margin-bottom: var(--xl);
+
+  @include bp(xs) {
+    --space: 7rem;
+  }
+
+  @include bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp(md) {
+    --space: 10rem;
+  }
 }
 
 
@@ -428,42 +440,73 @@ footer {
 }
 
 
-
-.heading--xs{
-  @include eyebrow;
-  color: oklch(var(--light--lch) / 0.8);
-  border-bottom: 1px solid oklch(var(--light--lch) / 0.5);
+// size scale demo
+.rect--2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
 }
 
 
-.heading--md {
+
+
+.heading--lg {
   @include title-thin;
   font-size: var(--text--lg);
   color: var(--text--bold);
   text-shadow: var(--text-sha--md);
-  text-align: end;
 }
 
-.heading__bg--md {
-  width: 100%;
+.heading__bg--lg {
+  min-width: fit-content;
+  max-width: 100%;
+  width: 50%;
+  display: grid;
+  place-self: center end;
+  border-radius: var(--sm) 0 0 var(--sm);
+
   @include glass.glass--no-bevel;
-  @include flex-c-y;
-  background-color: var(--bg--bold);
+  background-color: var(--tint--2xdark);
   padding: var(--sm) 0;
+  margin-bottom: var(--md);
+
+  @include bp(lg) {
+    width: 40%;
+  }
+
+  & > .heading--lg {
+    padding-left: var(--space-thin);
+    padding-right: var(--space-thin);
+  }
 }
 
 
-.heading--lg {
+
+.heading--xl {
   @include title-thick;
-  font-size: var(--text--lg);
-  text-shadow: var(--text-sha--sm);
-  text-align: end;
+  font-size: var(--text--xl);
+  font-weight: var(--font-weight--lg);
+  color: var(--text--xbold);
+  text-shadow: var(--text-sha--md);
 }
 
-.heading--lg__bg {
+.heading__bg--xl {
   width: 100%;
   @include glass.glass--no-bevel;
   @include flex-c;
-  background-color: var(--bg--base);
-  padding: var(--xl) 0;
+  background-color: var(--bg--0);
+  padding: var(--lg) 0;
+
+  & > .heading--xl {
+    text-align: end;
+  }
+}
+
+
+.heading--2xl {
+  @include title-thin;
+  font-size: var(--text--2xl);
+  text-shadow: var(--text-sha--sm);
+  text-align: center;
+  @include scrim-base($scrim--dark, 1.25em);
 }

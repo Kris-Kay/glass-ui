@@ -6,25 +6,7 @@
 @use "../glass" as glass;
 /* ========================================== */
 
-/* Rounded rectangles */
-/* ========================================== */
 
-.rect--2xs {
-  width: 16px;
-  height: 16px;
-  border-radius: 0.15rem;
-}
-
-.rect--md {
-  width: min(var(--max-w--md), 100%);
-  border-radius: var(--md);
-  padding: var(--md);
-}
-
-.rect--lg {
-  width: min(var(--max-w--lg), 100%);
-  border-radius: var(--lg);
-}
 
 
 
@@ -34,7 +16,6 @@
   display: grid;
   gap: var(--md);
   padding: var(--lg);
-  box-shadow: none;
   border-radius: 0;
 
   @include bp(sm) {
@@ -57,23 +38,30 @@
 
 
 @mixin box {
+  --space: var(--lg);
+
   width: 100%;
   height: fit-content;
   display: grid;
-  gap: var(--lg);
-  padding: var(--lg);
+  gap: var(--space);
+  padding: var(--space);
   box-shadow: var(--sha--xl);
 
   @include bp(sm) {
-    gap: var(--xl);
-    padding: var(--xl);
+    --space: var(--xl);
     border-radius: var(--lg);
   }
 
   @include bp(md) {
-    gap: var(--2xl);
-    padding: var(--2xl);
+    --space: var(--2xl);
     box-shadow: var(--sha--3xl);
+  }
+
+  & > .full-w-img {
+    display: grid;
+    place-self: center;
+    margin-left: calc(-1 * var(--space));
+    margin-right: calc(-1 * var(--space));
   }
 }
 
@@ -86,6 +74,8 @@
   @include box;
   width: fit-content;
   border-radius: var(--lg);
+
+
 }
 
 .box--full-w {
@@ -320,12 +310,7 @@
   }
 }
 
-.box__title {
-  text-align: center;
-  @include title-thin;
-  font-size: var(--text--2xl);
-  text-shadow: var(--text-sha--xs);
-}
+
 
 
 .box__title--md {
@@ -350,4 +335,25 @@
   margin-left: calc((-1 * var(--space-wide)) + 0.5px);
   margin-right: calc(-1 * var(--space-wide));
   box-shadow: glass.$flat-inset--md;
+}
+
+
+/* Rounded rectangles */
+/* ========================================== */
+.rect--sm {
+  width: min(var(--max-w--sm), 100%);
+  border-radius: var(--md);
+  padding: var(--sm);
+}
+
+.rect--md {
+  width: min(var(--max-w--md), 100%);
+  border-radius: var(--md);
+  padding: var(--md);
+}
+
+.rect--lg {
+  width: min(var(--max-w--lg), 100%);
+  border-radius: var(--lg);
+  padding: var(--lg);
 }

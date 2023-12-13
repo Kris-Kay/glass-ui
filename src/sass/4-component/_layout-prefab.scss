@@ -83,18 +83,18 @@
 
 .column-flex {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 
 //  width: fit-content;
 //  width: 100%;
 
-  > .column {
-  width: 100%;
+  // > .column {
+  // width: 100%;
 
-    // @include bp(lg) {
-    //   width: fit-content
-    // }
-  }
+  //   // @include bp(lg) {
+  //   //   width: fit-content
+  //   // }
+  // }
 }

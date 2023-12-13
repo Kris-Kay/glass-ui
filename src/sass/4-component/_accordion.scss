@@ -23,7 +23,7 @@
 
   /* visual */
   @include glass.glass--base;
-  background-color: var(--bg--base);
+  background-color: var(--bg--2);
 
   box-shadow: var(--sha--xl);
   border-radius: var(--space);
@@ -33,6 +33,11 @@
 .accordion__header {
   display: grid;
   padding: var(--space);
+
+  & > .eyebrow {
+    color: var(--text--base);
+    @include scrim-base($scrim--dark, 0.75em);
+  }
 }
 
 .accordion__summary {
@@ -44,16 +49,20 @@
     padding: var(--space);
 
     /* visual */
-    background-color: var(--bg--l-2);
+    background-color: var(--bg--inset3);
     box-shadow: $flat-sha--md;
   }
 }
 
 .see-more-btn, .see-less-btn {
   pointer-events: none;
-  color: var(--text--mild);
-  @include scrim-base {
-    background-color: var(--scrim--2xdark);
+  @include scrim-base($scrim--dark, 0.75em);
+
+  & > p {
+    font-family: $font-family-body;
+    font-weight: var(--font-weight--lg);
+    letter-spacing: $letter-spacing--md;
+    color: var(--text--xbold);
   }
 }
 
@@ -146,8 +155,9 @@
 .accordion__title {
   @include title-thick;
   font-size: var(--lg);
-  text-shadow: var(--text-sha--xs);
-  color: var(--text--base);
+  text-shadow: var(--text-sha--sm);
+  color: var(--text--bold);
+  @include scrim-base($scrim--dark, 1.25em);
 }
 
 .accordion__text {
