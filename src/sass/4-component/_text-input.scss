@@ -6,89 +6,101 @@
 @use "../glass" as glass;
 /* ========================================== */
 
-.text-input__bin {
-  // position: relative;
-  width: min(400px, 100%);
-  height: fit-content;
-  display: grid;
-  gap: $s1;
-}
-
-.text-input {
-  pointer-events: auto;
-  cursor: text;
-  width: 100%;
-  height: var(--ui--lg);
-  border-radius: $round;
-  padding: 0 $s4;
-
-  box-shadow: var(--inset--md);
-  background-color: var(--bg--l-2);
-
-  @include bp(sm) {
-    width: min(400px, 100%);
-  }
-}
-
 .text-input__wrap {
-  width: fit-content;
-  height: fit-content;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.label__group {
+  display: grid;
+  gap: 0.1rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.25rem;
 }
 
 .text-input__label {
   font-family: $font-family-title;
   font-weight: var(--font-weight--md);
-  letter-spacing: $letter-spacing--sm;
+  letter-spacing: $letter-spacing--md;
 }
 
 .text-input__hint {
-  font-family: $font-family-title;
+  // font-family: $font-family-title;
   font-weight: var(--font-weight--sm);
   font-size: var(--text--xs);
   letter-spacing: $letter-spacing--sm;
-  line-height: 1;
+  line-height: 1.1;
 }
 
-.textarea__wrap {
+
+
+.text-input {
+  pointer-events: auto;
+  cursor: text;
+  width: min(400px, 100%);
+  height: var(--ui--lg);
+  border-radius: var(--2xs);
+  padding: 0 1rem;
+
+  box-shadow: glass.$inset--md;
+  // box-shadow: var(--inset--md);
+  background-color: var(--bg--inset2);
+}
+
+
+
+
+///////////
+
+.textarea__holder {
   position: relative;
   z-index: 2;
-  @include flex-c;
-  // width: fit-content;
-  width: fit-content;
-  // min-width: 100%;
-    min-width: min(400px, 100%);
-
-  height: fit-content;
   pointer-events: none;
-  padding: $s4;
 
-  @include outer-radius (var(--2xs), $s4);
-  box-shadow: var(--inset--md);
-  background-color: var(--bg--l-2);
+  @include grid-c;
+  padding: 1rem;
 
-  // @include bp(sm) {
-  //   min-width: min(400px, 100%);
-  // }
+  // min-width: min(400px, 100%);
+  // max-width: 100%;
+  width: 100%;
+  height: fit-content;
+
+
+  @include outer-radius (0.5rem, 1rem);
+  box-shadow: glass.$inset--md;
+  // box-shadow: var(--inset--md);
+  background-color: var(--bg--inset2);
 }
 
 .textarea {
   z-index: 3;
-  inset: 1rem;
+  inset: 0rem;
   pointer-events: auto;
   cursor: text;
+  overflow: scroll;
+  resize: vertical;
 
-  min-width: 100%;
-  width: auto;
-  max-width: 100%;
-  height: auto;
   min-height: 150px;
-  overflow: auto;
+  max-width: 100%;
+  width: 100%;
 
-  border-radius: var(--2xs);
-  background-color: var(--bg--l-2);
+
+  text-align: start;
+  border-radius: 0.5rem;
+  // background-color: rgb(70, 22, 22);
+  // background-color: var(--bg--inset2);
+
+  // --min-w: calc(400px - 2rem);
+  // min-width: min(var(--min-w), 100%);
+  // max-width: min(600px, 100%);
+  // width: clamp(min(400px, 100%), fit-content, 700px);
 
   &:focus {
-    outline: 1.5px solid oklch(85% var(--primary--ch) / 0.8);;
+    outline: 1.5px solid oklch(85% var(--primary--ch) / 0.7);;
     outline-offset: $s2;
   }
+}
+
+.textarea-jail {
+  max-width: 690px;
 }

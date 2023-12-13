@@ -12,32 +12,42 @@
 // btn--disabled
 // btn--icon
 
-.btn, [data-theme=default] {
-  // * Button colors * //
-  --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
-  --btn-bg--hover: red;
-  // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-  --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-  // --btn-bg--base: var(--tint--base);
-  // --btn-bg--hover: var(--tint--bold);
-  // --btn-bg--active: var(--tint--2xbold);
-  --btn-text--base: var(--text-base);
-  --btn-text--hover: var(--text--bold);
-  --btn-text--active: var(--text--xbold);
-}
+// .btn, [data-theme=default] {
+//   // * Button colors * //
+//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--hover: red;
+//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+//   // --btn-bg--base: var(--tint--base);
+//   // --btn-bg--hover: var(--tint--bold);
+//   // --btn-bg--active: var(--tint--2xbold);
+//   --btn-text--rest: var(--text-base);
+//   --btn-text--hover: var(--text--bold);
+//   --btn-text--active: var(--text--xbold);
+// }
 
-.btn, [data-theme="high-contrast"] {
-    // * Button colors * //
-  --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
-  --btn-bg--hover: red;
-  // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-  --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-  // --btn-bg--base: var(--tint--base);
-  // --btn-bg--hover: var(--tint--bold);
-  // --btn-bg--active: var(--tint--2xbold);
-  --btn-text--base: var(--text-base);
+// .btn, [data-theme="high-contrast"] {
+//     // * Button colors * //
+//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--hover: red;
+//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+//   // --btn-bg--base: var(--tint--base);
+//   // --btn-bg--hover: var(--tint--bold);
+//   // --btn-bg--active: var(--tint--2xbold);
+//   --btn-text--rest: var(--text-base);
+//   --btn-text--hover: var(--text--bold);
+//   --btn-text--active: var(--text--xbold);
+// }
+
+html {
+  /* Button colors */
+  /* ========================================== */
+  --btn-bg--hover: var(--tint--xlight);
+  --btn-bg--active: var(--tint--2xlight);
+  --btn-text--rest: var(--text-base);
   --btn-text--hover: var(--text--bold);
-  --btn-text--active: var(--text--xbold);
+  --btn-text--active: var(--tint--xdark);
 }
 
 /* ========================================== */
@@ -254,7 +264,7 @@
   position: relative;
    box-shadow: var(--sha--xs);
   @include glass.glass-filter;
-  color: var(--btn-text--base);
+  color: var(--btn-text--rest);
   @include ui-transitions;
 
   &::after {
@@ -281,42 +291,43 @@
 
 @mixin btn-glass-clear {
   @include btn-glass--base;
-  background-color: var(--tint--base);
+  background-color: var(--tint--clear);
 
   &:hover {
-    background-color: var(--tint--xmild);
+    background-color: var(--tint--light);
   }
 
   &:active {
-    background-color: var(--tint--bold);
+    background-color: var(--tint--xlight);
   }
 }
 
 /* Light → 3D button glass */
 @mixin btn-glass-light {
   @include btn-glass--base;
-  background-color: var(--tint--xbold);
+  background-color: var(--tint--xlight);
 
   &:hover {
-    background-color: var(--tint--mild);
+    background-color: var(--tint--2xlight);
   }
 
   &:active {
-    background-color: var(--tint--2xmild);
+    background-color: var(--tint--3xlight);
+    color: var(--tint--xdark);
   }
 }
 
 /* Dark → 3D button glass */
 @mixin btn-glass-dark {
   @include btn-glass--base;
-  background-color: var(--tint--base);
+  background-color: var(--tint--xdark);
 
   &:hover {
-    background-color: var(--tint--bold);
+    background-color: var(--tint--2xdark);
   }
 
   &:active {
-    background-color: var(--tint--xbold);
+    background-color: var(--tint--3xdark);
   }
 }
 
@@ -336,18 +347,18 @@
 /* ========================================== */
 @mixin btn-2d--base {
   background-color: transparent;
-  color: var(--btn-text--base);
+  color: var(--btn-text--rest);
   box-shadow: none;
   @include ui-transitions;
 
   &:hover {
-    background-color: var(--tint--xmild);
-    box-shadow: var(--sha--xs);
+    background-color: var(--tint--light);
+    // box-shadow: var(--sha--xs);
   }
 
   &:active {
-    background-color: var(--tint--xbold);
-    box-shadow: var(--sha--2xs);
+    background-color: var(--tint--xlight);
+    // box-shadow: var(--sha--2xs);
   }
 }
 

@@ -15,18 +15,21 @@
   flex-direction: column;
   aspect-ratio : 1 / 1;
   border-radius: var(--sm);
-  @include title-thick;
-  font-size: var(--text--xs);
-  text-shadow: var(--text-sha--sm);
 
-  @include bp(md) {
-    font-size: var(--text--sm);
-    border-radius: var(--md);
-    text-shadow: var(--text-sha--md);
+  box-shadow: var(--sha--sm);
+  will-change: transform;
+  transform: scale(1);
+  transition:
+    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 1000ms,
+    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 1000ms;
+
+  &:hover {
+    box-shadow: var(--sha--lg);
+    transform: scale(1.05);
   }
 
-  & > .text--dark {
-    text-shadow: 0;
+  @include bp(md) {
+    border-radius: var(--md);
   }
 }
 

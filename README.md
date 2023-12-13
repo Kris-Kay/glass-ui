@@ -25,7 +25,6 @@ Includes beveled and inset glass styles whose use is demonstrated through the co
 #### Build with the basics so it should work with any project that's CSS compatible.
 * HTML
 * CSS (SCSS)
-* NPM
 * Vanilla JS (only used for component and demo site functionality)
 
 ### Browser compatibility
@@ -61,10 +60,9 @@ If you only want to grab a few styles, search for a class you like the look of i
 </br>
 
 ## Setup
-To get started: fork repo and open it in your IDE (I used VS Code).
-Navigate to your local copy via command line or through IDE's built in terminal.
-
-To install devDependencies run:
+To get started:
+1. Make sure you have Npm, Node, and Git installed.
+2. Install Node modules.
 ```
 npm install
 ```
@@ -93,15 +91,15 @@ npm run build
 ```
 <!-- HTML -->
 
-  <span class="glass-2xlight">
-    <p class="text-2xdark">.glass-2xlight</p>
+  <span class="glass--2xlight">
+    <p class="text-2xdark">.glass--2xlight</p>
   </span>
 ```
 
 ```
 /* SCSS Glass mixin */
 
-  @mixin glass-base {
+  @mixin glass--base {
     position: relative;
     @include fill.glass-filter;
     @content;
@@ -123,7 +121,7 @@ npm run build
 
 .glass {
   @include color.tint-modifier('background-color') {
-    @include glass-base;
+    @include glass--base;
   }
 }
 ```
@@ -131,14 +129,14 @@ npm run build
 ```
 /* CSS result */
 
-.glass-2xlight {
-  background-color: var(--tint-2xlight);
+.glass--2xlight {
+  background-color: var(--tint--2xlight);
   position: relative;
   -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
   backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.3);
 }
 
-.glass-2xlight::after {
+.glass--2xlight::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -160,7 +158,7 @@ npm run build
 }
 
   @media only screen and (min-width: 45rem) {
-    .glass-2xlight::after {
+    .glass--2xlight::after {
       box-shadow:
         inset 0.8px 0.8px 0.4px oklch(var(--highlight)/0.15),
         inset 2px 2px 1px -2.2px oklch(var(--highlight)/0.3),

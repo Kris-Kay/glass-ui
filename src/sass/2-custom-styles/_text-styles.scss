@@ -185,8 +185,8 @@ pre code {
   font-family: $font-family-title;
   font-size: var(--text--xs);
   letter-spacing: $letter-spacing--lg;
-  color: var(--text--bold);
-  text-shadow: var(--text-sha--sm);
+  color: var(--text--xbold);
+  text-shadow: var(--text-sha--md);
 
   @include bp(sm) {
     font-size: var(--text--sm);
