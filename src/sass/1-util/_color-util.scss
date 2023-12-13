@@ -71,13 +71,13 @@ $text-colors: (
   "mild":  var(--text--mild),
   "xmild":  var(--text--xmild),
 
-  "2xlight": var(--light--90),
-  "xlight": var(--light--80),
-  "light": var(--light--70),
-  "gray": var(--light--50),
-  "dark": var(--dark--30),
-  "xdark": var(--dark--20),
-  "2xdark": var(--dark--10),
+  "2xlight": var(--text--2xlight),
+  "xlight": var(--text--xlight),
+  "light": var(--text--light),
+  "gray": var(--text--gray),
+  "dark": var(--text--dark),
+  "xdark": var(--text--xdark),
+  "2xdark": var(--text--2xdark),
 );
 
 /* Text color classes */

@@ -72,18 +72,17 @@ textarea {
   text-transform: uppercase;
   font-size: var(--text--xs);
   font-family: $font-family-title;
-  font-weight: var(--font-weight--sm);
+  font-weight: var(--font-weight--md);
   letter-spacing: $letter-spacing--md;
   line-height: $line-height--sm;
 
   color: var(--text--mild);
-  text-shadow: var(--text-sha--xs);
+  text-shadow: var(--text-sha--2xs);
 }
 
 .eyebrow {
   @include eyebrow;
 }
-
 
 
 /* Code */
@@ -184,17 +183,20 @@ pre code {
 .class-name--sm {
   font-weight: var(--font-weight--md);
   font-family: $font-family-title;
-  font-size: var(--xs);
+  font-size: var(--text--xs);
   letter-spacing: $letter-spacing--lg;
   color: var(--text--bold);
-  padding: var(--xs);
   text-shadow: var(--text-sha--sm);
 
-  @include scrim-base($scrim--dark) {
-    filter: blur(0.75em);
-  }
-
   @include bp(sm) {
-    font-size: var(--sm);
+    font-size: var(--text--sm);
   }
+}
+
+
+
+.heading--xs{
+  @include eyebrow;
+  color: oklch(var(--light--lch) / 0.8);
+  border-bottom: 1px solid oklch(var(--light--lch) / 0.5);
 }

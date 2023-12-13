@@ -94,6 +94,10 @@
   --dark--10: oklch(10% var(--dark-ch) / 1);
   --dark--5:  oklch(5% var(--dark-ch) / 1);
 
+
+/* Colors that do not change with theme */
+/* ====================================================================== */
+
   /* Translucent glass tints */
   /* ========================================== */
   --tint--3xlight: oklch(var(--light--lch) / 0.75);
@@ -110,10 +114,20 @@
   /* ========================================== */
   --shadow: var(--dark--lch);
   --highlight: var(--light--lch);
+
+  /* Text colors */
+  /* ========================================== */
+  --text--2xlight: oklch(90% var(--light--ch) / 1);
+  --text--xlight: oklch(80% var(--light--ch) / 1);
+  --text--light: oklch(70% var(--light--ch) / 1);
+  --text--gray: oklch(50% var(--light--ch) / 1);
+  --text--dark: oklch(30% var(--light--ch) / 1);
+  --text--xdark: oklch(20% var(--light--ch) / 1);
+  --text--2xdark: oklch(10% var(--light--ch) / 1);
 }
 
 /* ====================================================================== */
-/* DefaultTheme */
+/* Default Theme */
 /* ====================================================================== */
 :root, [data-theme=default] {
 
@@ -125,20 +139,13 @@
   --bg--inset3: oklch(var(--dark--lch) / 0.3); /* -3 deepest inset */
   --bg--inset2: oklch(var(--dark--lch) / 0.2); /* -2 deeper inset */
   --bg--inset1: oklch(var(--dark--lch) / 0.1); /* -1 base inset */
-  // --bg--0:  oklch(5% var(--dark--ch) / 0.2);    /* 0  page bg */
-  // --bg--1:  oklch(10% var(--dark--ch) / 0.2);   /* 1  section bg */
-  // --bg--2:  oklch(25% var(--dark--ch) / 0.2);  /* 2  box bg */
-  // --bg--3:  oklch(40% var(--dark--ch) / 0.5);   /* 3  card bg */
-  // --bg--4:  oklch(50% var(--light--ch) / 0.2);  /* 4  tooltip bg */
-  // --bg--5:  oklch(70% var(--light--ch) / 0.2);   /* 5  modal bg */
 
-
-  --bg--0:  oklch(10% var(--dark--ch) / 0.4);    /* 0  page bg */
-  --bg--1:  oklch(20% var(--dark--ch) / 0.35);   /* 1  section bg */
-  --bg--2:  oklch(30% var(--dark--ch) / 0.3);  /* 2  box bg */
-  --bg--3:  oklch(50% var(--dark--ch) / 0.25);   /* 3  card bg */
-  --bg--4:  oklch(60% var(--light--ch) / 0.2);  /* 4  tooltip bg */
-  --bg--5:  oklch(80% var(--light--ch) / 0.2);   /* 5  modal bg */
+  --bg--0:  oklch(40% var(--dark--ch) / 0.2);    /* 0  page bg */
+  --bg--1:  oklch(50% var(--dark--ch) / 0.2);   /* 1  section bg */
+  --bg--2:  oklch(60% var(--dark--ch) / 0.2);  /* 2  box bg */
+  --bg--3:  oklch(70% var(--dark--ch) / 0.2);   /* 3  card bg */
+  --bg--4:  oklch(80% var(--dark--ch) / 0.25);  /* 4  tooltip bg */
+  --bg--5:  oklch(90% var(--dark--ch) / 0.3);   /* 5  modal bg */
 
   /* Text | Title | Label */
   /* ========================================== */
@@ -168,12 +175,13 @@
   --bg--inset3: oklch(var(--dark--lch) / 0.35);  /* -3 deepest inset */
   --bg--inset2: oklch(var(--dark--lch) / 0.25);  /* -2 deeper inset */
   --bg--inset1: oklch(var(--dark--lch) / 0.15);  /* -1 base inset */
-  --bg--0:  oklch(5% var(--dark--ch) / 0.3);    /* 0  page bg */
-  --bg--1:  oklch(10% var(--dark--ch) / 0.3);   /* 1  section bg */
-  --bg--2:  oklch(15% var(--dark--ch) / 0.3);  /* 2  box bg */
-  --bg--3:  oklch(20% var(--dark--ch) / 0.3);   /* 3  card bg */
-  --bg--4:  oklch(25% var(--light--ch) / 0.3);  /* 4  tooltip bg */
-  --bg--5:  oklch(30% var(--light--ch) / 0.3);   /* 5  modal bg */
+
+  --bg--0:  oklch(10% var(--dark--ch) / 0.3);    /* 0  page bg */
+  --bg--1:  oklch(30% var(--dark--ch) / 0.3);   /* 1  section bg */
+  --bg--2:  oklch(40% var(--dark--ch) / 0.3);  /* 2  box bg */
+  --bg--3:  oklch(50% var(--dark--ch) / 0.3);   /* 3  card bg */
+  --bg--4:  oklch(60% var(--dark--ch) / 0.35);  /* 4  tooltip bg */
+  --bg--5:  oklch(80% var(--dark--ch) / 0.4);   /* 5  modal bg */
 
   /* Body text | Headings | Labels */
   /* ========================================== */

@@ -56,11 +56,11 @@ html {
   /* md: 20px → 24px */
   --text--md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
 
-  /* lg: 24px → 32px */
-  --text--lg: clamp(1.35rem, 1.5vw + 1rem, 2rem);
+  /* lg: 24px → 28px */
+  --text--lg: clamp(1.35rem, 1.5vw + 1rem, 1.75rem);
 
-  /* xl: 36px → 40px */
-  --text--xl: clamp(2.25rem, 2.2vw + 1rem, 2.75rem);
+  /* xl: 32px → 40px */
+  --text--xl: clamp(2rem, 2.2vw + 1rem, 2.75rem);
 
   /* 2xl: 40px → 48px */
   --text--2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
