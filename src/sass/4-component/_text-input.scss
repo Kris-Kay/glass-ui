@@ -57,7 +57,7 @@
   z-index: 2;
   pointer-events: none;
 
-  @include grid-c;
+  @include grid--c;
   padding: 1rem;
 
   // min-width: min(400px, 100%);

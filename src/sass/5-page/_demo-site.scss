@@ -13,7 +13,7 @@
   margin-top: var(--xs);
   padding: 8% 4% 6% 12%;
   border-radius: var(--md);
-
+  box-shadow: var(--sha--3xs);
   transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
 
   &:hover {
@@ -30,6 +30,7 @@
   max-width: 100%;
   padding: var(--lg);
   border-radius: var(--md);
+  box-shadow: var(--sha--xl);
 }
 
 .overlap_wrap {
@@ -295,7 +296,7 @@ footer {
 .tint-demo__rect {
   width: 100%;
   height: fit-content;
-  @include flex-c-y;
+  @include flex--c-y;
   justify-content: flex-start;
   padding: var(--sm);
   border-radius: var(--2xs);
@@ -352,7 +353,7 @@ footer {
 .text-size__group {
   // display: flex;
   // align-items: end;
-  // flex-wrap: wrap;
+  // flex--wrap: wrap;
   display: grid;
   gap: var(--3xs);
 
@@ -465,6 +466,7 @@ footer {
   display: grid;
   place-self: center end;
   border-radius: var(--sm) 0 0 var(--sm);
+  box-shadow: var(--sha--2xl);
 
   @include glass.glass--no-bevel;
   // background-color: var(--tint--2xlight);
@@ -495,7 +497,7 @@ footer {
 .heading__bg--xl {
   width: 100%;
   @include glass.glass--no-bevel;
-  @include flex-c;
+  @include flex--c;
   background-color: var(--bg--0);
   padding: var(--lg) 0;
   margin-bottom: var(--3xl);

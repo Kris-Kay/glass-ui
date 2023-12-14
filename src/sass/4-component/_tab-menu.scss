@@ -12,9 +12,9 @@
   max-width: 100%;
   height: var(--ui--md);
   margin: 0 auto;
-  @include flex-c;
+  @include flex--c;
   gap: $s1;
-  background-color: var(--bg--l-2);
+  background-color: var(--bg--inset2);
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
@@ -35,7 +35,7 @@
 
   width: max-content;
   height: 100%;
-  @include flex-c;
+  @include flex--c;
   padding: 0 0.5rem;
 
   pointer-events: auto;

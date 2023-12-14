@@ -70,7 +70,7 @@ html {
 /* Base → Button layout */
 @mixin btn--base {
   width: fit-content;
-  @include flex-c;
+  @include flex--c;
   @include btn-text;
   border-radius: $round;
 
@@ -183,7 +183,7 @@ html {
 
 /* Base → round button */
 @mixin btn-round--base {
-  @include flex-c;
+  @include flex--c;
   border-radius: $round;
   // z-index: z.z(btn);
 

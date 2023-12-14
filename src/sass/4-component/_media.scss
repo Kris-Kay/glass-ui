@@ -62,7 +62,7 @@
   position: relative;
   width: 100%;
   height: fit-content;
-  @include grid-c;
+  @include grid--c;
 }
 
 .img-w-overlay {

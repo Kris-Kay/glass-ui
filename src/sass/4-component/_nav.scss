@@ -50,6 +50,7 @@
 .dropdown__wrap {
   position: relative;
   pointer-events: none;
+  z-index: 200;
 }
 
 .dropdown__btn {

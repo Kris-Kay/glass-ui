@@ -11,7 +11,7 @@
 /* Bento grid */
 /* ========================================== */
 .bento__rect {
-  @include flex-c;
+  @include flex--c;
   flex-direction: column;
   aspect-ratio : 1 / 1;
   border-radius: var(--sm);
@@ -88,7 +88,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex--wrap: wrap;
 
 //  width: fit-content;
 //  width: 100%;
