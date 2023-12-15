@@ -8,14 +8,14 @@
 
 /* Button reset */
 /* ========================================== */
-button {
-  background-color: transparent;
-  border: 0;
-  border-style: none;
-  border-radius: 0;
-  text-decoration: none;
-  appearance: none;
-}
+// button {
+//   background-color: transparent;
+//   border: 0;
+//   border-style: none;
+//   border-radius: 0;
+//   text-decoration: none;
+//   appearance: none;
+// }
 
 /* Button text */
 /* ========================================== */
@@ -34,10 +34,10 @@ button {
 /* ↓ config ↓ */
 @mixin btn-transition {
   transition:
-    background-color $speed--xslow $smooth,
-    color $speed--xslow $smooth,
-    text-shadow $speed--xslow $smooth,
-    box-shadow $speed--xslow $smooth;
+    background-color $speed--2xslow $smooth,
+    color $speed--2xslow $smooth,
+    text-shadow $speed--2xslow $smooth,
+    box-shadow $speed--2xslow $smooth;
   /* ↑ config ↑ */
 }
 
@@ -46,13 +46,14 @@ button {
 /* ========================================== */
   /* ↓ no touchÉ! ↓ */
 @mixin btn--base {
+  @content;
+
   --_btn--h: var(--btn--h, 1rem);
   --_btn-inner--h: var(--btn-inner--h, 0.8em);
   --_btn--t: var(--btn--t, 1px);
   --_btn--b: var(--btn--b, 1px);
   --_btn--x: var(--btn--x, 0.85em);
   --_btn--radius: var(--btn--radius, 0.25rem);
-  --_btn--text-sha: var(--btn--text-sha, var(--text-sha--2xs));
 
   @include btn-text;
   @include btn-transition;
@@ -60,24 +61,32 @@ button {
 
   height: var(--_btn--h);
   width: fit-content;
+  gap: var(--3xs);
   border-radius: var(--_btn--radius);
 
   font-size: var(--_btn-inner--h);
   line-height: var(--_btn-inner--h);
   padding: var(--_btn--t) var(--_btn--x) var(--_btn--b) var(--_btn--x);
-  text-shadow: var(--_btn--text-sha);
 
   & > .svg-icon {
     display: inline-block;
     align-self: center;
-    $h: calc(1.1 * var(--_btn-inner-h));
+    mask-size: cover;
+    $h: calc(1.1 * var(--_btn-inner--h));
     height: $h;
     width: $h;
-
-    // height: $h;
-    // width: $h;
     margin-top: calc(-1 * var(--_btn--t));
   }
+
+  // & > svg {
+  //   display: inline-block;
+  //   align-self: center;
+  //   mask-size: cover;
+  //   $h: calc(1.1 * var(--_btn-inner-h));
+  //   height: $h;
+  //   width: $h;
+  //   // margin-top: calc(-1 * var(--_btn--t));
+  // }
   /* ↑ no touchÉ! ↑ */
 }
 
@@ -86,43 +95,43 @@ button {
 /* ========================================== */
 /* ↓ config ↓ */
 @mixin btn--sm {
-  @include btn--base;
-
-  --btn--h: var(--ui--sm);
-  --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
-  --btn--t: 1px;
-  --btn--b: 0;
-  --btn--x: 0.85em;
-  --btn--radius: $round;
-  --btn--text-sha: var(--text-sha--2xs);
-  /* ↑ config ↑ */
+  @include btn--base {
+    --btn--h: 1.75rem;
+    --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
+    --btn--t: 0;
+    --btn--b: 0;
+    --btn--x: 0.85em;
+    --btn--radius: 9999px;
+    // --btn--radius: $round;
+    /* ↑ config ↑ */
+  }
 }
 
 /* ↓ config ↓ */
 @mixin btn--md {
-  @include btn--base;
-
-  --btn--h: var(--ui--md);
-  --btn-inner--h: 0.9em; // sets font-size | line-height | icon height
-  --btn--t: 1px;
-  --btn--b: 0;
-  --btn--x: 1rem;
-  --btn--radius: $round;
-  --btn--text-sha: var(--text-sha--2xs);
-  /* ↑ config ↑ */
+  @include btn--base {
+    --btn--h: 2.125rem;
+    // --btn--h: var(--ui--md);
+    --btn-inner--h: 0.9rem;
+    --btn--t: 0;
+    --btn--b: 0;
+    --btn--x: 1rem;
+    --btn--radius: 9999px;
+    /* ↑ config ↑ */
+  }
 }
 
 /* ↓ config ↓ */
 @mixin btn--lg {
   @include btn--base;
-
-  --btn--h: var(--ui--lg);
+  --btn--h: 2.5rem;
+  // --btn--h: var(--ui--lg);
   --btn-inner--h: 1em; // sets font-size | line-height | icon height
-  --btn--t: 1px;
+  --btn--t: 0;
   --btn--b: 0;
   --btn--x: 1.4rem;
-  --btn--radius: $round;
-  --btn--text-sha: var(--text-sha--xs);
+  --btn--radius: 9999px;
+  // --btn--radius: $round;
   /* ↑ config ↑ */
 }
 
@@ -139,6 +148,93 @@ button {
 // btn--icon
 
 
+@mixin btn {
+  --_btn-bg: var(--btn-bg, white);
+  --_btn-sha: var(--btn-sha, var(--sha--2xs));
+  --_btn-text: var(--btn-text, black);
+  --_btn-icon: var(--btn-icon, black);
+
+  $inner-h: 0.9em;
+  $p-t: 1px;
+  $p-b: 0;
+  $p-x: 1em;
+  $p-x-icon: 0.75em;
+
+  /* layout */
+  height: var(--ui--md);
+  font-size: $inner-h;
+  line-height: $inner-h;
+  padding: $p-t $p-x $p-b $p-x;
+  text-shadow: var(--text-sha--md);
+
+  @include btn-text;
+  @include ui-transitions;
+  @include flex--c;
+
+  width: fit-content;
+  border-radius: $round;
+
+  background-color: var(--_btn-bg);
+  color: var(--_btn-text);
+  box-shadow: var(--_btn-sha);
+
+
+  &.btn-icon {
+    gap: 0.3em;
+    padding: $p-t $p-x-icon $p-b $p-x-icon;
+  }
+
+  & > .svg-icon {
+    display: inline-block;
+    align-self: center;
+    mask-size: cover;
+    background-color: var(--_btn-icon);
+    background: var(--_btn-icon);
+    $h: calc(1.1 * $inner-h);
+    height: $h;
+    width: $h;
+    margin-top: calc(-1 * $p-t);
+  }
+
+  &:hover,
+   :focus {
+    --btn-bg: pink;
+    --btn-sha: var(--sha--2xl);
+    --btn-text: navy;
+    --btn-icon: navy;
+  }
+
+  &:active {
+    --btn-bg: orange;
+    --btn-sha: var(--sha--md);
+    --btn-text: green;
+    --btn-icon: green;
+  }
+
+  &[aria-selected="true"] {
+    --btn-bg: rgb(186, 164, 21);
+    --btn-sha: var(--sha--xs);
+    --btn-text: rgb(233, 44, 44);
+    --btn-icon: rgb(233, 44, 44);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    --btn-bg: black;
+    --btn-sha: var(--sha--3xs);
+    --btn-text: gray;
+    --btn-icon: gray;
+  }
+}
+
+
+.btn {
+  @include btn;
+}
+
+
+
+
 /* Button viz */
 /* ========================================== */
 @mixin btn-viz {
@@ -151,17 +247,17 @@ button {
   color: var(--_btn-text);
   box-shadow: var(--_btn-sha);
 
-  & > .svg-icon {
+  & > svg {
     mask-size: cover;
     background-color: var(--_btn-icon);
     background: var(--_btn-icon);
   }
 
   /* ↓ config ↓ */
-  --btn-bg: rgb(0, 123, 255);
-  --btn-text: red;
-  --btn-icon: red;
-  --btn-sha: var(--sha--sm);
+  // --btn-bg: rgb(0, 123, 255);
+  // --btn-text: red;
+  // --btn-icon: red;
+  // --btn-sha: var(--sha--sm);
 
   &:hover,
    :focus {
@@ -203,7 +299,7 @@ button {
   @include btn-viz;
 
   /* ↓ config ↓ */
-  --btn-bg: rgb(0, 255, 98);
+  --btn-bg: rgb(2, 35, 68);
   --btn-text: rgb(234, 255, 0);
   --btn-icon: rgb(197, 17, 17);
   --btn-sha: var(--sha--sm);
@@ -319,92 +415,6 @@ button {
 .btn-round--lg {
   @include btn-round--lg;
 }
-
-
-@mixin btn {
-  --_btn-bg: var(--btn-bg, white);
-  --_btn-sha: var(--btn-sha, var(--sha--2xs));
-  --_btn-text: var(--btn-text, black);
-  --_btn-icon: var(--btn-icon, black);
-
-  $inner-h: 0.9em;
-  $p-t: 1px;
-  $p-b: 0;
-  $p-x: 1em;
-  $p-x-icon: 0.75em;
-
-  /* layout */
-  height: var(--ui--md);
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: $p-t $p-x $p-b $p-x;
-  text-shadow: var(--text-sha--md);
-
-  @include btn-text;
-  @include ui-transitions;
-  @include flex--c;
-
-  width: fit-content;
-  border-radius: $round;
-
-  background-color: var(--_btn-bg);
-  color: var(--_btn-text);
-  box-shadow: var(--_btn-sha);
-
-
-  &.btn-icon {
-    gap: 0.3em;
-    padding: $p-t $p-x-icon $p-b $p-x-icon;
-  }
-
-  & > .svg-icon {
-    display: inline-block;
-    align-self: center;
-    mask-size: cover;
-    background-color: var(--_btn-icon);
-    background: var(--_btn-icon);
-    $h: calc(1.1 * $inner-h);
-    height: $h;
-    width: $h;
-    margin-top: calc(-1 * $p-t);
-  }
-
-  &:hover,
-   :focus {
-    --btn-bg: pink;
-    --btn-sha: var(--sha--2xl);
-    --btn-text: navy;
-    --btn-icon: navy;
-  }
-
-  &:active {
-    --btn-bg: orange;
-    --btn-sha: var(--sha--md);
-    --btn-text: green;
-    --btn-icon: green;
-  }
-
-  &[aria-selected="true"] {
-    --btn-bg: rgb(186, 164, 21);
-    --btn-sha: var(--sha--xs);
-    --btn-text: rgb(233, 44, 44);
-    --btn-icon: rgb(233, 44, 44);
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    --btn-bg: black;
-    --btn-sha: var(--sha--3xs);
-    --btn-text: gray;
-    --btn-icon: gray;
-  }
-}
-
-
-.btn {
-  @include btn;
-}
-
 
 
 

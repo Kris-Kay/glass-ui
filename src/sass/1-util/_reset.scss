@@ -75,17 +75,17 @@ button {
   direction: ltr;
 }
 
-// button,
-// a,
-// input,
-// textarea {
-//   background-color: transparent;
-//   border: 0;
-//   border-style: none;
-//   border-radius: 0;
-//   text-decoration: none;
-//   appearance: none;
-// }
+button,
+a,
+input,
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-style: none;
+  border-radius: 0;
+  text-decoration: none;
+  appearance: none;
+}
 
 a, button {
   cursor: pointer;
