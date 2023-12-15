@@ -1,0 +1,18 @@
+/* ========================================== */
+/* Interactions */
+@use "../config" as *;
+@use "../util" as *;
+/* ========================================== */
+
+$focus-tran: outline ease-in-out $speed--base;
+
+:focus {
+  outline: 1px solid var(--ui-focus);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

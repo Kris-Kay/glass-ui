@@ -1,15 +1,28 @@
 /* ========================================== */
 /* Animation custom styles */
-@use "../0-config/animation" as ani;
+@use "../config" as *;
 /* ========================================== */
 
-// html.root-transition,
-// html.root-transition *,
-// html.root-transition *:before,
-// html.root-transition *:after {
-//   transition: all 750ms !important;
-//   transition-delay: 0 !important;
-// }
+html.root-transition,
+html.root-transition *,
+html.root-transition *:before,
+html.root-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+$smooth: cubic-bezier(0.46, 0.43, 0.1, 0.99);
+
+@mixin float-transform {
+  will-change: transform;
+  transition: transform cubic-bezier(0.46, 0.43, 0.1, 0.99) $speed--xslow;
+}
+
+.float-transform {
+  @include float-transform;
+}
+
+
 
 // 3D
 .perspective-bin {
@@ -45,3 +58,29 @@
     transform: perspective(2000px) rotateY(15deg) rotateX(10deg) rotateZ(-5deg) translateX(15px);
   }
 }
+
+@mixin ui-transitions {
+  transition:
+    background-color $speed--xslow $smooth,
+    color $speed--xslow $smooth,
+    text-shadow $speed--xslow $smooth,
+    box-shadow $speed--xslow $smooth;
+}
+
+// @mixin ui-transitions {
+//   transition:
+//     background-color $speed--slow ease-out,
+//     box-shadow $speed--slow ease-out;
+
+//   &:hover {
+//     transition:
+//       background-color $speed--fast ease-in,
+//       box-shadow $speed--fast ease-in,
+//   }
+
+//   &:active {
+//     transition:
+//       background-color $speed--base ease-in-out,
+//       box-shadow $speed--base ease-in-out,
+//   }
+// }
