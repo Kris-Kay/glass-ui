@@ -6,12 +6,16 @@
 @use "../glass" as glass;
 /* ========================================== */
 
-.text-input__wrap {
-  display: grid;
-  gap: 0.5rem;
+.input:not(textarea) {
+  line-height: 1;
 }
 
-.label__group {
+.text-input__wrap {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.text-label__group {
   display: grid;
   gap: 0.1rem;
   padding-bottom: 0.25rem;
@@ -20,87 +24,81 @@
 
 .text-input__label {
   font-family: $font-family-title;
-  font-weight: var(--font-weight--md);
+  font-weight: $font-weight--md;
   letter-spacing: $letter-spacing--md;
 }
 
-.text-input__hint {
-  // font-family: $font-family-title;
-  font-weight: var(--font-weight--sm);
+.input-hint {
+  font-weight: $font-weight--sm;
   font-size: var(--text--xs);
   letter-spacing: $letter-spacing--sm;
   line-height: 1.1;
 }
 
-
-
+/* Text input */
+/* ========================================== */
 .text-input {
+  @include reset;
+
   pointer-events: auto;
   cursor: text;
   width: min(400px, 100%);
   height: var(--ui--lg);
   border-radius: var(--2xs);
-  padding: 0 1rem;
+  padding: 0 0.75rem;
 
   box-shadow: glass.$inset--md;
   // box-shadow: var(--inset--md);
   background-color: var(--bg--inset2);
+
+  &::placeholder {
+    color: var(--text--xmild);
+    font-size: var(--text--sm);
+  }
 }
 
-
-
-
-///////////
-
+/* Textarea input */
+/* ========================================== */
 .textarea__holder {
   position: relative;
   z-index: 2;
   pointer-events: none;
 
   @include grid--c;
-  padding: 1rem;
+  padding: 0.75rem;
 
-  // min-width: min(400px, 100%);
-  // max-width: 100%;
   width: 100%;
   height: fit-content;
 
+  @include outer-radius (var(--3xs), 0.75rem);
 
-  @include outer-radius (0.5rem, 1rem);
   box-shadow: glass.$inset--md;
   // box-shadow: var(--inset--md);
   background-color: var(--bg--inset2);
 }
 
 .textarea {
+  @include reset;
+
   z-index: 3;
-  inset: 0rem;
+  inset: 0;
   pointer-events: auto;
   cursor: text;
-  overflow: scroll;
+  overflow: auto;
   resize: vertical;
 
   min-height: 150px;
   max-width: 100%;
   width: 100%;
 
-
   text-align: start;
-  border-radius: 0.5rem;
-  // background-color: rgb(70, 22, 22);
-  // background-color: var(--bg--inset2);
+  border-radius: var(--2xs);
 
-  // --min-w: calc(400px - 2rem);
-  // min-width: min(var(--min-w), 100%);
-  // max-width: min(600px, 100%);
-  // width: clamp(min(400px, 100%), fit-content, 700px);
+  background-color: var(--bg--inset3);
+  transition: $focus-tran;
 
-  &:focus {
-    outline: 1.5px solid oklch(85% var(--primary--ch) / 0.7);;
-    outline-offset: $s2;
+  &::placeholder {
+    color: var(--text--xmild);
+    font-size: var(--text--sm);
   }
-}
-
-.textarea-jail {
-  max-width: 690px;
 }

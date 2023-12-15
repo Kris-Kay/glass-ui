@@ -12,7 +12,7 @@
 }
 
 .input__legend {
-  font-weight: var(--font-weight--md);
+  font-weight: $font-weight--md;
   font-family: $font-family-title;
   font-size: var(--sm);
   letter-spacing: $letter-spacing--md;

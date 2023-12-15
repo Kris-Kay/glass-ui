@@ -1,12 +1,15 @@
 /* ========================================== */
-/* Text utilities */
-@forward "../0-config/text";
-@use "../0-config/text";
+/* Text helpers */
+@use "../config" as *;
 /* ========================================== */
+
+.bold {
+  font-weight: $font-weight--lg;
+}
 
 .first-line--bold {
   &:first-line {
-    font-weight: var(--font-weight--lg);
+    font-weight: $font-weight--lg;
   }
 }
 
@@ -21,17 +24,21 @@
   min-width: 0;
 }
 
+.no-break {
+  word-break: keep-all;
+}
+
 /* text-align: */
-.text-c { text-align: center; }
-.text-l { text-align: start; }
-.text-r { text-align: end; }
-.text-j { text-align: justify; }
+.text--c { text-align: center; }
+.text--l { text-align: start; }
+.text--r { text-align: end; }
+.text--j { text-align: justify; }
 
-.text-ital { font-style: italic; }
+.text--ital { font-style: italic; }
 
-.text-cap { text-transform: capitalize; }
-.text-allcap { text-transform: uppercase; }
-.text-lower { text-transform: lowercase; }
+.text--cap { text-transform: capitalize; }
+.text--allcap { text-transform: uppercase; }
+.text--lower { text-transform: lowercase; }
 
 
 /* text-decoration: */

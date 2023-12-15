@@ -1,0 +1,68 @@
+/* ========================================== */
+/* Text shadows */
+@use 'sass:map';
+@forward "../1-util/shadow";
+@use "../1-util/shadow" as sha;
+/* ========================================== */
+
+html {
+  --text-sha--3xs:
+    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
+    0 0 0.5px oklch(var(--shadow) / 0.1),
+    0 0 1px oklch(var(--shadow) / 0.05);
+
+  --text-sha--2xs:
+    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
+    0.25px 0.25px 0.5px  oklch(var(--shadow) / 0.12),
+    0 0 0.5px oklch(var(--shadow) / 0.1),
+    0 0 1px oklch(var(--shadow) / 0.05);
+
+  --text-sha--xs:
+    0.2px 0.2px 0.2px oklch(var(--shadow) / 0.3),
+    0.5px 0.5px 1px  oklch(var(--shadow) / 0.12),
+    0 0 1px oklch(var(--shadow) / 0.1),
+    0 0 2px oklch(var(--shadow) / 0.05);
+
+  --text-sha--sm:
+    0.25px 0.25px 0.25px oklch(var(--shadow) / 0.4),
+    1px 1px 2px oklch(var(--shadow) / 0.12),
+    0 0 2px oklch(var(--shadow) / 0.1),
+    0 0 4px oklch(var(--shadow) / 0.1);
+
+  --text-sha--md:
+    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
+    1px 1px 2px oklch(var(--shadow) / 0.15),
+    0 0 4px oklch(var(--shadow) / 0.1),
+    0 0 8px oklch(var(--shadow) / 0.1);
+
+  --text-sha--lg:
+    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
+    1px 1px 2px oklch(var(--shadow) / 0.2),
+    0 0 6px oklch(var(--shadow) / 0.15),
+    0 0 12px oklch(var(--shadow) / 0.1);
+
+  --text-sha--xl:
+    0.8px 0.8px 0.8px oklch(var(--shadow) / 0.4),
+    2px 2px 4px oklch(var(--shadow) / 0.2),
+    0 0 8px oklch(var(--shadow) / 0.15),
+    0 0 16px oklch(var(--shadow) / 0.1);
+
+  --text-sha--2xl:
+    1px 1px 1px oklch(var(--shadow) / 0.4),
+    2px 2px 4px oklch(var(--shadow) / 0.2),
+    0 0 10px oklch(var(--shadow) / 0.15),
+    0 0 20px oklch(var(--shadow) / 0.1);
+
+  --text-sha--3xl:
+    1px 1px 1px oklch(var(--shadow) / 0.4),
+    2px 2px 4px oklch(var(--shadow) / 0.2),
+    0 0 10px oklch(var(--shadow) / 0.15),
+    0 0 20px oklch(var(--shadow) / 0.1),
+    0 0 25px oklch(var(--shadow) / 0.05);
+}
+
+/* Text shadow classes */
+/* ========================================== */
+.text-sha {
+  @include sha.shadow-modifier('text-sha', 'text-shadow');
+}

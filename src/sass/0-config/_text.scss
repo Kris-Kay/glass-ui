@@ -1,77 +1,71 @@
 /* ========================================== */
 /* Text */
 @use 'sass:map';
-@forward "../0-config/shadow";
-@use "../0-config/shadow" as sha;
 /* ========================================== */
 
-
 /* font-family: */
+/* ========================================== */
 /* Google fonts added in index.HTML <head> for better performance */
 $font-family-title: ('Poppins', 'Arial', sans-serif);
 $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $font-family-code: ('Fragment Mono', 'Courier', monospace);
 
 /* letter-spacing: */
+/* ========================================== */
 $letter-spacing--sm: 0.01em;
 $letter-spacing--md: 0.04em;
 $letter-spacing--lg: 0.08em;
 
 /* line-height: */
+/* ========================================== */
 $line-height--sm: calc(0.1rem + 2ex + 0.1rem);
 $line-height--md: calc(0.125rem + 2.25ex + 0.125rem);
 $line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* font-weight: */
-html {
-  --font-weight--sm: 200;
-  --font-weight--md: 300;
-  --font-weight--lg: 400;
-}
+/* ========================================== */
+$font-weight--xs: 100;
+$font-weight--sm: 200;
+$font-weight--md: 300;
+$font-weight--lg: 400;
+$font-weight--xl: 500;
 
-/* Compensate for light text over a dark background looking thicker */
-// :root, [data-theme=default] {
-//   --font-weight--sm: 200;
-//   --font-weight--md: 300;
-//   --font-weight--lg: 400;
-// }
-
-// [data-theme="high-contrast"] {
-//   --font-weight--sm: 300;
-//   --font-weight--md: 400;
-//   --font-weight--lg: 500;
-// }
-
-/* Fluid font sizes */
+/* Fluid typography range */
 /* ====================================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
-/* use this tool to fine-tune your fluid typography range */
 :root {
+  /* 3xs: 10px → 12px */
+  --text--3xs: clamp(0.625rem, 4vw - 1.25rem, 0.75rem);
+
+  /* 2xs: 12px → 14px */
+  --text--2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
+
   /* xs: 14px → 16px */
   --text--xs: clamp(0.875rem, 4vw - 1rem, 1rem);
 
-  /* sm: 17px → 20px */
-  --text--sm: clamp(1.063rem, 0.2vw + 1rem, 1.25rem);
+  /* sm: 16px → 18px */
+  --text--sm: clamp(1rem, 0.13vw + 1rem, 1.125rem);
 
-  /* md: 20px → 24px */
-  --text--md: clamp(1.25rem, 0.8vw + 1rem, 1.35rem);
+  /* md: 18px → 22px */
+  --text--md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
 
   /* lg: 22px → 28px */
-  --text--lg: clamp(1.375rem, 0.8vw + 1rem, 1.75rem);
+  --text--lg: clamp(1.375rem, 1.3vw + 1rem, 1.75rem);
 
-  /* xl: 32px → 40px */
-  --text--xl: clamp(2rem, 2.2vw + 1rem, 2.75rem);
+  /* xl: 28px → 36px */
+  --text--xl: clamp(1.75rem, 1.7vw + 1rem, 2.25rem);
 
-  /* 2xl: 40px → 48px */
-  --text--2xl: clamp(2.25rem, 3.4vw + 1rem, 3rem);
+  /* 2xl: 36px → 48px */
+  --text--2xl: clamp(2.25rem, 2.5vw + 1rem, 3rem);
 
-  /* 3xl: 48px → 56px */
-  --text--3xl: clamp(2.75rem, 4vw + 1rem, 3.5rem);
+  /* 3xl: 40px → 56px */
+  --text--3xl: clamp(2.5rem, 3.8vw + 1rem, 3.5rem);
 }
 
 /* Text size MAP */
-/* ====================================================================== */
+/* ========================================== */
 $text-sizes: (
+  "2xs":  var(--text--2xs),
   "xs":  var(--text--xs),
   "sm":  var(--text--sm),
   "md":  var(--text--md),
@@ -97,71 +91,4 @@ $text-sizes: (
 /* Generates a class for every size in `$text-sizes` MAP */
 .text {
   @include text-size-modifier;
-}
-
-
-
-
-
-/* Text shadows */
-/* ====================================================================== */
-html {
-  --text-sha--3xs:
-    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
-    0 0 0.5px oklch(var(--shadow) / 0.1),
-    0 0 1px oklch(var(--shadow) / 0.05);
-
-  --text-sha--2xs:
-    0.1px 0.1px 0.1px oklch(var(--shadow) / 0.3),
-    0.25px 0.25px 0.5px  oklch(var(--shadow) / 0.12),
-    0 0 0.5px oklch(var(--shadow) / 0.1),
-    0 0 1px oklch(var(--shadow) / 0.05);
-
-  --text-sha--xs:
-    0.2px 0.2px 0.2px oklch(var(--shadow) / 0.3),
-    0.5px 0.5px 1px  oklch(var(--shadow) / 0.12),
-    0 0 1px oklch(var(--shadow) / 0.1),
-    0 0 2px oklch(var(--shadow) / 0.05);
-
-  --text-sha--sm:
-    0.25px 0.25px 0.25px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.12),
-    0 0 2px oklch(var(--shadow) / 0.1),
-    0 0 4px oklch(var(--shadow) / 0.1);
-
-  --text-sha--md:
-    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.15),
-    0 0 4px oklch(var(--shadow) / 0.1),
-    0 0 8px oklch(var(--shadow) / 0.1);
-
-  --text-sha--lg:
-    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.4),
-    1px 1px 2px oklch(var(--shadow) / 0.2),
-    0 0 6px oklch(var(--shadow) / 0.15),
-    0 0 12px oklch(var(--shadow) / 0.1);
-
-  --text-sha--xl:
-    0.8px 0.8px 0.8px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 8px oklch(var(--shadow) / 0.15),
-    0 0 16px oklch(var(--shadow) / 0.1);
-
-  --text-sha--2xl:
-    1px 1px 1px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 10px oklch(var(--shadow) / 0.15),
-    0 0 20px oklch(var(--shadow) / 0.1);
-
-  --text-sha--3xl:
-    1px 1px 1px oklch(var(--shadow) / 0.4),
-    2px 2px 4px oklch(var(--shadow) / 0.2),
-    0 0 10px oklch(var(--shadow) / 0.15),
-    0 0 20px oklch(var(--shadow) / 0.1),
-    0 0 25px oklch(var(--shadow) / 0.05);
-}
-
-//* Text shadow classes *//
-.text-sha {
-  @include sha.shadow-modifier('text-sha', 'text-shadow');
 }
