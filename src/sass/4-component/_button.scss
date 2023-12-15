@@ -233,24 +233,24 @@
     }
 }
 
-/* Accent */
+/* Secondary */
 /* ========================================== */
 .btn-viz.btn--secondary {
   // @include btn-viz;
 
   /* ↓ config ↓ */
-    --btn-bg: oklch(50% var(--dark--ch) / 0.6);
+    --btn-bg: var(--tint--xdark);
     --btn-text: var(--text--2xlight);
     --btn-icon: var(--text--2xlight);
 
   &:hover {
-    --btn-bg: oklch(70% var(--dark--ch) / 0.6);
+    --btn-bg: var(--tint--dark);
     --btn-text: var(--text--2xlight);
     --btn-icon: var(--text--2xlight);
   }
 
   &:active {
-    --btn-bg: oklch(80% var(--light--ch) / 0.6);
+    --btn-bg: var(--tint--2xdark);
     --btn-text: var(--text--2xlight);
     --btn-icon: var(--text--2xlight);
   }
@@ -271,39 +271,60 @@
 
 /* Clear */
 /* ========================================== */
-.btn-viz.btn--clear {
-  // @include btn-viz;
+.btn--clear {
+  background-color: transparent;
+  color: var(--text--2xlight);
+  box-shadow: none;
+  @include ui-transitions;
+  font-weight: 400;
+   text-shadow: var(--text-sha--2xs);
 
-  /* ↓ config ↓ */
-  --btn-bg: var(--tint--clear);
-  --btn-text: var(--text--2xlight);
-  --btn-icon: var(--text--2xlight);
-  // box-shadow: none;
+  & > .svg-icon {
+    background-color: var(--text--2xlight);
+  }
 
   &:hover {
-  --btn-bg: var(--tint--light);
-  --btn-text: var(--text--2xlight);
-  --btn-icon: var(--text--2xlight);
+    background-color: var(--tint--xlight);
   }
 
   &:active {
-  --btn-bg: var(--tint--xlight);
-  --btn-text: var(--text--2xlight);
-  --btn-icon: var(--text--2xlight);
+    background-color: var(--tint--dark);
   }
 
-  // &[aria-selected="true"] {
-  //   --btn-bg: rgb(123, 21, 186);
-  //   --btn-text: rgb(233, 44, 176);
-  //   --btn-icon: rgb(233, 44, 192);
-  //   --btn-sha: var(--sha--xs);
+
+
+  // // @include btn-viz;
+
+  // /* ↓ config ↓ */
+  // --btn-bg: var(--tint--clear);
+  // --btn-text: var(--text--2xlight);
+  // --btn-icon: var(--text--2xlight);
+  // // box-shadow: none;
+
+  // &:hover {
+  // --btn-bg: var(--tint--light);
+  // --btn-text: var(--text--2xlight);
+  // --btn-icon: var(--text--2xlight);
   // }
 
-  &:disabled {
-  --btn-bg: var(--tint--clear);
-  --btn-text: var(--text--xlight);
-  --btn-icon: var(--text--xlight);
-  }
+  // &:active {
+  // --btn-bg: var(--tint--xlight);
+  // --btn-text: var(--text--2xlight);
+  // --btn-icon: var(--text--2xlight);
+  // }
+
+  // // &[aria-selected="true"] {
+  // //   --btn-bg: rgb(123, 21, 186);
+  // //   --btn-text: rgb(233, 44, 176);
+  // //   --btn-icon: rgb(233, 44, 192);
+  // //   --btn-sha: var(--sha--xs);
+  // // }
+
+  // &:disabled {
+  // --btn-bg: var(--tint--clear);
+  // --btn-text: var(--text--xlight);
+  // --btn-icon: var(--text--xlight);
+  // }
 }
 
 
