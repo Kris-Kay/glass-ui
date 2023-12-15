@@ -60,7 +60,7 @@
 
   & > p {
     font-family: $font-family-body;
-    font-weight: var(--font-weight--lg);
+    font-weight: $font-weight--lg;
     letter-spacing: $letter-spacing--md;
     color: var(--text--xbold);
   }
@@ -77,7 +77,7 @@
   pointer-events: auto;
   cursor: pointer;
   background-color: transparent;
-  @include btn.ui-transitions;
+  @include ui-transitions;
 
   &:hover {
     background-color: var(--tint--mild);

@@ -3,7 +3,19 @@
 /* mixinzzzz */
 /* ========================================== */
 
+// reset user agent style
+@mixin reset {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
 
+  border: 0;
+  border-style: none;
+  border-radius: 0;
+  text-decoration: none;
+
+  appearance: none;
+}
 
 
 
@@ -20,9 +32,9 @@
 
 /* Text color modifier mixin */
 /* ========================================== */
-/* Generates classes using `$text-colors` MAP */
-// @mixin text-color-modifier {
-//   @each $key, $value in $text-colors {
+/* Generates classes using `$text--colors` MAP */
+// @mixin text--color-modifier {
+//   @each $key, $value in $text--colors {
 //     &--#{$key} {
 //       color: $value;
 //     }

@@ -1,0 +1,11 @@
+/* ========================================== */
+/* Speed */
+@use "sass:map";
+/* ========================================== */
+$speed--2xslow: 1000ms;
+$speed--xslow:  750ms;
+$speed--slow:   500ms;
+$speed--base:   400ms;
+$speed--fast:   300ms;
+$speed--xfast:  200ms;
+$speed--2xfast: 100ms;

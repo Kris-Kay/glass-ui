@@ -56,43 +56,43 @@
   /* use `-lch` custom properties to create colors with different alpha values */
   --primary--ch: var(--primary-c) var(--primary-h);
   --primary--lch: var(--primary-l) var(--primary-c) var(--primary-h);
-  --primary--90: oklch(90% var(--primary-ch) / 1);
-  --primary--70: oklch(70% var(--primary-ch) / 1);
-  --primary--50: oklch(50% var(--primary-ch) / 1);
-  --primary--30: oklch(30% var(--primary-ch) / 1);
-  --primary--10: oklch(10% var(--primary-ch) / 1);
+  // --primary--90: oklch(90% var(--primary-ch) / 1);
+  // --primary--70: oklch(70% var(--primary-ch) / 1);
+  // --primary--50: oklch(50% var(--primary-ch) / 1);
+  // --primary--30: oklch(30% var(--primary-ch) / 1);
+  // --primary--10: oklch(10% var(--primary-ch) / 1);
 
   --accent--ch: var(--accent-c) var(--accent-h);
   --accent--lch: var(--accent-l) var(--accent-c) var(--accent-h);
-  --accent--90: oklch(90% var(--accent-ch) / 1);
-  --accent--70: oklch(70% var(--accent-ch) / 1);
-  --accent--50: oklch(50% var(--accent-ch) / 1);
-  --accent--30: oklch(30% var(--accent-ch) / 1);
-  --accent--10: oklch(10% var(--accent-ch) / 1);
+  // --accent--90: oklch(90% var(--accent-ch) / 1);
+  // --accent--70: oklch(70% var(--accent-ch) / 1);
+  // --accent--50: oklch(50% var(--accent-ch) / 1);
+  // --accent--30: oklch(30% var(--accent-ch) / 1);
+  // --accent--10: oklch(10% var(--accent-ch) / 1);
 
   --pop--ch: var(--pop-c)var(--pop-h);
   --pop--lch: var(--pop-l) var(--pop-c) var(--pop-h);
-  --pop--90: oklch(90% var(--pop-ch) / 1);
-  --pop--70: oklch(70% var(--pop-ch) / 1);
-  --pop--50: oklch(50% var(--pop-ch) / 1);
-  --pop--30: oklch(30% var(--pop-ch) / 1);
-  --pop--10: oklch(10% var(--pop-ch) / 1);
+  // --pop--90: oklch(90% var(--pop-ch) / 1);
+  // --pop--70: oklch(70% var(--pop-ch) / 1);
+  // --pop--50: oklch(50% var(--pop-ch) / 1);
+  // --pop--30: oklch(30% var(--pop-ch) / 1);
+  // --pop--10: oklch(10% var(--pop-ch) / 1);
 
   --light--ch: var(--light-c) var(--light-h);
   --light--lch: var(--light-l) var(--light-c) var(--light-h);
-  --light--90: oklch(90% var(--light-ch) / 1);
-  --light--80: oklch(80% var(--light-ch) / 1);
-  --light--70: oklch(70% var(--light-ch) / 1);
-  --light--60: oklch(60% var(--light-ch) / 1);
-  --light--50: oklch(50% var(--light-ch) / 1);
+  // --light--90: oklch(90% var(--light-ch) / 1);
+  // --light--80: oklch(80% var(--light-ch) / 1);
+  // --light--70: oklch(70% var(--light-ch) / 1);
+  // --light--60: oklch(60% var(--light-ch) / 1);
+  // --light--50: oklch(50% var(--light-ch) / 1);
 
   --dark--ch: var(--dark-c) var(--dark-h);
   --dark--lch: var(--dark-l) var(--dark-c) var(--dark-h);
-  --dark--40: oklch(40% var(--dark-ch) / 1);
-  --dark--30: oklch(30% var(--dark-ch) / 1);
-  --dark--20: oklch(20% var(--dark-ch) / 1);
-  --dark--10: oklch(10% var(--dark-ch) / 1);
-  --dark--5:  oklch(5% var(--dark-ch) / 1);
+  // --dark--40: oklch(40% var(--dark-ch) / 1);
+  // --dark--30: oklch(30% var(--dark-ch) / 1);
+  // --dark--20: oklch(20% var(--dark-ch) / 1);
+  // --dark--10: oklch(10% var(--dark-ch) / 1);
+  // --dark--5:  oklch(5% var(--dark-ch) / 1);
 
 
 /* Colors that do not change with theme */
@@ -157,7 +157,7 @@
 
   /* Text links */
   /* ========================================== */
-  --link--base: oklch(70% var(--primary--ch) / 1);
+  --link--rest: oklch(70% var(--primary--ch) / 1);
   --link--hover: oklch(50% var(--primary--ch) / 1);
   --link--visit: oklch(30% var(--primary--ch) / 1);
 
@@ -210,7 +210,7 @@
 
   /* Text links */
   /* ========================================== */
-  --link--base: oklch(70% var(--primary--ch) / 1);
+  --link--rest: oklch(70% var(--primary--ch) / 1);
   --link--hover: oklch(50% var(--primary--ch) / 1);
   --link--visit: oklch(30% var(--primary--ch) / 1);
 

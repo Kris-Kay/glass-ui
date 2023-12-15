@@ -1,0 +1,44 @@
+/* ========================================== */
+/* SVGs used on this site */
+@use 'sass:map';
+/* ========================================== */
+
+
+
+
+
+/* Change SVG color */
+/* ========================================== */
+/* Credit: Chris Coyier  */
+/* https://css-tricks.com/change-color-of-svg-on-hover/ */
+
+.svg-icon-color {
+  display: inline-block;
+  // width: auto;
+  // width: 70px;
+  // height: 70px;
+  width: var(--ui--md, 2.125rem);
+  height: var(--ui--md, 2.125rem);
+  align-self: center;
+  mask-size: cover;
+  background: purple;
+}
+
+// .icon-arrow {
+//   mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/icon-arrow-black.svg);
+// }
+// .icon {
+//   display: inline-block;
+//   width: 70px;
+//   height: 70px;
+//   background: black;
+//   mask-size: cover;
+// }
+// .icon:hover,
+// .icon:focus {
+//   background: red;
+// }
+
+/* SVGs */
+/* ========================================== */
+.svg-cube{ mask: url(/assets/icons/CubeTransparent.svg); }

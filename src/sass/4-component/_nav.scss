@@ -55,7 +55,8 @@
 
 .dropdown__btn {
   @include btn.btn-round--md;
-  @include btn.btn-glass-dark;
+  @include glass.btn-glass;
+  background-color: var(--tint--xdark);
 
   @include bp(md) {
     @include btn.btn-round--lg;
@@ -94,5 +95,5 @@
   min-width: max-content;
   width: 100%;
   letter-spacing: $letter-spacing--lg;
-  font-weight: var(--font-weight--md);
+  font-weight: $font-weight--md;
 }

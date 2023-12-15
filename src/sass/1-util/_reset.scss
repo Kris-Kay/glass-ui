@@ -75,46 +75,21 @@ button {
   direction: ltr;
 }
 
-button,
-a,
-input,
-textarea {
-  background-color: transparent;
-  border: 0;
-  border-style: none;
-  border-radius: 0;
-  text-decoration: none;
-  appearance: none;
-}
-
-textarea {
-  resize: vertical;
-  overflow: auto;
-  vertical-align: top;
-}
+// button,
+// a,
+// input,
+// textarea {
+//   background-color: transparent;
+//   border: 0;
+//   border-style: none;
+//   border-radius: 0;
+//   text-decoration: none;
+//   appearance: none;
+// }
 
 a, button {
   cursor: pointer;
   pointer-events: auto;
-}
-
-// button {
-//   -webkit-box-sizing: content-box;
-//   box-sizing: content-box;
-// }
-
-button:disabled {
-  cursor: default;
-}
-
-:focus {
-  outline: 1px solid var(--focus);
-  outline-offset: 1px;
-}
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
 }
 
 p {
@@ -143,16 +118,4 @@ canvas,
 video,
 progress {
   vertical-align: baseline;
-}
-
-
-// reset user agent style
-@mixin reset {
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  color: inherit;
-  line-height: inherit;
-  appearance: none;
 }

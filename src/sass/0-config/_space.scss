@@ -177,6 +177,8 @@ html {
 
 .max-w--lg {
   width: 100%;
+  max-width: 100%;
+
   @include bp.bp(lg) {
     max-width: var(--max-w--lg);
   }

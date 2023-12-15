@@ -6,181 +6,265 @@
 @use "../glass" as glass;
 /* ========================================== */
 
+/* Button reset */
+/* ========================================== */
+button {
+  background-color: transparent;
+  border: 0;
+  border-style: none;
+  border-radius: 0;
+  text-decoration: none;
+  appearance: none;
+}
+
+/* Button text */
+/* ========================================== */
+  /* ↓ config ↓ */
+@mixin btn-text {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing--md;
+  text-align: center;
+  text-shadow: var(--text-sha--2xs);
+  /* ↑ config ↑ */
+}
+
+/* Button transition */
+/* ========================================== */
+/* ↓ config ↓ */
+@mixin btn-transition {
+  transition:
+    background-color $speed--xslow $smooth,
+    color $speed--xslow $smooth,
+    text-shadow $speed--xslow $smooth,
+    box-shadow $speed--xslow $smooth;
+  /* ↑ config ↑ */
+}
+
+/* ========================================== */
+/* Button base */
+/* ========================================== */
+  /* ↓ no touchÉ! ↓ */
+@mixin btn--base {
+  --_btn--h: var(--btn--h, 1rem);
+  --_btn-inner--h: var(--btn-inner--h, 0.8em);
+  --_btn--t: var(--btn--t, 1px);
+  --_btn--b: var(--btn--b, 1px);
+  --_btn--x: var(--btn--x, 0.85em);
+  --_btn--radius: var(--btn--radius, 0.25rem);
+  --_btn--text-sha: var(--btn--text-sha, var(--text-sha--2xs));
+
+  @include btn-text;
+  @include btn-transition;
+  @include flex--c;
+
+  height: var(--_btn--h);
+  width: fit-content;
+  border-radius: var(--_btn--radius);
+
+  font-size: var(--_btn-inner--h);
+  line-height: var(--_btn-inner--h);
+  padding: var(--_btn--t) var(--_btn--x) var(--_btn--b) var(--_btn--x);
+  text-shadow: var(--_btn--text-sha);
+
+  & > .svg-icon {
+    display: inline-block;
+    align-self: center;
+    $h: calc(1.1 * var(--_btn-inner-h));
+    height: $h;
+    width: $h;
+
+    // height: $h;
+    // width: $h;
+    margin-top: calc(-1 * var(--_btn--t));
+  }
+  /* ↑ no touchÉ! ↑ */
+}
+
+.btn--base { @include btn--base; }
+/* Button sizes */
+/* ========================================== */
+/* ↓ config ↓ */
+@mixin btn--sm {
+  @include btn--base;
+
+  --btn--h: var(--ui--sm);
+  --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
+  --btn--t: 1px;
+  --btn--b: 0;
+  --btn--x: 0.85em;
+  --btn--radius: $round;
+  --btn--text-sha: var(--text-sha--2xs);
+  /* ↑ config ↑ */
+}
+
+/* ↓ config ↓ */
+@mixin btn--md {
+  @include btn--base;
+
+  --btn--h: var(--ui--md);
+  --btn-inner--h: 0.9em; // sets font-size | line-height | icon height
+  --btn--t: 1px;
+  --btn--b: 0;
+  --btn--x: 1rem;
+  --btn--radius: $round;
+  --btn--text-sha: var(--text-sha--2xs);
+  /* ↑ config ↑ */
+}
+
+/* ↓ config ↓ */
+@mixin btn--lg {
+  @include btn--base;
+
+  --btn--h: var(--ui--lg);
+  --btn-inner--h: 1em; // sets font-size | line-height | icon height
+  --btn--t: 1px;
+  --btn--b: 0;
+  --btn--x: 1.4rem;
+  --btn--radius: $round;
+  --btn--text-sha: var(--text-sha--xs);
+  /* ↑ config ↑ */
+}
+
+.btn--sm { @include btn--sm; }
+.btn--md { @include btn--md; }
+.btn--lg { @include btn--lg; }
+
+/* Button types */
+/* ========================================== */
 // btn--primary
 // btn--accent
 // btn--clear
-// btn--disabled
+// btn--round
 // btn--icon
 
-// .btn, [data-theme=default] {
-//   // * Button colors * //
-//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--hover: red;
-//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-//   // --btn-bg--base: var(--tint--base);
-//   // --btn-bg--hover: var(--tint--bold);
-//   // --btn-bg--active: var(--tint--2xbold);
-//   --btn-text--rest: var(--text-base);
-//   --btn-text--hover: var(--text--bold);
-//   --btn-text--active: var(--text--xbold);
-// }
 
-// .btn, [data-theme="high-contrast"] {
-//     // * Button colors * //
-//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--hover: red;
-//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-//   // --btn-bg--base: var(--tint--base);
-//   // --btn-bg--hover: var(--tint--bold);
-//   // --btn-bg--active: var(--tint--2xbold);
-//   --btn-text--rest: var(--text-base);
-//   --btn-text--hover: var(--text--bold);
-//   --btn-text--active: var(--text--xbold);
-// }
-
-html {
-  /* Button colors */
-  /* ========================================== */
-  --btn-bg--hover: var(--tint--xlight);
-  --btn-bg--active: var(--tint--2xlight);
-  --btn-text--rest: var(--text-base);
-  --btn-text--hover: var(--text--bold);
-  --btn-text--active: var(--tint--xdark);
-}
-
+/* Button viz */
 /* ========================================== */
-//* Button size & layout */
+@mixin btn-viz {
+  --_btn-bg: var(--btn-bg, white);
+  --_btn-text: var(--btn-text, black);
+  --_btn-icon: var(--btn-icon, black);
+  --_btn-sha: var(--btn-sha, var(--sha--2xs));
+
+  background-color: var(--_btn-bg);
+  color: var(--_btn-text);
+  box-shadow: var(--_btn-sha);
+
+  & > .svg-icon {
+    mask-size: cover;
+    background-color: var(--_btn-icon);
+    background: var(--_btn-icon);
+  }
+
+  /* ↓ config ↓ */
+  --btn-bg: rgb(0, 123, 255);
+  --btn-text: red;
+  --btn-icon: red;
+  --btn-sha: var(--sha--sm);
+
+  &:hover,
+   :focus {
+    --btn-bg: rgb(150, 21, 190);
+    --btn-text: rgb(17, 17, 219);
+    --btn-icon: rgb(11, 11, 206);
+    --btn-sha: var(--sha--2xl);
+  }
+
+  &:active {
+    --btn-bg: rgb(0, 255, 8);
+    --btn-text: rgb(128, 0, 32);
+    --btn-icon: rgb(128, 0, 2);
+    --btn-sha: var(--sha--md);
+  }
+
+  &[aria-selected="true"] {
+    --btn-bg: rgb(123, 21, 186);
+    --btn-text: rgb(233, 44, 176);
+    --btn-icon: rgb(233, 44, 192);
+    --btn-sha: var(--sha--xs);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    --btn-bg: rgb(149, 77, 77);
+    --btn-text: gray;
+    --btn-icon: gray;
+    --btn-sha: var(--sha--3xs);
+  }
+}
+
+.btn-viz { @include btn-viz; }
+
+
+/* Button primary */
 /* ========================================== */
+.btn--primary {
+  @include btn-viz;
 
-/* Base → Button text */
-@mixin btn-text {
-  font-family: $font-family-title;
-  font-weight: var(--font-weight--md);
-  letter-spacing: $letter-spacing--md;
-  text-align: center;
-  text-shadow: var(--text-sha--xs);
-}
+  /* ↓ config ↓ */
+  --btn-bg: rgb(0, 255, 98);
+  --btn-text: rgb(234, 255, 0);
+  --btn-icon: rgb(197, 17, 17);
+  --btn-sha: var(--sha--sm);
 
-// .btn-text {
-//   @include btn-text;
-// }
+  &:hover,
+   :focus {
+    --btn-bg: rgb(128, 190, 21);
+    --btn-text: rgb(17, 17, 219);
+    --btn-icon: rgb(11, 11, 206);
+    --btn-sha: var(--sha--2xl);
+  }
 
-/* Base → Button layout */
-@mixin btn--base {
-  width: fit-content;
-  @include flex--c;
-  @include btn-text;
-  border-radius: $round;
+  &:active {
+    --btn-bg: rgb(0, 255, 8);
+    --btn-text: rgb(128, 0, 32);
+    --btn-icon: rgb(128, 0, 2);
+    --btn-sha: var(--sha--md);
+  }
 
-  & img {
-    width: auto;
-    align-self: center;
+  &[aria-selected="true"] {
+    --btn-bg: rgb(123, 21, 186);
+    --btn-text: rgb(233, 44, 176);
+    --btn-icon: rgb(233, 44, 192);
+    --btn-sha: var(--sha--xs);
+  }
+
+  &:disabled {
+    --btn-bg: rgb(149, 77, 77);
+    --btn-text: gray;
+    --btn-icon: gray;
+    --btn-sha: var(--sha--3xs);
   }
 }
 
-/* Button sizes */
+
+/* 2D clear button */
 /* ========================================== */
-@mixin btn--sm {
-  /* config */
-  $inner-h: 0.8em; // ← set font size/line height/icon height here
-  $p-t: 1px; // ← padding-top diff for every font
-  $p-b: 0;
-  $p-x: 0.85em;
-  $p-x-icon: 0.7em;
+@mixin btn-2d--base {
+  background-color: transparent;
+  color: var(--btn-text--rest);
+  box-shadow: none;
+  @include ui-transitions;
 
-  &.btn-icon {
-    gap: 0.25em;
-    padding: $p-t $p-x-icon $p-b $p-x-icon;
+  &:hover {
+    background-color: var(--tint--light);
+    // box-shadow: var(--sha--xs);
   }
 
-  /* layout */
-  @include btn--base;
-  height: var(--ui--sm);
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: $p-t $p-x $p-b $p-x;
-
-  text-shadow: var(--text-sha--sm);
-
-  & img {
-    height: calc(1.1 * $inner-h);
-    margin-top: calc(-1 * $p-t);
+  &:active {
+    background-color: var(--tint--xlight);
+    // box-shadow: var(--sha--2xs);
   }
 }
 
-@mixin btn--md {
-  /* config */
-  $inner-h: 0.9em; // ← set font size/line height/icon height here
-  $p-t: 1px; // ← padding-top diff for every font
-  $p-b: 0;
-  $p-x: 1em;
-  $p-x-icon: 0.75em;
-
-  &.btn-icon {
-    gap: 0.3em;
-    padding: $p-t $p-x-icon $p-b $p-x-icon;
-  }
-
-  /* layout */
-  @include btn--base;
-  height: var(--ui--md);
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: $p-t $p-x $p-b $p-x;
-
-  text-shadow: var(--text-sha--md);
-
-  & img {
-    height: calc(1.1 * $inner-h);
-    margin-top: calc(-1 * $p-t);
-  }
+.btn-clear {
+  @include btn-2d--base;
 }
 
-@mixin btn--lg {
-  /* config */
-  $inner-h: 1em; // ← set font size/line height/icon height here
-  $p-t: 1px; // ← padding-top diff for every font
-  $p-b: 0;
-  $p-x: 1.4em;
-  $p-x-icon: 1em;
 
-  &.btn-icon {
-    gap: 0.4em;
-    padding: $p-t $p-x-icon $p-b $p-x-icon;
-  }
-
-  /* layout */
-  @include btn--base;
-  height: var(--ui--lg);
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: $p-t $p-x $p-b $p-x;
-
-  text-shadow: var(--text-sha--md);
-
-  & img {
-    height: calc(1.1 * $inner-h);
-    margin-top: calc(-1 * $p-t);
-  }
-}
-
-.btn--sm {
-  @include btn--sm;
-}
-
-.btn--md {
-  @include btn--md;
-}
-
-.btn--lg {
-  @include btn--lg;
-}
-
-//* Round icon buttons */
+/* Round buttons */
 /* ========================================== */
-
 /* Base → round button */
 @mixin btn-round--base {
   @include flex--c;
@@ -236,132 +320,251 @@ html {
   @include btn-round--lg;
 }
 
-/* ========================================== */
-//* Button state & visual styling */
-/* ========================================== */
 
-@mixin ui-transitions {
-  transition:
-    background-color $speed--slow ease-out,
-    box-shadow $speed--slow ease-out;
+@mixin btn {
+  --_btn-bg: var(--btn-bg, white);
+  --_btn-sha: var(--btn-sha, var(--sha--2xs));
+  --_btn-text: var(--btn-text, black);
+  --_btn-icon: var(--btn-icon, black);
 
-  &:hover {
-    transition:
-      background-color $speed--fast ease-in,
-      box-shadow $speed--fast ease-in,
-  }
+  $inner-h: 0.9em;
+  $p-t: 1px;
+  $p-b: 0;
+  $p-x: 1em;
+  $p-x-icon: 0.75em;
 
-  &:active {
-    transition:
-      background-color $speed--base ease-in-out,
-      box-shadow $speed--base ease-in-out,
-  }
-}
+  /* layout */
+  height: var(--ui--md);
+  font-size: $inner-h;
+  line-height: $inner-h;
+  padding: $p-t $p-x $p-b $p-x;
+  text-shadow: var(--text-sha--md);
 
-
-/* Base → 3D button glass material */
-@mixin btn-glass--base {
-  position: relative;
-   box-shadow: var(--sha--xs);
-  @include glass.glass-filter;
-  color: var(--btn-text--rest);
+  @include btn-text;
   @include ui-transitions;
+  @include flex--c;
 
-  &::after {
-    @include pseudo;
-    z-index: -1;
-    box-shadow: $bevel--sm;
+  width: fit-content;
+  border-radius: $round;
+
+  background-color: var(--_btn-bg);
+  color: var(--_btn-text);
+  box-shadow: var(--_btn-sha);
+
+
+  &.btn-icon {
+    gap: 0.3em;
+    padding: $p-t $p-x-icon $p-b $p-x-icon;
   }
 
-  &::before {
-    @include pseudo;
-    z-index: -2;
-    @include glass.noise--sm;
-    opacity: 70%;
+  & > .svg-icon {
+    display: inline-block;
+    align-self: center;
+    mask-size: cover;
+    background-color: var(--_btn-icon);
+    background: var(--_btn-icon);
+    $h: calc(1.1 * $inner-h);
+    height: $h;
+    width: $h;
+    margin-top: calc(-1 * $p-t);
   }
 
-  &:hover {
-    box-shadow: var(--sha--sm);
-  }
-
-  &:active {
-    box-shadow: var(--sha--2xs);
-  }
-}
-
-@mixin btn-glass-clear {
-  @include btn-glass--base;
-  background-color: var(--tint--clear);
-
-  &:hover {
-    background-color: var(--tint--light);
-  }
-
-  &:active {
-    background-color: var(--tint--xlight);
-  }
-}
-
-/* Light → 3D button glass */
-@mixin btn-glass-light {
-  @include btn-glass--base;
-  background-color: var(--tint--xlight);
-
-  &:hover {
-    background-color: var(--tint--2xlight);
+  &:hover,
+   :focus {
+    --btn-bg: pink;
+    --btn-sha: var(--sha--2xl);
+    --btn-text: navy;
+    --btn-icon: navy;
   }
 
   &:active {
-    background-color: var(--tint--3xlight);
-    color: var(--tint--xdark);
+    --btn-bg: orange;
+    --btn-sha: var(--sha--md);
+    --btn-text: green;
+    --btn-icon: green;
+  }
+
+  &[aria-selected="true"] {
+    --btn-bg: rgb(186, 164, 21);
+    --btn-sha: var(--sha--xs);
+    --btn-text: rgb(233, 44, 44);
+    --btn-icon: rgb(233, 44, 44);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    --btn-bg: black;
+    --btn-sha: var(--sha--3xs);
+    --btn-text: gray;
+    --btn-icon: gray;
   }
 }
 
-/* Dark → 3D button glass */
-@mixin btn-glass-dark {
-  @include btn-glass--base;
-  background-color: var(--tint--xdark);
 
-  &:hover {
-    background-color: var(--tint--2xdark);
-  }
-
-  &:active {
-    background-color: var(--tint--3xdark);
-  }
+.btn {
+  @include btn;
 }
 
-.btn-glass-clear {
-  @include btn-glass-clear;
-}
 
-.btn-glass-light {
-  @include btn-glass-light;
-}
 
-.btn-glass-dark {
-  @include btn-glass-dark;
-}
 
-/* 2D clear button */
-/* ========================================== */
-@mixin btn-2d--base {
-  background-color: transparent;
-  color: var(--btn-text--rest);
-  box-shadow: none;
-  @include ui-transitions;
+  // &:hover {
+  //   box-shadow: var(--sha--sm);
+  //   background-color: var(--tint--light);
+  // }
 
-  &:hover {
-    background-color: var(--tint--light);
-    // box-shadow: var(--sha--xs);
-  }
+  // &:active {
+  //   box-shadow: var(--sha--2xs);
+  //   background-color: var(--tint--xlight);
+  // }
 
-  &:active {
-    background-color: var(--tint--xlight);
-    // box-shadow: var(--sha--2xs);
-  }
-}
+  // &:disabled {
+  //   box-shadow: var(--sha--3xs);
+  //   background-color: var(--tint--xlight);
+  // }
 
-.btn-clear {
-  @include btn-2d--base;
+// $btn-colors: (
+//   primary: (
+//     bg-rest: var(--btn--primary-bg--rest),
+//     bg-hover: var(--btn--primary-bg--rest),
+//     bg-active: var(--btn--primary-bg--rest),
+//     bg-disabled: var(--btn--primary-bg--rest),
+
+//     text-rest: #404145,
+//     text-hover: #c7c7cd,
+//     text-active: #c7c7cd,
+//     text-disabled: #c7c7cd,
+//   ),
+
+//   accent: (
+//     bg-rest: #404145,
+//     bg-hover: #c7c7cd,
+//     bg-active: #c7c7cd,
+//     bg-disabled: #c7c7cd,
+
+//     text-rest: #404145,
+//     text-hover: #c7c7cd,
+//     text-active: #c7c7cd,
+//     text-disabled: #c7c7cd,
+//   ),
+
+//   clear: (
+//     bg-rest: transparent,
+//     bg-hover: #c7c7cd,
+//     bg-active: #c7c7cd,
+//     bg-disabled: #c7c7cd,
+
+//     text-rest: #404145,
+//     text-hover: #c7c7cd,
+//     text-active: #c7c7cd,
+//     text-disabled: #c7c7cd,
+//   ),
+// );
+
+
+
+
+
+// .btn, [data-theme=default] {
+//   // * Button colors * //
+//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--hover: red;
+//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+//   // --btn-bg--base: var(--tint--base);
+//   // --btn-bg--hover: var(--tint--bold);
+//   // --btn-bg--active: var(--tint--2xbold);
+//   --btn-text--rest: var(--text-base);
+//   --btn-text--hover: var(--text--bold);
+//   --btn-text--active: var(--text--xbold);
+// }
+
+// .btn, [data-theme="high-contrast"] {
+//     // * Button colors * //
+//   --btn-bg--base: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--hover: red;
+//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
+//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
+//   // --btn-bg--base: var(--tint--base);
+//   // --btn-bg--hover: var(--tint--bold);
+//   // --btn-bg--active: var(--tint--2xbold);
+//   --btn-text--rest: var(--text-base);
+//   --btn-text--hover: var(--text--bold);
+//   --btn-text--active: var(--text--xbold);
+// }
+
+// html {
+//   /* Button colors */
+//   /* ========================================== */
+//   --btn-bg--hover: var(--tint--xlight);
+//   --btn-bg--active: var(--tint--2xlight);
+//   --btn-text--rest: var(--text-base);
+//   --btn-text--hover: var(--text--bold);
+//   --btn-text--active: var(--tint--xdark);
+// }
+
+
+
+
+
+
+// html {
+//   /* Button colors */
+//   /* ========================================== */
+//   /* Primary */
+//   --btn--primary-bg--rest: var(--tint--clear);
+//   --btn--primary-bg--hover: var(--tint--xlight);
+//   --btn--primary-bg--active: var(--tint--2xlight);
+//   --btn--primary-bg--disabled: var(--tint--xdark);
+
+//   --btn--primary-text--rest: var(--text-base);
+//   --btn--primary-text--hover: var(--text--bold);
+//   --btn--primary-text--active: var(--tint--xdark);
+//   --btn--primary-text--disabled: var(--tint--dark);
+
+//   /* Accent */
+//   --btn--accent-bg--rest: var(--tint--clear);
+//   --btn--accent-bg--hover: var(--tint--xlight);
+//   --btn--accent-bg--active: var(--tint--2xlight);
+//   --btn--accent-bg--disabled: var(--tint--xdark);
+
+//   --btn--accent-text--rest: var(--text-base);
+//   --btn--accent-text--hover: var(--text--bold);
+//   --btn--accent-text--active: var(--tint--xdark);
+//   --btn--accent-text--disabled: var(--tint--dark);
+
+//   /* Clear */
+//   --btn--clear-bg--rest: var(--tint--clear);
+//   --btn--clear-bg--hover: var(--tint--xlight);
+//   --btn--clear-bg--active: var(--tint--2xlight);
+//   --btn--clear-bg--disabled: var(--tint--xdark);
+
+//   --btn--clear-text--rest: var(--text-base);
+//   --btn--clear-text--hover: var(--text--bold);
+//   --btn--clear-text--active: var(--tint--xdark);
+//   --btn--clear-text--disabled: var(--tint--dark);
+// }
+
+button {
+  /* Button colors */
+  /* ========================================== */
+  // --_btn-bg--rest: var(--btn-bg--rest);
+  // --_btn-bg--hover: var(--btn-bg--hover);
+  // --_btn-bg--active: var(--btn-bg--active);
+  // --_btn-bg--disabled: var(--btn-bg--disabled);
+
+  // --_btn-sha--rest: var(--btn-sha--rest);
+  // --_btn-sha--hover: var(--btn-sha--hover);
+  // --_btn-sha--active: var(--btn-sha--active);
+  // --_btn-sha--disabled: var(--bg-sha-disabled);
+
+  // --_btn-text--rest: var(--btn-text--rest);
+  // --_btn-text--hover: var(--text--hover);
+  // --_btn-text--active: var(--text--active);
+  // --_btn-text--disabled: var(--text--disabled);
+
+  // --_btn-icon--rest: var(--btn-icon--rest);
+  // --_btn-icon--hover: var(--btn-icon--hover);
+  // --_btn-icon--active: var(--btn-icon--active);
+  // --_btn-icon--disabled: var(--btn-icon--disabled);
 }
