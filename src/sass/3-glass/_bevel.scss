@@ -47,3 +47,13 @@ $flat-bevel--sm:
 .flat-bevel--sm {
   box-shadow: $flat-bevel--sm;
 }
+
+
+html {
+--bevel--sm:
+  inset 0.3px 0.3px 0.2px oklch(var(--highlight) / 0.15),
+  inset 2px 2px 0.4px -2.6px oklch(var(--highlight) / 0.5),
+  inset 1px 1px 0.4px -1.3px oklch(var(--highlight) / 0.1),
+  inset -0.6px -1.8px 1.4px -3.2px oklch(var(--highlight) / 0.8),
+  inset -1.8px -2px 0.2px -2.6px oklch(var(--highlight) / 0.08);
+}

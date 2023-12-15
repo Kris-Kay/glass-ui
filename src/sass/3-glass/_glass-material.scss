@@ -91,13 +91,13 @@
 /* Button glass material */
 /* ====================================================================== */
 @mixin btn-glass {
-  @include filter.glass-filter;
   position: relative;
+  @include filter.glass-filter;
 
   &::after {
     @include pseudo;
-    z-index: -1;
+    z-index: 202;
     box-shadow: bevel.$bevel--sm;
-    @include tex.noise--sm;
+    // @include tex.noise--sm;
   }
 }

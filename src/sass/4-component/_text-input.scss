@@ -47,8 +47,7 @@
   border-radius: var(--2xs);
   padding: 0 0.75rem;
 
-  box-shadow: glass.$inset--md;
-  // box-shadow: var(--inset--md);
+  box-shadow: var(--inset--md);
   background-color: var(--bg--inset2);
 
   &::placeholder {
@@ -72,8 +71,7 @@
 
   @include outer-radius (var(--3xs), 0.75rem);
 
-  box-shadow: glass.$inset--md;
-  // box-shadow: var(--inset--md);
+  box-shadow: var(--inset--md);
   background-color: var(--bg--inset2);
 }
 
@@ -93,8 +91,6 @@
 
   text-align: start;
   border-radius: var(--2xs);
-
-  background-color: var(--bg--inset3);
   transition: $focus-tran;
 
   &::placeholder {

@@ -57,20 +57,20 @@
 
   --active-knob-sha: var(--sha--2xs);
   --disabled-knob-sha: var(--sha--2xs);
-  --active-inset: #{glass.$inset--2xs};
-  --disabled-inset: #{glass.$inset--2xs--mild};
+  --active-inset: var(--inset--2xs);
+  --disabled-inset: var(--inset--2xs--mild);
   --active-opacity: 1;
   --disabled-opacity: 0.8;
 
 
   /* reset */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  margin: 0;
-  cursor: pointer;
-  overflow: hidden;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
+  // outline: none;
+  // margin: 0;
+  // cursor: pointer;
+  // overflow: hidden;
   transition: background-color $speed--base ease-in-out;
 
   &::after {

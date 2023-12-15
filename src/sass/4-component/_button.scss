@@ -6,29 +6,6 @@
 @use "../glass" as glass;
 /* ========================================== */
 
-/* Button reset */
-/* ========================================== */
-// button {
-//   background-color: transparent;
-//   border: 0;
-//   border-style: none;
-//   border-radius: 0;
-//   text-decoration: none;
-//   appearance: none;
-// }
-
-/* Button text */
-/* ========================================== */
-  /* ↓ config ↓ */
-@mixin btn-text {
-  font-family: $font-family-title;
-  font-weight: $font-weight--md;
-  letter-spacing: $letter-spacing--md;
-  text-align: center;
-  text-shadow: var(--text-sha--2xs);
-  /* ↑ config ↑ */
-}
-
 /* Button transition */
 /* ========================================== */
 /* ↓ config ↓ */
@@ -41,13 +18,24 @@
   /* ↑ config ↑ */
 }
 
+/* Button text */
+/* ========================================== */
+  /* ↓ config ↓ */
+@mixin btn-text {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing--md;
+  text-align: center;
+  text-shadow: var(--text-sha--3xs);
+  @include btn-transition;
+  /* ↑ config ↑ */
+}
+
 /* ========================================== */
 /* Button base */
 /* ========================================== */
   /* ↓ no touchÉ! ↓ */
 @mixin btn--base {
-  @content;
-
   --_btn--h: var(--btn--h, 1rem);
   --_btn-inner--h: var(--btn-inner--h, 0.8em);
   --_btn--t: var(--btn--t, 1px);
@@ -56,11 +44,12 @@
   --_btn--radius: var(--btn--radius, 0.25rem);
 
   @include btn-text;
-  @include btn-transition;
-  @include flex--c;
 
   height: var(--_btn--h);
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: var(--3xs);
   border-radius: var(--_btn--radius);
 
@@ -69,6 +58,7 @@
   padding: var(--_btn--t) var(--_btn--x) var(--_btn--b) var(--_btn--x);
 
   & > .svg-icon {
+    // z-index: 200;
     display: inline-block;
     align-self: center;
     mask-size: cover;
@@ -77,48 +67,37 @@
     width: $h;
     margin-top: calc(-1 * var(--_btn--t));
   }
-
-  // & > svg {
-  //   display: inline-block;
-  //   align-self: center;
-  //   mask-size: cover;
-  //   $h: calc(1.1 * var(--_btn-inner-h));
-  //   height: $h;
-  //   width: $h;
-  //   // margin-top: calc(-1 * var(--_btn--t));
-  // }
   /* ↑ no touchÉ! ↑ */
 }
 
-.btn--base { @include btn--base; }
 /* Button sizes */
 /* ========================================== */
 /* ↓ config ↓ */
 @mixin btn--sm {
-  @include btn--base {
-    --btn--h: 1.75rem;
-    --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
-    --btn--t: 0;
-    --btn--b: 0;
-    --btn--x: 0.85em;
-    --btn--radius: 9999px;
-    // --btn--radius: $round;
-    /* ↑ config ↑ */
-  }
+  @include btn--base;
+
+  --btn--h: 1.75rem;
+  // --btn--h: var(--ui--sm);
+  --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
+  --btn--t: 0;
+  --btn--b: 0;
+  --btn--x: 0.85em;
+  --btn--radius: 9999px;
+  /* ↑ config ↑ */
 }
 
 /* ↓ config ↓ */
 @mixin btn--md {
-  @include btn--base {
-    --btn--h: 2.125rem;
-    // --btn--h: var(--ui--md);
-    --btn-inner--h: 0.9rem;
-    --btn--t: 0;
-    --btn--b: 0;
-    --btn--x: 1rem;
-    --btn--radius: 9999px;
-    /* ↑ config ↑ */
-  }
+  @include btn--base;
+
+  --btn--h: 2.125rem;
+  // --btn--h: var(--ui--md);
+  --btn-inner--h: 0.9rem;
+  --btn--t: 0;
+  --btn--b: 0;
+  --btn--x: 1rem;
+  --btn--radius: 9999px;
+  /* ↑ config ↑ */
 }
 
 /* ↓ config ↓ */
@@ -131,7 +110,6 @@
   --btn--b: 0;
   --btn--x: 1.4rem;
   --btn--radius: 9999px;
-  // --btn--radius: $round;
   /* ↑ config ↑ */
 }
 
@@ -142,197 +120,192 @@
 /* Button types */
 /* ========================================== */
 // btn--primary
-// btn--accent
+// btn--secondary
 // btn--clear
 // btn--round
 // btn--icon
 
-
-@mixin btn {
-  --_btn-bg: var(--btn-bg, white);
-  --_btn-sha: var(--btn-sha, var(--sha--2xs));
-  --_btn-text: var(--btn-text, black);
-  --_btn-icon: var(--btn-icon, black);
-
-  $inner-h: 0.9em;
-  $p-t: 1px;
-  $p-b: 0;
-  $p-x: 1em;
-  $p-x-icon: 0.75em;
-
-  /* layout */
-  height: var(--ui--md);
-  font-size: $inner-h;
-  line-height: $inner-h;
-  padding: $p-t $p-x $p-b $p-x;
-  text-shadow: var(--text-sha--md);
-
-  @include btn-text;
-  @include ui-transitions;
-  @include flex--c;
-
-  width: fit-content;
-  border-radius: $round;
-
-  background-color: var(--_btn-bg);
-  color: var(--_btn-text);
-  box-shadow: var(--_btn-sha);
-
-
-  &.btn-icon {
-    gap: 0.3em;
-    padding: $p-t $p-x-icon $p-b $p-x-icon;
-  }
-
-  & > .svg-icon {
-    display: inline-block;
-    align-self: center;
-    mask-size: cover;
-    background-color: var(--_btn-icon);
-    background: var(--_btn-icon);
-    $h: calc(1.1 * $inner-h);
-    height: $h;
-    width: $h;
-    margin-top: calc(-1 * $p-t);
-  }
-
-  &:hover,
-   :focus {
-    --btn-bg: pink;
-    --btn-sha: var(--sha--2xl);
-    --btn-text: navy;
-    --btn-icon: navy;
-  }
-
-  &:active {
-    --btn-bg: orange;
-    --btn-sha: var(--sha--md);
-    --btn-text: green;
-    --btn-icon: green;
-  }
-
-  &[aria-selected="true"] {
-    --btn-bg: rgb(186, 164, 21);
-    --btn-sha: var(--sha--xs);
-    --btn-text: rgb(233, 44, 44);
-    --btn-icon: rgb(233, 44, 44);
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    --btn-bg: black;
-    --btn-sha: var(--sha--3xs);
-    --btn-text: gray;
-    --btn-icon: gray;
-  }
-}
-
-
-.btn {
-  @include btn;
-}
-
-
-
-
 /* Button viz */
 /* ========================================== */
-@mixin btn-viz {
+.btn-viz {
   --_btn-bg: var(--btn-bg, white);
   --_btn-text: var(--btn-text, black);
   --_btn-icon: var(--btn-icon, black);
-  --_btn-sha: var(--btn-sha, var(--sha--2xs));
+  // --_btn-sha: var(--btn-sha, var(--sha--2xs));
 
+  @include btn-transition;
+  @include glass.glass-filter;
   background-color: var(--_btn-bg);
-  color: var(--_btn-text);
-  box-shadow: var(--_btn-sha);
+  position: relative;
 
-  & > svg {
-    mask-size: cover;
+  color: var(--_btn-text);
+  // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--xs);
+
+  & > .svg-icon {
     background-color: var(--_btn-icon);
-    background: var(--_btn-icon);
+    @include btn-transition;
   }
 
-  /* ↓ config ↓ */
-  // --btn-bg: rgb(0, 123, 255);
-  // --btn-text: red;
-  // --btn-icon: red;
-  // --btn-sha: var(--sha--sm);
+  &::before {
+    @include pseudo;
+    z-index: 2;
+    box-shadow: glass.$bevel--sm;
+    // box-shadow: var(--bevel--sm);
+  }
 
-  &:hover,
-   :focus {
-    --btn-bg: rgb(150, 21, 190);
-    --btn-text: rgb(17, 17, 219);
-    --btn-icon: rgb(11, 11, 206);
-    --btn-sha: var(--sha--2xl);
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    @include glass.noise--sm;
+  }
+
+  &:hover {
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--sm);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
   }
 
   &:active {
-    --btn-bg: rgb(0, 255, 8);
-    --btn-text: rgb(128, 0, 32);
-    --btn-icon: rgb(128, 0, 2);
-    --btn-sha: var(--sha--md);
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--2xs);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
   }
 
-  &[aria-selected="true"] {
-    --btn-bg: rgb(123, 21, 186);
-    --btn-text: rgb(233, 44, 176);
-    --btn-icon: rgb(233, 44, 192);
-    --btn-sha: var(--sha--xs);
-  }
+  // &[aria-selected="true"] {
+  //   background-color: var(--_btn-bg);
+  //   color: var(--_btn-text);
+  //   box-shadow: var(--_btn-sha);
+
+  //   & > .svg-icon {
+  //     background-color: var(--_btn-icon);
+  //   }
+  // }
 
   &:disabled {
     cursor: not-allowed;
-    --btn-bg: rgb(149, 77, 77);
-    --btn-text: gray;
-    --btn-icon: gray;
-    --btn-sha: var(--sha--3xs);
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--3xs);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
   }
 }
+// .btn-viz { @include btn-viz; }
 
-.btn-viz { @include btn-viz; }
 
-
-/* Button primary */
+/* Primary */
 /* ========================================== */
-.btn--primary {
-  @include btn-viz;
+.btn-viz.btn--primary {
+    --btn-bg: oklch(70% var(--primary--ch) / 0.6);
+    --btn-text: var(--text--2xlight);
+    --btn-icon: var(--text--2xlight);
+
+    &:hover {
+      --btn-bg: oklch(90% var(--primary--ch) / 0.6);
+      --btn-text: var(--text--2xlight);
+      --btn-icon: var(--text--2xlight);
+    }
+
+    &:active {
+      --btn-bg: oklch(60% var(--primary--ch) / 0.6);
+      --btn-text: var(--text--xlight);
+      --btn-icon: var(--text--xlight);
+    }
+
+    &:disabled {
+      --btn-bg: oklch(40% var(--primary--ch) / 0.4);
+      --btn-text: var(--text--light);
+      --btn-icon: var(--text--light);
+    }
+}
+
+/* Accent */
+/* ========================================== */
+.btn-viz.btn--secondary {
+  // @include btn-viz;
 
   /* ↓ config ↓ */
-  --btn-bg: rgb(2, 35, 68);
-  --btn-text: rgb(234, 255, 0);
-  --btn-icon: rgb(197, 17, 17);
-  --btn-sha: var(--sha--sm);
+    --btn-bg: oklch(50% var(--dark--ch) / 0.6);
+    --btn-text: var(--text--2xlight);
+    --btn-icon: var(--text--2xlight);
 
-  &:hover,
-   :focus {
-    --btn-bg: rgb(128, 190, 21);
-    --btn-text: rgb(17, 17, 219);
-    --btn-icon: rgb(11, 11, 206);
-    --btn-sha: var(--sha--2xl);
+  &:hover {
+    --btn-bg: oklch(70% var(--dark--ch) / 0.6);
+    --btn-text: var(--text--2xlight);
+    --btn-icon: var(--text--2xlight);
   }
 
   &:active {
-    --btn-bg: rgb(0, 255, 8);
-    --btn-text: rgb(128, 0, 32);
-    --btn-icon: rgb(128, 0, 2);
-    --btn-sha: var(--sha--md);
+    --btn-bg: oklch(80% var(--light--ch) / 0.6);
+    --btn-text: var(--text--2xlight);
+    --btn-icon: var(--text--2xlight);
   }
 
-  &[aria-selected="true"] {
-    --btn-bg: rgb(123, 21, 186);
-    --btn-text: rgb(233, 44, 176);
-    --btn-icon: rgb(233, 44, 192);
-    --btn-sha: var(--sha--xs);
-  }
+  // &[aria-selected="true"] {
+  //   --btn-bg: rgb(123, 21, 186);
+  //   --btn-text: rgb(233, 44, 176);
+  //   --btn-icon: rgb(233, 44, 192);
+  //   --btn-sha: var(--sha--xs);
+  // }
 
   &:disabled {
-    --btn-bg: rgb(149, 77, 77);
-    --btn-text: gray;
-    --btn-icon: gray;
-    --btn-sha: var(--sha--3xs);
+    --btn-bg: oklch(80% var(--light--ch) / 0.4);
+    --btn-text: var(--text--xlight);
+    --btn-icon: var(--text--xlight);
   }
 }
+
+/* Clear */
+/* ========================================== */
+.btn-viz.btn--clear {
+  // @include btn-viz;
+
+  /* ↓ config ↓ */
+  --btn-bg: var(--tint--clear);
+  --btn-text: var(--text--2xlight);
+  --btn-icon: var(--text--2xlight);
+  // box-shadow: none;
+
+  &:hover {
+  --btn-bg: var(--tint--light);
+  --btn-text: var(--text--2xlight);
+  --btn-icon: var(--text--2xlight);
+  }
+
+  &:active {
+  --btn-bg: var(--tint--xlight);
+  --btn-text: var(--text--2xlight);
+  --btn-icon: var(--text--2xlight);
+  }
+
+  // &[aria-selected="true"] {
+  //   --btn-bg: rgb(123, 21, 186);
+  //   --btn-text: rgb(233, 44, 176);
+  //   --btn-icon: rgb(233, 44, 192);
+  //   --btn-sha: var(--sha--xs);
+  // }
+
+  &:disabled {
+  --btn-bg: var(--tint--clear);
+  --btn-text: var(--text--xlight);
+  --btn-icon: var(--text--xlight);
+  }
+}
+
 
 
 /* 2D clear button */
@@ -533,15 +506,15 @@
 //   --btn--primary-text--disabled: var(--tint--dark);
 
 //   /* Accent */
-//   --btn--accent-bg--rest: var(--tint--clear);
-//   --btn--accent-bg--hover: var(--tint--xlight);
-//   --btn--accent-bg--active: var(--tint--2xlight);
-//   --btn--accent-bg--disabled: var(--tint--xdark);
+//   --btn--secondary-bg--rest: var(--tint--clear);
+//   --btn--secondary-bg--hover: var(--tint--xlight);
+//   --btn--secondary-bg--active: var(--tint--2xlight);
+//   --btn--secondary-bg--disabled: var(--tint--xdark);
 
-//   --btn--accent-text--rest: var(--text-base);
-//   --btn--accent-text--hover: var(--text--bold);
-//   --btn--accent-text--active: var(--tint--xdark);
-//   --btn--accent-text--disabled: var(--tint--dark);
+//   --btn--secondary-text--rest: var(--text-base);
+//   --btn--secondary-text--hover: var(--text--bold);
+//   --btn--secondary-text--active: var(--tint--xdark);
+//   --btn--secondary-text--disabled: var(--tint--dark);
 
 //   /* Clear */
 //   --btn--clear-bg--rest: var(--tint--clear);
@@ -578,3 +551,88 @@ button {
   // --_btn-icon--active: var(--btn-icon--active);
   // --_btn-icon--disabled: var(--btn-icon--disabled);
 }
+
+
+// @mixin btn {
+//   --_btn-bg: var(--btn-bg, white);
+//   --_btn-sha: var(--btn-sha, var(--sha--2xs));
+//   --_btn-text: var(--btn-text, black);
+//   --_btn-icon: var(--btn-icon, black);
+
+//   $inner-h: 0.9em;
+//   $p-t: 1px;
+//   $p-b: 0;
+//   $p-x: 1em;
+//   $p-x-icon: 0.75em;
+
+//   /* layout */
+//   height: var(--ui--md);
+//   font-size: $inner-h;
+//   line-height: $inner-h;
+//   padding: $p-t $p-x $p-b $p-x;
+//   text-shadow: var(--text-sha--md);
+
+//   @include btn-text;
+//   @include ui-transitions;
+//   @include flex--c;
+
+//   width: fit-content;
+//   border-radius: $round;
+
+//   background-color: var(--_btn-bg);
+//   color: var(--_btn-text);
+//   box-shadow: var(--_btn-sha);
+
+
+//   &.btn-icon {
+//     gap: 0.3em;
+//     padding: $p-t $p-x-icon $p-b $p-x-icon;
+//   }
+
+//   & > .svg-icon {
+//     display: inline-block;
+//     align-self: center;
+//     mask-size: cover;
+//     background-color: var(--_btn-icon);
+//     background: var(--_btn-icon);
+//     $h: calc(1.1 * $inner-h);
+//     height: $h;
+//     width: $h;
+//     margin-top: calc(-1 * $p-t);
+//   }
+
+//   &:hover,
+//    :focus {
+//     --btn-bg: pink;
+//     --btn-sha: var(--sha--2xl);
+//     --btn-text: navy;
+//     --btn-icon: navy;
+//   }
+
+//   &:active {
+//     --btn-bg: orange;
+//     --btn-sha: var(--sha--md);
+//     --btn-text: green;
+//     --btn-icon: green;
+//   }
+
+//   &[aria-selected="true"] {
+//     --btn-bg: rgb(186, 164, 21);
+//     --btn-sha: var(--sha--xs);
+//     --btn-text: rgb(233, 44, 44);
+//     --btn-icon: rgb(233, 44, 44);
+//   }
+
+//   &:disabled {
+//     cursor: not-allowed;
+//     --btn-bg: black;
+//     --btn-sha: var(--sha--3xs);
+//     --btn-text: gray;
+//     --btn-icon: gray;
+//   }
+// }
+
+
+// .btn {
+//   @include btn;
+// }
