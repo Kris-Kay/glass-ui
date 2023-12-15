@@ -86,3 +86,18 @@
 .glass--flat-bevel-mobile {
   @include glass--flat-bevel-mobile;
 }
+
+
+/* Button glass material */
+/* ====================================================================== */
+@mixin btn-glass {
+  @include filter.glass-filter;
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    box-shadow: bevel.$bevel--sm;
+    @include tex.noise--sm;
+  }
+}

@@ -64,7 +64,7 @@ $bg-colors: (
 /* ========================================== */
 /* bold-mild  → change with theme */
 /* light-dark → always the same */
-$text-colors: (
+$text--colors: (
   "xbold":  var(--text--xbold),
   "bold":  var(--text--bold),
   "base":  var(--text--base),
@@ -82,7 +82,7 @@ $text-colors: (
 
 /* Text color classes */
 /* ========================================== */
-/* Generates a `.text--`class for every color in `$text-colors` MAP */
+/* Generates a `.text--`class for every color in `$text--colors` MAP */
 .text {
-  @include color-class-mixin($text-colors, 'color');
+  @include color-class-mixin($text--colors, 'color');
 }
