@@ -14,11 +14,21 @@
   margin: 0 auto;
   @include flex--c;
   gap: $s1;
-  background-color: var(--bg--inset2);
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
   @include outer-radius (var(--tab-br), var(--padding));
+
+  position: relative;
+  background-color: var(--bg--inset2);
+  @include glass.glass-filter;
+
+  &::before {
+    @include pseudo;
+    z-index: 202;
+    box-shadow: var(--inset--lg);
+    // @include tex.noise--sm;
+  }
 
   @include bp(xs) {
     gap: var(--3xs);
