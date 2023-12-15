@@ -359,6 +359,10 @@
 @mixin btn-round--base {
   @include flex--c;
   border-radius: $round;
+  @include btn-transition;
+  @include glass.btn-glass;
+  background-color: var(--tint--xdark);
+  box-shadow: var(--sha--2xs);
   // z-index: z.z(btn);
 
   & img {
@@ -366,6 +370,22 @@
     align-self: center;
     // z-index: z.z(on-btn);
   }
+
+  &:hover {
+    background-color: var(--tint--clear);
+    box-shadow: var(--sha--sm);
+  }
+
+  &:active {
+    background-color: var(--tint--xdark);
+    box-shadow: var(--sha--3xs);
+  }
+
+  // &.btn-dark {
+  //   @include glass.btn-glass;
+  //   background-color: var(--tint--dark);
+  //   box-shadow: var(--sha--2xs);
+  // }
 }
 
 @mixin btn-round--sm {
