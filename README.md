@@ -1,7 +1,7 @@
 # 3D glass UI
 A SCSS library full of customisable glass components and styles built with modern CSS.
 
-<img src="src/assets/homeImg/glass-x-view-white.png" width="300">
+<img src="src/assets/homeImg/glass-x-view-white.png" width="400">
 
 ## Table of contents
 * [Description](#description)
@@ -41,7 +41,7 @@ If your project requires legacy browser support or other browsers please make su
 ## Features
 * Customizable design tokens and composable styling classes. *For glass that reflects your branding.*
 * Oklch color theme with fallbacks. *For access to about 50% more colors than sRGB.*
-*
+* Fluid typography range. *For font sizes that scale with viewport width.*
 *
 *
 
@@ -60,8 +60,11 @@ If you only want to grab a few styles, search for a class you like the look of i
 </br>
 
 ## Setup
+This project uses Stephanie Eckles'
+[Minimum Static Site Setup with Sass](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/)
+
 To get started:
-1. Make sure you have Npm, Node, and Git installed.
+1. Make sure you have Node, Npm, and Git installed.
 2. Install Node modules.
 ```
 npm install
@@ -69,22 +72,13 @@ npm install
 
 </br>
 
-This project uses Stephanie Eckles'
-
-[Minimum Static Site Setup with Sass](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/)
-
-To copy src files to public and start Browsersync server at localhost:3000 run:
+3. Copy src files to public and start Browsersync server at localhost:3000.
 ```
 npm start
 ```
-</br>
-
-To copy files to public and autoprefixe css run:
-```
-npm run build
-```
 
 </br>
+
 
 ## Code example
 
