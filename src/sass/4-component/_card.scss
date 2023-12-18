@@ -22,7 +22,7 @@
   // border-radius: clamp(0px, calc(((100vw - 4px) - 100%) * 9999), 28px);
   border-radius: var(--lg);
   overflow: hidden;
-  box-shadow: var(--sha--2xl);
+  box-shadow: var(--sha--3xl);
 
   >.full-w-inset {
     /* layout */
@@ -31,8 +31,8 @@
     margin-right: var(--neg-space);
 
     /* visual */
-    // background-color: var(--bg--inset3);
-    // box-shadow: glass.$flat-inset--lg;
+    background-color: var(--bg--inset3);
+    box-shadow: var(--flat-inset--lg);
     color: var(--text--3xlight);
   }
 
