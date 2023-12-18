@@ -482,6 +482,8 @@ footer {
 
 .heading__bg--xl {
   width: 100%;
+  display: grid;
+  place-items: center;
   @include glass.glass--no-bevel;
   background-color: var(--bg--0);
   padding: var(--lg) 0;
@@ -489,6 +491,15 @@ footer {
 
   & > .heading--xl {
     text-align: end;
+    width: 100%;
+    max-width: var(--max-w--md);
+    padding-left: var(--space-thin);
+    padding-right: var(--space-thin);
+
+    @include bp(lg) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
