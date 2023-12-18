@@ -11,41 +11,33 @@
   --space: var(--lg); // < control padding from here
   --neg-space: calc(-1 * var(--space));
 
-  /* layout */
-  display: grid;
-  // gap: var(--space);
-  padding: var(--space);
-
-  /* visual */
-  // @extend .vw-radius--2xl;
-    // border-radius: max(0px, min(28px, calc((100vw - 4px - 100%) * 9999)));
-  // border-radius: clamp(0px, calc(((100vw - 4px) - 100%) * 9999), 28px);
-  border-radius: var(--lg);
   overflow: hidden;
-  box-shadow: var(--sha--3xl);
+  height: fit-content;
+  display: grid;
 
-  >.full-w-inset {
-    /* layout */
+  padding: var(--space);
+  border-radius: var(--lg);
+  box-shadow: var(--sha--2xl);
+
+
+  & > .full-w-inset {
     padding: var(--space);
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: var(--neg-space);
 
-    /* visual */
     background-color: var(--bg--inset3);
     box-shadow: var(--flat-inset--lg);
     color: var(--text--3xlight);
   }
 
-  >.full-w-img {
-    /* layout */
+  & > .full-w-img {
     display: grid;
     place-self: center;
     margin-left: var(--neg-space);
     margin-right: var(--neg-space);
   }
 
-  >.full-w-img-noBottomMargin {
-    /* layout */
+  & > .full-w-img-noBottomMargin {
     display: grid;
     place-self: center;
     margin-left: var(--neg-space);
@@ -53,28 +45,14 @@
     margin-bottom: var(--neg-space);
   }
 
-  >.full-w-img-noMargin {
-    /* layout */
+  & > .full-w-img-noMargin {
     display: grid;
     place-self: center;
     margin: var(--neg-space);
   }
-}
-
-.title-card {
-  /* layout */
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  place-items: center;
-  padding: var(--lg);
-
-  /* visual */
-  border-radius: var(--md);
-  // box-shadow: sha.$sha--lg;
 
   @include bp(md) {
-    border-radius: var(--lg);
-    padding: var(--xl);
+    --space: var(--xl);
+    box-shadow: var(--sha--3xl);
   }
 }

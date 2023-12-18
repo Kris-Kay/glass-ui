@@ -10,16 +10,18 @@
   --space: var(--md);
   --neg-space: calc(-1 * var(--space));
 
+  overflow: hidden;
   width: 100%;
   height: fit-content;
   display: grid;
-  gap: var(--xl);
+  place-content: center;
+  gap: var(--space);
   padding-top: var(--xl);
   padding-bottom: var(--xl);
   padding-left: var(--space);
   padding-right: var(--space);
-  border-radius: var(--md);
-  box-shadow: var(--sha--xl);
+  border-radius: var(--lg);
+  box-shadow: var(--sha--2xl);
 
   & > .full-w-img {
     display: grid;
@@ -29,24 +31,30 @@
   }
 
   & > .full-w-inset {
-    padding: var(--space);
+    height: fit-content;
+    // padding: var(--space);
+    padding-top: var(--lg);
+    padding-bottom: var(--lg);
+    padding-left: var(--space);
+    padding-right: var(--space);
     margin-left: calc(var(--neg-space) + 0.5px);
     margin-right: var(--neg-space);
     border-radius: 0;
   }
 
   @include bp(sm) {
-    --space: var(--xl);
+    --space: var(--lg);
+
     padding-top: var(--2xl);
     padding-bottom: var(--2xl);
     box-shadow: var(--sha--2xl);
   }
 
-  @include bp(md) {
-    --space: var(--2xl);
+  @include bp(lg) {
+    --space: var(--xl);
+
     padding-top: var(--3xl);
     padding-bottom: var(--3xl);
-    border-radius: var(--lg);
     box-shadow: var(--sha--3xl);
   }
 }
