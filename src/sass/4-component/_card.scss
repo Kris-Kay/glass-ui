@@ -24,16 +24,16 @@
   overflow: hidden;
   box-shadow: var(--sha--2xl);
 
-  >.full-w-fill {
+  >.full-w-inset {
     /* layout */
     padding: var(--space);
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: var(--neg-space);
 
     /* visual */
-    background-color: var(--bg--inset3);
-    box-shadow: glass.$flat-inset--lg;
-    color: var(--tint--3xlight);
+    // background-color: var(--bg--inset3);
+    // box-shadow: glass.$flat-inset--lg;
+    color: var(--text--3xlight);
   }
 
   >.full-w-img {

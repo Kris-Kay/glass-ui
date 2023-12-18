@@ -47,7 +47,7 @@
   height: 100%;
   @include flex--c;
   padding: 0 0.5rem;
-
+  overflow: hidden;
   pointer-events: auto;
   cursor: pointer;
 

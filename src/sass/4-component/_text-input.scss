@@ -42,7 +42,8 @@
 
   pointer-events: auto;
   cursor: text;
-  width: min(400px, 100%);
+  width: 100%;
+  // width: min(400px, 100%);
   height: var(--ui--lg);
   border-radius: var(--2xs);
   padding: 0 0.75rem;

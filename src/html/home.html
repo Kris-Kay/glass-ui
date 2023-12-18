@@ -10,7 +10,7 @@
             <h1 class="title--2xl ">3D Glass UI</h1>
           </div>
 
-          <div class="full-w-fill">
+          <div class="full-w-inset bg--inset3">
             <p class="first-line--bold">
               3D glassmorphism materials, built with modern CSS.
             </p>
@@ -35,7 +35,7 @@
 
   <!-- Intro -->
   <section class="gutter--all grid--c p-t--4xl">
-    <div class="max-w--md box--fit-content glass--3xdark">
+    <div class="max-w--md box--lg glass--3xdark">
       <div class="space-wide grid--c gap--md">
         <img src="/assets/tutorial-img/glass-layers-no-text.png" class="img--lg" alt="Illustration of glass UI layers">
 
@@ -53,9 +53,10 @@
       <h2 class="heading--xl max-w--md gutter--all">Components & Styles</h2>
     </div>
 
-    <div class="gutter--all grid--c">
-      <div class="max-w--md box glass--3xdark m-b--3xl">
-        <p class="text--md first-line--bold">The 3D Glass materials are designed to look great over a variety of backdrops. Use the three tab menu at the top of the page <span class="bold no-break text--xbold">(dark | light | color)</span> to switch the background image. The top-left icon toggles between regular and high-contrast themes.</p>
+    <!-- Components intro -->
+    <div class="gutter--all grid--c p-b--3xl">
+      <div class="max-w--md box--lg glass--3xdark ">
+        <p class="text--md first-line--bold">The 3D Glass materials are designed to look great over a variety of backdrops. Use the three tab menu at the top of the page to switch the background image, and the top-left icon to toggle between regular and high-contrast themes.</p>
       </div>
     </div>
 
@@ -68,7 +69,7 @@
           <h3 class="heading--lg">Background elevation</h3>
         </div>
 
-        <div class="gutter--all flex flex--c flex--wrap gap--3xl">
+        <div class="gutter--all grid--c gap--3xl">
           <div class="overlap_wrap max-w--sm">
             <div class="overlap_rect--md glass-bg--0">
               <p class="class-name--sm scrim--dark--sm">.glass-bg--0</p>
@@ -126,13 +127,13 @@
         </div>
 
         <div class="gutter--all grid--c">
-          <div class="max-w--md box glass-bg--3">
+          <div class="max-w--md box--lg glass-bg--3">
 
-            <div class="grid--c">
-              <div class="">
-                <h3 class="heading--2xl text--mild">Click tabs!</h3>
-              </div>
+            <div class="grid--c gap-3xs">
+              <h3 class="heading--2xl">Tab menu</h3>
+              <p class="text--mild">Click tabs to change image.</p>
             </div>
+
 
             <div class="demo-panelWrap full-w-img">
               <div id="panel-4" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="panel-img-wrap">
@@ -194,6 +195,72 @@
         </div>
       </section>
 
+      <!-- Inset-->
+      <section class="grid">
+        <div class="heading__bg--lg">
+          <h3 class="heading--lg">Insets</h3>
+        </div>
+
+        <div class="gutter--all flex--t flex--c-x flex--wrap gap--3xl">
+
+          <div class="max-w--sm box--lg glass--clear gradient--dark-gray">
+            <div class="grid--c gap-3xs">
+              <h3 class="heading--2xl">Flat insets</h3>
+              <p class="text--mild">Use with elements that fill edge-to-edge or that do not have a border-radius.</p>
+            </div>
+
+            <div class="full-w-inset bg--inset1 flat-inset--xs">
+              <p class="class-name--sm">.flat-inset--xs</p>
+            </div>
+
+            <div class="full-w-inset bg--inset1 flat-inset--sm">
+              <p class="class-name--sm">.flat-inset--sm</p>
+            </div>
+
+            <div class="full-w-inset bg--inset1 flat-inset--md">
+              <p class="class-name--sm">.flat-inset--md</p>
+            </div>
+
+            <div class="full-w-inset bg--inset1 flat-inset--lg">
+              <p class="class-name--sm">.flat-inset--lg</p>
+            </div>
+
+            <div class="full-w-inset bg--inset1 flat-inset--xl m-b--lg">
+              <p class="class-name--sm">.flat-inset--xl</p>
+            </div>
+
+          </div>
+
+          <div class="max-w--sm box--lg glass--clear gradient--dark-gray">
+            <div class="grid--c gap-3xs">
+              <h3 class="heading--2xl">Inset shadows</h3>
+              <p class="text--mild">Use with replaced elements such as inputs, and textareas as they can NOT have pseudo elements.</p>
+            </div>
+
+            <div class="inset-rect inset--xs">
+              <p class="class-name--sm">.inset--xs</p>
+            </div>
+
+            <div class="inset-rect inset--sm">
+              <p class="class-name--sm">.inset--sm</p>
+            </div>
+
+            <div class="inset-rect inset--md">
+              <p class="class-name--sm">.inset--md</p>
+            </div>
+
+            <div class="inset-rect inset--lg">
+              <p class="class-name--sm">.inset--lg</p>
+            </div>
+
+            <div class="inset-rect inset--xl">
+              <p class="class-name--sm">.inset--xl</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       <!-- Inputs -->
       <section class="grid">
 
@@ -205,7 +272,7 @@
           <div class="max-w--lg grid--c gap--5xl">
 
             <div class="flex--wrap flex--c-x gap--5xl">
-              <div class="grid gap--2xs rect--lg glass--3xdark sha--lg">
+              <div class="grid gap--2xs rect-fit--lg glass--3xdark sha--lg">
                 <fieldset class="input__fieldset">
                   <legend class="input__legend">.checkbox</legend>
 
@@ -275,7 +342,7 @@
                 </fieldset>
               </div>
 
-              <div class="grid gap--2xs rect--lg glass--3xdark sha--lg">
+              <div class="grid gap--2xs rect-fit--lg glass--3xdark sha--lg">
                 <fieldset class="input__fieldset">
                   <legend class="input__legend">.radio</legend>
 
@@ -345,7 +412,7 @@
                 </fieldset>
               </div>
 
-              <div class="grid gap--2xs rect--lg glass--3xdark sha--lg">
+              <div class="grid gap--2xs rect-fit--lg glass--3xdark sha--lg">
                 <fieldset class="input__fieldset">
                   <legend class="input__legend">.switch</legend>
 
@@ -403,7 +470,7 @@
               </div>
             </div>
 
-            <div class="gutter--all flex--c flex--wrap gap--5xl">
+            <div class="gutter--all grid--c gap--5xl">
               <div class="max-w--sm card  glass--3xdark gap--md">
                 <div class="grid--c">
                   <h3 class="heading--2xl">Text inputs</h3>
@@ -449,35 +516,6 @@
                 </div>
 
               </div>
-
-              <div class="max-w--sm card gradient--dark-gray glass--light gap-md">
-
-                <div class="grid--c">
-                  <h3 class="heading--2xl">Inset shadows</h3>
-                </div>
-
-                <div class="grid gap--xl p-y--md">
-                  <div class="inset-rect inset--xs">
-                    <p class="class-name--sm">.inset--xs</p>
-                  </div>
-
-                  <div class="inset-rect inset--sm">
-                    <p class="class-name--sm">.inset--sm</p>
-                  </div>
-
-                  <div class="inset-rect inset--md">
-                    <p class="class-name--sm">.inset--md</p>
-                  </div>
-
-                  <div class="inset-rect inset--lg">
-                    <p class="class-name--sm">.inset--lg</p>
-                  </div>
-
-                  <div class="inset-rect inset--xl">
-                    <p class="class-name--sm">.inset--xl</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -502,7 +540,7 @@
                 <h4 class="accordion__title">Accordion title</h4>
               </div>
 
-              <div class="accordion__summary full-w-fill">
+              <div class="accordion__summary full-w-inset">
                 <p class="accordion__text">Summary text of what is inside this accordion.</p>
               </div>
 
@@ -595,197 +633,204 @@
       </section>
 
       <!-- 3D Buttons  -->
-      <section class="gutter--all grid--c">
-        <div class="box glass-bg--0 max-w--md grid--c bg--lg gap--lg m-y--xl">
+      <section class="grid">
+        <div class="heading__bg--lg">
+          <h3 class="heading--lg">Buttons</h3>
+        </div>
 
-          <div class="grid--c m-b--md">
-            <h3 class="heading--2xl">Buttons</h3>
-            <p class="subhead text--c">Hover and click to see effects.</p>
-          </div>
+        <div class="gutter--all grid--c">
+          <div class="box--lg glass-bg--0 max-w--md grid--c gap--lg m-y--xl">
 
-          <div class="w-100 flex--wrap flex--se-x gap--5xl">
-
-            <div class="grid--c gap--sm">
-              <h4 class="class-name--sm">.btn--primary</h4>
-
-              <button
-                type="button"
-                class="btn-viz btn--primary btn--sm">
-                btn--sm
-                  <svg
-                  class="svg-icon svg-cube"
-                  alt="3D cube frame"
-                  aria-hidden="true">
-              </button>
-
-              <button
-                type="button"
-                class="btn-viz btn--primary btn--md">
-                btn--md
-                  <svg
-                  class="svg-icon svg-cube"
-                  alt="3D cube frame"
-                  aria-hidden="true">
-              </button>
-
-              <button
-                type="button"
-                class="btn-viz btn--primary btn--lg">
-                btn--lg
-                  <svg
-                  class="svg-icon svg-cube"
-                  alt="3D cube frame"
-                  aria-hidden="true">
-              </button>
-
+            <div class="grid--c gap-3xs">
+              <h3 class="heading--2xl">Buttons</h3>
+              <p class="text--mild">Hover and click to see effects.</p>
             </div>
 
-            <div class="grid--c gap--sm">
-              <h4 class="class-name--sm">.btn--secondary</h4>
+            <div class="w-100 flex--wrap flex--se-x gap--5xl">
 
-              <button
-                type="button"
-                class="btn-viz btn--secondary btn--sm">
-                btn--sm
-              </button>
+              <div class="grid--c gap--sm">
+                <h4 class="class-name--sm">.btn--primary</h4>
 
-              <button
-                type="button"
-                class="btn-viz btn--secondary btn--md">
-                btn--md
-              </button>
-
-              <button
-                type="button"
-                class="btn-viz btn--secondary btn--lg">
-                btn--lg
-              </button>
-
-            </div>
-
-            <div class="grid--c gap--sm">
-              <h4 class="class-name--sm">.btn--clear</h4>
-
-              <button
-                type="button"
-                class="btn--clear btn--sm">
-                btn--sm
-                  <svg
-                  class="svg-icon svg-chev-r"
-                  src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
-                  aria-hidden="true">
-              </button>
-
-              <button
-                type="button"
-                class="btn--clear btn--md">
-                btn--md
-                  <svg
-                  class="svg-icon svg-chev-r"
-                  src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
-                  aria-hidden="true">
-              </button>
-
-              <button
-                type="button"
-                class="btn--clear btn--lg">
-                btn--lg
-                  <svg
-                  class="svg-icon svg-chev-r"
-                  src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
-                  aria-hidden="true">
-              </button>
-
-            </div>
-
-            <!-- <div class="flex--sb-x max-w--sm">
-              <div class="grid--c gap--md">
-                <p class="class-name--sm ui-h--sm flex flex--c-y">.btn-round--sm</p>
-                <p class="class-name--sm ui-h--md flex flex--c-y">.btn-round--md</p>
-                <p class="class-name--sm ui-h--lg flex flex--c-y">.btn-round--lg</p>
-              </div>
-
-              <div class="grid--c gap--md">
-                <button type="button" class="btn-round--sm btn-glass-clear">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
+                <button
+                  type="button"
+                  class="btn-viz btn--primary btn--sm">
+                  btn--sm
+                    <svg
+                    class="svg-icon svg-cube"
+                    alt="3D cube frame"
                     aria-hidden="true">
                 </button>
 
-                <button type="button" class="btn-round--md btn-glass-clear">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn-viz btn--primary btn--md">
+                  btn--md
+                    <svg
+                    class="svg-icon svg-cube"
+                    alt="3D cube frame"
+                    aria-hidden="true">
                 </button>
 
-                <button type="button" class="btn-round--lg btn-glass-clear">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn-viz btn--primary btn--lg">
+                  btn--lg
+                    <svg
+                    class="svg-icon svg-cube"
+                    alt="3D cube frame"
+                    aria-hidden="true">
                 </button>
+
               </div>
 
-              <div class="grid--c gap--md">
-                <button type="button" class="btn-round--sm btn-glass-light">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+              <div class="grid--c gap--sm">
+                <h4 class="class-name--sm">.btn--secondary</h4>
+
+                <button
+                  type="button"
+                  class="btn-viz btn--secondary btn--sm">
+                  btn--sm
                 </button>
 
-                <button type="button" class="btn-round--md btn-glass-light">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn-viz btn--secondary btn--md">
+                  btn--md
                 </button>
 
-                <button type="button" class="btn-round--lg btn-glass-light">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn-viz btn--secondary btn--lg">
+                  btn--lg
                 </button>
+
               </div>
 
-              <div class="grid--c gap--md">
-                <button type="button" class="btn-round--sm btn-glass-dark">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+              <div class="grid--c gap--sm">
+                <h4 class="class-name--sm">.btn--clear</h4>
+
+                <button
+                  type="button"
+                  class="btn--clear btn--sm">
+                  btn--sm
+                    <svg
+                    class="svg-icon svg-chev-r"
+                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                    aria-hidden="true">
                 </button>
 
-                <button type="button" class="btn-round--md btn-glass-dark">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn--clear btn--md">
+                  btn--md
+                    <svg
+                    class="svg-icon svg-chev-r"
+                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                    aria-hidden="true">
                 </button>
 
-                <button type="button" class="btn-round--lg btn-glass-dark">
-                  <img
-                    src="/assets/icons/CubeTransparent.svg"
-                    alt="demo button"
-                    aria-hidden="true"
-                  >
+                <button
+                  type="button"
+                  class="btn--clear btn--lg">
+                  btn--lg
+                    <svg
+                    class="svg-icon svg-chev-r"
+                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                    aria-hidden="true">
                 </button>
+
               </div>
-            </div> -->
+
+              <!-- <div class="flex--sb-x max-w--sm">
+                <div class="grid--c gap--md">
+                  <p class="class-name--sm ui-h--sm flex flex--c-y">.btn-round--sm</p>
+                  <p class="class-name--sm ui-h--md flex flex--c-y">.btn-round--md</p>
+                  <p class="class-name--sm ui-h--lg flex flex--c-y">.btn-round--lg</p>
+                </div>
+
+                <div class="grid--c gap--md">
+                  <button type="button" class="btn-round--sm btn-glass-clear">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true">
+                  </button>
+
+                  <button type="button" class="btn-round--md btn-glass-clear">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+
+                  <button type="button" class="btn-round--lg btn-glass-clear">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+                </div>
+
+                <div class="grid--c gap--md">
+                  <button type="button" class="btn-round--sm btn-glass-light">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+
+                  <button type="button" class="btn-round--md btn-glass-light">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+
+                  <button type="button" class="btn-round--lg btn-glass-light">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+                </div>
+
+                <div class="grid--c gap--md">
+                  <button type="button" class="btn-round--sm btn-glass-dark">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+
+                  <button type="button" class="btn-round--md btn-glass-dark">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+
+                  <button type="button" class="btn-round--lg btn-glass-dark">
+                    <img
+                      src="/assets/icons/CubeTransparent.svg"
+                      alt="demo button"
+                      aria-hidden="true"
+                    >
+                  </button>
+                </div>
+              </div> -->
+
+            </div>
 
           </div>
-
         </div>
+
       </section>
 
     </div>
@@ -809,7 +854,7 @@
             <h2 class="accordion__title">.glass--base</h2>
           </div>
 
-          <div class="accordion__summary full-w-fill">
+          <div class="accordion__summary full-w-inset">
             <p class="accordion__text">Open accordion to see and copy the .glass--base code example. </p>
           </div>
 
@@ -900,7 +945,7 @@
   </section> -->
 
   <!-- About -->
-  <article id="about" class="grid gap--xl p-y--4xl">
+  <article id="about" class="grid gap--xl p-y--5xl">
     <div class="heading__bg--xl">
       <h2 class="heading--xl max-w--md gutter--all">About</h2>
     </div>
@@ -944,28 +989,30 @@
     </section> -->
 
     <section class="gutter--all grid--c">
-      <div class="max-w--sm card glass--base gap--xl">
+      <div class="max-w--md box--lg glass--base ">
 
-        <div class="flex flex--c">
+        <div class="flex--c m-t--md">
           <img src="/assets/other-img/Kris_w_Tetra_720x720.jpg" class="img--xs radius-round sha--2xl" alt="photo of Kris Kay">
         </div>
 
-        <div class="full-w-fill grid gap--md">
-          <div class="grid--c ">
-            <div class="grid gap--2xs ">
-              <p class="title-thick">Hi, I'm Kris Kay.</p>
-              <p>An augmented reality creator slash front-end developer with over a decade of product design experience.</p>
-            </div>
+        <div class="full-w-inset bg--inset3 inset--md">
+          <div class="grid gap--3xs">
+            <p class="title-thick">Hi, I'm Kris Kay.</p>
+            <p>I'm an augmented reality creator slash front-end developer with over a decade of product design experience.</p>
           </div>
+        </div>
 
-          <div id="contact">
+        <div class="grid--c gap--sm m-y--md">
+          <div id="contact" class="grid--c">
 
-            <div class="grid--c gap--3xs">
-              <p class="title-thick text--lg  text--c">Get in touch</p>
-              <p class="title-thin text--c">If you want to work together!</p>
+            <div class="rect-fit--lg bg--2xdark grid--c gap--md">
+              <div class="grid--c gap--3xs">
+                <p class="title-thick text--xbold text--lg text--c">For Project Inquiries</p>
+                <p class="text-xs text--xbold text--c">Send me an email or reach out on social.</p>
+              </div>
 
               <div class="js-copyWrap flex--c flex--wrap gap--2xs">
-                <p class="js-textToCopy text--xs title-thick">hello@kris-kay.com</p>
+                <p class="js-textToCopy text--xbold title-thick">hello@kris-kay.com</p>
                 <button
                   type="button"
                   class="js-copyBtn btn-round--sm">
@@ -978,25 +1025,25 @@
 
             </div>
           </div>
-        </div>
 
-        <div class="flex flex--c flex--wrap gap--sm">
+          <div class="flex flex--c flex--wrap gap--sm">
 
-          <a href="https://www.linkedin.com/in/kris-kay/" target="_blank" class="btn-glass-dark btn-round--md">
-            <img
-              src="assets/icons/LinkedinLogo.svg"
-              alt="LinkedIn logo"
-              aria-hidden="true"
-            >
-          </a>
+            <a href="https://www.linkedin.com/in/kris-kay/" target="_blank" class="btn-glass-dark btn-round--md">
+              <img
+                src="assets/icons/LinkedinLogo.svg"
+                alt="LinkedIn logo"
+                aria-hidden="true"
+              >
+            </a>
 
-          <a href="https://github.com/Kris-Kay" target="_blank" class="btn-glass-dark btn-round--md">
-            <img
-              src="assets/icons/GithubLogo.svg"
-              alt="GitHub logo"
-              aria-hidden="true"
-            >
-          </a>
+            <a href="https://github.com/Kris-Kay" target="_blank" class="btn-glass-dark btn-round--md">
+              <img
+                src="assets/icons/GithubLogo.svg"
+                alt="GitHub logo"
+                aria-hidden="true"
+              >
+            </a>
+          </div>
         </div>
 
       </div>
