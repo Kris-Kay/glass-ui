@@ -52,6 +52,7 @@
   align-items: center;
   gap: var(--3xs);
   border-radius: var(--_btn--radius);
+  overflow: hidden;
 
   font-size: var(--_btn-inner--h);
   line-height: var(--_btn-inner--h);
@@ -154,11 +155,11 @@
     // box-shadow: var(--bevel--sm);
   }
 
-  &::after {
-    @include pseudo;
-    z-index: -1;
-    @include glass.noise--sm;
-  }
+  // &::after {
+  //   @include pseudo;
+  //   z-index: -1;
+  //   @include glass.noise--sm;
+  // }
 
   &:hover {
     background-color: var(--_btn-bg);

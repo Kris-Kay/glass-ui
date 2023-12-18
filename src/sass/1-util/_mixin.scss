@@ -3,6 +3,16 @@
 /* mixinzzzz */
 /* ========================================== */
 
+@mixin generate-classes($map, $prefix, $property) {
+  @each $key, $value in $map {
+    &--#{$key} {
+      #{$property}:  var(--#{$prefix}--#{$key});
+      @content;
+    }
+  }
+}
+
+
 // reset user agent style
 @mixin reset {
   background-color: transparent;

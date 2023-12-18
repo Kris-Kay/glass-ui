@@ -12,6 +12,7 @@
 /* ========================================== */
 @mixin glass--base {
   position: relative;
+  overflow: hidden;
   @include filter.glass-filter;
 
   @content;
@@ -19,6 +20,7 @@
   &::after {
     @include pseudo;
     z-index: -1;
+    overflow: hidden;
     box-shadow: bevel.$bevel--md;
     @include tex.noise--md;
 
@@ -51,12 +53,14 @@
 /* ========================================== */
 @mixin glass--no-bevel {
   position: relative;
+  overflow: hidden;
   @include filter.glass-filter;
   @content;
 
   &::after {
     @include pseudo;
     z-index: -1;
+    overflow: hidden;
     @include tex.noise--md;
   }
 }
@@ -73,6 +77,7 @@
     &::after {
       @include pseudo;
       z-index: -1;
+      overflow: hidden;
       box-shadow: bevel.$flat-bevel--sm;
       @include tex.noise--md;
 
@@ -92,10 +97,12 @@
 /* ====================================================================== */
 @mixin btn-glass {
   position: relative;
+  overflow: hidden;
   @include filter.glass-filter;
 
   &::after {
     @include pseudo;
+    overflow: hidden;
     z-index: 202;
     box-shadow: bevel.$bevel--sm;
     // @include tex.noise--sm;

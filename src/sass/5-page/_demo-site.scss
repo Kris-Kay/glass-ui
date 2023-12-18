@@ -15,9 +15,11 @@
   border-radius: var(--md);
   box-shadow: var(--sha--3xs);
   transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
+  overflow: hidden;
 
   &:hover {
     padding: 6% 3% 4% 8%;
+    overflow: hidden;
   }
 
   & > p {
@@ -31,6 +33,7 @@
   padding: var(--lg);
   border-radius: var(--md);
   box-shadow: var(--sha--xl);
+  overflow: hidden;
 }
 
 .overlap_wrap {
@@ -42,9 +45,11 @@
     will-change: transform;
     transition: transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
     display: block;
+    overflow: hidden;
 
     &:hover {
       transform: translateY(-25%);
+      overflow: hidden;
     }
   }
 
@@ -254,24 +259,6 @@ footer {
 }
 
 
-// .rect--2xs {
-//   width: 16px;
-//   height: 16px;
-//   border-radius: 0.15rem;
-
-//   // border: 1px solid white;
-// }
-
-// .rect--lg {
-//   width: min(500px, 100%);
-//   padding: var(--space-thin);
-//   border-radius: var(--sm);
-//   display: grid;
-//   place-content: center start;
-// }
-
-
-
 
 /* Sizing demo */
 /* ========================================== */
@@ -341,13 +328,13 @@ footer {
 }
 
 
-.full-w-inset {
+.full-w-inset-demo {
+  display: grid;
+  place-content: center start;
   width: 100%;
   padding: var(--space-thin);
   border-radius: 0;
   background-color: var(--bg--inset2);
-  display: grid;
-  place-content: center start;
 }
 
 .text-size__group {
@@ -469,10 +456,9 @@ footer {
   box-shadow: var(--sha--2xl);
 
   @include glass.glass--no-bevel;
-  // background-color: var(--tint--2xlight);
   background-color: var(--tint--xdark);
   padding: var(--xs) 0;
-  margin-bottom: var(--xl);
+  margin-bottom: var(--2xl);
 
   @include bp(lg) {
     width: 40%;
@@ -488,8 +474,8 @@ footer {
 
 .heading--xl {
   @include title-thick;
-  font-size: var(--text--xl);
-  font-weight: $font-weight--lg;
+  font-size: var(--text--2xl);
+  font-weight: $font-weight--md;
   color: var(--text--xbold);
   text-shadow: var(--text-sha--md);
 }

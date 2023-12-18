@@ -41,15 +41,25 @@ $tints: (
 /* Background color MAP */
 /* ========================================== */
 $bg-colors: (
+  "3xlight": var(--tint--3xlight),
+  "2xlight": var(--tint--2xlight),
+  "xlight": var(--tint--xlight),
+  "light": var(--tint--light),
+  "clear": var(--tint--clear),
+  "dark": var(--tint--dark),
+  "xdark": var(--tint--xdark),
+  "2xdark": var(--tint--2xdark),
+  "3xdark": var(--tint--3xdark),
+
   "inset3":  var(--bg--inset3),
   "inset2":  var(--bg--inset2),
   "inset1":  var(--bg--inset1),
-  "0":   var(--bg--0),
-  "1":   var(--bg--1),
-  "2":   var(--bg--2),
-  "3":   var(--bg--3),
-  "4":   var(--bg--4),
-  "5":   var(--bg--5),
+  "0":       var(--bg--0),
+  "1":       var(--bg--1),
+  "2":       var(--bg--2),
+  "3":       var(--bg--3),
+  "4":       var(--bg--4),
+  "5":       var(--bg--5),
 );
 
 /* Background color classes */
