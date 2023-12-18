@@ -7,16 +7,17 @@
 /* ========================================== */
 
 @mixin box {
-  --space: var(--lg);
+  --space: var(--md);
   --neg-space: calc(-1 * var(--space));
 
   width: 100%;
   height: fit-content;
   display: grid;
-  gap: var(--space);
-  padding: var(--space);
-  // margin-top: var(--space);
-  // margin-bottom: var(--space);
+  gap: var(--xl);
+  padding-top: var(--xl);
+  padding-bottom: var(--xl);
+  padding-left: var(--space);
+  padding-right: var(--space);
   border-radius: var(--md);
   box-shadow: var(--sha--xl);
 
@@ -36,12 +37,16 @@
 
   @include bp(sm) {
     --space: var(--xl);
-    border-radius: var(--lg);
+    padding-top: var(--2xl);
+    padding-bottom: var(--2xl);
     box-shadow: var(--sha--2xl);
   }
 
   @include bp(md) {
     --space: var(--2xl);
+    padding-top: var(--3xl);
+    padding-bottom: var(--3xl);
+    border-radius: var(--lg);
     box-shadow: var(--sha--3xl);
   }
 }
