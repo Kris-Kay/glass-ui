@@ -7,6 +7,10 @@
 @use "button" as btn;
 /* ========================================== */
 
+.panels__wrap {
+  width: 100%;
+}
+
 .tab-menu {
   width: fit-content;
   max-width: 100%;
@@ -60,7 +64,7 @@
   background-color: transparent;
 
   @include bp(xs) {
-    padding: 0 0.9rem;
+    padding: 0 0.7rem;
   }
 
   @include bp(md) {

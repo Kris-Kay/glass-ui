@@ -183,8 +183,12 @@ pre code {
   color: var(--text--xbold);
   text-shadow: var(--text-sha--md);
 
-  @include bp(sm) {
+  @include bp(md) {
     font-size: var(--text--sm);
+  }
+
+  @include bp(lg) {
+    font-size: var(--text--md);
   }
 }
 
