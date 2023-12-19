@@ -14,19 +14,24 @@
   position: relative;
   overflow: hidden;
   @include filter.glass-filter;
-
   @content;
 
   &::after {
     @include pseudo;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
     box-shadow: bevel.$bevel--md;
-    @include tex.noise--md;
 
     @include bp(sm) {
       box-shadow: bevel.$bevel--lg;
     }
+  }
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    overflow: hidden;
+    @include tex.noise--md;
   }
 }
 
