@@ -211,24 +211,24 @@
 /* Primary */
 /* ========================================== */
 .btn-viz.btn--primary {
-    --btn-bg: oklch(70% var(--primary--ch) / 0.6);
+    --btn-bg: oklch(90% var(--light--ch) / 0.2);
     --btn-text: var(--text--2xlight);
     --btn-icon: var(--text--2xlight);
 
     &:hover {
-      --btn-bg: oklch(90% var(--primary--ch) / 0.6);
+      --btn-bg: oklch(90% var(--light--ch) / 0.4);
       --btn-text: var(--text--2xlight);
       --btn-icon: var(--text--2xlight);
     }
 
     &:active {
-      --btn-bg: oklch(60% var(--primary--ch) / 0.6);
+      --btn-bg: oklch(60% var(--light--ch) / 0.6);
       --btn-text: var(--text--xlight);
       --btn-icon: var(--text--xlight);
     }
 
     &:disabled {
-      --btn-bg: oklch(40% var(--primary--ch) / 0.4);
+      --btn-bg: oklch(40% var(--light--ch) / 0.2);
       --btn-text: var(--text--light);
       --btn-icon: var(--text--light);
     }

@@ -7,7 +7,7 @@
 $focus-tran: outline ease-in-out $speed--base;
 
 :focus {
-  outline: 1px solid var(--ui-focus);
+  outline: 1.5px solid oklch(90% var(--light--ch) / 0.3);
   outline-offset: 2px;
   border-radius: inherit;
 }

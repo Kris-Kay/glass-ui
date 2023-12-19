@@ -49,111 +49,107 @@
     <!-- ================================== -->
     <nav class="main-nav__wrap ">
       <div class="main-nav max-w--lg">
-        <!-- <div class=max-w--lg"> -->
+        <button class="js-themeToggle dropdown__btn" type="button">
+          <img src="/assets/icons/CircleHalf.svg"
+            id="js-light"
+            class=""
+            alt="turn on light mode">
 
-          <button class="js-themeToggle dropdown__btn" type="button">
-            <img src="/assets/icons/CircleHalf.svg"
-              id="js-light"
-              class=""
-              alt="turn on light mode">
+          <img src="/assets/icons/CircleHalfTilt.svg"
+            id="js-dark"
+            class="hidden"
+            alt="turn on dark mode">
+        </button>
 
-            <img src="/assets/icons/CircleHalfTilt.svg"
-              id="js-dark"
-              class="hidden"
-              alt="turn on dark mode">
+        <!-- tab menu -->
+        <div
+          role="tablist"
+          aria-label="Background image tabs"
+          class="js-tabMenu tab-menu">
+
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-1"
+            id="tab-1"
+            tabindex="-1">
+            Dark
           </button>
 
-          <!-- BG img tab menu -->
-          <div
-            role="tablist"
-            aria-label="Background image tabs"
-            class="js-tabMenu tab-menu">
+          <button
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-2"
+            id="tab-2"
+            tabindex="0">
+            Light
+          </button>
 
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-1"
-              id="tab-1"
-              tabindex="-1">
-              Dark
-            </button>
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+            tabindex="-1">
+            Color
+          </button>
+        </div>
 
-            <button
-              role="tab"
-              aria-selected="true"
-              aria-controls="panel-2"
-              id="tab-2"
-              tabindex="0">
-              Light
-            </button>
-
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-3"
-              id="tab-3"
-              tabindex="-1">
-              Color
-            </button>
-          </div>
-
-
-          <div class="dropdown__wrap">
-          <!-- Dropdown toggle button -->
-            <button
-              type="button"
-              id="js-dropdownToggle"
-              class="dropdown__btn"
+        <div class="dropdown__wrap">
+        <!-- Dropdown toggle button -->
+          <button
+            type="button"
+            id="js-dropdownToggle"
+            class="dropdown__btn"
+          >
+            <img
+              src="assets/icons/List.svg"
+              alt="Open nav dropdown"
+              id="js-navHam"
+              class=""
             >
-              <img
-                src="assets/icons/List.svg"
-                alt="Open nav dropdown"
-                id="js-navHam"
-                class=""
-              >
-              <img
-                src="/assets/icons/X.svg"
-                alt="Close nav dropdown"
-                id="js-navX"
-                class="hidden"
-              >
-            </button>
+            <img
+              src="/assets/icons/X.svg"
+              alt="Close nav dropdown"
+              id="js-navX"
+              class="hidden"
+            >
+          </button>
 
-            <!-- Dropdown -->
-            <div id="js-navDropdown" class="dropdown__bin">
-              <div id="js-dropdown__bg" class="dropdown__bg glass--2xdark hidden">
-                <div class="dropdown-item__bin">
+          <!-- Dropdown -->
+          <div id="js-navDropdown" class="dropdown__bin">
+            <div id="js-dropdown__bg" class="dropdown__bg glass--2xdark hidden">
+              <div class="dropdown-item__bin">
 
-                  <a href="#top-of-page"
-                    class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                    Top of page
-                  </a>
+                <a href="#top-of-page"
+                  class="dropdown__item js-dropdownItem btn--lg btn-clear">
+                  Top of page
+                </a>
 
-                  <a href="#components"
-                    class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                    Components
-                  </a>
+                <a href="#components"
+                  class="dropdown__item js-dropdownItem btn--lg btn-clear">
+                  Components
+                </a>
 
-                  <!-- <a href="#styles"
-                    class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                    styles
-                  </a> -->
+                <!-- <a href="#styles"
+                  class="dropdown__item js-dropdownItem btn--lg btn-clear">
+                  styles
+                </a> -->
 
-                  <!-- <a href="#example"
-                    class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                    Code example
-                  </a> -->
+                <!-- <a href="#example"
+                  class="dropdown__item js-dropdownItem btn--lg btn-clear">
+                  Code example
+                </a> -->
 
-                  <a href="#contact"
-                    class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                    Contact
-                  </a>
-                </div>
+                <a href="#contact"
+                  class="dropdown__item js-dropdownItem btn--lg btn-clear">
+                  Contact
+                </a>
               </div>
             </div>
           </div>
         </div>
-      <!-- </div> -->
+      </div>
     </nav>
 
     <!-- Page content -->
