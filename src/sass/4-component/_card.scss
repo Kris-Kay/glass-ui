@@ -8,7 +8,7 @@
 /* ========================================== */
 
 .card {
-  --space: var(--lg); // < control padding from here
+  --space: var(--md); // < control padding from here
   --neg-space: calc(-1 * var(--space));
 
   overflow: hidden;
@@ -17,7 +17,7 @@
 
   padding: var(--space);
   border-radius: var(--lg);
-  box-shadow: var(--sha--2xl);
+  box-shadow: var(--sha--xl);
 
 
   & > .full-w-inset {
@@ -51,8 +51,8 @@
     margin: var(--neg-space);
   }
 
-  @include bp(md) {
-    --space: var(--xl);
+  @include bp(sm) {
+    --space: var(--lg);
     box-shadow: var(--sha--3xl);
   }
 }

@@ -80,7 +80,7 @@
 
 
 
-.bg {
+.page-bg-img {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -103,25 +103,7 @@
   // background-repeat: no-repeat;
 }
 
-.section-gap {
-  --space: 6rem;
 
-  gap: var(--space);
-  // margin-top: var(--space);
-  margin-bottom: var(--xl);
-
-  @include bp(xs) {
-    --space: 7rem;
-  }
-
-  @include bp(sm) {
-    --space: 8rem;
-  }
-
-  @include bp(md) {
-    --space: 10rem;
-  }
-}
 
 
 // .background {
@@ -240,24 +222,6 @@ footer {
   object-fit: cover;
   object-position: center;
 }
-
-
-
-/* Switch demo */
-/* ========================================== */
-.switch-demo__layout {
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-  // width: fit-content;
-  // max-width: 100%;
-  height: var(--ui--lg);
-
-  // @include bp(sm) {
-  //   justify-content: flex-start;
-  // }
-}
-
 
 
 /* Sizing demo */
@@ -458,7 +422,7 @@ footer {
   @include glass.glass--no-bevel;
   background-color: var(--tint--xdark);
   padding: var(--xs) 0;
-  margin-bottom: var(--2xl);
+  // margin-bottom: var(--2xl);
 
   @include bp(lg) {
     width: 40%;
@@ -487,7 +451,8 @@ footer {
   @include glass.glass--no-bevel;
   background-color: var(--bg--0);
   padding: var(--lg) 0;
-  margin-bottom: var(--3xl);
+  margin-top: var(--4xl);
+  margin-bottom: var(--5xl);
 
   & > .heading--xl {
     text-align: end;
@@ -511,3 +476,95 @@ footer {
   text-align: center;
   @include scrim-base($scrim--dark, 1.25em);
 }
+
+
+
+.unit-padding--md {
+
+  --space: 3rem;
+  padding: var(--space) 0;
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 5rem;
+  }
+
+  @include bp(sm) {
+    --space: 7rem;
+  }
+
+  @include bp(md) {
+    --space: 9rem;
+  }
+
+  @include bp(lg) {
+    --space: 11rem;
+  }
+}
+
+
+.unit-padding--xl {
+
+  --space: 5rem;
+  padding: var(--space) 0;
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 7rem;
+  }
+
+  @include bp(sm) {
+    --space: 9rem;
+  }
+
+  @include bp(md) {
+    --space: 11rem;
+  }
+
+  @include bp(lg) {
+    --space: 13rem;
+  }
+}
+
+.unit-gap--xl {
+
+  --space: 5rem;
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 7rem;
+  }
+
+  @include bp(sm) {
+    --space: 9rem;
+  }
+
+  @include bp(md) {
+    --space: 11rem;
+  }
+
+  @include bp(lg) {
+    --space: 13rem;
+  }
+}
+
+
+// .section-gap {
+//   --space: 6rem;
+
+//   gap: var(--space);
+//   // margin-top: var(--space);
+//   margin-bottom: var(--xl);
+
+//   @include bp(xs) {
+//     --space: 7rem;
+//   }
+
+//   @include bp(sm) {
+//     --space: 8rem;
+//   }
+
+//   @include bp(md) {
+//     --space: 10rem;
+//   }
+// }

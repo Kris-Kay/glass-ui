@@ -32,7 +32,7 @@
 .atf__card-only {
   width: fit-content;
   height: fit-content;
-  place-self: end center;
+  place-self: end;
 
   @include bp(lg) {
     place-self: end start;
@@ -40,26 +40,35 @@
 }
 
 .atf__card {
-  width: 95%;
+  width: 100%;
+
+  @include bp(xs) {
+    width: min(100%, 300px);
+  }
 
   @include bp(sm) {
-    width: min(100%, 420px);
+    width: min(100%, 320px);
+  }
+
+  @include bp(md) {
+    width: min(100%, 340px);
   }
 
   @include bp(lg) {
-    width: min(100%, 450px);
+    width: min(100%, 350px);
   }
 }
 
 .card-3d-bin {
   width: 100%;
+  max-width: 100vw;
   height: fit-content;
   position: relative;
   display: grid;
-  place-items: center;
+  place-items: end center;
 
   perspective: 5500px;
-  // border:1px solid #ccc;
+  // border: 1px solid #ccc;
 
   @include bp(sm) {
     place-items: end start;
@@ -77,29 +86,29 @@
 
   transform:
     perspective(5000px)
-    rotateY(15deg)
+    rotateY(20deg)
     rotateX(15deg)
     rotateZ(-10deg)
     translateX(10px)
     translateY(-10%);
 
   @include bp(sm) {
-    transform:
-      perspective(5000px)
-      rotateY(15deg)
-      rotateX(20deg)
-      rotateZ(-15deg)
-      translateX(20px)
-      translateY(-10%);
+  transform:
+    perspective(5000px)
+    rotateY(20deg)
+    rotateX(15deg)
+    rotateZ(-10deg)
+    translateX(25px)
+    translateY(-10%);
   }
 
   @include bp(md) {
   transform:
     perspective(5000px)
-    rotateY(15deg)
-    rotateX(20deg)
-    rotateZ(-15deg)
-    translateX(40px)
+    rotateY(20deg)
+    rotateX(15deg)
+    rotateZ(-10deg)
+    translateX(30px)
     translateY(-10%);
   }
 
