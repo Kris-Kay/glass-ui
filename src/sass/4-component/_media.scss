@@ -82,3 +82,9 @@
   background-color: var(--tint--2xbold);
   border-radius: var(--sm);
 }
+
+.img-br--md {
+  width: 100%;
+  border-radius: var(--md);
+  overflow: hidden;
+}
