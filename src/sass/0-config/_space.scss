@@ -162,7 +162,8 @@ $bp--xl: map.get(bp.$breakpoints, xl);
 html {
   --max-w--sm: 512px;
   --max-w--md: 800px;
-  --max-w--lg: clamp($bp--lg, 85vw, $bp--xl);
+  --max-w--lg: 980px;
+  --max-w--xl: clamp($bp--lg, 85vw, $bp--xl);
 }
 
 .max-w--sm {
@@ -177,12 +178,18 @@ html {
 
 .max-w--lg {
   width: 100%;
-  max-width: 100%;
-
-  @include bp.bp(lg) {
-    max-width: var(--max-w--lg);
-  }
+  max-width: var(--max-w--lg);
 }
+
+
+// .max-w--lg {
+//   width: 100%;
+//   max-width: 100%;
+
+//   @include bp.bp(lg) {
+//     max-width: var(--max-w--lg);
+//   }
+// }
 
 
 .center-x {
