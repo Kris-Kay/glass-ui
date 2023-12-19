@@ -45,12 +45,9 @@
   gap: var(--space);
 
   &.full-w-inset {
-    /* layout */
     padding: var(--space);
-
-    /* visual */
     background-color: var(--bg--inset2);
-    box-shadow: $flat-sha--md;
+    box-shadow: var(--flat-inset--lg);
   }
 }
 
