@@ -43,19 +43,39 @@
   width: 100%;
 
   @include bp(xs) {
-    width: min(100%, 300px);
+    width: min(100%, 350px);
   }
 
   @include bp(sm) {
-    width: min(100%, 320px);
+    width: min(100%, 400px);
   }
 
   @include bp(md) {
-    width: min(100%, 340px);
+    width: min(100%, 420px);
   }
 
   @include bp(lg) {
-    width: min(100%, 350px);
+    width: 460px;
+  }
+}
+
+.max-text {
+  width: 100%;
+
+  // @include bp(xs) {
+  //   max-width: min(100%, 300px);
+  // }
+
+  // @include bp(sm) {
+  //   max-width: min(100%, 320px);
+  // }
+
+  // @include bp(md) {
+  //   max-width: min(100%, 360px);
+  // }
+
+  @include bp(lg) {
+    max-width: 300px;
   }
 }
 
