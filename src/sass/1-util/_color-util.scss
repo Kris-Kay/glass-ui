@@ -41,19 +41,6 @@ $tints: (
 /* Background color MAP */
 /* ========================================== */
 $bg-colors: (
-  // "3xlight": var(--tint--3xlight),
-  // "2xlight": var(--tint--2xlight),
-  // "xlight": var(--tint--xlight),
-  // "light": var(--tint--light),
-  // "clear": var(--tint--clear),
-  // "dark": var(--tint--dark),
-  // "xdark": var(--tint--xdark),
-  // "2xdark": var(--tint--2xdark),
-  // "3xdark": var(--tint--3xdark),
-
-  // "inset3":  var(--inset--xdeep),
-  // "inset2":  var(--inset--deep),
-  // "inset1":  var(--inset--base),
   "0":       var(--bg--0),
   "1":       var(--bg--1),
   "2":       var(--bg--2),
@@ -93,13 +80,13 @@ $text--colors: (
   "mild":  var(--text--mild),
   "xmild":  var(--text--xmild),
 
-  "2xlight": var(--text--2xlight),
-  "xlight": var(--text--xlight),
-  "light": var(--text--light),
-  "gray": var(--text--gray),
-  "dark": var(--text--dark),
-  "xdark": var(--text--xdark),
-  "2xdark": var(--text--2xdark),
+  "2xlight": var(--color--2xlight),
+  "xlight": var(--color--xlight),
+  "light": var(--color--light),
+  "gray": var(--color--gray),
+  "dark": var(--color--dark),
+  "xdark": var(--color--xdark),
+  "2xdark": var(--color--2xdark),
 );
 
 /* Text color classes */

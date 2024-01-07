@@ -267,14 +267,14 @@
 /* ========================================== */
 .btn--clear {
   background-color: transparent;
-  color: var(--text--2xlight);
+  color: var(--color--2xlight);
   box-shadow: none;
   @include ui-transitions;
   font-weight: 400;
    text-shadow: var(--text-sha--2xs);
 
   & > .svg-icon {
-    background-color: var(--text--2xlight);
+    background-color: var(--color--2xlight);
   }
 
   &:hover {
@@ -291,20 +291,20 @@
 
   // /* ↓ config ↓ */
   // --btn-bg: var(--tint--clear);
-  // --btn-text: var(--text--2xlight);
-  // --btn-icon: var(--text--2xlight);
+  // --btn-text: var(--color--2xlight);
+  // --btn-icon: var(--color--2xlight);
   // // box-shadow: none;
 
   // &:hover {
   // --btn-bg: var(--tint--light);
-  // --btn-text: var(--text--2xlight);
-  // --btn-icon: var(--text--2xlight);
+  // --btn-text: var(--color--2xlight);
+  // --btn-icon: var(--color--2xlight);
   // }
 
   // &:active {
   // --btn-bg: var(--tint--xlight);
-  // --btn-text: var(--text--2xlight);
-  // --btn-icon: var(--text--2xlight);
+  // --btn-text: var(--color--2xlight);
+  // --btn-icon: var(--color--2xlight);
   // }
 
   // // &[aria-selected="true"] {
@@ -316,8 +316,8 @@
 
   // &:disabled {
   // --btn-bg: var(--tint--clear);
-  // --btn-text: var(--text--xlight);
-  // --btn-icon: var(--text--xlight);
+  // --btn-text: var(--color--xlight);
+  // --btn-icon: var(--color--xlight);
   // }
 }
 

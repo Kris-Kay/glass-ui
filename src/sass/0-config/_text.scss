@@ -32,9 +32,6 @@ $font-weight--lg: 400;
 /* ====================================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
-  /* 3xs: 10px → 12px */
-  --text--3xs: clamp(0.625rem, 4vw - 1.25rem, 0.75rem);
-
   /* 2xs: 12px → 14px */
   --text--2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
 

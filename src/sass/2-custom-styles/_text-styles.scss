@@ -223,16 +223,12 @@ pre code {
   text-shadow: var(--text-sha--2xs);
 }
 
-.footnote {
-
-}
-
-.caption--2xs {
-  font-size: var(--text--2xs);
+.caption {
+  font-size: var(--text--xs);
   font-weight: $font-weight--sm;
 }
 
-.caption--3xs {
-  font-size: var(--text--3xs);
-  font-weight: $font-weight--md;
+.footnote {
+  font-size: var(--text--2xs);
+  font-weight: $font-weight--sm;
 }

@@ -365,7 +365,7 @@ footer {
 .heading--lg {
   @include title-thin;
   font-size: var(--text--lg);
-  // color: var(--text--gray);
+  // color: var(--color--gray);
   color: var(--text--bold);
   text-shadow: var(--text-sha--sm);
 }
