@@ -49,7 +49,7 @@
   padding: 0 0.75rem;
 
   box-shadow: var(--inset--md);
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
 
   &::placeholder {
     color: var(--text--xmild);
@@ -73,7 +73,7 @@
   @include outer-radius (var(--3xs), 0.75rem);
 
   box-shadow: var(--inset--md);
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
 }
 
 .textarea {

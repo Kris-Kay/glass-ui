@@ -276,7 +276,7 @@ footer {
   // height: 80px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--bg--inset1);
+  background-color: var(--inset--base);
 }
 
 
@@ -286,7 +286,7 @@ footer {
   width: 100%;
   padding: var(--space-thin);
   border-radius: 0;
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
 }
 
 .text-size__group {
@@ -343,34 +343,6 @@ footer {
 //   }
 // }
 
-
-.primary {
-  background-color: oklch(var(--primary--lch) / 1);
-}
-
-.accent {
-  background-color: oklch(var(--accent--lch) / 1);
-}
-
-.pop {
-  background-color: oklch(var(--pop--lch) / 1);
-}
-
-.light {
-  background-color: oklch(var(--light--lch) / 1);
-}
-
-.dark {
-  background-color: oklch(var(--dark--lch) / 1);
-}
-
-.gray--50 {
-  background-color: oklch(50% var(--dark--ch) / 1);
-}
-
-.gray--80 {
-  background-color: oklch(80% var(--dark--ch) / 1);
-}
 
 
 
@@ -462,7 +434,6 @@ footer {
   font-size: var(--text--2xl);
   text-shadow: var(--text-sha--sm);
   text-align: center;
-  @include scrim-base($scrim--dark, 1.25em);
 }
 
 

@@ -211,26 +211,26 @@
 /* Primary */
 /* ========================================== */
 .btn-viz.btn--primary {
-    --btn-bg: oklch(90% var(--light--ch) / 0.2);
-    --btn-text: var(--text--2xlight);
-    --btn-icon: var(--text--2xlight);
+    --btn-bg: oklch(var(--neutral--90) / 0.2);
+    --btn-text: var(--color--xlight);
+    --btn-icon: var(--color--xlight);
 
     &:hover {
-      --btn-bg: oklch(90% var(--light--ch) / 0.4);
-      --btn-text: var(--text--2xlight);
-      --btn-icon: var(--text--2xlight);
+      --btn-bg: oklch(var(--neutral--95) / 0.4);
+      --btn-text: var(--color--2xlight);
+      --btn-icon: var(--color--2xlight);
     }
 
     &:active {
-      --btn-bg: oklch(60% var(--light--ch) / 0.6);
-      --btn-text: var(--text--xlight);
-      --btn-icon: var(--text--xlight);
+      --btn-bg: oklch(var(--neutral--60) / 0.6);
+      --btn-text: var(--color--xlight);
+      --btn-icon: var(--color--xlight);
     }
 
     &:disabled {
-      --btn-bg: oklch(40% var(--light--ch) / 0.2);
-      --btn-text: var(--text--light);
-      --btn-icon: var(--text--light);
+      --btn-bg: oklch(40% var(--neutral--40) / 0.2);
+      --btn-text: var(--color--light);
+      --btn-icon: var(--color--light);
     }
 }
 
@@ -240,33 +240,26 @@
   // @include btn-viz;
 
   /* ↓ config ↓ */
-    --btn-bg: var(--tint--xdark);
-    --btn-text: var(--text--2xlight);
-    --btn-icon: var(--text--2xlight);
+    --btn-bg: oklch(var(--neutral--10) / 0.2);
+      --btn-text: var(--color--xlight);
+      --btn-icon: var(--color--xlight);
 
   &:hover {
-    --btn-bg: var(--tint--dark);
-    --btn-text: var(--text--2xlight);
-    --btn-icon: var(--text--2xlight);
+    --btn-bg: oklch(var(--neutral--30) / 0.2);
+    --btn-text: var(--color--2xlight);
+    --btn-icon: var(--color--2xlight);
   }
 
   &:active {
-    --btn-bg: var(--tint--2xdark);
-    --btn-text: var(--text--2xlight);
-    --btn-icon: var(--text--2xlight);
+    --btn-bg: oklch(var(--neutral--10) / 0.4);
+    --btn-text: var(--color--2xlight);
+    --btn-icon: var(--color--2xlight);
   }
 
-  // &[aria-selected="true"] {
-  //   --btn-bg: rgb(123, 21, 186);
-  //   --btn-text: rgb(233, 44, 176);
-  //   --btn-icon: rgb(233, 44, 192);
-  //   --btn-sha: var(--sha--xs);
-  // }
-
   &:disabled {
-    --btn-bg: oklch(80% var(--light--ch) / 0.4);
-    --btn-text: var(--text--xlight);
-    --btn-icon: var(--text--xlight);
+    --btn-bg: oklch(var(--neutral--10) / 0.1);
+      --btn-text: var(--color--xlight);
+      --btn-icon: var(--color--xlight);
   }
 }
 

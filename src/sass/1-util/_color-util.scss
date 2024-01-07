@@ -41,19 +41,19 @@ $tints: (
 /* Background color MAP */
 /* ========================================== */
 $bg-colors: (
-  "3xlight": var(--tint--3xlight),
-  "2xlight": var(--tint--2xlight),
-  "xlight": var(--tint--xlight),
-  "light": var(--tint--light),
-  "clear": var(--tint--clear),
-  "dark": var(--tint--dark),
-  "xdark": var(--tint--xdark),
-  "2xdark": var(--tint--2xdark),
-  "3xdark": var(--tint--3xdark),
+  // "3xlight": var(--tint--3xlight),
+  // "2xlight": var(--tint--2xlight),
+  // "xlight": var(--tint--xlight),
+  // "light": var(--tint--light),
+  // "clear": var(--tint--clear),
+  // "dark": var(--tint--dark),
+  // "xdark": var(--tint--xdark),
+  // "2xdark": var(--tint--2xdark),
+  // "3xdark": var(--tint--3xdark),
 
-  "inset3":  var(--bg--inset3),
-  "inset2":  var(--bg--inset2),
-  "inset1":  var(--bg--inset1),
+  // "inset3":  var(--inset--xdeep),
+  // "inset2":  var(--inset--deep),
+  // "inset1":  var(--inset--base),
   "0":       var(--bg--0),
   "1":       var(--bg--1),
   "2":       var(--bg--2),
@@ -67,6 +67,18 @@ $bg-colors: (
 /* Generates a `.bg--` class for every color in `$bg-colors` MAP */
 .bg {
   @include color-class-mixin($bg-colors, 'background-color');
+}
+
+.inset--base {
+  background-color: var(--inset--base);
+}
+
+.inset--deep {
+  background-color: var(--inset--deep);
+}
+
+.inset--xdeep {
+  background-color: var(--inset--xdeep);
 }
 
 

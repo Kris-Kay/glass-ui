@@ -16,8 +16,9 @@
   padding-bottom: var(--nav-h);
 }
 
-.atf__title-only {
+.atf-30 {
   min-height: 30vh;
+  height: fit-content;
   margin-top: var(--nav-h);
   display: grid;
   place-items: center;

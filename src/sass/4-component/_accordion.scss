@@ -36,7 +36,6 @@
 
   & > .eyebrow {
     color: var(--text--base);
-    @include scrim-base($scrim--dark, 0.75em);
   }
 }
 
@@ -46,14 +45,13 @@
 
   &.full-w-inset {
     padding: var(--space);
-    background-color: var(--bg--inset2);
+    background-color: var(--inset--deep);
     box-shadow: var(--flat-inset--lg);
   }
 }
 
 .see-more-btn, .see-less-btn {
   pointer-events: none;
-  @include scrim-base($scrim--dark, 0.75em);
 
   & > p {
     font-family: $font-family-body;
@@ -154,7 +152,6 @@
   font-size: var(--lg);
   text-shadow: var(--text-sha--sm);
   color: var(--text--bold);
-  @include scrim-base($scrim--dark, 1.25em);
 }
 
 .accordion__text {

@@ -34,7 +34,7 @@
   @include outer-radius (var(--tab-br), var(--padding));
 
   position: relative;
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
   @include glass.glass-filter;
 
   &::before {
@@ -70,7 +70,7 @@
   @include btn.btn-text;
   @include btn.btn-2d--base;
   border-radius: var(--tab-br);
-  color: oklch(var(--light--lch));
+  color: oklch(var(--neutral--95) / 1);
   background-color: transparent;
 
   @include bp(xs) {
