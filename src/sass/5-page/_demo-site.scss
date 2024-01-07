@@ -217,8 +217,8 @@ footer {
 .size-demo__rect {
   background-color: var(--tint--2xlight);
   border-radius: 0.1rem;
-  height: $s11;
-  margin: $s3 0;
+  height: 3rem;
+  margin: 0.75rem 0;
   box-shadow: var(--sha--2xs);
 
   @include bp(md) {

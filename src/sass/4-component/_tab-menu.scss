@@ -27,7 +27,7 @@
   height: var(--ui--md);
   margin: 0 auto;
   @include flex--c;
-  gap: $s1;
+  gap: 0.25rem;
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
