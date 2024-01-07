@@ -259,7 +259,7 @@ footer {
 
   @include bp(sm) {
     border-radius: var(--md);
-    padding: var(--space-thin);
+    padding: var(--gutter);
   }
 
   @include bp(md) {
@@ -284,7 +284,7 @@ footer {
   display: grid;
   place-content: center start;
   width: 100%;
-  padding: var(--space-thin);
+  padding: var(--gutter);
   border-radius: 0;
   background-color: var(--inset--deep);
 }
@@ -389,8 +389,8 @@ footer {
   }
 
   & > .heading--lg {
-    padding-left: var(--space-thin);
-    padding-right: var(--space-thin);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
 }
 
@@ -418,8 +418,8 @@ footer {
     text-align: end;
     width: 100%;
     max-width: var(--max-w--md);
-    padding-left: var(--space-thin);
-    padding-right: var(--space-thin);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
 
     @include bp(lg) {
       padding-left: 0;
