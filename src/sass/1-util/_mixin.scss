@@ -1,6 +1,5 @@
 /* ========================================== */
-
-/* mixinzzzz */
+/* Mixins */
 /* ========================================== */
 
 @mixin generate-classes($map, $prefix, $property) {
@@ -11,55 +10,3 @@
     }
   }
 }
-
-
-// reset user agent style
-@mixin reset {
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-
-  border: 0;
-  border-style: none;
-  border-radius: 0;
-  text-decoration: none;
-
-  appearance: none;
-}
-
-
-
-// replace substring with another string
-// credits: https://css-tricks.com/snippets/sass/str-replace-function/
-// @function str-replace($string, $search, $replace: '') {
-//   $index: str-index($string, $search);
-//   @if $index {
-//     @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-//   }
-//   @return $string;
-// }
-
-
-/* Text color modifier mixin */
-/* ========================================== */
-/* Generates classes using `$text--colors` MAP */
-// @mixin text--color-modifier {
-//   @each $key, $value in $text--colors {
-//     &--#{$key} {
-//       color: $value;
-//     }
-//   }
-// }
-
-
-/* Tint modifier mixin */
-/* ========================================== */
-/* Generates classes using `$tints` MAP */
-// @mixin tint-modifier($property: background-color) {
-//   @each $key, $value in $tints {
-//     &--#{$key} {
-//       #{$property}: $value;
-//       @content;
-//     }
-//   }
-// }

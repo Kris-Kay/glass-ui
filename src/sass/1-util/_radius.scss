@@ -36,8 +36,6 @@ $round: 9999px;
   }
 }
 
-  // @include outer-radius (0.5rem, 1rem);
-
 .vw-radius {
   @include vw-radius-modifier('border-radius') {
     overflow: hidden;
