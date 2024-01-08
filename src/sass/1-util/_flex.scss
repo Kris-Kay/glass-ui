@@ -64,8 +64,8 @@
 .flex--str-y { display: flex; align-items: stretch; }
 
 /* align-content: */
-.flex--cont-t { display: flex; align-content: start; }
-.flex--cont-b { display: flex; align-content: end; }
+.flex--cont-t { display: flex; align-content: flex-start; }
+.flex--cont-b { display: flex; align-content: flex-end; }
 .flex--cont-c-y { display: flex; align-content: center; }
 .flex--cont-sb-y { display: flex; align-content: space-between; }
 .flex--cont-sa-y { display: flex; align-content: space-around; }
