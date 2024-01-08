@@ -1,9 +1,7 @@
 /* ========================================== */
 /* Grid */
 @forward "../0-config/breakpoint";
-@forward "../0-config/size";
 @use "../0-config/breakpoint" as bp;
-@use "../0-config/size";
 /* ========================================== */
 
 .grid { display: grid; }
@@ -14,204 +12,17 @@
 }
 .grid--c { @include grid--c; }
 
-.grid-col--3 {
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-
-//TODO
-.grid--col {
-  --columns: 1;
-  --gutter-width: var(--sm);
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-gap: var(--gutter-width);
-}
-
-.grid-i--c-r {
+.grid--c-content {
   display: grid;
-  place-self: center end;
+  place-content: center;
 }
-
-
 
 .grid-12 {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
-.wrap-2 {
-  width: 100%;
-  gap: var(--sm);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-
-  &:nth-child(1) {
-    grid-column: 1/2;
-  }
-
-  &:nth-child(2) {
-    grid-column: 1/2;
-  }
-
-  @include bp.bp(sm) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: var(--md);
-
-    &:nth-child(1) {
-      grid-column: 1/2;
-    }
-
-    &:nth-child(2) {
-      grid-column: 2/3;
-    }
-  }
-
-  @include bp.bp(lg) {
-    gap: var(--xl);
-  }
-}
-
-
-// parent must be set to "display: grid;"
-// add gap here or in html
-.grid-2col {
-  display: grid;
-  grid-template-columns: auto;
-
-  @include bp.bp(sm) {
-    grid-template-columns: auto auto;
-  }
-}
-
-.grid-3col {
-  display: grid;
-
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
-  @include bp.bp(md) {
-    grid-template-columns: repeat(3, minmax(180px, 1fr));
-  }
-}
-
-.grid-3 {
-  display: grid;
-  place-items: center;
-
-width: 100%;
-  grid-template-columns: 100%;
-
-  @include bp.bp(sm) {
-    grid-template-columns: auto auto;
-  }
-  @include bp.bp(md) {
-    grid-template-columns: auto auto auto;
-  }
-}
-
-.place-c {
-  display: grid;
-  place-content: center;
-}
-
-.grid-4col {
-  display: grid;
-  // grid-template-columns: auto;
-
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  // @include bp.bp(sm) {
-  //   grid-template-columns: auto auto auto;
-  // }
-  @include bp.bp(md) {
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
-  }
-}
-
-
 .grid-auto-col--sm {
   display: grid;
-
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  // @include bp.bp(sm) {
-  //   grid-template-columns: auto auto auto;
-  // }
-}
-
-.grid-3x2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  align-items: baseline;
-
-  >:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  >:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  >:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  @include bp.bp(sm) {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-
-    >:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    >:nth-child(2) {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    >:nth-child(3) {
-      grid-column: 3;
-      grid-row: 1;
-    }
-  }
-}
-
-
-.grid-3x3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-
-  >:nth-child(1) {
-    grid-row: 1;
-  }
-
-  >:nth-child(2) {
-    grid-row: 2;
-  }
-
-  >:nth-child(3) {
-    grid-row: 3;
-  }
-}
-
-.grid-3x3__sub {
-  display: contents;
-
-  >:nth-child(1) {
-    grid-column: 1;
-  }
-
-  >:nth-child(2) {
-    grid-column: 2;
-  }
-
-  >:nth-child(3) {
-    grid-column: 3;
-  }
 }

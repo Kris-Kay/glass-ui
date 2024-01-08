@@ -7,7 +7,7 @@
 @use "button" as btn;
 /* ========================================== */
 
-.panel-img-wrap {
+.panel-img__bin {
   width: 100%;
   max-height: 100%;
   overflow: hidden;
@@ -27,14 +27,14 @@
   height: var(--ui--md);
   margin: 0 auto;
   @include flex--c;
-  gap: $s1;
+  gap: 0.25rem;
   --tab-br: 8px;
   --padding: 3px;
   padding: var(--padding);
   @include outer-radius (var(--tab-br), var(--padding));
 
   position: relative;
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
   @include glass.glass-filter;
 
   &::before {
@@ -70,7 +70,7 @@
   @include btn.btn-text;
   @include btn.btn-2d--base;
   border-radius: var(--tab-br);
-  color: oklch(var(--light--lch));
+  color: oklch(var(--neutral--95) / 1);
   background-color: transparent;
 
   @include bp(xs) {
@@ -88,7 +88,7 @@
 
   &:hover {
     background-color: var(--tint--xlight);
-    box-shadow: 0;
+    box-shadow: none;
   }
 }
 

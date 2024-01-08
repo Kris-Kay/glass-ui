@@ -38,8 +38,6 @@
 /* Text input */
 /* ========================================== */
 .text-input {
-  @include reset;
-
   pointer-events: auto;
   cursor: text;
   width: 100%;
@@ -49,7 +47,7 @@
   padding: 0 0.75rem;
 
   box-shadow: var(--inset--md);
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
 
   &::placeholder {
     color: var(--text--xmild);
@@ -73,12 +71,10 @@
   @include outer-radius (var(--3xs), 0.75rem);
 
   box-shadow: var(--inset--md);
-  background-color: var(--bg--inset2);
+  background-color: var(--inset--deep);
 }
 
 .textarea {
-  @include reset;
-
   z-index: 3;
   inset: 0;
   pointer-events: auto;

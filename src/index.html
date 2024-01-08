@@ -16,7 +16,7 @@
     <!-- === Fonts === -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nunito+Sans:wght@200;300;400;500&family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Nunito+Sans:wght@200;300;400&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
 
     <!-- === CSS === -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -25,29 +25,66 @@
 <!-- Body -->
 <!-- ================================== -->
   <body id="top-of-page">
-    <div class="panels__wrap">
+    <div class="page-bg__bin">
+      <div
+        id="panel-1"
+        role="tabpanel"
+        tabindex="0"
+        aria-labelledby="tab-1"
+        hidden>
 
-      <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" hidden>
-        <img src="/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg" alt="background image" class="page-bg-img">
-        <!-- <img src="/assets/bgImg/black-paper.jpg" alt="background image" class="bg"> -->
+        <img
+          src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
+          sizes="100vw"
+          srcset="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_640x948.jpg 640w,
+                  /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg 1024w,
+                  /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1920x2844.jpg 1920w,
+                  /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_2376x3520.jpg 2376w"
+          alt="3D geometric shapes on a dark background"
+          class="page-bg__img">
       </div>
 
-      <div id="panel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" >
-        <img src="/assets/bgImg/chris-lee-plant-l.jpg" alt="background image" class="page-bg-img">
-        <!-- <img src="/assets/bgImg/yellow.jpg" alt="background image" class="page-bg-img"> -->
+      <div
+        id="panel-2"
+        role="tabpanel"
+        tabindex="0"
+        aria-labelledby="tab-2">
+
+        <img
+          src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
+          sizes="100vw"
+          srcset="/assets/bgImg/monstera-plant-leaves-by-chris-lee_640x853.jpg 640w,
+                  /assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg 1024w,
+                  /assets/bgImg/monstera-plant-leaves-by-chris-lee_1920x2560.jpg 1920w,
+                  /assets/bgImg/monstera-plant-leaves-by-chris-lee_2400x3200.jpg 2400w"
+          alt="green Monstera plant leaves on a white background"
+          class="page-bg__img">
       </div>
 
-      <div id="panel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" hidden>
-        <img src="/assets/bgImg/gabriel-castles-qrpLT6UGYxI-unsplash.jpg" alt="background image" class="page-bg-img">
-      </div>
+      <div
+        id="panel-3"
+        role="tabpanel"
+        tabindex="0"
+        aria-labelledby="tab-3"
+        hidden>
 
+        <img
+          src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
+          sizes="100vw"
+          srcset="/assets/bgImg/sunset-sky-by-gabriel-castles_1024x683.jpg 1024w,
+                  /assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg 1920w,
+                  /assets/bgImg/sunset-sky-by-gabriel-castles_2400x1600.jpg 2400w,
+                  /assets/bgImg/sunset-sky-by-gabriel-castles_3600x2400.jpg 3600w"
+          alt="sunset sky with pink and orange clouds"
+          class="page-bg__img">
+      </div>
     </div>
 
     <div class="body-grid">
 
     <!-- Nav -->
     <!-- ================================== -->
-    <nav class="main-nav__wrap ">
+    <nav class="main-nav__wrap">
       <div class="main-nav max-w--lg">
         <button class="js-themeToggle dropdown__btn" type="button">
           <img src="/assets/icons/CircleHalf.svg"
@@ -130,12 +167,12 @@
                   Components
                 </a>
 
-                <!-- <a href="#styles"
+                <a href="#details"
                   class="dropdown__item js-dropdownItem btn--lg btn-clear">
-                  styles
-                </a> -->
+                  Details
+                </a>
 
-                <!-- <a href="#example"
+                <!-- <a href="#code"
                   class="dropdown__item js-dropdownItem btn--lg btn-clear">
                   Code example
                 </a> -->
@@ -153,7 +190,7 @@
 
     <!-- Page content -->
     <!-- ================================== -->
-    <div id="content"></div>
+    <div id="content" class="content__bin"></div>
 
     </div>
 
@@ -161,7 +198,7 @@
 <!-- ================================== -->
 
   <script src="/js/tabMenu.js"></script>
-  <script src="/js/theme-toggle.js"></script>
+  <script src="/js/themeToggle.js"></script>
   <script src="/js/dropdown.js"></script>
   <script src="/js/accordion.js"></script>
   <script src="/js/rectWidth.js"></script>

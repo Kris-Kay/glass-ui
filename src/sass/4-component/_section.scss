@@ -26,11 +26,11 @@
 }
 
 .section__header {
-  --space: var(--space-thin); // < control padding from here
+  --space: var(--gutter); // < control padding from here
 
   /* layout */
   display: grid;
-  gap: $s2;
+  gap: 0.5rem;
   padding: var(--space);
 
   /* visual */
@@ -50,7 +50,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--bg--inset2);
+    background-color: var(--inset--deep);
     box-shadow: var(--flat-inset--md);
   }
 }

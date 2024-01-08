@@ -1,171 +1,35 @@
 /* ========================================== */
 /* Space */
 @use "sass:map";
-@forward "size";
 @forward "breakpoint";
 @use "breakpoint" as bp;
-@use "size";
 /* ========================================== */
 
-$bp--xs: map.get(bp.$breakpoints, xs);
 $bp--sm: map.get(bp.$breakpoints, sm);
 $bp--md: map.get(bp.$breakpoints, md);
 $bp--lg: map.get(bp.$breakpoints, lg);
-$bp--xl: map.get(bp.$breakpoints, xl);
 
-
-/* Responsive UI height */
+/* Responsive UI heights | gutters | max widths */
 /* ========================================== */
-/* used for matching the height of buttons, inputs, icons, etc. so that they don't look weird next to each other */
-
-/* Responsive layout edge */
-/* ========================================== */
-// * used to create consistent responsive layouts
-// * thin = small change at each bp, wide= starts small and gets very big
-
-:root {
+html {
   --ui--sm: 1.75rem;   /* 28px */
   --ui--md: 2.125rem;  /* 34px */
   --ui--lg: 2.5rem;    /* 40px */
 
-// 320 - 431
-  --space-thin: 16px;
-  --space-wide: 16px;
-  --space-widex2: calc(var(--space-wide) * 2);
-  --space-thinx2: calc(var(--space-thin) * 2);
-
-  // --max-w--md: calc(100vw - var(--space-thinx2));
-  // --max-w--sm: calc(var(--max-w--md) - var(--space-widex2));
-  // --max-w--sm: minmax(calc(var(--max-w--md) - var(--space-widex2)), 600px);
-
-// 432 - 831
-  @include bp.bp(sm) {
-    --space-thin: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
-    --space-wide: clamp(1rem, 3.9vw + 0.25rem, 4rem);
-
-    // --max-w--sm: min(calc(100vw - var(--space-widex2)), 90%);
-    // --max-w--md: min(calc(100vw - (var(--space-thin) * 2)),  #{bp.$bp--md});
-  }
-
-// 832 - 1023
-  // @include bp.bp(md) {
-    // --max-w--md: minmax(calc(100vw - var(--space-thinx2)), 900px);
-
-    // --max-w--sm: min(90%, 672px);
-    // --max-w--sm: min(90%, 768px);
-  // }
-
-// 1024 - 1440
-  // @include bp.bp(lg) {
-    // --space-thin: 32px;
-    // --space-wide: 80px;
-
-    // --max-w--md: clamp( #{bp.$bp--md}, 80%, #{bp.$bp--lg});
-    // --max-w--lg: clamp(#{bp.$bp--lg}, 80%, #{bp.$bp--xl});
-  // }
-}
-
-/* 100% */
-/* ========================================== */
-.w-100 {
-  width: 100%;
-  // max-width: 100vw;
-}
-
-.h-100 {
-  height: 100%;
-}
-
-
-.ui-h--sm {
-  height: var(--ui--sm);
-}
-
-.ui-h--md {
-  height: var(--ui--md);
-}
-
-.ui-h--lg {
-  height: var(--ui--lg);
-}
-
-/* Max width */
-/* ========================================== */
-// @mixin max-w--sm {
-//   // width: calc(100vw - var(--space-widex2));
-//   width: 100%;
-
-//   // margin-left: auto;
-//   // margin-right: auto;
-
-//   @include bp.bp(sm) {
-//     max-width: 672px;
-//     width: 100%;
-//   }
-
-//   @include bp.bp(md) {
-//     max-width: 672px;
-//   }
-// }
-
-
-
-//md
-// @mixin max-w--md {
-//   width: calc(100vw - var(--space-thinx2));
-//   max-width: calc(bp.$bp--md - var(--space-thinx2));
-//   // margin-left: auto;
-//   // margin-right: auto;
-
-//   @include bp.bp(md) {
-//   // min-width: calc(bp.$bp--md - var(--space-thinx2));
-//     // min-width: calc(bp.$bp--md - var(--space-widex2));
-//     // max-width: clamp(bp.$bp--md, calc(100vw - var(--space-widex2)), 900px);
-//     max-width: 900px;
-//   }
-
-//   // @include bp.bp(md) {
-//   //   min-width: bp.$bp--md;
-//   //   // max-width: clamp(bp.$bp--md, calc(100vw - var(--space-widex2)),900px);
-//   //   max-width: 900px;
-//   // }
-// }
-
-// @mixin max-w--md {
-//   width: calc(100% - var(--space-widex2));
-//   // max-width: 800px;
-
-//   @include bp.bp(md) {
-//   // min-width: calc(bp.$bp--md - var(--space-thinx2));
-//     // min-width: calc(bp.$bp--md - var(--space-widex2));
-//     // max-width: clamp(bp.$bp--md, calc(100vw - var(--space-widex2)), 900px);
-//     width: min(800px, calc(100% - var(--space-widex2)));
-//   }
-// }
-
-
-
-//lg
-// @mixin max-w--lg {
-//   width: calc(100% - var(--space-widex2));
-//   max-width: bp.$bp--lg;
-//   // margin-left: auto;
-//   // margin-right: auto;
-
-//   // @include bp.bp(lg) {
-//   //   // min-width: bp.$bp--lg;
-//   //   max-width: 80vw;
-//   // }
-// }
-
-
-html {
   --max-w--sm: 512px;
   --max-w--md: 800px;
   --max-w--lg: 980px;
-  --max-w--xl: clamp($bp--lg, 85vw, $bp--xl);
+
+  --gutter: 16px;
+  --gutterx2: calc(var(--gutter) * 2);
+
+  @include bp.bp(sm) {
+    --gutter: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
+  }
 }
 
+/* Max width classes */
+/* ========================================== */
 .max-w--sm {
   width: 100%;
   max-width: var(--max-w--sm);
@@ -181,46 +45,24 @@ html {
   max-width: var(--max-w--lg);
 }
 
-
-// .max-w--lg {
-//   width: 100%;
-//   max-width: 100%;
-
-//   @include bp.bp(lg) {
-//     max-width: var(--max-w--lg);
-//   }
-// }
-
-
-.center-x {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
+/* Gutter classes */
+/* ========================================== */
 .gutter--all {
-  width: calc(100vw - var(--space-thinx2));
+  width: calc(100vw - var(--gutterx2));
   margin-left: auto;
   margin-right: auto;
 }
 
-
-@mixin gutter-from--sm {
-  width: 100%;
+.gutter-from--sm {
+    width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @include bp.bp(sm) {
-    min-width: calc($bp--sm - var(--space-thinx2));
-    width: calc(100% - var(--space-thinx2));
+    min-width: calc($bp--sm - var(--gutterx2));
+    width: calc(100% - var(--gutterx2));
   }
 }
-
-.gutter-from--sm {
-  @include gutter-from--sm;
-}
-
 
 .gutter-from--md {
   width: 100%;
@@ -228,8 +70,8 @@ html {
   margin-right: auto;
 
   @include bp.bp(md) {
-    min-width: calc($bp--sm - var(--space-thinx2));
-    width: calc(100% - var(--space-thinx2));
+    min-width: calc($bp--sm - var(--gutterx2));
+    width: calc(100% - var(--gutterx2));
   }
 }
 
@@ -239,82 +81,7 @@ html {
   margin-right: auto;
 
   @include bp.bp(lg) {
-    min-width: calc($bp--lg - var(--space-thinx2));
-    max-width: calc(100% - var(--space-thinx2));
+    min-width: calc($bp--lg - var(--gutterx2));
+    max-width: calc(100% - var(--gutterx2));
   }
-}
-
-
-// @mixin gutter--all {
-//   padding: 0 var(--space-thin);
-
-//   @include bp.bp(sm) {
-//     padding: 0;
-//   }
-// }
-
-// .gutter--all {
-//   @include gutter--all;
-// }
-
-
-
-/* Layout spacing classes */
-/* ========================================== */
-
-/* Space thin */
-.space-thin {
-  padding: var(--space-thin);
-}
-
-.space-thin-w {
-  width: var(--space-thin);
-}
-
-.space-thin-x {
-  padding-left: var(--space-thin);
-  padding-right: var(--space-thin);
-}
-
-.space-thin-y {
-  padding-top: var(--space-thin);
-  padding-bottom: var(--space-thin);
-}
-
-.neg-space-thin {
-  margin-left: calc(-1 * var(--space-thin));
-  margin-right: calc(-1 * var(--space-thin));
-}
-
-/* Space wide */
-.space-wide {
-  padding: var(--space-wide);
-}
-
-.space-wide-w {
-  width: var(--space-wide);
-}
-
-.space-wide-x {
-  padding-left: var(--space-wide);
-  padding-right: var(--space-wide);
-}
-
-.space-wide-y {
-  padding-top: var(--space-wide);
-  padding-bottom: var(--space-wide);
-}
-
-.neg-space-wide-x {
-  margin-left: calc(-1 * var(--space-wide));
-  margin-right: calc(-1 * var(--space-wide));
-}
-
-
-
-
-
-.box-box {
-  width: 100%;
-  height: 300px;
 }

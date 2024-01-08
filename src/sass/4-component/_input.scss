@@ -51,7 +51,7 @@
   --disabled-knob: var(--ui-disabled-knob);
   --disabled-text: var(--ui-disabled-text);
 
-  --border-hover: oklch(var(--primary--lch) / 0.4);
+  --border-hover: oklch(var(--primary--80) / 0.4);
   --focus: 2px var(--ui-focus);
   --border: transparent;
 
@@ -183,7 +183,7 @@ input[type='checkbox'].checkbox {
 
     &::after {
       z-index: 3;
-      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--dark--lch) / 0.5));
+      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral--10) / 0.5));
       border-radius: 0.05rem;
       width: 55%;
       height: 30%;
@@ -231,7 +231,7 @@ input[type='radio'] {
   &:checked {
     &::after {
       z-index: 3;
-      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--dark--lch) / 0.5));
+      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral--10) / 0.5));
       margin: 4px;
       aspect-ratio: 1 / 1;
       border-radius: $round;

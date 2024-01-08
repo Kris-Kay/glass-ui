@@ -24,19 +24,14 @@ $line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* font-weight: */
 /* ========================================== */
-$font-weight--xs: 100;
 $font-weight--sm: 200;
 $font-weight--md: 300;
 $font-weight--lg: 400;
-$font-weight--xl: 500;
 
 /* Fluid typography range */
 /* ====================================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
-  /* 3xs: 10px → 12px */
-  --text--3xs: clamp(0.625rem, 4vw - 1.25rem, 0.75rem);
-
   /* 2xs: 12px → 14px */
   --text--2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
 

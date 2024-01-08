@@ -5,13 +5,14 @@
 
 /* Noise textures */
 /* ========================================== */
-// * Noise texture .png generator: https://devsdash.com/tools/noise-texture-generator
+/* Noise texture generator */
+/* https://devsdash.com/tools/noise-texture-generator */
 
 @mixin noise {
   background-repeat: repeat;
-  background-image: url(/assets/textures/noise-texture-white-100den-10op-500x500.png), url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
-
-  // background-image: url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png), url(/assets/textures/noise-texture-100x100.png);
+  background-image:
+    url(/assets/textures/noise-texture-white-100den-10op-500x500.png),
+    url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
 }
 
 @mixin noise--sm {

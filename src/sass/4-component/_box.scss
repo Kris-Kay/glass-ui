@@ -94,14 +94,14 @@
   object-position: center;
 }
 
-    // background-color: var(--bg--inset3);
+    // background-color: var(--inset--xdeep);
     // box-shadow: glass.$flat-inset--lg;
     // color: var(--text--3xlight);
 
 
 .full-w-bg {
   @include box;
-  @include gutter-from--sm;
+  // @include gutter-from--sm;
   border-radius: 0;
   padding: var(--xl) var(--md);
 
@@ -118,17 +118,12 @@
 
 
 
-.space-thin > .full-w-inset {
-  margin-left: calc((-1 * var(--space-thin)) + 0.5px);
-  margin-right: calc(-1 * var(--space-thin));
+.gutter > .full-w-inset {
+  margin-left: calc((-1 * var(--gutter)) + 0.5px);
+  margin-right: calc(-1 * var(--gutter));
   box-shadow: var(--flat-inset--md);
 }
 
-.space-wide > .full-w-inset {
-  margin-left: calc((-1 * var(--space-wide)) + 0.5px);
-  margin-right: calc(-1 * var(--space-wide));
-  box-shadow: var(--flat-inset--md);
-}
 
 
 /* Rounded rectangles */
