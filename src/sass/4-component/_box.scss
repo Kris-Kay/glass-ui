@@ -6,6 +6,70 @@
 @use "../glass" as glass;
 /* ========================================== */
 
+.box-padding--wide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 2.25rem;
+  }
+
+  @include bp(sm) {
+    --space: 2.5rem;
+  }
+
+  @include bp(md) {
+    --space: 2.75rem;
+  }
+
+  @include bp(lg) {
+    --space: 3rem;
+  }
+}
+
+.box-padding--xwide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 2.5rem;
+  }
+
+  @include bp(sm) {
+    --space: 3rem;
+  }
+
+  @include bp(md) {
+    --space: 3.5rem;
+  }
+
+  @include bp(lg) {
+    --space: 4rem;
+  }
+}
+
+.box-padding--2xwide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 3rem;
+  }
+
+  @include bp(sm) {
+    --space: 4rem;
+  }
+
+  @include bp(md) {
+    --space: 5rem;
+  }
+
+  @include bp(lg) {
+    --space: 6rem;
+  }
+}
+
+
 @mixin box {
   --space: var(--md);
   --neg-space: calc(-1 * var(--space));
@@ -14,54 +78,97 @@
   width: 100%;
   height: fit-content;
   display: grid;
-  place-content: center;
   gap: var(--space);
-  padding-top: var(--xl);
-  padding-bottom: var(--xl);
-  padding-left: var(--space);
-  padding-right: var(--space);
+  padding: var(--space);
+  // padding-top: var(--xl);
+  // padding-bottom: var(--xl);
+  // padding-left: var(--space);
+  // padding-right: var(--space);
   border-radius: var(--lg);
   box-shadow: var(--sha--2xl);
 
   & > .full-w-img-wrap {
-    // max-height: 100%;
-    // overflow: hidden;
-    // aspect-ratio : 1 / 1;
     margin-left: var(--neg-space);
     margin-right: var(--neg-space);
   }
 
+  // & > .full-w-inset {
+  //   height: fit-content;
+  //   padding: var(--space);
+  //   // padding-top: var(--lg);
+  //   // padding-bottom: var(--lg);
+  //   // padding-left: var(--space);
+  //   // padding-right: var(--space);
+  //   margin-left: calc(var(--neg-space) + 0.5px);
+  //   margin-right: var(--neg-space);
+  //   border-radius: 0;
+  //   background-color: var(--inset--deep);
+  //   box-shadow: var(--flat-inset--md);
+  // }
+
   & > .full-w-inset {
-    height: fit-content;
-    // padding: var(--space);
-    padding-top: var(--lg);
-    padding-bottom: var(--lg);
-    padding-left: var(--space);
-    padding-right: var(--space);
-    margin-left: calc(var(--neg-space) + 0.5px);
+    padding: var(--space);
+    margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: var(--neg-space);
-    border-radius: 0;
+
+    background-color: var(--inset--deep);
+    box-shadow: var(--flat-inset--lg);
   }
+
 
   @include bp(sm) {
     --space: var(--lg);
 
-    padding-top: var(--2xl);
-    padding-bottom: var(--2xl);
+    // padding-top: var(--2xl);
+    // padding-bottom: var(--2xl);
     box-shadow: var(--sha--2xl);
   }
 
   @include bp(lg) {
     --space: var(--xl);
 
-    padding-top: var(--3xl);
-    padding-bottom: var(--3xl);
+    // padding-top: var(--3xl);
+    // padding-bottom: var(--3xl);
     box-shadow: var(--sha--3xl);
   }
 }
 
+.box--md {
+  @include box;
+}
+
 .box--lg {
   @include box;
+  --space: var(--lg);
+
+  @include bp(sm) {
+    --space: var(--xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--2xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--3xl);
+  }
+}
+
+.box--xl {
+  @include box;
+  --space: var(--xl);
+
+  @include bp(sm) {
+    --space: var(--2xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--3xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--4xl);
+  }
 }
 
 

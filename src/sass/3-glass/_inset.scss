@@ -162,11 +162,11 @@ $insets: (
 /* Inset classes */
 /* ========================================== */
 .inset {
-  @include generate-classes($insets, 'inset', 'box-shadow');
+  @include generate-classes($insets, 'box-shadow', 'inset', '--');
 }
 
 .flat-inset {
-  @include generate-classes($insets, 'flat-inset', 'box-shadow');
+  @include generate-classes($insets, 'box-shadow', 'flat-inset', '--');
 }
 
 

@@ -19,13 +19,12 @@
   border-radius: var(--lg);
   box-shadow: var(--sha--xl);
 
-
   & > .full-w-inset {
     padding: var(--space);
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: var(--neg-space);
 
-    background-color: var(--inset--xdeep);
+    background-color: var(--inset--deep);
     box-shadow: var(--flat-inset--lg);
     color: var(--text--3xlight);
   }
