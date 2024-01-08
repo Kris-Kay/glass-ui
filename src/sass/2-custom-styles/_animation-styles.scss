@@ -5,8 +5,8 @@
 
 html.root-transition,
 html.root-transition *,
-html.root-transition *:before,
-html.root-transition *:after {
+html.root-transition *::before,
+html.root-transition *::after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
