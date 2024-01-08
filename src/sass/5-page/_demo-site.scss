@@ -7,6 +7,52 @@
 @use "../component" as *;
 /* ========================================== */
 
+.page-bg__bin {
+  position: relative;
+  // width: 100%;
+  // max-width: 100vw;
+  // height: 100vh;
+  // min-height: 100vh;
+  display: block;
+  z-index: -10;
+}
+
+.page-bg__img {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: -9;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: block;
+
+  object-fit: cover;
+  background-color: var(--page-bg);
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.body-grid {
+  min-height: 100vh;
+  height: fit-content;
+  display: grid;
+}
+
+.content__bin {
+  display: block;
+  height: fit-content;
+  z-index: z(base);
+}
+
+
 // Glass-bg demo
 .telescope-rect--lower-r {
   width: 100%;
@@ -77,140 +123,6 @@
     width: 50%;
   }
 }
-
-
-
-.page-bg-img {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  z-index: -10;
-  width: 100%;
-  max-width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  display: block;
-
-  object-fit: cover;
-  // background-color: var(--page-bg);
-  // -webkit-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-}
-
-
-
-
-// .background {
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-
-//   z-index: -10;
-//   width: 100%;
-//   max-width: 100vw;
-//   height: 100vh;
-//   min-height: 100vh;
-//   display: block;
-
-//   background-color: color.$bg-color;
-//   -webkit-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-
-
-//   &.dark {
-//     // geo shapes
-//     background-image: url(/assets/bgImg/amokrane-ait-kaci-_eGvuubNBZ8-unsplash-m.jpg);
-//     background-blend-mode: multiply;
-//     background-color: rgba(color.$ink10, 0.3);
-//     //glass wall
-//     // background-color: color.$ink10;
-//     // background-image:  url(https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=3540);
-//     // background-blend-mode: color-burn;
-
-//     //cube
-//     // background-image:  url(https://images.unsplash.com/photo-1677414026913-947aa348bdc7?auto=format&fit=crop&q=80&w=2358&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-//     // background-blend-mode: hard-light;
-
-
-//     // background-image:  url(https://images.unsplash.com/photo-1677214467782-e6befd6cdd66?auto=format&fit=crop&q=80&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-//     // background-blend-mode: luminosity;
-
-
-//     // background-image: url(/assets/bgImg/geo-aqua.jpg);
-//     // background-image: url(/assets/bgImg/black-paper.jpg);
-//     // background-color: #000;
-//   }
-
-//   &.light {
-//     // background-color: #fff;
-//     // background-image: url(/assets/bgImg/clouds.jpg);
-//     // background-image: url(/assets/bgImg/white-paper.jpg);
-//     background-image: image-set(
-//       "/assets/bgImg/chris-lee-plant-s.jpg" 1x,
-//       "/assets/bgImg/chris-lee-plant-m.jpg" 2x,
-//       "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
-//   }
-
-//   &.color {
-
-
-//     // background-image: url(/assets/bgImg/black-paper.jpg);
-//     // background-image: image-set(
-//     //   "/assets/bgImg/chris-lee-plant-s.jpg" 1x,
-//     //   "/assets/bgImg/chris-lee-plant-m.jpg" 2x,
-//     //   "/assets/bgImg/chris-lee-plant-l.jpg" 3x);
-//     // background-color: #000;
-//     background-image: url(/assets/bgImg/yellow.jpg);
-//   }
-// }
-
-.body-grid {
-  min-height: 100vh;
-  height: fit-content;
-  display: grid;
-}
-
-.content {
-  display: block;
-  height: fit-content;
-}
-
-footer {
-  height: fit-content;
-  align-self: end;
-}
-
-
-// // tab menu images
-// .demo-panelWrap {
-//   width: 100%;
-//   height: 400px;
-
-//   @include bp(sm) {
-//     height: 500px;
-//   }
-
-//   @include bp(md) {
-//     height: 600px;
-//   }
-
-//   @include bp(lg) {
-//     height: 700px;
-//   }
-// }
-
-
 
 /* Sizing demo */
 /* ========================================== */
