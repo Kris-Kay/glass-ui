@@ -23,7 +23,7 @@ $tints: (
   "2xlight": var(--tint--2xlight),
   "xlight": var(--tint--xlight),
   "light": var(--tint--light),
-  "clear": var(--tint--clear),
+  "gray": var(--tint--gray),
   "dark": var(--tint--dark),
   "xdark": var(--tint--xdark),
   "2xdark": var(--tint--2xdark),
@@ -41,20 +41,21 @@ $tints: (
 /* Background color MAP */
 /* ========================================== */
 $bg-colors: (
-  "0":       var(--bg--0),
-  "1":       var(--bg--1),
-  "2":       var(--bg--2),
-  "3":       var(--bg--3),
-  "4":       var(--bg--4),
-  "5":       var(--bg--5),
+  "2xclear": var(--bg--2xclear),
+  "xclear": var(--bg--xclear),
+  "clear": var(--bg--clear),
+  "base": var(--bg--base),
+  "solid": var(--bg--solid),
+  "xsolid": var(--bg--xsolid),
+  "2xsolid": var(--bg--2xsolid),
 );
 
 /* Background color classes */
 /* ========================================== */
 /* Generates a `.bg--` class for every color in `$bg-colors` MAP */
-.bg {
-  @include color-class-mixin($bg-colors, 'background-color');
-}
+// .bg {
+//   @include color-class-mixin($bg-colors, 'background-color');
+// }
 
 .inset--base {
   background-color: var(--inset--base);

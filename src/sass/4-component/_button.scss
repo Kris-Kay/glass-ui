@@ -290,7 +290,7 @@
   // // @include btn-viz;
 
   // /* ↓ config ↓ */
-  // --btn-bg: var(--tint--clear);
+  // --btn-bg: var(--tint--base);
   // --btn-text: var(--color--2xlight);
   // --btn-icon: var(--color--2xlight);
   // // box-shadow: none;
@@ -315,7 +315,7 @@
   // // }
 
   // &:disabled {
-  // --btn-bg: var(--tint--clear);
+  // --btn-bg: var(--tint--base);
   // --btn-text: var(--color--xlight);
   // --btn-icon: var(--color--xlight);
   // }
@@ -366,7 +366,7 @@
   }
 
   &:hover {
-    background-color: var(--tint--clear);
+    background-color: var(--tint--base);
     box-shadow: var(--sha--sm);
   }
 
@@ -530,7 +530,7 @@
 //   /* Button colors */
 //   /* ========================================== */
 //   /* Primary */
-//   --btn--primary-bg--rest: var(--tint--clear);
+//   --btn--primary-bg--rest: var(--tint--base);
 //   --btn--primary-bg--hover: var(--tint--xlight);
 //   --btn--primary-bg--active: var(--tint--2xlight);
 //   --btn--primary-bg--disabled: var(--tint--xdark);
@@ -541,7 +541,7 @@
 //   --btn--primary-text--disabled: var(--tint--dark);
 
 //   /* Accent */
-//   --btn--secondary-bg--rest: var(--tint--clear);
+//   --btn--secondary-bg--rest: var(--tint--base);
 //   --btn--secondary-bg--hover: var(--tint--xlight);
 //   --btn--secondary-bg--active: var(--tint--2xlight);
 //   --btn--secondary-bg--disabled: var(--tint--xdark);
@@ -552,7 +552,7 @@
 //   --btn--secondary-text--disabled: var(--tint--dark);
 
 //   /* Clear */
-//   --btn--clear-bg--rest: var(--tint--clear);
+//   --btn--clear-bg--rest: var(--tint--base);
 //   --btn--clear-bg--hover: var(--tint--xlight);
 //   --btn--clear-bg--active: var(--tint--2xlight);
 //   --btn--clear-bg--disabled: var(--tint--xdark);

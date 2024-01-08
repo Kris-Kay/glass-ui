@@ -90,18 +90,6 @@
 /* ====================================================================== */
 :root, [data-theme=default] {
 
-  /* Translucent glass tints */
-  /* ========================================== */
-  --tint--3xlight: oklch(var(--neutral--98) / 0.4);
-  --tint--2xlight: oklch(var(--neutral--98) / 0.3);
-  --tint--xlight:  oklch(var(--neutral--98) / 0.2);
-  --tint--light:   oklch(var(--neutral--98) / 0.1);
-  --tint--clear:   oklch(var(--neutral--98) / 0.01);
-  --tint--dark:    oklch(var(--neutral--10) / 0.1);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.2);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.4);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
-
   /* Solid colors */
   /* ========================================== */
   --color--white:   oklch(var(--neutral--98) / 1);
@@ -114,25 +102,47 @@
   --color--2xdark:  oklch(var(--neutral--10) / 1);
   --color--black:   oklch(var(--neutral--5) / 1);
 
-  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* Translucent tints */
   /* ========================================== */
-  --shadow: var(--neutral--10);
-  --highlight: var(--neutral--98);
+  --tint--3xlight: oklch(var(--neutral--90) / 0.5);
+  --tint--2xlight: oklch(var(--neutral--80) / 0.4);
+  --tint--xlight:  oklch(var(--neutral--70) / 0.3);
+  --tint--light:   oklch(var(--neutral--60) / 0.2);
+  --tint--gray:   oklch(var(--neutral--50) / 0.01);
+  --tint--dark:    oklch(var(--neutral--40) / 0.1);
+  --tint--xdark:   oklch(var(--neutral--30) / 0.3);
+  --tint--2xdark:  oklch(var(--neutral--20) / 0.5);
+  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
+  // --tint--3xlight: oklch(var(--neutral--98) / 0.4);
+  // --tint--2xlight: oklch(var(--neutral--98) / 0.3);
+  // --tint--xlight:  oklch(var(--neutral--98) / 0.2);
+  // --tint--light:   oklch(var(--neutral--98) / 0.1);
+  // --tint--base:   oklch(var(--neutral--98) / 0.01);
+  // --tint--dark:    oklch(var(--neutral--10) / 0.1);
+  // --tint--xdark:   oklch(var(--neutral--10) / 0.2);
+  // --tint--2xdark:  oklch(var(--neutral--10) / 0.4);
+  // --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
 
   /* Background elevation levels */
   /* ========================================== */
-  --bg--0:  oklch(var(--neutral--40) / 0.15);
-  --bg--1:  oklch(var(--neutral--50) / 0.15);
-  --bg--2:  oklch(var(--neutral--60) / 0.2);
-  --bg--3:  oklch(var(--neutral--70) / 0.2);
-  --bg--4:  oklch(var(--neutral--80) / 0.25);
-  --bg--5:  oklch(var(--neutral--90) / 0.25);
+  --bg--2xclear:  oklch(var(--neutral--90) / 0.01);
+  --bg--xclear:  oklch(var(--neutral--90) / 0.1);
+  --bg--clear:  oklch(var(--neutral--90) / 0.15);
+  --bg--base:  oklch(var(--neutral--90) / 0.2);
+  --bg--solid:  oklch(var(--neutral--90) / 0.3);
+  --bg--xsolid:  oklch(var(--neutral--90) / 0.4);
+  --bg--2xsolid:  oklch(var(--neutral--90) / 0.5);
 
   /* Insets */
   /* ========================================== */
   --inset--base: oklch(var(--neutral--10) / 0.1);
   --inset--deep: oklch(var(--neutral--10) / 0.2);
   --inset--xdeep: oklch(var(--neutral--10) / 0.3);
+
+  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* ========================================== */
+  --shadow: var(--neutral--10);
+  --highlight: var(--neutral--98);
 
   /* Text | Title | Label */
   /* ========================================== */
@@ -178,12 +188,13 @@
 
   /* Background elevation levels */
   /* ========================================== */
-  --bg--0:  oklch(var(--neutral--20) / 0.4);
-  --bg--1:  oklch(var(--neutral--30) / 0.4);
-  --bg--2:  oklch(var(--neutral--40) / 0.4);
-  --bg--3:  oklch(var(--neutral--50) / 0.4);
-  --bg--4:  oklch(var(--neutral--60) / 0.4);
-  --bg--5:  oklch(var(--neutral--70) / 0.4);
+  --bg--2xclear:  oklch(var(--neutral--20) / 0.4);
+  --bg--xclear:  oklch(var(--neutral--30) / 0.4);
+  --bg--clear:  oklch(var(--neutral--40) / 0.4);
+  --bg--base:  oklch(var(--neutral--50) / 0.4);
+  --bg--solid:  oklch(var(--neutral--60) / 0.4);
+  --bg--xsolid:  oklch(var(--neutral--70) / 0.4);
+  --bg--2xsolid:  oklch(var(--neutral--80) / 0.4);
 
   /* Insets */
   /* ========================================== */
@@ -322,7 +333,7 @@
 //   --tint--2xlight: oklch(var(--light--lch) / 0.3);
 //   --tint--xlight:  oklch(var(--light--lch) / 0.2);
 //   --tint--light:   oklch(var(--light--lch) / 0.1);
-//   --tint--clear:   oklch(var(--light--lch) / 0.01);
+//   --tint--base:   oklch(var(--light--lch) / 0.01);
 //   --tint--dark:    oklch(var(--dark--lch) / 0.1);
 //   --tint--xdark:   oklch(var(--dark--lch) / 0.2);
 //   --tint--2xdark:  oklch(var(--dark--lch) / 0.4);
@@ -358,12 +369,12 @@
 //   --bg--inset2: oklch(var(--dark--lch) / 0.2); /* -2 deeper inset */
 //   --bg--inset1: oklch(var(--dark--lch) / 0.1); /* -1 base inset */
 
-//   --bg--0:  oklch(40% var(--dark--ch) / 0.2);    /* 0  page bg */
-//   --bg--1:  oklch(50% var(--dark--ch) / 0.2);   /* 1  section bg */
-//   --bg--2:  oklch(60% var(--dark--ch) / 0.2);  /* 2  box bg */
-//   --bg--3:  oklch(70% var(--dark--ch) / 0.2);   /* 3  card bg */
-//   --bg--4:  oklch(80% var(--dark--ch) / 0.25);  /* 4  tooltip bg */
-//   --bg--5:  oklch(90% var(--dark--ch) / 0.3);   /* 5  modal bg */
+//   --bg--2xclear:  oklch(40% var(--dark--ch) / 0.2);    /* 0  page bg */
+//   --bg--xclear:  oklch(50% var(--dark--ch) / 0.2);   /* 1  section bg */
+//   --bg--clear:  oklch(60% var(--dark--ch) / 0.2);  /* 2  box bg */
+//   --bg--base:  oklch(70% var(--dark--ch) / 0.2);   /* 3  card bg */
+//   --bg--solid:  oklch(80% var(--dark--ch) / 0.25);  /* 4  tooltip bg */
+//   --bg--xsolid:  oklch(90% var(--dark--ch) / 0.3);   /* 5  modal bg */
 
 //   /* Text | Title | Label */
 //   /* ========================================== */
@@ -412,12 +423,12 @@
 //   --bg--inset2: oklch(var(--dark--lch) / 0.25);  /* -2 deeper inset */
 //   --bg--inset1: oklch(var(--dark--lch) / 0.15);  /* -1 base inset */
 
-//   --bg--0:  oklch(10% var(--dark--ch) / 0.3);    /* 0  page bg */
-//   --bg--1:  oklch(30% var(--dark--ch) / 0.3);   /* 1  section bg */
-//   --bg--2:  oklch(40% var(--dark--ch) / 0.3);  /* 2  box bg */
-//   --bg--3:  oklch(50% var(--dark--ch) / 0.3);   /* 3  card bg */
-//   --bg--4:  oklch(60% var(--dark--ch) / 0.35);  /* 4  tooltip bg */
-//   --bg--5:  oklch(80% var(--dark--ch) / 0.4);   /* 5  modal bg */
+//   --bg--2xclear:  oklch(10% var(--dark--ch) / 0.3);    /* 0  page bg */
+//   --bg--xclear:  oklch(30% var(--dark--ch) / 0.3);   /* 1  section bg */
+//   --bg--clear:  oklch(40% var(--dark--ch) / 0.3);  /* 2  box bg */
+//   --bg--base:  oklch(50% var(--dark--ch) / 0.3);   /* 3  card bg */
+//   --bg--solid:  oklch(60% var(--dark--ch) / 0.35);  /* 4  tooltip bg */
+//   --bg--xsolid:  oklch(80% var(--dark--ch) / 0.4);   /* 5  modal bg */
 
 //   /* Body text | Headings | Labels */
 //   /* ========================================== */

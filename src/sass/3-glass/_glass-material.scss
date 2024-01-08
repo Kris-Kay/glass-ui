@@ -47,8 +47,8 @@
   }
 }
 
-.glass-bg {
-  @include color-class-mixin($bg-colors, 'background-color'){
+.glass {
+  @include generate-classes($bg-colors, 'background-color', 'bg', '--') {
     @include glass--base;
   }
 }
