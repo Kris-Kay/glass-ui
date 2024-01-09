@@ -159,6 +159,13 @@
   }
 }
 
+.rect--2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+}
+
+
 /* Tint & fill demo */
 /* ========================================== */
 .tint-demo__rect {
@@ -208,7 +215,6 @@
   background-color: var(--inset-bg--base);
 }
 
-
 .full-w-inset-demo {
   display: grid;
   place-content: center start;
@@ -251,45 +257,6 @@
   gap: var(--3xs);
 }
 
-// .color {
-//   div:nth-child(1) {
-//     background-color: hsl(0 0% 50%);
-//   }
-//   div:nth-child(2) {
-//     background-color: hsl(0 20% 50%);
-//   }
-//   div:nth-child(3) {
-//     background-color: hsl(0 40% 50%);
-//   }
-//   div:nth-child(4) {
-//     background-color: hsl(0 60% 50%);
-//   }
-//   div:nth-child(5) {
-//     background-color: hsl(0 80% 50%);
-//   }
-//   div:nth-child(6) {
-//     background-color: hsl(0 100% 50%);
-//   }
-// }
-
-
-
-
-
-.test-oklch {
-	color: oklch(40% 0.268735435 34.568626);
-}
-
-
-// size scale demo
-.rect--2xs {
-  width: 16px;
-  height: 16px;
-  border-radius: 0.15rem;
-}
-
-
-
 
 .heading--lg {
   @include title--thin;
@@ -323,8 +290,6 @@
   }
 }
 
-
-
 .heading--xl {
   @include title-thick;
   font-size: var(--text--2xl);
@@ -356,7 +321,6 @@
     }
   }
 }
-
 
 .heading--2xl {
   @include title--thin;
@@ -433,24 +397,3 @@
     --space: 12rem;
   }
 }
-
-
-// .section-gap {
-//   --space: 6rem;
-
-//   gap: var(--space);
-//   // margin-top: var(--space);
-//   margin-bottom: var(--xl);
-
-//   @include bp(xs) {
-//     --space: 7rem;
-//   }
-
-//   @include bp(sm) {
-//     --space: 8rem;
-//   }
-
-//   @include bp(md) {
-//     --space: 10rem;
-//   }
-// }

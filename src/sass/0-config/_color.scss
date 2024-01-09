@@ -107,25 +107,27 @@
 
   /* Translucent tints */
   /* ========================================== */
-  --tint--3xlight: oklch(var(--neutral--90) / 0.5);
-  --tint--2xlight: oklch(var(--neutral--80) / 0.4);
-  --tint--xlight:  oklch(var(--neutral--70) / 0.3);
-  --tint--light:   oklch(var(--neutral--60) / 0.2);
-  --tint--gray:    oklch(var(--neutral--50) / 0.01);
-  --tint--dark:    oklch(var(--neutral--40) / 0.1);
-  --tint--xdark:   oklch(var(--neutral--30) / 0.3);
-  --tint--2xdark:  oklch(var(--neutral--20) / 0.5);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
+  --tint--4xlight: oklch(var(--neutral--95) / 0.7);
+  --tint--3xlight: oklch(var(--neutral--95) / 0.5);
+  --tint--2xlight: oklch(var(--neutral--95) / 0.3);
+  --tint--xlight:  oklch(var(--neutral--95) / 0.2);
+  --tint--light:   oklch(var(--neutral--95) / 0.1);
+  --tint--clear:   oklch(var(--neutral--95) / 0.01);
+  --tint--dark:    oklch(var(--neutral--10) / 0.1);
+  --tint--xdark:   oklch(var(--neutral--10) / 0.2);
+  --tint--2xdark:  oklch(var(--neutral--10) / 0.3);
+  --tint--3xdark:  oklch(var(--neutral--10) / 0.5);
+  --tint--4xdark:  oklch(var(--neutral--10) / 0.7);
 
   /* Background depth */
   /* ========================================== */
-  --depth--2xback:  oklch(var(--neutral--90) / 0.01);
-  --depth--xback:  oklch(var(--neutral--90) / 0.1);
-  --depth--back:  oklch(var(--neutral--90) / 0.15);
-  --depth--base:  oklch(var(--neutral--90) / 0.2);
-  --depth--front:  oklch(var(--neutral--90) / 0.3);
-  --depth--xfront:  oklch(var(--neutral--90) / 0.4);
-  --depth--2xfront:  oklch(var(--neutral--90) / 0.5);
+  --depth--2xback:  oklch(var(--neutral--10) / 0.2);
+  --depth--xback:  oklch(var(--neutral--15) / 0.2);
+  --depth--back:  oklch(var(--neutral--20) / 0.2);
+  --depth--base:  oklch(var(--neutral--80) / 0.2);
+  --depth--front:  oklch(var(--neutral--85) / 0.2);
+  --depth--xfront:  oklch(var(--neutral--90) / 0.2);
+  --depth--2xfront:  oklch(var(--neutral--95) / 0.2);
 
   /* Insets */
   /* ========================================== */
@@ -151,9 +153,6 @@
   --link--rest: oklch(var(--accent--60) / 1);
   --link--hover: oklch(var(--accent--70) / 1);
   --link--visit: oklch(var(--accent--50) / 1);
-
-  /* UI */
-  /* ========================================== */
 
   /* Other */
   /* ========================================== */
@@ -200,10 +199,6 @@
   --link--rest: oklch(var(--accent--70) / 1);
   --link--hover: oklch(var(--accent--80) / 1);
   --link--visit: oklch(var(--accent--60) / 1);
-
-  /* UI */
-  /* ========================================== */
-
 
   /* Other */
   /* ========================================== */

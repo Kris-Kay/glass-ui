@@ -112,3 +112,32 @@ html {
 .img--lg {
   width: min(100%, 700px);
 }
+
+
+/* Spacing */
+/* ========================================== */
+.page-space {
+  --space: 4rem;
+
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--space);
+  margin: var(--space) 0;
+
+  @include bp.bp(xs) {
+    --space: 6rem;
+  }
+
+  @include bp.bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp.bp(md) {
+    --space: 10rem;
+  }
+
+  @include bp.bp(lg) {
+    --space: 12rem;
+  }
+}
