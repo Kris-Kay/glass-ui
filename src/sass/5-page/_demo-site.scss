@@ -52,24 +52,31 @@
   z-index: z(base);
 }
 
+.telescope-rect__wrap {
+  overflow: hidden;
+  border-radius: var(--xl);
+
+  &:nth-child(1) {
+    box-shadow: var(--sha--2xl);
+  }
+}
 
 // Glass-bg demo
 .telescope-rect--lower-r {
-  width: 100%;
-  margin-top: var(--xs);
-  padding: 8% 4% 6% 12%;
-  border-radius: var(--md);
+  padding: 6% 4% 4% 14%;
+  // padding: 8% 4% 6% 12%;
+  will-change: padding;
+  transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
   box-shadow: var(--sha--3xs);
-  transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
-  overflow: hidden;
 
   &:hover {
-    padding: 6% 3% 4% 8%;
-    overflow: hidden;
+    padding: 5%;
+    // padding: 6% 3% 4% 8%;
   }
 
   & > p {
-    padding: var(--3xs);
+    padding: var(--3xs) 0 var(--2xs) 0;
+    pointer-events: none;
   }
 }
 
@@ -279,7 +286,7 @@
 
 
 .heading--lg {
-  @include title-thin;
+  @include title--thin;
   font-size: var(--text--lg);
   // color: var(--color--gray);
   color: var(--text--bold);
@@ -346,7 +353,7 @@
 
 
 .heading--2xl {
-  @include title-thin;
+  @include title--thin;
   font-size: var(--text--2xl);
   text-shadow: var(--text-sha--sm);
   text-align: center;

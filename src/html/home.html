@@ -5,7 +5,7 @@
     <div class="card-3d-bin atf__card-only">
       <div class="card-3d ">
         <div class="card atf__card glass--xclear gap--lg">
-          <div class="grid gap--3xs">
+          <div class="grid gap--2xs">
             <p class="eyebrow">SCSS library</p>
             <h1 class="title--thick text--xl text-sha--xs text-space--md">3D Glass UI</h1>
           </div>
@@ -40,8 +40,8 @@
         <img src="/assets/tutorial-img/glass-layers-no-text.png" class="img--lg" alt="Illustration of glass UI layers">
 
         <div class="grid gap--2xs">
-          <p class="title-thin text--3xl text--c ">3D glass UI</p>
-          <p class="text--md title-thin text--c text--mild max-w--sm">is a SCSS library compatible with almost any project or framework.</p>
+          <p class="title--thin text--3xl text--c ">3D glass UI</p>
+          <p class="text--md title--thin text--c text--mild max-w--sm">is a SCSS library compatible with almost any project or framework.</p>
         </div>
       </div>
     </div>
@@ -72,8 +72,8 @@
           <h3 class="heading--lg">Glass opacity</h3>
         </div>
 
-        <div class="gutter--all grid--c gap--3xl">
-          <!-- <div class="overlap_wrap max-w--sm">
+        <!-- <div class="gutter--all grid--c">
+          <div class="overlap_wrap max-w--sm">
             <div class="overlap_rect--md glass--2xclear">
               <p class="class-name--sm ">.glass--2xclear</p>
             </div>
@@ -101,22 +101,24 @@
             <div class="overlap_rect--md glass--2xsolid">
               <p class="class-name--sm ">.glass--2xsolid</p>
             </div>
-          </div> -->
+          </div>
+        </div> -->
 
-          <div class="max-w--md">
-            <div class="telescope-rect--lower-r glass--2xclear">
+        <div class="gutter--all grid--c gap--3xl h--100vh">
+          <div class="max-w--md telescope-rect__wrap">
+            <div class="telescope-rect--lower-r glass--2xclear radius--xl">
               <p class="class-name--sm ">.glass--2xclear</p>
-              <div class="telescope-rect--lower-r glass--xclear">
+              <div class="telescope-rect--lower-r glass--xclear radius--lg">
                 <p class="class-name--sm ">.glass--xclear</p>
-                <div class="telescope-rect--lower-r glass--clear">
+                <div class="telescope-rect--lower-r glass--clear radius--lg">
                   <p class="class-name--sm ">.glass--clear</p>
-                  <div class="telescope-rect--lower-r glass--base">
+                  <div class="telescope-rect--lower-r glass--base radius--md">
                     <p class="class-name--sm ">.glass--base</p>
-                    <div class="telescope-rect--lower-r glass--solid">
+                    <div class="telescope-rect--lower-r glass--solid radius--md">
                       <p class="class-name--sm ">.glass--solid</p>
-                      <div class="telescope-rect--lower-r glass--xsolid">
+                      <div class="telescope-rect--lower-r glass--xsolid radius--md">
                         <p class="class-name--sm ">.glass--xsolid</p>
-                          <div class="telescope-rect--lower-r glass--2xsolid">
+                          <div class="telescope-rect--lower-r glass--2xsolid radius--sm">
                             <p class="class-name--sm ">.glass--2xsolid</p>
                           </div>
                       </div>
@@ -891,16 +893,16 @@
     <section class="gutter--all grid--c gap--5xl">
 
       <!-- Why -->
-      <div class="max-w--sm glass--2xdark box--lg">
+      <div class="max-w--sm box--lg glass--3xdark">
         <div class=" grid--c gap--md">
           <h3 class="heading--2xl">Why it exists</h3>
 
-          <p>This library came about because the glassmorphism CSS I found online consisted of milky translucency with a bit of blur, and a thin white outline. So I experimented with a bunch of freshly supported CSS to develop a more refined and three-dimensional glass look.</p>
+          <p class="first-line--bold">This library came about because the glassmorphism CSS I found online didn't look anything like real glass. So I experimented with a bunch of freshly supported CSS to develop a more refined and three-dimensional glass look.</p>
         </div>
       </div>
 
       <!-- How -->
-      <div class="max-w--md box--lg glass--2xdark">
+      <div class="max-w--md box--lg glass--xdark">
 
         <div class="grid--c gap-3xs">
           <h3 class="heading--2xl">How it differs</h3>
@@ -908,14 +910,22 @@
         </div>
 
         <div class="flex--c">
-          <img src="/assets/homeImg/3D-glass-ui-bevel-details.png" class="max-w--sm img-br--md" alt="beveled glass details illustration">
+
+        <img
+          src="/assets/homeImg/glass-details_1024x1236.jpg"
+          sizes="100%"
+          srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
+                  /assets/homeImg/glass-details_1024x1236.jpg 1024w,
+                  /assets/homeImg/glass-details_1920x2317.jpg 1920w"
+          alt="beveled glass CSS details illustration"
+          class="max-w--md img-br--md">
         </div>
 
         <div class="full-w-inset">
           <div class="grid gap--md">
 
             <div class="grid--c gap--3xs">
-              <h3 class="title-thin text--xl text--c text-sha--sm">Key characteristics</h3>
+              <h3 class="title--thin text--xl text--c text-sha--sm">Key characteristics</h3>
               <p class="text--mild  text-sha--xs">of next-gen glassmorphism</p>
             </div>
 
@@ -944,25 +954,14 @@
           </div>
         </div>
 
-        <!-- <div class="full-w-inset">
-          <div class="grid gap--3xs">
-            <p class="title-thick text--md">Hi, I'm Kris Kay.</p>
-          </div>
-        </div> -->
-
-      </div>
-
-      <!-- GPT -->
-      <div class="max-w--md box--lg glass--2xdark">
-
         <div class="grid--c gap-3xs">
-          <h3 class="heading--2xl">ChatGPT 4 CSS</h3>
-          <p class="text--mild  text-sha--xs">vs 3D glass ui</p>
+          <h3 class="title--thin text--xl text--bold text-sha--xs">ChatGPT 4</h3>
+          <p class="text--mild text--md text-sha--xs">vs 3D glass ui</p>
         </div>
 
         <div class="full-w-img-wrap">
-          <div class="img__aspect--1-1">
-            <img src="/assets/homeImg/black-BG_chatGPT-vs-3d-glass-ui_noCode.png" class="full-w-img" alt="beveled glass details illustration">
+          <div class="img__aspect--5-4">
+            <img src="/assets/homeImg/img-BG_chatGPT-vs-3d-glass-ui.png" class="full-w-img" alt="beveled glass details illustration">
           </div>
         </div>
 
@@ -970,12 +969,11 @@
           <p>The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight.</p>
         </div>
 
-        <!-- <div class="full-w-img-wrap">
-          <div class="img__aspect--5-4">
-            <img src="/assets/homeImg/img-BG_chatGPT-vs-3d-glass-ui.png" class="full-w-img" alt="beveled glass details illustration">
+        <div class="full-w-img-noBottomMargin">
+          <div class="img__aspect--1-1">
+            <img src="/assets/homeImg/black-BG_chatGPT-vs-3d-glass-ui_noCode.png" class="full-w-img" alt="beveled glass details illustration">
           </div>
-        </div> -->
-
+        </div>
       </div>
 
     </section>
@@ -990,7 +988,7 @@
 
     <section class="gutter--all grid--c gap--5xl">
 
-      <div class="max-w--md box--md glass--2xdark">
+      <div class="max-w--md box--md glass--xdark">
 
         <div class="flex--c">
           <img src="/assets/other img/Kris_w_Tetra_862x862.jpg"
@@ -1026,9 +1024,9 @@
 
       </div>
 
-      <div class="box--md glass--3xdark grid--c max-w--sm">
+      <div class="max-w--sm box--md glass--3xdark grid--c">
         <div class="grid--c gap--2xs">
-          <p class="title-thin text--xbold text--2xl text--c">For Project Inquiries</p>
+          <p class="title--thin text--xbold text--2xl text--c">For Project Inquiries</p>
           <p class="text-xs text--c">Email me at:</p>
           <div class="js-copyWrap flex--c flex--wrap gap--2xs">
             <p class="js-textToCopy text--xbold title-thick">hello@kris-kay.com</p>
@@ -1042,8 +1040,6 @@
             </button>
           </div>
         </div>
-
-
       </div>
     </section>
 

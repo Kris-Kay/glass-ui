@@ -14,6 +14,8 @@
   position: relative;
   overflow: hidden;
   @include filter.glass-filter;
+  transform: translateZ(0);
+
   @content;
 
   &::after {
@@ -31,7 +33,7 @@
     @include pseudo;
     z-index: -2;
     overflow: hidden;
-    @include tex.noise--md;
+    @include tex.noise;
   }
 }
 
@@ -66,7 +68,7 @@
     @include pseudo;
     z-index: -1;
     overflow: hidden;
-    @include tex.noise--md;
+    @include tex.noise;
   }
 }
 
@@ -84,7 +86,7 @@
       z-index: -1;
       overflow: hidden;
       box-shadow: bevel.$flat-bevel--sm;
-      @include tex.noise--md;
+      @include tex.noise;
 
       @include bp(sm) {
         box-shadow: bevel.$bevel--lg;

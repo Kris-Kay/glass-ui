@@ -141,8 +141,8 @@
 
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ========================================== */
-  --shadow: var(--neutral--10);
-  --highlight: var(--neutral--98);
+  --shadow: var(--primary--20);
+  --highlight: var(--neutral--95);
 
   /* Text | Title | Label */
   /* ========================================== */
@@ -209,6 +209,11 @@
   --text--base:  oklch(var(--neutral--90) / 1);
   --text--mild:  oklch(var(--neutral--85) / 1);
   --text--xmild: oklch(var(--neutral--80) / 1);
+
+  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* ========================================== */
+  --shadow: var(--primary--15);
+  --highlight: var(--neutral--98);
 
   /* Text links */
   /* ========================================== */

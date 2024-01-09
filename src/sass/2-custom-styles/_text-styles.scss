@@ -37,13 +37,13 @@ textarea {
 
 /* Thin titles */
 /* ========================================== */
-@mixin title-thin {
+@mixin title--thin {
   font-family: $font-family-title;
   font-weight: $font-weight--sm;
   letter-spacing: $letter-spacing--sm;
   line-height: $line-height--md;
 }
-.title-thin { @include title-thin; }
+.title--thin { @include title--thin; }
 
 
 /* Text links */
@@ -206,7 +206,7 @@ pre code {
 /* ========================================== */
 .big-title {
   font-size: var(--text--3xl);
-  @include title-thin;
+  @include title--thin;
 }
 
 
