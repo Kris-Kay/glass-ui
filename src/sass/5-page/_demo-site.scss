@@ -53,23 +53,36 @@
 }
 
 
+/* Telescope glass demo */
+.h--800 {
+  height: min(800px, 70vh);
+}
+
+.telescope-rect__wrap {
+  overflow: hidden;
+  border-radius: var(--xl);
+
+  &:nth-child(1) {
+    box-shadow: var(--sha--2xl);
+  }
+}
+
 // Glass-bg demo
 .telescope-rect--lower-r {
-  width: 100%;
-  margin-top: var(--xs);
-  padding: 8% 4% 6% 12%;
-  border-radius: var(--md);
+  padding: 6% 4% 4% 14%;
+  // padding: 8% 4% 6% 12%;
+  will-change: padding;
+  transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
   box-shadow: var(--sha--3xs);
-  transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 800ms;
-  overflow: hidden;
 
   &:hover {
-    padding: 6% 3% 4% 8%;
-    overflow: hidden;
+    padding: 5%;
+    // padding: 6% 3% 4% 8%;
   }
 
   & > p {
-    padding: 0.5em;
+    padding: var(--3xs) 0 var(--2xs) 0;
+    pointer-events: none;
   }
 }
 
@@ -121,6 +134,10 @@
 
   div:nth-child(6) {
     width: 50%;
+  }
+
+  div:nth-child(7) {
+    width: 40%;
   }
 }
 
@@ -188,7 +205,7 @@
   // height: 80px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--inset--base);
+  background-color: var(--inset-bg--base);
 }
 
 
@@ -198,7 +215,7 @@
   width: 100%;
   padding: var(--gutter);
   border-radius: 0;
-  background-color: var(--inset--deep);
+  background-color: var(--inset-bg--deep);
 }
 
 .text-size__group {
@@ -275,7 +292,7 @@
 
 
 .heading--lg {
-  @include title-thin;
+  @include title--thin;
   font-size: var(--text--lg);
   // color: var(--color--gray);
   color: var(--text--bold);
@@ -321,7 +338,7 @@
   display: grid;
   place-items: center;
   @include glass.glass--no-bevel;
-  background-color: var(--bg--0);
+  background-color: var(--bg--2xback);
   padding: var(--lg) 0;
   margin-top: var(--4xl);
   margin-bottom: var(--5xl);
@@ -342,7 +359,7 @@
 
 
 .heading--2xl {
-  @include title-thin;
+  @include title--thin;
   font-size: var(--text--2xl);
   text-shadow: var(--text-sha--sm);
   text-align: center;
@@ -350,10 +367,32 @@
 
 
 
-.unit-padding--md {
 
+.unit-gap--md {
+  --space: 2rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 4rem;
+  }
+
+  @include bp(sm) {
+    --space: 6rem;
+  }
+
+  @include bp(md) {
+    --space: 8rem;
+  }
+
+  @include bp(lg) {
+    --space: 10rem;
+  }
+}
+
+.unit-gap--lg {
   --space: 3rem;
-  padding: var(--space) 0;
+
   gap: var(--space);
 
   @include bp(xs) {
@@ -373,49 +412,25 @@
   }
 }
 
-
-.unit-padding--xl {
-
-  --space: 5rem;
-  padding: var(--space) 0;
-  gap: var(--space);
-
-  @include bp(xs) {
-    --space: 7rem;
-  }
-
-  @include bp(sm) {
-    --space: 9rem;
-  }
-
-  @include bp(md) {
-    --space: 11rem;
-  }
-
-  @include bp(lg) {
-    --space: 13rem;
-  }
-}
-
 .unit-gap--xl {
+  --space: 4rem;
 
-  --space: 5rem;
   gap: var(--space);
 
   @include bp(xs) {
-    --space: 7rem;
+    --space: 6rem;
   }
 
   @include bp(sm) {
-    --space: 9rem;
+    --space: 8rem;
   }
 
   @include bp(md) {
-    --space: 11rem;
+    --space: 10rem;
   }
 
   @include bp(lg) {
-    --space: 13rem;
+    --space: 12rem;
   }
 }
 

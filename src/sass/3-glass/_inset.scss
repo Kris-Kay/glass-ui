@@ -162,16 +162,27 @@ $insets: (
 /* Inset classes */
 /* ========================================== */
 .inset {
-  @include generate-classes($insets, 'inset', 'box-shadow');
+  @include generate-classes($insets, 'box-shadow', 'inset', '--');
 }
 
 .flat-inset {
-  @include generate-classes($insets, 'flat-inset', 'box-shadow');
+  @include generate-classes($insets, 'box-shadow', 'flat-inset', '--');
 }
 
 
+/* Inset background color classes */
+/* ========================================== */
+.inset-bg--base {
+  background-color: var(--inset-bg--base);
+}
 
+.inset-bg--deep {
+  background-color: var(--inset-bg--deep);
+}
 
+.inset-bg--xdeep {
+  background-color: var(--inset-bg--xdeep);
+}
 
 
 
@@ -357,7 +368,7 @@ $inset-shadow--sm:
 /* ========================================== */
 // .inset-glass--md {
 //   position: relative;
-//   background-color: var(--inset--deep);
+//   background-color: var(--inset-bg--deep);
 //   @include filter.glass-filter;
 
 //   &::before {

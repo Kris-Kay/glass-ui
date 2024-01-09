@@ -31,7 +31,7 @@
     @include pseudo;
     z-index: -2;
     overflow: hidden;
-    @include tex.noise--md;
+    @include tex.noise;
   }
 }
 
@@ -42,17 +42,14 @@
 /* Glass classes */
 /* ========================================== */
 .glass {
-  @include color-class-mixin($tints, 'background-color'){
+  @include generate-classes($tints, 'background-color', 'tint', '--') {
+    @include glass--base;
+};
+
+  @include generate-classes($depth, 'background-color', 'depth', '--') {
     @include glass--base;
   }
 }
-
-.glass-bg {
-  @include color-class-mixin($bg-colors, 'background-color'){
-    @include glass--base;
-  }
-}
-
 
 /* Glass with no bevel */
 /* ========================================== */
@@ -66,7 +63,7 @@
     @include pseudo;
     z-index: -1;
     overflow: hidden;
-    @include tex.noise--md;
+    @include tex.noise;
   }
 }
 
@@ -84,7 +81,7 @@
       z-index: -1;
       overflow: hidden;
       box-shadow: bevel.$flat-bevel--sm;
-      @include tex.noise--md;
+      @include tex.noise;
 
       @include bp(sm) {
         box-shadow: bevel.$bevel--lg;

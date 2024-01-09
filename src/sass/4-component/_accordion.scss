@@ -23,7 +23,7 @@
 
   /* visual */
   @include glass.glass--base;
-  background-color: var(--bg--2);
+  background-color: var(--bg--back);
 
   box-shadow: var(--sha--xl);
   border-radius: var(--space);
@@ -45,7 +45,7 @@
 
   &.full-w-inset {
     padding: var(--space);
-    background-color: var(--inset--deep);
+    background-color: var(--inset-bg--deep);
     box-shadow: var(--flat-inset--lg);
   }
 }

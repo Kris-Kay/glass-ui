@@ -12,7 +12,6 @@
 /* ====================================================================== */
 :root {
   /* Fallback colors */
-
   /* Primary */
   --primary--hue: 220;
   --primary--95: 95% 0.06 var(--primary--hue);
@@ -20,6 +19,7 @@
   --primary--85: 85% 0.14 var(--primary--hue);
   --primary--80: 80% 0.13 var(--primary--hue);
   --primary--75: 75% 0.12 var(--primary--hue);
+  --primary--70: 70% 0.12 var(--primary--hue);
   --primary--60: 60% 0.1 var(--primary--hue);
   --primary--50: 50% 0.08 var(--primary--hue);
   --primary--40: 40% 0.06 var(--primary--hue);
@@ -83,27 +83,12 @@
       --accent--40: 40% 0.125 var(--accent--hue);
     }
   }
-}
-
-/* ====================================================================== */
-/* Default Theme */
-/* ====================================================================== */
-:root, [data-theme=default] {
-
-  /* Translucent glass tints */
-  /* ========================================== */
-  --tint--3xlight: oklch(var(--neutral--98) / 0.4);
-  --tint--2xlight: oklch(var(--neutral--98) / 0.3);
-  --tint--xlight:  oklch(var(--neutral--98) / 0.2);
-  --tint--light:   oklch(var(--neutral--98) / 0.1);
-  --tint--clear:   oklch(var(--neutral--98) / 0.01);
-  --tint--dark:    oklch(var(--neutral--10) / 0.1);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.2);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.4);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
 
   /* Solid colors */
   /* ========================================== */
+  --color--primary:   oklch(var(--primary--75) / 1);
+  --color--accent:   oklch(var(--accent--70) / 1);
+
   --color--white:   oklch(var(--neutral--98) / 1);
   --color--2xlight: oklch(var(--neutral--90) / 1);
   --color--xlight:  oklch(var(--neutral--80) / 1);
@@ -113,26 +98,45 @@
   --color--xdark:   oklch(var(--neutral--20) / 1);
   --color--2xdark:  oklch(var(--neutral--10) / 1);
   --color--black:   oklch(var(--neutral--5) / 1);
+}
 
-  /* Box-shadows | Text-shadows | Drop-shadows */
-  /* ========================================== */
-  --shadow: var(--neutral--10);
-  --highlight: var(--neutral--98);
+/* ====================================================================== */
+/* Default Theme */
+/* ====================================================================== */
+:root, [data-theme=default] {
 
-  /* Background elevation levels */
+  /* Translucent tints */
   /* ========================================== */
-  --bg--0:  oklch(var(--neutral--40) / 0.15);
-  --bg--1:  oklch(var(--neutral--50) / 0.15);
-  --bg--2:  oklch(var(--neutral--60) / 0.2);
-  --bg--3:  oklch(var(--neutral--70) / 0.2);
-  --bg--4:  oklch(var(--neutral--80) / 0.25);
-  --bg--5:  oklch(var(--neutral--90) / 0.25);
+  --tint--3xlight: oklch(var(--neutral--90) / 0.5);
+  --tint--2xlight: oklch(var(--neutral--80) / 0.4);
+  --tint--xlight:  oklch(var(--neutral--70) / 0.3);
+  --tint--light:   oklch(var(--neutral--60) / 0.2);
+  --tint--gray:    oklch(var(--neutral--50) / 0.01);
+  --tint--dark:    oklch(var(--neutral--40) / 0.1);
+  --tint--xdark:   oklch(var(--neutral--30) / 0.3);
+  --tint--2xdark:  oklch(var(--neutral--20) / 0.5);
+  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
+
+  /* Background depth */
+  /* ========================================== */
+  --depth--2xback:  oklch(var(--neutral--90) / 0.01);
+  --depth--xback:  oklch(var(--neutral--90) / 0.1);
+  --depth--back:  oklch(var(--neutral--90) / 0.15);
+  --depth--base:  oklch(var(--neutral--90) / 0.2);
+  --depth--front:  oklch(var(--neutral--90) / 0.3);
+  --depth--xfront:  oklch(var(--neutral--90) / 0.4);
+  --depth--2xfront:  oklch(var(--neutral--90) / 0.5);
 
   /* Insets */
   /* ========================================== */
-  --inset--base: oklch(var(--neutral--10) / 0.1);
-  --inset--deep: oklch(var(--neutral--10) / 0.2);
-  --inset--xdeep: oklch(var(--neutral--10) / 0.3);
+  --inset-bg--base: oklch(var(--neutral--10) / 0.1);
+  --inset-bg--deep: oklch(var(--neutral--10) / 0.2);
+  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
+
+  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* ========================================== */
+  --shadow: var(--primary--20);
+  --highlight: var(--neutral--95);
 
   /* Text | Title | Label */
   /* ========================================== */
@@ -150,20 +154,6 @@
 
   /* UI */
   /* ========================================== */
-  --ui-focus: oklch(var(--primary--80) / 0.4);
-
-  --ui-rest-bg: oklch(var(--neutral--10) / 0.2);
-  --ui-rest-hover-bg: oklch(var(--neutral--10) / 0.3);
-  --ui-rest-knob: oklch(var(--neutral--90) / 1);
-
-  --ui-active-bg: oklch(var(--primary--80) / 0.7);
-  --ui-active-hover-bg: oklch(var(--primary--90) / 0.9);
-  --ui-active-knob: oklch(var(--neutral--95) / 1);
-
-  --ui-disabled-bg: oklch(var(--neutral--10) / 0.08);
-  --ui-disabled-checked-bg: oklch(var(--primary--75) / 0.8);
-  --ui-disabled-knob: oklch(var(--neutral--98) / 0.4);
-  --ui-disabled-text: oklch(var(--neutral--80) / 1);
 
   /* Other */
   /* ========================================== */
@@ -178,18 +168,19 @@
 
   /* Background elevation levels */
   /* ========================================== */
-  --bg--0:  oklch(var(--neutral--20) / 0.4);
-  --bg--1:  oklch(var(--neutral--30) / 0.4);
-  --bg--2:  oklch(var(--neutral--40) / 0.4);
-  --bg--3:  oklch(var(--neutral--50) / 0.4);
-  --bg--4:  oklch(var(--neutral--60) / 0.4);
-  --bg--5:  oklch(var(--neutral--70) / 0.4);
+  --depth--2xback:  oklch(var(--neutral--20) / 0.4);
+  --depth--xback:  oklch(var(--neutral--30) / 0.4);
+  --depth--back:  oklch(var(--neutral--40) / 0.4);
+  --depth--base:  oklch(var(--neutral--50) / 0.4);
+  --depth--front:  oklch(var(--neutral--60) / 0.4);
+  --depth--xfront:  oklch(var(--neutral--70) / 0.4);
+  --depth--2xfront:  oklch(var(--neutral--80) / 0.4);
 
   /* Insets */
   /* ========================================== */
-  --inset--base: oklch(var(--neutral--10) / 0.15);
-  --inset--deep: oklch(var(--neutral--10) / 0.25);
-  --inset--xdeep: oklch(var(--neutral--10) / 0.35);
+  --inset-bg--base: oklch(var(--neutral--10) / 0.15);
+  --inset-bg--deep: oklch(var(--neutral--10) / 0.25);
+  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.35);
 
   /* Body text | Headings | Labels */
   /* ========================================== */
@@ -199,6 +190,11 @@
   --text--mild:  oklch(var(--neutral--85) / 1);
   --text--xmild: oklch(var(--neutral--80) / 1);
 
+  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* ========================================== */
+  --shadow: var(--primary--15);
+  --highlight: var(--neutral--98);
+
   /* Text links */
   /* ========================================== */
   --link--rest: oklch(var(--accent--70) / 1);
@@ -207,246 +203,9 @@
 
   /* UI */
   /* ========================================== */
-  --ui-focus: oklch(var(--primary--80) / 0.4);
 
-  --ui-rest-bg: oklch(var(--neutral--10) / 0.2);
-  --ui-rest-hover-bg: oklch(var(--neutral--10) / 0.3);
-  --ui-rest-knob: oklch(var(--neutral--90) / 1);
-
-  --ui-active-bg: oklch(var(--primary--80) / 0.7);
-  --ui-active-hover-bg: oklch(var(--primary--90) / 0.9);
-  --ui-active-knob: oklch(var(--neutral--95) / 1);
-
-  --ui-disabled-bg: oklch(var(--neutral--10) / 0.08);
-  --ui-disabled-checked-bg: oklch(var(--primary--75) / 0.8);
-  --ui-disabled-knob: oklch(var(--neutral--98) / 0.4);
-  --ui-disabled-text: oklch(var(--neutral--80) / 1);
 
   /* Other */
   /* ========================================== */
   --page-bg: oklch(var(--primary--30) / 1);
 }
-
-
-/* Color tokens */
-/* ====================================================================== */
-// :root {
-// /* Fallback colors go here */
-//   // * Sky * //
-//   --primary--l: 50%;
-//   --primary--c: 0.12;
-//   --primary--h: 220;
-
-//   // * Leaf * //
-//   --accent--l: 92%;
-//   --accent--c: 0.2;
-//   --accent--h: 130;
-
-//   // * Rose * //
-//   --pop--l: 50%;
-//   --pop--c: 0.2;
-//   --pop--h: 345;
-
-//   // * Snow * //
-//   --light--l: 100%;
-//   --light--c: 0.01;
-//   --light--h: 250;
-
-//   // * Ink * //
-//   --dark--l: 5%;
-//   --dark--c: 0.02;
-//   --dark--h: 250;
-
-//   // @media (color-gamut: p3) {
-//   // /* P3 color space values go here */
-//   // /* These will only be visible if both the display and browser support the P3 color space */
-//   //   :root {
-//   //     --primary-c: 0.15;
-//   //     --accent-c: 0.22;
-//   //     --pop-c: 0.23;
-//   //     --light-c: 0.012;
-//   //     --dark-c: 0.042;
-//   //   }
-
-//   /* Base color values */
-//   /* ========================================== */
-//   /* use `-ch` custom properties to create colors that are lighter or darker */
-//   /* use `-lch` custom properties to create colors with different alpha values */
-//   --primary--ch: var(--primary--c) var(--primary--h);
-//   --primary--lch: var(--primary--l) var(--primary--c) var(--primary--h);
-//   // --primary--90: oklch(90% var(--primary--ch) / 1);
-//   // --primary--70: oklch(70% var(--primary--ch) / 1);
-//   // --primary--50: oklch(50% var(--primary--ch) / 1);
-//   // --primary--30: oklch(30% var(--primary--ch) / 1);
-//   // --primary--10: oklch(10% var(--primary--ch) / 1);
-
-//   --accent--ch: var(--accent--c) var(--accent--h);
-//   --accent--lch: var(--accent--l) var(--accent-c) var(--accent--h);
-//   // --accent--90: oklch(90% var(--accent--ch) / 1);
-//   // --accent--70: oklch(70% var(--accent--ch) / 1);
-//   // --accent--50: oklch(50% var(--accent--ch) / 1);
-//   // --accent--30: oklch(30% var(--accent--ch) / 1);
-//   // --accent--10: oklch(10% var(--accent--ch) / 1);
-
-//   --pop--ch: var(--pop--c)var(--pop--h);
-//   --pop--lch: var(--pop--l) var(--pop--c) var(--pop--h);
-//   // --pop--90: oklch(90% var(--pop--ch) / 1);
-//   // --pop--70: oklch(70% var(--pop--ch) / 1);
-//   // --pop--50: oklch(50% var(--pop--ch) / 1);
-//   // --pop--30: oklch(30% var(--pop--ch) / 1);
-//   // --pop--10: oklch(10% var(--pop--ch) / 1);
-
-//   --light--ch: var(--light--c) var(--light--h);
-//   --light--lch: var(--light--l) var(--light--c) var(--light--h);
-//   // --light--90: oklch(90% var(--light--ch) / 1);
-//   // --light--80: oklch(80% var(--light--ch) / 1);
-//   // --light--70: oklch(70% var(--light--ch) / 1);
-//   // --light--60: oklch(60% var(--light--ch) / 1);
-//   // --light--50: oklch(50% var(--light--ch) / 1);
-
-//   --dark--ch: var(--dark--c) var(--dark--h);
-//   --dark--lch: var(--dark--l) var(--dark--c) var(--dark--h);
-//   // --dark--40: oklch(40% var(--dark--ch) / 1);
-//   // --dark--30: oklch(30% var(--dark--ch) / 1);
-//   // --dark--20: oklch(20% var(--dark--ch) / 1);
-//   // --dark--10: oklch(10% var(--dark--ch) / 1);
-//   // --dark--5:  oklch(5% var(--dark--ch) / 1);
-
-
-// /* Colors that do not change with theme */
-// /* ====================================================================== */
-
-//   /* Translucent glass tints */
-//   /* ========================================== */
-//   --tint--3xlight: oklch(var(--light--lch) / 0.4);
-//   --tint--2xlight: oklch(var(--light--lch) / 0.3);
-//   --tint--xlight:  oklch(var(--light--lch) / 0.2);
-//   --tint--light:   oklch(var(--light--lch) / 0.1);
-//   --tint--clear:   oklch(var(--light--lch) / 0.01);
-//   --tint--dark:    oklch(var(--dark--lch) / 0.1);
-//   --tint--xdark:   oklch(var(--dark--lch) / 0.2);
-//   --tint--2xdark:  oklch(var(--dark--lch) / 0.4);
-//   --tint--3xdark:  oklch(var(--dark--lch) / 0.7);
-
-//   /* Box-shadows | Text-shadows | Drop-shadows */
-//   /* ========================================== */
-//   --shadow: var(--dark--lch);
-//   --highlight: var(--light--lch);
-
-//   /* Text colors */
-//   /* ========================================== */
-//   --text--2xlight: oklch(100% var(--light--ch) / 1);
-//   --text--xlight: oklch(90% var(--light--ch) / 1);
-//   --text--light: oklch(80% var(--light--ch) / 1);
-//   --text--gray: oklch(50% var(--light--ch) / 1);
-//   --text--dark: oklch(30% var(--light--ch) / 1);
-//   --text--xdark: oklch(20% var(--light--ch) / 1);
-//   --text--2xdark: oklch(10% var(--light--ch) / 1);
-// }
-
-/* ====================================================================== */
-/* Default Theme */
-/* ====================================================================== */
-// :root, [data-theme=default] {
-
-//   /* Background elevation levels */
-//   /* ========================================== */
-//   /* In both light & dark modes the higher the level the lighter the value */
-//   /* e.g. in light mode: --bg--l1: light gray; --bg--l5: white; */
-//   /* e.g. in dark mode:  --bg--l1: black;      --bg--l5: dark gray; */
-//   --bg--inset3: oklch(var(--dark--lch) / 0.3); /* -3 deepest inset */
-//   --bg--inset2: oklch(var(--dark--lch) / 0.2); /* -2 deeper inset */
-//   --bg--inset1: oklch(var(--dark--lch) / 0.1); /* -1 base inset */
-
-//   --bg--0:  oklch(40% var(--dark--ch) / 0.2);    /* 0  page bg */
-//   --bg--1:  oklch(50% var(--dark--ch) / 0.2);   /* 1  section bg */
-//   --bg--2:  oklch(60% var(--dark--ch) / 0.2);  /* 2  box bg */
-//   --bg--3:  oklch(70% var(--dark--ch) / 0.2);   /* 3  card bg */
-//   --bg--4:  oklch(80% var(--dark--ch) / 0.25);  /* 4  tooltip bg */
-//   --bg--5:  oklch(90% var(--dark--ch) / 0.3);   /* 5  modal bg */
-
-//   /* Text | Title | Label */
-//   /* ========================================== */
-//   --text--xbold: oklch(95% var(--light--ch) / 1);
-//   --text--bold:  oklch(90% var(--light--ch) / 1);
-//   --text--base:  oklch(85% var(--light--ch) / 1);
-//   --text--mild:  oklch(80% var(--light--ch) / 1);
-//   --text--xmild: oklch(75% var(--light--ch) / 1);
-
-//   /* Text links */
-//   /* ========================================== */
-//   --link--rest: oklch(70% var(--primary--ch) / 1);
-//   --link--hover: oklch(50% var(--primary--ch) / 1);
-//   --link--visit: oklch(30% var(--primary--ch) / 1);
-
-//   /* UI */
-//   /* ========================================== */
-//   --ui-focus: oklch(var(--primary--lch) / 0.4);
-
-//   --ui-rest-bg: var(--bg--inset2);
-//   --ui-rest-hover-bg: var(--bg--inset3);
-//   --ui-rest-knob: oklch(var(--light--lch) / 1);
-
-//   --ui-active-bg: oklch(80% var(--primary--ch) / 0.7);
-//   --ui-active-hover-bg: oklch(65% var(--primary--ch) / 0.9);
-//   --ui-active-knob: oklch(var(--light--lch) / 1);
-
-//   --ui-disabled-bg: var(--bg--inset1);
-//   --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary--h) / 1);
-//   --ui-disabled-knob: oklch(var(--light--lch) / 0.4);
-//   --ui-disabled-text: var(--text--mild);
-// }
-
-
-/* ====================================================================== */
-/* High-contrast Theme */
-/* ====================================================================== */
-// [data-theme="high-contrast"] {
-
-//   /* Background elevation levels */
-//   /* ========================================== */
-//   /* In both light & dark modes the higher the level the lighter the value */
-//   /* e.g. in light mode: --bg--l1: light gray; --bg--l5: white; */
-//   /* e.g. in dark mode:  --bg--l1: black;      --bg--l5: dark gray; */
-//   --bg--inset3: oklch(var(--dark--lch) / 0.35);  /* -3 deepest inset */
-//   --bg--inset2: oklch(var(--dark--lch) / 0.25);  /* -2 deeper inset */
-//   --bg--inset1: oklch(var(--dark--lch) / 0.15);  /* -1 base inset */
-
-//   --bg--0:  oklch(10% var(--dark--ch) / 0.3);    /* 0  page bg */
-//   --bg--1:  oklch(30% var(--dark--ch) / 0.3);   /* 1  section bg */
-//   --bg--2:  oklch(40% var(--dark--ch) / 0.3);  /* 2  box bg */
-//   --bg--3:  oklch(50% var(--dark--ch) / 0.3);   /* 3  card bg */
-//   --bg--4:  oklch(60% var(--dark--ch) / 0.35);  /* 4  tooltip bg */
-//   --bg--5:  oklch(80% var(--dark--ch) / 0.4);   /* 5  modal bg */
-
-//   /* Body text | Headings | Labels */
-//   /* ========================================== */
-//   --text--xbold: oklch(100% var(--light--ch) / 1);
-//   --text--bold:  oklch(95% var(--light--ch) / 1);
-//   --text--base:  oklch(90% var(--light--ch) / 1);
-//   --text--mild:  oklch(85% var(--light--ch) / 1);
-//   --text--xmild: oklch(80% var(--light--ch) / 1);
-
-//   /* Text links */
-//   /* ========================================== */
-//   --link--rest: oklch(70% var(--primary--ch) / 1);
-//   --link--hover: oklch(50% var(--primary--ch) / 1);
-//   --link--visit: oklch(30% var(--primary--ch) / 1);
-
-//   /* UI */
-//   /* ========================================== */
-//   --ui-focus: oklch(var(--primary--lch) / 0.4);
-
-//   --ui-rest-bg: var(--bg--inset2);
-//   --ui-rest-hover-bg: var(--bg--inset3);
-//   --ui-rest-knob: oklch(var(--light--lch) / 1);
-
-//   --ui-active-bg: oklch(75% var(--primary--ch) / 0.7);
-//   --ui-active-hover-bg: oklch(55% var(--primary--ch) / 0.9);
-//   --ui-active-knob: oklch(var(--light--lch) / 1);
-
-//   --ui-disabled-bg: var(--bg--inset1);
-//   --ui-disabled-checked-bg: oklch(40% 0.06 var(--primary--h) / 1);
-//   --ui-disabled-knob: oklch(var(--light--lch) / 0.4);
-//   --ui-disabled-text: var(--text--mild);
-// }

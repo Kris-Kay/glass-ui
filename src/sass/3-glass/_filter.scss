@@ -15,7 +15,7 @@ html {
   }
 
   @include bp(md) {
-    --blur: 40px;
+    --blur: 28px;
   }
 
   @include bp(lg) {

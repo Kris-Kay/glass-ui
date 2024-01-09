@@ -39,28 +39,26 @@
 
 @mixin input--base {
   /* config */
-  --rest-knob: var(--ui-rest-knob);
-  --rest-bg: var(--ui-rest-bg);
-  --rest-hover-bg: var(--ui-rest-hover-bg);
+  --rest-bg: oklch(var(--neutral--10) / 0.2);
+  --rest-hover-bg: oklch(var(--neutral--10) / 0.3);
+  --rest-knob: var(--color--2xlight);
 
-  --active-bg: var(--ui-active-bg);
-  --active-hover-bg: var(--ui-active-hover-bg);
-
-  --disabled-bg: var(--ui-disabled-bg);
-  --disabled-checked-bg: var(--ui-disabled-checked-bg);
-  --disabled-knob: var(--ui-disabled-knob);
-  --disabled-text: var(--ui-disabled-text);
-
-  --border-hover: oklch(var(--primary--80) / 0.4);
-  --focus: 2px var(--ui-focus);
-  --border: transparent;
-
-  --active-knob-sha: var(--sha--2xs);
-  --disabled-knob-sha: var(--sha--2xs);
-  --active-inset: var(--inset--2xs);
-  --disabled-inset: var(--inset--3xs);
   --active-opacity: 1;
+  --active-bg: oklch(var(--primary--75) / 0.8);
+  --active-inset: var(--inset--2xs);
+  --active-hover-bg: oklch(var(--primary--75) / 1);
+  --active-knob-sha: var(--sha--2xs);
+
   --disabled-opacity: 0.8;
+  --disabled-bg: oklch(var(--neutral--10) / 0.1);
+  --disabled-checked-bg: oklch(var(--primary--75) / 0.8);
+  --disabled-inset: var(--inset--3xs);
+  --disabled-text: var(--text--xmild);
+  --disabled-knob: oklch(var(--neutral--80) / 0.4);
+  --disabled-knob-sha: var(--sha--2xs);
+
+  --border: transparent;
+  --border-hover: oklch(var(--primary--75) / 0.4);
 
   overflow: hidden;
   cursor: pointer;

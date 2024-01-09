@@ -2,9 +2,9 @@
 /* Mixins */
 /* ========================================== */
 
-@mixin generate-classes($map, $prefix, $property) {
+@mixin generate-classes($map, $property, $prefix, $split) {
   @each $key, $value in $map {
-    &--#{$key} {
+    &#{$split}#{$key} {
       #{$property}:  var(--#{$prefix}--#{$key});
       @content;
     }

@@ -10,22 +10,23 @@
 
 @mixin noise {
   background-repeat: repeat;
+  background-size: 100px 100px;
   background-image:
     url(/assets/textures/noise-texture-white-100den-10op-500x500.png),
     url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
 }
 
-@mixin noise--sm {
-  @include noise;
-  background-size: 13px;
-}
+// @mixin noise--sm {
+//   @include noise;
+//   // background-size: 13px;
+// }
 
-@mixin noise--md {
-  @include noise;
-  background-size: 40px;
-}
+// @mixin noise--md {
+//   @include noise;
+//   background-size: 30px 30px;
+// }
 
-@mixin noise--lg {
-  @include noise;
-  background-size: 82px;
-}
+// @mixin noise--lg {
+//   @include noise;
+//   background-size: 100px 100px;
+// }

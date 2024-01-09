@@ -13,7 +13,7 @@
 .bento__rect {
   @include flex--c;
   flex-direction: column;
-  aspect-ratio : 1 / 1;
+  aspect-ratio : 4 / 1;
   border-radius: var(--sm);
 
   box-shadow: var(--sha--sm);
@@ -28,8 +28,34 @@
     transform: scale(1.05);
   }
 
+  @include bp(xs) {
+    aspect-ratio : 1 / 1;
+  }
+
   @include bp(md) {
     border-radius: var(--md);
+  }
+}
+
+.bento__wrap--1to3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lg);
+  }
+
+  @include bp(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--xl);
+  }
+
+  @include bp(lg) {
+    gap: var(--2xl);
   }
 }
 
