@@ -102,7 +102,7 @@
   //   margin-left: calc(var(--neg-space) + 0.5px);
   //   margin-right: var(--neg-space);
   //   border-radius: 0;
-  //   background-color: var(--inset--deep);
+  //   background-color: var(--inset-bg--deep);
   //   box-shadow: var(--flat-inset--md);
   // }
 
@@ -111,7 +111,7 @@
     margin-left: calc((-1 * var(--space)) + 0.5px);
     margin-right: var(--neg-space);
 
-    background-color: var(--inset--xdeep);
+    background-color: var(--inset-bg--xdeep);
     box-shadow: var(--flat-inset--lg);
   }
 
@@ -208,7 +208,7 @@
   object-position: center;
 }
 
-    // background-color: var(--inset--xdeep);
+    // background-color: var(--inset-bg--xdeep);
     // box-shadow: glass.$flat-inset--lg;
     // color: var(--text--3xlight);
 

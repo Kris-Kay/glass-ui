@@ -52,6 +52,12 @@
   z-index: z(base);
 }
 
+
+/* Telescope glass demo */
+.h--800 {
+  height: min(800px, 70vh);
+}
+
 .telescope-rect__wrap {
   overflow: hidden;
   border-radius: var(--xl);
@@ -199,7 +205,7 @@
   // height: 80px;
   padding: var(--xs);
   border-radius: var(--xs);
-  background-color: var(--inset--base);
+  background-color: var(--inset-bg--base);
 }
 
 
@@ -209,7 +215,7 @@
   width: 100%;
   padding: var(--gutter);
   border-radius: 0;
-  background-color: var(--inset--deep);
+  background-color: var(--inset-bg--deep);
 }
 
 .text-size__group {

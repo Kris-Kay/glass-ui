@@ -1,29 +1,34 @@
 /* ========================================== */
 /* Colors util */
 @use "sass:map";
+@use "mixin" as *;
 /* ========================================== */
 
-/* ====================================================================== */
-/* Color modifier mixin */
-/* ====================================================================== */
-@mixin color-class-mixin($map, $property: background-color) {
-  @each $key, $value in $map {
-    &--#{$key} {
-      #{$property}: $value;
-      @content;
-    }
-  }
-}
+/* Solid colors MAP */
+/* ========================================== */
+$colors: (
+  "primary": var(--color--primary),
+  "accent": var(--color--accent),
 
+  "white": var(--color--white),
+  "2xlight": var(--color--2xlight),
+  "xlight": var(--color--xlight),
+  "light": var(--color--light),
+  "gray": var(--color--gray),
+  "dark": var(--color--dark),
+  "xdark": var(--color--xdark),
+  "2xdark": var(--color--2xdark),
+  "black": var(--color--black),
+);
 
-/* Tint color MAP */
+/* Tint colors MAP */
 /* ========================================== */
 $tints: (
   "3xlight": var(--tint--3xlight),
   "2xlight": var(--tint--2xlight),
   "xlight": var(--tint--xlight),
   "light": var(--tint--light),
-  "gray": var(--tint--gray),
+  "clear": var(--tint--clear),
   "dark": var(--tint--dark),
   "xdark": var(--tint--xdark),
   "2xdark": var(--tint--2xdark),
@@ -34,65 +39,35 @@ $tints: (
 /* ========================================== */
 /* Generates a `.tint--` class for every tint in `$tints` MAP */
 .tint {
-  @include color-class-mixin($tints, 'background-color');
+  @include generate-classes($tints, 'background-color', 'tint', '--');
 }
 
-
-/* Background color MAP */
+/* Depth colors MAP */
 /* ========================================== */
-$bg-colors: (
-  "2xclear": var(--bg--2xclear),
-  "xclear": var(--bg--xclear),
-  "clear": var(--bg--clear),
-  "base": var(--bg--base),
-  "solid": var(--bg--solid),
-  "xsolid": var(--bg--xsolid),
-  "2xsolid": var(--bg--2xsolid),
+$depth: (
+  "2xback": var(--depth--2xback),
+  "xback": var(--depth--xback),
+  "back": var(--depth--back),
+  "base": var(--depth--base),
+  "front": var(--depth--front),
+  "xfront": var(--depth--xfront),
+  "2xfront": var(--depth--2xfront),
 );
 
-/* Background color classes */
+
+/* Text colors MAP */
 /* ========================================== */
-/* Generates a `.bg--` class for every color in `$bg-colors` MAP */
-// .bg {
-//   @include color-class-mixin($bg-colors, 'background-color');
-// }
-
-.inset--base {
-  background-color: var(--inset--base);
-}
-
-.inset--deep {
-  background-color: var(--inset--deep);
-}
-
-.inset--xdeep {
-  background-color: var(--inset--xdeep);
-}
-
-
-/* Text color MAP */
-/* ========================================== */
-/* bold-mild  → change with theme */
-/* light-dark → always the same */
-$text--colors: (
+$text-colors: (
   "xbold":  var(--text--xbold),
   "bold":  var(--text--bold),
   "base":  var(--text--base),
   "mild":  var(--text--mild),
   "xmild":  var(--text--xmild),
-
-  "2xlight": var(--color--2xlight),
-  "xlight": var(--color--xlight),
-  "light": var(--color--light),
-  "gray": var(--color--gray),
-  "dark": var(--color--dark),
-  "xdark": var(--color--xdark),
-  "2xdark": var(--color--2xdark),
 );
 
 /* Text color classes */
 /* ========================================== */
-/* Generates a `.text--`class for every color in `$text--colors` MAP */
 .text {
-  @include color-class-mixin($text--colors, 'color');
+  @include generate-classes($text-colors, 'color', 'text', '--');
+  @include generate-classes($colors, 'color', 'color', '--');
 }

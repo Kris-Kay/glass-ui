@@ -14,8 +14,6 @@
   position: relative;
   overflow: hidden;
   @include filter.glass-filter;
-  transform: translateZ(0);
-
   @content;
 
   &::after {
@@ -44,17 +42,14 @@
 /* Glass classes */
 /* ========================================== */
 .glass {
-  @include color-class-mixin($tints, 'background-color'){
+  @include generate-classes($tints, 'background-color', 'tint', '--') {
+    @include glass--base;
+};
+
+  @include generate-classes($depth, 'background-color', 'depth', '--') {
     @include glass--base;
   }
 }
-
-.glass {
-  @include generate-classes($bg-colors, 'background-color', 'bg', '--') {
-    @include glass--base;
-  }
-}
-
 
 /* Glass with no bevel */
 /* ========================================== */

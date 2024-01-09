@@ -36,7 +36,7 @@
   /* visual */
   border-radius: 0;
   @include glass.glass--flat-bevel-mobile;
-  background-color: var(--bg--base);
+  background-color: var(--depth--base);
 
   @include bp(sm) {
     overflow: hidden;
@@ -50,7 +50,7 @@
     margin-right: calc(-1 * var(--space));
 
     /* visual */
-    background-color: var(--inset--deep);
+    background-color: var(--inset-bg--deep);
     box-shadow: var(--flat-inset--md);
   }
 }
