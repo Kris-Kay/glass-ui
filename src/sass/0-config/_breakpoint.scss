@@ -7,11 +7,11 @@
 /* ========================================== */
 /* #Config these values */
 $breakpoints: (
-  "xs": 20rem, /* 320px  and bigger */
-  "sm": 28rem, /* 448px  and bigger */
-  "md": 45rem, /* 720px  and bigger */
-  "lg": 64rem, /* 1024px and bigger */
-  "xl": 90rem, /* 1440px and bigger */
+  "xs": 22.5rem, /* 360px  and bigger */
+  "sm": 28rem,   /* 448px  and bigger */
+  "md": 45rem,   /* 720px  and bigger */
+  "lg": 64rem,   /* 1024px and bigger */
+  "xl": 90rem,   /* 1440px and bigger */
 );
 
 /* Breakpoints mixin */
