@@ -3,8 +3,22 @@
 @use 'sass:map';
 /* ========================================== */
 
+/* SVG icons */
+/* ========================================== */
+.icon--sm {
+  height: var(--ui--sm);
+  width: auto;
+}
 
+.icon--md {
+  height: var(--ui--md);
+  width: auto;
+}
 
+.icon--lg {
+  height: var(--ui--lg);
+  width: auto;
+}
 
 
 /* Change SVG color */

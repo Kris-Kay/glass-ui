@@ -85,3 +85,30 @@ html {
     max-width: calc(100% - var(--gutterx2));
   }
 }
+
+
+/* Max width for images */
+/* ========================================== */
+.img--2xs {
+  width: min(100%, 200px);
+}
+
+.img--xs {
+  width: min(100%, 300px);
+}
+
+.img--sm {
+  width: min(100%, 400px);
+}
+
+.img--md {
+  width: min(100%, 500px);
+}
+
+.img--lg {
+  width: min(100%, 600px);
+}
+
+.img--lg {
+  width: min(100%, 700px);
+}
