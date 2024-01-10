@@ -41,7 +41,6 @@
     @include pseudo;
     z-index: 202;
     box-shadow: var(--inset--lg);
-    // @include tex.noise--sm;
   }
 
   @include bp(xs) {
@@ -60,7 +59,7 @@
   width: max-content;
   height: 100%;
   @include flex--c;
-  padding: 0 0.5rem;
+  padding: 0 0.6rem;
   overflow: hidden;
   pointer-events: auto;
   cursor: pointer;
@@ -70,11 +69,11 @@
   @include btn.btn-text;
   @include btn.btn-2d--base;
   border-radius: var(--tab-br);
-  color: oklch(var(--neutral--95) / 1);
+  color: var(--color--white);
   background-color: transparent;
 
   @include bp(xs) {
-    padding: 0 0.7rem;
+    padding: 0 0.8rem;
   }
 
   @include bp(md) {
@@ -93,7 +92,7 @@
 }
 
 [role="tab"][aria-selected="true"] {
-  background-color: var(--tint--2xlight);
-  color: var(--tint--xdark);
-  box-shadow: var(--sha--2xs);
+  background-color: var(--tint--3xlight);
+  color: var(--tint--2xdark);
+  box-shadow: var(--sha--3xs);
 }

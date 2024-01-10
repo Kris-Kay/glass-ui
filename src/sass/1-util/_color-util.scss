@@ -8,36 +8,36 @@
 /* ========================================== */
 $colors: (
   "primary": var(--color--primary),
-  "accent": var(--color--accent),
-
-  "white": var(--color--white),
+  "accent":  var(--color--accent),
+  "white":   var(--color--white),
   "2xlight": var(--color--2xlight),
-  "xlight": var(--color--xlight),
-  "light": var(--color--light),
-  "gray": var(--color--gray),
-  "dark": var(--color--dark),
-  "xdark": var(--color--xdark),
-  "2xdark": var(--color--2xdark),
-  "black": var(--color--black),
+  "xlight":  var(--color--xlight),
+  "light":   var(--color--light),
+  "gray":    var(--color--gray),
+  "dark":    var(--color--dark),
+  "xdark":   var(--color--xdark),
+  "2xdark":  var(--color--2xdark),
+  "black":   var(--color--black),
 );
 
 /* Tint colors MAP */
 /* ========================================== */
 $tints: (
+  "4xlight": var(--tint--4xlight),
   "3xlight": var(--tint--3xlight),
   "2xlight": var(--tint--2xlight),
-  "xlight": var(--tint--xlight),
-  "light": var(--tint--light),
-  "clear": var(--tint--clear),
-  "dark": var(--tint--dark),
-  "xdark": var(--tint--xdark),
-  "2xdark": var(--tint--2xdark),
-  "3xdark": var(--tint--3xdark),
+  "xlight":  var(--tint--xlight),
+  "light":   var(--tint--light),
+  "clear":   var(--tint--clear),
+  "dark":    var(--tint--dark),
+  "xdark":   var(--tint--xdark),
+  "2xdark":  var(--tint--2xdark),
+  "3xdark":  var(--tint--3xdark),
+  "4xdark":  var(--tint--4xdark),
 );
 
 /* Tint classes */
 /* ========================================== */
-/* Generates a `.tint--` class for every tint in `$tints` MAP */
 .tint {
   @include generate-classes($tints, 'background-color', 'tint', '--');
 }
@@ -45,24 +45,23 @@ $tints: (
 /* Depth colors MAP */
 /* ========================================== */
 $depth: (
-  "2xback": var(--depth--2xback),
-  "xback": var(--depth--xback),
-  "back": var(--depth--back),
-  "base": var(--depth--base),
-  "front": var(--depth--front),
-  "xfront": var(--depth--xfront),
+  "2xback":  var(--depth--2xback),
+  "xback":   var(--depth--xback),
+  "back":    var(--depth--back),
+  "base":    var(--depth--base),
+  "front":   var(--depth--front),
+  "xfront":  var(--depth--xfront),
   "2xfront": var(--depth--2xfront),
 );
-
 
 /* Text colors MAP */
 /* ========================================== */
 $text-colors: (
-  "xbold":  var(--text--xbold),
+  "xbold": var(--text--xbold),
   "bold":  var(--text--bold),
   "base":  var(--text--base),
   "mild":  var(--text--mild),
-  "xmild":  var(--text--xmild),
+  "xmild": var(--text--xmild),
 );
 
 /* Text color classes */

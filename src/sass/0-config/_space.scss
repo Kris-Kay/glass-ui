@@ -2,12 +2,12 @@
 /* Space */
 @use "sass:map";
 @forward "breakpoint";
-@use "breakpoint" as bp;
+@use "breakpoint" as *;
 /* ========================================== */
 
-$bp--sm: map.get(bp.$breakpoints, sm);
-$bp--md: map.get(bp.$breakpoints, md);
-$bp--lg: map.get(bp.$breakpoints, lg);
+$bp--sm: map.get($breakpoints, sm);
+$bp--md: map.get($breakpoints, md);
+$bp--lg: map.get($breakpoints, lg);
 
 /* Responsive UI heights | gutters | max widths */
 /* ========================================== */
@@ -16,14 +16,14 @@ html {
   --ui--md: 2.125rem;  /* 34px */
   --ui--lg: 2.5rem;    /* 40px */
 
-  --max-w--sm: 512px;
-  --max-w--md: 800px;
+  --max-w--sm: 520px;
+  --max-w--md: 680px;
   --max-w--lg: 980px;
 
   --gutter: 16px;
   --gutterx2: calc(var(--gutter) * 2);
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     --gutter: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
   }
 }
@@ -58,7 +58,7 @@ html {
   margin-left: auto;
   margin-right: auto;
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     min-width: calc($bp--sm - var(--gutterx2));
     width: calc(100% - var(--gutterx2));
   }
@@ -69,7 +69,7 @@ html {
   margin-left: auto;
   margin-right: auto;
 
-  @include bp.bp(md) {
+  @include bp(md) {
     min-width: calc($bp--sm - var(--gutterx2));
     width: calc(100% - var(--gutterx2));
   }
@@ -80,8 +80,199 @@ html {
   margin-left: auto;
   margin-right: auto;
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     min-width: calc($bp--lg - var(--gutterx2));
     max-width: calc(100% - var(--gutterx2));
+  }
+}
+
+
+/* Max width for images */
+/* ========================================== */
+.img--2xs {
+  width: min(100%, 200px);
+}
+
+.img--xs {
+  width: min(100%, 300px);
+}
+
+.img--sm {
+  width: min(100%, 400px);
+}
+
+.img--md {
+  width: min(100%, 500px);
+}
+
+.img--lg {
+  width: min(100%, 600px);
+}
+
+.img--lg {
+  width: min(100%, 700px);
+}
+
+
+/* Spacing */
+/* ========================================== */
+.page-space {
+  --space: 4rem;
+
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--space);
+  margin: var(--space) 0;
+
+  @include bp(xs) {
+    --space: 6rem;
+  }
+
+  @include bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp(md) {
+    --space: 10rem;
+  }
+
+  @include bp(lg) {
+    --space: 12rem;
+  }
+}
+
+
+
+.padding--wide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 2.25rem;
+  }
+
+  @include bp(sm) {
+    --space: 2.5rem;
+  }
+
+  @include bp(md) {
+    --space: 2.75rem;
+  }
+
+  @include bp(lg) {
+    --space: 3rem;
+  }
+}
+
+.padding--xwide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 2.5rem;
+  }
+
+  @include bp(sm) {
+    --space: 3rem;
+  }
+
+  @include bp(md) {
+    --space: 3.5rem;
+  }
+
+  @include bp(lg) {
+    --space: 4rem;
+  }
+}
+
+.padding--2xwide {
+  --space: 2rem;
+  padding: var(--space);
+
+  @include bp(xs) {
+    --space: 3rem;
+  }
+
+  @include bp(sm) {
+    --space: 4rem;
+  }
+
+  @include bp(md) {
+    --space: 5rem;
+  }
+
+  @include bp(lg) {
+    --space: 6rem;
+  }
+}
+
+
+
+
+
+.unit-gap--md {
+  --space: 2rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 4rem;
+  }
+
+  @include bp(sm) {
+    --space: 6rem;
+  }
+
+  @include bp(md) {
+    --space: 8rem;
+  }
+
+  @include bp(lg) {
+    --space: 10rem;
+  }
+}
+
+.unit-gap--lg {
+  --space: 3rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 5rem;
+  }
+
+  @include bp(sm) {
+    --space: 7rem;
+  }
+
+  @include bp(md) {
+    --space: 9rem;
+  }
+
+  @include bp(lg) {
+    --space: 11rem;
+  }
+}
+
+.unit-gap--xl {
+  --space: 4rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 6rem;
+  }
+
+  @include bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp(md) {
+    --space: 10rem;
+  }
+
+  @include bp(lg) {
+    --space: 12rem;
   }
 }

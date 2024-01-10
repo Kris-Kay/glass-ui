@@ -18,9 +18,9 @@ $letter-spacing--lg: 0.06em;
 
 /* line-height: */
 /* ========================================== */
-$line-height--sm: calc(0.1rem + 2ex + 0.1rem);
-$line-height--md: calc(0.125rem + 2.75ex + 0.125rem);
-$line-height--lg: calc(0.125rem + 3ex + 0.125rem);
+$line-height--sm: calc(0.125rem + 2ex + 0.125rem);
+$line-height--md: calc(0.125rem + 2.25ex + 0.125rem);
+$line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* font-weight: */
 /* ========================================== */
@@ -51,10 +51,10 @@ $font-weight--lg: 400;
   --text--xl: clamp(1.75rem, 1.7vw + 1rem, 2.25rem);
 
   /* 2xl: 36px → 48px */
-  --text--2xl: clamp(2.25rem, 2.5vw + 1rem, 3rem);
+  --text--2xl: clamp(2.25rem, 2.5vw + 1rem, 2.75rem);
 
   /* 3xl: 40px → 56px */
-  --text--3xl: clamp(2.5rem, 3.8vw + 1rem, 3.5rem);
+  --text--3xl: clamp(2.5rem, 3.8vw + 1rem, 4rem);
 }
 
 /* Text size MAP */

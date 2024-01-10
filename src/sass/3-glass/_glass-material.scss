@@ -4,16 +4,53 @@
 @use "../custom" as *;
 @use "../util" as *;
 @use "bevel";
-@use "filter";
-@use "texture" as tex;
 /* ========================================== */
+
+/* Glass filter */
+/* ========================================== */
+html {
+  --satu: 1.3;
+  --bright: 0.95;
+  --blur: 28px;
+
+  @include bp(xs) {
+    --blur: 32px;
+  }
+
+  @include bp(md) {
+    --blur: 28px;
+  }
+
+  @include bp(lg) {
+    --blur: 64px;
+  }
+}
+
+@mixin glass-filter {
+  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+  backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+}
+
+/* Glass noise texture */
+/* ========================================== */
+/* Noise texture generator */
+/* https://devsdash.com/tools/noise-texture-generator */
+
+@mixin noise {
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  background-image:
+    url(/assets/textures/noise-texture-white-100den-10op-500x500.png),
+    url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
+}
+
 
 /* Base Glass */
 /* ========================================== */
 @mixin glass--base {
   position: relative;
   overflow: hidden;
-  @include filter.glass-filter;
+  @include glass-filter;
   @content;
 
   &::after {
@@ -31,7 +68,7 @@
     @include pseudo;
     z-index: -2;
     overflow: hidden;
-    @include tex.noise;
+    @include noise;
   }
 }
 
@@ -56,14 +93,14 @@
 @mixin glass--no-bevel {
   position: relative;
   overflow: hidden;
-  @include filter.glass-filter;
+  @include glass-filter;
   @content;
 
   &::after {
     @include pseudo;
     z-index: -1;
     overflow: hidden;
-    @include tex.noise;
+    @include noise;
   }
 }
 
@@ -81,7 +118,7 @@
       z-index: -1;
       overflow: hidden;
       box-shadow: bevel.$flat-bevel--sm;
-      @include tex.noise;
+      @include noise;
 
       @include bp(sm) {
         box-shadow: bevel.$bevel--lg;
@@ -100,13 +137,13 @@
 @mixin btn-glass {
   position: relative;
   overflow: hidden;
-  @include filter.glass-filter;
+  @include glass-filter;
 
   &::after {
     @include pseudo;
     overflow: hidden;
     z-index: 202;
     box-shadow: bevel.$bevel--sm;
-    // @include tex.noise--sm;
+    // @include noise--sm;
   }
 }

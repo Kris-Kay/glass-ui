@@ -4,54 +4,152 @@
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-@use "button" as btn;
 /* ========================================== */
 
-.card {
-  --space: var(--md); // < control padding from here
-  --neg-space: calc(-1 * var(--space));
+@mixin card-base {
+  --_space: var(--space, 1.5rem);
+  --_neg-space: calc(-1 * var(--_space));
 
-  overflow: hidden;
   height: fit-content;
   display: grid;
+  gap: var(--_space);
+  padding: var(--_space);
+  overflow: hidden;
+  border-radius: var(--md);
+  box-shadow: var(--sha--lg);
 
-  padding: var(--space);
-  border-radius: var(--lg);
-  box-shadow: var(--sha--xl);
+  @include bp(sm) {
+    border-radius: var(--lg);
+    box-shadow: var(--sha--xl);
+  }
+
+  @include bp(lg) {
+    box-shadow: var(--sha--2xl);
+  }
+
+  & > .full-w-fill {
+    padding: var(--_space);
+    margin: 0 var(--_neg-space);
+  }
+
+  & > .full-w-fill-noYMargin {
+    padding: var(--_space);
+    margin: var(--_neg-space);
+  }
 
   & > .full-w-inset {
-    padding: var(--space);
-    margin-left: calc((-1 * var(--space)) + 0.5px);
-    margin-right: var(--neg-space);
+    padding: var(--_space);
+    margin-left: calc((-1 * var(--_space)) + 0.5px);
+    margin-right: var(--_neg-space);
 
-    background-color: var(--inset-bg--deep);
+    color: var(--color--3xlight);
+    background-color: var(--inset-bg--xdeep);
     box-shadow: var(--flat-inset--lg);
-    color: var(--text--3xlight);
   }
 
   & > .full-w-img {
     display: grid;
     place-self: center;
-    margin-left: var(--neg-space);
-    margin-right: var(--neg-space);
+    margin-left: var(--_neg-space);
+    margin-right: var(--_neg-space);
   }
 
   & > .full-w-img-noBottomMargin {
     display: grid;
     place-self: center;
-    margin-left: var(--neg-space);
-    margin-right: var(--neg-space);
-    margin-bottom: var(--neg-space);
+    margin-left: var(--_neg-space);
+    margin-right: var(--_neg-space);
+    margin-bottom: var(--_neg-space);
   }
 
   & > .full-w-img-noMargin {
     display: grid;
     place-self: center;
-    margin: var(--neg-space);
+    margin: var(--_neg-space);
   }
+}
+
+.card--sm {
+  @include card-base;
+  --space: var(--sm);
 
   @include bp(sm) {
+    --space: var(--md);
+  }
+
+  @include bp(lg) {
     --space: var(--lg);
-    box-shadow: var(--sha--3xl);
+  }
+}
+
+.card--md {
+  @include card-base;
+  --space: var(--md);
+  border-radius: var(--lg);
+
+  @include bp(xs) {
+    --space: var(--lg);
+  }
+
+  @include bp(lg) {
+    --space: var(--xl);
+  }
+}
+
+.card--lg {
+  @include card-base;
+  --space: var(--lg);
+  border-radius: var(--lg);
+
+  @include bp(sm) {
+    --space: var(--xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--2xl);
+  }
+}
+
+.card--xl {
+  @include card-base;
+  --space: var(--xl);
+  border-radius: var(--lg);
+
+  @include bp(sm) {
+    --space: var(--2xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--3xl);
+  }
+}
+
+.card--2xl {
+  @include card-base;
+  --space: var(--2xl);
+  border-radius: var(--lg);
+
+  @include bp(sm) {
+    --space: var(--3xl);
+    border-radius: var(--xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--4xl);
+  }
+}
+
+.card--3xl {
+  @include card-base;
+  --space: var(--3xl);
+  border-radius: var(--lg);
+
+  @include bp(sm) {
+    --space: var(--4xl);
+    border-radius: var(--xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--5xl);
   }
 }

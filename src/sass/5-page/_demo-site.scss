@@ -55,7 +55,19 @@
 
 /* Telescope glass demo */
 .h--800 {
-  height: min(800px, 70vh);
+  height: 500px;
+
+  @include bp(sm) {
+      height: 600px;
+  }
+
+  @include bp(sm) {
+      height: 700px;
+  }
+
+  @include bp(md) {
+      height: 800px;
+  }
 }
 
 .telescope-rect__wrap {
@@ -159,6 +171,13 @@
   }
 }
 
+.rect--2xs {
+  width: 16px;
+  height: 16px;
+  border-radius: 0.15rem;
+}
+
+
 /* Tint & fill demo */
 /* ========================================== */
 .tint-demo__rect {
@@ -208,7 +227,6 @@
   background-color: var(--inset-bg--base);
 }
 
-
 .full-w-inset-demo {
   display: grid;
   place-content: center start;
@@ -251,45 +269,6 @@
   gap: var(--3xs);
 }
 
-// .color {
-//   div:nth-child(1) {
-//     background-color: hsl(0 0% 50%);
-//   }
-//   div:nth-child(2) {
-//     background-color: hsl(0 20% 50%);
-//   }
-//   div:nth-child(3) {
-//     background-color: hsl(0 40% 50%);
-//   }
-//   div:nth-child(4) {
-//     background-color: hsl(0 60% 50%);
-//   }
-//   div:nth-child(5) {
-//     background-color: hsl(0 80% 50%);
-//   }
-//   div:nth-child(6) {
-//     background-color: hsl(0 100% 50%);
-//   }
-// }
-
-
-
-
-
-.test-oklch {
-	color: oklch(40% 0.268735435 34.568626);
-}
-
-
-// size scale demo
-.rect--2xs {
-  width: 16px;
-  height: 16px;
-  border-radius: 0.15rem;
-}
-
-
-
 
 .heading--lg {
   @include title--thin;
@@ -323,8 +302,6 @@
   }
 }
 
-
-
 .heading--xl {
   @include title-thick;
   font-size: var(--text--2xl);
@@ -338,7 +315,7 @@
   display: grid;
   place-items: center;
   @include glass.glass--no-bevel;
-  background-color: var(--bg--2xback);
+  background-color: var(--tint--dark);
   padding: var(--lg) 0;
   margin-top: var(--4xl);
   margin-bottom: var(--5xl);
@@ -346,7 +323,7 @@
   & > .heading--xl {
     text-align: end;
     width: 100%;
-    max-width: var(--max-w--md);
+    max-width: var(--max-w--lg);
     padding-left: var(--gutter);
     padding-right: var(--gutter);
 
@@ -357,7 +334,6 @@
   }
 }
 
-
 .heading--2xl {
   @include title--thin;
   font-size: var(--text--2xl);
@@ -367,90 +343,108 @@
 
 
 
+/* Bento grid */
+/* ========================================== */
+.bento__rect {
+  @include flex--c;
+  flex-direction: column;
+  aspect-ratio : 4.5 / 1;
+  border-radius: var(--sm);
+  padding: var(--xl) var(--2xl);
 
-.unit-gap--md {
-  --space: 2rem;
+  will-change: transform, box-shadow;
+  box-shadow: var(--sha--2xs);
+  transform: scale(1);
+  transition:
+    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
+    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
 
-  gap: var(--space);
-
-  @include bp(xs) {
-    --space: 4rem;
+  &:hover {
+    box-shadow: var(--sha--sm);
+    transform: scale(1.02);
   }
 
-  @include bp(sm) {
-    --space: 6rem;
+  @include bp(xs) {
+    aspect-ratio : 1 / 1;
+    max-width: 175px;
+    padding: var(--2xs);
   }
 
   @include bp(md) {
-    --space: 8rem;
+    border-radius: var(--md);
+    max-width: 200px;
   }
 
   @include bp(lg) {
-    --space: 10rem;
+    padding: var(--sm);
+    max-width: 300px;
   }
 }
 
-.unit-gap--lg {
-  --space: 3rem;
-
-  gap: var(--space);
+.bento__wrap--1to3 {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--md);
 
   @include bp(xs) {
-    --space: 5rem;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include bp(sm) {
-    --space: 7rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include bp(md) {
-    --space: 9rem;
+    gap: var(--lg);
   }
 
   @include bp(lg) {
-    --space: 11rem;
+    gap: var(--xl);
   }
 }
 
-.unit-gap--xl {
-  --space: 4rem;
+.bento__wrap--2to3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--md);
 
-  gap: var(--space);
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--xl);
+  }
+
+  @include bp(lg) {
+    gap: var(--2xl);
+  }
+}
+
+.bento__wrap--1to5 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: var(--md);
 
   @include bp(xs) {
-    --space: 6rem;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include bp(sm) {
-    --space: 8rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include bp(md) {
-    --space: 10rem;
+    gap: var(--lg);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   @include bp(lg) {
-    --space: 12rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-
-
-// .section-gap {
-//   --space: 6rem;
-
-//   gap: var(--space);
-//   // margin-top: var(--space);
-//   margin-bottom: var(--xl);
-
-//   @include bp(xs) {
-//     --space: 7rem;
-//   }
-
-//   @include bp(sm) {
-//     --space: 8rem;
-//   }
-
-//   @include bp(md) {
-//     --space: 10rem;
-//   }
-// }

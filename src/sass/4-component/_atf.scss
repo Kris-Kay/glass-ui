@@ -44,15 +44,16 @@
   width: 100%;
 
   @include bp(xs) {
-    width: min(100%, 350px);
+    width: 340px;
+    // width: min(100%, 360px);
   }
 
   @include bp(sm) {
-    width: min(100%, 400px);
+    width: min(100%, 380px);
   }
 
   @include bp(md) {
-    width: min(100%, 420px);
+    width: min(100%, 410px);
   }
 
   @include bp(lg) {
@@ -110,7 +111,7 @@
     rotateY(20deg)
     rotateX(15deg)
     rotateZ(-10deg)
-    translateX(10px)
+    translateX(5px)
     translateY(-10%);
 
   @include bp(sm) {

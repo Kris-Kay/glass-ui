@@ -4,9 +4,7 @@
 @use "../config" as *;
 @use "../util" as *;
 @use "../custom" as *;
-@use "filter";
 @use "glass-material" as glass;
-@use "texture" as tex;
 /* ========================================== */
 
 body {
@@ -248,7 +246,7 @@ $inset-shadow--sm:
 // .inset-bevel--sm {
 //   position: relative;
 //   @include filter.glass-filter;
-//   @include tex.noise--sm;
+//   @include glass.noise--sm;
 //   box-shadow: var(--inset--md);
 //   background-color: var(--bg--l-2);
 
@@ -376,7 +374,7 @@ $inset-shadow--sm:
 //     z-index: 202;
 //     box-shadow: $inset--sm;
 //    // box-shadow: var(--inset--lg);
-//     // @include tex.noise--sm;
+//     // @include glass.noise--sm;
 //   }
 
 //   // &::after {
