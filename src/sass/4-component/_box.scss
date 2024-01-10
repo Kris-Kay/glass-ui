@@ -75,7 +75,7 @@
   --neg-space: calc(-1 * var(--space));
 
   overflow: hidden;
-  width: 100%;
+  // width: 100%;
   height: fit-content;
   display: grid;
   gap: var(--space);
@@ -148,16 +148,12 @@
   @include box;
   --space: var(--lg);
 
-  @include bp(sm) {
+  @include bp(xs) {
     --space: var(--xl);
   }
 
   @include bp(sm) {
     --space: var(--2xl);
-  }
-
-  @include bp(lg) {
-    --space: var(--3xl);
   }
 }
 
@@ -169,12 +165,8 @@
     --space: var(--2xl);
   }
 
-  @include bp(sm) {
-    --space: var(--3xl);
-  }
-
   @include bp(lg) {
-    --space: var(--4xl);
+    --space: var(--3xl);
   }
 }
 

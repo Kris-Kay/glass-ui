@@ -178,18 +178,8 @@ pre code {
 .class-name--sm {
   font-weight: $font-weight--md;
   font-family: $font-family-title;
-  font-size: var(--text--xs);
+  font-size: var(--text--sm);
   letter-spacing: $letter-spacing--lg;
-  color: var(--text--xbold);
-  text-shadow: var(--text-sha--md);
-
-  @include bp(md) {
-    font-size: var(--text--sm);
-  }
-
-  @include bp(lg) {
-    font-size: var(--text--md);
-  }
 }
 
 

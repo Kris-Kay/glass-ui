@@ -13,49 +13,59 @@
 .bento__rect {
   @include flex--c;
   flex-direction: column;
-  aspect-ratio : 4 / 1;
+  aspect-ratio : 4.5 / 1;
   border-radius: var(--sm);
+  padding: var(--xl) var(--2xl);
 
-  box-shadow: var(--sha--sm);
-  will-change: transform;
+  will-change: transform, box-shadow;
+  box-shadow: var(--sha--2xs);
   transform: scale(1);
   transition:
-    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 1000ms,
-    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 1000ms;
+    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
+    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
 
   &:hover {
-    box-shadow: var(--sha--lg);
-    transform: scale(1.05);
+    box-shadow: var(--sha--sm);
+    transform: scale(1.02);
   }
 
   @include bp(xs) {
     aspect-ratio : 1 / 1;
+    max-width: 175px;
+    padding: var(--2xs);
   }
 
   @include bp(md) {
     border-radius: var(--md);
+    max-width: 200px;
+  }
+
+  @include bp(lg) {
+    padding: var(--sm);
+    max-width: 300px;
   }
 }
 
 .bento__wrap--1to3 {
-  width: 100%;
+  width: fit-content;
   display: grid;
   grid-template-columns: 1fr;
-  place-content: center;
   gap: var(--md);
 
   @include bp(xs) {
     grid-template-columns: 1fr 1fr;
-    gap: var(--lg);
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include bp(md) {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--xl);
+    gap: var(--lg);
   }
 
   @include bp(lg) {
-    gap: var(--2xl);
+    gap: var(--xl);
   }
 }
 

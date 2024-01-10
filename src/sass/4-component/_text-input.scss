@@ -33,6 +33,7 @@
   font-size: var(--text--xs);
   letter-spacing: $letter-spacing--sm;
   line-height: 1.1;
+  color: var(--text--mild);
 }
 
 /* Text input */
@@ -47,11 +48,12 @@
   padding: 0 0.75rem;
 
   box-shadow: var(--inset--md);
-  background-color: var(--inset-bg--deep);
+  background-color: var(--inset-bg--xdeep);
 
   &::placeholder {
-    color: var(--text--xmild);
+    color: var(--text--base);
     font-size: var(--text--sm);
+    font-weight: $font-weight--md;
   }
 }
 
@@ -71,7 +73,7 @@
   @include outer-radius (var(--3xs), 0.75rem);
 
   box-shadow: var(--inset--md);
-  background-color: var(--inset-bg--deep);
+  background-color: var(--inset-bg--xdeep);
 }
 
 .textarea {
@@ -91,7 +93,8 @@
   transition: $focus-tran;
 
   &::placeholder {
-    color: var(--text--xmild);
+    color: var(--text--base);
     font-size: var(--text--sm);
+    font-weight: $font-weight--md;
   }
 }

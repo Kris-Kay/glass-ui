@@ -55,7 +55,19 @@
 
 /* Telescope glass demo */
 .h--800 {
-  height: min(800px, 70vh);
+  height: 500px;
+
+  @include bp(sm) {
+      height: 600px;
+  }
+
+  @include bp(sm) {
+      height: 700px;
+  }
+
+  @include bp(md) {
+      height: 800px;
+  }
 }
 
 .telescope-rect__wrap {
