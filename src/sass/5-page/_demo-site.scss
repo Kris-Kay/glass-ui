@@ -315,7 +315,7 @@
   display: grid;
   place-items: center;
   @include glass.glass--no-bevel;
-  background-color: var(--bg--2xback);
+  background-color: var(--tint--dark);
   padding: var(--lg) 0;
   margin-top: var(--4xl);
   margin-bottom: var(--5xl);
@@ -323,7 +323,7 @@
   & > .heading--xl {
     text-align: end;
     width: 100%;
-    max-width: var(--max-w--md);
+    max-width: var(--max-w--lg);
     padding-left: var(--gutter);
     padding-right: var(--gutter);
 
@@ -343,69 +343,108 @@
 
 
 
+/* Bento grid */
+/* ========================================== */
+.bento__rect {
+  @include flex--c;
+  flex-direction: column;
+  aspect-ratio : 4.5 / 1;
+  border-radius: var(--sm);
+  padding: var(--xl) var(--2xl);
 
-.unit-gap--md {
-  --space: 2rem;
+  will-change: transform, box-shadow;
+  box-shadow: var(--sha--2xs);
+  transform: scale(1);
+  transition:
+    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
+    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
 
-  gap: var(--space);
-
-  @include bp(xs) {
-    --space: 4rem;
+  &:hover {
+    box-shadow: var(--sha--sm);
+    transform: scale(1.02);
   }
 
-  @include bp(sm) {
-    --space: 6rem;
+  @include bp(xs) {
+    aspect-ratio : 1 / 1;
+    max-width: 175px;
+    padding: var(--2xs);
   }
 
   @include bp(md) {
-    --space: 8rem;
+    border-radius: var(--md);
+    max-width: 200px;
   }
 
   @include bp(lg) {
-    --space: 10rem;
+    padding: var(--sm);
+    max-width: 300px;
   }
 }
 
-.unit-gap--lg {
-  --space: 3rem;
-
-  gap: var(--space);
+.bento__wrap--1to3 {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--md);
 
   @include bp(xs) {
-    --space: 5rem;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include bp(sm) {
-    --space: 7rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include bp(md) {
-    --space: 9rem;
+    gap: var(--lg);
   }
 
   @include bp(lg) {
-    --space: 11rem;
+    gap: var(--xl);
   }
 }
 
-.unit-gap--xl {
-  --space: 4rem;
-
-  gap: var(--space);
-
-  @include bp(xs) {
-    --space: 6rem;
-  }
+.bento__wrap--2to3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--md);
 
   @include bp(sm) {
-    --space: 8rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include bp(md) {
-    --space: 10rem;
+    gap: var(--xl);
   }
 
   @include bp(lg) {
-    --space: 12rem;
+    gap: var(--2xl);
+  }
+}
+
+.bento__wrap--1to5 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--lg);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include bp(lg) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }

@@ -206,3 +206,73 @@ html {
     --space: 6rem;
   }
 }
+
+
+
+
+
+.unit-gap--md {
+  --space: 2rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 4rem;
+  }
+
+  @include bp(sm) {
+    --space: 6rem;
+  }
+
+  @include bp(md) {
+    --space: 8rem;
+  }
+
+  @include bp(lg) {
+    --space: 10rem;
+  }
+}
+
+.unit-gap--lg {
+  --space: 3rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 5rem;
+  }
+
+  @include bp(sm) {
+    --space: 7rem;
+  }
+
+  @include bp(md) {
+    --space: 9rem;
+  }
+
+  @include bp(lg) {
+    --space: 11rem;
+  }
+}
+
+.unit-gap--xl {
+  --space: 4rem;
+
+  gap: var(--space);
+
+  @include bp(xs) {
+    --space: 6rem;
+  }
+
+  @include bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp(md) {
+    --space: 10rem;
+  }
+
+  @include bp(lg) {
+    --space: 12rem;
+  }
+}
