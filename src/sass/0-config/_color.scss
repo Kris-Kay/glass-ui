@@ -98,6 +98,11 @@
   --color--xdark:   oklch(var(--neutral--20) / 1);
   --color--2xdark:  oklch(var(--neutral--10) / 1);
   --color--black:   oklch(var(--neutral--5) / 1);
+
+  /* Box-shadows | Text-shadows | Drop-shadows */
+  /* ========================================== */
+  --shadow: var(--primary--15);
+  --highlight: var(--neutral--95);
 }
 
 /* ====================================================================== */
@@ -134,11 +139,6 @@
   --inset-bg--base: oklch(var(--neutral--10) / 0.1);
   --inset-bg--deep: oklch(var(--neutral--10) / 0.2);
   --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
-
-  /* Box-shadows | Text-shadows | Drop-shadows */
-  /* ========================================== */
-  --shadow: var(--primary--20);
-  --highlight: var(--neutral--95);
 
   /* Text | Title | Label */
   /* ========================================== */
@@ -188,11 +188,6 @@
   --text--base:  oklch(var(--neutral--90) / 1);
   --text--mild:  oklch(var(--neutral--85) / 1);
   --text--xmild: oklch(var(--neutral--80) / 1);
-
-  /* Box-shadows | Text-shadows | Drop-shadows */
-  /* ========================================== */
-  --shadow: var(--primary--15);
-  --highlight: var(--neutral--98);
 
   /* Text links */
   /* ========================================== */
