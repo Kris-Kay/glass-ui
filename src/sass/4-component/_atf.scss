@@ -44,42 +44,23 @@
   width: 100%;
 
   @include bp(xs) {
-    width: 340px;
-    // width: min(100%, 360px);
+    width: 350px;
   }
 
   @include bp(sm) {
-    width: min(100%, 380px);
+    width: clamp(350px, 380px, 400px);
   }
 
   @include bp(md) {
-    width: min(100%, 410px);
+    width: clamp(400px, 410px, 420px);
   }
 
   @include bp(lg) {
-    width: 540px;
+    // width: 540px;
+    width: clamp(450px, 480px, 500px);
   }
 }
 
-.max-text {
-  width: 100%;
-
-  // @include bp(xs) {
-  //   max-width: min(100%, 300px);
-  // }
-
-  // @include bp(sm) {
-  //   max-width: min(100%, 320px);
-  // }
-
-  // @include bp(md) {
-  //   max-width: min(100%, 360px);
-  // }
-
-  @include bp(lg) {
-    max-width: 300px;
-  }
-}
 
 .card-3d-bin {
   width: 100%;

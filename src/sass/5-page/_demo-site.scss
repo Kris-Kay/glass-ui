@@ -71,7 +71,9 @@
 }
 
 .telescope-rect__wrap {
-  overflow: hidden;
+  // overflow: hidden;
+  overflow: visible;
+
   border-radius: var(--xl);
 
   &:nth-child(1) {
@@ -81,19 +83,28 @@
 
 // Glass-bg demo
 .telescope-rect--lower-r {
-  padding: 6% 4% 4% 14%;
+  min-width: fit-content;
+  padding: 5%;
   // padding: 8% 4% 6% 12%;
-  will-change: padding;
-  transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
-  box-shadow: var(--sha--3xs);
 
-  &:hover {
-    padding: 5%;
-    // padding: 6% 3% 4% 8%;
+  box-shadow: var(--sha--3xs);
+  overflow: visible;
+
+  @include bp(md) {
+    will-change: padding;
+    transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
+    padding: 6% 4% 4% 14%;
+
+    &:hover {
+      padding: 5%;
+      // padding: 6% 3% 4% 8%;
+    }
   }
 
+
+
   & > p {
-    padding: var(--3xs) 0 var(--2xs) 0;
+    padding: var(--2xs) 0;
     pointer-events: none;
   }
 }
@@ -331,7 +342,20 @@
       padding-left: 0;
       padding-right: 0;
     }
+
+    @include bp(xl) {
+      padding-left: 0;
+      padding-right: var(--gutter);
+    }
   }
+
+  @include bp(xl) {
+    width: 50%;
+    border-radius: 0 var(--md) var(--md) 0;
+    display: flex;
+    justify-self: flex-start;
+  }
+
 }
 
 .heading--2xl {
