@@ -211,9 +211,9 @@
 /* Primary */
 /* ========================================== */
 .btn-viz.btn--primary {
-    --btn-bg: oklch(var(--neutral--90) / 0.2);
-    --btn-text: var(--color--xlight);
-    --btn-icon: var(--color--xlight);
+    --btn-bg: oklch(var(--neutral--90) / 0.3);
+    --btn-text: var(--color--white);
+    --btn-icon: var(--color--white);
 
     &:hover {
       --btn-bg: oklch(var(--neutral--95) / 0.4);
@@ -241,13 +241,13 @@
 
   /* ↓ config ↓ */
     --btn-bg: oklch(var(--neutral--10) / 0.2);
-      --btn-text: var(--color--xlight);
-      --btn-icon: var(--color--xlight);
+    --btn-text: var(--color--2xlight);
+    --btn-icon: var(--color--2xlight);
 
   &:hover {
     --btn-bg: oklch(var(--neutral--30) / 0.2);
-    --btn-text: var(--color--2xlight);
-    --btn-icon: var(--color--2xlight);
+    --btn-text: var(--color--white);
+    --btn-icon: var(--color--white);
   }
 
   &:active {
@@ -267,14 +267,14 @@
 /* ========================================== */
 .btn--clear {
   background-color: transparent;
-  color: var(--color--2xlight);
+  color: var(--color--white);
   box-shadow: none;
   @include ui-transitions;
   font-weight: 400;
-   text-shadow: var(--text-sha--2xs);
+  text-shadow: var(--text-sha--2xs);
 
   & > .svg-icon {
-    background-color: var(--color--2xlight);
+    background-color: var(--color--white);
   }
 
   &:hover {
@@ -327,7 +327,7 @@
 /* ========================================== */
 @mixin btn-2d--base {
   background-color: transparent;
-  color: var(--btn-text--rest);
+  color: var(--color--white);
   box-shadow: none;
   @include ui-transitions;
 

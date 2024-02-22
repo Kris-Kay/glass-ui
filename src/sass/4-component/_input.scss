@@ -41,7 +41,7 @@
   /* config */
   --rest-bg: oklch(var(--neutral--10) / 0.2);
   --rest-hover-bg: oklch(var(--neutral--10) / 0.3);
-  --rest-knob: var(--color--2xlight);
+  --rest-knob: oklch(var(--neutral--90) / 0.9);
 
   --active-opacity: 1;
   --active-bg: oklch(var(--primary--75) / 0.8);
@@ -51,10 +51,10 @@
 
   --disabled-opacity: 0.8;
   --disabled-bg: oklch(var(--neutral--10) / 0.1);
-  --disabled-checked-bg: oklch(var(--primary--75) / 0.8);
+  --disabled-checked-bg: oklch(var(--primary--50) / 1);
   --disabled-inset: var(--inset--3xs);
   --disabled-text: var(--text--xmild);
-  --disabled-knob: oklch(var(--neutral--80) / 0.4);
+  --disabled-knob: oklch(var(--neutral--90) / 0.6);
   --disabled-knob-sha: var(--sha--2xs);
 
   --border: transparent;
