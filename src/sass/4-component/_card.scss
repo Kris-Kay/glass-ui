@@ -90,10 +90,6 @@
   @include bp(xs) {
     --space: var(--lg);
   }
-
-  @include bp(lg) {
-    --space: var(--xl);
-  }
 }
 
 .card--lg {
