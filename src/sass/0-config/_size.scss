@@ -84,20 +84,6 @@ $sizes: (
   }
 }
 
-/* Width classes */
-/* ================================================== */
-// Generates a .class for every T-shirt size
-.w {
-  @include size-modifiers('width');
-}
-
-/* Height classes */
-/* ================================================== */
-// Generates a .class for every T-shirt size
-.h {
-  @include size-modifiers('height');
-}
-
 /* Gap classes */
 /* ================================================== */
 // Generates a .class for every T-shirt size

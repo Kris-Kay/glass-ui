@@ -1,6 +1,6 @@
-/* ================================== */
+/* ========================================== */
 /* Responsive size range print out */
-/* ================================== */
+/* ========================================== */
 
 let widthTimeout = false;
 let widthDelay = 300; // delay after event is "complete" to run callback

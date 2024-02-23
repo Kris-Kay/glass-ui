@@ -93,7 +93,7 @@ npm start
 ```
 /* SCSS Glass mixin */
 
-  @mixin glass--base {
+  @mixin glass_base {
     position: relative;
     @include fill.glass-filter;
     @content;
@@ -115,7 +115,7 @@ npm start
 
 .glass {
   @include color.tint-modifier('background-color') {
-    @include glass--base;
+    @include glass_base;
   }
 }
 ```

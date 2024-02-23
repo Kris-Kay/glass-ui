@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Buttons */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-/* ========================================== */
+/* ================================================== */
 
 /* Button transition */
-/* ========================================== */
+/* ================================================== */
 /* ↓ config ↓ */
 @mixin btn-transition {
   transition:
@@ -19,7 +19,7 @@
 }
 
 /* Button text */
-/* ========================================== */
+/* ================================================== */
   /* ↓ config ↓ */
 @mixin btn-text {
   font-family: $font-family-title;
@@ -31,9 +31,9 @@
   /* ↑ config ↑ */
 }
 
-/* ========================================== */
+/* ================================================== */
 /* Button base */
-/* ========================================== */
+/* ================================================== */
   /* ↓ no touchÉ! ↓ */
 @mixin btn--base {
   --_btn--h: var(--btn--h, 1rem);
@@ -59,7 +59,6 @@
   padding: var(--_btn--t) var(--_btn--x) var(--_btn--b) var(--_btn--x);
 
   & > .svg-icon {
-    // z-index: 200;
     display: inline-block;
     align-self: center;
     mask-size: cover;
@@ -72,13 +71,13 @@
 }
 
 /* Button sizes */
-/* ========================================== */
+/* ================================================== */
 /* ↓ config ↓ */
 @mixin btn--sm {
   @include btn--base;
 
   --btn--h: 1.75rem;
-  // --btn--h: var(--ui--sm);
+  // --btn--h: var(--ui-h--sm);
   --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
   --btn--t: 0;
   --btn--b: 0;
@@ -92,7 +91,7 @@
   @include btn--base;
 
   --btn--h: 2.125rem;
-  // --btn--h: var(--ui--md);
+  // --btn--h: var(--ui-h--md);
   --btn-inner--h: 0.9rem;
   --btn--t: 0;
   --btn--b: 0;
@@ -105,7 +104,7 @@
 @mixin btn--lg {
   @include btn--base;
   --btn--h: 2.5rem;
-  // --btn--h: var(--ui--lg);
+  // --btn--h: var(--ui-h--lg);
   --btn-inner--h: 1em; // sets font-size | line-height | icon height
   --btn--t: 0;
   --btn--b: 0;
@@ -119,7 +118,7 @@
 .btn--lg { @include btn--lg; }
 
 /* Button types */
-/* ========================================== */
+/* ================================================== */
 // btn--primary
 // btn--secondary
 // btn--clear
@@ -127,7 +126,7 @@
 // btn--icon
 
 /* Button viz */
-/* ========================================== */
+/* ================================================== */
 .btn-viz {
   --_btn-bg: var(--btn-bg, white);
   --_btn-text: var(--btn-text, black);
@@ -209,7 +208,7 @@
 
 
 /* Primary */
-/* ========================================== */
+/* ================================================== */
 .btn-viz.btn--primary {
     --btn-bg: oklch(var(--neutral--90) / 0.3);
     --btn-text: var(--color--white);
@@ -235,7 +234,7 @@
 }
 
 /* Secondary */
-/* ========================================== */
+/* ================================================== */
 .btn-viz.btn--secondary {
   // @include btn-viz;
 
@@ -264,67 +263,32 @@
 }
 
 /* Clear */
-/* ========================================== */
-.btn--clear {
-  background-color: transparent;
-  color: var(--color--white);
-  box-shadow: none;
-  @include ui-transitions;
-  font-weight: 400;
-  text-shadow: var(--text-sha--2xs);
+/* ================================================== */
+// .btn--clear {
+//   background-color: transparent;
+//   color: var(--color--white);
+//   box-shadow: none;
+//   @include ui-transitions;
+//   font-weight: 400;
+//   text-shadow: var(--text-sha--2xs);
 
-  & > .svg-icon {
-    background-color: var(--color--white);
-  }
+//   & > .svg-icon {
+//     background-color: var(--color--white);
+//   }
 
-  &:hover {
-    background-color: var(--tint--xlight);
-  }
+//   &:hover {
+//     background-color: var(--tint--xlight);
+//   }
 
-  &:active {
-    background-color: var(--tint--dark);
-  }
-
-
-
-  // // @include btn-viz;
-
-  // /* ↓ config ↓ */
-  // --btn-bg: var(--tint--base);
-  // --btn-text: var(--color--2xlight);
-  // --btn-icon: var(--color--2xlight);
-  // // box-shadow: none;
-
-  // &:hover {
-  // --btn-bg: var(--tint--light);
-  // --btn-text: var(--color--2xlight);
-  // --btn-icon: var(--color--2xlight);
-  // }
-
-  // &:active {
-  // --btn-bg: var(--tint--xlight);
-  // --btn-text: var(--color--2xlight);
-  // --btn-icon: var(--color--2xlight);
-  // }
-
-  // // &[aria-selected="true"] {
-  // //   --btn-bg: rgb(123, 21, 186);
-  // //   --btn-text: rgb(233, 44, 176);
-  // //   --btn-icon: rgb(233, 44, 192);
-  // //   --btn-sha: var(--sha--xs);
-  // // }
-
-  // &:disabled {
-  // --btn-bg: var(--tint--base);
-  // --btn-text: var(--color--xlight);
-  // --btn-icon: var(--color--xlight);
-  // }
-}
+//   &:active {
+//     background-color: var(--tint--dark);
+//   }
+// }
 
 
 
 /* 2D clear button */
-/* ========================================== */
+/* ================================================== */
 @mixin btn-2d--base {
   background-color: transparent;
   color: var(--color--white);
@@ -348,7 +312,7 @@
 
 
 /* Round buttons */
-/* ========================================== */
+/* ================================================== */
 /* Base → round button */
 @mixin btn-round--base {
   @include flex--c;
@@ -374,41 +338,35 @@
     background-color: var(--tint--xdark);
     box-shadow: var(--sha--3xs);
   }
-
-  // &.btn-dark {
-  //   @include glass.btn-glass;
-  //   background-color: var(--tint--dark);
-  //   box-shadow: var(--sha--2xs);
-  // }
 }
 
 @mixin btn-round--sm {
   @include btn-round--base;
-  width: var(--ui--sm);
-  height: var(--ui--sm);
+  width: var(--ui-h--sm);
+  height: var(--ui-h--sm);
 
   & img {
-    height: calc(var(--ui--sm) * 0.65);
+    height: calc(var(--ui-h--sm) * 0.65);
   }
 }
 
 @mixin btn-round--md {
   @include btn-round--base;
-  width: var(--ui--md);
-  height: var(--ui--md);
+  width: var(--ui-h--md);
+  height: var(--ui-h--md);
 
   & img {
-    height: calc(var(--ui--md) * 0.65);
+    height: calc(var(--ui-h--md) * 0.65);
   }
 }
 
 @mixin btn-round--lg {
   @include btn-round--base;
-  width: var(--ui--lg);
-  height: var(--ui--lg);
+  width: var(--ui-h--lg);
+  height: var(--ui-h--lg);
 
   & img {
-    height: calc(var(--ui--lg) * 0.6);
+    height: calc(var(--ui-h--lg) * 0.6);
   }
 }
 
@@ -423,251 +381,3 @@
 .btn-round--lg {
   @include btn-round--lg;
 }
-
-
-
-  // &:hover {
-  //   box-shadow: var(--sha--sm);
-  //   background-color: var(--tint--light);
-  // }
-
-  // &:active {
-  //   box-shadow: var(--sha--2xs);
-  //   background-color: var(--tint--xlight);
-  // }
-
-  // &:disabled {
-  //   box-shadow: var(--sha--3xs);
-  //   background-color: var(--tint--xlight);
-  // }
-
-// $btn-colors: (
-//   primary: (
-//     bg-rest: var(--btn--primary-bg--rest),
-//     bg-hover: var(--btn--primary-bg--rest),
-//     bg-active: var(--btn--primary-bg--rest),
-//     bg-disabled: var(--btn--primary-bg--rest),
-
-//     text-rest: #404145,
-//     text-hover: #c7c7cd,
-//     text-active: #c7c7cd,
-//     text-disabled: #c7c7cd,
-//   ),
-
-//   accent: (
-//     bg-rest: #404145,
-//     bg-hover: #c7c7cd,
-//     bg-active: #c7c7cd,
-//     bg-disabled: #c7c7cd,
-
-//     text-rest: #404145,
-//     text-hover: #c7c7cd,
-//     text-active: #c7c7cd,
-//     text-disabled: #c7c7cd,
-//   ),
-
-//   clear: (
-//     bg-rest: transparent,
-//     bg-hover: #c7c7cd,
-//     bg-active: #c7c7cd,
-//     bg-disabled: #c7c7cd,
-
-//     text-rest: #404145,
-//     text-hover: #c7c7cd,
-//     text-active: #c7c7cd,
-//     text-disabled: #c7c7cd,
-//   ),
-// );
-
-
-
-
-
-// .btn, [data-theme=default] {
-//   // * Button colors * //
-//   --btn-depth--base: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--hover: red;
-//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-//   // --btn-depth--base: var(--tint--base);
-//   // --btn-bg--hover: var(--tint--bold);
-//   // --btn-bg--active: var(--tint--2xbold);
-//   --btn-text--rest: var(--text-base);
-//   --btn-text--hover: var(--text--bold);
-//   --btn-text--active: var(--text--xbold);
-// }
-
-// .btn, [data-theme="high-contrast"] {
-//     // * Button colors * //
-//   --btn-depth--base: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--hover: red;
-//   // --btn-bg--hover: oklch(99% var(--light--ch) / 0.9);
-//   --btn-bg--active: oklch(60% var(--light--ch) / 0.5);
-//   // --btn-depth--base: var(--tint--base);
-//   // --btn-bg--hover: var(--tint--bold);
-//   // --btn-bg--active: var(--tint--2xbold);
-//   --btn-text--rest: var(--text-base);
-//   --btn-text--hover: var(--text--bold);
-//   --btn-text--active: var(--text--xbold);
-// }
-
-// html {
-//   /* Button colors */
-//   /* ========================================== */
-//   --btn-bg--hover: var(--tint--xlight);
-//   --btn-bg--active: var(--tint--2xlight);
-//   --btn-text--rest: var(--text-base);
-//   --btn-text--hover: var(--text--bold);
-//   --btn-text--active: var(--tint--xdark);
-// }
-
-
-
-
-
-
-// html {
-//   /* Button colors */
-//   /* ========================================== */
-//   /* Primary */
-//   --btn--primary-bg--rest: var(--tint--base);
-//   --btn--primary-bg--hover: var(--tint--xlight);
-//   --btn--primary-bg--active: var(--tint--2xlight);
-//   --btn--primary-bg--disabled: var(--tint--xdark);
-
-//   --btn--primary-text--rest: var(--text-base);
-//   --btn--primary-text--hover: var(--text--bold);
-//   --btn--primary-text--active: var(--tint--xdark);
-//   --btn--primary-text--disabled: var(--tint--dark);
-
-//   /* Accent */
-//   --btn--secondary-bg--rest: var(--tint--base);
-//   --btn--secondary-bg--hover: var(--tint--xlight);
-//   --btn--secondary-bg--active: var(--tint--2xlight);
-//   --btn--secondary-bg--disabled: var(--tint--xdark);
-
-//   --btn--secondary-text--rest: var(--text-base);
-//   --btn--secondary-text--hover: var(--text--bold);
-//   --btn--secondary-text--active: var(--tint--xdark);
-//   --btn--secondary-text--disabled: var(--tint--dark);
-
-//   /* Clear */
-//   --btn--clear-bg--rest: var(--tint--base);
-//   --btn--clear-bg--hover: var(--tint--xlight);
-//   --btn--clear-bg--active: var(--tint--2xlight);
-//   --btn--clear-bg--disabled: var(--tint--xdark);
-
-//   --btn--clear-text--rest: var(--text-base);
-//   --btn--clear-text--hover: var(--text--bold);
-//   --btn--clear-text--active: var(--tint--xdark);
-//   --btn--clear-text--disabled: var(--tint--dark);
-// }
-
-button {
-  /* Button colors */
-  /* ========================================== */
-  // --_btn-bg--rest: var(--btn-bg--rest);
-  // --_btn-bg--hover: var(--btn-bg--hover);
-  // --_btn-bg--active: var(--btn-bg--active);
-  // --_btn-bg--disabled: var(--btn-bg--disabled);
-
-  // --_btn-sha--rest: var(--btn-sha--rest);
-  // --_btn-sha--hover: var(--btn-sha--hover);
-  // --_btn-sha--active: var(--btn-sha--active);
-  // --_btn-sha--disabled: var(--bg-sha-disabled);
-
-  // --_btn-text--rest: var(--btn-text--rest);
-  // --_btn-text--hover: var(--text--hover);
-  // --_btn-text--active: var(--text--active);
-  // --_btn-text--disabled: var(--text--disabled);
-
-  // --_btn-icon--rest: var(--btn-icon--rest);
-  // --_btn-icon--hover: var(--btn-icon--hover);
-  // --_btn-icon--active: var(--btn-icon--active);
-  // --_btn-icon--disabled: var(--btn-icon--disabled);
-}
-
-
-// @mixin btn {
-//   --_btn-bg: var(--btn-bg, white);
-//   --_btn-sha: var(--btn-sha, var(--sha--2xs));
-//   --_btn-text: var(--btn-text, black);
-//   --_btn-icon: var(--btn-icon, black);
-
-//   $inner-h: 0.9em;
-//   $p-t: 1px;
-//   $p-b: 0;
-//   $p-x: 1em;
-//   $p-x-icon: 0.75em;
-
-//   /* layout */
-//   height: var(--ui--md);
-//   font-size: $inner-h;
-//   line-height: $inner-h;
-//   padding: $p-t $p-x $p-b $p-x;
-//   text-shadow: var(--text-sha--md);
-
-//   @include btn-text;
-//   @include ui-transitions;
-//   @include flex--c;
-
-//   width: fit-content;
-//   border-radius: $round;
-
-//   background-color: var(--_btn-bg);
-//   color: var(--_btn-text);
-//   box-shadow: var(--_btn-sha);
-
-
-//   &.btn-icon {
-//     gap: 0.3em;
-//     padding: $p-t $p-x-icon $p-b $p-x-icon;
-//   }
-
-//   & > .svg-icon {
-//     display: inline-block;
-//     align-self: center;
-//     mask-size: cover;
-//     background-color: var(--_btn-icon);
-//     background: var(--_btn-icon);
-//     $h: calc(1.1 * $inner-h);
-//     height: $h;
-//     width: $h;
-//     margin-top: calc(-1 * $p-t);
-//   }
-
-//   &:hover,
-//    :focus {
-//     --btn-bg: pink;
-//     --btn-sha: var(--sha--2xl);
-//     --btn-text: navy;
-//     --btn-icon: navy;
-//   }
-
-//   &:active {
-//     --btn-bg: orange;
-//     --btn-sha: var(--sha--md);
-//     --btn-text: green;
-//     --btn-icon: green;
-//   }
-
-//   &[aria-selected="true"] {
-//     --btn-bg: rgb(186, 164, 21);
-//     --btn-sha: var(--sha--xs);
-//     --btn-text: rgb(233, 44, 44);
-//     --btn-icon: rgb(233, 44, 44);
-//   }
-
-//   &:disabled {
-//     cursor: not-allowed;
-//     --btn-bg: black;
-//     --btn-sha: var(--sha--3xs);
-//     --btn-text: gray;
-//     --btn-icon: gray;
-//   }
-// }
-
-
-// .btn {
-//   @include btn;
-// }

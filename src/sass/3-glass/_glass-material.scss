@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Glass */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "bevel";
-/* ========================================== */
+/* ================================================== */
 
 /* Glass filter */
-/* ========================================== */
+/* ================================================== */
 html {
   --satu: 1.3;
   --bright: 0.95;
@@ -18,7 +18,7 @@ html {
   }
 
   @include bp(md) {
-    --blur: 28px;
+    --blur: 48px;
   }
 
   @include bp(lg) {
@@ -32,10 +32,9 @@ html {
 }
 
 /* Glass noise texture */
-/* ========================================== */
+/* ================================================== */
 /* Noise texture generator */
 /* https://devsdash.com/tools/noise-texture-generator */
-
 @mixin noise {
   background-repeat: repeat;
   background-size: 100px 100px;
@@ -45,9 +44,9 @@ html {
 }
 
 
-/* Base Glass */
-/* ========================================== */
-@mixin glass--base {
+/* Glass base*/
+/* ================================================== */
+@mixin glass_base {
   position: relative;
   overflow: hidden;
   @include glass-filter;
@@ -72,24 +71,24 @@ html {
   }
 }
 
-.glass--base {
-  @include glass--base;
+.glass_base {
+  @include glass_base;
 }
 
 /* Glass classes */
-/* ========================================== */
+/* ================================================== */
 .glass {
   @include generate-classes($tints, 'background-color', 'tint', '--') {
-    @include glass--base;
+    @include glass_base;
 };
 
   @include generate-classes($depth, 'background-color', 'depth', '--') {
-    @include glass--base;
+    @include glass_base;
   }
 }
 
 /* Glass with no bevel */
-/* ========================================== */
+/* ================================================== */
 @mixin glass--no-bevel {
   position: relative;
   overflow: hidden;
@@ -109,10 +108,10 @@ html {
 }
 
 /* Flat bevel on mobile */
-/* ========================================== */
+/* ================================================== */
 /* For components that switch to edge-to-edge on mobile */
 @mixin glass--flat-bevel-mobile {
-  @include glass--base {
+  @include glass_base {
     &::after {
       @include pseudo;
       z-index: -1;
@@ -133,7 +132,7 @@ html {
 
 
 /* Button glass material */
-/* ====================================================================== */
+/* ================================================== */
 @mixin btn-glass {
   position: relative;
   overflow: hidden;
@@ -144,6 +143,6 @@ html {
     overflow: hidden;
     z-index: 202;
     box-shadow: bevel.$bevel--sm;
-    // @include noise--sm;
+    @include noise;
   }
 }

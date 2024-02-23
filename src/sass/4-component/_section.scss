@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Sections */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ========================================== */
+/* ================================================== */
 
-.section__wrap {
+.section_bin {
 /* layout */
   // width: 100%;
   display: grid;
@@ -25,8 +25,8 @@
   }
 }
 
-.section__header {
-  --space: var(--gutter); // < control padding from here
+.section-header {
+  --space: var(--moat); // < control padding from here
 
   /* layout */
   display: grid;
@@ -56,13 +56,13 @@
 }
 
 
-.section__title {
-  @include title-thick;
+.section-title {
+  @include title--thick;
   font-size: var(--lg);
   text-shadow: var(--text-sha--md);
 }
 
-.section__body {
+.section-body {
   /* layout */
   width: 100%;
   height: fit-content;

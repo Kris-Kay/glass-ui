@@ -1,40 +1,40 @@
-/* ========================================== */
+/* ================================================== */
 /* SVGs */
-/* ========================================== */
+/* ================================================== */
 
 /* SVG icon sizes */
-/* ========================================== */
+/* ================================================== */
 .icon--sm {
   width: auto;
-  height: var(--ui--sm);
+  height: var(--ui-h--sm);
 }
 
 .icon--md {
   width: auto;
-  height: var(--ui--md);
+  height: var(--ui-h--md);
 }
 
 .icon--lg {
   width: auto;
-  height: var(--ui--lg);
+  height: var(--ui-h--lg);
 }
 
 /* Change SVG color */
-/* ========================================== */
+/* ================================================== */
 /* Credit: Chris Coyier  */
 /* https://css-tricks.com/change-color-of-svg-on-hover/ */
 
 .svg-icon-color {
   display: inline-block;
-  width: var(--ui--md, 2.125rem);
-  height: var(--ui--md, 2.125rem);
+  width: var(--ui-h--md, 2.125rem);
+  height: var(--ui-h--md, 2.125rem);
   align-self: center;
   mask-size: cover;
   background: purple;
 }
 
 /* SVGs */
-/* ========================================== */
+/* ================================================== */
 .svg-cube { mask: url(/assets/icons/CubeTransparent.svg); }
 
 .svg-chev--up { mask: url(/assets/icons/CaretUp.svg); }

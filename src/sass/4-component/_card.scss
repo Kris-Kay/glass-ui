@@ -1,10 +1,10 @@
-/* ========================================== */
+/* ================================================== */
 /* Cards */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-/* ========================================== */
+/* ================================================== */
 
 @mixin card-base {
   --_space: var(--space, 1.5rem);
@@ -16,15 +16,14 @@
   padding: var(--_space);
   overflow: hidden;
   border-radius: var(--md);
+  // @include moat-radius(--md);
   box-shadow: var(--sha--lg);
+
+
 
   @include bp(sm) {
     border-radius: var(--lg);
     box-shadow: var(--sha--xl);
-  }
-
-  @include bp(lg) {
-    box-shadow: var(--sha--2xl);
   }
 
   & > .full-w-fill {
@@ -67,6 +66,7 @@
     place-self: center;
     margin: var(--_neg-space);
   }
+
 }
 
 .card--sm {
@@ -85,10 +85,19 @@
 .card--md {
   @include card-base;
   --space: var(--md);
-  border-radius: var(--lg);
+  // border-radius: var(--lg);
+  @include moat-radius(--md);
 
   @include bp(xs) {
     --space: var(--lg);
+  }
+
+  &.moat--sm {
+    border-radius: 0;
+
+    @include bp(sm) {
+      border-radius: var(--lg);
+    }
   }
 }
 
@@ -110,6 +119,7 @@
   @include card-base;
   --space: var(--xl);
   border-radius: var(--lg);
+  // @include moat-radius(--lg);
 
   @include bp(sm) {
     --space: var(--2xl);
@@ -117,6 +127,14 @@
 
   @include bp(lg) {
     --space: var(--3xl);
+  }
+
+  &.moat--md {
+    border-radius: 0;
+
+    @include bp(md) {
+      border-radius: var(--xl);
+    }
   }
 }
 

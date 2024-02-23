@@ -1,7 +1,17 @@
-/* ========================================== */
+/* ================================================== */
 /* Animation custom styles */
 @use "../config" as *;
-/* ========================================== */
+/* ================================================== */
+
+/* Speed */
+/* ================================================== */
+$speed--2xslow: 1000ms;
+$speed--xslow:  750ms;
+$speed--slow:   500ms;
+$speed--base:   400ms;
+$speed--fast:   300ms;
+$speed--xfast:  200ms;
+$speed--2xfast: 100ms;
 
 html.root-transition,
 html.root-transition *,
@@ -23,9 +33,23 @@ $smooth: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 }
 
 
+$focus-tran: outline ease-in-out $speed--base;
+
+:focus {
+  outline: 1.5px solid oklch(var(--neutral--90) / 0.3);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
 
 // 3D
-.perspective-bin {
+.perspective_bin {
   position: relative;
   perspective: 2500px;
   // width:30rem;

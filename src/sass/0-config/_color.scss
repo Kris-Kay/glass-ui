@@ -1,6 +1,6 @@
-/* ========================================== */
+/* ================================================== */
 /* Colors & Themes */
-/* ========================================== */
+/* ================================================== */
 
 /* OKLCH Color Picker & Converter */
 /* https://oklch.com/ */
@@ -9,7 +9,7 @@
 /* h = hue       0deg to 360deg */
 
 /* Color tokens */
-/* ====================================================================== */
+/* ================================================== */
 :root {
   /* Fallback colors */
   /* Primary */
@@ -85,7 +85,7 @@
   }
 
   /* Solid colors */
-  /* ========================================== */
+  /* ================================================== */
   --color--primary:   oklch(var(--primary--75) / 1);
   --color--accent:   oklch(var(--accent--70) / 1);
 
@@ -100,32 +100,32 @@
   --color--black:   oklch(var(--neutral--5) / 1);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
-  /* ========================================== */
+  /* ================================================== */
   --shadow: var(--primary--15);
   --highlight: var(--neutral--95);
 }
 
-/* ====================================================================== */
+/* ================================================== */
 /* Default Theme */
-/* ====================================================================== */
+/* ================================================== */
 :root, [data-theme=default] {
 
   /* Translucent tints */
-  /* ========================================== */
-  --tint--4xlight: oklch(var(--neutral--95) / 0.6);
+  /* ================================================== */
+  --tint--4xlight: oklch(var(--neutral--95) / 0.5);
   --tint--3xlight: oklch(var(--neutral--95) / 0.4);
-  --tint--2xlight: oklch(var(--neutral--95) / 0.2);
-  --tint--xlight:  oklch(var(--neutral--95) / 0.1);
-  --tint--light:   oklch(var(--neutral--95) / 0.05);
+  --tint--2xlight: oklch(var(--neutral--95) / 0.3);
+  --tint--xlight:  oklch(var(--neutral--95) / 0.2);
+  --tint--light:   oklch(var(--neutral--95) / 0.1);
   --tint--clear:   oklch(var(--neutral--95) / 0.01);
-  --tint--dark:    oklch(var(--neutral--10) / 0.05);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.1);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.2);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.4);
-  --tint--4xdark:  oklch(var(--neutral--10) / 0.6);
+  --tint--dark:    oklch(var(--neutral--10) / 0.15);
+  --tint--xdark:   oklch(var(--neutral--10) / 0.25);
+  --tint--2xdark:  oklch(var(--neutral--10) / 0.35);
+  --tint--3xdark:  oklch(var(--neutral--10) / 0.45);
+  --tint--4xdark:  oklch(var(--neutral--10) / 0.55);
 
   /* Background depth */
-  /* ========================================== */
+  /* ================================================== */
   --depth--2xback:  oklch(var(--neutral--10) / 0.2);
   --depth--xback:  oklch(var(--neutral--15) / 0.2);
   --depth--back:  oklch(var(--neutral--20) / 0.2);
@@ -135,13 +135,13 @@
   --depth--2xfront:  oklch(var(--neutral--95) / 0.2);
 
   /* Insets */
-  /* ========================================== */
+  /* ================================================== */
   --inset-bg--base: oklch(var(--neutral--10) / 0.1);
   --inset-bg--deep: oklch(var(--neutral--10) / 0.2);
   --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
 
   /* Text | Title | Label */
-  /* ========================================== */
+  /* ================================================== */
   --text--xbold: oklch(var(--neutral--95) / 1);
   --text--bold:  oklch(var(--neutral--90) / 1);
   --text--base:  oklch(var(--neutral--85) / 1);
@@ -149,24 +149,24 @@
   --text--xmild: oklch(var(--neutral--75) / 1);
 
   /* Text links */
-  /* ========================================== */
+  /* ================================================== */
   --link--rest: oklch(var(--accent--60) / 1);
   --link--hover: oklch(var(--accent--70) / 1);
   --link--visit: oklch(var(--accent--50) / 1);
 
   /* Other */
-  /* ========================================== */
+  /* ================================================== */
   --page-bg: oklch(var(--primary--95) / 1);
 }
 
 
-/* ====================================================================== */
+/* ================================================== */
 /* High Contrast Theme */
-/* ====================================================================== */
+/* ================================================== */
 [data-theme="high-contrast"] {
 
   /* Translucent tints */
-  /* ========================================== */
+  /* ================================================== */
   --tint--4xlight: oklch(var(--neutral--95) / 0.8);
   --tint--3xlight: oklch(var(--neutral--95) / 0.6);
   --tint--2xlight: oklch(var(--neutral--95) / 0.4);
@@ -180,7 +180,7 @@
   --tint--4xdark:  oklch(var(--neutral--10) / 0.8);
 
   /* Background elevation levels */
-  /* ========================================== */
+  /* ================================================== */
   --depth--2xback:  oklch(var(--neutral--20) / 0.4);
   --depth--xback:  oklch(var(--neutral--30) / 0.4);
   --depth--back:  oklch(var(--neutral--40) / 0.4);
@@ -190,13 +190,13 @@
   --depth--2xfront:  oklch(var(--neutral--80) / 0.4);
 
   /* Insets */
-  /* ========================================== */
+  /* ================================================== */
   --inset-bg--base: oklch(var(--neutral--10) / 0.15);
   --inset-bg--deep: oklch(var(--neutral--10) / 0.25);
   --inset-bg--xdeep: oklch(var(--neutral--10) / 0.35);
 
   /* Body text | Headings | Labels */
-  /* ========================================== */
+  /* ================================================== */
   --text--xbold: oklch(var(--neutral--98) / 1);
   --text--bold:  oklch(var(--neutral--95) / 1);
   --text--base:  oklch(var(--neutral--90) / 1);
@@ -204,12 +204,12 @@
   --text--xmild: oklch(var(--neutral--80) / 1);
 
   /* Text links */
-  /* ========================================== */
+  /* ================================================== */
   --link--rest: oklch(var(--accent--70) / 1);
   --link--hover: oklch(var(--accent--80) / 1);
   --link--visit: oklch(var(--accent--60) / 1);
 
   /* Other */
-  /* ========================================== */
+  /* ================================================== */
   --page-bg: oklch(var(--primary--30) / 1);
 }

@@ -1,6 +1,6 @@
-/* ================================== */
+/* ========================================== */
 /* Copy to clipboard */
-/* ================================== */
+/* ========================================== */
 function findCopyBtns() {
   let $copyBtns = document.querySelectorAll(".js-copyBtn");
   let $copyBtnsArray = Array.from($copyBtns);

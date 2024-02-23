@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Accordion */
 @use "../config" as *;
 @use "../util" as *;
 @use "../custom" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ========================================== */
+/* ================================================== */
 
-.accordion__warp {
+.accordion_bin {
   --space: var(--md);
 
   @include bp(md) {
@@ -15,14 +15,14 @@
   }
 }
 
-.accordion__body {
+.accordion-body {
   /* layout */
   position: relative;
   z-index: 5;
   display: grid;
 
   /* visual */
-  @include glass.glass--base;
+  @include glass.glass_base;
   background-color: var(--tint--xdark);
 
   box-shadow: var(--sha--xl);
@@ -30,12 +30,12 @@
   overflow: hidden;
 }
 
-.accordion__header {
+.accordion-header {
   display: grid;
   padding: var(--space);
 }
 
-.accordion__summary {
+.accordion-summary {
   display: grid;
   gap: var(--space);
 
@@ -58,7 +58,7 @@
   }
 }
 
-.accordion__toggle {
+.accordion-toggle {
   /* layout */
   width: 100%;
   display: flex;
@@ -115,7 +115,7 @@
   }
 }
 
-.accordion__content {
+.accordion-content {
   /* layout */
   width: 100%;
   height: fit-content;
@@ -144,14 +144,14 @@
   }
 }
 
-.accordion__title {
-  @include title-thick;
+.accordion-title {
+  @include title--thick;
   font-size: var(--text--xl);
   text-shadow: var(--text-sha--sm);
   color: var(--text--bold);
 }
 
-.accordion__text {
+.accordion-text {
   max-width: 100%;
   font-size: var(--text--sm);
 }

@@ -1,9 +1,9 @@
-/* ========================================== */
+/* ================================================== */
 /* flex--box */
-/* ========================================== */
+/* ================================================== */
 
 /* Flex mixins */
-/* ========================================== */
+/* ================================================== */
 @mixin flex--c {
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@
 
 
 /* For flex containers */
-/* ========================================== */
+/* ================================================== */
 /* display: */
 .flex { display: flex; }
 .flex--in { display: inline-flex; }
@@ -40,10 +40,10 @@
 .flex--row { display: flex; flex-direction: row; }
 .flex--row-rev { display: flex; flex-direction: row-reverse; }
 
-/* flex--wrap: */
+/* flex-_bin: */
 .flex--nowrap { display: flex; flex-wrap: nowrap; }
-.flex--wrap { display: flex; flex-wrap: wrap; }
-.flex--wrap-rev { display: flex; flex-wrap: wrap-reverse; }
+.flex-_bin { display: flex; flex-wrap: wrap; }
+.flex-_bin-rev { display: flex; flex-wrap: wrap-reverse; }
 
 /* Center x & y */
 .flex--c { @include flex--c; }
@@ -73,7 +73,7 @@
 
 
 /* For flex children */
-/* ========================================== */
+/* ================================================== */
 /* flex--grow: */
 .flex--grow-0 { flex-grow: 0; }
 .flex--grow-1 { flex-grow: 1; }

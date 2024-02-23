@@ -1,9 +1,9 @@
-/* ========================================== */
+/* ================================================== */
 /* Bevel */
-/* ========================================== */
+/* ================================================== */
 
 /* Curved bevel */
-/* ========================================== */
+/* ================================================== */
 $bevel--xs:
   inset 0.2px 0.2px 0.2px oklch(var(--highlight) / 0.15),      // top-left bevel
   inset 2px 2px 0.4px -2.8px oklch(var(--highlight) / 0.5),    // top-left specular highlight
@@ -28,13 +28,6 @@ $bevel--md:
   inset -1.8px -2px 0.2px -2.5px oklch(var(--highlight) / 0.08); // bottom-right specular
 
 
-// $bevel--lg:
-//   inset 0.8px 0.8px 0.4px oklch(var(--highlight) / 0.15), // top-left bevel
-//   inset 2px 2px 1px -2.2px oklch(var(--highlight) / 0.3),    // top-left specular highlight
-//   inset 1px 1px 0.6px -1px oklch(var(--highlight) / 0.1), // top-left highlight
-//   inset -0.8px -2px 1.4px -3px oklch(var(--highlight) / 0.8), // bottom thin highlight
-//   inset -1.6px -2px 0.4px -2.4px oklch(var(--highlight) / 0.08); // bottom-right specular
-
 $bevel--lg:
   inset 1px 1px 0.25px oklch(var(--highlight) / 0.1), // top-left bevel
   inset 2px 2px 1px -2.5px oklch(var(--highlight) / 0.7),    // top-left specular highlight
@@ -43,7 +36,7 @@ $bevel--lg:
   inset -1.6px -2px 0.4px -2.2px oklch(var(--highlight) / 0.05); // bottom-right specular
 
 /* Flat bevel */
-/* ========================================== */
+/* ================================================== */
 $flat-bevel--sm:
   inset 0 0.3px 0 oklch(var(--highlight) / 0.12), // top highlight
   inset 0 0.7px 0.1px oklch(var(--highlight) / 0.12), // top bevel

@@ -1,12 +1,12 @@
-/* ================================== */
+/* ========================================== */
 /* Open & Close dropdown */
-/* ================================== */
+/* ========================================== */
 
 const $btn = document.getElementById("js-dropdownToggle");
 const $ham = document.getElementById("js-navHam");
 const $x = document.getElementById("js-navX");
 const $dd = document.getElementById("js-navDropdown");
-const $ddBG = document.getElementById("js-dropdown__bg");
+const $ddBG = document.getElementById("js-dropdown-bg");
 const $ddItems = $dd.querySelectorAll(".js-dropdownItem");
 const $ddArray = Array.from($ddItems);
 

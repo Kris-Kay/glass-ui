@@ -1,28 +1,28 @@
-/* ========================================== */
+/* ================================================== */
 /* Text inputs */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-/* ========================================== */
+/* ================================================== */
 
 .input:not(textarea) {
   line-height: 1;
 }
 
-.text-input__wrap {
+.text-input_bin {
   display: grid;
   gap: 0.25rem;
 }
 
-.text-label__group {
+.text-label-group {
   display: grid;
   gap: 0.1rem;
   padding-bottom: 0.25rem;
   padding-left: 0.25rem;
 }
 
-.text-input__label {
+.text-input_label {
   font-family: $font-family-title;
   font-weight: $font-weight--md;
   letter-spacing: $letter-spacing--md;
@@ -37,13 +37,13 @@
 }
 
 /* Text input */
-/* ========================================== */
+/* ================================================== */
 .text-input {
   pointer-events: auto;
   cursor: text;
   width: 100%;
   // width: min(400px, 100%);
-  height: var(--ui--lg);
+  height: var(--ui-h--lg);
   border-radius: var(--2xs);
   padding: 0 0.75rem;
 
@@ -58,8 +58,8 @@
 }
 
 /* Textarea input */
-/* ========================================== */
-.textarea__holder {
+/* ================================================== */
+.textarea-holder {
   position: relative;
   z-index: 2;
   pointer-events: none;

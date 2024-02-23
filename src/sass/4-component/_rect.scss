@@ -1,7 +1,7 @@
-/* ========================================== */
+/* ================================================== */
 /* Rounded rectangles */
 @use "../config" as *;
-/* ========================================== */
+/* ================================================== */
 
 @mixin rect-base {
   --_space: var(--space, 1.5rem);
@@ -99,29 +99,3 @@
     --space: var(--5xl);
   }
 }
-
-
-
-// /* Rounded rectangles */
-// /* ========================================== */
-// @mixin rect-classes {
-//   @each $key, $value in $sizes {
-//     &--#{$key} {
-//       padding: var(--#{$key});
-//       border-radius: var(--#{$key});
-//       @content;
-//     }
-//   }
-// }
-
-// .rect-100 {
-//   @include rect-classes {
-//     width: 100%;
-//   }
-// }
-
-// .rect-fit {
-//   @include rect-classes {
-//   width: fit-content;
-//   }
-// }

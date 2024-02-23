@@ -1,6 +1,6 @@
-/* ================================== */
+/* ========================================== */
 /* Accordion JS */
-/* ================================== */
+/* ========================================== */
 
 function findAccordions() {
   let $accordionToggles = document.querySelectorAll(".js-accordionToggle");

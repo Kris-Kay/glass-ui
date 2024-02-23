@@ -1,6 +1,6 @@
-/* ================================== */
+/* ========================================== */
 /*  Fluid typography Scale print out */
-/* ================================== */
+/* ========================================== */
 
 let textSizeTimeout = false;
 let textSizeDelay = 300; // delay after event is "complete" to run callback

@@ -1,6 +1,6 @@
-/* ========================================== */
+/* ================================================== */
 /* Reset */
-/* ========================================== */
+/* ================================================== */
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -52,21 +52,7 @@ button,
 body {
   margin: 0;
   padding: 0;
-  // -webkit-font--smoothing: subpixel-antialiased;
 }
-
-
-// body,
-// input,
-// textarea,
-// select,
-// button {
-//   font-synthesis: none;
-//   -moz-font-feature-settings: "kern";
-//   font-feature-settings: "kern";
-//   -webkit-font--smoothing: antialiased;
-//   -moz-osx-font--smoothing: grayscale;
-// }
 
 button,
 a,

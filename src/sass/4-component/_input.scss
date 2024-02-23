@@ -1,17 +1,17 @@
-/* ========================================== */
+/* ================================================== */
 /* Inputs */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
-/* ========================================== */
+/* ================================================== */
 
-.input__fieldset {
+.input_fieldset {
   display: grid;
   gap: var(--xs);
 }
 
-.input__legend {
+.input_legend {
   font-weight: $font-weight--md;
   font-family: $font-family-title;
   font-size: var(--sm);
@@ -21,23 +21,23 @@
   text-shadow: var(--text-sha--2xs);
 }
 
-.input__wrap {
+.input_bin {
   display: flex;
   align-items: center;
   gap: var(--2xs);
 }
 
-.input__label--sm {
+.input_label--sm {
   width: fit-content;
   color: var(--text--bold);
 }
 
-.input__label--md {
+.input_label--md {
   width: fit-content;
   color: var(--text--bold);
 }
 
-@mixin input--base {
+@mixin input_base {
   /* config */
   --rest-bg: oklch(var(--neutral--10) / 0.2);
   --rest-hover-bg: oklch(var(--neutral--10) / 0.3);
@@ -96,11 +96,11 @@
 
 /* Switches */
 input[type='checkbox'].switch {
-  --_switch-height: var(--switch-height, var(--ui--sm));
+  --_switch-height: var(--switch-height, var(--ui-h--sm));
   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
   --_thumb-margin: var(--thumb-margin, 3px);
 
-  @include input--base;
+  @include input_base;
 
   position: relative;
   z-index: 1;
@@ -148,24 +148,24 @@ input[type='checkbox'].switch {
 
   &.switch--sm {
     --thumb-margin: 3px;
-    --switch-height: var(--ui--sm);
+    --switch-height: var(--ui-h--sm);
   }
 
   &.switch--md {
     --thumb-margin: 3.5px;
-    --switch-height: var(--ui--md);
+    --switch-height: var(--ui-h--md);
   }
 
   &.switch--lg {
     --thumb-margin: 4px;
-    --switch-height: var(--ui--lg);
+    --switch-height: var(--ui-h--lg);
   }
 }
 
 /* Checkboxes */
 input[type='checkbox'].checkbox {
 
-  @include input--base;
+  @include input_base;
 
   position: relative;
   z-index: 1;
@@ -213,7 +213,7 @@ input[type='checkbox'].checkbox {
 /* Radio buttons */
 input[type='radio'] {
 
-  @include input--base;
+  @include input_base;
 
   position: relative;
   z-index: 1;

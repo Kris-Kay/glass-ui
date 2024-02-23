@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Home */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "../component" as *;
-/* ========================================== */
+/* ================================================== */
 
-.page-bg__bin {
+.page-bg_bin {
   position: relative;
   // width: 100%;
   // max-width: 100vw;
@@ -17,7 +17,7 @@
   z-index: -10;
 }
 
-.page-bg__img {
+.page-bg-img {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -40,13 +40,13 @@
   background-repeat: no-repeat;
 }
 
-.body-grid {
+.body_grid {
   min-height: 100vh;
   height: fit-content;
   display: grid;
 }
 
-.content__bin {
+.content_bin {
   display: block;
   height: fit-content;
   z-index: z(base);
@@ -70,7 +70,7 @@
   }
 }
 
-.telescope-rect__wrap {
+.telescope-rect_bin {
   // overflow: hidden;
   overflow: visible;
 
@@ -165,8 +165,8 @@
 }
 
 /* Sizing demo */
-/* ========================================== */
-.size-demo__rect {
+/* ================================================== */
+.size-demo-rect {
   background-color: var(--tint--2xlight);
   border-radius: 0.1rem;
   height: 3rem;
@@ -190,8 +190,8 @@
 
 
 /* Tint & fill demo */
-/* ========================================== */
-.tint-demo__rect {
+/* ================================================== */
+.tint-demo-rect {
   width: 100%;
   height: fit-content;
   @include flex--c-y;
@@ -209,7 +209,7 @@
   }
 }
 
-.tint-demo__bin {
+.tint-demo_bin {
   width: 100%;
   display: grid;
   gap: var(--sm);
@@ -218,7 +218,7 @@
 
   @include bp(sm) {
     border-radius: var(--md);
-    padding: var(--gutter);
+    padding: var(--moat);
   }
 
   @include bp(md) {
@@ -229,25 +229,16 @@
 
 
 /*  Insets demo */
-/* ========================================== */
+/* ================================================== */
 .inset-rect {
-  width: 100%;
-  // height: 80px;
+  width: min(100%, 400px);
   padding: var(--xs);
   border-radius: var(--xs);
   background-color: var(--inset-bg--base);
 }
 
-.full-w-inset-demo {
-  display: grid;
-  place-content: center start;
-  width: 100%;
-  padding: var(--gutter);
-  border-radius: 0;
-  background-color: var(--inset-bg--deep);
-}
 
-.text-size__group {
+.text-size-group {
   // display: flex;
   // align-items: end;
   // flex-wrap: wrap;
@@ -274,7 +265,7 @@
   }
 }
 
-.text-size__label {
+.text-size-label {
   display: flex;
   align-items: baseline;
   gap: var(--3xs);
@@ -289,7 +280,7 @@
   text-shadow: var(--text-sha--sm);
 }
 
-.heading__bg--lg {
+.heading-bg--lg {
   min-width: fit-content;
   max-width: 100%;
   width: 50%;
@@ -308,20 +299,20 @@
   }
 
   & > .heading--lg {
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+    padding-left: var(--moat);
+    padding-right: var(--moat);
   }
 }
 
 .heading--xl {
-  @include title-thick;
+  @include title--thick;
   font-size: var(--text--2xl);
   font-weight: $font-weight--md;
   color: var(--text--xbold);
   text-shadow: var(--text-sha--md);
 }
 
-.heading__bg--xl {
+.heading-bg--xl {
   width: 100%;
   display: grid;
   place-items: center;
@@ -335,8 +326,8 @@
     text-align: end;
     width: 100%;
     max-width: var(--max-w--lg);
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+    padding-left: var(--moat);
+    padding-right: var(--moat);
 
     @include bp(lg) {
       padding-left: 0;
@@ -345,7 +336,7 @@
 
     @include bp(xl) {
       padding-left: 0;
-      padding-right: var(--gutter);
+      padding-right: var(--moat);
     }
   }
 
@@ -368,8 +359,8 @@
 
 
 /* Bento grid */
-/* ========================================== */
-.bento__rect {
+/* ================================================== */
+.bento-rect {
   @include flex--c;
   flex-direction: column;
   aspect-ratio : 4.5 / 1;
@@ -405,7 +396,7 @@
   }
 }
 
-.bento__wrap--1to3 {
+.bento_bin--1to3 {
   width: fit-content;
   display: grid;
   grid-template-columns: 1fr;
@@ -428,7 +419,7 @@
   }
 }
 
-.bento__wrap--2to3 {
+.bento_bin--2to3 {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -448,7 +439,7 @@
   }
 }
 
-.bento__wrap--1to5 {
+.bento_bin--1to5 {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -470,5 +461,40 @@
 
   @include bp(lg) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+.wrap-2 {
+  width: 100%;
+  gap: var(--sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &:nth-child(1) {
+    grid-column: 1/2;
+  }
+
+  &:nth-child(2) {
+    grid-column: 1/2;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--md);
+
+    &:nth-child(1) {
+      grid-column: 1/2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 2/3;
+    }
+  }
+
+  @include bp(lg) {
+    gap: var(--xl);
   }
 }
