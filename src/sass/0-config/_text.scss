@@ -1,35 +1,35 @@
-/* ========================================== */
+/* ================================================== */
 /* Text */
 @use 'sass:map';
-/* ========================================== */
+/* ================================================== */
 
 /* font-family: */
-/* ========================================== */
+/* ================================================== */
 /* Google fonts added in index.HTML <head> for better performance */
 $font-family-title: ('Poppins', 'Arial', sans-serif);
 $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $font-family-code: ('Fragment Mono', 'Courier', monospace);
 
 /* letter-spacing: */
-/* ========================================== */
+/* ================================================== */
 $letter-spacing--sm: 0.01em;
 $letter-spacing--md: 0.04em;
 $letter-spacing--lg: 0.06em;
 
 /* line-height: */
-/* ========================================== */
+/* ================================================== */
 $line-height--sm: calc(0.125rem + 2.15ex + 0.125rem);
 $line-height--md: calc(0.125rem + 2.25ex + 0.125rem);
 $line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* font-weight: */
-/* ========================================== */
+/* ================================================== */
 $font-weight--sm: 200;
 $font-weight--md: 300;
 $font-weight--lg: 400;
 
 /* Fluid typography range */
-/* ====================================================================== */
+/* ================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
   --text--2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
@@ -43,7 +43,7 @@ $font-weight--lg: 400;
 }
 
 /* Text size MAP */
-/* ========================================== */
+/* ================================================== */
 $text-sizes: (
   "2xs":  var(--text--2xs),
   "xs":  var(--text--xs),
@@ -56,7 +56,7 @@ $text-sizes: (
 );
 
 /* Text size modifier mixin */
-/* ========================================== */
+/* ================================================== */
 /* Generates a classes using `$text-sizes` MAP */
 @mixin text-size-modifier {
   @each $key, $value in $text-sizes {
@@ -67,7 +67,7 @@ $text-sizes: (
 }
 
 /* Text size classes */
-/* ========================================== */
+/* ================================================== */
 /* Generates a class for every size in `$text-sizes` MAP */
 .text {
   @include text-size-modifier;
