@@ -1,13 +1,13 @@
-/* ========================================== */
+/* ================================================== */
 /* Tab menu */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ========================================== */
+/* ================================================== */
 
-.panel-img__bin {
+.panel-img_bin {
   width: 100%;
   max-height: 100%;
   overflow: hidden;
@@ -24,7 +24,7 @@
 .tab-menu {
   width: fit-content;
   max-width: 100%;
-  height: var(--ui--md);
+  height: var(--ui-h--md);
   margin: 0 auto;
   @include flex--c;
   gap: 0.25rem;
@@ -48,7 +48,7 @@
   }
 
   @include bp(md) {
-    height: var(--ui--lg);
+    height: var(--ui-h--lg);
   }
 }
 

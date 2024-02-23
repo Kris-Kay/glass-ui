@@ -1,23 +1,23 @@
-/* ========================================== */
+/* ================================================== */
 /* Nav */
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
-/* ========================================== */
+/* ================================================== */
 
 /* Global nav height */
-/* ========================================== */
+/* ================================================== */
 :root {
-  --nav-h: calc(var(--ui--md) + (var(--gutter) * 2));
+  --nav-h: calc(var(--ui-h--md) + (var(--moat) * 2));
 
   @include bp(md) {
-    --nav-h: calc(var(--ui--lg) + (var(--gutter) * 2));
+    --nav-h: calc(var(--ui-h--lg) + (var(--moat) * 2));
   }
 }
 
-.main-nav__wrap {
+.main-nav_bin {
   position: fixed;
   height: var(--nav-h);
   z-index: 200;
@@ -26,7 +26,7 @@
 
 .main-nav {
   width: 100%;
-  padding: var(--gutter);
+  padding: var(--moat);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,14 +46,14 @@
 
 
 /* Dropdown */
-/* ========================================== */
-.dropdown__wrap {
+/* ================================================== */
+.dropdown {
   position: relative;
   pointer-events: none;
   background-color: transparent;
 }
 
-.dropdown__btn {
+.main-nav_icon-btn {
   @include btn.btn-round--md;
   @include glass.btn-glass;
   background-color: var(--tint--xdark);
@@ -63,15 +63,15 @@
   }
 }
 
-.dropdown__bin {
+.dropdown_bin {
   width: fit-content;
   height: fit-content;
   pointer-events: none;
 }
 
-.dropdown__bg {
+.dropdown-bg {
   position: absolute;
-  top: calc(var(--ui--lg) * 1.2);
+  top: calc(var(--ui-h--lg) * 1.25);
   right: 0;
   padding: var(--sm);
   z-index: 200;
@@ -81,7 +81,7 @@
   box-shadow: var(--sha--xl);
 }
 
-.dropdown-item__bin {
+.dropdown-item_bin {
   width: fit-content;
   display: grid;
   gap: calc(var(--xs) * 0.5);
@@ -89,7 +89,7 @@
   pointer-events: none;
 }
 
-.dropdown__item {
+.dropdown-item {
   pointer-events: auto;
   cursor: pointer;
   min-width: max-content;
