@@ -1,35 +1,40 @@
-/* ========================================== */
+/* ================================================== */
 /* Space */
 @use "sass:map";
 @forward "breakpoint";
 @use "breakpoint" as *;
-/* ========================================== */
+/* ================================================== */
 
 $bp--sm: map.get($breakpoints, sm);
 $bp--md: map.get($breakpoints, md);
 $bp--lg: map.get($breakpoints, lg);
 
-/* Responsive UI heights | gutters | max widths */
-/* ========================================== */
+/* Responsive UI heights | moats | max widths */
+/* ================================================== */
 html {
-  --ui--sm: 1.75rem;   /* 28px */
-  --ui--md: 2.125rem;  /* 34px */
-  --ui--lg: 2.5rem;    /* 40px */
+  --ui-h--sm: 1.75rem;   /* 28px */
+  --ui-h--md: 2.125rem;  /* 34px */
+  --ui-h--lg: 2.5rem;    /* 40px */
 
   --max-w--sm: 520px;
   --max-w--md: 680px;
   --max-w--lg: 980px;
 
-  --gutter: 16px;
-  --gutterx2: calc(var(--gutter) * 2);
+  --moat: 16px;
+  --moat--x2: calc(var(--moat) * 2);
 
   @include bp(sm) {
-    --gutter: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
+    --moat: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
+    --moat--x2: calc(var(--moat) * 2);
   }
 }
 
+.w--fit {
+  width: fit-content;
+}
+
 /* Max width classes */
-/* ========================================== */
+/* ================================================== */
 .max-w--sm {
   width: 100%;
   max-width: var(--max-w--sm);
@@ -45,50 +50,50 @@ html {
   max-width: var(--max-w--lg);
 }
 
-/* Gutter classes */
-/* ========================================== */
-.gutter--all {
-  width: calc(100vw - var(--gutterx2));
+/* moat classes */
+/* ================================================== */
+.moat--all {
+  width: calc(100vw - var(--moat--x2));
   margin-left: auto;
   margin-right: auto;
 }
 
-.gutter-from--sm {
-    width: 100%;
+.moat-from--sm {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @include bp(sm) {
-    min-width: calc($bp--sm - var(--gutterx2));
-    width: calc(100% - var(--gutterx2));
+    min-width: calc($bp--sm - var(--moat--x2));
+    width: calc(100% - var(--moat--x2));
   }
 }
 
-.gutter-from--md {
+.moat-from--md {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @include bp(md) {
-    min-width: calc($bp--sm - var(--gutterx2));
-    width: calc(100% - var(--gutterx2));
+    min-width: calc($bp--sm - var(--moat--x2));
+    width: calc(100% - var(--moat--x2));
   }
 }
 
-.gutter-from--lg {
+.moat-from--lg {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 
   @include bp(lg) {
-    min-width: calc($bp--lg - var(--gutterx2));
-    max-width: calc(100% - var(--gutterx2));
+    min-width: calc($bp--lg - var(--moat--x2));
+    max-width: calc(100% - var(--moat--x2));
   }
 }
 
 
 /* Max width for images */
-/* ========================================== */
+/* ================================================== */
 .img--2xs {
   width: min(100%, 180px);
 }
@@ -115,11 +120,10 @@ html {
 
 
 /* Spacing */
-/* ========================================== */
-.page-space {
+/* ================================================== */
+.page_grid {
   --space: 4rem;
 
-  width: 100%;
   height: fit-content;
   display: grid;
   gap: var(--space);
@@ -139,6 +143,29 @@ html {
 
   @include bp(lg) {
     --space: 12rem;
+  }
+}
+
+.section_gap {
+  --gap: 3rem;
+
+  display: grid;
+  gap: var(--gap);
+
+  @include bp(xs) {
+    --gap: 5rem;
+  }
+
+  @include bp(sm) {
+    --gap: 7rem;
+  }
+
+  @include bp(md) {
+    --gap: 9rem;
+  }
+
+  @include bp(lg) {
+    --gap: 11rem;
   }
 }
 
@@ -211,68 +238,48 @@ html {
 
 
 
-.unit-gap--md {
-  --space: 2rem;
+// .unit-gap--md {
+//   --space: 2rem;
 
-  gap: var(--space);
+//   gap: var(--space);
 
-  @include bp(xs) {
-    --space: 4rem;
-  }
+//   @include bp(xs) {
+//     --space: 4rem;
+//   }
 
-  @include bp(sm) {
-    --space: 6rem;
-  }
+//   @include bp(sm) {
+//     --space: 6rem;
+//   }
 
-  @include bp(md) {
-    --space: 8rem;
-  }
+//   @include bp(md) {
+//     --space: 8rem;
+//   }
 
-  @include bp(lg) {
-    --space: 10rem;
-  }
-}
+//   @include bp(lg) {
+//     --space: 10rem;
+//   }
+// }
 
-.unit-gap--lg {
-  --space: 3rem;
 
-  gap: var(--space);
 
-  @include bp(xs) {
-    --space: 5rem;
-  }
+// .unit-gap--xl {
+//   --space: 4rem;
 
-  @include bp(sm) {
-    --space: 7rem;
-  }
+//   gap: var(--space);
 
-  @include bp(md) {
-    --space: 9rem;
-  }
+//   @include bp(xs) {
+//     --space: 6rem;
+//   }
 
-  @include bp(lg) {
-    --space: 11rem;
-  }
-}
+//   @include bp(sm) {
+//     --space: 8rem;
+//   }
 
-.unit-gap--xl {
-  --space: 4rem;
+//   @include bp(md) {
+//     --space: 10rem;
+//   }
 
-  gap: var(--space);
-
-  @include bp(xs) {
-    --space: 6rem;
-  }
-
-  @include bp(sm) {
-    --space: 8rem;
-  }
-
-  @include bp(md) {
-    --space: 10rem;
-  }
-
-  @include bp(lg) {
-    --space: 12rem;
-  }
-}
+//   @include bp(lg) {
+//     --space: 12rem;
+//   }
+// }

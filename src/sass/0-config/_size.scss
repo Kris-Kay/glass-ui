@@ -1,12 +1,12 @@
-/* ========================================== */
+/* ================================================== */
 /* Sizes */
 @use "sass:map";
 @forward "breakpoint";
 @use "breakpoint" as bp;
-/* ========================================== */
+/* ================================================== */
 
 /* Dynamic T-shirt sizes */
-/* ========================================== */
+/* ================================================== */
 /* Sizes scale with viewport width */
 /* https://utopia.fyi/space/calculator/ */
 :root {
@@ -45,7 +45,7 @@
 }
 
 /* T-shirt Size MAP */
-/* ========================================== */
+/* ================================================== */
 /* Used by modifier mixins */
 $sizes: (
   "3xs": --3xs,
@@ -62,7 +62,7 @@ $sizes: (
 );
 
 /* Size modifier mixin */
-/* ========================================== */
+/* ================================================== */
 /* Generates .classes using $sizes map */
 
 @mixin size-modifiers($property) {
@@ -85,21 +85,21 @@ $sizes: (
 }
 
 /* Width classes */
-/* ========================================== */
+/* ================================================== */
 // Generates a .class for every T-shirt size
 .w {
   @include size-modifiers('width');
 }
 
 /* Height classes */
-/* ========================================== */
+/* ================================================== */
 // Generates a .class for every T-shirt size
 .h {
   @include size-modifiers('height');
 }
 
 /* Gap classes */
-/* ========================================== */
+/* ================================================== */
 // Generates a .class for every T-shirt size
 .gap {
   @include size-modifiers('gap');
