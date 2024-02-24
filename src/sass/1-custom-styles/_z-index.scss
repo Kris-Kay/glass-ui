@@ -1,0 +1,26 @@
+/* ================================================== */
+/* Z-index */
+@use "sass:list";
+/* ================================================== */
+$z: (
+  "on-modal",
+  "modal",
+  "on-menu",
+  "menu",
+  "on-nav",
+  "nav",
+  "on-card",
+  "card",
+  "section",
+  "page",
+  "page-bg"
+);
+
+@function z($name) {
+  @if index($z, $name) {
+      @return (length($z) - index($z, $name)) + 1;
+  } @else {
+      @warn 'There is no z-index named "#{$name}"; choose one of: #{$z}';
+      @return null;
+  }
+}

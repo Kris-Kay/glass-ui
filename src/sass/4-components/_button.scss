@@ -1,0 +1,382 @@
+/* ================================================== */
+/* Buttons */
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+/* ================================================== */
+
+/* Button transition */
+/* ================================================== */
+/* ↓ config ↓ */
+@mixin btn-transition {
+  transition:
+    background-color $speed--2xslow $smooth,
+    color $speed--2xslow $smooth,
+    text-shadow $speed--2xslow $smooth,
+    box-shadow $speed--2xslow $smooth;
+  /* ↑ config ↑ */
+}
+
+/* Button text */
+/* ================================================== */
+  /* ↓ config ↓ */
+@mixin btn-text {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing--md;
+  text-align: center;
+  text-shadow: var(--text-sha--3xs);
+  @include btn-transition;
+  /* ↑ config ↑ */
+}
+
+/* ================================================== */
+/* Button base */
+/* ================================================== */
+  /* ↓ no touchÉ! ↓ */
+@mixin btn--base {
+  --_btn--h: var(--btn--h, 1rem);
+  --_btn-inner--h: var(--btn-inner--h, 0.8em);
+  --_btn--t: var(--btn--t, 1px);
+  --_btn--b: var(--btn--b, 1px);
+  --_btn--x: var(--btn--x, 0.85em);
+  --_btn--radius: var(--btn--radius, 0.25rem);
+
+  @include btn-text;
+
+  height: var(--_btn--h);
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--3xs);
+  border-radius: var(--_btn--radius);
+  overflow: hidden;
+
+  font-size: var(--_btn-inner--h);
+  line-height: var(--_btn-inner--h);
+  padding: var(--_btn--t) var(--_btn--x) var(--_btn--b) var(--_btn--x);
+
+  & > .svg-icon {
+    display: inline-block;
+    align-self: center;
+    mask-size: cover;
+    $h: calc(1.1 * var(--_btn-inner--h));
+    height: $h;
+    width: $h;
+    margin-top: calc(-1 * var(--_btn--t));
+  }
+  /* ↑ no touchÉ! ↑ */
+}
+
+/* Button sizes */
+/* ================================================== */
+/* ↓ config ↓ */
+@mixin btn--sm {
+  @include btn--base;
+
+  --btn--h: 1.75rem;
+  // --btn--h: var(--ui-h--sm);
+  --btn-inner--h: 0.8em; // sets font-size | line-height | icon height
+  --btn--t: 0;
+  --btn--b: 0;
+  --btn--x: 0.85em;
+  --btn--radius: 9999px;
+  /* ↑ config ↑ */
+}
+
+/* ↓ config ↓ */
+@mixin btn--md {
+  @include btn--base;
+
+  --btn--h: 2.125rem;
+  // --btn--h: var(--ui-h--md);
+  --btn-inner--h: 0.9rem;
+  --btn--t: 0;
+  --btn--b: 0;
+  --btn--x: 1rem;
+  --btn--radius: 9999px;
+  /* ↑ config ↑ */
+}
+
+/* ↓ config ↓ */
+@mixin btn--lg {
+  @include btn--base;
+  --btn--h: 2.5rem;
+  // --btn--h: var(--ui-h--lg);
+  --btn-inner--h: 1em; // sets font-size | line-height | icon height
+  --btn--t: 0;
+  --btn--b: 0;
+  --btn--x: 1.4rem;
+  --btn--radius: 9999px;
+  /* ↑ config ↑ */
+}
+
+.btn--sm { @include btn--sm; }
+.btn--md { @include btn--md; }
+.btn--lg { @include btn--lg; }
+
+/* Button types */
+/* ================================================== */
+// btn--primary
+// btn--secondary
+// btn--clear
+// btn--round
+// btn--icon
+
+/* Button viz */
+/* ================================================== */
+.btn-viz {
+  --_btn-bg: var(--btn-bg, white);
+  --_btn-text: var(--btn-text, black);
+  --_btn-icon: var(--btn-icon, black);
+  // --_btn-sha: var(--btn-sha, var(--sha--2xs));
+
+  @include btn-transition;
+  @include glass.glass-filter;
+  background-color: var(--_btn-bg);
+  position: relative;
+
+  color: var(--_btn-text);
+  // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--xs);
+
+  & > .svg-icon {
+    background-color: var(--_btn-icon);
+    @include btn-transition;
+  }
+
+  &::before {
+    @include pseudo;
+    z-index: 2;
+    box-shadow: glass.$bevel--sm;
+    // box-shadow: var(--bevel--sm);
+  }
+
+  // &::after {
+  //   @include pseudo;
+  //   z-index: -1;
+  //   @include glass.noise--sm;
+  // }
+
+  &:hover {
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--sm);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
+  }
+
+  &:active {
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--2xs);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
+  }
+
+  // &[aria-selected="true"] {
+  //   background-color: var(--_btn-bg);
+  //   color: var(--_btn-text);
+  //   box-shadow: var(--_btn-sha);
+
+  //   & > .svg-icon {
+  //     background-color: var(--_btn-icon);
+  //   }
+  // }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--_btn-bg);
+    color: var(--_btn-text);
+    // box-shadow: var(--_btn-sha);
+    box-shadow: var(--sha--3xs);
+
+    & > .svg-icon {
+      background-color: var(--_btn-icon);
+    }
+  }
+}
+// .btn-viz { @include btn-viz; }
+
+
+/* Primary */
+/* ================================================== */
+.btn-viz.btn--primary {
+    --btn-bg: oklch(var(--neutral--90) / 0.3);
+    --btn-text: var(--color--white);
+    --btn-icon: var(--color--white);
+
+    &:hover {
+      --btn-bg: oklch(var(--neutral--95) / 0.4);
+      --btn-text: var(--color--2xlight);
+      --btn-icon: var(--color--2xlight);
+    }
+
+    &:active {
+      --btn-bg: oklch(var(--neutral--60) / 0.6);
+      --btn-text: var(--color--xlight);
+      --btn-icon: var(--color--xlight);
+    }
+
+    &:disabled {
+      --btn-bg: oklch(40% var(--neutral--40) / 0.2);
+      --btn-text: var(--color--light);
+      --btn-icon: var(--color--light);
+    }
+}
+
+/* Secondary */
+/* ================================================== */
+.btn-viz.btn--secondary {
+  // @include btn-viz;
+
+  /* ↓ config ↓ */
+    --btn-bg: oklch(var(--neutral--10) / 0.2);
+    --btn-text: var(--color--2xlight);
+    --btn-icon: var(--color--2xlight);
+
+  &:hover {
+    --btn-bg: oklch(var(--neutral--30) / 0.2);
+    --btn-text: var(--color--white);
+    --btn-icon: var(--color--white);
+  }
+
+  &:active {
+    --btn-bg: oklch(var(--neutral--10) / 0.4);
+    --btn-text: var(--color--2xlight);
+    --btn-icon: var(--color--2xlight);
+  }
+
+  &:disabled {
+    --btn-bg: oklch(var(--neutral--10) / 0.1);
+      --btn-text: var(--color--xlight);
+      --btn-icon: var(--color--xlight);
+  }
+}
+
+/* Clear */
+/* ================================================== */
+// .btn--clear {
+//   background-color: transparent;
+//   color: var(--color--white);
+//   box-shadow: none;
+//   @include ui-transitions;
+//   font-weight: 400;
+//   text-shadow: var(--text-sha--2xs);
+
+//   & > .svg-icon {
+//     background-color: var(--color--white);
+//   }
+
+//   &:hover {
+//     background-color: var(--tint--xlight);
+//   }
+
+//   &:active {
+//     background-color: var(--tint--dark);
+//   }
+// }
+
+
+
+/* 2D clear button */
+/* ================================================== */
+@mixin btn-2d--base {
+  background-color: transparent;
+  color: var(--color--white);
+  box-shadow: none;
+  @include ui-transitions;
+
+  &:hover {
+    background-color: var(--tint--light);
+    // box-shadow: var(--sha--xs);
+  }
+
+  &:active {
+    background-color: var(--tint--xlight);
+    // box-shadow: var(--sha--2xs);
+  }
+}
+
+.btn--clear {
+  @include btn-2d--base;
+}
+
+
+/* Round buttons */
+/* ================================================== */
+/* Base → round button */
+@mixin btn-round--base {
+  @include flex--c;
+  border-radius: 9999px;
+  @include btn-transition;
+  @include glass.btn-glass;
+  background-color: var(--tint--xdark);
+  box-shadow: var(--sha--2xs);
+  // z-index: z.z(btn);
+
+  & img {
+    width: auto;
+    align-self: center;
+    // z-index: z.z(on-btn);
+  }
+
+  &:hover {
+    background-color: var(--tint--base);
+    box-shadow: var(--sha--sm);
+  }
+
+  &:active {
+    background-color: var(--tint--xdark);
+    box-shadow: var(--sha--3xs);
+  }
+}
+
+@mixin btn-round--sm {
+  @include btn-round--base;
+  width: var(--ui-h--sm);
+  height: var(--ui-h--sm);
+
+  & img {
+    height: calc(var(--ui-h--sm) * 0.65);
+  }
+}
+
+@mixin btn-round--md {
+  @include btn-round--base;
+  width: var(--ui-h--md);
+  height: var(--ui-h--md);
+
+  & img {
+    height: calc(var(--ui-h--md) * 0.65);
+  }
+}
+
+@mixin btn-round--lg {
+  @include btn-round--base;
+  width: var(--ui-h--lg);
+  height: var(--ui-h--lg);
+
+  & img {
+    height: calc(var(--ui-h--lg) * 0.6);
+  }
+}
+
+.btn-round--sm {
+  @include btn-round--sm;
+}
+
+.btn-round--md {
+  @include btn-round--md;
+}
+
+.btn-round--lg {
+  @include btn-round--lg;
+}

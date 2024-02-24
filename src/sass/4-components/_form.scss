@@ -1,0 +1,106 @@
+/* ================================================== */
+/* Text inputs */
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+/* ================================================== */
+
+.input:not(textarea) {
+  line-height: 1;
+}
+
+.text-input_bin {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.text-input_label_bin {
+  display: grid;
+  gap: 0.1rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.text-input_label {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing--md;
+}
+
+.input-hint {
+  font-weight: $font-weight--sm;
+  font-size: var(--text--xs);
+  letter-spacing: $letter-spacing--sm;
+  line-height: 1.1;
+  color: var(--text--mild);
+}
+
+/* Text input */
+/* ================================================== */
+.text-input {
+  pointer-events: auto;
+  cursor: text;
+  width: 100%;
+  // width: min(400px, 100%);
+  height: var(--ui-h--lg);
+  border-radius: var(--2xs);
+  padding: 0 0.75rem;
+
+  box-shadow: var(--inset--md);
+  background-color: var(--inset-bg--xdeep);
+
+  &::placeholder {
+    color: var(--text--base);
+    font-size: var(--text--sm);
+    font-weight: $font-weight--sm;
+  }
+}
+
+/* Textarea input */
+/* ================================================== */
+.textarea-holder {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+
+  @include grid--c;
+  padding: 0.75rem;
+
+  width: 100%;
+  height: fit-content;
+
+  @include outer-radius (var(--3xs), 0.75rem);
+
+  box-shadow: var(--inset--md);
+  background-color: var(--inset-bg--xdeep);
+}
+
+.textarea {
+  z-index: 3;
+  inset: 0;
+  pointer-events: auto;
+  cursor: text;
+  overflow: auto;
+  resize: vertical;
+
+  min-height: 150px;
+  max-width: 100%;
+  width: 100%;
+
+  text-align: start;
+  border-radius: var(--2xs);
+  transition: $focus-tran;
+
+  &::placeholder {
+    color: var(--text--base);
+    font-size: var(--text--sm);
+    font-weight: $font-weight--md;
+  }
+}
+
+::placeholder {
+    color: red;
+    // color: var(--text--base);
+    font-size: var(--text--sm);
+    font-weight: $font-weight--md;
+  }

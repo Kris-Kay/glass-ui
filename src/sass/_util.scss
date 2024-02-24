@@ -1,12 +1,7 @@
-/* Utilities */
-@forward "../sass/1-util/color-util";
-@forward "../sass/1-util/flex";
-@forward "../sass/1-util/grid";
-@forward "../sass/1-util/layout-help";
-@forward "../sass/1-util/margin";
-@forward "../sass/1-util/mixin";
-@forward "../sass/1-util/padding";
-@forward "../sass/1-util/radius";
-@forward "../sass/1-util/reset";
-@forward "../sass/1-util/shadow";
-@forward "../sass/1-util/text-util";
+/* Utils */
+@forward "../sass/2-util/grid-flex-gap";
+@forward "../sass/2-util/layout-help";
+@forward "../sass/2-util/margin-padding";
+@forward "../sass/2-util/mixin";
+@forward "../sass/2-util/radius";
+@forward "../sass/2-util/reset";

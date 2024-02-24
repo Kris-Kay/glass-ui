@@ -1,0 +1,25 @@
+/* ================================================== */
+/* SVGs */
+/* ================================================== */
+
+/* Change SVG color */
+/* ================================================== */
+/* Credit: Chris Coyier  */
+/* https://css-tricks.com/change-color-of-svg-on-hover/ */
+.svg-icon-color {
+  display: inline-block;
+  width: var(--ui-h--md, 2.125rem);
+  height: var(--ui-h--md, 2.125rem);
+  align-self: center;
+  mask-size: cover;
+  background: purple;
+}
+
+/* SVGs */
+/* ================================================== */
+.svg-cube { mask: url(/assets/icons/CubeTransparent.svg); }
+
+.svg-chev--up { mask: url(/assets/icons/CaretUp.svg); }
+.svg-chev--down { mask: url(/assets/icons/CaretDown.svg); }
+.svg-chev--l { mask: url(/assets/icons/CaretLeft.svg); }
+.svg-chev--r { mask: url(/assets/icons/CaretRight.svg); }

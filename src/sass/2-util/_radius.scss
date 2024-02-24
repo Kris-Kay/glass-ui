@@ -1,0 +1,61 @@
+/* ================================================== */
+/* Border Radius */
+@use "../1-custom-styles/space" as *;
+/* ================================================== */
+
+/* Border radius classes */
+/* ================================================== */
+// * Generates a class for every T-shirt size
+// * T-shirt size values scale with viewport width
+.radius {
+  @include size-modifiers('border-radius') {
+    overflow: hidden;
+  }
+}
+
+/* Conditional border-radius */
+/* ================================================== */
+// https://ishadeed.com/article/conditional-border-radius/
+// remove border radius if element width = 100vw
+// border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, *max size goes here*);
+@mixin vw-radius-modifier($property) {
+  @each $key, $value in $sizes {
+    &--#{$key} {
+      #{$property}: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
+      @content;
+    }
+  }
+}
+
+.vw-radius {
+  @include vw-radius-modifier('border-radius') {
+    overflow: hidden;
+  }
+}
+
+
+
+@mixin moat-radius($key) {
+  @if not map-has-key($sizes, $key) {
+    @warn "Warning: `#{$key}` is not a valid T-shirt size.";
+  } @else {
+    border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--#{$key}));
+    overflow: hidden;
+  }
+}
+
+/* Nested border radius */
+/* ================================================== */
+@mixin outer-radius ($inner-radius, $padding) {
+  $r: calc($inner-radius + $padding);
+  $f: calc(($r * 3) / 100);
+  $br: calc($r - $f);
+
+  border-radius: $br;
+}
+
+
+.radius-round {
+  border-radius: 9999px;
+  overflow: hidden;
+}

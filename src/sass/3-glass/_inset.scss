@@ -1,9 +1,11 @@
 /* ================================================== */
 /* Inset */
 @use "sass:map";
-@use "../config" as *;
-@use "../util" as *;
-@use "../custom" as *;
+@use "../1-custom-styles/color" as *;
+@use "../1-custom-styles/breakpoint" as *;
+@use "../2-util/mixin";
+@use "bevel";
+@use "shadow";
 @use "glass-material" as glass;
 /* ================================================== */
 
@@ -142,7 +144,7 @@ $flat-insets: (
 
 /* Flat inset classes */
 .flat-inset {
-  @include generate-classes($flat-insets, 'box-shadow', 'flat-inset', '--');
+  @include mixin.generate-classes($flat-insets, 'box-shadow', 'flat-inset', '--');
 }
 
 
@@ -160,7 +162,7 @@ $insets: (
 
 /* Inset classes */
 .inset {
-  @include generate-classes($insets, 'box-shadow', 'inset', '--');
+  @include mixin.generate-classes($insets, 'box-shadow', 'inset', '--');
 }
 
 

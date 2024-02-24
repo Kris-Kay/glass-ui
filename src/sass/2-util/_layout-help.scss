@@ -1,0 +1,73 @@
+/* ================================================== */
+/* Layout helpers */
+/* ================================================== */
+.w--100 { width: 100%; }
+
+.w--fit { width: fit-content; }
+
+.h--100vh { min-height: 100vh; }
+
+.h--70vh { min-height: 70vh; }
+
+/* Display */
+/* ================================================== */
+.block { display: block; }
+
+.inline { display: inline; }
+
+.inlineblock { display: inline-block; }
+
+.hidden { display: none; }
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+/* Sidescroll */
+/* ================================================== */
+.sidescroll_bin {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:hover {
+    overflow-x: scroll;
+  }
+}
+
+.sidescroll { flex: 0 0 auto; }
+
+
+/* Spacing */
+/* ================================================== */
+.m-auto-x {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Other */
+/* ================================================== */
+@mixin pseudo {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}

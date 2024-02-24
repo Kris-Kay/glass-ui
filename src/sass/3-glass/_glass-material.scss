@@ -1,10 +1,12 @@
 /* ================================================== */
 /* Glass */
 @use "sass:map";
-@use "../config" as *;
-@use "../custom" as *;
-@use "../util" as *;
+@use "../1-custom-styles/color" as *;
+@use "../1-custom-styles/breakpoint" as *;
+@use "../2-util/mixin";
+@use "../2-util/layout-help" as *;
 @use "bevel";
+@use "shadow";
 /* ================================================== */
 
 /* Glass filter */
@@ -80,13 +82,9 @@ html {
 /* Glass classes */
 /* ================================================== */
 .glass {
-  @include generate-classes($tints, 'background-color', 'tint', '--') {
+  @include mixin.generate-classes($tints, 'background-color', 'tint', '--') {
     @include glass_base;
 };
-
-  @include generate-classes($depth, 'background-color', 'depth', '--') {
-    @include glass_base;
-  }
 }
 
 /* Glass with no bevel */

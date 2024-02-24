@@ -1,0 +1,275 @@
+/* ================================================== */
+/* Space */
+@use "sass:map";
+@use "breakpoint" as *;
+@use "../2-util/mixin";
+/* ================================================== */
+
+
+/* Dynamic T-shirt sizes */
+/* ================================================== */
+/* Sizes scale with viewport width */
+/* https://utopia.fyi/space/calculator/ */
+:root {
+  /* 3xs: 4px → 6px */
+  --3xs: clamp(0.25rem, 0.21rem + 0.21vw, 0.38rem);
+
+  /* 2xs: 8px → 12px */
+  --2xs: clamp(0.5rem, 0.42rem + 0.42vw, 0.75rem);
+
+  /* xs: 12px → 18px */
+  --xs: clamp(0.75rem, 0.63rem + 0.63vw, 1.13rem);
+
+  /* sm: 16px → 24px */
+  --sm: clamp(1rem, 0.83rem + 0.83vw, 1.5rem);
+
+  /* md: 20px → 30px */
+  --md: clamp(1.25rem, 1.04rem + 1.04vw, 1.88rem);
+
+  /* lg: 24px → 36px */
+  --lg: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+
+  /* xl: 32px → 44px */
+  --xl: clamp(2rem, 1.67rem + 1.67vw, 2.75rem);
+
+  /* 2xl: 40px → 60px */
+  --2xl: clamp(2.5rem, 2.08rem + 2.08vw, 3.75rem);
+
+  /* 3xl: 48px → 72px */
+  --3xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+
+  /* 4xl: 64px → 96px */
+  --4xl: clamp(4rem, 3.33rem + 3.33vw, 6rem);
+
+  /* 5xl: 80px → 120px */
+  --5xl: clamp(5rem, 4.17rem + 4.17vw, 7.5rem);
+}
+
+/* T-shirt Size MAP */
+/* ================================================== */
+/* Used by modifier mixins */
+$sizes: (
+  "3xs": --3xs,
+  "2xs": --2xs,
+  "xs": --xs,
+  "sm": --sm,
+  "md": --md,
+  "lg": --lg,
+  "xl": --xl,
+  "2xl": --2xl,
+  "3xl": --3xl,
+  "4xl": --4xl,
+  "5xl": --5xl,
+);
+
+/* Size modifier mixin */
+/* ================================================== */
+/* Generates .classes using $sizes map */
+@mixin size-modifiers($property) {
+  @each $key, $value in $sizes {
+    &--#{$key} {
+      #{$property}: var($value);
+      @content;
+    }
+  }
+}
+
+@mixin xy-size-modifiers($property1, $property2) {
+  @each $key, $value in $sizes {
+    &--#{$key} {
+      #{$property1}: var($value);
+      #{$property2}: var($value);
+    }
+  }
+}
+
+/* Gap classes */
+/* ================================================== */
+.gap {
+  @include size-modifiers('gap');
+}
+
+
+$bp--sm: map.get($breakpoints, sm);
+$bp--md: map.get($breakpoints, md);
+$bp--lg: map.get($breakpoints, lg);
+
+/* Responsive UI heights | moats | max widths */
+/* ================================================== */
+html {
+  --ui-h--sm: 1.75rem;   /* 28px */
+  --ui-h--md: 2.125rem;  /* 34px */
+  --ui-h--lg: 2.5rem;    /* 40px */
+
+  --max-w--sm: 520px;
+  --max-w--md: 760px;
+  --max-w--lg: 1080px;
+
+  --moat: 16px;
+  --moat--x2: calc(var(--moat) * 2);
+
+  @include bp(sm) {
+    --moat: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
+    --moat--x2: calc(var(--moat) * 2);
+  }
+}
+
+
+/* Max width classes */
+/* ================================================== */
+.max-w--sm {
+  width: 100%;
+  max-width: var(--max-w--sm);
+}
+
+.max-w--md {
+  width: 100%;
+  max-width: var(--max-w--md);
+}
+
+.max-w--lg {
+  width: 100%;
+  max-width: var(--max-w--lg);
+}
+
+/* moat classes */
+/* ================================================== */
+.moat--all {
+  width: calc(100vw - var(--moat--x2));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moat-from--sm {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp(sm) {
+    min-width: calc($bp--sm - var(--moat--x2));
+    width: calc(100% - var(--moat--x2));
+  }
+}
+
+.moat-from--md {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp(md) {
+    min-width: calc($bp--sm - var(--moat--x2));
+    width: calc(100% - var(--moat--x2));
+  }
+}
+
+.moat-from--lg {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include bp(lg) {
+    min-width: calc($bp--lg - var(--moat--x2));
+    max-width: calc(100% - var(--moat--x2));
+  }
+}
+
+
+/* Max width for images */
+/* ================================================== */
+.img--2xs {
+  width: min(100%, 180px);
+}
+
+.img--xs {
+  width: min(100%, 300px);
+}
+
+.img--sm {
+  width: min(100%, 400px);
+}
+
+.img--md {
+  width: min(100%, 500px);
+}
+
+.img--lg {
+  width: min(100%, 600px);
+}
+
+.img--lg {
+  width: min(100%, 700px);
+}
+
+
+
+// .gap {
+//   @include mixin.generate-classes($sizes, 'gap', '-', '-');
+// }
+
+/* Spacing */
+/* ================================================== */
+.page_grid {
+  --space: 4rem;
+
+  height: fit-content;
+  display: grid;
+  gap: var(--space);
+  padding: var(--space) 0;
+
+  @include bp(xs) {
+    --space: 6rem;
+  }
+
+  @include bp(sm) {
+    --space: 8rem;
+  }
+
+  @include bp(md) {
+    --space: 8rem;
+  }
+
+  @include bp(lg) {
+    --space: 12rem;
+  }
+}
+
+.section_gap {
+  --gap: 4rem;
+
+  display: grid;
+  gap: var(--gap);
+
+  @include bp(xs) {
+    --gap: 6rem;
+  }
+
+  @include bp(sm) {
+    --gap: 8rem;
+  }
+
+  @include bp(md) {
+    --gap: 10rem;
+  }
+
+  @include bp(lg) {
+    --gap: 12rem;
+  }
+}
+
+
+/* Icon sizes */
+/* ================================================== */
+.icon--sm {
+  width: auto;
+  height: var(--ui-h--sm);
+}
+
+.icon--md {
+  width: auto;
+  height: var(--ui-h--md);
+}
+
+.icon--lg {
+  width: auto;
+  height: var(--ui-h--lg);
+}

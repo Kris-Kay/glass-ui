@@ -1,5 +1,10 @@
 /* Custom styles */
-@forward "../sass/2-custom-styles/animation";
-@forward "../sass/2-custom-styles/gradient";
-@forward "../sass/2-custom-styles/svg";
-@forward "../sass/2-custom-styles/text-styles";
+@forward "../sass/1-custom-styles/animation";
+@forward "../sass/1-custom-styles/breakpoint";
+@forward "../sass/1-custom-styles/color";
+@forward "../sass/1-custom-styles/gradient";
+@forward "../sass/1-custom-styles/space";
+@forward "../sass/1-custom-styles/svg";
+@forward "../sass/1-custom-styles/text-config";
+@forward "../sass/1-custom-styles/text-styles";
+@forward "../sass/1-custom-styles/z-index";

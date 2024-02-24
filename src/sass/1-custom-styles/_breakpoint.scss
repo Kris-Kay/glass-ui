@@ -1,0 +1,29 @@
+/* ================================================== */
+/* Mobile 1st breakpoints */
+@use "sass:map";
+/* ================================================== */
+
+/* Breakpoints MAP */
+/* ================================================== */
+/* ✨ Config these values ✨ */
+$breakpoints: (
+  "xs": 22.5rem, /* 360px  and bigger */
+  "sm": 30rem,   /* 480px  and bigger */
+  "md": 45rem,   /* 720px  and bigger */
+  "lg": 64rem,   /* 1024px and bigger */
+  "xl": 90rem,   /* 1440px and bigger */
+);
+
+/* Breakpoint mixin */
+/* ================================================== */
+/* Credit: James Steinbach */
+/* https://jdsteinbach.com/css/sass-maps-breakpoint-mixin/ */
+@mixin bp($key) {
+  @if not map-has-key($breakpoints, $key) {
+    @warn "Warning: `#{$key}` is not a valid breakpoint.";
+  } @else {
+    @media only screen and (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}

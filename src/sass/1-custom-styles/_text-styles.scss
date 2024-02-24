@@ -1,0 +1,228 @@
+/* ================================================== */
+/* Text styles */
+@use "sass:map";
+@use "breakpoint" as *;
+@use "text-config" as *;
+/* ================================================== */
+
+/* Body text */
+/* ================================================== */
+@mixin body-text {
+  font-family: $font-family-body;
+  font-weight: $font-weight--sm;
+  font-size: var(--text--sm);
+  letter-spacing: $letter-spacing--sm;
+  line-height: $line-height--sm;
+  color: var(--text--base);
+}
+
+body,
+p,
+input,
+textarea {
+  @include body-text;
+}
+
+
+/* Thick titles */
+/* ================================================== */
+@mixin title--thick {
+  font-family: $font-family-title;
+  font-weight: $font-weight--lg;
+  line-height: $line-height--md;
+  letter-spacing: $letter-spacing--sm;
+}
+.title--thick { @include title--thick; }
+
+
+/* Thin titles */
+/* ================================================== */
+@mixin title--thin {
+  font-family: $font-family-title;
+  font-weight: $font-weight--sm;
+  letter-spacing: $letter-spacing--sm;
+  line-height: $line-height--md;
+}
+.title--thin { @include title--thin; }
+
+
+
+
+/* Common text styles */
+/* ================================================== */
+.big-title {
+  @include title--thin;
+  font-size: var(--text--3xl);
+  text-shadow: var(--text-sha--3xl);
+  line-height: 2.05ex;
+  color: var(--text--mild);
+  text-align: center;
+}
+
+.section-title {
+  @include title--thin;
+  font-size: var(--text--2xl);
+  text-shadow: var(--text-sha--2xl);
+  line-height: 2.1ex;
+  color: var(--text--strong);
+  text-align: center;
+}
+
+.subhead {
+  font-weight: $font-weight--md;
+  font-size: var(--text--xs);
+  letter-spacing: $letter-spacing--md;
+  line-height: $line-height--md;
+  color: var(--text--mild);
+  text-shadow: var(--text-sha--2xs);
+}
+
+.caption {
+  font-size: var(--text--xs);
+  font-weight: $font-weight--sm;
+}
+
+.footnote {
+  font-size: var(--text--2xs);
+  font-weight: $font-weight--sm;
+}
+
+.eyebrow {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  font-size: var(--text--2xs);
+  letter-spacing: $letter-spacing--md;
+  line-height: $line-height--sm;
+
+  color: var(--text--mild);
+  text-transform: uppercase;
+  text-shadow: var(--text-sha--2xs);
+}
+
+.code {
+  font-family: $font-family-code;
+  font-size: var(--text--sm);
+  line-height: $line-height--lg;
+  color:  oklch(var(--accent--80) / 1);
+}
+
+.text-link {
+  @include body-text;
+  color: var(--link--rest);
+
+  :hover {
+    color: var(--link--hover);
+  }
+
+  :visited {
+    color: var(--link--visit);
+  }
+}
+
+/* Custom text styles */
+/* ================================================== */
+.data-label--xs {
+  @include title--thick;
+  font-size: var(--text--xs);
+  text-shadow: var(--text-sha--xs);
+}
+
+.data-label--sm {
+  @include title--thick;
+  font-size: var(--text--sm);
+  text-shadow: var(--text-sha--sm);
+}
+
+.class-name--xs {
+  font-weight: $font-weight--md;
+  font-family: $font-family-title;
+  font-size: var(--text--2xs);
+  letter-spacing: $letter-spacing--lg;
+  color: var(--text--xstrong);
+  text-shadow: var(--text-sha--xs);
+
+  @include bp(sm) {
+    font-size: var(--text--xs);
+  }
+}
+
+.class-name--sm {
+  font-weight: $font-weight--md;
+  font-family: $font-family-title;
+  font-size: var(--text--sm);
+  letter-spacing: $letter-spacing--lg;
+}
+
+
+/* ================================================== */
+/* Text helpers */
+/* ================================================== */
+
+/* text-align: */
+.text--c { text-align: center; }
+.text--l { text-align: start; }
+.text--r { text-align: end; }
+.text--j { text-align: justify; }
+
+/* letter-spacing: */
+.text-space--sm { letter-spacing: $letter-spacing--sm; }
+.text-space--md { letter-spacing: $letter-spacing--md; }
+.text-space--lg { letter-spacing: $letter-spacing--lg; }
+
+/* text-transform: */
+.text--no-tran { text-transform: none; }
+.text--cap { text-transform: capitalize; }
+.text--allcap { text-transform: uppercase; }
+.text--lower { text-transform: lowercase; }
+.text--full-w { text-transform: full-width; }
+
+.text--bold { font-weight: $font-weight--lg; }
+.text--ital { font-style: italic; }
+
+.text-line-through { text-decoration: line-through; }
+.text-underline { text-decoration: underline; }
+
+
+
+.first-line--bold {
+  &:first-line {
+    font-weight: $font-weight--lg;
+  }
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.no-word-break { word-break: keep-all; }
+
+
+/* Bullet point decorations */
+/* ================================================== */
+.dot {
+  &::before {
+    padding-right: 0.25em;
+    content: "•"
+  }
+}
+
+.check {
+  &::before {
+    padding-right: 0.25em;
+    content: "☐"
+  }
+}
+
+.arrow {
+  &::before {
+    padding-right: 0.25em;
+    content: "➟"
+  }
+}

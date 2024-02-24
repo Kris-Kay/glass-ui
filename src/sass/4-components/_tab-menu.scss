@@ -1,0 +1,99 @@
+/* ================================================== */
+/* Tab menu */
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+@use "button" as btn;
+/* ================================================== */
+
+.panel-img_bin {
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+}
+
+.panel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tab-menu {
+  position: relative;
+  z-index: z(on-nav);
+  width: fit-content;
+  max-width: 100%;
+  height: var(--ui-h--md);
+  @include flex--c;
+  gap: 0.25rem;
+  margin: 0 auto;
+
+  --tab-radius: 8px;
+  --padding: 3px;
+  padding: var(--padding);
+  @include outer-radius (var(--tab-radius), var(--padding));
+
+  background-color: var(--inset-bg--deep);
+  @include glass.glass-filter;
+
+  &::before {
+    @include pseudo;
+    // z-index: 202;
+    box-shadow: var(--inset--lg);
+  }
+
+  @include bp(xs) {
+    gap: var(--3xs);
+  }
+
+  @include bp(md) {
+    height: var(--ui-h--lg);
+  }
+}
+
+
+[role="tab"] {
+  --inner-h: 0.95rem;
+
+  width: max-content;
+  height: 100%;
+  @include flex--c;
+  padding: 0 0.6rem;
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+
+  font-size: var(--inner-h);
+  line-height: var(--inner-h);
+  @include btn.btn-text;
+  @include btn.btn-2d--base;
+  border-radius: var(--tab-radius);
+  color: var(--color--white);
+  background-color: transparent;
+
+  @include bp(xs) {
+    padding: 0 0.8rem;
+  }
+
+  @include bp(md) {
+    --inner-h: 1.1rem;
+    padding: 0 1.2rem;
+  }
+
+  @include bp(lg) {
+    padding: 0 1.3rem;
+  }
+
+  &:hover {
+    background-color: var(--tint--xlight);
+    box-shadow: none;
+  }
+}
+
+[role="tab"][aria-selected="true"] {
+  background-color: var(--tint--3xlight);
+  color: var(--tint--2xdark);
+  box-shadow: var(--sha--3xs);
+}
