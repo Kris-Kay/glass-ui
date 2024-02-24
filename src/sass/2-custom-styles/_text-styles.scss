@@ -33,6 +33,7 @@ textarea {
 }
 .title--thick { @include title--thick; }
 
+
 /* Thin titles */
 /* ================================================== */
 @mixin title--thin {
@@ -193,10 +194,22 @@ pre code {
 
 /* ================================================== */
 .big-title {
-  font-size: var(--text--3xl);
   @include title--thin;
+  font-size: var(--text--3xl);
+  text-shadow: var(--text-sha--3xl);
+  line-height: 2.05ex;
+  color: var(--text--mild);
+  text-align: center;
 }
 
+.section-title {
+  @include title--thin;
+  font-size: var(--text--2xl);
+  text-shadow: var(--text-sha--2xl);
+  line-height: 2.1ex;
+  color: var(--text--bold);
+  text-align: center;
+}
 
 .headline {
 

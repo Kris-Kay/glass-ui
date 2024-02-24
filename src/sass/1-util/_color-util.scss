@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Colors util */
 @use "sass:map";
-@use "mixin" as *;
+@use "mixin" as mixin;
 /* ================================================== */
 
 /* Solid colors MAP */
@@ -21,7 +21,7 @@ $colors: (
 );
 
 .bg {
-  @include generate-classes($colors, 'background-color', 'color', '--');
+  @include mixin.generate-classes($colors, 'background-color', 'color', '--');
 }
 
 /* Tint colors MAP */
@@ -43,7 +43,7 @@ $tints: (
 /* Tint classes */
 /* ================================================== */
 .tint {
-  @include generate-classes($tints, 'background-color', 'tint', '--');
+  @include mixin.generate-classes($tints, 'background-color', 'tint', '--');
 }
 
 /* Depth colors MAP */
@@ -71,6 +71,6 @@ $text-colors: (
 /* Text color classes */
 /* ================================================== */
 .text {
-  @include generate-classes($text-colors, 'color', 'text', '--');
-  @include generate-classes($colors, 'color', 'color', '--');
+  @include mixin.generate-classes($text-colors, 'color', 'text', '--');
+  @include mixin.generate-classes($colors, 'color', 'color', '--');
 }

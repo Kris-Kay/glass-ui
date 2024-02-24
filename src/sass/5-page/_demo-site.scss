@@ -69,19 +69,16 @@
 .telescope-rect--lower-r {
   min-width: fit-content;
   padding: 5%;
-  // padding: 8% 4% 6% 12%;
-
-  box-shadow: var(--sha--3xs);
   overflow: visible;
+  box-shadow: var(--sha--3xs);
 
   @include bp(md) {
     will-change: padding;
     transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
-    padding: 6% 4% 4% 14%;
+    padding: 6% 4% 4% 12%;
 
     &:hover {
       padding: 5%;
-      // padding: 6% 3% 4% 8%;
     }
   }
 
@@ -212,8 +209,20 @@
 
 /*  Insets demo */
 /* ================================================== */
+.inset-rect_bin {
+  width: 100%;
+  padding: 0;
+  display: grid;
+  gap: var(--md);
+
+  @include bp(sm) {
+    width: fit-content;
+  }
+}
+
 .inset-rect {
-  width: min(100%, 400px);
+  width: 100%;
+  max-width: 380px;
   padding: var(--xs);
   border-radius: var(--xs);
   background-color: var(--inset-bg--base);
@@ -300,16 +309,25 @@
   place-items: center;
   @include glass.glass--no-bevel;
   background-color: var(--tint--dark);
-  padding: var(--lg) 0;
+  padding: var(--lg) var(--moat);
   margin-top: var(--4xl);
-  margin-bottom: var(--5xl);
+  margin-bottom: var(--3xl);
 
-  & > .heading--xl {
-    text-align: end;
+  @include bp(sm) {
+    min-width: 80%;
+    width: fit-content;
+    border-radius: 0 var(--md) var(--md) 0;
+    display: flex;
+    justify-self: flex-start;
+  }
+
+  @include bp(xl) {
+    min-width: 30%;
+  }
+
+  & > .big-title {
     width: 100%;
-    max-width: var(--max-w--lg);
-    padding-left: var(--moat);
-    padding-right: var(--moat);
+    text-align: end;
 
     @include bp(lg) {
       padding-left: 0;
@@ -322,21 +340,8 @@
     }
   }
 
-  @include bp(xl) {
-    width: 50%;
-    border-radius: 0 var(--md) var(--md) 0;
-    display: flex;
-    justify-self: flex-start;
-  }
-
 }
 
-.heading--2xl {
-  @include title--thin;
-  font-size: var(--text--2xl);
-  text-shadow: var(--text-sha--sm);
-  text-align: center;
-}
 
 
 
@@ -349,17 +354,17 @@
   border-radius: var(--sm);
   padding: var(--xl) var(--2xl);
 
-  will-change: transform, box-shadow;
-  box-shadow: var(--sha--2xs);
-  transform: scale(1);
-  transition:
-    transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
-    box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
+  // will-change: transform, box-shadow;
+  // box-shadow: var(--sha--2xs);
+  // transform: scale(1);
+  // transition:
+  //   transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
+  //   box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
 
-  &:hover {
-    box-shadow: var(--sha--sm);
-    transform: scale(1.02);
-  }
+  // &:hover {
+  //   box-shadow: var(--sha--sm);
+  //   transform: scale(1.02);
+  // }
 
   @include bp(xs) {
     aspect-ratio : 1 / 1;

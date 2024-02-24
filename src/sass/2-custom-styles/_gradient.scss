@@ -18,9 +18,9 @@
 
 .gradient-gray--mid {
   background: linear-gradient(to top left,
-    oklch(var(--neutral--40) / 0.85) 0%,
-    oklch(var(--neutral--50) / 0.9) 70%,
-    oklch(var(--neutral--60) / 0.95) 100%);
+    oklch(var(--neutral--40) / 0.8) 0%,
+    oklch(var(--neutral--50) / 0.4) 70%,
+    oklch(var(--neutral--60) / 0.1) 100%);
 }
 
 .gradient-gray--dark {

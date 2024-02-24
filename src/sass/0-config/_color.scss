@@ -124,19 +124,9 @@
   --tint--3xdark:  oklch(var(--neutral--10) / 0.45);
   --tint--4xdark:  oklch(var(--neutral--10) / 0.55);
 
-  /* Background depth */
-  /* ================================================== */
-  --depth--2xback:  oklch(var(--neutral--10) / 0.2);
-  --depth--xback:  oklch(var(--neutral--15) / 0.2);
-  --depth--back:  oklch(var(--neutral--20) / 0.2);
-  --depth--base:  oklch(var(--neutral--80) / 0.2);
-  --depth--front:  oklch(var(--neutral--85) / 0.2);
-  --depth--xfront:  oklch(var(--neutral--90) / 0.2);
-  --depth--2xfront:  oklch(var(--neutral--95) / 0.2);
-
   /* Insets */
   /* ================================================== */
-  --inset-bg--base: oklch(var(--neutral--10) / 0.1);
+  --inset-bg--base: oklch(var(--neutral--10) / 0.13);
   --inset-bg--deep: oklch(var(--neutral--10) / 0.2);
   --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
 
@@ -168,32 +158,22 @@
   /* Translucent tints */
   /* ================================================== */
   --tint--4xlight: oklch(var(--neutral--95) / 0.8);
-  --tint--3xlight: oklch(var(--neutral--95) / 0.6);
-  --tint--2xlight: oklch(var(--neutral--95) / 0.4);
+  --tint--3xlight: oklch(var(--neutral--95) / 0.7);
+  --tint--2xlight: oklch(var(--neutral--95) / 0.5);
   --tint--xlight:  oklch(var(--neutral--95) / 0.3);
   --tint--light:   oklch(var(--neutral--95) / 0.2);
-  --tint--clear:   oklch(var(--neutral--95) / 0.01);
+  --tint--clear:   oklch(var(--neutral--10) / 0.15);
   --tint--dark:    oklch(var(--neutral--10) / 0.2);
   --tint--xdark:   oklch(var(--neutral--10) / 0.3);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.4);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.6);
+  --tint--2xdark:  oklch(var(--neutral--10) / 0.5);
+  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
   --tint--4xdark:  oklch(var(--neutral--10) / 0.8);
-
-  /* Background elevation levels */
-  /* ================================================== */
-  --depth--2xback:  oklch(var(--neutral--20) / 0.4);
-  --depth--xback:  oklch(var(--neutral--30) / 0.4);
-  --depth--back:  oklch(var(--neutral--40) / 0.4);
-  --depth--base:  oklch(var(--neutral--50) / 0.4);
-  --depth--front:  oklch(var(--neutral--60) / 0.4);
-  --depth--xfront:  oklch(var(--neutral--70) / 0.4);
-  --depth--2xfront:  oklch(var(--neutral--80) / 0.4);
 
   /* Insets */
   /* ================================================== */
-  --inset-bg--base: oklch(var(--neutral--10) / 0.15);
+  --inset-bg--base: oklch(var(--neutral--10) / 0.2);
   --inset-bg--deep: oklch(var(--neutral--10) / 0.25);
-  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.35);
+  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
 
   /* Body text | Headings | Labels */
   /* ================================================== */

@@ -124,7 +124,7 @@ html {
   height: fit-content;
   display: grid;
   gap: var(--space);
-  margin: var(--space) 0;
+  padding: var(--space) 0;
 
   @include bp(xs) {
     --space: 6rem;
@@ -135,7 +135,7 @@ html {
   }
 
   @include bp(md) {
-    --space: 10rem;
+    --space: 8rem;
   }
 
   @include bp(lg) {
@@ -144,24 +144,24 @@ html {
 }
 
 .section_gap {
-  --gap: 3rem;
+  --gap: 4rem;
 
   display: grid;
   gap: var(--gap);
 
   @include bp(xs) {
-    --gap: 5rem;
+    --gap: 6rem;
   }
 
   @include bp(sm) {
-    --gap: 7rem;
+    --gap: 8rem;
   }
 
   @include bp(md) {
-    --gap: 9rem;
+    --gap: 10rem;
   }
 
   @include bp(lg) {
-    --gap: 11rem;
+    --gap: 12rem;
   }
 }

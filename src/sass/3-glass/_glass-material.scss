@@ -1,5 +1,6 @@
 /* ================================================== */
 /* Glass */
+@use "sass:map";
 @use "../config" as *;
 @use "../custom" as *;
 @use "../util" as *;
@@ -49,6 +50,7 @@ html {
 @mixin glass_base {
   position: relative;
   overflow: hidden;
+
   @include glass-filter;
   @content;
 

@@ -40,7 +40,7 @@
   @if not map-has-key(size.$sizes, $key) {
     @warn "Warning: `#{$key}` is not a valid T-shirt size.";
   } @else {
-    border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var($value));
+    border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, var(--#{$key}));
     overflow: hidden;
   }
 }

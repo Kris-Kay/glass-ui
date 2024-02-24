@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Shadows */
 @use "sass:map";
-@use "mixin" as *;
+@use "mixin" as mixin;
 /* ================================================== */
 
 /* Elevation shadows */
@@ -79,7 +79,7 @@ $shadows: (
 );
 
 .sha {
-  @include generate-classes($shadows, 'box-shadow', 'sha', '--');
+  @include mixin.generate-classes($shadows, 'box-shadow', 'sha', '--');
 }
 
 
@@ -128,92 +128,5 @@ $overhangs: (
 );
 
 .overhang-sha {
-  @include generate-classes($overhangs, 'box-shadow', 'overhang-sha', '--');
-}
-
-
-/* ================================================== */
-/* Text shadows */
-/* ================================================== */
-html {
-  --text-sha--3xs:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.2px 0.2px 0.2px oklch(var(--shadow) / 0.2),
-    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.15);
-
-  --text-sha--2xs:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.25px 0.25px 0.25px oklch(var(--shadow) / 0.2),
-    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.15);
-
-  --text-sha--xs:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.3px 0.3px 0.3px oklch(var(--shadow) / 0.25),
-    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.15);
-
-  --text-sha--sm:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.35px 0.35px 0.35px oklch(var(--shadow) / 0.25),
-    0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.15);
-
-  --text-sha--md:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.4px 0.4px 0.4px oklch(var(--shadow) / 0.25),
-    0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.2);
-
-  --text-sha--lg:
-    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
-    0.45px 0.45px 0.45px oklch(var(--shadow) / 0.25),
-    0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.2);
-
-  --text-sha--xl:
-    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
-    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.25),
-    0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.2);
-
-  --text-sha--2xl:
-    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
-    0.55px 0.55px 0.55px oklch(var(--shadow) / 0.25),
-    1px 1px 2px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.2);
-
-  --text-sha--3xl:
-    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
-    0.6px 0.6px 0.6px oklch(var(--shadow) / 0.25),
-    1px 1px 2px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.2);
-}
-
-/* Text shadow MAP */
-/* ================================================== */
-$text-shadows: (
-  "3xs": var(--text-sha--3xs),
-  "2xs": var(--text-sha--2xs),
-  "xs": var(--text-sha--xs),
-  "sm": var(--text-sha--sm),
-  "md": var(--text-sha--md),
-  "lg": var(--text-sha--lg),
-  "xl": var(--text-sha--xl),
-  "2xl": var(--text-sha--2xl),
-  "3xl": var(--text-sha--3xl),
-);
-
-.text-sha {
-  @include generate-classes($text-shadows, 'text-shadow', 'text-sha', '--');
+  @include mixin.generate-classes($overhangs, 'box-shadow', 'overhang-sha', '--');
 }

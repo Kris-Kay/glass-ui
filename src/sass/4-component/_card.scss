@@ -42,8 +42,8 @@
     margin-right: var(--_neg-space);
 
     color: var(--color--3xlight);
-    // background-color: var(--inset-bg--xdeep);
-    // box-shadow: var(--flat-inset--lg);
+    background-color: var(--inset-bg--xdeep);
+    box-shadow: var(--flat-inset--lg);
   }
 
   & > .full-w-img {
@@ -104,6 +104,7 @@
   @include card-base;
   --space: var(--lg);
   border-radius: var(--lg);
+  // @include moat-radius(lg);
 
   @include bp(sm) {
     --space: var(--xl);
@@ -117,8 +118,7 @@
 .card--xl {
   @include card-base;
   --space: var(--xl);
-  border-radius: var(--lg);
-  // @include moat-radius(lg);
+  @include moat-radius(lg);
 
   @include bp(sm) {
     --space: var(--2xl);
@@ -126,44 +126,5 @@
 
   @include bp(lg) {
     --space: var(--3xl);
-gap: var(--5xl);
-  }
-
-  &.moat--md {
-    border-radius: 0;
-
-    @include bp(md) {
-      border-radius: var(--xl);
-    }
-  }
-}
-
-.card--2xl {
-  @include card-base;
-  --space: var(--2xl);
-  border-radius: var(--lg);
-
-  @include bp(sm) {
-    --space: var(--3xl);
-    border-radius: var(--xl);
-  }
-
-  @include bp(lg) {
-    --space: var(--4xl);
-  }
-}
-
-.card--3xl {
-  @include card-base;
-  --space: var(--3xl);
-  border-radius: var(--lg);
-
-  @include bp(sm) {
-    --space: var(--4xl);
-    border-radius: var(--xl);
-  }
-
-  @include bp(lg) {
-    --space: var(--5xl);
   }
 }
