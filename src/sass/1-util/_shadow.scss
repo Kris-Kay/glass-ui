@@ -1,8 +1,11 @@
 /* ================================================== */
 /* Shadows */
 @use "sass:map";
+@use "mixin" as *;
 /* ================================================== */
 
+/* Elevation shadows */
+/* ================================================== */
 html {
   --sha--3xs:
     0.5px 0.4px 1px oklch(var(--shadow) / 0.12),
@@ -61,7 +64,8 @@ html {
     0 0 0.4px oklch(var(--shadow) / 0.13);
 }
 
-//* Shadow Size MAP *//
+/* Shadows MAP */
+/* ================================================== */
 $shadows: (
   "3xs": var(--sha--3xs),
   "2xs": var(--sha--2xs),
@@ -74,44 +78,142 @@ $shadows: (
   "3xl": var(--sha--3xl)
 );
 
-//* Shadow class gen mixin *//
-@mixin shadow-modifier($prefix, $property) {
-  @each $key, $value in $shadows {
-    &--#{$key} {
-      #{$property}: var(--#{$prefix}--#{$key});
-    }
-  }
-}
-
-//* Elevation shadow classes *//
 .sha {
-  @include shadow-modifier('sha','box-shadow');
+  @include generate-classes($shadows, 'box-shadow', 'sha', '--');
 }
 
 
-/* Flat shadows  */
 /* ================================================== */
-$flat-sha--sm:
-  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.7), // small shadow
-  inset 0 1px 2px -2px oklch(var(--shadow) / 0.5), // med shadow
-  inset 0 2px 4px -4px oklch(var(--shadow) / 0.3);    // lg shadow
+/* Flat overhang shadows */
+/* ================================================== */
+html {
+--overhang-sha--xs:
+  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.5),
+  inset 0 1px 2px -2px oklch(var(--shadow) / 0.5),
+  inset 0 2px 4px -4px oklch(var(--shadow) / 0.3);
 
-.flat-sha--sm { box-shadow: $flat-sha--sm; }
+--overhang-sha--sm:
+  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.7),
+  inset 0 1px 2px -2px oklch(var(--shadow) / 0.5),
+  inset 0 2px 4px -4px oklch(var(--shadow) / 0.3),
+  inset 0 4px 8px -8px oklch(var(--shadow) / 0.3);
+
+--overhang-sha--md:
+  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.5),
+  inset 0 1px 2px -2px oklch(var(--shadow) / 0.5),
+  inset 0 2px 4px -4px oklch(var(--shadow) / 0.5),
+  inset 0 6px 12px -12px oklch(var(--shadow) / 0.3);
+
+--overhang-sha--lg:
+  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.4),
+  inset 0 2px 4px -4px oklch(var(--shadow) / 0.5),
+  inset 0 4px 8px -8px oklch(var(--shadow) / 0.5),
+  inset 0 8px 16px -16px oklch(var(--shadow) / 0.3);
+
+--overhang-sha--xl:
+  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.4),
+  inset 0 4px 8px -8px oklch(var(--shadow) / 0.5),
+  inset 0 8px 16px -16px oklch(var(--shadow) / 0.5),
+  inset 0 10px 20px -20px oklch(var(--shadow) / 0.3);
+}
+
+/* Overhang shadow MAP */
+/* ================================================== */
+$overhangs: (
+  "xs":  var(--overhang-sha--xs),
+  "sm":  var(--overhang-sha--sm),
+  "md":  var(--overhang-sha--md),
+  "lg":  var(--overhang-sha--lg),
+  "xl":  var(--overhang-sha--xl),
+);
+
+.overhang-sha {
+  @include generate-classes($overhangs, 'box-shadow', 'overhang-sha', '--');
+}
 
 
-$flat-sha--md:
-  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.5), // small shadow
-  inset 0 1px 2px -2px oklch(var(--shadow) / 0.5), // small shadow
-  inset 0 2px 4px -4px oklch(var(--shadow) / 0.5), // med shadow
-  inset 0 4px 8px -8px oklch(var(--shadow) / 0.3);    // lg shadow
+/* ================================================== */
+/* Text shadows */
+/* ================================================== */
+html {
+  --text-sha--3xs:
+    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
+    0.2px 0.2px 0.2px oklch(var(--shadow) / 0.2),
+    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.15);
 
-.flat-sha--md { box-shadow: $flat-sha--md; }
+  --text-sha--2xs:
+    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
+    0.25px 0.25px 0.25px oklch(var(--shadow) / 0.2),
+    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.15);
 
+  --text-sha--xs:
+    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
+    0.3px 0.3px 0.3px oklch(var(--shadow) / 0.25),
+    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.15);
 
-$flat-sha--lg:
-  inset 0 0.5px 1px -1px oklch(var(--shadow) / 0.5), // small shadow
-  inset 0 2px 4px -4px oklch(var(--shadow) / 0.5), // small shadow
-  inset 0 4px 8px -8px oklch(var(--shadow) / 0.5), // med shadow
-  inset 0 8px 16px -16px oklch(var(--shadow) / 0.3);    // lg shadow
+  --text-sha--sm:
+    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
+    0.35px 0.35px 0.35px oklch(var(--shadow) / 0.25),
+    0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.15);
 
-.flat-sha--lg { box-shadow: $flat-sha--lg; }
+  --text-sha--md:
+    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
+    0.4px 0.4px 0.4px oklch(var(--shadow) / 0.25),
+    0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
+
+  --text-sha--lg:
+    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
+    0.45px 0.45px 0.45px oklch(var(--shadow) / 0.25),
+    0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
+
+  --text-sha--xl:
+    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
+    0.5px 0.5px 0.5px oklch(var(--shadow) / 0.25),
+    0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
+
+  --text-sha--2xl:
+    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
+    0.55px 0.55px 0.55px oklch(var(--shadow) / 0.25),
+    1px 1px 2px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
+
+  --text-sha--3xl:
+    0.25px 0 0.25px oklch(var(--shadow) / 0.1),
+    0.6px 0.6px 0.6px oklch(var(--shadow) / 0.25),
+    1px 1px 2px oklch(var(--shadow) / 0.1),
+    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
+}
+
+/* Text shadow MAP */
+/* ================================================== */
+$text-shadows: (
+  "3xs": var(--text-sha--3xs),
+  "2xs": var(--text-sha--2xs),
+  "xs": var(--text-sha--xs),
+  "sm": var(--text-sha--sm),
+  "md": var(--text-sha--md),
+  "lg": var(--text-sha--lg),
+  "xl": var(--text-sha--xl),
+  "2xl": var(--text-sha--2xl),
+  "3xl": var(--text-sha--3xl),
+);
+
+.text-sha {
+  @include generate-classes($text-shadows, 'text-shadow', 'text-sha', '--');
+}
