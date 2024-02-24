@@ -17,8 +17,8 @@ html {
   --ui-h--lg: 2.5rem;    /* 40px */
 
   --max-w--sm: 520px;
-  --max-w--md: 680px;
-  --max-w--lg: 980px;
+  --max-w--md: 760px;
+  --max-w--lg: 1080px;
 
   --moat: 16px;
   --moat--x2: calc(var(--moat) * 2);
@@ -29,9 +29,6 @@ html {
   }
 }
 
-.w--fit {
-  width: fit-content;
-}
 
 /* Max width classes */
 /* ================================================== */
@@ -166,70 +163,5 @@ html {
 
   @include bp(lg) {
     --gap: 11rem;
-  }
-}
-
-
-
-.padding--wide {
-  --space: 2rem;
-  padding: var(--space);
-
-  @include bp(xs) {
-    --space: 2.25rem;
-  }
-
-  @include bp(sm) {
-    --space: 2.5rem;
-  }
-
-  @include bp(md) {
-    --space: 2.75rem;
-  }
-
-  @include bp(lg) {
-    --space: 3rem;
-  }
-}
-
-.padding--xwide {
-  --space: 2rem;
-  padding: var(--space);
-
-  @include bp(xs) {
-    --space: 2.5rem;
-  }
-
-  @include bp(sm) {
-    --space: 3rem;
-  }
-
-  @include bp(md) {
-    --space: 3.5rem;
-  }
-
-  @include bp(lg) {
-    --space: 4rem;
-  }
-}
-
-.padding--2xwide {
-  --space: 2rem;
-  padding: var(--space);
-
-  @include bp(xs) {
-    --space: 3rem;
-  }
-
-  @include bp(sm) {
-    --space: 4rem;
-  }
-
-  @include bp(md) {
-    --space: 5rem;
-  }
-
-  @include bp(lg) {
-    --space: 6rem;
   }
 }

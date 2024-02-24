@@ -10,8 +10,8 @@
 .panel-img_bin {
   width: 100%;
   max-height: 100%;
-  overflow: hidden;
   aspect-ratio : 1 / 1;
+  overflow: hidden;
 }
 
 .panel-img {
@@ -22,24 +22,26 @@
 }
 
 .tab-menu {
+  position: relative;
+  z-index: z(on-nav);
   width: fit-content;
   max-width: 100%;
   height: var(--ui-h--md);
-  margin: 0 auto;
   @include flex--c;
   gap: 0.25rem;
-  --tab-br: 8px;
+  margin: 0 auto;
+
+  --tab-radius: 8px;
   --padding: 3px;
   padding: var(--padding);
-  @include outer-radius (var(--tab-br), var(--padding));
+  @include outer-radius (var(--tab-radius), var(--padding));
 
-  position: relative;
   background-color: var(--inset-bg--deep);
   @include glass.glass-filter;
 
   &::before {
     @include pseudo;
-    z-index: 202;
+    // z-index: 202;
     box-shadow: var(--inset--lg);
   }
 
@@ -68,7 +70,7 @@
   line-height: var(--inner-h);
   @include btn.btn-text;
   @include btn.btn-2d--base;
-  border-radius: var(--tab-br);
+  border-radius: var(--tab-radius);
   color: var(--color--white);
   background-color: transparent;
 

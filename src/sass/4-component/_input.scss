@@ -109,7 +109,7 @@ input[type='checkbox'].switch {
   height: var(--_switch-height);
   vertical-align: var(--_thumb-margin);
   align-items: center;
-  border-radius: $round;
+  border-radius: 9999px;
   background-color: var(--rest-bg);
   box-shadow: var(--active-inset);
 
@@ -122,7 +122,7 @@ input[type='checkbox'].switch {
 
     background-color: var(--rest-knob);
     box-shadow: var(--active-knob-sha);
-    border-radius: $round;
+    border-radius: 9999px;
     transition: margin;
     transition-duration: inherit;
   }
@@ -224,7 +224,7 @@ input[type='radio'] {
   aspect-ratio: 1 / 1;
   background-color: var(--rest-bg);
   box-shadow: var(--active-inset);
-  border-radius: $round;
+  border-radius: 9999px;
 
   &:checked {
     &::after {
@@ -232,7 +232,7 @@ input[type='radio'] {
       filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral--10) / 0.5));
       margin: 4px;
       aspect-ratio: 1 / 1;
-      border-radius: $round;
+      border-radius: 9999px;
       background-color: var(--rest-knob);
     }
   }

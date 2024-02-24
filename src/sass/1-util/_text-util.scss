@@ -3,9 +3,7 @@
 @use "../config" as *;
 /* ================================================== */
 
-.bold {
-  font-weight: $font-weight--lg;
-}
+.bold { font-weight: $font-weight--lg; }
 
 .first-line--bold {
   &:first-line {
@@ -13,7 +11,7 @@
   }
 }
 
-.truncate {
+.ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -24,9 +22,7 @@
   min-width: 0;
 }
 
-.no-break {
-  word-break: keep-all;
-}
+.no-word-break { word-break: keep-all; }
 
 /* text-align: */
 .text--c { text-align: center; }
@@ -34,24 +30,20 @@
 .text--r { text-align: end; }
 .text--j { text-align: justify; }
 
-.text--ital { font-style: italic; }
-
 .text--cap { text-transform: capitalize; }
 .text--allcap { text-transform: uppercase; }
 .text--lower { text-transform: lowercase; }
 
+.text--ital { font-style: italic; }
 
-/* text-decoration: */
 .text-line-through { text-decoration: line-through; }
 .text-underline { text-decoration: underline; }
-
-
-
-.lh-1 { line-height: 1; }
 
 .text-space--sm { letter-spacing: $letter-spacing--sm; }
 .text-space--md { letter-spacing: $letter-spacing--md; }
 .text-space--lg { letter-spacing: $letter-spacing--lg; }
+
+.lh-1 { line-height: 1; }
 
 
 /* Bullet point decorations */

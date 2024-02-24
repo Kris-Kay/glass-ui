@@ -19,30 +19,31 @@
 
 .main-nav_bin {
   position: fixed;
+  z-index: z(nav);
   height: var(--nav-h);
-  z-index: 200;
   inset: 0;
+  padding: var(--moat);
+
+  // @include bp(lg) {
+  //   padding: var(--moat) 0;
+  // }
 }
 
 .main-nav {
   width: 100%;
-  padding: var(--moat);
+  max-width: 1024px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
   gap: var(--3xs);
   margin: 0 auto;
+
+  @include bp(lg) {
+    max-width: calc($bp--lg + (var(--ui-h--lg) * 2) + 6rem);
+  }
 }
-
-// .theme-toggle {
-//   @include btn.round-btn--sm;
-//   @include btn.btn--clear;
-
-//   &.js-navLinkBg {
-//     @include btn.btn-glass-both;
-//   }
-// }
 
 
 /* Dropdown */
@@ -71,18 +72,24 @@
 
 .dropdown-bg {
   position: absolute;
-  top: calc(var(--ui-h--lg) * 1.25);
+  top: calc(var(--ui-h--md) * 1.25);
   right: 0;
   padding: var(--sm);
-  z-index: 200;
+  // z-index: 200;
+  z-index: z(menu);
   pointer-events: auto;
   overflow: hidden;
   border-radius: var(--sm);
   box-shadow: var(--sha--xl);
+
+  @include bp(md) {
+    top: calc(var(--ui-h--lg) * 1.25);
+  }
 }
 
 .dropdown-item_bin {
   width: fit-content;
+  height: fit-content;
   display: grid;
   gap: calc(var(--xs) * 0.5);
   margin: calc(var(--3xs) * -1);
@@ -90,10 +97,13 @@
 }
 
 .dropdown-item {
-  pointer-events: auto;
-  cursor: pointer;
-  min-width: max-content;
+  z-index: z(on-menu);
   width: 100%;
+  min-width: max-content;
+
   letter-spacing: $letter-spacing--md;
   font-weight: $font-weight--md;
+
+  pointer-events: auto;
+  cursor: pointer;
 }

@@ -3,19 +3,16 @@
 @use "sass:list";
 /* ================================================== */
 $z: (
-  "base",
-  "box",
-  "on-box",
-  "card",
-  "on-card",
-  "nav",
-  "on-nav",
-  "menu",
-  "on-menu",
-  "tooltip",
-  "on-tooltip",
-  "modal",
   "on-modal",
+  "modal",
+  "on-menu",
+  "menu",
+  "on-nav",
+  "nav",
+  "on-card",
+  "card",
+  "section",
+  "page",
 );
 
 @function z($name) {

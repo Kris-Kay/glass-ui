@@ -40,10 +40,10 @@
 .flex--row { display: flex; flex-direction: row; }
 .flex--row-rev { display: flex; flex-direction: row-reverse; }
 
-/* flex-_bin: */
+/* flex--wrap: */
 .flex--nowrap { display: flex; flex-wrap: nowrap; }
-.flex-_bin { display: flex; flex-wrap: wrap; }
-.flex-_bin-rev { display: flex; flex-wrap: wrap-reverse; }
+.flex--wrap { display: flex; flex-wrap: wrap; }
+.flex--wrap-rev { display: flex; flex-wrap: wrap-reverse; }
 
 /* Center x & y */
 .flex--c { @include flex--c; }

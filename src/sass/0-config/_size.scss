@@ -64,7 +64,6 @@ $sizes: (
 /* Size modifier mixin */
 /* ================================================== */
 /* Generates .classes using $sizes map */
-
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &--#{$key} {
@@ -76,7 +75,6 @@ $sizes: (
 
 @mixin xy-size-modifiers($property1, $property2) {
   @each $key, $value in $sizes {
-
     &--#{$key} {
       #{$property1}: var($value);
       #{$property2}: var($value);
@@ -86,7 +84,6 @@ $sizes: (
 
 /* Gap classes */
 /* ================================================== */
-// Generates a .class for every T-shirt size
 .gap {
   @include size-modifiers('gap');
 }

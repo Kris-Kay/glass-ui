@@ -20,6 +20,10 @@ $colors: (
   "black":   var(--color--black),
 );
 
+.bg {
+  @include generate-classes($colors, 'background-color', 'color', '--');
+}
+
 /* Tint colors MAP */
 /* ================================================== */
 $tints: (

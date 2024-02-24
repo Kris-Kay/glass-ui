@@ -1,25 +1,25 @@
 /* ================================================== */
 /* Layout helpers */
 /* ================================================== */
+.w--100 { width: 100%; }
 
-.hidden {
-  display: none;
-}
+.w--fit { width: fit-content; }
+
+.h--100vh { min-height: 100vh; }
+
+.h--70vh { min-height: 70vh; }
+
+/* Display */
+/* ================================================== */
+.block { display: block; }
+
+.inline { display: inline; }
+
+.inlineblock { display: inline-block; }
+
+.hidden { display: none; }
 
 .visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/* content made available only to screen readers */
-.sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -31,28 +31,9 @@
   white-space: nowrap;
 }
 
-/* focusable, visually hidden element */
-.sr-only-focusable {
-  &:not(:focus):not(:focus-within){
-    @extend .sr-only
-  }
-}
 
-@mixin pseudo {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-@mixin absolute-center {
-  position: absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-}
-
+/* Sidescroll */
+/* ================================================== */
 .sidescroll_bin {
   width: 100%;
   display: flex;
@@ -70,30 +51,24 @@
   }
 }
 
-.sidescroll {
-  flex: 0 0 auto;
+.sidescroll { flex: 0 0 auto; }
+
+
+/* Spacing */
+/* ================================================== */
+.m-auto-x {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.w-100 {
-  width: 100%;
-}
-
-.h--100vh {
-  height: 100vh;
-}
-
-.js-show-block {
-  display: block;
-}
-
-.js-show-inline {
-  display: inline;
-}
-
-.js-show-inlineblock {
-  display: inline-block;
-}
-
-.js-hide {
-  display: none;
+/* Other */
+/* ================================================== */
+@mixin pseudo {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
 }

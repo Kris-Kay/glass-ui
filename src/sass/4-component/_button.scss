@@ -316,7 +316,7 @@
 /* Base → round button */
 @mixin btn-round--base {
   @include flex--c;
-  border-radius: $round;
+  border-radius: 9999px;
   @include btn-transition;
   @include glass.btn-glass;
   background-color: var(--tint--xdark);

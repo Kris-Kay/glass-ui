@@ -15,7 +15,7 @@
   gap: 0.25rem;
 }
 
-.text-label-group {
+.text-input_label_bin {
   display: grid;
   gap: 0.1rem;
   padding-bottom: 0.25rem;
@@ -98,3 +98,10 @@
     font-weight: $font-weight--md;
   }
 }
+
+::placeholder {
+    color: red;
+    // color: var(--text--base);
+    font-size: var(--text--sm);
+    font-weight: $font-weight--md;
+  }

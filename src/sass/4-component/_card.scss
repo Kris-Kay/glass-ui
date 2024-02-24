@@ -85,8 +85,7 @@
 .card--md {
   @include card-base;
   --space: var(--md);
-  // border-radius: var(--lg);
-  @include moat-radius(--md);
+  border-radius: var(--md);
 
   @include bp(xs) {
     --space: var(--lg);
@@ -119,7 +118,7 @@
   @include card-base;
   --space: var(--xl);
   border-radius: var(--lg);
-  // @include moat-radius(--lg);
+  // @include moat-radius(lg);
 
   @include bp(sm) {
     --space: var(--2xl);
