@@ -130,7 +130,7 @@
   border-radius: 0 0 var(--space) var(--space);
   box-shadow: var(--sha--xl);
   @include glass.glass-filter;
-  background-color: var(--tint--4xdark);
+  background-color: var(--tint--3xdark);
   color: var(--tint--3xlight);
 
   animation: slide-down 200ms;

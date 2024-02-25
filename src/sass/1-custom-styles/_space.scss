@@ -97,11 +97,11 @@ $bp--lg: map.get($breakpoints, lg);
 /* Responsive UI heights | moats | max widths */
 /* ================================================== */
 html {
-  --ui-h--sm: 1.5rem;   /* 24px */
-  --ui-h--md: 2rem;  /* 32px */
-  --ui-h--lg: 2.25rem;    /* 36px */
+    --ui-h--sm: 1.75rem;   /* 28px */
+    --ui-h--md: 2.25rem;  /* 36px */
+    --ui-h--lg: 2.75rem;    /* 44px */
 
-  --max-w--xs: 400px;
+  --max-w--xs: 420px;
   --max-w--sm: 620px;
   --max-w--md: 760px;
   --max-w--lg: 1080px;
@@ -109,21 +109,26 @@ html {
   --moat: 16px;
   --moat--x2: calc(var(--moat) * 2);
 
+  // @include bp(xs) {
+  //   --ui-h--sm: 1.75rem;   /* 28px */
+  //   --ui-h--md: 2.125rem;  /* 34px */
+  //   --ui-h--lg: 2.5rem;    /* 40px */
+  // }
+
   @include bp(sm) {
     --moat: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);
     --moat--x2: calc(var(--moat) * 2);
-  }
-
-  @include bp(md) {
-    --ui-h--sm: 1.75rem;   /* 28px */
-    --ui-h--md: 2.125rem;  /* 34px */
-    --ui-h--lg: 2.5rem;    /* 40px */
   }
 }
 
 
 /* Max width classes */
 /* ================================================== */
+.max-w--xs {
+  width: 100%;
+  max-width: var(--max-w--xs);
+}
+
 .max-w--sm {
   width: 100%;
   max-width: var(--max-w--sm);

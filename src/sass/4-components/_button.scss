@@ -133,7 +133,7 @@
   // --_btn-sha: var(--btn-sha, var(--sha--2xs));
 
   @include btn-transition;
-  @include glass.glass-filter;
+
   background-color: var(--_btn-bg);
   position: relative;
 
@@ -209,7 +209,8 @@
 /* Primary */
 /* ================================================== */
 .btn-viz.btn--primary {
-    --btn-bg: oklch(var(--neutral--90) / 0.3);
+    @include glass.glass-filter--vib;
+    --btn-bg: oklch(var(--primary--70) / 0.15);
     --btn-text: var(--color--white);
     --btn-icon: var(--color--white);
 
@@ -236,9 +237,9 @@
 /* ================================================== */
 .btn-viz.btn--secondary {
   // @include btn-viz;
-
+    @include glass.glass-filter;
   /* ↓ config ↓ */
-    --btn-bg: oklch(var(--neutral--10) / 0.2);
+    --btn-bg: oklch(var(--primary--20) / 0.2);
     --btn-text: var(--color--2xlight);
     --btn-icon: var(--color--2xlight);
 
@@ -291,8 +292,14 @@
 @mixin btn-2d--base {
   background-color: transparent;
   color: var(--color--white);
+--btn-icon: var(--color--white);
   box-shadow: none;
-  @include ui-transitions;
+  @include btn-transition;
+
+  & > .svg-icon {
+    background-color: var(--btn-icon);
+    @include btn-transition;
+  }
 
   &:hover {
     background-color: var(--tint--light);

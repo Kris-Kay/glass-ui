@@ -12,9 +12,11 @@
 /* Glass filter */
 /* ================================================== */
 html {
-  --satu: 1.3;
+  --satu: 1.2;
+  --satu2: 1.9;
   --bright: 0.95;
-  --blur: 8vw;
+  --brighter: 1.1;
+  --blur: 9vw;
 
   // @include bp(xs) {
   //   --blur: 32px;
@@ -24,14 +26,19 @@ html {
     --blur: 6vw;
   }
 
-  // @include bp(lg) {
-  //   --blur: 64px;
-  // }
+  @include bp(lg) {
+    --blur: 4vw;
+  }
 }
 
 @mixin glass-filter {
   -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
   backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+}
+
+@mixin glass-filter--vib {
+  -webkit-backdrop-filter:  blur(10px) brightness(var(--brighter)) saturate(var(--satu2));
+  backdrop-filter: blur(10px) brightness(var(--brighter)) saturate(var(--satu2));
 }
 
 /* Glass noise texture */
@@ -40,7 +47,7 @@ html {
 /* https://devsdash.com/tools/noise-texture-generator */
 @mixin noise {
   background-repeat: repeat;
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-image:
     url(/assets/textures/noise-texture-white-100den-10op-500x500.png),
     url(/assets/textures/noise-texture-black-100den-10op-500x500.png);
@@ -58,7 +65,7 @@ html {
 
   &::after {
     @include pseudo;
-    z-index: 1;
+    z-index: -1;
     overflow: hidden;
     box-shadow: bevel.$bevel--md;
 
@@ -72,6 +79,7 @@ html {
     z-index: -2;
     overflow: hidden;
     @include noise;
+    opacity: 0.7;
   }
 }
 
@@ -95,11 +103,12 @@ html {
   @include glass-filter;
   @content;
 
-  &::after {
+  &::before {
     @include pseudo;
-    z-index: -1;
+    z-index: -2;
     overflow: hidden;
     @include noise;
+    opacity: 0.7;
   }
 }
 
@@ -143,6 +152,20 @@ html {
     overflow: hidden;
     z-index: 202;
     box-shadow: bevel.$bevel--sm;
-    @include noise;
+    // @include noise;
+  }
+}
+
+@mixin btn-glass--vib {
+  position: relative;
+  overflow: hidden;
+  @include glass-filter--vib;
+
+  &::after {
+    @include pseudo;
+    overflow: hidden;
+    z-index: 202;
+    box-shadow: bevel.$bevel--sm;
+    // @include noise;
   }
 }

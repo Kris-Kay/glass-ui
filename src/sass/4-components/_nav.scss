@@ -74,8 +74,8 @@
   top: calc(var(--ui-h--md) * 1.25);
   right: 0;
   padding: var(--sm);
-  // z-index: 200;
-  z-index: z(menu);
+  z-index: 300;
+  // z-index: z(menu);
   pointer-events: auto;
   overflow: hidden;
   border-radius: var(--sm);

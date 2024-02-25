@@ -14,14 +14,9 @@
   gap: var(--_space);
   padding: var(--_space);
   overflow: hidden;
-  border-radius: var(--md);
-  // @include moat-radius(--md);
   box-shadow: var(--sha--lg);
 
-
-
   @include bp(sm) {
-    border-radius: var(--lg);
     box-shadow: var(--sha--xl);
   }
 
@@ -71,9 +66,11 @@
 .card--sm {
   @include card-base;
   --space: var(--sm);
+  border-radius: var(--sm);
 
   @include bp(sm) {
     --space: var(--md);
+    border-radius: var(--md);
   }
 
   @include bp(lg) {
@@ -90,20 +87,40 @@
     --space: var(--lg);
   }
 
-  &.moat--sm {
+  @include bp(sm) {
+    border-radius: var(--lg);
+  }
+
+  &.moat-radius-from--sm {
     border-radius: 0;
 
     @include bp(sm) {
       border-radius: var(--lg);
     }
   }
+
+  &.moat-radius-from--md {
+    border-radius: 0;
+
+    @include bp(md) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.moat-radius-from--lg {
+    border-radius: 0;
+
+    @include bp(lg) {
+      border-radius: var(--lg);
+    }
+  }
 }
 
 .card--lg {
-  @include card-base;
   --space: var(--lg);
-  // border-radius: var(--lg);
-  @include moat-radius(lg);
+
+  @include card-base;
+  border-radius: var(--lg);
 
   @include bp(sm) {
     --space: var(--xl);
@@ -112,12 +129,37 @@
   @include bp(lg) {
     --space: var(--2xl);
   }
+
+  &.moat-radius-from--sm {
+    border-radius: 0;
+
+    @include bp(sm) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.moat-radius-from--md {
+    border-radius: 0;
+
+    @include bp(md) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.moat-radius-from--lg {
+    border-radius: 0;
+
+    @include bp(lg) {
+      border-radius: var(--lg);
+    }
+  }
+
 }
 
 .card--xl {
   @include card-base;
   --space: var(--xl);
-  @include moat-radius(lg);
+  border-radius: var(--lg);
 
   @include bp(sm) {
     --space: var(--2xl);
@@ -125,6 +167,31 @@
 
   @include bp(lg) {
     --space: var(--3xl);
+    border-radius: var(--xl);
+  }
+
+  &.moat-radius-from--sm {
+    border-radius: 0;
+
+    @include bp(sm) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.moat-radius-from--md {
+    border-radius: 0;
+
+    @include bp(md) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.moat-radius-from--lg {
+    border-radius: 0;
+
+    @include bp(lg) {
+      border-radius: var(--lg);
+    }
   }
 }
 

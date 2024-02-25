@@ -212,16 +212,13 @@
   width: 100%;
   padding: 0;
   display: grid;
+  place-items: center;
   gap: var(--md);
-
-  @include bp(sm) {
-    width: fit-content;
-  }
 }
 
 .inset-rect {
-  width: 100%;
-  max-width: 380px;
+  width: min(100%, 380px);
+  // max-width: 380px;
   padding: var(--xs);
   border-radius: var(--xs);
   background-color: var(--inset-bg--base);
@@ -308,20 +305,28 @@
   place-items: center;
   @include glass.glass--no-bevel;
   background-color: var(--tint--clear);
-  padding: var(--lg) var(--moat);
+  padding: var(--md) var(--moat);
   margin-top: var(--4xl);
-  margin-bottom: var(--3xl);
+  margin-bottom: var(--4xl);
+  box-shadow: var(--sha--xs);
 
-  @include bp(sm) {
-    min-width: 40%;
+  @include bp(xs) {
+    min-width: calc(100vw - var(--moat));
     width: fit-content;
-    border-radius: 0 var(--md) var(--md) 0;
+
+    border-radius: 0 var(--sm) var(--sm) 0;
     display: flex;
     justify-self: flex-start;
   }
 
+  @include bp(lg) {
+    min-width: 75%;
+    box-shadow: var(--sha--lg);
+  }
+
   @include bp(xl) {
-    min-width: 33%;
+    min-width: 35%;
+
     border-radius: 0 var(--md) var(--md) 0;
   }
 
