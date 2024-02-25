@@ -1,11 +1,11 @@
 /* ================================================== */
 /* Grid | Flex-box | Gap */
+@use "../1-custom-styles/breakpoint" as *;
 /* ================================================== */
 
 /* ================================================== */
 /* Grid */
 /* ================================================== */
-
 .grid { display: grid; }
 
 @mixin grid--c {
@@ -115,3 +115,24 @@
 .flex--i-c-y { align-self: center; }
 .flex--i--base-y { align-self: baseline; }
 .flex--i-str-y { align-self: stretch; }
+
+
+.no-wrap--sm {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include bp(sm) {
+    flex-wrap: nowrap;
+  }
+}
+
+.c-to-start--sm {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  @include bp(sm) {
+    justify-content: flex-start;
+    text-align: start;
+  }
+}

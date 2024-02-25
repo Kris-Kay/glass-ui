@@ -296,7 +296,7 @@
 
 .heading--xl {
   @include title--thick;
-  font-size: var(--text--2xl);
+  font-size: var(--text--xl);
   font-weight: $font-weight--md;
   color: var(--text--xstrong);
   text-shadow: var(--text-sha--md);
@@ -307,13 +307,13 @@
   display: grid;
   place-items: center;
   @include glass.glass--no-bevel;
-  background-color: var(--tint--dark);
+  background-color: var(--tint--clear);
   padding: var(--lg) var(--moat);
   margin-top: var(--4xl);
   margin-bottom: var(--3xl);
 
   @include bp(sm) {
-    min-width: 80%;
+    min-width: 40%;
     width: fit-content;
     border-radius: 0 var(--md) var(--md) 0;
     display: flex;
@@ -321,7 +321,8 @@
   }
 
   @include bp(xl) {
-    min-width: 30%;
+    min-width: 33%;
+    border-radius: 0 var(--md) var(--md) 0;
   }
 
   & > .big-title {
@@ -483,4 +484,14 @@
   @include bp(lg) {
     gap: var(--xl);
   }
+}
+
+
+.stamp {
+  width: clamp(100px, 150px, 200px);
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  object-fit: cover;
+  object-position: center;
 }

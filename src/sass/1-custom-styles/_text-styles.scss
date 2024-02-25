@@ -101,9 +101,7 @@ textarea {
 
 .code {
   font-family: $font-family-code;
-  font-size: var(--text--sm);
   line-height: $line-height--lg;
-  color:  oklch(var(--accent--80) / 1);
 }
 
 .text-link {

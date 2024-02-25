@@ -14,19 +14,19 @@
 html {
   --satu: 1.3;
   --bright: 0.95;
-  --blur: 28px;
+  --blur: 8vw;
 
-  @include bp(xs) {
-    --blur: 32px;
-  }
+  // @include bp(xs) {
+  //   --blur: 32px;
+  // }
 
   @include bp(md) {
-    --blur: 48px;
+    --blur: 6vw;
   }
 
-  @include bp(lg) {
-    --blur: 64px;
-  }
+  // @include bp(lg) {
+  //   --blur: 64px;
+  // }
 }
 
 @mixin glass-filter {

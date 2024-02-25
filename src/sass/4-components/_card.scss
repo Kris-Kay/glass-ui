@@ -102,8 +102,8 @@
 .card--lg {
   @include card-base;
   --space: var(--lg);
-  border-radius: var(--lg);
-  // @include moat-radius(lg);
+  // border-radius: var(--lg);
+  @include moat-radius(lg);
 
   @include bp(sm) {
     --space: var(--xl);
