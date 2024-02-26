@@ -16,18 +16,14 @@ html {
   --satu2: 1.9;
   --bright: 0.95;
   --brighter: 1.1;
-  --blur: 9vw;
+  --blur: 10vw;
 
-  // @include bp(xs) {
-  //   --blur: 32px;
-  // }
-
-  @include bp(md) {
-    --blur: 6vw;
+  @include bp(xs) {
+    --blur: 9vw;
   }
 
-  @include bp(lg) {
-    --blur: 4vw;
+  @include bp(md) {
+    --blur: 56px;
   }
 }
 
