@@ -52,7 +52,6 @@
   }
 }
 
-
 .card-3d_bin {
   position: relative;
   perspective: 1500px;
@@ -61,7 +60,7 @@
 .card-3d {
   backface-visibility: hidden;
   will-change: transform;
-  transition: transform $speed--2xslow ease-in-out;
+  transition: transform $speed--2xslow $smooth-cubic;
 
   transform:
     perspective(2000px)

@@ -68,7 +68,6 @@
   pointer-events: auto;
   cursor: pointer;
   background-color: transparent;
-  // @include ui-transitions;
 
   &:hover {
     background-color: var(--tint--light);

@@ -10,10 +10,10 @@
 /* ↓ config ↓ */
 @mixin btn-transition {
   transition:
-    background-color $speed--2xslow $smooth,
-    color $speed--2xslow $smooth,
-    text-shadow $speed--2xslow $smooth,
-    box-shadow $speed--2xslow $smooth;
+    background-color $speed--xslow $smooth-cubic,
+    color $speed--xslow $smooth-cubic,
+    text-shadow $speed--xslow $smooth-cubic,
+    box-shadow $speed--xslow $smooth-cubic;
   /* ↑ config ↑ */
 }
 
@@ -268,7 +268,7 @@
 //   background-color: transparent;
 //   color: var(--color--white);
 //   box-shadow: none;
-//   @include ui-transitions;
+
 //   font-weight: 400;
 //   text-shadow: var(--text-sha--2xs);
 

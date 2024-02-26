@@ -89,7 +89,6 @@
 
   text-align: start;
   border-radius: var(--2xs);
-  transition: $focus-tran;
 
   &::placeholder {
     color: var(--text--base);
@@ -97,10 +96,3 @@
     font-weight: $font-weight--md;
   }
 }
-
-::placeholder {
-    color: red;
-    // color: var(--text--base);
-    font-size: var(--text--sm);
-    font-weight: $font-weight--md;
-  }

@@ -5,6 +5,18 @@
 @use "../glass" as glass;
 /* ================================================== */
 
+:focus {
+  outline: 1.5px solid oklch(var(--neutral--90, #e3ecf3) / 0.3);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
 .input_fieldset {
   display: grid;
   gap: var(--xs);

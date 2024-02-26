@@ -496,10 +496,10 @@
 
 
 .stamp {
-  width: clamp(100px, 150px, 200px);
+  width: clamp(100px, 120px, 180px);
   aspect-ratio : 1 / 1;
   overflow: hidden;
-  border-radius: var(--xs);
+  border-radius: var(--sm);
   object-fit: cover;
   object-position: center;
 }

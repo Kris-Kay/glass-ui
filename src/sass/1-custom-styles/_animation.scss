@@ -2,7 +2,7 @@
 /* Animation custom styles */
 /* ================================================== */
 
-/* Speed */
+/* Speeds */
 /* ================================================== */
 $speed--2xslow: 1000ms;
 $speed--xslow:  750ms;
@@ -12,6 +12,13 @@ $speed--fast:   300ms;
 $speed--xfast:  200ms;
 $speed--2xfast: 100ms;
 
+/* cubic-bezier */
+/* ================================================== */
+$smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
+
+
+/* Color theme change ani */
+/* ================================================== */
 html.root-transition,
 html.root-transition *,
 html.root-transition *::before,
@@ -19,91 +26,3 @@ html.root-transition *::after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
-
-$smooth: cubic-bezier(0.46, 0.43, 0.1, 0.99);
-
-@mixin float-transform {
-  will-change: transform;
-  transition: transform cubic-bezier(0.46, 0.43, 0.1, 0.99) $speed--xslow;
-}
-
-.float-transform {
-  @include float-transform;
-}
-
-
-$focus-tran: outline ease-in-out $speed--base;
-
-:focus {
-  outline: 1.5px solid oklch(var(--neutral--90) / 0.3);
-  outline-offset: 2px;
-  border-radius: inherit;
-}
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-
-
-// 3D
-.perspective_bin {
-  position: relative;
-  perspective: 2500px;
-  // width:30rem;
-  // height:30rem;
-  width: 100%;
-  height: 100%;
-  // border:3px solid #ccc;
-  padding: 2rem;
-  margin: var(--nav-h) auto 0 auto;
-  gap: var(--sm);
-  align-items: end;
-  align-content:end;
-  // align-content: space-around;
-  justify-content: space-around;
-}
-
-.perspective {
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  gap: var(--sm);
-  place-items: center;
-  padding: var(--sm);
-
-  transform: perspective(2000px) rotateY(20deg) rotateX(20deg) rotateZ(-10deg);
-
-  transition: transform 800ms ease;
-
-  &:hover {
-    transform: perspective(2000px) rotateY(15deg) rotateX(10deg) rotateZ(-5deg) translateX(15px);
-  }
-}
-
-@mixin ui-transitions {
-  transition:
-    background-color $speed--xslow $smooth,
-    color $speed--xslow $smooth,
-    text-shadow $speed--xslow $smooth,
-    box-shadow $speed--xslow $smooth;
-}
-
-// @mixin ui-transitions {
-//   transition:
-//     background-color $speed--slow ease-out,
-//     box-shadow $speed--slow ease-out;
-
-//   &:hover {
-//     transition:
-//       background-color $speed--fast ease-in,
-//       box-shadow $speed--fast ease-in,
-//   }
-
-//   &:active {
-//     transition:
-//       background-color $speed--base ease-in-out,
-//       box-shadow $speed--base ease-in-out,
-//   }
-// }
