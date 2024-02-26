@@ -172,7 +172,8 @@
 .tint-demo-rect {
   width: 100%;
   height: fit-content;
-  @include flex--c-y;
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
   padding: var(--sm);
   border-radius: var(--2xs);
@@ -353,7 +354,9 @@
 /* Bento grid */
 /* ================================================== */
 .bento-rect {
-  @include flex--c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   aspect-ratio : 4.5 / 1;
   border-radius: var(--sm);
