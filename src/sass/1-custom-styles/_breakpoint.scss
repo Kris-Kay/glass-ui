@@ -16,8 +16,6 @@ $breakpoints: (
 
 /* Breakpoint mixin */
 /* ================================================== */
-/* Credit: James Steinbach */
-/* https://jdsteinbach.com/css/sass-maps-breakpoint-mixin/ */
 @mixin bp($key) {
   @if not map-has-key($breakpoints, $key) {
     @warn "Warning: `#{$key}` is not a valid breakpoint.";

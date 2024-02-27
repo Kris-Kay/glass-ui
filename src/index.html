@@ -86,16 +86,18 @@
     <nav class="main-nav_bin">
       <div class="main-nav">
         <!-- Theme toggle -->
-        <button class="js-themeToggle main-nav_icon-btn" type="button">
-          <img src="/assets/icons/CircleHalf.svg"
-            id="js-light"
-            class=""
-            alt="turn on light mode">
+        <button class="js-themeToggle main-nav_icon-btn btn--secondary"
+                type="button">
 
-          <img src="/assets/icons/CircleHalfTilt.svg"
-            id="js-dark"
-            class="hidden"
-            alt="turn on dark mode">
+          <svg  class="svg-circleHalf"
+                id="js-light"
+                alt="turn default theme on"
+                aria-hidden="true"></svg>
+
+          <svg  class="svg-circleHalfTilt hidden"
+                id="js-dark"
+                alt="turn high contrast theme on"
+                aria-hidden="true"></svg>
         </button>
 
         <!-- BG Tabs menu -->
@@ -135,22 +137,17 @@
         <!-- Dropdown -->
         <div class="dropdown">
           <!-- Dropdown toggle -->
-          <button
+          <button class="main-nav_icon-btn btn--secondary"
             type="button"
-            id="js-dropdownToggle"
-            class="main-nav_icon-btn">
+            id="js-dropdownToggle">
 
-            <img
-              src="assets/icons/List.svg"
-              alt="Open dropdown"
-              id="js-navHam"
-              class="">
+            <svg  class="svg-ham"
+                  alt="Open dropdown menu"
+                  id="js-navHam"> </svg>
 
-            <img
-              src="/assets/icons/X.svg"
-              alt="Close dropdown"
-              id="js-navX"
-              class="hidden">
+            <svg  class="svg-x hidden"
+                  alt="Close dropdown menu"
+                  id="js-navX"> </svg>
           </button>
 
           <!-- Dropdown -->
@@ -186,6 +183,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </nav>
 

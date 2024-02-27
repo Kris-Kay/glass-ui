@@ -37,12 +37,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  pointer-events: none;
 }
 
 .body_grid {
   min-height: 100vh;
   height: fit-content;
   display: grid;
+  overflow: hidden;
 }
 
 .content_bin {
@@ -277,7 +280,7 @@
   border-radius: var(--sm) 0 0 var(--sm);
   box-shadow: var(--sha--2xl);
 
-  @include glass.glass--no-bevel;
+  @include glass.glass-no-bevel;
   background-color: var(--tint--xdark);
   padding: var(--xs) 0;
   // margin-bottom: var(--2xl);
@@ -304,7 +307,7 @@
   width: 100%;
   display: grid;
   place-items: center;
-  @include glass.glass--no-bevel;
+  @include glass.glass-no-bevel;
   background-color: var(--tint--clear);
   padding: var(--md) var(--moat);
   margin-top: var(--4xl);
@@ -496,10 +499,11 @@
 
 
 .stamp {
-  width: clamp(100px, 120px, 180px);
+  width: clamp(120px, 150px, 180px);
   aspect-ratio : 1 / 1;
   overflow: hidden;
   border-radius: var(--sm);
   object-fit: cover;
   object-position: center;
+  opacity: 0.85;
 }

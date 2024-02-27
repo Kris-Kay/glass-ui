@@ -21,7 +21,7 @@
   display: grid;
 
   /* visual */
-  @include glass.glass_base;
+  @include glass.glass-no-bevel;
   background-color: var(--tint--xdark);
 
   box-shadow: var(--sha--xl);
@@ -128,7 +128,7 @@
   /* visual */
   border-radius: 0 0 var(--space) var(--space);
   box-shadow: var(--sha--xl);
-  @include glass.glass-filter;
+  @include glass.glass-filter-dark;
   background-color: var(--tint--3xdark);
   color: var(--tint--3xlight);
 

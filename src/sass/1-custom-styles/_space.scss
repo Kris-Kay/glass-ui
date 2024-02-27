@@ -97,23 +97,24 @@ $bp--lg: map.get($breakpoints, lg);
 /* Responsive UI heights | moats | max widths */
 /* ================================================== */
 html {
-    --ui-h--sm: 1.75rem;   /* 28px */
+    --ui-h--sm: 2rem;   /* 32px */
     --ui-h--md: 2.25rem;  /* 36px */
-    --ui-h--lg: 2.75rem;    /* 44px */
-
-  --max-w--xs: 420px;
-  --max-w--sm: 620px;
-  --max-w--md: 760px;
-  --max-w--lg: 1080px;
+    --ui-h--lg: 2.5rem;    /* 40px */
 
   --moat: 16px;
   --moat--x2: calc(var(--moat) * 2);
 
-  // @include bp(xs) {
-  //   --ui-h--sm: 1.75rem;   /* 28px */
-  //   --ui-h--md: 2.125rem;  /* 34px */
-  //   --ui-h--lg: 2.5rem;    /* 40px */
-  // }
+  --max-w--xs: calc(479px - var(--moat--x2));
+  --max-w--sm: calc(719px - var(--moat--x2));
+  --max-w--md: 800px;
+  // --max-w--md: calc(719px - var(--moat--x2));
+  --max-w--lg: 1080px;
+
+  @include bp(md) {
+    --ui-h--sm: 2.25rem;   /* 36px */
+    --ui-h--md: 2.5rem;  /* 40px */
+    --ui-h--lg: 2.75rem;    /* 44px */
+  }
 
   @include bp(sm) {
     --moat: clamp(1rem, 1.8vw + 0.5rem, 2.5rem);

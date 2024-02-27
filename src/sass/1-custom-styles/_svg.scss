@@ -17,9 +17,69 @@
 
 /* SVGs */
 /* ================================================== */
-.svg-cube { mask: url(/assets/icons/CubeTransparent.svg); }
 
-.svg-chev--up { mask: url(/assets/icons/CaretUp.svg); }
-.svg-chev--down { mask: url(/assets/icons/CaretDown.svg); }
-.svg-chev--l { mask: url(/assets/icons/CaretLeft.svg); }
-.svg-chev--r { mask: url(/assets/icons/CaretRight.svg); }
+@mixin svg-icon {
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+   pointer-events: none;
+}
+
+.svg-cube {
+  @include svg-icon;
+  mask: url(/assets/icons/CubeTransparent.svg);
+}
+
+.svg-copy {
+  @include svg-icon;
+  mask: url(/assets/icons/Copy.svg);
+}
+
+.svg-SquareOut {
+  @include svg-icon;
+  mask: url(/assets/icons/SquareOut.svg);
+}
+
+.svg-chev--up {
+  @include svg-icon;
+  mask: url(/assets/icons/CaretUp.svg);
+}
+.svg-chev--down {
+  @include svg-icon;
+  mask: url(/assets/icons/CaretDown.svg);
+}
+
+.svg-chev--l {
+  @include svg-icon;
+  mask: url(/assets/icons/CaretLeft.svg);
+}
+
+.svg-chev--r {
+  @include svg-icon;
+  mask: url(/assets/icons/CaretRight.svg);
+}
+
+.svg-linkedin {
+  // @include svg-icon;
+  mask: url(/assets/icons/LinkedinLogo.svg);
+}
+
+.svg-instagram {
+  @include svg-icon;
+  mask: url(/assets/icons/InstagramLogo.svg);
+}
+
+.svg-github {
+  @include svg-icon;
+  mask: url(/assets/icons/GithubLogo.svg);
+}
+
+.svg-ham { mask: url(/assets/icons/List.svg); }
+
+.svg-x { mask: url(/assets/icons/X.svg); }
+
+.svg-circleHalf { mask: url(/assets/icons/CircleHalf.svg); }
+
+.svg-circleHalfTilt { mask: url(/assets/icons/CircleHalfTilt.svg); }

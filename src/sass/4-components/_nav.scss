@@ -44,6 +44,14 @@
   }
 }
 
+.main-nav_icon-btn {
+  @include btn.btn-round--md;
+  z-index: z(on-nav);
+
+  @include bp(md) {
+    @include btn.btn-round--lg;
+  }
+}
 
 /* Dropdown */
 /* ================================================== */
@@ -51,16 +59,7 @@
   position: relative;
   pointer-events: none;
   background-color: transparent;
-}
-
-.main-nav_icon-btn {
-  @include btn.btn-round--md;
-  @include glass.btn-glass;
-  background-color: var(--tint--xdark);
-
-  @include bp(md) {
-    @include btn.btn-round--lg;
-  }
+  z-index: z(menu);
 }
 
 .dropdown_bin {
@@ -70,14 +69,16 @@
 }
 
 .dropdown-bg {
+  @include glass.glass-e2e-all;
+  background-color: var(--tint--xdark);
   position: absolute;
   top: calc(var(--ui-h--md) * 1.25);
   right: 0;
   padding: var(--sm);
-  z-index: 300;
+  // z-index: 300;
   // z-index: z(menu);
   pointer-events: auto;
-  overflow: hidden;
+  // overflow: hidden;
   border-radius: var(--sm);
   box-shadow: var(--sha--xl);
 

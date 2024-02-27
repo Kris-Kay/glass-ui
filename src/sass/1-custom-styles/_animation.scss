@@ -4,13 +4,13 @@
 
 /* Speeds */
 /* ================================================== */
-$speed--2xslow: 1000ms;
-$speed--xslow:  750ms;
-$speed--slow:   500ms;
-$speed--base:   400ms;
-$speed--fast:   300ms;
-$speed--xfast:  200ms;
-$speed--2xfast: 100ms;
+$speed--2xslow: 750ms;
+$speed--xslow:  500ms;
+$speed--slow:   400ms;
+$speed--base:   300ms;
+$speed--fast:   200ms;
+$speed--xfast:  100ms;
+$speed--2xfast: 150ms;
 
 /* cubic-bezier */
 /* ================================================== */
@@ -25,4 +25,16 @@ html.root-transition *::before,
 html.root-transition *::after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
+}
+
+:focus {
+  outline: 1px solid oklch(var(--neutral--90, #e3ecf3) / 0.4);
+  outline-offset: 2px;
+  border-radius: inherit;
+  transition: all 300ms;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }

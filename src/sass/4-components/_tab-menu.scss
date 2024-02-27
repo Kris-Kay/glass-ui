@@ -29,29 +29,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
+  gap: 5px;
   margin: 0 auto;
 
-  --tab-radius: 8px;
-  --padding: 3px;
+  --tab-radius: 5px;
+  --padding: 5px;
   padding: var(--padding);
   @include outer-radius (var(--tab-radius), var(--padding));
 
   background-color: var(--inset-bg--deep);
-  @include glass.glass-filter;
+  @include glass.glass-filter-base;
 
   &::before {
     @include pseudo;
-    // z-index: 202;
+    z-index: -2;
     box-shadow: var(--inset--lg);
   }
 
   @include bp(xs) {
-    gap: var(--3xs);
+    --tab-radius: 6px;
+    --padding: 5px;
+    gap: 6px;
   }
 
   @include bp(md) {
     height: var(--ui-h--lg);
+    --tab-radius: 8px;
+    --padding: 6px;
+    gap: 7px;
   }
 }
 
@@ -64,7 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0.6rem;
+  padding: 0 0.7rem;
   overflow: hidden;
   pointer-events: auto;
   cursor: pointer;
@@ -72,22 +77,24 @@
   font-size: var(--inner-h);
   line-height: var(--inner-h);
   @include btn.btn-text;
-  @include btn.btn-2d--base;
+  @include btn.btn--clear;
   border-radius: var(--tab-radius);
   color: var(--color--white);
   background-color: transparent;
 
   @include bp(xs) {
     padding: 0 0.8rem;
+    --inner-h: 1rem;
+  }
+
+  @include bp(sm) {
+    --inner-h: 1.1rem;
+    padding: 0 0.9rem;
   }
 
   @include bp(md) {
     --inner-h: 1.1rem;
     padding: 0 1.2rem;
-  }
-
-  @include bp(lg) {
-    padding: 0 1.3rem;
   }
 
   &:hover {
@@ -98,6 +105,6 @@
 
 [role="tab"][aria-selected="true"] {
   background-color: var(--tint--3xlight);
-  color: var(--tint--2xdark);
+  color: var(--tint--3xdark);
   box-shadow: var(--sha--3xs);
 }

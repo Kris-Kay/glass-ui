@@ -15,10 +15,7 @@
   padding: var(--_space);
   overflow: hidden;
   box-shadow: var(--sha--lg);
-
-  @include bp(sm) {
-    box-shadow: var(--sha--xl);
-  }
+  z-index: z(card);
 
   & > .full-w-fill {
     padding: var(--_space);
@@ -130,6 +127,7 @@
     --space: var(--2xl);
   }
 
+
   &.moat-radius-from--sm {
     border-radius: 0;
 
@@ -154,6 +152,29 @@
     }
   }
 
+  &.glass-e2e-sm {
+    border-radius: 0;
+
+    @include bp(sm) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.glass-e2e-md  {
+    border-radius: 0;
+
+    @include bp(md) {
+      border-radius: var(--lg);
+    }
+  }
+
+  &.glass-e2e-lg {
+    border-radius: 0;
+
+    @include bp(lg) {
+      border-radius: var(--lg);
+    }
+  }
 }
 
 .card--xl {
@@ -169,6 +190,30 @@
     --space: var(--3xl);
     border-radius: var(--xl);
   }
+
+  // & .glass-e2e-sm {
+  //   border-radius: none;
+
+  //   @include bp(sm) {
+  //     border-radius: var(--lg);
+  //   }
+  // }
+
+  // & .glass-e2e-md  {
+  //   border-radius: 0;
+
+  //   @include bp(md) {
+  //     border-radius: var(--lg);
+  //   }
+  // }
+
+  // & .glass-e2e-lg {
+  //   border-radius: 0;
+
+  //   @include bp(lg) {
+  //     border-radius: var(--lg);
+  //   }
+  // }
 
   &.moat-radius-from--sm {
     border-radius: 0;
