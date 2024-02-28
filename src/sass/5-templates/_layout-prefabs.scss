@@ -5,3 +5,184 @@
 @use "../glass" as glass;
 @use "../components" as *;
 /* ================================================== */
+
+
+
+/* Bento grid */
+/* ================================================== */
+.bento-rect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  aspect-ratio : 4.5 / 1;
+  border-radius: var(--sm);
+  padding: var(--xl) var(--2xl);
+
+  // will-change: transform, box-shadow;
+  // box-shadow: var(--sha--2xs);
+  // transform: scale(1);
+  // transition:
+  //   transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
+  //   box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
+
+  // &:hover {
+  //   box-shadow: var(--sha--sm);
+  //   transform: scale(1.02);
+  // }
+
+  @include bp(xs) {
+    aspect-ratio : 1 / 1;
+    max-width: 175px;
+    padding: var(--2xs);
+  }
+
+  @include bp(md) {
+    border-radius: var(--md);
+    max-width: 200px;
+  }
+
+  @include bp(lg) {
+    padding: var(--sm);
+    max-width: 300px;
+  }
+}
+
+.bento_bin--1to3 {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--lg);
+  }
+
+  @include bp(lg) {
+    gap: var(--xl);
+  }
+}
+
+.bento_bin--2to3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--xl);
+  }
+
+  @include bp(lg) {
+    gap: var(--2xl);
+  }
+}
+
+.bento_bin--1to5 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp(md) {
+    gap: var(--lg);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include bp(lg) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+.wrap-2 {
+  width: 100%;
+  gap: var(--sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &:nth-child(1) {
+    grid-column: 1/2;
+  }
+
+  &:nth-child(2) {
+    grid-column: 1/2;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--md);
+
+    &:nth-child(1) {
+      grid-column: 1/2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 2/3;
+    }
+  }
+
+  @include bp(lg) {
+    gap: var(--xl);
+  }
+}
+
+
+
+/* Telescope rect glass demo */
+.telescope-rect_bin {
+  // overflow: hidden;
+  overflow: visible;
+
+  border-radius: var(--xl);
+
+  &:nth-child(1) {
+    box-shadow: var(--sha--2xl);
+  }
+}
+
+.telescope-rect--lower-r {
+  min-width: fit-content;
+  padding: 5%;
+  overflow: visible;
+  box-shadow: var(--sha--3xs);
+
+  @include bp(md) {
+    will-change: padding;
+    transition: padding cubic-bezier(0.46, 0.43, 0.1, 0.99) 100ms;
+    padding: 6% 4% 4% 12%;
+
+    &:hover {
+      padding: 5%;
+    }
+  }
+
+  & > p {
+    padding: var(--2xs) 0;
+    pointer-events: none;
+  }
+}

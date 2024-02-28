@@ -1,5 +1,5 @@
 /* ================================================== */
-/* Text inputs */
+/* Forms | Text inputs */
 @use "../custom" as *;
 @use "../util" as *;
 @use "../glass" as glass;
@@ -9,31 +9,17 @@
   line-height: 1;
 }
 
-.text-input_bin {
+.text-input-bin {
+  height: min-content;
   display: grid;
-  gap: 0.25rem;
+  gap: var(--3xs);
 }
 
-.text-input_label_bin {
+.input-label-bin {
   display: grid;
-  gap: 0.1rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.25rem;
+  padding-bottom: var(--3xs);
 }
 
-.text-input_label {
-  font-family: $font-family-title;
-  font-weight: $font-weight--md;
-  letter-spacing: $letter-spacing--md;
-}
-
-.input-hint {
-  font-weight: $font-weight--sm;
-  font-size: var(--text--xs);
-  letter-spacing: $letter-spacing--sm;
-  line-height: 1.1;
-  color: var(--text--mild);
-}
 
 /* Text input */
 /* ================================================== */
@@ -42,7 +28,7 @@
   cursor: text;
   width: 100%;
   // width: min(400px, 100%);
-  height: var(--ui-h--lg);
+  height: var(--ui-h-lg);
   border-radius: var(--2xs);
   padding: 0 0.75rem;
 
@@ -58,7 +44,7 @@
 
 /* Textarea input */
 /* ================================================== */
-.textarea-holder {
+.textarea-wrap {
   position: relative;
   z-index: 2;
   pointer-events: none;

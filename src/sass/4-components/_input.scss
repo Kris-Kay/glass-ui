@@ -5,39 +5,10 @@
 @use "../glass" as glass;
 /* ================================================== */
 
-.input_fieldset {
-  display: grid;
-  gap: var(--xs);
-}
-
-.input_legend {
-  font-weight: $font-weight--md;
-  font-family: $font-family-title;
-  font-size: var(--sm);
-  letter-spacing: $letter-spacing--md;
-  padding-bottom: var(--xs);
-  color: var(--text--xstrong);
-  text-shadow: var(--text-sha--2xs);
-}
-
-.input_bin {
-  display: flex;
-  align-items: center;
-  gap: var(--2xs);
-}
-
-.input_label--sm {
-  width: fit-content;
-  color: var(--text--strong);
-}
-
-.input_label--md {
-  width: fit-content;
-  color: var(--text--strong);
-}
-
+/* Base for switch | checkbox | radio button */
+/* ✨ Config these values ✨ */
+/* ================================================== */
 @mixin input_base {
-  /* config */
   --rest-bg: oklch(var(--neutral--10) / 0.2);
   --rest-hover-bg: oklch(var(--neutral--10) / 0.3);
   --rest-knob: oklch(var(--neutral--90) / 0.9);
@@ -93,9 +64,10 @@
   }
 }
 
-/* Switches */
+/* Switch */
+/* ================================================== */
 input[type='checkbox'].switch {
-  --_switch-height: var(--switch-height, var(--ui-h--sm));
+  --_switch-height: var(--switch-height, var(--ui-h-sm));
   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
   --_thumb-margin: var(--thumb-margin, 3px);
 
@@ -145,23 +117,24 @@ input[type='checkbox'].switch {
     }
   }
 
-  &.switch--sm {
+  &.switch-sm {
     --thumb-margin: 3px;
-    --switch-height: var(--ui-h--sm);
+    --switch-height: 1.2rem;
   }
 
-  &.switch--md {
+  &.switch-md {
     --thumb-margin: 3.5px;
-    --switch-height: var(--ui-h--md);
+    --switch-height: 1.24rem;
   }
 
-  &.switch--lg {
+  &.switch-lg {
     --thumb-margin: 4px;
-    --switch-height: var(--ui-h--lg);
+    --switch-height:1.5rem;
   }
 }
 
-/* Checkboxes */
+/* Checkbox */
+/* ================================================== */
 input[type='checkbox'].checkbox {
 
   @include input_base;
@@ -208,8 +181,8 @@ input[type='checkbox'].checkbox {
   }
 }
 
-
-/* Radio buttons */
+/* Radio button */
+/* ================================================== */
 input[type='radio'] {
 
   @include input_base;
@@ -249,4 +222,27 @@ input[type='radio'] {
       }
     }
   }
+}
+
+/* Input wappers & items */
+/* ================================================== */
+.input-fieldset {
+  display: grid;
+  gap: var(--xs);
+}
+
+.input-legend {
+  padding-bottom: var(--xs);
+}
+
+.input-bin {
+  display: flex;
+  align-items: center;
+  gap: var(--2xs);
+}
+
+.inline-label {
+  width: fit-content;
+  font-weight: $font-weight--md;
+  color: var(--text--xstrong);
 }

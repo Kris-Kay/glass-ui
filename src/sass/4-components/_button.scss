@@ -73,7 +73,7 @@
 @mixin btn--sm {
   @include btn-structure;
 
-  --btn--h: var(--ui-h--sm);
+  --btn--h: var(--ui-h-sm);
   --btn-inner--h: 0.8em;
   --btn--t: 0;
   --btn--b: 0;
@@ -85,7 +85,7 @@
 @mixin btn--md {
   @include btn-structure;
 
-  --btn--h: var(--ui-h--md);
+  --btn--h: var(--ui-h-md);
   --btn-inner--h: 0.9rem;
   --btn--t: 0;
   --btn--b: 0;
@@ -97,7 +97,7 @@
 @mixin btn--lg {
   @include btn-structure;
 
-  --btn--h: var(--ui-h--lg);
+  --btn--h: var(--ui-h-lg);
   --btn-inner--h: 1em;
   --btn--t: 0;
   --btn--b: 0;
@@ -128,19 +128,19 @@
 @mixin btn-round--sm {
   @include btn-round--base;
 
-  width: var(--ui-h--sm);
-  height: var(--ui-h--sm);
+  width: var(--ui-h-sm);
+  height: var(--ui-h-sm);
   box-shadow: var(--sha--2xs);
 
   & > svg {
-    width: calc(var(--ui-h--sm) * 0.56);
-    height: calc(var(--ui-h--sm) * 0.56);
+    width: calc(var(--ui-h-sm) * 0.56);
+    height: calc(var(--ui-h-sm) * 0.56);
   }
 
   &:hover {
     & > svg {
-      width: calc(var(--ui-h--sm) * 0.59);
-      height: calc(var(--ui-h--sm) * 0.59);
+      width: calc(var(--ui-h-sm) * 0.59);
+      height: calc(var(--ui-h-sm) * 0.59);
     }
   }
 }
@@ -148,19 +148,19 @@
 @mixin btn-round--md {
   @include btn-round--base;
 
-  width: var(--ui-h--md);
-  height: var(--ui-h--md);
+  width: var(--ui-h-md);
+  height: var(--ui-h-md);
   box-shadow: var(--sha--xs);
 
   & > svg {
-    width: calc(var(--ui-h--md) * 0.58);
-    height: calc(var(--ui-h--md) * 0.58);
+    width: calc(var(--ui-h-md) * 0.58);
+    height: calc(var(--ui-h-md) * 0.58);
   }
 
   &:hover {
     & > svg {
-      width: calc(var(--ui-h--md) * 0.62);
-      height: calc(var(--ui-h--md) * 0.62);
+      width: calc(var(--ui-h-md) * 0.62);
+      height: calc(var(--ui-h-md) * 0.62);
     }
   }
 }
@@ -168,19 +168,19 @@
 @mixin btn-round--lg {
   @include btn-round--base;
 
-  width: var(--ui-h--lg);
-  height: var(--ui-h--lg);
+  width: var(--ui-h-lg);
+  height: var(--ui-h-lg);
   box-shadow: var(--sha--sm);
 
   & > svg {
-    width: calc(var(--ui-h--lg) * 0.56);
-    height: calc(var(--ui-h--lg) * 0.56);
+    width: calc(var(--ui-h-lg) * 0.56);
+    height: calc(var(--ui-h-lg) * 0.56);
   }
 
   &:hover {
     & > svg {
-      width: calc(var(--ui-h--lg) * 0.6);
-      height: calc(var(--ui-h--lg) * 0.6);
+      width: calc(var(--ui-h-lg) * 0.6);
+      height: calc(var(--ui-h-lg) * 0.6);
     }
   }
 }

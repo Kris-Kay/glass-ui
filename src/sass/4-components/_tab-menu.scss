@@ -25,7 +25,7 @@
   z-index: z(on-nav);
   width: fit-content;
   max-width: 100%;
-  height: var(--ui-h--md);
+  height: var(--ui-h-md);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@
   }
 
   @include bp(md) {
-    height: var(--ui-h--lg);
+    height: var(--ui-h-lg);
     --tab-radius: 8px;
     --padding: 6px;
     gap: 7px;

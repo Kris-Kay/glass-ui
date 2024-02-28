@@ -4,6 +4,7 @@
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
+@use "card" as card;
 /* ================================================== */
 
 .atf {
@@ -11,12 +12,16 @@
   height: fit-content;
   display: grid;
   margin: var(--nav-h) auto 0 auto;
-  padding-bottom: var(--nav-h);
+  padding: 0 var(--moat) var(--nav-h) var(--moat);
+
+  @include bp(md) {
+      padding: 0 2rem var(--nav-h) 2rem;
+  }
 }
 
 .atf_card_bin {
   width: 100%;
-  max-width: var(--max-w--md);
+  max-width: var(--max-w-sm);
   place-self: end center;
 
   display: grid;
@@ -26,8 +31,8 @@
     place-items: end start;
   }
 
-  @include bp(xl) {
-    max-width: var(--max-w--lg);
+  @include bp(md) {
+    max-width: var(--max-w-lg);
   }
 }
 
@@ -35,11 +40,19 @@
   width: 100%;
   overflow: hidden;
 
+  @include card.card-base;
+  --space: var(--md);
+
+  border-radius: var(--md);
+  box-shadow: var(--sha--lg);
+
   @include bp(xs) {
+    --space: var(--lg);
     width: min(100%, 360px);
   }
 
   @include bp(sm) {
+    border-radius: var(--lg);
     width: clamp(360px, 380px, 400px);
   }
 

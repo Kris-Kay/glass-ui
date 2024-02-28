@@ -1,5 +1,5 @@
-@forward "custom";
-@forward "util";
-@forward "glass";
-@forward "components";
-@forward "templates";
+@forward "./components";
+@forward "./custom";
+@forward "./glass";
+@forward "./templates";
+@forward "./util";

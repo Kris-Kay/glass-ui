@@ -8,8 +8,8 @@
 /* https://css-tricks.com/change-color-of-svg-on-hover/ */
 .svg-icon-color {
   display: inline-block;
-  width: var(--ui-h--md, 2.125rem);
-  height: var(--ui-h--md, 2.125rem);
+  width: var(--ui-h-md, 2.125rem);
+  height: var(--ui-h-md, 2.125rem);
   align-self: center;
   mask-size: cover;
   background: purple;

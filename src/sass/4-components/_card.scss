@@ -4,18 +4,22 @@
 @use "../util" as *;
 @use "../glass" as glass;
 /* ================================================== */
+/* card-xs to card-xl  */
+/* fill available space up to max-width values that match their T-shirt size */
+/* have proportional padding & gap values that scale with viewport width */
+/* have conditional border-radius values that turn to 0 if width = = 100vw */
 
 @mixin card-base {
   --_space: var(--space, 1.5rem);
   --_neg-space: calc(-1 * var(--_space));
 
+  z-index: z(card);
   height: fit-content;
   display: grid;
   gap: var(--_space);
   padding: var(--_space);
-  overflow: hidden;
-  box-shadow: var(--sha--lg);
-  z-index: z(card);
+
+  // overflow: hidden;
 
   & > .full-w-fill {
     padding: var(--_space);
@@ -57,189 +61,77 @@
     place-self: center;
     margin: var(--_neg-space);
   }
-
 }
 
-.card--sm {
-  @include card-base;
-  --space: var(--sm);
-  border-radius: var(--sm);
-
-  @include bp(sm) {
-    --space: var(--md);
-    border-radius: var(--md);
-  }
-
-  @include bp(lg) {
-    --space: var(--lg);
-  }
-}
-
-.card--md {
+.card-xs {
   @include card-base;
   --space: var(--md);
-  border-radius: var(--md);
 
-  @include bp(xs) {
-    --space: var(--lg);
-  }
+  width: min(100%, var(--max-w-xs));
 
-  @include bp(sm) {
-    border-radius: var(--lg);
-  }
-
-  &.moat-radius-from--sm {
-    border-radius: 0;
-
-    @include bp(sm) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--md {
-    border-radius: 0;
-
-    @include bp(md) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--lg {
-    border-radius: 0;
-
-    @include bp(lg) {
-      border-radius: var(--lg);
-    }
-  }
+  @include radius("md");
+  box-shadow: var(--sha--sm);
 }
 
-.card--lg {
+.card-sm {
+ @include card-base;
+  --space: var(--md);
+
+  width: min(100%, var(--max-w-sm));
+
+  @include radius("md");
+  box-shadow: var(--sha--md);
+}
+
+.card-md {
+  @include card-base;
   --space: var(--lg);
 
-  @include card-base;
-  border-radius: var(--lg);
+  width: min(100%, var(--max-w-md));
+
+  @include radius("lg");
+  box-shadow: var(--sha--lg);
 
   @include bp(sm) {
     --space: var(--xl);
-  }
-
-  @include bp(lg) {
-    --space: var(--2xl);
-  }
-
-
-  &.moat-radius-from--sm {
-    border-radius: 0;
-
-    @include bp(sm) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--md {
-    border-radius: 0;
-
-    @include bp(md) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--lg {
-    border-radius: 0;
-
-    @include bp(lg) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.glass-e2e-sm {
-    border-radius: 0;
-
-    @include bp(sm) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.glass-e2e-md  {
-    border-radius: 0;
-
-    @include bp(md) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.glass-e2e-lg {
-    border-radius: 0;
-
-    @include bp(lg) {
-      border-radius: var(--lg);
-    }
+    @include radius("xl");
   }
 }
 
-.card--xl {
+.card-lg {
+  @include card-base;
+  --space: var(--lg);
+
+  width: min(100%, var(--max-w-lg));
+
+  @include radius("lg");
+  box-shadow: var(--sha--lg);
+
+  @include bp(md) {
+    --space: var(--xl);
+    @include radius("xl");
+    box-shadow: var(--sha--xl);
+  }
+}
+
+.card-xl {
   @include card-base;
   --space: var(--xl);
-  border-radius: var(--lg);
 
-  @include bp(sm) {
-    --space: var(--2xl);
-  }
+  width: min(100%, var(--max-w-xl));
+
+  @include radius("xl");
+  box-shadow: var(--sha--lg);
 
   @include bp(lg) {
-    --space: var(--3xl);
-    border-radius: var(--xl);
-  }
-
-  // & .glass-e2e-sm {
-  //   border-radius: none;
-
-  //   @include bp(sm) {
-  //     border-radius: var(--lg);
-  //   }
-  // }
-
-  // & .glass-e2e-md  {
-  //   border-radius: 0;
-
-  //   @include bp(md) {
-  //     border-radius: var(--lg);
-  //   }
-  // }
-
-  // & .glass-e2e-lg {
-  //   border-radius: 0;
-
-  //   @include bp(lg) {
-  //     border-radius: var(--lg);
-  //   }
-  // }
-
-  &.moat-radius-from--sm {
-    border-radius: 0;
-
-    @include bp(sm) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--md {
-    border-radius: 0;
-
-    @include bp(md) {
-      border-radius: var(--lg);
-    }
-  }
-
-  &.moat-radius-from--lg {
-    border-radius: 0;
-
-    @include bp(lg) {
-      border-radius: var(--lg);
-    }
+    --space: var(--xl);
+    @include radius("xl");
+    box-shadow: var(--sha--xl);
   }
 }
 
+/* Card items */
+/* ================================================== */
 .card_title {
   @include title--thick;
   font-size: var(--text--2xl);

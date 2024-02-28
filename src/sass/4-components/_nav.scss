@@ -9,10 +9,10 @@
 /* Global nav height */
 /* ================================================== */
 :root {
-  --nav-h: calc(var(--ui-h--md) + (var(--moat) * 2));
+  --nav-h: calc(var(--ui-h-md) + (var(--moat) * 2));
 
   @include bp(md) {
-    --nav-h: calc(var(--ui-h--lg) + (var(--moat) * 2));
+    --nav-h: calc(var(--ui-h-lg) + (var(--moat) * 2));
   }
 }
 
@@ -22,10 +22,6 @@
   height: var(--nav-h);
   inset: 0;
   padding: var(--moat);
-
-  // @include bp(lg) {
-  //   padding: var(--moat) 0;
-  // }
 }
 
 .main-nav {
@@ -40,7 +36,7 @@
   margin: 0 auto;
 
   @include bp(lg) {
-    max-width: calc($bp--lg + (var(--ui-h--lg) * 2) + 6rem);
+    max-width: calc($bp--lg + (var(--ui-h-lg) * 2) + 6rem);
   }
 }
 
@@ -72,18 +68,16 @@
   @include glass.glass-e2e-all;
   background-color: var(--tint--xdark);
   position: absolute;
-  top: calc(var(--ui-h--md) * 1.25);
+  top: calc(var(--ui-h-md) * 1.3);
   right: 0;
   padding: var(--sm);
-  // z-index: 300;
-  // z-index: z(menu);
   pointer-events: auto;
-  // overflow: hidden;
+  overflow: hidden;
   border-radius: var(--sm);
   box-shadow: var(--sha--xl);
 
   @include bp(md) {
-    top: calc(var(--ui-h--lg) * 1.25);
+    top: calc(var(--ui-h-lg) * 1.3);
   }
 }
 

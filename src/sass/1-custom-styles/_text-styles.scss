@@ -152,6 +152,23 @@ textarea {
 }
 
 
+.input-label {
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  font-size: var(--sm);
+  letter-spacing: $letter-spacing--md;
+  color: var(--text--xstrong);
+  text-shadow: var(--text-sha--sm);
+}
+
+.input-hint {
+  font-weight: $font-weight--sm;
+  font-size: var(--text--xs);
+  line-height: 1.1;
+  color: var(--text--mild);
+  text-shadow: var(--text-sha--2xs);
+}
+
 /* ================================================== */
 /* Text helpers */
 /* ================================================== */
@@ -168,7 +185,6 @@ textarea {
 .text-space--lg { letter-spacing: $letter-spacing--lg; }
 
 /* text-transform: */
-.text--no-tran { text-transform: none; }
 .text--cap { text-transform: capitalize; }
 .text--allcap { text-transform: uppercase; }
 .text--lower { text-transform: lowercase; }
