@@ -64,9 +64,9 @@ $sizes: (
 /* Responsive UI heights | moats | max widths */
 /* ================================================== */
 html {
-  --ui-h-sm: 2rem;    /* 32px */
+  --ui-h-sm: 1.75rem;  /* 28px */
   --ui-h-md: 2.25rem; /* 36px */
-  --ui-h-lg: 2.5rem;  /* 40px */
+  --ui-h-lg: 2.75rem;  /* 44px */
 
   --moat: 1rem;
 
@@ -76,11 +76,11 @@ html {
   --max-w-lg: 980px;
   --max-w-xl: 1200px;
 
-  @include bp(md) {
-    --ui-h-sm: 2.25rem; /* 36px */
-    --ui-h-md: 2.5rem;  /* 40px */
-    --ui-h-lg: 2.75rem; /* 44px */
-  }
+  // @include bp(md) {
+  //   --ui-h-sm: 2.25rem; /* 36px */
+  //   --ui-h-md: 2.5rem;  /* 40px */
+  //   --ui-h-lg: 2.75rem; /* 44px */
+  // }
 }
 
 .max-w-xs { width: min(100%, var(--max-w-xs)); }
@@ -96,26 +96,26 @@ html {
 /* are flex containers set to ` justify-content: center;` */
 
 @mixin moat {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   z-index: z.z("section");
 
-// display: flex;
-// justify-content: center;
-  display: grid;
-  place-items: center;
+display: flex;
+justify-content: center;
+  // display: grid;
+  // place-items: center;
 }
 
 .moat-all {
   @include moat;
   padding: 0 var(--moat);
-  background-color: hsl(240 100% 50% / 0.2);
+  // background-color: hsl(240 100% 50% / 0.2);
 }
 
 .moat-xs {
   @include moat;
 
-  background-color: hsla(139, 100%, 50%, 0.2);
+  // background-color: hsla(139, 100%, 50%, 0.2);
 
   @include bp(xs) {
     padding: 0 var(--moat);
@@ -125,7 +125,7 @@ html {
 .moat-sm {
   @include moat;
 
-  background-color: hsla(308, 100%, 50%, 0.2);
+  // background-color: hsla(308, 100%, 50%, 0.2);
 
   @include bp(sm) {
     padding: 0 var(--moat);
@@ -135,7 +135,7 @@ html {
 .moat-md {
   @include moat;
 
-  background-color: hsla(104, 100%, 50%, 0.2);
+  // background-color: hsla(104, 100%, 50%, 0.2);
 
   @include bp(md) {
     padding: 0 var(--moat);
@@ -145,7 +145,7 @@ html {
 .moat-lg {
   @include moat;
 
-  background-color: hsla(40, 100%, 50%, 0.2);
+  // background-color: hsla(40, 100%, 50%, 0.2);
 
   @include bp(lg) {
     padding: 0 var(--moat);
@@ -155,7 +155,7 @@ html {
 .moat-xl {
   @include moat;
 
-  background-color: hsla(8, 100%, 50%, 0.2);
+  // background-color: hsla(8, 100%, 50%, 0.2);
 
   @include bp(xl) {
     padding: 0 var(--moat);
@@ -226,7 +226,7 @@ html {
 /* Spacing */
 /* ================================================== */
 .page-grid {
-  --space: 4rem;
+  --space: 2rem;
 
   height: fit-content;
   display: grid;
@@ -234,7 +234,7 @@ html {
   padding:  var(--space) 0;
 
   @include bp(xs) {
-    --space: 6rem;
+    --space: 3rem;
   }
 
   @include bp(sm) {

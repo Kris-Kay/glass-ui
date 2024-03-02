@@ -129,9 +129,9 @@
 
   /* Insets */
   /* ================================================== */
-  --inset-bg--base: oklch(var(--neutral--10) / 0.13);
-  --inset-bg--deep: oklch(var(--neutral--10) / 0.2);
-  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
+  --inset-bg-reg: oklch(var(--neutral--10) / 0.13);
+  --inset-bg-deep: oklch(var(--neutral--10) / 0.2);
+  --inset-bg-xdeep: oklch(var(--neutral--10) / 0.3);
 
   /* Text | Title | Label */
   /* ================================================== */
@@ -172,9 +172,9 @@
 
   /* Insets */
   /* ================================================== */
-  --inset-bg--base: oklch(var(--neutral--10) / 0.2);
-  --inset-bg--deep: oklch(var(--neutral--10) / 0.25);
-  --inset-bg--xdeep: oklch(var(--neutral--10) / 0.3);
+  --inset-bg-reg: oklch(var(--neutral--10) / 0.2);
+  --inset-bg-deep: oklch(var(--neutral--10) / 0.25);
+  --inset-bg-xdeep: oklch(var(--neutral--10) / 0.3);
 
   /* Text | Title | Label */
   /* ================================================== */

@@ -155,17 +155,14 @@
 
 /* Telescope rect glass demo */
 .telescope-rect_bin {
-  // overflow: hidden;
-  overflow: visible;
-
   border-radius: var(--xl);
 
-  &:nth-child(1) {
+  & > div {
     box-shadow: var(--sha--2xl);
   }
 }
 
-.telescope-rect--lower-r {
+.telescope-rect {
   min-width: fit-content;
   padding: 5%;
   overflow: visible;
@@ -185,4 +182,49 @@
     padding: var(--2xs) 0;
     pointer-events: none;
   }
+}
+
+
+.big-title-bg {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  padding: var(--sm);
+
+  margin-top: var(--nav-h);
+  margin-bottom: var(--3xl);
+
+  @include glass.glass-no-bevel;
+  background-color: var(--tint--clear);
+  box-shadow: var(--sha--sm);
+
+  @include bp(sm) {
+    justify-self: flex-start;
+    width: calc(100vw - var(--lg));
+    border-radius: 0 var(--sm) var(--sm) 0;
+  }
+
+  @include bp(xl) {
+    width: fit-content;
+  }
+
+  & > .big-title {
+    width: 100%;
+    text-align: end;
+
+    @include bp(xl) {
+      width: 90vw;
+    }
+  }
+}
+
+
+.stamp {
+  width: clamp(120px, 150px, 180px);
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--sm);
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.85;
 }
