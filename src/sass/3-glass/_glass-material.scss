@@ -96,33 +96,51 @@ html {
 @mixin noise-sm {
   background-repeat: repeat;
   background-size: 20px 20px;
-  // background-image: url(/assets/textures/noise-texture-gray-40x40.pngg);
-  background-image: url(/assets/textures/noise-texture-pink-100x100.png);
+  background-image: url(/assets/textures/noise-texture-gray-40x40.pngg);
 }
 
-  // position: relative;
-  // overflow: hidden;
-  // @include glass-filter;
-  // @content;
+.glass-container {
+  container-name: glass-co;
+  container-type: inline-size;
 
-  // &::after {
-  //   @include pseudo;
-  //   z-index: 1;
-  //   overflow: hidden;
-  //   box-shadow: bevel.$bevel--md;
+  @container glass-co (width > 99vw) {
+    .glass-3d {
+      box-shadow: none;
+      &::after {
+        box-shadow: bevel.$flat-bevel--sm;
+      }
 
-  //   @include bp(sm) {
-  //     box-shadow: bevel.$bevel--lg;
-  //   }
-  // }
+      & > .full-w-inset {
+        margin-left: calc((-1 * var(--_space)));
+      }
+    }
+  }
+}
 
-  // &::before {
-  //   @include pseudo;
-  //   z-index: -2;
-  //   overflow: hidden;
-  //   @include noise;
-  // }
+.glass-3d {
+  position: relative;
+  overflow: hidden;
+  @include glass-filter-base;
+  width: 100%;
 
+  &::after {
+    @include pseudo;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: bevel.$bevel--md;
+
+    @include bp(sm) {
+      box-shadow: bevel.$bevel--lg;
+    }
+  }
+
+  &::before {
+    @include pseudo;
+    z-index: -2;
+    overflow: hidden;
+    @include noise;
+  }
+}
 
 /* Glass base → no bevel */
 /* ================================================== */
@@ -141,88 +159,7 @@ html {
     opacity: 0.8;
   }
 }
-
-/* Curved bevel & moat at all screen sizes */
-@mixin glass-e2e-none {
-
-  @include glass-no-bevel;
-
-  &::after {
-    @include pseudo;
-    z-index: 1;
-    overflow: hidden;
-    box-shadow: bevel.$bevel--md;
-
-    @include bp(sm) {
-      box-shadow: bevel.$bevel--lg;
-    }
-  }
-}
-
-/* For elements that switch to edge-to-edge at less than bp(sm) */
-@mixin glass-e2e-sm {
-  position: relative;
-  overflow: hidden;
-  @include glass-filter-base;
-  @content;
-
-  &::before {
-    @include pseudo;
-    z-index: -2;
-    overflow: hidden;
-    @include noise;
-  }
-
-  &::after {
-    @include pseudo;
-    z-index: 1;
-    overflow: hidden;
-    box-shadow: bevel.$flat-bevel--sm;
-
-    @include bp(sm) {
-      box-shadow: bevel.$bevel--lg;
-    }
-  }
-}
-
-/* For elements that switch to edge-to-edge at less than bp(md) */
-@mixin glass-e2e-md {
-
-  @include glass-no-bevel;
-
-  &::after {
-    @include pseudo;
-    z-index: 1;
-    overflow: hidden;
-    box-shadow: bevel.$flat-bevel--sm;
-
-    @include bp(sm) {
-      box-shadow: bevel.$bevel--lg;
-    }
-
-    @include bp(md) {
-      box-shadow: bevel.$bevel--lg;
-    }
-  }
-}
-
-
-/* For elements that switch to edge-to-edge at less than bp(lg) */
-@mixin glass-e2e-lg {
-
-  @include glass-no-bevel;
-
-  &::after {
-    @include pseudo;
-    z-index: 1;
-    overflow: hidden;
-    box-shadow: bevel.$flat-bevel--sm;
-
-    @include bp(lg) {
-      box-shadow: bevel.$bevel--lg;
-    }
-  }
-}
+.glass-no-bevel { @include glass-no-bevel; }
 
 /* For elements that only go to edge-to-edge */
 @mixin glass-e2e-all {
@@ -236,41 +173,14 @@ html {
     box-shadow: bevel.$flat-bevel--sm;
   }
 }
-
-
+.glass-e2e-all { @include glass-e2e-all; }
 
 
 /* Button glass material */
-/* Has no backdrop-filter */
 /* ================================================== */
-// @mixin btn-glass($filter) {
-//   position: relative;
-//   overflow: hidden;
-// // isolation: isolate;
-// //   @content;
-
-
-//   &::before {
-//     @include pseudo;
-//     @include noise-sm;
-//     z-index: -2;
-//     overflow: hidden;
-//     opacity: 0.8;
-//     backdrop-filter: #{$filter};
-//   }
-
-//   &::after {
-//     @include pseudo;
-//     z-index: -1;
-//     overflow: hidden;
-//     box-shadow: bevel.$bevel--sm;
-//   }
-// }
-
 @mixin btn-glass {
   position: relative;
   overflow: hidden;
-  // @include glass-filter-base;
 
   &::after {
     @include pseudo;
@@ -279,25 +189,3 @@ html {
     box-shadow: bevel.$bevel--sm;
   }
 }
-
-// @mixin btn-glass {
-//   position: relative;
-//   overflow: hidden;
-//   @include glass-filter;
-
-//   &::after {
-//     @include pseudo;
-//     overflow: hidden;
-//     z-index: 202;
-//     box-shadow: bevel.$bevel--sm;
-//     // @include noise--sm;
-//   }
-// }
-
-
-.glass-no-bevel { @include glass-no-bevel; }
-.glass-e2e-none { @include glass-e2e-none; }
-.glass-e2e-sm { @include glass-e2e-sm; }
-.glass-e2e-md { @include glass-e2e-md; }
-.glass-e2e-lg { @include glass-e2e-lg; }
-.glass-e2e-all { @include glass-e2e-all; }

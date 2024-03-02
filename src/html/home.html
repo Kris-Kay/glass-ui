@@ -1,13 +1,13 @@
 <!-- Home Header -->
 <!-- ================================================== -->
-<!-- <header>
+<header>
   <section class="atf">
     <div class="card-3d_bin atf_card_bin">
-        <div class="card-3d atf_card glass-e2e-none tint--xdark">
+        <div class="card-3d atf_card glass-3d tint--xdark">
 
           <div class="grid">
             <p class="eyebrow">SCSS library</p>
-            <h1 class="card_title">3D Glass UI</h1>
+            <h1 class="card-title">3D Glass UI</h1>
           </div>
 
           <div class="full-w-inset">
@@ -17,7 +17,7 @@
           </div>
 
           <div class="justify-r">
-            <a  class="btn-viz btn--primary btn--lg"
+            <a  class="btn--primary btn--lg"
                 href="https://github.com/Kris-Kay"
                 target="_blank" >
               GitHub repo
@@ -27,32 +27,23 @@
             </a>
           </div>
 
-          <div class="justify-r">
+          <!-- <div class="justify-r">
             <div class="flex gap--3xs">
               <p class="text-sha--sm">Created by</p>
               <p class="text-sha--sm text--allcap">Kris Kay</p>
             </div>
-          </div>
+          </div> -->
         </div>
     </div>
   </section>
-</header> -->
+</header>
 
 <!-- Main -->
 <!-- ================================================== -->
 <main class="page-grid">
-
-<!-- <div class="moat-all">
-  <div class="card-xl glass-e2e-none tint--xdark">
-            <img src="/assets/tutorial-img/glass-layers-no-text.png"
-          class="max-w-xs tint--2xdark"
-          alt="Illustration of glass UI layers">
-  </div>
-</div> -->
-
   <!-- Intro -->
-  <section class="moat-md">
-    <div class="card-md glass-e2e-md tint--3xdark">
+  <section class="moat-sm glass-container">
+    <div class="card-md glass-3d tint--3xdark">
       <div class="grid-c gap--md">
 
         <img src="/assets/tutorial-img/glass-layers-no-text.png"
@@ -68,28 +59,26 @@
 
   <!-- Glass styles  -->
   <section id="styles" class="grid">
-    <div class="heading-bg--xl">
+    <div class="big-title-bg">
       <h2 class="big-title">Glass styles</h2>
     </div>
 
-    <div class="grid gap--5xl">
-
-      <!-- Glass tints -->
-      <div class="moat-all h--50vh">
+    <div class="section-grid">
+      <div class="moat-all h--50vh flex-c">
         <div class="max-w-sm telescope-rect_bin">
-          <div class="telescope-rect--lower-r glass-e2e-none tint--2xdark radius--xl">
+          <div class="telescope-rect glass-3d tint--2xdark radius--xl">
             <p class="class-name--sm text-sha--xs">.tint--2xdark</p>
-            <div class="telescope-rect--lower-r glass-e2e-none tint--xdark radius--lg">
+            <div class="telescope-rect glass-3d tint--xdark radius--lg">
               <p class="class-name--sm text-sha--xs">.tint--xdark</p>
-              <div class="telescope-rect--lower-r glass-e2e-none tint--dark radius--lg">
+              <div class="telescope-rect glass-3d tint--dark radius--lg">
                 <p class="class-name--sm text-sha--xs">.tint--dark</p>
-                <div class="telescope-rect--lower-r glass-e2e-none tint--clear radius--md">
+                <div class="telescope-rect glass-3d tint--clear radius--md">
                   <p class="class-name--sm text-sha--xs">.tint--clear</p>
-                  <div class="telescope-rect--lower-r glass-e2e-none tint--light radius--md">
+                  <div class="telescope-rect glass-3d tint--light radius--md">
                     <p class="class-name--sm text-sha--sm">.tint--light</p>
-                    <div class="telescope-rect--lower-r glass-e2e-none tint--xlight radius--md">
+                    <div class="telescope-rect glass-3d tint--xlight radius--md">
                       <p class="class-name--sm text-sha--sm">.tint--xlight</p>
-                        <div class="telescope-rect--lower-r glass-e2e-none tint--2xlight radius--sm">
+                        <div class="telescope-rect glass-3d tint--2xlight radius--sm">
                           <p class="class-name--sm text-sha--sm">.tint--2xlight</p>
                         </div>
                     </div>
@@ -101,292 +90,284 @@
         </div>
       </div>
 
-      <!-- Glass Insets & Swatches -->
-      <!-- <div class="flex-c flex-wrap justify-se gap--3xl"> -->
-
-        <!-- Swatches -->
-        <div class="moat-all">
+      <div class="flex-c flex-wrap justify-se gap--3xl moat-all">
           <div class="bento_bin--1to3 max-w-md">
-            <span class="bento-rect glass-e2e-none tint--3xlight">
+            <span class="bento-rect glass-3d tint--3xlight">
               <span class="class-name--sm text--xlight text-sha--sm ">.tint--3xlight</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--2xlight">
+            <span class="bento-rect glass-3d tint--2xlight">
               <span class="class-name--sm text--xlight text-sha--sm">.tint--2xlight</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--xlight">
+            <span class="bento-rect glass-3d tint--xlight">
               <span class="class-name--sm text--xlight text-sha--sm ">.tint--xlight</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--light">
+            <span class="bento-rect glass-3d tint--light">
               <span class="class-name--sm text--xlight text-sha--sm">.tint--light</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--clear">
+            <span class="bento-rect glass-3d tint--clear">
               <span class="class-name--sm text--xlight text-sha--sm">.tint--clear</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--dark">
+            <span class="bento-rect glass-3d tint--dark">
               <span class="class-name--sm text--xlight text-sha--sm">.tint--dark</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--xdark">
+            <span class="bento-rect glass-3d tint--xdark">
               <span class="class-name--sm text--xlight text-sha--2xs">.tint--xdark</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--2xdark">
+            <span class="bento-rect glass-3d tint--2xdark">
               <span class="class-name--sm text--xlight text-sha--2xs">.tint--2xdark</span>
             </span>
 
-            <span class="bento-rect glass-e2e-none tint--3xdark">
+            <span class="bento-rect glass-3d tint--3xdark">
               <span class="class-name--sm text--xlight text-sha--2xs">.tint--3xdark</span>
             </span>
           </div>
-        </div>
 
-        <!-- Insets -->
-        <div class="moat-all">
-          <div class="card-xs glass-e2e-none gradient--2xdark">
-              <!-- <h3 class="section-title">Inset shadows</h3> -->
+          <div class="card-xs glass-3d gradient--2xdark">
+              <h3 class="section-title">Inset shadows</h3>
 
-              <div class="inset-rect inset--xs">
+              <div class="inset--xs inset-bg-reg radius--xs">
                 <p class="class-name--sm m--xs">.inset--xs</p>
               </div>
 
-              <div class="inset-rect inset--sm">
+              <div class="inset--sm inset-bg-reg radius--xs">
                 <p class="class-name--sm m--xs">.inset--sm</p>
               </div>
 
-              <div class="inset-rect inset--md">
+              <div class="inset--md inset-bg-reg radius--xs">
                 <p class="class-name--sm m--xs">.inset--md</p>
               </div>
 
-              <div class="inset-rect inset--lg">
+              <div class="inset--lg inset-bg-reg radius--xs">
                 <p class="class-name--sm m--xs">.inset--lg</p>
               </div>
 
-              <div class="inset-rect inset--xl">
+              <div class="inset--xl inset-bg-reg radius--xs">
                 <p class="class-name--sm m--xs">.inset--xl</p>
               </div>
           </div>
-        </div>
-
+      </div>
     </div>
   </section>
 
   <!-- Components -->
   <section id="components" class="grid">
-    <div class="heading-bg--xl">
+    <div class="big-title-bg">
       <h2 class="big-title">Components</h2>
     </div>
 
     <div class="section-grid">
       <!-- Inputs -->
-      <div class="grid">
-        <div class="grid gap--5xl">
+      <div class="grid gap--3xl">
 
-          <div class="flex-wrap flex-c gap--2xl">
-            <div class="card-lg glass-e2e-none tint--3xdark">
-              <fieldset class="input-fieldset">
-                <legend class="input-legend input-label">Checkboxs</legend>
+        <div class="moat-all flex-wrap flex-c gap--2xl">
+          <div class="card-fit glass-3d tint--3xdark">
+            <fieldset class="input-fieldset">
+              <legend class="input-legend input-label">Checkboxs</legend>
 
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    id="op-2"
-                    name="options"
-                    value="option 2"
-                    class="checkbox"
-                  />
-                  <label
-                    for="op-2"
-                    class="inline-label">
-                    Unchecked
-                  </label>
-                </div>
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  id="op-2"
+                  name="options"
+                  value="option 2"
+                  class="checkbox"
+                />
+                <label
+                  for="op-2"
+                  class="inline-label">
+                  Unchecked
+                </label>
+              </div>
 
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    id="op-1"
-                    name="options"
-                    value="option 1"
-                    class="checkbox"
-                    checked
-                  />
-                  <label
-                    for="op-1"
-                    class="inline-label">
-                    Checked
-                  </label>
-                </div>
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  id="op-1"
+                  name="options"
+                  value="option 1"
+                  class="checkbox"
+                  checked
+                />
+                <label
+                  for="op-1"
+                  class="inline-label">
+                  Checked
+                </label>
+              </div>
 
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    id="op-3"
-                    name="options"
-                    value="option 3"
-                    class="checkbox"
-                    disabled
-                  />
-                  <label
-                    for="op-3"
-                    class="inline-label">
-                    Disabled
-                  </label>
-                </div>
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  id="op-3"
+                  name="options"
+                  value="option 3"
+                  class="checkbox"
+                  disabled
+                />
+                <label
+                  for="op-3"
+                  class="inline-label">
+                  Disabled
+                </label>
+              </div>
 
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    id="op-4"
-                    name="options"
-                    value="option 4"
-                    class="checkbox"
-                    checked disabled
-                  />
-                  <label
-                    for="op-4"
-                    class="inline-label">
-                    Disabled & checked
-                  </label>
-                </div>
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  id="op-4"
+                  name="options"
+                  value="option 4"
+                  class="checkbox"
+                  checked disabled
+                />
+                <label
+                  for="op-4"
+                  class="inline-label">
+                  Disabled & checked
+                </label>
+              </div>
 
-              </fieldset>
-            </div>
-
-            <div class="card-lg glass-e2e-none tint--3xdark">
-              <fieldset class="input-fieldset">
-                <legend class="input-legend input-label">Radio buttons</legend>
-
-                <div class="input-bin">
-                  <input
-                    type="radio"
-                    id="r-2"
-                    name="options-r"
-                    value="option 2"
-                    class="radio"
-                  />
-                  <label
-                    for="r-2"
-                    class="inline-label">
-                    Unchecked
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="radio"
-                    id="r-1"
-                    name="options-t"
-                    value="option 1"
-                    class="radio"
-                    checked
-                  />
-                  <label
-                    for="r-1"
-                    class="inline-label">
-                    Checked
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="radio"
-                    id="r-3"
-                    name="options-q"
-                    value="option 3"
-                    class="radio-style"
-                    disabled
-                  />
-                  <label
-                    for="r-3"
-                    class="inline-label">
-                    Disabled
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="radio"
-                    id="r-4"
-                    name="options-w"
-                    value="option 4"
-                    class="radio"
-                    checked disabled
-                  />
-                  <label
-                    for="r-4"
-                    class="inline-label">
-                    Disabled & checked
-                  </label>
-                </div>
-
-              </fieldset>
-            </div>
-
-            <div class="card-lg glass-e2e-none tint--3xdark">
-              <fieldset class="input-fieldset">
-                <legend class="input-legend input-label">Switchs</legend>
-
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    class="switch switch-sm"
-                    id="switch-sm" >
-
-                  <label
-                    for="switch-sm"
-                    class="inline-label">
-                    Unchecked
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    class="switch switch-sm"
-                    id="switch-checked--sm"
-                    checked >
-                  <label
-                    for="switch-checked--sm"
-                    class="inline-label">
-                    Checked
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    class="switch switch-sm"
-                    id="switch-disabled--sm"
-                    disabled >
-                  <label
-                    for="switch-disabled--sm"
-                    class="inline-label">
-                    Disabled
-                  </label>
-                </div>
-
-                <div class="input-bin">
-                  <input
-                    type="checkbox"
-                    class="switch switch-sm"
-                    id="s-4"
-                    disabled checked >
-                  <label
-                    for="s-4"
-                    class="inline-label">
-                    Disabled & checked
-                  </label>
-                </div>
-              </fieldset>
-            </div>
+            </fieldset>
           </div>
 
-          <div class="moat-all max-w-xs card--md glass-e2e-none tint--clear gradient--xdark">
+          <div class="card-fit glass-3d tint--3xdark">
+            <fieldset class="input-fieldset">
+              <legend class="input-legend input-label">Radio buttons</legend>
+
+              <div class="input-bin">
+                <input
+                  type="radio"
+                  id="r-2"
+                  name="options-r"
+                  value="option 2"
+                  class="radio"
+                />
+                <label
+                  for="r-2"
+                  class="inline-label">
+                  Unchecked
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="radio"
+                  id="r-1"
+                  name="options-t"
+                  value="option 1"
+                  class="radio"
+                  checked
+                />
+                <label
+                  for="r-1"
+                  class="inline-label">
+                  Checked
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="radio"
+                  id="r-3"
+                  name="options-q"
+                  value="option 3"
+                  class="radio-style"
+                  disabled
+                />
+                <label
+                  for="r-3"
+                  class="inline-label">
+                  Disabled
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="radio"
+                  id="r-4"
+                  name="options-w"
+                  value="option 4"
+                  class="radio"
+                  checked disabled
+                />
+                <label
+                  for="r-4"
+                  class="inline-label">
+                  Disabled & checked
+                </label>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="card-fit glass-3d tint--3xdark">
+            <fieldset class="input-fieldset">
+              <legend class="input-legend input-label">Switchs</legend>
+
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  class="switch switch-sm"
+                  id="switch-sm" >
+
+                <label
+                  for="switch-sm"
+                  class="inline-label">
+                  Unchecked
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  class="switch switch-sm"
+                  id="switch-checked--sm"
+                  checked >
+                <label
+                  for="switch-checked--sm"
+                  class="inline-label">
+                  Checked
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  class="switch switch-sm"
+                  id="switch-disabled--sm"
+                  disabled >
+                <label
+                  for="switch-disabled--sm"
+                  class="inline-label">
+                  Disabled
+                </label>
+              </div>
+
+              <div class="input-bin">
+                <input
+                  type="checkbox"
+                  class="switch switch-sm"
+                  id="s-4"
+                  disabled checked >
+                <label
+                  for="s-4"
+                  class="inline-label">
+                  Disabled & checked
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="moat-all">
+          <div class="card-xs glass-3d tint--clear gradient--xdark">
             <div>
               <h3 class="section-title">Text inputs</h3>
             </div>
@@ -428,19 +409,18 @@
 
             </div>
           </div>
-
         </div>
       </div>
 
       <!-- Accordion -->
-        <div class="moat-all grid-c">
-          <div class="js-accordion accordion_bin max-w-md">
+        <div class="moat-sm">
+          <div class="js-accordion accordion-bin glass-container">
 
-            <div class="accordion-body is-closed">
+            <div class="accordion-body glass-3d is-closed">
 
               <div class="accordion-header">
                 <p class="eyebrow">eyebrow text</p>
-                <h4 class="accordion-title">Accordion title</h4>
+                <h4 class="card-title">Accordion title</h4>
               </div>
 
               <div class="accordion-summary full-w-inset">
@@ -448,49 +428,48 @@
               </div>
 
               <div class="js-accordionToggle accordion-toggle is-closed">
-                <div class="see-more-btn">
-                  <p class="btn-text">More info</p>
-                  <img src="/assets/icons/CaretDown.svg"
-                    class="ui-h-sm"
-                    alt="cheveron down icon"
-                    aria-hidden="true"
-                  >
-                </div>
+                <button class="see-more-btn"
+                  type="button">
+                  See more
+                  <svg
+                  class="svg-chev--down"
+                  src="/assets/icons/CaretDown.svg"
+                  alt="cheveron down"
+                  aria-hidden="true">
+                </button>
 
-                <div class="see-less-btn">
-                  <p class="btn-text">Less info</p>
-                  <img src="/assets/icons/CaretUp.svg"
-                    class="ui-h-sm"
-                    alt="cheveron up icon"
-                    aria-hidden="true"
-                  >
-                </div>
+                <button class="see-less-btn"
+                  type="button">
+                  See less
+                  <svg
+                  class="svg-chev--up ui-h-sm"
+                  src="/assets/icons/CaretUp.svg"
+                  alt="cheveron up"
+                  aria-hidden="true">
+                </button>
               </div>
             </div>
 
-            <div class="accordion-content is-closed">
-              <div class="grid gap--xs p-t--sm">
-                <p class="text--md">Accordion content</p>
-                <div class="flex flex-c">
-                  <img src="/assets/other img/hello-bear.gif"
-                    class="max-w-sm m-auto-x"
-                    alt="animated .gif of bear waving hello"
-                  >
-                </div>
-                <p>More info goes in here!</p>
+            <div class="accordion-content glass-no-bevel is-closed">
+              <p class="text--lg">Accordion content</p>
+              <div class="flex-c">
+                <img src="/assets/other img/hello-bear.gif"
+                  class="max-w-sm m-auto-x"
+                  alt="animated .gif of bear waving hello"
+                >
               </div>
-
+              <p>More info goes in here!</p>
             </div>
 
           </div>
         </div>
 
       <!-- Buttons -->
-        <div class="moat-lg grid-c">
-          <div class="card-lg glass-e2e-lg tint--2xdark max-w-lg grid-c radius-from--lg">
+        <div class="moat-lg glass-container">
+          <div class="card-xl glass-3d tint--xdark">
 
             <div class="grid-c gap-3xs ">
-              <h3 class="big-title">Buttons</h3>
+              <h3 class="section-title">Buttons</h3>
               <p class="text--mild  text-sha--sm">Hover and click to see effects.</p>
             </div>
 
@@ -559,8 +538,8 @@
 
                 <button
                   type="button"
-                  class="btn--clear btn--sm">
-                  btn--sm
+                  class="btn--clear btn-round--sm">
+
                     <svg
                     class="svg-icon svg-chev--r"
                     src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
@@ -569,8 +548,8 @@
 
                 <button
                   type="button"
-                  class="btn--clear btn--md">
-                  btn--md
+                  class="btn--clear btn-round--md">
+
                     <svg
                     class="svg-icon svg-chev--r"
                     src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
@@ -579,8 +558,8 @@
 
                 <button
                   type="button"
-                  class="btn--clear btn--lg">
-                  btn--lg
+                  class="btn--clear btn-round--lg">
+
                     <svg
                     class="svg-icon svg-chev--r"
                     src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
@@ -595,8 +574,8 @@
         </div>
 
       <!-- Tab menu -->
-      <div class="grid-c moat-all">
-        <div class="max-w-sm card-lg glass-e2e-none tint--3xdark">
+      <div class="moat-sm glass-container">
+        <div class="card-md glass-3d tint--3xdark">
 
           <div class="grid-c gap-3xs">
             <h3 class="section-title">Tab menu</h3>
@@ -701,13 +680,13 @@
 
   <!-- Details -->
   <section id="details" class="grid">
-    <div class="heading-bg--xl">
+    <div class="big-title-bg">
       <h2 class="big-title">Details</h2>
     </div>
 
     <!-- How -->
-    <div class="moat-md grid-c">
-      <div class="max-w-md card-lg glass-e2e-md tint--3xdark radius-from--md">
+    <div class="moat-md glass-container">
+      <div class="card-md glass-3d tint--3xdark">
 
         <div class="grid-c gap-3xs">
           <h3 class="section-title">How it differs</h3>
@@ -790,19 +769,19 @@
 
   <!-- Contact -->
   <section id="contact" class="grid">
-    <div class="heading-bg--xl">
+    <div class="big-title-bg">
       <h2 class="big-title">Contact</h2>
     </div>
 
-    <div class="moat-sm grid-c">
-      <div class="max-w-sm card-lg glass-e2e-sm tint--xdark ">
+    <div class="moat-xs glass-container">
+      <div class="card-sm glass-3d tint--xdark ">
 
         <!-- top -->
         <div class="justify-sb gap--md align-items-c  w--100">
 
           <div class="flex-col w--fit ">
             <p class="eyebrow">Built by</p>
-            <p class="card_title">Kris Kay</p>
+            <p class="card-title">Kris Kay</p>
           </div>
 
           <div class="justify-r gap--sm">
