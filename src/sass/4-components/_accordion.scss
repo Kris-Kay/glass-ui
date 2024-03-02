@@ -4,103 +4,80 @@
 @use "../util" as *;
 @use "../glass" as glass;
 @use "button" as btn;
+@use "card" as card;
 /* ================================================== */
 
-.accordion_bin {
+.accordion-bin {
   --space: var(--md);
-
-  @include bp(md) {
-    --space: var(--lg);
-  }
+  display: grid;
+  width: min(100%, var(--max-w-sm));
+  box-shadow: var(--sha--md);
+  @include radius("md");
 }
 
 .accordion-body {
-  /* layout */
-  position: relative;
-  z-index: 5;
-  display: grid;
+  @include card.card-base;
 
-  /* visual */
-  @include glass.glass-no-bevel;
-  background-color: var(--tint--xdark);
-
-  box-shadow: var(--sha--xl);
-  border-radius: var(--space);
-  overflow: hidden;
-}
-
-.accordion-header {
-  display: grid;
-  padding: var(--space);
-}
-
-.accordion-summary {
-  display: grid;
-  gap: var(--space);
-
-  &.full-w-inset {
-    padding: var(--space);
-    background-color: var(--inset-bg--deep);
-    box-shadow: var(--flat-inset--lg);
-  }
-}
-
-.see-more-btn, .see-less-btn {
-  pointer-events: none;
-
-  & > p {
-    font-family: $font-family-title;
-    font-weight: $font-weight--md;
-    font-size: var(--text--sm);
-    letter-spacing: $letter-spacing--lg;
-    color: var(--color--white);
-  }
+  width: 100%;
+  @include radius("md");
 }
 
 .accordion-toggle {
-  /* layout */
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: var(--space);
 
-  /* visual */
   pointer-events: auto;
   cursor: pointer;
+  border-radius: var(--2xs);
   background-color: transparent;
 
   &:hover {
     background-color: var(--tint--light);
   }
 
-  >.see-more-btn {
+  & > .see-more-btn {
     display: none;
   }
 
-  >.see-less-btn {
-    width: fit-content;
+  & > .see-less-btn {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: var(--3xs);
   }
 
   &.is-closed {
-
-    >.see-more-btn {
-      width: fit-content;
+    & > .see-more-btn {
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: var(--3xs);
     }
 
-    >.see-less-btn {
+    & > .see-less-btn {
       display: none;
     }
   }
 }
 
+.see-more-btn, .see-less-btn {
+  pointer-events: none;
+
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--3xs);
+  padding: var(--3xs);
+
+  font-family: $font-family-title;
+  font-weight: $font-weight--md;
+  font-size: var(--text--sm);
+  letter-spacing: $letter-spacing--lg;
+  color: var(--color--white);
+
+  & > svg {
+    @include svg-icon;
+    background-color: var(--color--white);
+    height: 1.5rem;
+  }
+}
 
 @keyframes slide-down {
   from {
@@ -114,23 +91,19 @@
 }
 
 .accordion-content {
-  /* layout */
   width: 100%;
   height: fit-content;
   display: grid;
   gap: var(--space);
-  padding-top: var(--2xl);
+  padding-top: var(--3xl);
   padding-bottom: var(--space);
   padding-left: var(--space);
   padding-right: var(--space);
   margin-top: calc(-1 * var(--xl));
 
-  /* visual */
-  border-radius: 0 0 var(--space) var(--space);
-  box-shadow: var(--sha--xl);
-  @include glass.glass-filter-dark;
+  @include radius("md");
   background-color: var(--tint--3xdark);
-  color: var(--tint--3xlight);
+  box-shadow: var(--sha--md);
 
   animation: slide-down 200ms;
   animation-timing-function: ease-in;
@@ -140,16 +113,4 @@
     display: none;
     height: 0;
   }
-}
-
-.accordion-title {
-  @include title--thick;
-  font-size: var(--text--xl);
-  text-shadow: var(--text-sha--sm);
-  color: var(--text--strong);
-}
-
-.accordion-text {
-  max-width: 100%;
-  font-size: var(--text--sm);
 }
