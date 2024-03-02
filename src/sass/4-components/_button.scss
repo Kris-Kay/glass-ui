@@ -74,10 +74,10 @@
   @include btn-structure;
 
   --btn--h: var(--ui-h-sm);
-  --btn-inner--h: 0.8em;
+  --btn-inner--h: 0.75rem;
   --btn--t: 0;
   --btn--b: 0;
-  --btn--x: 0.85em;
+  --btn--x: 0.9rem;
   --btn--radius: 9999px;
   box-shadow: var(--sha--2xs);
 }
@@ -86,10 +86,10 @@
   @include btn-structure;
 
   --btn--h: var(--ui-h-md);
-  --btn-inner--h: 0.9rem;
+  --btn-inner--h: 0.85rem;
   --btn--t: 0;
   --btn--b: 0;
-  --btn--x: 1rem;
+  --btn--x: 1.1rem;
   --btn--radius: 9999px;
   box-shadow: var(--sha--xs);
 }
@@ -98,10 +98,10 @@
   @include btn-structure;
 
   --btn--h: var(--ui-h-lg);
-  --btn-inner--h: 1em;
+  --btn-inner--h: 1rem;
   --btn--t: 0;
   --btn--b: 0;
-  --btn--x: 1.4rem;
+  --btn--x: 1.6rem;
   --btn--radius: 9999px;
   box-shadow: var(--sha--sm);
 }

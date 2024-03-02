@@ -33,11 +33,11 @@
 
   & > .full-w-inset {
     padding: var(--_space);
-    margin-left: calc((-1 * var(--_space)) + 0.5px);
+    margin-left: calc(var(--_neg-space) + 0.5px);
     margin-right: var(--_neg-space);
 
     color: var(--color--3xlight);
-    background-color: var(--inset-bg--xdeep);
+    background-color: var(--inset-bg-xdeep);
     box-shadow: var(--flat-inset--lg);
   }
 
@@ -61,6 +61,16 @@
     place-self: center;
     margin: var(--_neg-space);
   }
+}
+
+.card-fit {
+  @include card-base;
+  --space: var(--lg);
+
+  width: fit-content;
+
+  @include radius("lg");
+  box-shadow: var(--sha--lg);
 }
 
 .card-xs {
@@ -132,9 +142,11 @@
 
 /* Card items */
 /* ================================================== */
-.card_title {
+.card-title {
   @include title--thick;
-  font-size: var(--text--2xl);
-  text-shadow: var(--text-sha--sm);
+  font-size: var(--text--xl);
   line-height: 1;
+
+  color: var(--text--strong);
+  text-shadow: var(--text-sha--md);
 }

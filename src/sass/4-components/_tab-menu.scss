@@ -33,11 +33,11 @@
   margin: 0 auto;
 
   --tab-radius: 5px;
-  --padding: 5px;
+  --padding: 4px;
   padding: var(--padding);
   @include outer-radius (var(--tab-radius), var(--padding));
 
-  background-color: var(--inset-bg--deep);
+  background-color: var(--inset-bg-deep);
   @include glass.glass-filter-base;
 
   &::before {
@@ -48,14 +48,14 @@
 
   @include bp(xs) {
     --tab-radius: 6px;
-    --padding: 5px;
+    --padding: 4px;
     gap: 6px;
   }
 
   @include bp(md) {
     height: var(--ui-h-lg);
     --tab-radius: 8px;
-    --padding: 6px;
+    --padding: 5px;
     gap: 7px;
   }
 }
@@ -83,8 +83,8 @@
   background-color: transparent;
 
   @include bp(xs) {
-    padding: 0 0.8rem;
     --inner-h: 1rem;
+    padding: 0 0.8rem;
   }
 
   @include bp(sm) {
