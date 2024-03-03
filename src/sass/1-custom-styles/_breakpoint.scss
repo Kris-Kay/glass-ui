@@ -28,8 +28,8 @@ $breakpoints: (
 
 /* Breakpoint variables */
 /* ================================================== */
-$bp--xs: map.get($breakpoints, xs);
-$bp--sm: map.get($breakpoints, sm);
-$bp--md: map.get($breakpoints, md);
-$bp--lg: map.get($breakpoints, lg);
-$bp--xl: map.get($breakpoints, xl);
+$bp-xs: map.get($breakpoints, xs);
+$bp-sm: map.get($breakpoints, sm);
+$bp-md: map.get($breakpoints, md);
+$bp-lg: map.get($breakpoints, lg);
+$bp-xl: map.get($breakpoints, xl);

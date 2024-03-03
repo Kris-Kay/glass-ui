@@ -41,7 +41,7 @@
   --space: calc(var(--sm) * 1.15);
   width: 100%;
   border-radius: calc(var(--lg) * 1.15);
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha-sm);
 
   @include bp(xs) {
     --space: var(--md);

@@ -68,103 +68,13 @@ html {
   --ui-h-md: 2.25rem; /* 36px */
   --ui-h-lg: 2.75rem;  /* 44px */
 
-  --moat: 1rem;
-
   --max-w-xs: 400px;
   --max-w-sm: 600px;
   --max-w-md: 800px;
   --max-w-lg: 980px;
   --max-w-xl: 1200px;
 
-  // @include bp(md) {
-  //   --ui-h-sm: 2.25rem; /* 36px */
-  //   --ui-h-md: 2.5rem;  /* 40px */
-  //   --ui-h-lg: 2.75rem; /* 44px */
-  // }
-}
-
-.max-w-xs { width: min(100%, var(--max-w-xs)); }
-.max-w-sm { width: min(100%, var(--max-w-sm)); }
-.max-w-md { width: min(100%, var(--max-w-md)); }
-.max-w-lg { width: min(100%, var(--max-w-lg)); }
-.max-w-xl { width: min(100%, var(--max-w-xl)); }
-
-/* Moat classes */
-/* ================================================== */
-/* wrap elements to add or remove left-right padding  */
-/* padding is added at the breakpoint value that match the suffix */
-/* are flex containers set to ` justify-content: center;` */
-
-@mixin moat {
-  width: 100%;
-  height: fit-content;
-  z-index: z.z("section");
-
-display: flex;
-justify-content: center;
-  // display: grid;
-  // place-items: center;
-}
-
-.moat-all {
-  @include moat;
-  padding: 0 var(--moat);
-  // background-color: hsl(240 100% 50% / 0.2);
-}
-
-.moat-xs {
-  @include moat;
-
-  // background-color: hsla(139, 100%, 50%, 0.2);
-
-  @include bp(xs) {
-    padding: 0 var(--moat);
-  }
-}
-
-.moat-sm {
-  @include moat;
-
-  // background-color: hsla(308, 100%, 50%, 0.2);
-
-  @include bp(sm) {
-    padding: 0 var(--moat);
-  }
-}
-
-.moat-md {
-  @include moat;
-
-  // background-color: hsla(104, 100%, 50%, 0.2);
-
-  @include bp(md) {
-    padding: 0 var(--moat);
-  }
-}
-
-.moat-lg {
-  @include moat;
-
-  // background-color: hsla(40, 100%, 50%, 0.2);
-
-  @include bp(lg) {
-    padding: 0 var(--moat);
-  }
-}
-
-.moat-xl {
-  @include moat;
-
-  // background-color: hsla(8, 100%, 50%, 0.2);
-
-  @include bp(xl) {
-    padding: 0 var(--moat);
-  }
-}
-
-.moat-none {
-  @include moat;
-  padding: 0;
+  --moat: 1rem;
 }
 
 /* UI hight */
@@ -184,42 +94,81 @@ justify-content: center;
   height: var(--ui-h-lg);
 }
 
-
-
-
-/* moat classes */
+/* Max width classes */
 /* ================================================== */
-.moat-from--sm {
+.max-w-xs { width: min(100%, var(--max-w-xs)); }
+.max-w-sm { width: min(100%, var(--max-w-sm)); }
+.max-w-md { width: min(100%, var(--max-w-md)); }
+.max-w-lg { width: min(100%, var(--max-w-lg)); }
+.max-w-xl { width: min(100%, var(--max-w-xl)); }
+
+/* Moat classes */
+/* ================================================== */
+/* wrap elements to add or remove left-right padding  */
+/* padding is added at the breakpoint value that match the suffix */
+/* are flex containers set to ` justify-content: center;` */
+
+@mixin moat {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  height: fit-content;
+  z-index: z.z("section");
+  display: flex;
+  justify-content: center;
+}
+
+.moat-all {
+  @include moat;
+  padding: 0 var(--moat);
+}
+
+.moat-xs {
+  @include moat;
+  padding: 0;
+
+  @include bp(xs) {
+    padding: 0 var(--moat);
+  }
+}
+
+.moat-sm {
+  @include moat;
+  padding: 0;
 
   @include bp(sm) {
-    min-width: calc($bp--sm - var(--moat--x2));
-    width: calc(100% - var(--moat--x2));
+    padding: 0 var(--moat);
   }
 }
 
-.moat-from--md {
-  // width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.moat-md {
+  @include moat;
+  padding: 0;
 
   @include bp(md) {
-    min-width: calc($bp--sm - var(--moat--x2));
-    // width: calc(100% - var(--moat--x2));
+    padding: 0 var(--moat);
   }
 }
 
-.moat-from--lg {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.moat-lg {
+  @include moat;
+  padding: 0;
 
   @include bp(lg) {
-    min-width: calc($bp--lg - var(--moat--x2));
-    max-width: calc(100% - var(--moat--x2));
+    padding: 0 var(--moat);
   }
+}
+
+.moat-xl {
+  @include moat;
+  padding: 0;
+
+  @include bp(xl) {
+    padding: 0 var(--moat);
+  }
+}
+
+.moat-none {
+  @include moat;
+  padding: 0;
 }
 
 
@@ -264,9 +213,3 @@ justify-content: center;
     --gap: 12rem;
   }
 }
-
-
-/* Max width classes */
-/* ================================================== */
-.max-150 { width: min(100%, 150px); }
-.max-200 { width: min(100%, 200px); }

@@ -14,20 +14,20 @@
 /* ✐ Edit colors in → src/sass/1-custom-styles/_color.scss */
 /* ================================================== */
 $tints: (
-  "3xlight": var(--tint--3xlight),
-  "2xlight": var(--tint--2xlight),
-  "xlight":  var(--tint--xlight),
-  "light":   var(--tint--light),
-  "clear":   var(--tint--clear),
-  "dark":    var(--tint--dark),
-  "xdark":   var(--tint--xdark),
-  "2xdark":  var(--tint--2xdark),
-  "3xdark":  var(--tint--3xdark),
+  "3xlight": var(--tint-3xlight),
+  "2xlight": var(--tint-2xlight),
+  "xlight":  var(--tint-xlight),
+  "light":   var(--tint-light),
+  "clear":   var(--tint-clear),
+  "dark":    var(--tint-dark),
+  "xdark":   var(--tint-xdark),
+  "2xdark":  var(--tint-2xdark),
+  "3xdark":  var(--tint-3xdark),
 );
 
-/* Generate .tint-- classes */
+/* Generate .tint- classes */
 .tint {
-  @include mixin.generate-classes($tints, 'background-color', 'tint', '--');
+  @include mixin.generate-classes($tints, 'background-color', 'tint', '-');
 }
 
 /* backdrop-filter: <filter-function> values */
@@ -107,7 +107,7 @@ html {
     .glass-3d {
       box-shadow: none;
       &::after {
-        box-shadow: bevel.$flat-bevel--sm;
+        box-shadow: bevel.$flat-bevel-sm;
       }
 
       & > .full-w-inset {
@@ -127,7 +127,7 @@ html {
     @include pseudo;
     z-index: 1;
     overflow: hidden;
-    box-shadow: bevel.$bevel--sm;
+    box-shadow: bevel.$bevel-sm;
   }
 
   &::before {
@@ -166,7 +166,7 @@ html {
     @include pseudo;
     z-index: 1;
     overflow: hidden;
-    box-shadow: bevel.$flat-bevel--sm;
+    box-shadow: bevel.$flat-bevel-sm;
   }
 }
 .glass-e2e-all { @include glass-e2e-all; }
@@ -182,6 +182,6 @@ html {
     @include pseudo;
     overflow: hidden;
     z-index: 202;
-    box-shadow: bevel.$bevel--md;
+    box-shadow: bevel.$bevel-md;
   }
 }

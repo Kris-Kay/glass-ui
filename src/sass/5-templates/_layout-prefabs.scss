@@ -18,17 +18,17 @@
   aspect-ratio : 4.5 / 1;
   border-radius: var(--sm);
   padding: var(--xl) var(--2xl);
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha-sm);
 
   // will-change: transform, box-shadow;
-  // box-shadow: var(--sha--2xs);
+  // box-shadow: var(--sha-2xs);
   // transform: scale(1);
   // transition:
   //   transform cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms,
   //   box-shadow cubic-bezier(0.46, 0.43, 0.1, 0.99) 400ms;
 
   // &:hover {
-  //   box-shadow: var(--sha--sm);
+  //   box-shadow: var(--sha-sm);
   //   transform: scale(1.02);
   // }
 
@@ -173,7 +173,7 @@
   }
 
   & > div {
-    box-shadow: var(--sha--sm);
+    box-shadow: var(--sha-sm);
   }
 }
 
@@ -181,7 +181,7 @@
   min-width: fit-content;
   padding: 5%;
   overflow: visible;
-  box-shadow: var(--sha--3xs);
+  box-shadow: var(--sha-3xs);
 
   @include bp(md) {
     will-change: padding;
@@ -209,8 +209,8 @@
   margin-bottom: 2rem;
 
   @include glass.glass-no-bevel;
-  background-color: var(--tint--clear);
-  box-shadow: var(--sha--sm);
+  background-color: var(--tint-clear);
+  box-shadow: var(--sha-sm);
 
   @include bp(sm) {
     justify-self: flex-start;
@@ -249,5 +249,5 @@
   object-fit: cover;
   object-position: center;
   opacity: 0.8;
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha-sm);
 }

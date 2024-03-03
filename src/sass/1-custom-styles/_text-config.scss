@@ -13,116 +13,116 @@ $font-family-code: ('Fragment Mono', 'Courier', monospace);
 
 /* letter-spacing: */
 /* ================================================== */
-$letter-spacing--sm: 0.01em;
-$letter-spacing--md: 0.04em;
-$letter-spacing--lg: 0.06em;
+$letter-spacing-sm: 0.01em;
+$letter-spacing-md: 0.04em;
+$letter-spacing-lg: 0.06em;
 
 /* line-height: */
 /* ================================================== */
-$line-height--sm: calc(0.125rem + 2.15ex + 0.125rem);
-$line-height--md: calc(0.125rem + 2.25ex + 0.125rem);
-$line-height--lg: calc(0.125rem + 2.5ex + 0.125rem);
+$line-height-sm: calc(0.125rem + 2.15ex + 0.125rem);
+$line-height-md: calc(0.125rem + 2.25ex + 0.125rem);
+$line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
 
 /* font-weight: */
 /* ================================================== */
-$font-weight--sm: 200;
-$font-weight--md: 300;
-$font-weight--lg: 400;
+$font-weight-sm: 200;
+$font-weight-md: 300;
+$font-weight-lg: 400;
 
 /* ================================================== */
 /* Fluid typography range */
 /* ================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
-  --text--2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
-  --text--xs: clamp(0.875rem, 4vw - 1rem, 1rem);
-  --text--sm: clamp(1rem, 0.13vw + 1rem, 1.125rem);
-  --text--md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
-  --text--lg: clamp(1.375rem, 1.3vw + 1rem, 1.75rem);
-  --text--xl: clamp(1.5rem, 1.7vw + 1rem, 2.25rem);
-  --text--2xl: clamp(1.75rem, 2.5vw + 1rem, 2.8rem);
-  --text--3xl: clamp(2rem, 3.8vw + 1rem, 3.25rem);
+  --text-2xs: clamp(0.75rem, 4vw - 1.5rem, 0.875rem);
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+  --text-sm: clamp(1rem, 0.13vw + 1rem, 1.125rem);
+  --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  --text-lg: clamp(1.375rem, 1.3vw + 1rem, 1.75rem);
+  --text-xl: clamp(1.5rem, 1.7vw + 1rem, 2.25rem);
+  --text-2xl: clamp(1.75rem, 2.5vw + 1rem, 2.8rem);
+  --text-3xl: clamp(2rem, 3.8vw + 1rem, 3.25rem);
 }
 
 /* Text size MAP */
 /* ================================================== */
 $text-sizes: (
-  "2xs":  var(--text--2xs),
-  "xs":  var(--text--xs),
-  "sm":  var(--text--sm),
-  "md":  var(--text--md),
-  "lg":  var(--text--lg),
-  "xl":  var(--text--xl),
-  "2xl":  var(--text--2xl),
-  "3xl":  var(--text--3xl),
+  "2xs":  var(--text-2xs),
+  "xs":  var(--text-xs),
+  "sm":  var(--text-sm),
+  "md":  var(--text-md),
+  "lg":  var(--text-lg),
+  "xl":  var(--text-xl),
+  "2xl":  var(--text-2xl),
+  "3xl":  var(--text-3xl),
 );
 
 /* Text size classes */
 .text {
-  @include mixin.generate-classes($text-sizes, 'font-size', 'text', '--');
+  @include mixin.generate-classes($text-sizes, 'font-size', 'text', '-');
 }
 
 /* ================================================== */
 /* Text shadows */
 /* ================================================== */
 html {
-  --text-sha--3xs:
+  --text-sha-3xs:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.2px 0.2px 0.2px oklch(var(--shadow) / 0.2),
     0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
-  --text-sha--2xs:
+  --text-sha-2xs:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.25px 0.25px 0.25px oklch(var(--shadow) / 0.2),
     0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
-  --text-sha--xs:
+  --text-sha-xs:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.3px 0.3px 0.3px oklch(var(--shadow) / 0.25),
     0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
-  --text-sha--sm:
+  --text-sha-sm:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.35px 0.35px 0.35px oklch(var(--shadow) / 0.25),
     0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
-  --text-sha--md:
+  --text-sha-md:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.4px 0.4px 0.4px oklch(var(--shadow) / 0.25),
     0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
-  --text-sha--lg:
+  --text-sha-lg:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.45px 0.45px 0.45px oklch(var(--shadow) / 0.25),
     0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
-  --text-sha--xl:
+  --text-sha-xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.5px 0.5px 0.5px oklch(var(--shadow) / 0.25),
     0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
-  --text-sha--2xl:
+  --text-sha-2xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.55px 0.55px 0.55px oklch(var(--shadow) / 0.25),
     1px 1px 2px oklch(var(--shadow) / 0.1),
     0 0 0.01em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
-  --text-sha--3xl:
+  --text-sha-3xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.6px 0.6px 0.6px oklch(var(--shadow) / 0.25),
     1px 1px 2px oklch(var(--shadow) / 0.1),
@@ -133,17 +133,17 @@ html {
 /* Text shadow MAP */
 /* ================================================== */
 $text-shadows: (
-  "3xs": var(--text-sha--3xs),
-  "2xs": var(--text-sha--2xs),
-  "xs": var(--text-sha--xs),
-  "sm": var(--text-sha--sm),
-  "md": var(--text-sha--md),
-  "lg": var(--text-sha--lg),
-  "xl": var(--text-sha--xl),
-  "2xl": var(--text-sha--2xl),
-  "3xl": var(--text-sha--3xl),
+  "3xs": var(--text-sha-3xs),
+  "2xs": var(--text-sha-2xs),
+  "xs": var(--text-sha-xs),
+  "sm": var(--text-sha-sm),
+  "md": var(--text-sha-md),
+  "lg": var(--text-sha-lg),
+  "xl": var(--text-sha-xl),
+  "2xl": var(--text-sha-2xl),
+  "3xl": var(--text-sha-3xl),
 );
 
 .text-sha {
-  @include mixin.generate-classes($text-shadows, 'text-shadow', 'text-sha', '--');
+  @include mixin.generate-classes($text-shadows, 'text-shadow', 'text-sha', '-');
 }

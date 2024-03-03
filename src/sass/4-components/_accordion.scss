@@ -11,7 +11,7 @@
   --space: var(--md);
   display: grid;
   width: min(100%, var(--max-w-sm));
-  box-shadow: var(--sha--md);
+  box-shadow: var(--sha-md);
   @include radius("md");
 }
 
@@ -33,7 +33,7 @@
   background-color: transparent;
 
   &:hover {
-    background-color: var(--tint--light);
+    background-color: var(--tint-light);
   }
 
   & > .see-more-btn {
@@ -67,14 +67,14 @@
   padding: var(--3xs);
 
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
-  font-size: var(--text--sm);
-  letter-spacing: $letter-spacing--lg;
-  color: var(--color--white);
+  font-weight: $font-weight-md;
+  font-size: var(--text-sm);
+  letter-spacing: $letter-spacing-lg;
+  color: var(--color-white);
 
   & > svg {
     @include svg-icon;
-    background-color: var(--color--white);
+    background-color: var(--color-white);
     height: 1.5rem;
   }
 }
@@ -102,8 +102,8 @@
   margin-top: calc(-1 * var(--xl));
 
   @include radius("md");
-  background-color: var(--tint--3xdark);
-  box-shadow: var(--sha--md);
+  background-color: var(--tint-3xdark);
+  box-shadow: var(--sha-md);
 
   animation: slide-down 200ms;
   animation-timing-function: ease-in;

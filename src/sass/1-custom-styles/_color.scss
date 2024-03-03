@@ -14,9 +14,9 @@
 /* ================================================== */
 :root {
 /* ✨ Config these values ✨ */
-  --primary--hue: 220;
-  --accent--hue: 130;
-  --neutral--hue: 250;
+  --primary-hue: 220;
+  --accent-hue: 130;
+  --neutral-hue: 250;
 }
 
 
@@ -28,87 +28,71 @@
   /* Fallback colors */
   /* ================================================== */
   /* Primary */
-  --primary--95: 95% 0.06 var(--primary--hue);
-  --primary--90: 90% 0.12 var(--primary--hue);
-  --primary--85: 85% 0.14 var(--primary--hue);
-  --primary--80: 80% 0.13 var(--primary--hue);
-  --primary--75: 75% 0.12 var(--primary--hue);
-  --primary--70: 70% 0.12 var(--primary--hue);
-  --primary--60: 60% 0.1 var(--primary--hue);
-  --primary--50: 50% 0.08 var(--primary--hue);
-  --primary--40: 40% 0.06 var(--primary--hue);
-  --primary--30: 30% 0.05 var(--primary--hue);
-  --primary--20: 20% 0.03 var(--primary--hue);
-  --primary--15: 15% 0.025 var(--primary--hue);
+  --primary--95: 95% 0.06 var(--primary-hue);
+  --primary--90: 90% 0.12 var(--primary-hue);
+  --primary--85: 85% 0.14 var(--primary-hue);
+  --primary--80: 80% 0.13 var(--primary-hue);
+  --primary--75: 75% 0.12 var(--primary-hue);
+  --primary--70: 70% 0.12 var(--primary-hue);
+  --primary--50: 50% 0.08 var(--primary-hue);
+  --primary--20: 20% 0.03 var(--primary-hue);
+  --primary--15: 15% 0.025 var(--primary-hue);
 
   /* Accent */
-  --accent--80: 80% 0.12 var(--accent--hue);
-  --accent--70: 70% 0.2 var(--accent--hue);
-  --accent--60: 60% 0.17 var(--accent--hue);
-  --accent--50: 50% 0.14 var(--accent--hue);
-  --accent--40: 40% 0.11 var(--accent--hue);
+  --accent--80: 80% 0.12 var(--accent-hue);
+  --accent--70: 70% 0.2 var(--accent-hue);
+  --accent--50: 50% 0.14 var(--accent-hue);
 
   /* Neutral */
-  --neutral--98: 98% 0.009 var(--neutral--hue);
-  --neutral--95: 95% 0.02 var(--neutral--hue);
-  --neutral--90: 90% 0.03 var(--neutral--hue);
-  --neutral--85: 85% 0.03 var(--neutral--hue);
-  --neutral--80: 80% 0.025 var(--neutral--hue);
-  --neutral--75: 75% 0.025 var(--neutral--hue);
-  --neutral--70: 70% 0.025 var(--neutral--hue);
-  --neutral--65: 65% 0.02 var(--neutral--hue);
-  --neutral--60: 60% 0.02 var(--neutral--hue);
-  --neutral--55: 55% 0.02 var(--neutral--hue);
-  --neutral--50: 50% 0.02 var(--neutral--hue);
-  --neutral--45: 45% 0.01 var(--neutral--hue);
-  --neutral--40: 40% 0.01 var(--neutral--hue);
-  --neutral--35: 35% 0.01 var(--neutral--hue);
-  --neutral--30: 30% 0.01 var(--neutral--hue);
-  --neutral--25: 25% 0.02 var(--neutral--hue);
-  --neutral--20: 20% 0.02 var(--neutral--hue);
-  --neutral--15: 15% 0.02 var(--neutral--hue);
-  --neutral--10: 10% 0.02 var(--neutral--hue);
-  --neutral--5:  5% 0.014 var(--neutral--hue);
+  --neutral--98: 98% 0.009 var(--neutral-hue);
+  --neutral--95: 95% 0.02 var(--neutral-hue);
+  --neutral--90: 90% 0.03 var(--neutral-hue);
+  --neutral--85: 85% 0.03 var(--neutral-hue);
+  --neutral--80: 80% 0.025 var(--neutral-hue);
+  --neutral--75: 75% 0.025 var(--neutral-hue);
+  --neutral--70: 70% 0.025 var(--neutral-hue);
+  --neutral--60: 60% 0.02 var(--neutral-hue);
+  --neutral--50: 50% 0.02 var(--neutral-hue);
+  --neutral--40: 40% 0.01 var(--neutral-hue);
+  --neutral--30: 30% 0.01 var(--neutral-hue);
+  --neutral--20: 20% 0.02 var(--neutral-hue);
+  --neutral--10: 10% 0.02 var(--neutral-hue);
+  --neutral--5:  5% 0.014 var(--neutral-hue);
 
   @media (color-gamut: p3) {
   /* P3 color space values go here */
   /* These will only be visible if both the display and browser support the P3 color space */
     :root {
       /* Primary */
-      --primary--95: 95% 0.065 var(--primary--hue);
-      --primary--90: 90% 0.13 var(--primary--hue);
-      --primary--85: 85% 0.15 var(--primary--hue);
-      --primary--80: 80% 0.16 var(--primary--hue);
-      --primary--75: 75% 0.15 var(--primary--hue);
-      --primary--60: 60% 0.12 var(--primary--hue);
-      --primary--50: 50% 0.1 var(--primary--hue);
-      --primary--40: 40% 0.09 var(--primary--hue);
-      --primary--30: 30% 0.06 var(--primary--hue);
-      --primary--20: 20% 0.04 var(--primary--hue);
-      --primary--15: 15% 0.033 var(--primary--hue);
+      --primary--95: 95% 0.065 var(--primary-hue);
+      --primary--90: 90% 0.13 var(--primary-hue);
+      --primary--85: 85% 0.15 var(--primary-hue);
+      --primary--80: 80% 0.16 var(--primary-hue);
+      --primary--75: 75% 0.15 var(--primary-hue);
+      --primary--50: 50% 0.1 var(--primary-hue);
+      --primary--20: 20% 0.04 var(--primary-hue);
+      --primary--15: 15% 0.033 var(--primary-hue);
 
       /* Accent */
-      --accent--80: 80% 0.135 var(--accent--hue);
-      --accent--70: 70% 0.21 var(--accent--hue);
-      --accent--60: 60% 0.19 var(--accent--hue);
-      --accent--50: 50% 0.16 var(--accent--hue);
-      --accent--40: 40% 0.125 var(--accent--hue);
+      --accent--80: 80% 0.135 var(--accent-hue);
+      --accent--70: 70% 0.21 var(--accent-hue);
+      --accent--50: 50% 0.16 var(--accent-hue);
     }
   }
 
   /* Solid colors that do not change with theme */
   /* ================================================== */
-  --color--primary: oklch(var(--primary--75) / 1);
-  --color--accent:  oklch(var(--accent--70) / 1);
-  --color--white:   oklch(var(--neutral--98) / 1);
-  --color--2xlight: oklch(var(--neutral--90) / 1);
-  --color--xlight:  oklch(var(--neutral--80) / 1);
-  --color--light:   oklch(var(--neutral--70) / 1);
-  --color--gray:    oklch(var(--neutral--50) / 1);
-  --color--dark:    oklch(var(--neutral--30) / 1);
-  --color--xdark:   oklch(var(--neutral--20) / 1);
-  --color--2xdark:  oklch(var(--neutral--10) / 1);
-  --color--black:   oklch(var(--neutral--5) / 1);
+  --color-primary: oklch(var(--primary--75) / 1);
+  --color-accent:  oklch(var(--accent--70) / 1);
+  --color-white:   oklch(var(--neutral--98) / 1);
+  --color-2xlight: oklch(var(--neutral--90) / 1);
+  --color-xlight:  oklch(var(--neutral--80) / 1);
+  --color-light:   oklch(var(--neutral--70) / 1);
+  --color-gray:    oklch(var(--neutral--50) / 1);
+  --color-dark:    oklch(var(--neutral--30) / 1);
+  --color-xdark:   oklch(var(--neutral--20) / 1);
+  --color-2xdark:  oklch(var(--neutral--10) / 1);
+  --color-black:   oklch(var(--neutral--5) / 1);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
@@ -117,15 +101,15 @@
 
   /* Translucent tints */
   /* ================================================== */
-  --tint--3xlight: oklch(var(--neutral--95) / 0.4);
-  --tint--2xlight: oklch(var(--neutral--95) / 0.3);
-  --tint--xlight:  oklch(var(--neutral--95) / 0.2);
-  --tint--light:   oklch(var(--neutral--95) / 0.1);
-  --tint--clear:   oklch(var(--neutral--10) / 0.05);
-  --tint--dark:    oklch(var(--neutral--10) / 0.1);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.2);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.3);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.5);
+  --tint-3xlight: oklch(var(--neutral--95) / 0.4);
+  --tint-2xlight: oklch(var(--neutral--95) / 0.3);
+  --tint-xlight:  oklch(var(--neutral--95) / 0.2);
+  --tint-light:   oklch(var(--neutral--95) / 0.1);
+  --tint-clear:   oklch(var(--neutral--10) / 0.05);
+  --tint-dark:    oklch(var(--neutral--10) / 0.1);
+  --tint-xdark:   oklch(var(--neutral--10) / 0.2);
+  --tint-2xdark:  oklch(var(--neutral--10) / 0.3);
+  --tint-3xdark:  oklch(var(--neutral--10) / 0.5);
 
   /* Insets */
   /* ================================================== */
@@ -135,17 +119,11 @@
 
   /* Text | Title | Label */
   /* ================================================== */
-  --text--xstrong: oklch(var(--neutral--95) / 1);
-  --text--strong:  oklch(var(--neutral--90) / 1);
-  --text--base:  oklch(var(--neutral--85) / 1);
-  --text--mild:  oklch(var(--neutral--80) / 1);
-  --text--xmild: oklch(var(--neutral--75) / 1);
-
-  /* Text links */
-  /* ================================================== */
-  --link--rest: oklch(var(--accent--60) / 1);
-  --link--hover: oklch(var(--accent--70) / 1);
-  --link--visit: oklch(var(--accent--50) / 1);
+  --text-xstrong: oklch(var(--neutral--95) / 1);
+  --text-strong:  oklch(var(--neutral--90) / 1);
+  --text-base:  oklch(var(--neutral--85) / 1);
+  --text-mild:  oklch(var(--neutral--80) / 1);
+  --text-xmild: oklch(var(--neutral--75) / 1);
 
   /* Other */
   /* ================================================== */
@@ -160,15 +138,15 @@
 
   /* Translucent tints */
   /* ================================================== */
-  --tint--3xlight: oklch(var(--neutral--95) / 0.5);
-  --tint--2xlight: oklch(var(--neutral--95) / 0.4);
-  --tint--xlight:  oklch(var(--neutral--95) / 0.3);
-  --tint--light:   oklch(var(--neutral--95) / 0.2);
-  --tint--clear:   oklch(var(--neutral--10) / 0.15);
-  --tint--dark:    oklch(var(--neutral--10) / 0.3);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.4);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.5);
-  --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
+  --tint-3xlight: oklch(var(--neutral--95) / 0.5);
+  --tint-2xlight: oklch(var(--neutral--95) / 0.4);
+  --tint-xlight:  oklch(var(--neutral--95) / 0.3);
+  --tint-light:   oklch(var(--neutral--95) / 0.2);
+  --tint-clear:   oklch(var(--neutral--10) / 0.15);
+  --tint-dark:    oklch(var(--neutral--10) / 0.3);
+  --tint-xdark:   oklch(var(--neutral--10) / 0.4);
+  --tint-2xdark:  oklch(var(--neutral--10) / 0.5);
+  --tint-3xdark:  oklch(var(--neutral--10) / 0.7);
 
   /* Insets */
   /* ================================================== */
@@ -178,21 +156,15 @@
 
   /* Text | Title | Label */
   /* ================================================== */
-  --text--xstrong: oklch(var(--neutral--98) / 1);
-  --text--strong:  oklch(var(--neutral--95) / 1);
-  --text--base:  oklch(var(--neutral--90) / 1);
-  --text--mild:  oklch(var(--neutral--85) / 1);
-  --text--xmild: oklch(var(--neutral--80) / 1);
-
-  /* Text links */
-  /* ================================================== */
-  --link--rest: oklch(var(--accent--70) / 1);
-  --link--hover: oklch(var(--accent--80) / 1);
-  --link--visit: oklch(var(--accent--60) / 1);
+  --text-xstrong: oklch(var(--neutral--98) / 1);
+  --text-strong:  oklch(var(--neutral--95) / 1);
+  --text-base:  oklch(var(--neutral--90) / 1);
+  --text-mild:  oklch(var(--neutral--85) / 1);
+  --text-xmild: oklch(var(--neutral--80) / 1);
 
   /* Other */
   /* ================================================== */
-  --page-bg: oklch(var(--primary--30) / 1);
+  --page-bg: oklch(var(--primary--20) / 1);
 }
 
 
@@ -203,38 +175,37 @@
 /* Solid colors MAP */
 /* ================================================== */
 $colors: (
-  "primary": var(--color--primary),
-  "accent":  var(--color--accent),
-  "white":   var(--color--white),
-  "2xlight": var(--color--2xlight),
-  "xlight":  var(--color--xlight),
-  "light":   var(--color--light),
-  "gray":    var(--color--gray),
-  "dark":    var(--color--dark),
-  "xdark":   var(--color--xdark),
-  "2xdark":  var(--color--2xdark),
-  "black":   var(--color--black),
+  "primary": var(--color-primary),
+  "accent":  var(--color-accent),
+  "white":   var(--color-white),
+  "2xlight": var(--color-2xlight),
+  "xlight":  var(--color-xlight),
+  "light":   var(--color-light),
+  "gray":    var(--color-gray),
+  "dark":    var(--color-dark),
+  "xdark":   var(--color-xdark),
+  "2xdark":  var(--color-2xdark),
+  "black":   var(--color-black),
 );
 
 /* Background color classes */
 .bg {
-  @include mixin.generate-classes($colors, 'background-color', 'color', '--');
+  @include mixin.generate-classes($colors, 'background-color', 'color', '-');
 }
-
 
 
 /* Text colors MAP */
 /* ================================================== */
 $text-colors: (
-  "xstrong": var(--text--xstrong),
-  "strong":  var(--text--strong),
-  "base":  var(--text--base),
-  "mild":  var(--text--mild),
-  "xmild": var(--text--xmild),
+  "xstrong": var(--text-xstrong),
+  "strong":  var(--text-strong),
+  "base":  var(--text-base),
+  "mild":  var(--text-mild),
+  "xmild": var(--text-xmild),
 );
 
 /* Text color classes */
 .text {
-  @include mixin.generate-classes($text-colors, 'color', 'text', '--');
-  @include mixin.generate-classes($colors, 'color', 'color', '--');
+  @include mixin.generate-classes($text-colors, 'color', 'text', '-');
+  @include mixin.generate-classes($colors, 'color', 'color', '-');
 }

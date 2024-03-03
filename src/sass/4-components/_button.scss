@@ -24,10 +24,10 @@
 /* ✨ Config these values ✨ */
 @mixin btn-text {
   font-family: $font-family-title;
-  font-weight: $font-weight--md;
-  letter-spacing: $letter-spacing--md;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
   text-align: center;
-  text-shadow: var(--text-sha--lg);
+  text-shadow: var(--text-sha-lg);
 }
 
 /* ================================================== */
@@ -79,7 +79,7 @@
   --btn--b: 0;
   --btn--x: 0.9rem;
   --btn--radius: 9999px;
-  box-shadow: var(--sha--2xs);
+  box-shadow: var(--sha-2xs);
 }
 
 @mixin btn--md {
@@ -91,7 +91,7 @@
   --btn--b: 0;
   --btn--x: 1.1rem;
   --btn--radius: 9999px;
-  box-shadow: var(--sha--2xs);
+  box-shadow: var(--sha-2xs);
 }
 
 @mixin btn--lg {
@@ -103,7 +103,7 @@
   --btn--b: 0;
   --btn--x: 1.6rem;
   --btn--radius: 9999px;
-  box-shadow: var(--sha--xs);
+  box-shadow: var(--sha-xs);
 }
 
 /* ================================================== */
@@ -130,7 +130,7 @@
 
   width: var(--ui-h-sm);
   height: var(--ui-h-sm);
-  box-shadow: var(--sha--2xs);
+  box-shadow: var(--sha-2xs);
 
   & > svg {
     width: calc(var(--ui-h-sm) * 0.56);
@@ -150,7 +150,7 @@
 
   width: var(--ui-h-md);
   height: var(--ui-h-md);
-  box-shadow: var(--sha--xs);
+  box-shadow: var(--sha-xs);
 
   & > svg {
     width: calc(var(--ui-h-md) * 0.58);
@@ -170,7 +170,7 @@
 
   width: var(--ui-h-lg);
   height: var(--ui-h-lg);
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha-sm);
 
   & > svg {
     width: calc(var(--ui-h-lg) * 0.56);
@@ -257,7 +257,7 @@
 
   @include glass.glass-filter-xvib;
   --btn-bg: oklch(var(--primary--70) / 0.2);
-  --btn-text: var(--color--white);
+  --btn-text: var(--color-white);
 
   &:hover {
     @include glass.glass-filter-light;
@@ -277,7 +277,7 @@
 
   @include glass.glass-filter-dark;
   --btn-bg: oklch(var(--primary--20) / 0.15);
-  --btn-text: var(--color--white);
+  --btn-text: var(--color-white);
 
   &:hover {
     @include glass.glass-filter-xdark;
@@ -293,7 +293,7 @@
 /* ✨ Config these values ✨ */
 /* ================================================== */
 @mixin btn--clear {
-  --btn-text: var(--color--white);
+  --btn-text: var(--color-white);
 
   backdrop-filter: none;
   @include btn-transition;

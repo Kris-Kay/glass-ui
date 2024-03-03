@@ -13,7 +13,7 @@ html {
 /* Insets */
 /* ================================================== */
 /* Use with replaced elements such as: <input> & <textarea> */
---inset--3xs:
+--inset-3xs:
   inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
   inset -0.3px -0.3px 0.5px -0.5px oklch(var(--highlight) / 0.1),
   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.08),
@@ -21,7 +21,7 @@ html {
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.3),
   inset 0.25px 0.25px 0.25px oklch(var(--shadow) / 0.15);
 
---inset--2xs:
+--inset-2xs:
   inset -2px -2px 1px -3px oklch(var(--highlight) / 0.3),
   inset -0.3px -0.3px 0.5px -0.5px oklch(var(--highlight) / 0.2),
   inset -0.3px -0.3px 0 oklch(var(--highlight) / 0.15),
@@ -29,7 +29,7 @@ html {
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.5),
   inset 0.25px 0.25px 0.25px oklch(var(--shadow) / 0.15);
 
---inset--xs:
+--inset-xs:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.1),
   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.25),
   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),
@@ -38,7 +38,7 @@ html {
   inset 0.75px 0.75px 1.5px -0.25px oklch(var(--shadow) / 0.12),
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1);
 
---inset--sm:
+--inset-sm:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.3),
   inset -0.5px -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.35),
   inset -0.6px -0.6px 0 oklch(var(--highlight) / 0.1),
@@ -47,7 +47,7 @@ html {
   inset 0.75px 0.75px 1.5px -0.25px oklch(var(--shadow) / 0.1),
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1);
 
---inset--md:
+--inset-md:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset -1px -1px 1.1px -1px oklch(var(--highlight) / 0.35),
   inset -0.8px -0.8px 0 oklch(var(--highlight) / 0.07),
@@ -57,7 +57,7 @@ html {
   inset 0.75px 0.75px 1.5px -0.5px oklch(var(--shadow) / 0.1),
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1);
 
---inset--lg:
+--inset-lg:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset -1px -1px 1.7px -1px oklch(var(--highlight) / 0.35),
   inset -1px -1px 0 oklch(var(--highlight) / 0.07),
@@ -67,7 +67,7 @@ html {
   inset 0.75px 0.75px 1.5px -0.5px oklch(var(--shadow) / 0.08),
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--shadow) / 0.1);
 
---inset--xl:
+--inset-xl:
   inset -2px -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset -1.25px -1.25px 2px -1.2px oklch(var(--highlight) / 0.35),
   inset -1.25px -1.25px 0  oklch(var(--highlight) / 0.07),
@@ -81,7 +81,7 @@ html {
 /* Flat insets  */
 /* ================================================== */
 /* Use with elements that fill edge-to-edge or that do not have a border-radius */
---flat-inset--xs:
+--flat-inset-xs:
   inset 0 -2px   1.25px -3px oklch(var(--highlight) / 0.1),
   inset 0 -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.25),
   inset 0 -0.6px 0 oklch(var(--highlight) / 0.1),
@@ -90,7 +90,7 @@ html {
   inset 0 1px 2px -2px oklch(var(--shadow) / 0.5),
   inset 0 2px 4px -4px oklch(var(--shadow) / 0.3);
 
---flat-inset--sm:
+--flat-inset-sm:
   inset 0 -2px 1.25px -3px oklch(var(--highlight) / 0.2),
   inset 0 -0.5px 0.7px -0.5px oklch(var(--highlight) / 0.25),
   inset 0 -0.6px 0 oklch(var(--highlight) / 0.1),
@@ -100,7 +100,7 @@ html {
   inset 0 2px 4px -4px oklch(var(--shadow) / 0.3),
   inset 0 4px 8px -8px oklch(var(--shadow) / 0.3);
 
---flat-inset--md:
+--flat-inset-md:
   inset 0 -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset 0 -1px 1.1px -1px oklch(var(--highlight) / 0.35),
   inset 0 -0.8px 0 oklch(var(--highlight) / 0.07),
@@ -110,7 +110,7 @@ html {
   inset 0 2px 4px -4px oklch(var(--shadow) / 0.5),
   inset 0 6px 12px -12px oklch(var(--shadow) / 0.3);
 
---flat-inset--lg:
+--flat-inset-lg:
   inset 0 -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset 0 -1px 1.5px -1px oklch(var(--highlight) / 0.35),
   inset 0 -1px 0 oklch(var(--highlight) / 0.07),
@@ -120,7 +120,7 @@ html {
   inset 0 4px 8px -8px oklch(var(--shadow) / 0.5),
   inset 0 8px 16px -16px oklch(var(--shadow) / 0.3);
 
---flat-inset--xl:
+--flat-inset-xl:
   inset 0 -2px 1.25px -3px oklch(var(--highlight) / 0.4),
   inset 0 -1.25px 2px -1.25px oklch(var(--highlight) / 0.35),
   inset 0 -1.75px 0  oklch(var(--highlight) / 0.05),
@@ -135,34 +135,34 @@ html {
 /* Flat inset MAP */
 /* ================================================== */
 $flat-insets: (
-  "xs":  var(--inset--xs),
-  "sm":  var(--inset--sm),
-  "md":  var(--inset--md),
-  "lg":  var(--inset--lg),
-  "xl":  var(--inset--xl),
+  "xs":  var(--inset-xs),
+  "sm":  var(--inset-sm),
+  "md":  var(--inset-md),
+  "lg":  var(--inset-lg),
+  "xl":  var(--inset-xl),
 );
 
 /* Flat inset classes */
 .flat-inset {
-  @include mixin.generate-classes($flat-insets, 'box-shadow', 'flat-inset', '--');
+  @include mixin.generate-classes($flat-insets, 'box-shadow', 'flat-inset', '-');
 }
 
 
 /* Insets MAP */
 /* ================================================== */
 $insets: (
-  "3xs": var(--inset--3xs),
-  "2xs": var(--inset--2xs),
-  "xs":  var(--inset--xs),
-  "sm":  var(--inset--sm),
-  "md":  var(--inset--md),
-  "lg":  var(--inset--lg),
-  "xl":  var(--inset--xl),
+  "3xs": var(--inset-3xs),
+  "2xs": var(--inset-2xs),
+  "xs":  var(--inset-xs),
+  "sm":  var(--inset-sm),
+  "md":  var(--inset-md),
+  "lg":  var(--inset-lg),
+  "xl":  var(--inset-xl),
 );
 
 /* Inset classes */
 .inset {
-  @include mixin.generate-classes($insets, 'box-shadow', 'inset', '--');
+  @include mixin.generate-classes($insets, 'box-shadow', 'inset', '-');
 }
 
 

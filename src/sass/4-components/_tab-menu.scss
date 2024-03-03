@@ -43,7 +43,7 @@
   &::before {
     @include pseudo;
     z-index: -2;
-    box-shadow: var(--inset--lg);
+    box-shadow: var(--inset-lg);
   }
 
   @include bp(xs) {
@@ -79,7 +79,7 @@
   @include btn.btn-text;
   @include btn.btn--clear;
   border-radius: var(--tab-radius);
-  color: var(--color--white);
+  color: var(--color-white);
   background-color: transparent;
 
   @include bp(xs) {
@@ -98,13 +98,13 @@
   }
 
   &:hover {
-    background-color: var(--tint--xlight);
+    background-color: var(--tint-xlight);
     box-shadow: none;
   }
 }
 
 [role="tab"][aria-selected="true"] {
-  background-color: var(--tint--3xlight);
-  color: var(--tint--3xdark);
-  box-shadow: var(--sha--3xs);
+  background-color: var(--tint-3xlight);
+  color: var(--tint-3xdark);
+  box-shadow: var(--sha-3xs);
 }

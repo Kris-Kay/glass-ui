@@ -9,7 +9,7 @@
 @mixin generate-classes($map, $property, $prefix, $split) {
   @each $key, $value in $map {
     &#{$split}#{$key} {
-      #{$property}:  var(--#{$prefix}--#{$key});
+      #{$property}:  var(--#{$prefix}-#{$key});
       @content;
     }
   }

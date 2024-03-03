@@ -36,9 +36,9 @@
     margin-left: calc(var(--_neg-space) + 0.5px);
     margin-right: var(--_neg-space);
 
-    color: var(--color--3xlight);
+    color: var(--color-3xlight);
     background-color: var(--inset-bg-xdeep);
-    box-shadow: var(--flat-inset--lg);
+    box-shadow: var(--flat-inset-lg);
   }
 
   & > .full-w-img {
@@ -70,7 +70,7 @@
   width: fit-content;
 
   @include radius("lg");
-  box-shadow: var(--sha--lg);
+  box-shadow: var(--sha-lg);
 }
 
 .card-xs {
@@ -80,7 +80,7 @@
   width: min(100%, var(--max-w-xs));
 
   @include radius("lg");
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha-sm);
 }
 
 .card-sm {
@@ -90,7 +90,7 @@
   width: min(100%, var(--max-w-sm));
 
   @include radius("md");
-  box-shadow: var(--sha--md);
+  box-shadow: var(--sha-md);
 }
 
 .card-md {
@@ -100,7 +100,7 @@
   width: min(100%, var(--max-w-md));
 
   @include radius("lg");
-  box-shadow: var(--sha--lg);
+  box-shadow: var(--sha-lg);
 
   @include bp(sm) {
     --space: var(--xl);
@@ -115,12 +115,12 @@
   width: min(100%, var(--max-w-lg));
 
   @include radius("lg");
-  box-shadow: var(--sha--lg);
+  box-shadow: var(--sha-lg);
 
   @include bp(md) {
     --space: var(--xl);
     @include radius("xl");
-    box-shadow: var(--sha--xl);
+    box-shadow: var(--sha-xl);
   }
 }
 
@@ -131,22 +131,22 @@
   width: min(100%, var(--max-w-xl));
 
   @include radius("xl");
-  box-shadow: var(--sha--lg);
+  box-shadow: var(--sha-lg);
 
   @include bp(lg) {
     --space: var(--xl);
     @include radius("xl");
-    box-shadow: var(--sha--xl);
+    box-shadow: var(--sha-xl);
   }
 }
 
 /* Card items */
 /* ================================================== */
 .card-title {
-  @include title--thick;
-  font-size: var(--text--xl);
+  @include title-thick;
+  font-size: var(--text-xl);
   line-height: 110%;
 
-  color: var(--text--strong);
-  text-shadow: var(--text-sha--md);
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-md);
 }

@@ -15,17 +15,17 @@
 
   --active-opacity: 1;
   --active-bg: oklch(var(--primary--75) / 0.8);
-  --active-inset: var(--inset--2xs);
+  --active-inset: var(--inset-2xs);
   --active-hover-bg: oklch(var(--primary--75) / 1);
-  --active-knob-sha: var(--sha--2xs);
+  --active-knob-sha: var(--sha-2xs);
 
   --disabled-opacity: 0.8;
   --disabled-bg: oklch(var(--neutral--10) / 0.1);
   --disabled-checked-bg: oklch(var(--primary--50) / 1);
-  --disabled-inset: var(--inset--3xs);
-  --disabled-text: var(--text--xmild);
+  --disabled-inset: var(--inset-3xs);
+  --disabled-text: var(--text-xmild);
   --disabled-knob: oklch(var(--neutral--90) / 0.6);
-  --disabled-knob-sha: var(--sha--2xs);
+  --disabled-knob-sha: var(--sha-2xs);
 
   --border: transparent;
   --border-hover: oklch(var(--primary--75) / 0.4);
@@ -51,7 +51,7 @@
     opacity: var(--disabled-opacity);
 
     & + label {
-      color: var(--text--xmild);
+      color: var(--text-xmild);
     }
   }
 
@@ -243,6 +243,6 @@ input[type='radio'] {
 
 .inline-label {
   width: fit-content;
-  font-weight: $font-weight--md;
-  color: var(--text--xstrong);
+  font-weight: $font-weight-md;
+  color: var(--text-xstrong);
 }

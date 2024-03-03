@@ -32,13 +32,13 @@
   border-radius: var(--2xs);
   padding: 0 0.75rem;
 
-  box-shadow: var(--inset--md);
+  box-shadow: var(--inset-md);
   background-color: var(--inset-bg-xdeep);
 
   &::placeholder {
-    color: var(--text--base);
-    font-size: var(--text--sm);
-    font-weight: $font-weight--sm;
+    color: var(--text-base);
+    font-size: var(--text-sm);
+    font-weight: $font-weight-sm;
   }
 }
 
@@ -57,7 +57,7 @@
 
   @include outer-radius (var(--3xs), 0.75rem);
 
-  box-shadow: var(--inset--md);
+  box-shadow: var(--inset-md);
   background-color: var(--inset-bg-xdeep);
 }
 
@@ -77,8 +77,8 @@
   border-radius: var(--2xs);
 
   &::placeholder {
-    color: var(--text--base);
-    font-size: var(--text--sm);
-    font-weight: $font-weight--md;
+    color: var(--text-base);
+    font-size: var(--text-sm);
+    font-weight: $font-weight-md;
   }
 }

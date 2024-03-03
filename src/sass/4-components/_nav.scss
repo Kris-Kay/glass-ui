@@ -36,7 +36,7 @@
   margin: 0 auto;
 
   @include bp(lg) {
-    max-width: calc($bp--lg + (var(--ui-h-lg) * 2) + 6rem);
+    max-width: calc($bp-lg + (var(--ui-h-lg) * 2) + 6rem);
   }
 }
 
@@ -66,7 +66,7 @@
 
 .dropdown-bg {
   @include glass.glass-e2e-all;
-  background-color: var(--tint--xdark);
+  background-color: var(--tint-xdark);
   position: absolute;
   top: calc(var(--ui-h-md) * 1.3);
   right: 0;
@@ -74,7 +74,7 @@
   pointer-events: auto;
   overflow: hidden;
   border-radius: var(--sm);
-  box-shadow: var(--sha--xl);
+  box-shadow: var(--sha-xl);
 
   @include bp(md) {
     top: calc(var(--ui-h-lg) * 1.3);
@@ -95,8 +95,8 @@
   width: 100%;
   min-width: max-content;
 
-  letter-spacing: $letter-spacing--md;
-  font-weight: $font-weight--md;
+  letter-spacing: $letter-spacing-md;
+  font-weight: $font-weight-md;
 
   pointer-events: auto;
   cursor: pointer;
