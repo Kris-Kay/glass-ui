@@ -48,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: calc(var(--btn--x) / 2);
+  gap: calc(var(--btn--x) / 3);
 
   border-radius: var(--_btn--radius);
   overflow: hidden;
@@ -91,7 +91,7 @@
   --btn--b: 0;
   --btn--x: 1.1rem;
   --btn--radius: 9999px;
-  box-shadow: var(--sha--xs);
+  box-shadow: var(--sha--2xs);
 }
 
 @mixin btn--lg {
@@ -103,7 +103,7 @@
   --btn--b: 0;
   --btn--x: 1.6rem;
   --btn--radius: 9999px;
-  box-shadow: var(--sha--sm);
+  box-shadow: var(--sha--xs);
 }
 
 /* ================================================== */

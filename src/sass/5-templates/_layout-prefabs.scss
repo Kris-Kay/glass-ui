@@ -18,6 +18,7 @@
   aspect-ratio : 4.5 / 1;
   border-radius: var(--sm);
   padding: var(--xl) var(--2xl);
+  box-shadow: var(--sha--sm);
 
   // will-change: transform, box-shadow;
   // box-shadow: var(--sha--2xs);
@@ -156,9 +157,23 @@
 /* Telescope rect glass demo */
 .telescope-rect_bin {
   border-radius: var(--xl);
+  min-width: 290px;
+  width: 100%;
+
+ @include bp(xs) {
+    min-width: 310px;
+  }
+
+  @include bp(sm) {
+    min-width: 450px;
+  }
+
+  @include bp(lg) {
+    min-width: 500px;
+  }
 
   & > div {
-    box-shadow: var(--sha--2xl);
+    box-shadow: var(--sha--sm);
   }
 }
 
@@ -190,9 +205,8 @@
   display: flex;
   justify-self: center;
   padding: var(--sm);
-
   margin-top: var(--nav-h);
-  margin-bottom: var(--3xl);
+  margin-bottom: 2rem;
 
   @include glass.glass-no-bevel;
   background-color: var(--tint--clear);
@@ -202,6 +216,14 @@
     justify-self: flex-start;
     width: calc(100vw - var(--lg));
     border-radius: 0 var(--sm) var(--sm) 0;
+  }
+
+  @include bp(sm) {
+    margin-bottom: 6rem;
+  }
+
+  @include bp(lg) {
+    margin-bottom: 8rem;
   }
 
   @include bp(xl) {
@@ -226,5 +248,6 @@
   border-radius: var(--sm);
   object-fit: cover;
   object-position: center;
-  opacity: 0.85;
+  opacity: 0.8;
+  box-shadow: var(--sha--sm);
 }

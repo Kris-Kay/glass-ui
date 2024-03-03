@@ -231,48 +231,39 @@ justify-content: center;
   height: fit-content;
   display: grid;
   gap: var(--space);
-  padding:  var(--space) 0;
-
-  @include bp(xs) {
-    --space: 3rem;
-  }
+  padding: var(--space) 0;
 
   @include bp(sm) {
-    --space: 8rem;
-  }
-
-  @include bp(md) {
-    --space: 10rem;
+    --space: 6rem;
   }
 
   @include bp(lg) {
-    --space: 12rem;
+    --space: 8rem;
   }
 }
 
 .section-grid {
-  --gap: 3rem;
+  --gap: 6rem;
 
   display: grid;
   gap: var(--gap);
 
   @include bp(xs) {
-    --gap: 5rem;
+    --gap: 8rem;
   }
 
   @include bp(sm) {
-    --gap: 7rem;
+    --gap: 10rem;
   }
 
   @include bp(md) {
-    --gap: 9rem;
+    --gap: 11rem;
   }
 
   @include bp(lg) {
-    --gap: 11rem;
+    --gap: 12rem;
   }
 }
-
 
 
 /* Max width classes */

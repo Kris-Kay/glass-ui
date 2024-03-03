@@ -19,7 +19,7 @@
   gap: var(--_space);
   padding: var(--_space);
 
-  // overflow: hidden;
+  overflow: hidden;
 
   & > .full-w-fill {
     padding: var(--_space);
@@ -75,11 +75,11 @@
 
 .card-xs {
   @include card-base;
-  --space: var(--md);
+  --space: var(--lg);
 
   width: min(100%, var(--max-w-xs));
 
-  @include radius("md");
+  @include radius("lg");
   box-shadow: var(--sha--sm);
 }
 
@@ -145,7 +145,7 @@
 .card-title {
   @include title--thick;
   font-size: var(--text--xl);
-  line-height: 1;
+  line-height: 110%;
 
   color: var(--text--strong);
   text-shadow: var(--text-sha--md);
