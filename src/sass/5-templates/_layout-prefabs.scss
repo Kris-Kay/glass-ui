@@ -10,14 +10,14 @@
 
 /* Bento grid */
 /* ================================================== */
-.bento-rect {
+.bento-rect-sm {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  aspect-ratio : 4.5 / 1;
+  aspect-ratio : 5 / 1;
   border-radius: var(--sm);
-  padding: var(--xl) var(--2xl);
+  padding: var(--xl) var(--4xl);
   box-shadow: var(--sha-sm);
 
   // will-change: transform, box-shadow;
@@ -48,6 +48,37 @@
     max-width: 300px;
   }
 }
+
+.bento-rect-md {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  aspect-ratio : 2 / 1;
+  border-radius: var(--md);
+  padding: var(--xl) var(--3xl);
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    aspect-ratio : 1 / 1;
+    padding: var(--xs);
+    border-radius: var(--lg);
+  }
+
+  // @include bp(sm) {
+  //   width: 200px;
+  //   aspect-ratio : 1 / 1;
+  //   padding: var(--xs);
+  //   border-radius: var(--lg);
+  // }
+
+  @include bp(lg) {
+    width: 250px;
+    padding: var(--sm);
+  }
+}
+
 
 .bento_bin--1to3 {
   width: fit-content;
