@@ -127,11 +127,7 @@ html {
     @include pseudo;
     z-index: 1;
     overflow: hidden;
-    box-shadow: bevel.$bevel--md;
-
-    @include bp(sm) {
-      box-shadow: bevel.$bevel--lg;
-    }
+    box-shadow: bevel.$bevel--sm;
   }
 
   &::before {
@@ -186,6 +182,6 @@ html {
     @include pseudo;
     overflow: hidden;
     z-index: 202;
-    box-shadow: bevel.$bevel--sm;
+    box-shadow: bevel.$bevel--md;
   }
 }

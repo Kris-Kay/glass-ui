@@ -113,7 +113,7 @@
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
   --shadow: var(--primary--15);
-  --highlight: var(--neutral--95);
+  --highlight: var(--neutral--90);
 
   /* Translucent tints */
   /* ================================================== */
@@ -165,16 +165,16 @@
   --tint--xlight:  oklch(var(--neutral--95) / 0.3);
   --tint--light:   oklch(var(--neutral--95) / 0.2);
   --tint--clear:   oklch(var(--neutral--10) / 0.15);
-  --tint--dark:    oklch(var(--neutral--10) / 0.2);
-  --tint--xdark:   oklch(var(--neutral--10) / 0.3);
-  --tint--2xdark:  oklch(var(--neutral--10) / 0.4);
+  --tint--dark:    oklch(var(--neutral--10) / 0.3);
+  --tint--xdark:   oklch(var(--neutral--10) / 0.4);
+  --tint--2xdark:  oklch(var(--neutral--10) / 0.5);
   --tint--3xdark:  oklch(var(--neutral--10) / 0.7);
 
   /* Insets */
   /* ================================================== */
-  --inset-bg-reg: oklch(var(--neutral--10) / 0.2);
-  --inset-bg-deep: oklch(var(--neutral--10) / 0.25);
-  --inset-bg-xdeep: oklch(var(--neutral--10) / 0.3);
+  --inset-bg-reg: oklch(var(--neutral--10) / 0.25);
+  --inset-bg-deep: oklch(var(--neutral--10) / 0.3);
+  --inset-bg-xdeep: oklch(var(--neutral--10) / 0.35);
 
   /* Text | Title | Label */
   /* ================================================== */
