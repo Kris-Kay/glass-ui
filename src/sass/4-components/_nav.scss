@@ -53,6 +53,8 @@
 /* ================================================== */
 .dropdown {
   position: relative;
+  width: fit-content;
+  height: fit-content;
   pointer-events: none;
   background-color: transparent;
   z-index: z(menu);
@@ -65,7 +67,10 @@
 }
 
 .dropdown-bg {
-  @include glass.glass-e2e-all;
+  min-width: 200px;
+  width: fit-content;
+  height: fit-content;
+  @include glass.glass-3d;
   background-color: var(--tint-xdark);
   position: absolute;
   top: calc(var(--ui-h-md) * 1.3);
