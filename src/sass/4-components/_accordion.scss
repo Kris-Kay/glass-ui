@@ -10,16 +10,16 @@
 .accordion-bin {
   --space: var(--md);
   display: grid;
-  width: min(100%, var(--max-w-sm));
-  box-shadow: var(--sha-md);
-  @include radius("md");
+  width: min(100%, var(--max-w-md));
 }
 
 .accordion-body {
   @include card.card-base;
-
-  width: 100%;
+  background-color: var(--tint-xdark);
+  // max-width: 100%;
+  box-shadow: var(--sha-lg);
   @include radius("md");
+  overflow: hidden;
 }
 
 .accordion-toggle {
@@ -91,19 +91,22 @@
 }
 
 .accordion-content {
-  width: 100%;
+  z-index: 2;
+  width: min(100%, var(--max-w-md));
   height: fit-content;
   display: grid;
   gap: var(--space);
-  padding-top: var(--3xl);
+  padding-top: var(--4xl);
   padding-bottom: var(--space);
   padding-left: var(--space);
   padding-right: var(--space);
-  margin-top: calc(-1 * var(--xl));
+  margin-top: calc(-1 * var(--2xl));
 
+ @include glass.glass-filter-xdark;
   @include radius("md");
+  overflow: hidden;
   background-color: var(--tint-3xdark);
-  box-shadow: var(--sha-md);
+  box-shadow: var(--sha-lg);
 
   animation: slide-down 200ms;
   animation-timing-function: ease-in;
