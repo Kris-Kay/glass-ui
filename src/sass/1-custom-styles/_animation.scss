@@ -28,7 +28,7 @@ html.root-transition *::after {
 }
 
 :focus {
-  outline: 1px solid oklch(var(--neutral--90, #e3ecf3) / 0.4);
+  outline: 1px solid oklch(var(--neutral-90, #e3ecf3) / 0.4);
   outline-offset: 2px;
   border-radius: inherit;
   transition: all 300ms;

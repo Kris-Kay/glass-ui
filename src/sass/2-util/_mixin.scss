@@ -6,10 +6,10 @@
 
 /* Generic class generating mixin */
 /* ================================================== */
-@mixin generate-classes($map, $property, $prefix, $split) {
+@mixin generate-classes($map, $property, $variablePrefix, $classSplit) {
   @each $key, $value in $map {
-    &#{$split}#{$key} {
-      #{$property}:  var(--#{$prefix}-#{$key});
+    &#{$classSplit}#{$key} {
+      #{$property}: var(--#{$variablePrefix}-#{$key});
       @content;
     }
   }
@@ -20,7 +20,7 @@
 /* Generates .classes using $sizes map */
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
-    &--#{$key} {
+    &-#{$key} {
       #{$property}: var($value);
       @content;
     }
@@ -31,7 +31,7 @@
 /* ================================================== */
 @mixin xy-size-modifiers($property1, $property2) {
   @each $key, $value in $sizes {
-    &--#{$key} {
+    &-#{$key} {
       #{$property1}: var($value);
       #{$property2}: var($value);
     }

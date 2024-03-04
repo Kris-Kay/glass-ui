@@ -6,7 +6,7 @@
 @use "../components" as *;
 /* ================================================== */
 
-.page-bg_bin {
+.page-bg-bin {
   position: relative;
   display: block;
   z-index: -10;
@@ -37,14 +37,14 @@
   pointer-events: none;
 }
 
-.body_grid {
+.body-grid {
   min-height: 100vh;
   height: fit-content;
   display: grid;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
-.content_bin {
+.content-bin {
   display: block;
   height: fit-content;
   z-index: z(page);

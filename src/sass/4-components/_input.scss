@@ -8,31 +8,32 @@
 /* Base for switch | checkbox | radio button */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-@mixin input_base {
-  --rest-bg: oklch(var(--neutral--10) / 0.2);
-  --rest-hover-bg: oklch(var(--neutral--10) / 0.3);
-  --rest-knob: oklch(var(--neutral--90) / 0.9);
+@mixin input-base {
+  --rest-bg: var(--inset-bg-deep);
+  --rest-hover-bg: var(--inset-bg-xdeep);
+  --rest-knob: oklch(var(--neutral-85) / 0.9);
 
   --active-opacity: 1;
-  --active-bg: oklch(var(--primary--75) / 0.8);
-  --active-inset: var(--inset-2xs);
-  --active-hover-bg: oklch(var(--primary--75) / 1);
-  --active-knob-sha: var(--sha-2xs);
+  --active-bg: oklch(var(--primary-70) / 1);
+  --active-inset: var(--inset-lg);
+  --active-hover-bg: oklch(var(--primary-65) / 1);
+  --active-knob-sha: var(--sha-sm);
 
-  --disabled-opacity: 0.8;
-  --disabled-bg: oklch(var(--neutral--10) / 0.1);
-  --disabled-checked-bg: oklch(var(--primary--50) / 1);
-  --disabled-inset: var(--inset-3xs);
+  // --disabled-opacity: 0.9;
+  --disabled-bg: var(--inset-bg-deep);
+  --disabled-checked-bg: oklch(var(--primary-70) / 0.5);
+  --disabled-inset: none;
   --disabled-text: var(--text-xmild);
-  --disabled-knob: oklch(var(--neutral--90) / 0.6);
-  --disabled-knob-sha: var(--sha-2xs);
+  --disabled-knob: oklch(var(--neutral-90) / 0.3);
+  --disabled-knob-sha: none;
 
   --border: transparent;
-  --border-hover: oklch(var(--primary--75) / 0.4);
+  --border-hover: oklch(var(--primary-70) / 0.4);
 
   overflow: hidden;
   cursor: pointer;
-  transition: background-color $speed--base ease-in-out;
+  will-change: background-color;
+  transition: background-color $speed--base $smooth-cubic;
 
   &::after {
     @include pseudo;
@@ -48,7 +49,6 @@
     cursor: not-allowed;
     background-color: var(--disabled-bg);
     box-shadow: var(--disabled-inset);
-    opacity: var(--disabled-opacity);
 
     & + label {
       color: var(--text-xmild);
@@ -68,10 +68,10 @@
 /* ================================================== */
 input[type='checkbox'].switch {
   --_switch-height: var(--switch-height, var(--ui-h-sm));
-  --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.8));
+  --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.618));
   --_thumb-margin: var(--thumb-margin, 3px);
 
-  @include input_base;
+  @include input-base;
 
   position: relative;
   z-index: 1;
@@ -118,13 +118,13 @@ input[type='checkbox'].switch {
   }
 
   &.switch-sm {
-    --thumb-margin: 3px;
-    --switch-height: 1.2rem;
+    --thumb-margin: 3.5px;
+    --switch-height: 1.75rem;
   }
 
   &.switch-md {
     --thumb-margin: 3.5px;
-    --switch-height: 1.24rem;
+    --switch-height: 1.35rem;
   }
 
   &.switch-lg {
@@ -137,27 +137,25 @@ input[type='checkbox'].switch {
 /* ================================================== */
 input[type='checkbox'].checkbox {
 
-  @include input_base;
+  @include input-base;
 
   position: relative;
   z-index: 1;
   display: grid;
   place-content: center;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: var(--rest-bg);
   box-shadow: var(--active-inset);
   border-radius: 0.25rem;
 
   &:checked {
-
     &::after {
       z-index: 3;
-      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral--10) / 0.5));
       border-radius: 0.05rem;
       width: 55%;
       height: 30%;
-      border: 2px solid var(--rest-knob);
+      border: 3px solid var(--rest-knob);
       border-top: 0;
       border-right: 0;
       left: 23%;
@@ -173,7 +171,7 @@ input[type='checkbox'].checkbox {
       background-color: var(--disabled-checked-bg);
 
       &::after {
-        border: 2px solid var(--disabled-knob);
+        border: 3px solid var(--disabled-knob);
         border-top: 0;
         border-right: 0;
       }
@@ -185,14 +183,14 @@ input[type='checkbox'].checkbox {
 /* ================================================== */
 input[type='radio'] {
 
-  @include input_base;
+  @include input-base;
 
   position: relative;
   z-index: 1;
   // display: grid;
   // place-items: center;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   aspect-ratio: 1 / 1;
   background-color: var(--rest-bg);
   box-shadow: var(--active-inset);
@@ -201,7 +199,7 @@ input[type='radio'] {
   &:checked {
     &::after {
       z-index: 3;
-      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral--10) / 0.5));
+      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral-10) / 0.5));
       margin: 4px;
       aspect-ratio: 1 / 1;
       border-radius: 9999px;
@@ -228,11 +226,11 @@ input[type='radio'] {
 /* ================================================== */
 .input-fieldset {
   display: grid;
-  gap: var(--xs);
+  gap: var(--md);
 }
 
 .input-legend {
-  padding-bottom: var(--xs);
+  padding-bottom: var(--sm);
 }
 
 .input-bin {

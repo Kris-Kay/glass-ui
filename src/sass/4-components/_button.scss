@@ -70,7 +70,7 @@
 /* Button sizes */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-@mixin btn--sm {
+@mixin btn-sm {
   @include btn-structure;
 
   --btn--h: var(--ui-h-sm);
@@ -82,7 +82,7 @@
   box-shadow: var(--sha-2xs);
 }
 
-@mixin btn--md {
+@mixin btn-md {
   @include btn-structure;
 
   --btn--h: var(--ui-h-md);
@@ -94,7 +94,7 @@
   box-shadow: var(--sha-2xs);
 }
 
-@mixin btn--lg {
+@mixin btn-lg {
   @include btn-structure;
 
   --btn--h: var(--ui-h-lg);
@@ -125,7 +125,7 @@
   }
 }
 
-@mixin btn-round--sm {
+@mixin btn-round-sm {
   @include btn-round--base;
 
   width: var(--ui-h-sm);
@@ -145,7 +145,7 @@
   }
 }
 
-@mixin btn-round--md {
+@mixin btn-round-md {
   @include btn-round--base;
 
   width: var(--ui-h-md);
@@ -165,7 +165,7 @@
   }
 }
 
-@mixin btn-round--lg {
+@mixin btn-round-lg {
   @include btn-round--base;
 
   width: var(--ui-h-lg);
@@ -185,12 +185,12 @@
   }
 }
 
-.btn--sm { @include btn--sm; }
-.btn--md { @include btn--md; }
-.btn--lg { @include btn--lg; }
-.btn-round--sm { @include btn-round--sm; }
-.btn-round--md { @include btn-round--md; }
-.btn-round--lg { @include btn-round--lg; }
+.btn-sm { @include btn-sm; }
+.btn-md { @include btn-md; }
+.btn-lg { @include btn-lg; }
+.btn-round-sm { @include btn-round-sm; }
+.btn-round-md { @include btn-round-md; }
+.btn-round-lg { @include btn-round-lg; }
 
 
 /* ================================================== */
@@ -252,11 +252,11 @@
 /* 3D Primary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn--primary {
+.btn-primary {
   @include btn-skin;
 
   @include glass.glass-filter-xvib;
-  --btn-bg: oklch(var(--primary--70) / 0.2);
+  --btn-bg: oklch(var(--primary-75) / 0.2);
   --btn-text: var(--color-white);
 
   &:hover {
@@ -265,18 +265,18 @@
 
   // &:active {
   //   @include glass.glass-filter-base;
-  //   --btn-bg: oklch(var(--primary--20) / 0.1);
+  //   --btn-bg: oklch(var(--primary-25) / 0.1);
   // }
 }
 
 /* 3D Secondary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn--secondary {
+.btn-secondary {
   @include btn-skin;
 
   @include glass.glass-filter-dark;
-  --btn-bg: oklch(var(--primary--20) / 0.15);
+  --btn-bg: oklch(var(--primary-25) / 0.15);
   --btn-text: var(--color-white);
 
   &:hover {
@@ -285,14 +285,14 @@
 
   // &:active {
   //   @include glass.glass-filter-dark;
-  //   --btn-bg: oklch(var(--primary--15) / 0.35);
+  //   --btn-bg: oklch(var(--primary-15) / 0.35);
   // }
 }
 
 /* 2D Clear button */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-@mixin btn--clear {
+@mixin btn-clear {
   --btn-text: var(--color-white);
 
   backdrop-filter: none;
@@ -311,7 +311,7 @@
 
   // &:active {
   //   @include glass.glass-filter-dark;
-  //   --btn-bg: oklch(var(--primary--15) / 0.35);
+  //   --btn-bg: oklch(var(--primary-15) / 0.35);
   // }
 }
-.btn--clear { @include btn--clear; }
+.btn-clear { @include btn-clear; }

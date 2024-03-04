@@ -16,7 +16,7 @@
   }
 }
 
-.main-nav_bin {
+.main-nav-bin {
   position: fixed;
   z-index: z(nav);
   height: var(--nav-h);
@@ -40,12 +40,12 @@
   }
 }
 
-.main-nav_icon-btn {
-  @include btn.btn-round--md;
+.main-nav-icon-btn {
+  @include btn.btn-round-md;
   z-index: z(on-nav);
 
   @include bp(md) {
-    @include btn.btn-round--lg;
+    @include btn.btn-round-lg;
   }
 }
 
@@ -58,7 +58,7 @@
   z-index: z(menu);
 }
 
-.dropdown_bin {
+.dropdown-bin {
   width: fit-content;
   height: fit-content;
   pointer-events: none;
@@ -81,7 +81,7 @@
   }
 }
 
-.dropdown-item_bin {
+.dropdown-item-bin {
   width: fit-content;
   height: fit-content;
   display: grid;

@@ -1,23 +1,11 @@
 /* ================================================== */
 /* SVGs */
 /* ================================================== */
-
-/* Change SVG color */
-/* ================================================== */
 /* Credit: Chris Coyier  */
 /* https://css-tricks.com/change-color-of-svg-on-hover/ */
-.svg-icon-color {
-  display: inline-block;
-  width: var(--ui-h-md, 2.125rem);
-  height: var(--ui-h-md, 2.125rem);
-  align-self: center;
-  mask-size: cover;
-  background: purple;
-}
 
 /* SVGs */
 /* ================================================== */
-
 @mixin svg-icon {
   max-width: 100%;
   max-height: 100%;
@@ -42,21 +30,21 @@
   mask: url(/assets/icons/SquareOut.svg);
 }
 
-.svg-chev--up {
+.svg-chev-up {
   @include svg-icon;
   mask: url(/assets/icons/CaretUp.svg);
 }
-.svg-chev--down {
+.svg-chev-down {
   @include svg-icon;
   mask: url(/assets/icons/CaretDown.svg);
 }
 
-.svg-chev--l {
+.svg-chev-l {
   @include svg-icon;
   mask: url(/assets/icons/CaretLeft.svg);
 }
 
-.svg-chev--r {
+.svg-chev-r {
   @include svg-icon;
   mask: url(/assets/icons/CaretRight.svg);
 }

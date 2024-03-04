@@ -114,6 +114,9 @@ html {
   z-index: z.z("section");
   display: flex;
   justify-content: center;
+
+  // display: grid;
+  // place-items: center;
 }
 
 .moat-all {

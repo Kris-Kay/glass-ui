@@ -46,8 +46,6 @@ html {
                     --blur: 10vw;
   @include bp(xs) { --blur: 9vw; }
   @include bp(md) { --blur: 56px; }
-
---vib:  blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-xstrong));
 }
 
 /* backdrop-filter: */
@@ -106,6 +104,7 @@ html {
   @container glass-co (width > 99vw) {
     .glass-3d {
       box-shadow: none;
+
       &::after {
         box-shadow: bevel.$flat-bevel-sm;
       }
@@ -117,7 +116,7 @@ html {
   }
 }
 
-.glass-3d {
+@mixin glass-3d {
   position: relative;
   overflow: hidden;
   @include glass-filter-base;
@@ -127,7 +126,7 @@ html {
     @include pseudo;
     z-index: 1;
     overflow: hidden;
-    box-shadow: bevel.$bevel-sm;
+    box-shadow: var(--bevel-lg);
   }
 
   &::before {
@@ -138,21 +137,23 @@ html {
   }
 }
 
+.glass-3d {
+  @include glass-3d;
+}
+
 /* Glass base → no bevel */
 /* ================================================== */
 @mixin glass-no-bevel {
   position: relative;
   overflow: hidden;
-
   @include glass-filter-base;
-  @content;
+  width: 100%;
 
   &::before {
     @include pseudo;
     z-index: -2;
     overflow: hidden;
     @include noise;
-    opacity: 0.8;
   }
 }
 .glass-no-bevel { @include glass-no-bevel; }
@@ -182,6 +183,6 @@ html {
     @include pseudo;
     overflow: hidden;
     z-index: 202;
-    box-shadow: bevel.$bevel-md;
+    box-shadow: var(--bevel-lg);
   }
 }

@@ -1,19 +1,15 @@
 /* ================================================== */
 /* Layout helpers */
 /* ================================================== */
-.w--100 { width: 100%; }
+.w-100 { width: 100%; }
 
-.w--fit { width: fit-content; }
+.w-fit { width: fit-content; }
 
-.h--100vh { min-height: 100vh; }
+.h-100vh { min-height: 100vh; }
 
-.h--70vh { min-height: 70vh; }
+.h-75vh { min-height: 75vh; }
 
-.h--50vh { min-height: 50vh; }
-
-.h-300 { min-height: 300px; }
-
-.h-600 { height: 600px; }
+.h-50vh { min-height: 50vh; }
 
 /* Display */
 /* ================================================== */
@@ -38,21 +34,21 @@
 }
 
 
-.ratio--1-1 {
+.ratio-1-1 {
   aspect-ratio: 1 / 1;
 }
 
-.ratio--4-3 {
+.ratio-4-3 {
   aspect-ratio: 4 / 3;
 }
 
-.ratio--16-9 {
+.ratio-16-9 {
   aspect-ratio: 16 / 9;
 }
 
 /* Sidescroll */
 /* ================================================== */
-.sidescroll_bin {
+.sidescroll-bin {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -89,4 +85,7 @@
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
+//   border: none;
+// -webkit-backface-visibility: hidden;
+// backface-visibility: hidden;
 }
