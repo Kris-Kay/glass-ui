@@ -21,7 +21,7 @@
                 href="https://github.com/Kris-Kay"
                 target="_blank" >
               GitHub repo
-              <svg  class="svg-icon svg-SquareOut"
+              <svg  class=" svg-square-out"
                     alt="3D glass UI GitHub repo"
                     aria-hidden="true" >
             </a>
@@ -37,7 +37,7 @@
 <main class="page-grid">
 
   <!-- Intro -->
-  <section class="moat-sm glass-container">
+  <section class="moat-xs glass-container">
     <div class="card-sm glass-3d tint-2xdark">
       <div class="grid-c gap-md p-md">
 
@@ -323,13 +323,13 @@
               <div class="input-bin">
                 <input
                   type="checkbox"
-                  id="op-2"
+                  id="op-0"
                   name="options"
                   value="option 2"
                   class="checkbox"
                 />
                 <label
-                  for="op-2"
+                  for="op-0"
                   class="inline-label">
                   Unchecked
                 </label>
@@ -354,14 +354,14 @@
               <div class="input-bin">
                 <input
                   type="checkbox"
-                  id="op-3"
+                  id="op-2"
                   name="options"
                   value="option 3"
                   class="checkbox"
                   disabled
                 />
                 <label
-                  for="op-3"
+                  for="op-2"
                   class="inline-label">
                   Disabled
                 </label>
@@ -370,14 +370,14 @@
               <div class="input-bin">
                 <input
                   type="checkbox"
-                  id="op-4"
+                  id="op-3"
                   name="options"
                   value="option 4"
                   class="checkbox"
                   checked disabled
                 />
                 <label
-                  for="op-4"
+                  for="op-3"
                   class="inline-label">
                   Disabled & checked
                 </label>
@@ -393,13 +393,13 @@
               <div class="input-bin">
                 <input
                   type="radio"
-                  id="r-2"
+                  id="r-0"
                   name="options-r"
                   value="option 2"
                   class="radio"
                 />
                 <label
-                  for="r-2"
+                  for="r-0"
                   class="inline-label">
                   Unchecked
                 </label>
@@ -424,7 +424,7 @@
               <div class="input-bin">
                 <input
                   type="radio"
-                  id="r-3"
+                  id="r-2"
                   name="options-q"
                   value="option 3"
                   class="radio-style"
@@ -440,14 +440,14 @@
               <div class="input-bin">
                 <input
                   type="radio"
-                  id="r-4"
+                  id="r-3"
                   name="options-w"
                   value="option 4"
                   class="radio"
                   checked disabled
                 />
                 <label
-                  for="r-4"
+                  for="r-3"
                   class="inline-label">
                   Disabled & checked
                 </label>
@@ -461,52 +461,46 @@
               <legend class="input-legend input-label">Switchs</legend>
 
               <div class="input-bin">
-                <input
+                <input class="switch switch-sm"
                   type="checkbox"
-                  class="switch switch-sm"
-                  id="switch-sm" >
-
+                  id="s-0" >
                 <label
-                  for="switch-sm"
+                  for="s-0"
                   class="inline-label">
                   Unchecked
                 </label>
               </div>
 
               <div class="input-bin">
-                <input
+                <input class="switch switch-sm"
                   type="checkbox"
-                  class="switch switch-sm"
-                  id="switch-checked--sm"
+                  id="s-1"
                   checked >
-                <label
-                  for="switch-checked--sm"
-                  class="inline-label">
+                <label class="inline-label"
+                  for="s-1" >
                   Checked
                 </label>
               </div>
 
               <div class="input-bin">
-                <input
+                <input class="switch switch-sm"
                   type="checkbox"
-                  class="switch switch-sm"
-                  id="switch-disabled--sm"
+                  id="s-2"
                   disabled >
                 <label
-                  for="switch-disabled--sm"
+                  for="s-2"
                   class="inline-label">
                   Disabled
                 </label>
               </div>
 
               <div class="input-bin">
-                <input
+                <input class="switch switch-sm"
                   type="checkbox"
-                  class="switch switch-sm"
-                  id="s-4"
+                  id="s-3"
                   disabled checked >
                 <label
-                  for="s-4"
+                  for="s-3"
                   class="inline-label">
                   Disabled & checked
                 </label>
@@ -518,10 +512,10 @@
       </div>
 
       <!-- Accordion -->
-        <div class="moat-md ">
-          <div class="js-accordion accordion-bin glass-container">
+        <div class="moat-sm">
+          <div class="js-accordion glass-container max-w-sm grid-c">
 
-            <div class="accordion-body glass-3d tint-dark is-closed">
+            <div class="tint-dark card-sm glass-3d is-closed">
 
               <div class="accordion-header">
                 <p class="eyebrow">eyebrow text</p>
@@ -555,7 +549,7 @@
               </div>
             </div>
 
-            <div class="accordion-content glass-no-bevel is-closed">
+            <div class="accordion-content card-sm glass-no-bevel is-closed">
               <p class="text-lg">Accordion content</p>
               <div class="flex-c">
                 <img src="/assets/other img/hello-bear.gif"
@@ -577,96 +571,82 @@
               <p class="text-mild  text-sha-sm">Hover and click to see effects.</p>
             </div>
 
-            <div class="w-100 flex-wrap justify-se gap-3xl">
+            <div class="w-100 flex-wrap justify-sa gap-3xl">
 
-              <div class="grid-c gap-sm">
+              <div class="grid-c gap-md">
                 <h4 class="class-name">.btn-primary</h4>
 
-                <button
-                  type="button"
-                  class="btn-primary btn-sm">
-                  btn-sm
-                    <svg
-                    class="svg-icon svg-cube"
-                    alt="3D cube frame"
-                    aria-hidden="true">
+                <button class="btn-primary btn-sm"
+                  type="button">
+                  .btn-sm
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-primary btn-md">
-                  btn-md
-                    <svg
-                    class="svg-icon svg-cube"
-                    alt="3D cube frame"
-                    aria-hidden="true">
+                <button class="btn-primary btn-md"
+                  type="button">
+                  .btn-md
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-primary btn-lg">
-                  btn-lg
-                    <svg
-                    class="svg-icon svg-cube"
-                    alt="3D cube frame"
-                    aria-hidden="true">
+                <button class="btn-primary btn-lg"
+                  type="button">
+                  .btn-lg
                 </button>
-
               </div>
 
-              <div class="grid-c gap-sm">
+              <div class="grid-c gap-md">
                 <h4 class="class-name">.btn-secondary</h4>
 
-                <button
-                  type="button"
-                  class="btn-viz btn-secondary btn-sm">
-                  btn-sm
+                <button class="btn-secondary btn-sm"
+                  type="button">
+                  .btn-sm
+                  <svg  class="svg-square-out"
+                        alt="open in new tab"
+                        aria-hidden="true" >
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-viz btn-secondary btn-md">
-                  btn-md
+                <button class="btn-secondary btn-md"
+                  type="button">
+                  .btn-md
+                  <svg  class="svg-square-out"
+                        alt="open in new tab"
+                        aria-hidden="true" >
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-viz btn-secondary btn-lg">
-                  btn-lg
+                <button class="btn-secondary btn-lg"
+                  type="button">
+                  .btn-lg
+                  <svg  class="svg-square-out"
+                        alt="open in new tab"
+                        aria-hidden="true" >
                 </button>
 
               </div>
 
-              <div class="grid-c gap-sm">
+              <div class="grid-c gap-md">
                 <h4 class="class-name">.btn-clear</h4>
 
-                <button
-                  type="button"
-                  class="btn-clear btn-round-sm">
-
-                    <svg
-                    class="svg-icon svg-chev-r"
-                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                <button class="btn-clear btn-sm"
+                  type="button">
+                  .btn-sm
+                    <svg class="svg-chev-r"
+                    alt="right cheveron icon"
                     aria-hidden="true">
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-clear btn-round-md">
-
-                    <svg
-                    class="svg-icon svg-chev-r"
-                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                <button class="btn-clear btn-md"
+                  type="button">
+                  .btn-md
+                    <svg class="svg-chev-r"
+                    src="/assets/icons/CaretRight.svg"
+                    alt="right cheveron icon"
                     aria-hidden="true">
                 </button>
 
-                <button
-                  type="button"
-                  class="btn-clear btn-round-lg">
-
-                    <svg
-                    class="svg-icon svg-chev-r"
-                    src="/assets/icons/CaretRight.svg" alt="cheveron right icon"
+                <button class="btn-clear btn-lg"
+                  type="button">
+                  .btn-lg
+                    <svg class="svg-chev-r"
+                    src="/assets/icons/CaretRight.svg"
+                    alt="right cheveron icon"
                     aria-hidden="true">
                 </button>
 
@@ -828,7 +808,7 @@
         </div>
 
         <div class="full-w-inset tint-xdark gap-xs grid-c ">
-          <div class=" m-t--xs">
+          <div class=" m-t-xs">
             <img  class="stamp sha-xl"
                   src="/assets/other img/Kris_w_Tetra_862x862.jpg"
                   alt="photo of Kris Kay">
@@ -838,7 +818,7 @@
               augmented reality creator | digital product designer | modern CSS enthusiast </p>
         </div>
 
-        <div class="grid-c p-y--lg">
+        <div class="grid-c p-y-lg">
           <div class="grid gap-2xs p-xl inset-lg radius-sm inset-bg-reg max-w-sm">
             <p class="title-thin text-xstrong text-xl text-center">For Project Inquiries</p>
             <p class="text-xs text-center">Email me at:</p>
