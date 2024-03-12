@@ -1,10 +1,8 @@
 /* ================================================== */
 /* Above the fold */
-@use "../custom" as *;
-@use "../util" as *;
-@use "../glass" as glass;
-@use "button" as btn;
-@use "card" as card;
+@use "../1-custom-styles/breakpoint" as bp;
+@use "../1-custom-styles/animation" as ani;
+@use "../4-components/card" as card;
 /* ================================================== */
 
 .atf {
@@ -14,7 +12,7 @@
   margin: var(--nav-h) auto 0 auto;
   padding: 0 var(--moat) var(--nav-h) var(--moat);
 
-  @include bp(md) {
+  @include bp.bp(md) {
       padding: 0 2rem var(--nav-h) 2rem;
   }
 }
@@ -27,11 +25,11 @@
   display: grid;
   place-items: end center;
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     place-items: end start;
   }
 
-  @include bp(md) {
+  @include bp.bp(md) {
     max-width: var(--max-w-lg);
   }
 }
@@ -43,22 +41,28 @@
   border-radius: calc(var(--lg) * 1.15);
   box-shadow: var(--sha-sm);
 
-  @include bp(xs) {
+  @include bp.bp(xs) {
     --space: var(--md);
     width: min(100%, 360px);
   }
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     border-radius: var(--lg);
     width: clamp(360px, 380px, 400px);
   }
 
-  @include bp(md) {
+  @include bp.bp(md) {
     width: clamp(400px, 420px, 430px);
   }
 
-  @include bp(lg) {
-    width: clamp(430px, 440px, 460px);
+  @include bp.bp(lg) {
+    width: clamp(430px, 440px, 445px);
+  }
+
+  @include bp.bp(lg) {
+    & p {
+      font-size: var(--text-md);
+    }
   }
 }
 
@@ -70,7 +74,7 @@
 .card-3d {
   backface-visibility: hidden;
   will-change: transform;
-  transition: transform $speed--2xslow $smooth-cubic;
+  transition: transform ani.$speed-2xslow ani.$smooth-cubic;
 
   transform:
     perspective(2000px)
@@ -80,7 +84,7 @@
     translateX(16px)
     translateY(-5%);
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     transform:
       perspective(2000px)
       rotateY(25deg)
