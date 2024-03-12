@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Colors & Themes */
 @use "sass:map";
-@use "../2-util/mixin";
+@use "../2-util/mixin" as mix;
 /* ================================================== */
 /* OKLCH Color Picker & Converter */
 /* https://oklch.com/ */
@@ -12,8 +12,8 @@
 /* ================================================== */
 /* Color tokens */
 /* ================================================== */
-:root {
 /* ✨ Config these values ✨ */
+:root {
   --primary-hue: 220;
   --accent-hue: 130;
   --neutral-hue: 250;
@@ -112,13 +112,13 @@
   --tint-2xdark:  oklch(var(--neutral-10) / 0.3);
   --tint-3xdark:  oklch(var(--neutral-10) / 0.5);
 
-  /* Insets */
+  /* Inset bg colors */
   /* ================================================== */
   --inset-bg-reg: oklch(var(--neutral-10) / 0.13);
   --inset-bg-deep: oklch(var(--neutral-10) / 0.2);
   --inset-bg-xdeep: oklch(var(--neutral-10) / 0.3);
 
-  /* Text | Title | Label */
+  /* Text colors */
   /* ================================================== */
   --text-xstrong: oklch(var(--neutral-95) / 1);
   --text-strong:  oklch(var(--neutral-90) / 1);
@@ -149,13 +149,13 @@
   --tint-2xdark:  oklch(var(--neutral-10) / 0.5);
   --tint-3xdark:  oklch(var(--neutral-10) / 0.7);
 
-  /* Insets */
+  /* Inset bg colors */
   /* ================================================== */
   --inset-bg-reg: oklch(var(--neutral-10) / 0.25);
   --inset-bg-deep: oklch(var(--neutral-10) / 0.3);
   --inset-bg-xdeep: oklch(var(--neutral-10) / 0.35);
 
-  /* Text | Title | Label */
+  /* Text colors */
   /* ================================================== */
   --text-xstrong: oklch(var(--neutral-98) / 1);
   --text-strong:  oklch(var(--neutral-95) / 1);
@@ -168,10 +168,6 @@
   --page-bg: oklch(var(--primary-25) / 1);
 }
 
-
-/* ================================================== */
-/* Color utils */
-/* ================================================== */
 
 /* Solid colors MAP */
 /* ================================================== */
@@ -189,11 +185,29 @@ $colors: (
   "black":   var(--color-black),
 );
 
-/* Background color classes */
-.bg {
-  @include mixin.generate-classes($colors, 'background-color', 'color', '-');
+/* Solid color classes */
+.color {
+  @include mix.generate-classes($colors, 'background-color', 'color', '-');
 }
 
+/* Tints MAP */
+/* ================================================== */
+$tints: (
+  "3xlight": var(--tint-3xlight),
+  "2xlight": var(--tint-2xlight),
+  "xlight":  var(--tint-xlight),
+  "light":   var(--tint-light),
+  "clear":   var(--tint-clear),
+  "dark":    var(--tint-dark),
+  "xdark":   var(--tint-xdark),
+  "2xdark":  var(--tint-2xdark),
+  "3xdark":  var(--tint-3xdark),
+);
+
+/* Generate .tint- classes */
+.tint {
+  @include mix.generate-classes($tints, 'background-color', 'tint', '-');
+}
 
 /* Text colors MAP */
 /* ================================================== */
@@ -206,7 +220,10 @@ $text-colors: (
 );
 
 /* Text color classes */
+/* ================================================== */
+/* `text-color-` classes change with the theme */
+/* `text-` classes are always the same color */
 .text {
-  @include mixin.generate-classes($text-colors, 'color', 'text', '-');
-  @include mixin.generate-classes($colors, 'color', 'color', '-');
+  @include mix.generate-classes($text-colors, 'color', 'text', '-');
+  @include mix.generate-classes($colors, 'color', 'color', '-');
 }

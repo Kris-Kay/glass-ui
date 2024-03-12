@@ -1,87 +1,83 @@
 /* ================================================== */
 /* Glass */
 @use "sass:map";
-@use "sass:list";
-@use "../1-custom-styles/color" as *;
-@use "../1-custom-styles/breakpoint" as *;
-@use "../2-util/mixin";
-@use "../2-util/layout-help" as *;
-@use "bevel";
-@use "shadow";
+@use "../1-custom-styles/breakpoint" as bp;
+@use "../2-util/mixin" as mix;
+@use "../2-util/layout-help" as lh;
 /* ================================================== */
-
-/* Glass tints MAP */
-/* ✐ Edit colors in → src/sass/1-custom-styles/_color.scss */
-/* ================================================== */
-$tints: (
-  "3xlight": var(--tint-3xlight),
-  "2xlight": var(--tint-2xlight),
-  "xlight":  var(--tint-xlight),
-  "light":   var(--tint-light),
-  "clear":   var(--tint-clear),
-  "dark":    var(--tint-dark),
-  "xdark":   var(--tint-xdark),
-  "2xdark":  var(--tint-2xdark),
-  "3xdark":  var(--tint-3xdark),
-);
-
-/* Generate .tint- classes */
-.tint {
-  @include mixin.generate-classes($tints, 'background-color', 'tint', '-');
-}
 
 /* backdrop-filter: <filter-function> values */
 /* ================================================== */
+/* ✨ Config these values ✨ */
 html {
-  --satu-mild: 0.9;
+  --satu-mild: 0.8;
   --satu-base: 1.2;
   --satu-strong: 1.8;
-  --satu-xstrong: 2.2;
+  --satu-xstrong: 2.5;
 
   --bright-xdark: 0.6;
   --bright-dark: 0.8;
   --bright-base: 0.95;
   --bright-light: 1.25;
 
-                    --blur: 10vw;
-  @include bp(xs) { --blur: 9vw; }
-  @include bp(md) { --blur: 56px; }
+                       --blur: 10vw;
+  @include bp.bp(md) { --blur: 56px; }
+  @include bp.bp(lg) { --blur: 64px; }
 }
 
 /* backdrop-filter: */
 /* ================================================== */
-@mixin glass-filter-light {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-light)) saturate(var(--satu-base));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-light)) saturate(var(--satu-base));
+@mixin glass-filter-base {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.2);
+  backdrop-filter:         blur(var(--blur)) brightness(0.95) saturate(1.2);
 }
 
-@mixin glass-filter-base {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-base));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-base));
+@mixin glass-filter-vib-mild {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.9) saturate(0.8);
+  backdrop-filter:         blur(var(--blur)) brightness(0.9) saturate(0.8);
 }
 
 @mixin glass-filter-vib {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-strong));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-strong));
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.95) saturate(1.5);
+  backdrop-filter:         blur(var(--blur)) brightness(0.95) saturate(1.5);
 }
 
 @mixin glass-filter-xvib {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-xstrong));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-base)) saturate(var(--satu-xstrong));
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(1) saturate(2);
+  backdrop-filter:         blur(var(--blur)) brightness(1) saturate(2);
+}
+
+@mixin glass-filter-2xvib {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(1) saturate(2.5);
+  backdrop-filter:         blur(var(--blur)) brightness(1) saturate(2.5);
 }
 
 @mixin glass-filter-dark {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-dark)) saturate(var(--satu-base));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-dark)) saturate(var(--satu-base));
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.85) saturate(1.2);
+  backdrop-filter:         blur(var(--blur)) brightness(0.85) saturate(1.2);
 }
 
 @mixin glass-filter-xdark {
-  -webkit-backdrop-filter:  blur(var(--blur)) brightness(var(--bright-xdark)) saturate(var(--satu-base));
-  backdrop-filter: blur(var(--blur)) brightness(var(--bright-xdark)) saturate(var(--satu-base));
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.7) saturate(1.5);
+  backdrop-filter:         blur(var(--blur)) brightness(0.7) saturate(1.5);
 }
 
+@mixin glass-filter-2xdark {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(0.4) saturate(2);
+  backdrop-filter:         blur(var(--blur)) brightness(0.4) saturate(2);
+}
 
-/* Glass noise texture */
+@mixin glass-filter-light {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(1.1) saturate(1.2);
+  backdrop-filter:         blur(var(--blur)) brightness(1.1) saturate(1.2);
+}
+
+@mixin glass-filter-xlight {
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(1.3) saturate(1.2);
+  backdrop-filter:         blur(var(--blur)) brightness(1.3) saturate(1.2);
+}
+
+/* Noise texture */
 /* ================================================== */
 /* Noise texture generator */
 /* https://devsdash.com/tools/noise-texture-generator */
@@ -97,25 +93,8 @@ html {
   background-image: url(/assets/textures/noise-texture-gray-40x40.pngg);
 }
 
-.glass-container {
-  container-name: glass-co;
-  container-type: inline-size;
-
-  @container glass-co (width > 99vw) {
-    .glass-3d {
-      box-shadow: none;
-
-      &::after {
-        box-shadow: bevel.$flat-bevel-sm;
-      }
-
-      & > .full-w-inset {
-        margin-left: calc((-1 * var(--_space)));
-      }
-    }
-  }
-}
-
+/* 3D glass material */
+/* ================================================== */
 @mixin glass-3d {
   position: relative;
   overflow: hidden;
@@ -123,25 +102,43 @@ html {
   width: 100%;
 
   &::after {
-    @include pseudo;
+    @include lh.pseudo;
     z-index: 1;
     overflow: hidden;
     box-shadow: var(--bevel-lg);
   }
 
   &::before {
-    @include pseudo;
+    @include lh.pseudo;
     z-index: -2;
     overflow: hidden;
     @include noise;
   }
 }
+.glass-3d { @include glass-3d; }
 
-.glass-3d {
-  @include glass-3d;
+
+/* Glass container */
+/* ================================================== */
+.glass-container {
+  container-name: glass-co;
+  container-type: inline-size;
+
+  @container glass-co (width > 98vw) {
+    .glass-3d {
+      &::after {
+        box-shadow: var(--flat-bevel-lg);
+      }
+
+      > .full-w-inset {
+        margin-left: var(--_neg-space);
+      }
+    }
+  }
 }
 
-/* Glass base → no bevel */
+
+/* Glass with NO bevel */
 /* ================================================== */
 @mixin glass-no-bevel {
   position: relative;
@@ -150,7 +147,7 @@ html {
   width: 100%;
 
   &::before {
-    @include pseudo;
+    @include lh.pseudo;
     z-index: -2;
     overflow: hidden;
     @include noise;
@@ -158,19 +155,30 @@ html {
 }
 .glass-no-bevel { @include glass-no-bevel; }
 
-/* For elements that only go to edge-to-edge */
-@mixin glass-e2e-all {
 
-  @include glass-no-bevel;
+/* edge-to-edge glass */
+/* ================================================== */
+@mixin glass-e2e {
+  position: relative;
+  overflow: hidden;
+  @include glass-filter-base;
+  width: 100%;
 
   &::after {
-    @include pseudo;
+    @include lh.pseudo;
     z-index: 1;
     overflow: hidden;
-    box-shadow: bevel.$flat-bevel-sm;
+    box-shadow: var(--flat-bevel-lg);
+  }
+
+  &::before {
+    @include lh.pseudo;
+    z-index: -2;
+    overflow: hidden;
+    @include noise;
   }
 }
-.glass-e2e-all { @include glass-e2e-all; }
+.glass-e2e { @include glass-e2e; }
 
 
 /* Button glass material */
@@ -180,9 +188,9 @@ html {
   overflow: hidden;
 
   &::after {
-    @include pseudo;
+    @include lh.pseudo;
     overflow: hidden;
     z-index: 202;
-    box-shadow: var(--bevel-lg);
+    box-shadow: var(--bevel-md);
   }
 }
