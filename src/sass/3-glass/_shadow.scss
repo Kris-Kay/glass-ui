@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Shadows */
 @use "sass:map";
-@use "../2-util/mixin";
+@use "../2-util/mixin" as mix;
 /* ================================================== */
 
 /* Elevation shadows */
@@ -79,7 +79,7 @@ $shadows: (
 );
 
 .sha {
-  @include mixin.generate-classes($shadows, 'box-shadow', 'sha', '-');
+  @include mix.generate-classes($shadows, 'box-shadow', 'sha', '-');
 }
 
 
@@ -117,7 +117,7 @@ html {
   inset 0 10px 20px -20px oklch(var(--shadow) / 0.3);
 }
 
-/* Overhang shadow MAP */
+/* Flat overhang shadow MAP */
 /* ================================================== */
 $overhangs: (
   "xs":  var(--overhang-sha-xs),
@@ -128,5 +128,5 @@ $overhangs: (
 );
 
 .overhang-sha {
-  @include mixin.generate-classes($overhangs, 'box-shadow', 'overhang-sha', '-');
+  @include mix.generate-classes($overhangs, 'box-shadow', 'overhang-sha', '-');
 }

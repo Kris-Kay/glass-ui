@@ -1,14 +1,13 @@
 /* ================================================== */
 /* Border Radius */
-@use "sass:map";
 @use "../1-custom-styles/space" as *;
-@use "mixin" as *;
+@use "mixin" as mix;
 /* ================================================== */
 
 /* Border radius classes */
 /* ================================================== */
 .radius {
-  @include size-modifiers('border-radius') {
+  @include mix.size-modifiers('border-radius') {
     overflow: hidden;
   }
 }
@@ -16,13 +15,11 @@
 
 /* Conditional border-radius */
 /* ================================================== */
-// https://ishadeed.com/article/conditional-border-radius/
-// remove border-radius if element width = 100vw or bigger
 @mixin radius($key) {
   @if not map-has-key($sizes, $key) {
     @warn "Warning: `#{$key}` is not a valid T-shirt size. Select from: #{$sizes}";
   } @else {
-        border-radius: max(0px, min(var(--#{$key}), calc((100vw - 4px - 100%) * 9999))) / var(--#{$key});
+        border-radius: max(0px, min(var(--#{$key}), calc((100vw - 16px - 100%) * 9999))) / var(--#{$key});
     overflow: hidden;
   }
 }

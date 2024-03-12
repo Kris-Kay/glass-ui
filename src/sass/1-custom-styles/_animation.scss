@@ -1,37 +1,63 @@
 /* ================================================== */
 /* Animation custom styles */
+@use "sass:map";
 /* ================================================== */
 
 /* Speeds */
 /* ================================================== */
-$speed--2xslow: 750ms;
-$speed--xslow:  500ms;
-$speed--slow:   400ms;
-$speed--base:   300ms;
-$speed--fast:   200ms;
-$speed--xfast:  100ms;
-$speed--2xfast: 150ms;
+/* ✨ Config these values ✨ */
+$speed-2xslow: 750ms;
+$speed-xslow:  500ms;
+$speed-slow:   400ms;
+$speed-base:   300ms;
+$speed-fast:   200ms;
+$speed-xfast:  100ms;
+$speed-2xfast: 150ms;
 
 /* cubic-bezier */
 /* ================================================== */
 $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 
+@keyframes slide-down {
+  from {
+    transform: translateY(-20%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 
-/* Color theme change ani */
+@keyframes slide-up {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20%);
+    opacity: 0.25;
+  }
+}
+
+
+/* Color theme change animation */
 /* ================================================== */
 html.root-transition,
 html.root-transition *,
 html.root-transition *::before,
 html.root-transition *::after {
-  transition: all 750ms !important;
+  transition: all $speed-2xslow !important;
   transition-delay: 0 !important;
 }
 
+/* Focus */
+/* ================================================== */
 :focus {
-  outline: 1px solid oklch(var(--neutral-90, #e3ecf3) / 0.4);
-  outline-offset: 2px;
+  outline: 1px solid oklch(var(--primary-95) / 0.5);
+  outline-offset: 1.5px;
   border-radius: inherit;
-  transition: all 300ms;
+  transition: all $speed-base;
 }
 
 ::-moz-focus-inner {

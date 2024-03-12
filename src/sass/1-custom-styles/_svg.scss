@@ -12,57 +12,28 @@
   aspect-ratio: 1 / 1;
   mask-repeat: no-repeat;
   mask-size: cover;
-   pointer-events: none;
+  pointer-events: none;
 }
 
-.svg-cube {
-  @include svg-icon;
-  mask: url(/assets/icons/CubeTransparent.svg);
-}
+.svg-cube { mask: url(/assets/icons/CubeTransparent.svg); }
 
-.svg-copy {
-  @include svg-icon;
-  mask: url(/assets/icons/Copy.svg);
-}
+.svg-copy { mask: url(/assets/icons/Copy.svg); }
 
-.svg-SquareOut {
-  @include svg-icon;
-  mask: url(/assets/icons/SquareOut.svg);
-}
+.svg-square-out { mask: url(/assets/icons/SquareOut.svg); }
 
-.svg-chev-up {
-  @include svg-icon;
-  mask: url(/assets/icons/CaretUp.svg);
-}
-.svg-chev-down {
-  @include svg-icon;
-  mask: url(/assets/icons/CaretDown.svg);
-}
+.svg-chev-up { mask: url(/assets/icons/CaretUp.svg); }
 
-.svg-chev-l {
-  @include svg-icon;
-  mask: url(/assets/icons/CaretLeft.svg);
-}
+.svg-chev-down { mask: url(/assets/icons/CaretDown.svg); }
 
-.svg-chev-r {
-  @include svg-icon;
-  mask: url(/assets/icons/CaretRight.svg);
-}
+.svg-chev-l { mask: url(/assets/icons/CaretLeft.svg); }
 
-.svg-linkedin {
-  // @include svg-icon;
-  mask: url(/assets/icons/LinkedinLogo.svg);
-}
+.svg-chev-r { mask: url(/assets/icons/CaretRight.svg); }
 
-.svg-instagram {
-  @include svg-icon;
-  mask: url(/assets/icons/InstagramLogo.svg);
-}
+.svg-linkedin { mask: url(/assets/icons/LinkedinLogo.svg); }
 
-.svg-github {
-  @include svg-icon;
-  mask: url(/assets/icons/GithubLogo.svg);
-}
+.svg-instagram { mask: url(/assets/icons/InstagramLogo.svg); }
+
+.svg-github { mask: url(/assets/icons/GithubLogo.svg); }
 
 .svg-ham { mask: url(/assets/icons/List.svg); }
 

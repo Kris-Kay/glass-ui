@@ -1,38 +1,37 @@
 /* ================================================== */
 /* Margins & Padding */
-@use "sass:map";
-@use "mixin" as *;
+@use "mixin" as mix;
 /* ================================================== */
 
 /* ================================================== */
 /* Margins */
 /* ================================================== */
 .m {
-  @include size-modifiers('margin');
+  @include mix.size-modifiers('margin');
 }
 
 .m-t {
-  @include size-modifiers('margin-top');
+  @include mix.size-modifiers('margin-top');
 }
 
 .m-b {
-  @include size-modifiers('margin-bottom');
+  @include mix.size-modifiers('margin-bottom');
 }
 
 .m-l {
-  @include size-modifiers('margin-left');
+  @include mix.size-modifiers('margin-left');
 }
 
 .m-r {
-  @include size-modifiers('margin-right');
+  @include mix.size-modifiers('margin-right');
 }
 
 .m-x {
-  @include xy-size-modifiers('margin-right', 'margin-left');
+  @include  mix.xy-size-modifiers('margin-right', 'margin-left');
 }
 
 .m-y {
-  @include xy-size-modifiers('margin-top', 'margin-bottom');
+  @include  mix.xy-size-modifiers('margin-top', 'margin-bottom');
 }
 
 
@@ -40,29 +39,29 @@
 /* Padding */
 /* ================================================== */
 .p {
-  @include size-modifiers('padding');
+  @include mix.size-modifiers('padding');
 }
 
 .p-t {
-  @include size-modifiers('padding-top');
+  @include mix.size-modifiers('padding-top');
 }
 
 .p-b {
-  @include size-modifiers('padding-bottom');
+  @include mix.size-modifiers('padding-bottom');
 }
 
 .p-l {
-  @include size-modifiers('padding-left');
+  @include mix.size-modifiers('padding-left');
 }
 
 .p-r {
-  @include size-modifiers('padding-right');
+  @include mix.size-modifiers('padding-right');
 }
 
 .p-x {
-  @include xy-size-modifiers('padding-right', 'padding-left');
+  @include  mix.xy-size-modifiers('padding-right', 'padding-left');
 }
 
 .p-y {
-  @include xy-size-modifiers('padding-top', 'padding-bottom');
+  @include  mix.xy-size-modifiers('padding-top', 'padding-bottom');
 }

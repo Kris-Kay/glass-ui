@@ -33,7 +33,7 @@
   overflow: hidden;
   cursor: pointer;
   will-change: background-color;
-  transition: background-color $speed--base $smooth-cubic;
+  transition: background-color $speed-base $smooth-cubic;
 
   &::after {
     @include pseudo;

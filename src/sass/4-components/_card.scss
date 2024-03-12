@@ -11,7 +11,7 @@
 
 @mixin card-base {
   --_space: var(--space, 1.5rem);
-  --_neg-space: calc(-1 * var(--_space));
+  --_neg-space: calc(-1 * var(--space));
 
   z-index: z(card);
   height: fit-content;
@@ -89,7 +89,7 @@
 
   width: min(100%, var(--max-w-sm));
 
-  @include radius("md");
+  @include radius("lg");
   box-shadow: var(--sha-md);
 }
 
@@ -134,8 +134,7 @@
   box-shadow: var(--sha-lg);
 
   @include bp(lg) {
-    --space: var(--xl);
-    @include radius("xl");
+    --space: var(--2xl);
     box-shadow: var(--sha-xl);
   }
 }

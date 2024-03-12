@@ -1,13 +1,14 @@
 /* ================================================== */
 /* Space */
 @use "sass:map";
-@use "breakpoint" as *;
+@use "breakpoint" as bp;
 @use "z-index" as z;
 /* ================================================== */
 
 /* Dynamic T-shirt sizes */
 /* ================================================== */
-/* Sizes scale with viewport width */
+/* ✨ Config these values ✨ */
+/* Fluid Space Calculator */
 /* https://utopia.fyi/space/calculator/ */
 :root {
   /* 3xs: 4px → 6px */
@@ -61,13 +62,9 @@ $sizes: (
 );
 
 
-/* Responsive UI heights | moats | max widths */
+/* Spacing variables */
 /* ================================================== */
 html {
-  --ui-h-sm: 1.75rem;  /* 28px */
-  --ui-h-md: 2.25rem; /* 36px */
-  --ui-h-lg: 2.75rem;  /* 44px */
-
   --max-w-xs: 400px;
   --max-w-sm: 600px;
   --max-w-md: 800px;
@@ -75,6 +72,22 @@ html {
   --max-w-xl: 1200px;
 
   --moat: 1rem;
+
+  --ui-h-sm: 1.625rem; /* 26px */
+  --ui-h-md: 2rem;     /* 32px */
+  --ui-h-lg: 2.5rem;   /* 40px */
+
+  @include bp.bp(xs) {
+    --ui-h-sm: 1.75rem;  /* 28px */
+    --ui-h-md: 2.25rem;  /* 36px */
+    --ui-h-lg: 2.75rem;  /* 44px */
+  }
+
+  @include bp.bp(md) {
+    --ui-h-sm: 1.875rem;  /* 30px */
+    --ui-h-md: 2.5rem;    /* 40px */
+    --ui-h-lg: 3rem;      /* 48px */
+  }
 }
 
 /* UI hight */
@@ -105,18 +118,14 @@ html {
 /* Moat classes */
 /* ================================================== */
 /* wrap elements to add or remove left-right padding  */
-/* padding is added at the breakpoint value that match the suffix */
-/* are flex containers set to ` justify-content: center;` */
-
+/* add padding at the breakpoint value that match the suffix */
+/* are flex containers set to `justify-content: center;` */
 @mixin moat {
   width: 100%;
   height: fit-content;
   z-index: z.z("section");
   display: flex;
   justify-content: center;
-
-  // display: grid;
-  // place-items: center;
 }
 
 .moat-all {
@@ -128,7 +137,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp(xs) {
+  @include bp.bp(xs) {
     padding: 0 var(--moat);
   }
 }
@@ -137,7 +146,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     padding: 0 var(--moat);
   }
 }
@@ -146,7 +155,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp(md) {
+  @include bp.bp(md) {
     padding: 0 var(--moat);
   }
 }
@@ -155,7 +164,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp(lg) {
+  @include bp.bp(lg) {
     padding: 0 var(--moat);
   }
 }
@@ -164,7 +173,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp(xl) {
+  @include bp.bp(xl) {
     padding: 0 var(--moat);
   }
 }
@@ -185,11 +194,11 @@ html {
   gap: var(--space);
   padding: var(--space) 0;
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     --space: 6rem;
   }
 
-  @include bp(lg) {
+  @include bp.bp(lg) {
     --space: 8rem;
   }
 }
@@ -200,19 +209,19 @@ html {
   display: grid;
   gap: var(--gap);
 
-  @include bp(xs) {
+  @include bp.bp(xs) {
     --gap: 8rem;
   }
 
-  @include bp(sm) {
+  @include bp.bp(sm) {
     --gap: 10rem;
   }
 
-  @include bp(md) {
+  @include bp.bp(md) {
     --gap: 11rem;
   }
 
-  @include bp(lg) {
+  @include bp.bp(lg) {
     --gap: 12rem;
   }
 }

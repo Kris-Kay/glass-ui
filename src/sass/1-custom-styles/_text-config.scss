@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Text */
 @use 'sass:map';
-@use "../2-util/mixin";
+@use "../2-util/mixin" as mix;
 /* ================================================== */
 
 /* font-family: */
@@ -59,7 +59,7 @@ $text-sizes: (
 
 /* Text size classes */
 .text {
-  @include mixin.generate-classes($text-sizes, 'font-size', 'text', '-');
+  @include mix.generate-classes($text-sizes, 'font-size', 'text', '-');
 }
 
 /* ================================================== */
@@ -145,5 +145,5 @@ $text-shadows: (
 );
 
 .text-sha {
-  @include mixin.generate-classes($text-shadows, 'text-shadow', 'text-sha', '-');
+  @include mix.generate-classes($text-shadows, 'text-shadow', 'text-sha', '-');
 }

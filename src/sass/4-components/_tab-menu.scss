@@ -53,7 +53,6 @@
   }
 
   @include bp(md) {
-    height: var(--ui-h-lg);
     --tab-radius: 8px;
     --padding: 5px;
     gap: 7px;
@@ -62,7 +61,7 @@
 
 
 [role="tab"] {
-  --inner-h: 0.95rem;
+  --content-h: 0.95rem;
 
   width: max-content;
   height: 100%;
@@ -74,8 +73,8 @@
   pointer-events: auto;
   cursor: pointer;
 
-  font-size: var(--inner-h);
-  line-height: var(--inner-h);
+  font-size: var(--content-h);
+  line-height: var(--content-h);
   @include btn.btn-text;
   @include btn.btn-clear;
   border-radius: var(--tab-radius);
@@ -83,17 +82,17 @@
   background-color: transparent;
 
   @include bp(xs) {
-    --inner-h: 1rem;
+    --content-h: 1rem;
     padding: 0 0.8rem;
   }
 
   @include bp(sm) {
-    --inner-h: 1.1rem;
+    --content-h: 1.1rem;
     padding: 0 0.9rem;
   }
 
   @include bp(md) {
-    --inner-h: 1.1rem;
+    --content-h: 1.1rem;
     padding: 0 1.2rem;
   }
 
