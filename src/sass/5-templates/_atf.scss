@@ -10,11 +10,8 @@
   height: fit-content;
   display: grid;
   margin: var(--nav-h) auto 0 auto;
+  max-width: var(--max-w-md);
   padding: 0 var(--moat) var(--nav-h) var(--moat);
-
-  @include bp.bp(md) {
-      padding: 0 2rem var(--nav-h) 2rem;
-  }
 }
 
 .atf-card-bin {

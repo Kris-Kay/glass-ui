@@ -136,6 +136,7 @@ textarea {
   font-size: var(--text-sm);
   letter-spacing: $letter-spacing-lg;
   text-shadow: var(--text-sha-sm);
+  word-break: keep-all;
 }
 
 .input-label {

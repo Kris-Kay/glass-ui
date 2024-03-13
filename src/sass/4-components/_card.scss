@@ -19,8 +19,6 @@
   gap: var(--_space);
   padding: var(--_space);
 
-  overflow: hidden;
-
   & > .full-w-fill {
     padding: var(--_space);
     margin: 0 var(--_neg-space);
@@ -29,6 +27,13 @@
   & > .full-w-fill-noYMargin {
     padding: var(--_space);
     margin: var(--_neg-space);
+  }
+
+  & > .full-w-fill-noBottomMargin  {
+    padding: var(--_space);
+    margin-left: var(--_neg-space);
+    margin-right: var(--_neg-space);
+    margin-bottom: var(--_neg-space);
   }
 
   & > .full-w-inset {
@@ -66,9 +71,7 @@
 .card-fit {
   @include card-base;
   --space: var(--lg);
-
   width: fit-content;
-
   @include radius("lg");
   box-shadow: var(--sha-lg);
 }
@@ -77,28 +80,37 @@
   @include card-base;
   --space: var(--lg);
 
-  width: min(100%, var(--max-w-xs));
-
   @include radius("lg");
   box-shadow: var(--sha-sm);
+
+  @include bp(xs) {
+    --space: var(--xl);
+    @include radius("xl");
+  }
 }
 
 .card-sm {
- @include card-base;
-  --space: var(--md);
-
-  width: min(100%, var(--max-w-sm));
-
+  @include card-base;
+  --space: var(--lg);
+  // width: min(100%, var(--max-w-sm));
   @include radius("lg");
   box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--2xl);
+    @include radius("xl");
+    box-shadow: var(--sha-lg);
+  }
 }
 
 .card-md {
   @include card-base;
   --space: var(--lg);
-
-  width: min(100%, var(--max-w-md));
-
+  // width: min(100%, var(--max-w-md));
   @include radius("lg");
   box-shadow: var(--sha-lg);
 
@@ -106,13 +118,21 @@
     --space: var(--xl);
     @include radius("xl");
   }
+
+  @include bp(md) {
+    --space: var(--3xl);
+  }
+
+  @include bp(lg) {
+    --space: var(--4xl);
+  }
 }
 
 .card-lg {
   @include card-base;
   --space: var(--lg);
 
-  width: min(100%, var(--max-w-lg));
+  // width: min(100%, var(--max-w-lg));
 
   @include radius("lg");
   box-shadow: var(--sha-lg);
@@ -124,18 +144,24 @@
   }
 }
 
+
 .card-xl {
   @include card-base;
-  --space: var(--xl);
-
-  width: min(100%, var(--max-w-xl));
-
-  @include radius("xl");
+  --space: var(--lg);
+  // width: min(100%, var(--max-w-xl));
+  @include radius("lg");
   box-shadow: var(--sha-lg);
 
-  @include bp(lg) {
+  @include bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp(sm) {
     --space: var(--2xl);
-    box-shadow: var(--sha-xl);
+  }
+
+  @include bp(md) {
+    --space: var(--3xl);
   }
 }
 
@@ -148,4 +174,87 @@
 
   color: var(--text-strong);
   text-shadow: var(--text-sha-md);
+}
+
+@mixin space-base {
+  --_space: var(--space, 2rem);
+  --_neg-space: calc(-1 * var(--space));
+
+  height: fit-content;
+  display: grid;
+  gap: var(--_space);
+  padding: var(--_space);
+  @include radius("lg");
+
+  @include bp(xs) {
+    @include radius("xl");
+  }
+}
+
+.space-md {
+  @include space-base;
+  --space: var(--md);
+
+  @include bp(xs) {
+    --space: var(--lg);
+  }
+
+  @include bp(sm) {
+    --space: var(--xl);
+  }
+
+  @include bp(md) {
+    --space: var(--2xl);
+  }
+}
+
+.space-lg {
+  @include space-base;
+  --space: var(--lg);
+
+  @include bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--2xl);
+  }
+
+  @include bp(md) {
+    --space: var(--3xl);
+  }
+}
+
+.space-xl {
+  @include space-base;
+  --space: var(--xl);
+
+  @include bp(xs) {
+    --space: var(--2xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--3xl);
+  }
+
+  @include bp(md) {
+    --space: var(--4xl);
+  }
+}
+
+.space-2xl {
+  @include space-base;
+  --space: var(--2xl);
+
+  @include bp(xs) {
+    --space: var(--3xl);
+  }
+
+  @include bp(sm) {
+    --space: var(--4xl);
+  }
+
+  @include bp(md) {
+    --space: var(--5xl);
+  }
 }

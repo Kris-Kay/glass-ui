@@ -99,7 +99,6 @@ html {
   position: relative;
   overflow: hidden;
   @include glass-filter-base;
-  width: 100%;
 
   &::after {
     @include lh.pseudo;
