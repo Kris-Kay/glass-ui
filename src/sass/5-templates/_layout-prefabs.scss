@@ -269,13 +269,13 @@
     border-radius: 0 var(--sm) var(--sm) 0;
   }
 
-  @include bp(sm) {
-    margin-bottom: 6rem;
-  }
+  // @include bp(sm) {
+  //   margin-bottom: 6rem;
+  // }
 
-  @include bp(lg) {
-    margin-bottom: 8rem;
-  }
+  // @include bp(lg) {
+  //   margin-bottom: 8rem;
+  // }
 
   @include bp(xl) {
     width: fit-content;
