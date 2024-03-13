@@ -70,8 +70,8 @@ $moat-xl: 5rem;
 html {
   --moat: #{$moat-xs}; /* 16px */
 
-  --max-w-xs: calc(#{bp.$bp-sm} - calc(#{$moat-xs} * 2)); /* 432px */
-  --max-w-sm: calc(#{bp.$bp-md} - calc(#{$moat-md} * 2)); /* 600px */
+  --max-w-xs: calc(#{bp.$bp-sm} - calc(#{$moat-xs} * 2)); /* 448px */
+  --max-w-sm: calc(#{bp.$bp-md} - calc(#{$moat-md} * 2)); /* 784px */
   --max-w-md: calc(#{bp.$bp-lg} - calc(#{$moat-md} * 2)); /* 960px */
   --max-w-lg: calc(#{bp.$bp-xl} - calc(#{$moat-xl} * 2)); /* 1280px */
 
@@ -225,25 +225,29 @@ html {
 }
 
 .section-space {
-  --space: 7rem;
+  --space: 5rem;
 
   display: grid;
   gap: var(--space);
-  padding-top: calc(var(--space) / 1.618);
+  // padding: calc(var(--space) / 2) 0;
 
   @include bp.bp(xs) {
-    --space: 8rem;
+    --space: 6rem;
   }
 
   @include bp.bp(sm) {
-    --space: 10rem;
+    --space: 7rem;
   }
 
   @include bp.bp(md) {
-    --space: 11rem;
+    --space: 8rem;
   }
 
   @include bp.bp(lg) {
+    --space: 10rem;
+  }
+
+  @include bp.bp(xl) {
     --space: 12rem;
   }
 }
