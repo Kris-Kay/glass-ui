@@ -290,15 +290,3 @@
     }
   }
 }
-
-
-.stamp {
-  width: clamp(120px, 150px, 180px);
-  aspect-ratio : 1 / 1;
-  overflow: hidden;
-  border-radius: var(--sm);
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.8;
-  box-shadow: var(--sha-sm);
-}

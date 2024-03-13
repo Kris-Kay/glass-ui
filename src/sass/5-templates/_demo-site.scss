@@ -54,3 +54,25 @@
   height: fit-content;
   z-index: z(page);
 }
+
+.stamp {
+  width: 100px;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  opacity: 0.8;
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    border-radius: var(--sm);
+  }
+
+  @include bp(sm) {
+    width: 180px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}
