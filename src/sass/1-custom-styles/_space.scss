@@ -61,20 +61,19 @@ $sizes: (
   "5xl": --5xl,
 );
 
-$moat-sm: 1rem;
-$moat-sm-2: 2rem;
+$moat-xs: 1rem;
 $moat-md: 2rem;
-$moat-md-2: 4rem;
+$moat-xl: 5rem;
 
 /* Spacing variables */
 /* ================================================== */
 html {
-  --moat: #{$moat-sm}; /* 16px */
+  --moat: #{$moat-xs}; /* 16px */
 
-  --max-w-xs: calc(#{bp.$bp-sm} - #{$moat-sm-2}); /* 448px */
-  --max-w-sm: calc(#{bp.$bp-md} - #{$moat-md-2}); /* 800px */
-  --max-w-md: calc(#{bp.$bp-lg} - #{$moat-md-2}); /* 960px */
-  --max-w-lg: 75rem;                              /* 1200px */
+  --max-w-xs: calc(#{bp.$bp-sm} - calc(#{$moat-xs} * 2)); /* 432px */
+  --max-w-sm: calc(#{bp.$bp-md} - calc(#{$moat-md} * 2)); /* 600px */
+  --max-w-md: calc(#{bp.$bp-lg} - calc(#{$moat-md} * 2)); /* 960px */
+  --max-w-lg: calc(#{bp.$bp-xl} - calc(#{$moat-xl} * 2)); /* 1280px */
 
   --ui-h-sm: 1.625rem; /* 26px */
   --ui-h-md: 2rem;     /* 32px */
@@ -92,6 +91,10 @@ html {
     --ui-h-sm: 1.875rem; /* 30px */
     --ui-h-md: 2.5rem;   /* 40px */
     --ui-h-lg: 3rem;     /* 48px */
+  }
+
+  @include bp.bp(xl) {
+    --moat: #{$moat-xl}; /* 64px */
   }
 }
 
