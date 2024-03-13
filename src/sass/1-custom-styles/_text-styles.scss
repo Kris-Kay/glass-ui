@@ -49,12 +49,22 @@ textarea {
 
 /* Common text styles */
 /* ================================================== */
+// .big-title {
+//   @include title-thin;
+//   font-size: var(--text-3xl);
+//   text-shadow: var(--text-sha-3xl);
+//   line-height: 2.05ex;
+//   color: var(--text-mild);
+//   text-align: center;
+// }
+
 .big-title {
-  @include title-thin;
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
   font-size: var(--text-3xl);
   text-shadow: var(--text-sha-3xl);
-  line-height: 2.05ex;
-  color: var(--text-mild);
+  line-height: 1;
+  color: var(--text-strong);
   text-align: center;
 }
 

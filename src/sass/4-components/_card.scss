@@ -225,8 +225,7 @@
   }
 }
 
-.space-xl {
-  @include space-base;
+@mixin space-xl {
   --space: var(--xl);
 
   @include bp(xs) {
@@ -240,6 +239,10 @@
   @include bp(md) {
     --space: var(--4xl);
   }
+}
+
+.space-xl {
+  @include space-xl;
 }
 
 .space-2xl {

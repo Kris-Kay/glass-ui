@@ -71,6 +71,22 @@ input[type='checkbox'].switch {
   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.618));
   --_thumb-margin: var(--thumb-margin, 3px);
 
+    --thumb-margin: 3.5px;
+    --switch-height: var(--ui-h-sm);
+    --switch-width: calc(var(--switch-height) * 1.8);
+
+  // @include bp(xs) {
+  //   --switch-height: 1.8rem;
+  // }
+
+  // @include bp(sm) {
+  //   --switch-height: 1.75rem;
+  // }
+
+  // @include bp(md) {
+  //   --switch-height: 1.75rem;
+  // }
+
   @include input-base;
 
   position: relative;
@@ -117,20 +133,20 @@ input[type='checkbox'].switch {
     }
   }
 
-  &.switch-sm {
-    --thumb-margin: 3.5px;
-    --switch-height: 1.75rem;
-  }
+  // &.switch-sm {
+  //   --thumb-margin: 3.5px;
+  //   --switch-height: 1.75rem;
+  // }
 
-  &.switch-md {
-    --thumb-margin: 3.5px;
-    --switch-height: 1.35rem;
-  }
+  // &.switch-md {
+  //   --thumb-margin: 3.5px;
+  //   --switch-height: 1.35rem;
+  // }
 
-  &.switch-lg {
-    --thumb-margin: 4px;
-    --switch-height:1.5rem;
-  }
+  // &.switch-lg {
+  //   --thumb-margin: 4px;
+  //   --switch-height:1.5rem;
+  // }
 }
 
 /* Checkbox */
@@ -236,7 +252,7 @@ input[type='radio'] {
 .input-bin {
   display: flex;
   align-items: center;
-  gap: var(--2xs);
+  gap: var(--xs);
 }
 
 .inline-label {
