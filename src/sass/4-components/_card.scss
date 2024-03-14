@@ -10,14 +10,18 @@
 /* have conditional border-radius values that turn to 0 if width = = 100vw */
 
 @mixin card-base {
-  --_space: var(--space, 1.5rem);
+  --_space: var(--space, 1rem);
   --_neg-space: calc(-1 * var(--space));
-
   z-index: z(card);
   height: fit-content;
   display: grid;
   gap: var(--_space);
-  padding: var(--_space);
+  padding: calc(var(--_space) * 1.618) var(--_space);
+  box-shadow: var(--sha-sm);
+
+  @include bp(sm) {
+    padding: var(--_space);
+  }
 
   & > .full-w-fill {
     padding: var(--_space);
@@ -30,10 +34,16 @@
   }
 
   & > .full-w-fill-noBottomMargin  {
-    padding: var(--_space);
     margin-left: var(--_neg-space);
     margin-right: var(--_neg-space);
-    margin-bottom: var(--_neg-space);
+    margin-bottom: calc(var(--_neg-space) * 1.618);
+
+    padding: calc(var(--_space) *1.618) var(--_space);
+
+    @include bp(sm) {
+      padding: var(--_space);
+      margin-bottom: var(--_neg-space);
+    }
   }
 
   & > .full-w-inset {
@@ -58,206 +68,145 @@
     place-self: center;
     margin-left: var(--_neg-space);
     margin-right: var(--_neg-space);
-    margin-bottom: var(--_neg-space);
+    margin-bottom: calc(var(--_neg-space) * 1.618);
+
+    @include bp(sm) {
+      margin-bottom: var(--_neg-space);
+    }
   }
 
   & > .full-w-img-noMargin {
     display: grid;
     place-self: center;
-    margin: var(--_neg-space);
+    // margin: var(--_neg-space);
+    margin-left: var(--_neg-space);
+    margin-right: var(--_neg-space);
+    margin-top: var(--_neg-space);
+    margin-bottom: calc(var(--_neg-space) * 1.618);
+
+    // padding: calc(var(--_space) *1.618) var(--_space);
+
+    @include bp(sm) {
+      padding: var(--_space);
+      margin-bottom: var(--_neg-space);
+    }
   }
 }
 
+
 .card-fit {
   @include card-base;
-  --space: var(--lg);
   width: fit-content;
-  @include radius("lg");
-  box-shadow: var(--sha-lg);
+  @include radius("md-lg");
+}
+
+.card-2xs {
+  @include card-base;
+  // --space: var(--sm);
+  max-width: var(--max-w-2xs);
+  @include radius("md-lg");
+
+  // @include bp(sm) {
+  //   --space: var(--sm-md);
+  // }
 }
 
 .card-xs {
   @include card-base;
-  --space: var(--lg);
+  // --space: var(--sm);
+  max-width: var(--max-w-xs);
+  @include radius("md-lg");
 
-  @include radius("lg");
-  box-shadow: var(--sha-sm);
+  // @include bp(sm) {
+  //   --space: var(--sm-md);
+  // }
 
-  @include bp(xs) {
-    --space: var(--xl);
-    @include radius("xl");
+  & > .card-title {
+    @include bp(xs) {
+      font-size: var(--text-2xl);
+    }
   }
 }
 
 .card-sm {
   @include card-base;
-  --space: var(--lg);
-  // width: min(100%, var(--max-w-sm));
-  @include radius("lg");
-  box-shadow: var(--sha-md);
+  // --space: var(--lg-xl);
+  max-width: var(--max-w-sm);
+  @include radius("lg-xl");
 
-  @include bp(xs) {
-    --space: var(--xl);
+  @include bp(md) {
+    @include radius("xl");
   }
 
-  @include bp(sm) {
-    --space: var(--2xl);
-    @include radius("xl");
-    box-shadow: var(--sha-lg);
+  & > .card-title {
+    @include bp(xs) {
+      font-size: var(--text-2xl);
+    }
+
+    @include bp(sm) {
+      font-size: var(--text-3xl);
+    }
   }
 }
 
 .card-md {
   @include card-base;
-  --space: var(--lg);
-  // width: min(100%, var(--max-w-md));
-  @include radius("lg");
-  box-shadow: var(--sha-lg);
+  // --space: var(--xl-2xl);
+  max-width: var(--max-w-md);
+  @include radius("xl");
 
-  @include bp(sm) {
-    --space: var(--xl);
-    @include radius("xl");
-  }
+  & > .card-title {
 
-  @include bp(md) {
-    --space: var(--3xl);
-  }
+    @include bp(xs) {
+      font-size: var(--text-2xl);
+    }
 
-  @include bp(lg) {
-    --space: var(--4xl);
+    @include bp(sm) {
+      font-size: var(--text-3xl);
+    }
+
+    @include bp(md) {
+      font-size: 5rem;
+    }
   }
 }
 
 .card-lg {
   @include card-base;
-  --space: var(--lg);
+  // --space: var(--xl-2xl);
+  max-width: var(--max-w-lg);
+  @include radius("xl");
 
-  // width: min(100%, var(--max-w-lg));
+  width: min(100%, var(--max-w-lg));
 
-  @include radius("lg");
-  box-shadow: var(--sha-lg);
+  & > .card-title {
+    @include bp(xs) {
+      font-size: var(--text-2xl);
+    }
 
-  @include bp(md) {
-    --space: var(--xl);
-    @include radius("xl");
-    box-shadow: var(--sha-xl);
-  }
-}
+    @include bp(sm) {
+      font-size: var(--text-3xl);
+    }
 
+    @include bp(md) {
+      font-size: 4.25rem;
+    }
 
-.card-xl {
-  @include card-base;
-  --space: var(--lg);
-  // width: min(100%, var(--max-w-xl));
-  @include radius("lg");
-  box-shadow: var(--sha-lg);
-
-  @include bp(xs) {
-    --space: var(--xl);
-  }
-
-  @include bp(sm) {
-    --space: var(--2xl);
-  }
-
-  @include bp(md) {
-    --space: var(--3xl);
+    @include bp(lg) {
+      font-size: 5rem;
+    }
   }
 }
 
 /* Card items */
 /* ================================================== */
 .card-title {
-  @include title-thick;
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  letter-spacing: $letter-spacing-sm;
+  text-shadow: var(--text-sha-2xl);
+  line-height: 1.1;
+  color: var(--text-xstrong);
+  text-align: center;
   font-size: var(--text-xl);
-  line-height: 110%;
-
-  color: var(--text-strong);
-  text-shadow: var(--text-sha-md);
-}
-
-@mixin space-base {
-  --_space: var(--space, 2rem);
-  --_neg-space: calc(-1 * var(--space));
-
-  height: fit-content;
-  display: grid;
-  gap: var(--_space);
-  padding: var(--_space);
-  @include radius("lg");
-
-  @include bp(xs) {
-    @include radius("xl");
-  }
-}
-
-.space-md {
-  @include space-base;
-  --space: var(--md);
-
-  @include bp(xs) {
-    --space: var(--lg);
-  }
-
-  @include bp(sm) {
-    --space: var(--xl);
-  }
-
-  @include bp(md) {
-    --space: var(--2xl);
-  }
-}
-
-.space-lg {
-  @include space-base;
-  --space: var(--lg);
-
-  @include bp(xs) {
-    --space: var(--xl);
-  }
-
-  @include bp(sm) {
-    --space: var(--2xl);
-  }
-
-  @include bp(md) {
-    --space: var(--3xl);
-  }
-}
-
-@mixin space-xl {
-  --space: var(--xl);
-
-  @include bp(xs) {
-    --space: var(--2xl);
-  }
-
-  @include bp(sm) {
-    --space: var(--3xl);
-  }
-
-  @include bp(md) {
-    --space: var(--4xl);
-  }
-}
-
-.space-xl {
-  @include space-xl;
-}
-
-.space-2xl {
-  @include space-base;
-  --space: var(--2xl);
-
-  @include bp(xs) {
-    --space: var(--3xl);
-  }
-
-  @include bp(sm) {
-    --space: var(--4xl);
-  }
-
-  @include bp(md) {
-    --space: var(--5xl);
-  }
 }
