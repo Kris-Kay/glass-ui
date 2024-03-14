@@ -1,62 +1,40 @@
 /* ================================================== */
 /* Demo site home page */
 @use "../custom" as *;
-@use "../util" as *;
-@use "../glass" as glass;
-@use "../components" as *;
 /* ================================================== */
 
-.page-bg-bin {
+body {
   position: relative;
-  display: block;
-  z-index: -10;
-  background-color: var(--page-bg);
-  pointer-events: none;
 }
 
-.page-bg-panel {
+.page-bg-bin {
+  z-index: -10;
   position: fixed;
   inset: 0;
-  z-index: -9;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100lvh;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
+  background-color: var(--page-bg);
+  clip-path: inset(0);
   pointer-events: none;
+  will-change: scroll-position;
 }
 
 .page-bg-img {
+  z-index: -9;
   position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   inset: 0;
-
-  width: 100%;
-  min-height: 100%;
-
-  display: block;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
   object-fit: cover;
   object-position: top;
   pointer-events: none;
 }
-
-// html {
-//   scrollbar-color: var(--scrollbar-tumb) var(--scrollbar-track);
-// }
-
-// ::-webkit-scrollbar {
-//   // width: 8px;
-//   // height: 8px;
-//   background-color: var(--scrollbar-track);
-//   padding: 1px;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: var(--scrollbar-tumb);
-//   border-radius: 5px;
-//   margin: 1px;
-// }
 
 .body-grid {
   width: 100%;
@@ -65,33 +43,10 @@
   display: grid;
   // overflow: hidden;
   pointer-events: auto;
-
 }
 
 .content-bin {
   display: block;
   height: fit-content;
   z-index: z(page);
-}
-
-.stamp {
-  width: 100px;
-  aspect-ratio : 1 / 1;
-  overflow: hidden;
-  border-radius: var(--xs);
-  opacity: 0.8;
-  box-shadow: var(--sha-md);
-
-  @include bp(xs) {
-    width: 150px;
-    border-radius: var(--sm);
-  }
-
-  @include bp(sm) {
-    width: 180px;
-  }
-
-  & > img {
-    width: 100%;
-  }
 }

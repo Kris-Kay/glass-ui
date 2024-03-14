@@ -10,8 +10,8 @@
   justify-content: flex-end;
   pointer-events: auto;
   cursor: pointer;
-  padding: var(--2xs);
-  margin: calc(-1 * var(--2xs));
+  padding: var(--3xs);
+  margin: calc(-1 * var(--3xs));
   border-radius: var(--xs);
   background-color: transparent;
 
@@ -76,5 +76,19 @@
   &.is-closed {
     display: none;
     height: 0;
+  }
+}
+
+.accordion-title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  text-shadow: var(--text-sha-2xl);
+  line-height: 1;
+  color: var(--text-xstrong);
+  font-size: var(--text-lg);
+
+  @include bp(sm) {
+    font-size: var(--text-xl);
   }
 }

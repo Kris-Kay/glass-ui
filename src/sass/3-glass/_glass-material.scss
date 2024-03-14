@@ -125,6 +125,7 @@ html {
 
   @container glass-co (width > 98vw) {
     .glass-3d {
+
       &::after {
         box-shadow: var(--flat-bevel-lg);
       }

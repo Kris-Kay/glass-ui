@@ -251,23 +251,20 @@
 }
 
 .big-title-bg {
-@include space-xl;
-
   width: fit-content;
   display: flex;
   justify-content: flex-end;
-  padding: var(--moat);
+  padding: var(--md);
   margin-top: var(--nav-h);
-  margin-bottom: var(--space);
+  margin-bottom: var(--3xl);
 
   @include glass.glass-3d;
   background-color: var(--tint-clear);
   box-shadow: var(--sha-sm);
   border-radius: var(--sm) 0 0 var(--sm);
 
-  & .big-title {
-    width: fit-content;
-    text-align: end;
+  @include bp(xs) {
+    padding: var(--lg);
   }
 }
 
@@ -311,3 +308,27 @@
 //     }
 //   }
 // }
+
+
+
+.stamp {
+  width: 100px;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  opacity: 0.8;
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    border-radius: var(--sm);
+  }
+
+  @include bp(sm) {
+    width: 180px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}
