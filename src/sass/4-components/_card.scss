@@ -97,7 +97,7 @@
 .card-fit {
   @include card-base;
   width: fit-content;
-  @include radius("md-lg");
+  border-radius: var(--md-lg);
 }
 
 .card-2xs {

@@ -252,9 +252,10 @@
 
 .big-title-bg {
   width: fit-content;
+  min-width: 50%;
   display: flex;
-  justify-content: flex-end;
-  padding: var(--md);
+  justify-content: flex-start;
+  padding: var(--sm);
   margin-top: var(--nav-h);
   margin-bottom: var(--3xl);
 
@@ -263,11 +264,25 @@
   box-shadow: var(--sha-sm);
   border-radius: var(--sm) 0 0 var(--sm);
 
-  @include bp(xs) {
-    padding: var(--lg);
+  @include bp(sm) {
+    min-width: 33%;
   }
+
 }
 
+.big-title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  font-size: var(--text-xl);
+  text-shadow: var(--text-sha-3xl);
+  line-height: 1;
+  color: var(--text-strong);
+  text-align: left;
+
+  @include bp(lg) {
+    font-size: var(--text-2xl);
+  }
+}
 
 // .big-title-bg {
 //   width: 100%;

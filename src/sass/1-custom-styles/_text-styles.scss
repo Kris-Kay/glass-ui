@@ -1,6 +1,7 @@
 /* ================================================== */
 /* Text styles */
 @use "sass:map";
+@use "breakpoint" as bp;
 @use "text-config" as *;
 /* ================================================== */
 
@@ -58,14 +59,18 @@ textarea {
 //   text-align: center;
 // }
 
-.big-title {
+.very-big-title {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   text-shadow: var(--text-sha-3xl);
   line-height: 1;
   color: var(--text-strong);
   text-align: center;
+
+  @include bp.bp(lg) {
+    font-size: var(--text-2xl);
+  }
 }
 
 .section-title {
@@ -106,6 +111,10 @@ textarea {
   color: var(--text-mild);
   text-transform: uppercase;
   text-shadow: var(--text-sha-2xs);
+
+  @include bp.bp(lg) {
+    font-size: var(--text-xs);
+  }
 }
 
 .code {

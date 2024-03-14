@@ -103,43 +103,8 @@
                 aria-hidden="true"></svg>
         </button>
 
-        <!-- BG Tabs menu -->
-        <div
-          role="tablist"
-          aria-label="Background image tabs"
-          class="js-tabMenu tab-menu">
-
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-1"
-            id="tab-1"
-            tabindex="-1">
-            Dark
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="true"
-            aria-controls="panel-2"
-            id="tab-2"
-            tabindex="0">
-            Light
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-3"
-            id="tab-3"
-            tabindex="-1">
-            Color
-          </button>
-        </div>
-
         <!-- Dropdown -->
         <div class="dropdown">
-          <!-- Dropdown toggle -->
           <button class="main-nav-icon-btn btn-secondary"
             type="button"
             id="js-dropdownToggle">
@@ -185,13 +150,51 @@
             </div>
           </div>
         </div>
-
       </div>
     </nav>
 
     <!-- Page content -->
     <!-- ========================================== -->
     <div id="content" class="content-bin"></div>
+
+    <!-- BG Tabs menu -->
+    <div class="bottom-tab-menu-bin">
+      <div class="bottom-tab-menu glass-3d tint-clear">
+        <div class="js-tabMenu tab-menu"
+          role="tablist"
+          aria-label="Background image tabs"
+          >
+
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-1"
+            id="tab-1"
+            tabindex="-1">
+            Dark
+          </button>
+
+          <button
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-2"
+            id="tab-2"
+            tabindex="0">
+            Light
+          </button>
+
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-3"
+            id="tab-3"
+            tabindex="-1">
+            Color
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Scripts -->

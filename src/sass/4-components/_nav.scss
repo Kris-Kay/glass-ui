@@ -3,9 +3,13 @@
 @use "../1-custom-styles/breakpoint" as bp;
 @use "../1-custom-styles/text-config" as text;
 @use "../1-custom-styles/z-index" as z;
+@use "../2-util/radius" as r;
 @use "../glass" as glass;
 @use "button" as btn;
+@use "card" as card;
 /* ================================================== */
+// @use "../custom" as *;
+// @use "../util" as *;
 
 /* Global nav height */
 /* ================================================== */
@@ -93,4 +97,38 @@
 
   pointer-events: auto;
   cursor: pointer;
+}
+
+/* Tab menu */
+
+/* ================================================== */
+
+.bottom-tab-menu-bin {
+  position: fixed;
+  z-index: z.z(nav);
+  left: 0;
+  right: 0;
+  bottom: 3rem;
+
+  display: grid;
+  place-items: end center;
+
+  // @include bp.bp(sm) {
+  //   place-items: end start;
+  //   padding-left: var(--moat);
+  // }
+}
+
+.bottom-tab-menu {
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--sha-xl);
+  @include r.radius("sm");
+  padding: var(--sm) var(--lg);
+
+  // @include bp.bp(sm) {
+  //   padding: var(--md) var(--lg);
+  // }
 }
