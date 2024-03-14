@@ -83,7 +83,14 @@
 
   /* Solid colors that do not change with theme */
   /* ================================================== */
-  --color-primary: oklch(var(--primary-75) / 1);
+  --color-primary-15: oklch(var(--primary-15) / 1);
+  --color-primary-25: oklch(var(--primary-25) / 1);
+  --color-primary-50: oklch(var(--primary-50) / 1);
+  --color-primary-95: oklch(var(--primary-95) / 1);
+  --color-primary-90: oklch(var(--primary-90) / 1);
+
+  --color-primary: oklch(var(--primary-80) / 1);
+  // --color-primary: oklch(var(--primary-75) / 1);
   --color-accent:  oklch(var(--accent-70) / 1);
   --color-white:   oklch(var(--neutral-98) / 1);
   --color-2xlight: oklch(var(--neutral-90) / 1);
@@ -176,6 +183,12 @@
 /* ================================================== */
 $colors: (
   "primary": var(--color-primary),
+  "primary-15": var(--color-primary-15),
+  "primary-25": var(--color-primary-25),
+  "primary-50": var(--color-primary-50),
+  "primary-95": var(--color-primary-95),
+  "primary-90": var(--color-primary-90),
+
   "accent":  var(--color-accent),
   "white":   var(--color-white),
   "2xlight": var(--color-2xlight),
