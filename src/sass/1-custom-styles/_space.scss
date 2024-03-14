@@ -8,46 +8,85 @@
 /* Dynamic T-shirt sizes */
 /* ================================================== */
 /* ✨ Config these values ✨ */
-/* Fluid Space Calculator */
-/* https://utopia.fyi/space/calculator/ */
 :root {
-  /* 3xs: 4px → 6px */
-  --3xs: clamp(0.25rem, 0.21rem + 0.21vw, 0.375rem);
+  // /* 4xs: 2px → 4px */
+  // --4xs: clamp(0.125rem, calc(0.21rem + 0.21vw), 0.25rem);
 
-  /* 2xs: 8px → 12px */
-  --2xs: clamp(0.5rem, 0.42rem + 0.42vw, 0.75rem);
+  // /* 3xs: 4px → 8px */
+  // --3xs: clamp(0.25rem, calc(0.21rem + 0.21vw), 0.5rem);
 
-  /* xs: 12px → 18px */
-  --xs: clamp(0.75rem, 0.63rem + 0.63vw, 1.125rem);
+  // /* 2xs: 8px → 12px */
+  // --2xs: clamp(0.5rem, calc(0.42rem + 0.42vw), 0.75rem);
 
-  /* sm: 16px → 24px */
-  --sm: clamp(1rem, 0.83rem + 0.83vw, 1.5rem);
+  // /* xs: 12px → 16px */
+  // --xs: clamp(0.75rem, calc(0.63rem + 0.63vw), 1rem);
 
-  /* md: 20px → 32px */
-  --md: clamp(1.25rem, 1.04rem + 1.04vw, 2rem);
 
-  /* lg: 24px → 36px */
-  --lg: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+  /* 2px */
+  --5xs: 0.125rem;
 
-  /* xl: 28px → 40px */
-  --xl: clamp(1.75em, 1.67rem + 1.67vw, 2.5rem);
+  /* 4px */
+  --4xs: 0.25rem;
 
-  /* 2xl: 32px → 60px */
-  --2xl: clamp(2rem, 2.08rem + 2.08vw, 3.75rem);
+  /* 8px */
+  --3xs: 0.5rem;
 
-  /* 3xl: 48px → 72px */
-  --3xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
+  /* 12px */
+  --2xs: 0.75rem;
 
-  /* 4xl: 64px → 96px */
-  --4xl: clamp(4rem, 3.33rem + 3.33vw, 6rem);
+  /* 16px */
+  --xs: 1rem;
 
-  /* 5xl: 80px → 120px */
-  --5xl: clamp(5rem, 4.17rem + 4.17vw, 7.5rem);
+
+  /* 16px → 24px */
+  --sm: clamp(1rem, calc(2vw + 0.5rem), 1.5rem);
+
+  /* 20px → 32px */
+  --md: clamp(1.25rem, calc(2vw + 0.85rem), 2rem);
+
+  /* 24px → 40px */
+  --lg: clamp(1.5rem, calc(2vw + 1rem), 2.5rem);
+
+  /* 28px → 48px */
+  --xl: clamp(1.75rem, calc(2vw + 1.4rem), 3rem);
+
+
+  /* 32px → 56px */
+  --2xl: clamp(2rem, calc(2vw + 1.6rem), 3.5rem);
+
+  /* 48px → 72px */
+  --3xl: clamp(3rem, calc(2vw + 2.6rem), 4.5rem);
+
+  /* 64px → 96px */
+  --4xl: clamp(4rem, calc(2vw + 3.6rem), 6rem);
+
+  /* 80px → 120px */
+  --5xl: clamp(5rem, calc(2vw + 4.6rem), 7.5rem);
+
+
+
+
+  /* 16px → 32px */
+  --sm-md: clamp(1rem, calc(2vw + 0.5rem), 2rem);
+
+  /* 20px → 40px */
+  --md-lg: clamp(1.25rem, calc(2vw + 0.85rem), 2.5rem);
+
+  /* 24px → 48px */
+  --lg-xl: clamp(1.5rem, calc(2vw + 1rem), 3rem);
+
+  /* 28px → 56px */
+  --xl-2xl: clamp(1.75rem, calc(2vw + 1.4rem), 3.5rem);
+
+  /* 32px → 72px */
+  --2xl-3xl: clamp(2rem, calc(2vw + 1.6rem), 4.5rem);
 }
 
 /* T-shirt Size MAP */
 /* ================================================== */
 $sizes: (
+  "5xs": --5xs,
+  "4xs": --4xs,
   "3xs": --3xs,
   "2xs": --2xs,
   "xs": --xs,
@@ -59,21 +98,34 @@ $sizes: (
   "3xl": --3xl,
   "4xl": --4xl,
   "5xl": --5xl,
+
+  "sm-md": --sm-md,
+  "md-lg": --md-lg,
+  "lg-xl": --lg-xl,
+  "xl-2xl": --xl-2xl,
+  "2xl-3xl": --2xl-3xl,
 );
 
+/* Spacing variables */
+/* ================================================== */
 $moat-xs: 1rem;
 $moat-md: 2rem;
 $moat-xl: 5rem;
 
-/* Spacing variables */
-/* ================================================== */
 html {
   --moat: #{$moat-xs}; /* 16px */
 
-  --max-w-xs: calc(#{bp.$bp-sm} - calc(#{$moat-xs} * 2)); /* 448px */
-  --max-w-sm: calc(#{bp.$bp-md} - calc(#{$moat-md} * 2)); /* 784px */
-  --max-w-md: calc(#{bp.$bp-lg} - calc(#{$moat-md} * 2)); /* 960px */
-  --max-w-lg: calc(#{bp.$bp-xl} - calc(#{$moat-xl} * 2)); /* 1280px */
+  // --max-w-2xs: calc(#{bp.$bp-xs} - calc(#{$moat-xs} * 2)); /* 328px */
+  // --max-w-xs: calc(#{bp.$bp-sm} - calc(#{$moat-xs} * 2)); /* 448px */
+  // --max-w-sm: calc(#{bp.$bp-md} - calc(#{$moat-md} * 2)); /* 784px */
+  // --max-w-md: calc(#{bp.$bp-lg} - calc(#{$moat-md} * 2)); /* 960px */
+  // --max-w-lg: calc(#{bp.$bp-xl} - calc(#{$moat-xl} * 2)); /* 1280px */
+
+  --max-w-xs: 380px;
+  --max-w-sm: 600px;
+  --max-w-md: 800px;
+  --max-w-lg: 960px;
+  --max-w-xl: 1280px;
 
   --ui-h-sm: 1.625rem; /* 26px */
   --ui-h-md: 2rem;     /* 32px */
@@ -93,30 +145,15 @@ html {
     --ui-h-lg: 3rem;     /* 48px */
   }
 
-  @include bp.bp(xl) {
-    --moat: #{$moat-xl}; /* 64px */
-  }
+  // @include bp.bp(xl) {
+  //   --moat: #{$moat-xl}; /* 80px */
+  // }
 }
 
-/* UI hight */
-/* ================================================== */
-.ui-h-sm {
-  width: auto;
-  height: var(--ui-h-sm);
-}
-
-.ui-h-md {
-  width: auto;
-  height: var(--ui-h-md);
-}
-
-.ui-h-lg {
-  width: auto;
-  height: var(--ui-h-lg);
-}
 
 /* Max width classes */
 /* ================================================== */
+.max-w-2xs { width: min(100%, var(--max-w-2xs)); }
 .max-w-xs { width: min(100%, var(--max-w-xs)); }
 .max-w-sm { width: min(100%, var(--max-w-sm)); }
 .max-w-md { width: min(100%, var(--max-w-md)); }
@@ -126,25 +163,17 @@ html {
 /* ================================================== */
 /* wrap elements to add or remove left-right padding  */
 /* add padding at the breakpoint value that match the suffix */
-/* are flex containers set to `justify-content: center;` */
 @mixin moat {
   width: 100%;
-  // height: fit-content;
-  // z-index: z.z("section");
-  // display: flex;
-  // justify-content: center;
-  display: grid;
-  place-items: center;
+  z-index: z.z("section");
+  display: flex;
+  justify-content: center;
+  // background-color: rgba(0, 0, 200, 0.9);
 }
 
 .moat-all {
   @include moat;
   padding: 0 var(--moat);
-
-  // & > * {
-  //   //
-  //   max-width: calc(100vw - var(--moat2));
-  // }
 }
 
 .moat-xs {
@@ -154,20 +183,11 @@ html {
   @include bp.bp(xs) {
     padding: 0 var(--moat);
   }
-
-  // & > * {
-  //   max-width: calc(bp.$bp-xs - var(--moat2));
-
-  //   @include bp.bp(xs) {
-  //     max-width: 100%;
-  //   }
-  // }
 }
 
 .moat-sm {
   @include moat;
   padding: 0;
-  // max-width: calc(bp.$bp-sm - var(--moat2));
 
   @include bp.bp(sm) {
     padding: 0 var(--moat);
@@ -177,7 +197,6 @@ html {
 .moat-md {
   @include moat;
   padding: 0;
-  // max-width: calc(bp.$bp-md - var(--moat2));
 
   @include bp.bp(md) {
     padding: 0 var(--moat);
@@ -187,7 +206,6 @@ html {
 .moat-lg {
   @include moat;
   padding: 0;
-  // max-width: calc(bp.$bp-lg - var(--moat2));
 
   @include bp.bp(lg) {
     padding: 0 var(--moat);
@@ -197,7 +215,6 @@ html {
 .moat-xl {
   @include moat;
   padding: 0;
-  // max-width: calc(bp.$bp-xl - var(--moat2));
 
   @include bp.bp(xl) {
     padding: 0 var(--moat);
@@ -207,47 +224,215 @@ html {
 
 /* Spacing */
 /* ================================================== */
-.page-grid {
-  --space: 2rem;
-
-  height: fit-content;
+.section-gap {
+  --section-gap: 5rem;
   display: grid;
-  gap: var(--space);
-  padding: var(--space) 0;
-
-  @include bp.bp(sm) {
-    --space: 6rem;
-  }
-
-  @include bp.bp(lg) {
-    --space: 8rem;
-  }
-}
-
-.section-space {
-  --space: 5rem;
-
-  display: grid;
-  gap: var(--space);
-  // padding: calc(var(--space) / 2) 0;
+  gap: var(--section-gap);
 
   @include bp.bp(xs) {
-    --space: 6rem;
+    --section-gap: 6rem;
   }
 
   @include bp.bp(sm) {
-    --space: 7rem;
+    --section-gap: 7rem;
   }
 
   @include bp.bp(md) {
-    --space: 8rem;
+    --section-gap: 8rem;
   }
 
   @include bp.bp(lg) {
-    --space: 10rem;
+    --section-gap: 9rem;
   }
 
   @include bp.bp(xl) {
-    --space: 12rem;
+    --section-gap: 10rem;
+  }
+}
+
+@mixin space-sm-lg {
+  display: grid;
+  --space: var(--sm);
+
+  @include bp.bp(xs) {
+    --space: var(--md);
+  }
+
+  @include bp.bp(lg) {
+    --space: var(--lg);
+  }
+}
+
+
+
+@mixin space-md-xl {
+  display: grid;
+  --space: var(--md);
+
+  @include bp.bp(xs) {
+    --space: var(--lg);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--xl);
+  }
+}
+
+@mixin space-lg-xl {
+  display: grid;
+  --space: var(--lg);
+
+  @include bp.bp(xs) {
+    --space: var(--xl);
+  }
+}
+
+@mixin space-lg-2xl {
+  display: grid;
+  --space: var(--lg);
+
+  @include bp.bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl);
+  }
+}
+
+@mixin space-lg-2xl {
+  display: grid;
+  --space: var(--lg);
+
+  @include bp.bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl);
+  }
+}
+
+@mixin space-lg-3xl {
+  display: grid;
+  --space: var(--lg);
+
+  @include bp.bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl);
+  }
+
+  @include bp.bp(md) {
+    --space: var(--3xl);
+  }
+}
+
+@mixin space-md-3xl {
+  display: grid;
+  --space: var(--md);
+
+  @include bp.bp(xs) {
+    --space: var(--lg);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--xl);
+  }
+
+  @include bp.bp(md) {
+    --space: var(--2xl);
+  }
+
+  @include bp.bp(lg) {
+    --space: var(--3xl);
+  }
+}
+
+.space {
+  @include space-sm-lg;
+
+  padding: var(--space);
+  gap: var(--space);
+  // gap: calc(var(--space) / 1.618);
+
+  border-radius: max(0px, min(var(--lg), calc((100vw - 4px - 100%) * 9999))) / var(--lg);
+}
+
+
+.space-sm-lg {
+  display: grid;
+  --space: var(--sm);
+
+  @include bp.bp(xs) {
+    --space: var(--md);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--lg);
+  }
+}
+
+
+.space-md-lg {
+  display: grid;
+  --space: var(--md-lg);
+
+  @include bp.bp(xs) {
+    --space: var(--lg);
+  }
+}
+
+
+.space-sm-3xl {
+  display: grid;
+  --space: var(--sm);
+
+  @include bp.bp(sm) {
+    --space: var(--md);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl-3xl);
+  }
+
+  @include bp.bp(md) {
+    --space: var(--3xl);
+  }
+}
+
+.space-lg-3xl {
+  display: grid;
+  --space: var(--lg-xl);
+
+  @include bp.bp(xs) {
+    --space: var(--xl);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl-3xl);
+  }
+
+  @include bp.bp(md) {
+    --space: var(--3xl);
+  }
+}
+
+.space-xl-3xl {
+  display: grid;
+  --space: var(--xl);
+
+  @include bp.bp(xs) {
+    --space: var(--xl-2xl);
+  }
+
+  @include bp.bp(sm) {
+    --space: var(--2xl-3xl);
+  }
+
+  @include bp.bp(md) {
+    --space: var(--3xl);
   }
 }
