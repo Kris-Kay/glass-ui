@@ -198,6 +198,33 @@
   }
 }
 
+.card-xl {
+  @include card-base;
+  // --space: var(--xl-2xl);
+  max-width: var(--max-w-xl);
+  @include radius("xl");
+
+  width: min(100%, var(--max-w-xl));
+
+
+  & > .card-title {
+    @include bp(xs) {
+      font-size: var(--text-2xl);
+    }
+
+    @include bp(sm) {
+      font-size: var(--text-3xl);
+    }
+
+    @include bp(md) {
+      font-size: 4.25rem;
+    }
+
+    @include bp(lg) {
+      font-size: 5rem;
+    }
+  }
+}
 /* Card items */
 /* ================================================== */
 .card-title {
