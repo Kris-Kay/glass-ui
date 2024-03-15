@@ -149,14 +149,14 @@
 
   /* Translucent tints */
   /* ================================================== */
-  --tint-3xlight: oklch(var(--neutral-95) / 0.5);
-  --tint-2xlight: oklch(var(--neutral-95) / 0.4);
-  --tint-xlight:  oklch(var(--neutral-95) / 0.3);
-  --tint-light:   oklch(var(--neutral-95) / 0.2);
-  --tint-clear:   oklch(var(--neutral-10) / 0.15);
-  --tint-dark:    oklch(var(--neutral-10) / 0.3);
-  --tint-xdark:   oklch(var(--neutral-10) / 0.4);
-  --tint-2xdark:  oklch(var(--neutral-10) / 0.5);
+  --tint-3xlight: oklch(var(--neutral-95) / 0.6);
+  --tint-2xlight: oklch(var(--neutral-95) / 0.5);
+  --tint-xlight:  oklch(var(--neutral-95) / 0.4);
+  --tint-light:   oklch(var(--neutral-95) / 0.3);
+  --tint-clear:   oklch(var(--neutral-10) / 0.2);
+  --tint-dark:    oklch(var(--neutral-10) / 0.4);
+  --tint-xdark:   oklch(var(--neutral-10) / 0.5);
+  --tint-2xdark:  oklch(var(--neutral-10) / 0.6);
   --tint-3xdark:  oklch(var(--neutral-10) / 0.7);
 
   /* Inset bg colors */
@@ -186,8 +186,8 @@ $colors: (
   "primary-15": var(--color-primary-15),
   "primary-25": var(--color-primary-25),
   "primary-50": var(--color-primary-50),
-  "primary-95": var(--color-primary-95),
   "primary-90": var(--color-primary-90),
+  "primary-95": var(--color-primary-95),
 
   "accent":  var(--color-accent),
   "white":   var(--color-white),

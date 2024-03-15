@@ -69,7 +69,7 @@
 .card-3d-bin {
   position: relative;
   width: 96%;
-  perspective: 1500px;
+  perspective: 1800px;
 // border: 1px solid red;
 }
 
@@ -79,7 +79,7 @@
   transition: transform ani.$speed-2xslow ani.$smooth-cubic;
 
   transform:
-    perspective(2000px)
+    perspective(2200px)
     rotateY(30deg)
     rotateX(15deg)
     rotateZ(-4deg)
