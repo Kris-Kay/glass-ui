@@ -38,6 +38,10 @@
   @include bp.bp(lg) {
     max-width: calc(bp.$bp-lg + (var(--ui-h-md) * 2) + 6rem);
   }
+
+  @include bp.bp(xl) {
+    max-width: bp.$bp-xl ;
+  }
 }
 
 .main-nav-icon-btn {

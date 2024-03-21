@@ -18,10 +18,6 @@
   @include bp.bp(xs) {
     --clear-tabs: calc( (var(--ui-h-md)) + 12rem + calc(var(--sm) * 2));
   }
-
-  @include bp.bp(md) {
-    --clear-tabs: calc( (var(--ui-h-md)) + 8rem + calc(var(--sm) * 2));
-  }
 }
 
 .hero-card-bin {
@@ -38,6 +34,10 @@
 
   @include bp.bp(md) {
     max-width: var(--max-w-xl);
+  }
+
+  @include bp.bp(xl) {
+    max-width: bp.$bp-xl ;
   }
 }
 
@@ -65,8 +65,7 @@
 
   @include bp.bp(lg) {
     width: clamp(440px, 445px, 450px);
-  border-radius: calc(var(--lg) * 0.95);
-
+    border-radius: calc(var(--lg) * 0.95);
   }
 }
 
@@ -74,7 +73,10 @@
   position: relative;
   width: 96%;
   perspective: 1800px;
-// border: 1px solid red;
+
+  @media (width > 2400px) {
+    perspective: 2500px;
+  }
 }
 
 .card-3d {
