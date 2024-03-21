@@ -27,8 +27,9 @@
                 target="_blank" >
               GitHub repo
               <svg  class=" svg-square-out"
-                    alt="3D glass UI GitHub repo"
-                    aria-hidden="true" >
+                    role="graphics-symbol"
+                    aria-hidden="true"  >
+              </svg>
             </a>
           </div> -->
 
@@ -48,7 +49,7 @@
           class="max-w-xs m-auto-x"
           alt="Illustration of glass UI layers">
         <div class="grid gap-2xs">
-          <p class="title-thin text-3xl text-center ">3D glass UI</p>
+          <h2 class="title-thin text-3xl text-center ">3D glass UI</h2>
           <p class="title-thin text-center text-mild">is a SCSS library compatible with almost any project or framework.</p>
         </div>
       </div>
@@ -159,10 +160,10 @@
           <div class="flex-c">
             <img
               src="/assets/homeImg/glass-details_1024x1236.jpg"
-              sizes="100%"
               srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
                       /assets/homeImg/glass-details_1024x1236.jpg 1024w,
                       /assets/homeImg/glass-details_1920x2317.jpg 1920w"
+              sizes="800px"
               alt="beveled glass CSS details illustration"
               class="max-w-md radius-md">
           </div>
@@ -224,10 +225,10 @@
           <div class="full-w-img-noBottomMargin">
             <img
               src="/assets/homeImg/gpt4-glass-issues_840x840.jpg"
-              sizes="100%"
               srcset="/assets/homeImg/gpt4-glass-issues_640x640.jpg 640w,
                       /assets/homeImg/gpt4-glass-issues_840x840.jpg 840w,
                       /assets/homeImg/gpt4-glass-issues_1280x1280.jpg 1280w"
+              sizes="800px"
               alt="ChatGPT 4 glass CSS issues"
               class="w-100">
           </div>
@@ -250,120 +251,108 @@
         <div class="moat-all flex-wrap flex-c gap-3xl">
           <div class="card-fit space-md-lg glass-3d tint-3xdark">
             <fieldset class="input-fieldset">
-              <legend class="input-legend input-label">Checkboxs</legend>
+              <legend class="input-legend input-label">
+                Checkboxs
+              </legend>
 
-              <div class="input-bin">
-                <input
-                  type="checkbox"
-                  id="op-0"
-                  name="options"
-                  value="option 2"
-                  class="checkbox"
-                />
-                <label
-                  for="op-0"
-                  class="inline-label">
+              <div class="input-group">
+                <input  class="checkbox"
+                        type="checkbox"
+                        id="op-0"
+                        name="options"
+                        value="option 2" >
+                <label  class="inline-label"
+                        for="op-0" >
                   Unchecked
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="checkbox"
                   type="checkbox"
                   id="op-1"
                   name="options"
                   value="option 1"
-                  class="checkbox"
-                  checked
-                />
-                <label
-                  for="op-1"
-                  class="inline-label">
+                  checked  >
+                <label class="inline-label"
+                  for="op-1"  >
                   Checked
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="checkbox"
                   type="checkbox"
                   id="op-2"
                   name="options"
                   value="option 3"
-                  class="checkbox"
-                  disabled
-                />
-                <label
-                  for="op-2"
-                  class="inline-label">
+                  disabled  >
+                <label class="inline-label"
+                  for="op-2"  >
                   Disabled
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="checkbox"
                   type="checkbox"
                   id="op-3"
                   name="options"
                   value="option 4"
-                  class="checkbox"
-                  checked disabled
-                />
-                <label
-                  for="op-3"
-                  class="inline-label">
+                  checked disabled  >
+                <label class="inline-label"
+                  for="op-3"  >
                   Disabled & checked
                 </label>
               </div>
-
             </fieldset>
           </div>
 
           <div class="card-fit space-md-lg glass-3d tint-3xdark">
             <fieldset class="input-fieldset">
-              <legend class="input-legend input-label">Switchs</legend>
+              <legend class="input-legend input-label">
+                Switchs
+              </legend>
 
-              <div class="input-bin">
+              <div class="input-group">
                 <input class="switch"
                   type="checkbox"
-                  id="s-0" >
-                <label
-                  for="s-0"
-                  class="inline-label">
+                  id="s-0"  >
+                <label class="inline-label"
+                  for="s-0"  >
                   Unchecked
                 </label>
               </div>
 
-              <div class="input-bin">
+              <div class="input-group">
                 <input class="switch"
                   type="checkbox"
                   id="s-1"
-                  checked >
+                  checked  >
                 <label class="inline-label"
-                  for="s-1" >
+                  for="s-1"  >
                   Checked
                 </label>
               </div>
 
-              <div class="input-bin">
+              <div class="input-group">
                 <input class="switch"
                   type="checkbox"
                   id="s-2"
-                  disabled >
-                <label
-                  for="s-2"
-                  class="inline-label">
+                  disabled  >
+                <label class="inline-label"
+                  for="s-2"  >
                   Disabled
                 </label>
               </div>
 
-              <div class="input-bin">
+              <div class="input-group">
                 <input class="switch"
                   type="checkbox"
                   id="s-3"
-                  disabled checked >
-                <label
-                  for="s-3"
-                  class="inline-label">
+                  disabled checked  >
+                <label class="inline-label"
+                  for="s-3"  >
                   Disabled & checked
                 </label>
               </div>
@@ -374,65 +363,53 @@
             <fieldset class="input-fieldset">
               <legend class="input-legend input-label">Radio buttons</legend>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="radio"
                   type="radio"
                   id="r-0"
                   name="options-r"
-                  value="option 2"
-                  class="radio"
-                />
-                <label
-                  for="r-0"
-                  class="inline-label">
+                  value="option 2"  >
+                <label class="inline-label"
+                  for="r-0"  >
                   Unchecked
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="radio"
                   type="radio"
                   id="r-1"
                   name="options-t"
                   value="option 1"
-                  class="radio"
-                  checked
-                />
-                <label
-                  for="r-1"
-                  class="inline-label">
+                  checked  >
+                <label class="inline-label"
+                  for="r-1"  >
                   Checked
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="radio"
                   type="radio"
                   id="r-2"
                   name="options-q"
                   value="option 3"
-                  class="radio-style"
-                  disabled
-                />
-                <label
-                  for="r-3"
-                  class="inline-label">
+                  disabled  >
+                <label class="inline-label"
+                  for="r-3"  >
                   Disabled
                 </label>
               </div>
 
-              <div class="input-bin">
-                <input
+              <div class="input-group">
+                <input class="radio"
                   type="radio"
                   id="r-3"
                   name="options-w"
                   value="option 4"
-                  class="radio"
-                  checked disabled
-                />
-                <label
-                  for="r-3"
-                  class="inline-label">
+                  checked disabled  >
+                <label class="inline-label"
+                  for="r-3"  >
                   Disabled & checked
                 </label>
               </div>
@@ -446,7 +423,7 @@
 
             <h3 class="card-title">Text inputs</h3>
 
-            <div class="text-input-bin w-100">
+            <div class="text-input-group w-100">
               <div class="input-label-bin">
                 <label for="t-1" class="input-label">Text input label</label>
 
@@ -460,14 +437,17 @@
                 placeholder="Type in here!"
                 aria-describedby="aria-hint-text"
                 name="text-input"
-                type="text">
+                type="text"  >
             </div>
 
-            <div class="text-input-bin w-100">
+            <div class="text-input-group w-100">
               <div class="input-label-bin">
-                <label for="t-2" class="input-label">Textarea label</label>
+                <label  class="input-label"
+                        for="t-2"  >
+                  Textarea label
+                </label>
 
-                <p id="aria-hint-text" class="input-hint">
+                <p class="input-hint" id="aria-hint-text-id" >
                   Aria hint text
                 </p>
               </div>
@@ -477,7 +457,7 @@
                   id="t-2"
                   class="textarea"
                   placeholder="Pull lower-right corner to make text box bigger."
-                  aria-describedby="aria-hint-text"
+                  aria-describedby="aria-hint-text-id"
                   name="textarea"></textarea>
               </div>
             </div>
@@ -501,24 +481,24 @@
               </div>
 
               <div class="js-accordionToggle accordion-toggle is-closed">
-                <button class="see-more-btn"
-                  type="button">
+                <button  class="see-more-btn"
+                         type="button">
                   See more
-                  <svg
-                  class="svg-chev-down"
-                  src="/assets/icons/CaretDown.svg"
-                  alt="cheveron down"
-                  aria-hidden="true">
+                  <svg  class="svg-chev-down"
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>cheveron down</title>
+                  </svg>
                 </button>
 
-                <button class="see-less-btn"
-                  type="button">
+                <button  class="see-less-btn"
+                         type="button">
                   See less
-                  <svg
-                  class="svg-chev-up"
-                  src="/assets/icons/CaretUp.svg"
-                  alt="cheveron up"
-                  aria-hidden="true">
+                  <svg  class="svg-chev-up"
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>cheveron up</title>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -526,9 +506,9 @@
             <div class="accordion-content card-md space-sm-lg glass-no-bevel is-closed">
               <p class="text-lg">Accordion content</p>
               <div class="flex-c">
-                <img src="/assets/other img/hello-bear.gif"
+                <img  src="/assets/other-img/hello-bear.gif"
                   class="max-w-xs "
-                  alt="animated .gif of bear waving hello" >
+                      alt="animated .gif of bear waving hello"  >
               </div>
               <p>More info goes in here!</p>
             </div>
@@ -573,24 +553,30 @@
                   type="button">
                   .btn-sm
                   <svg  class="svg-square-out"
-                        alt="open in new tab"
-                        aria-hidden="true" >
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>open in new tab</title>
+                  </svg>
                 </button>
 
                 <button class="btn-secondary btn-md"
                   type="button">
                   .btn-md
                   <svg  class="svg-square-out"
-                        alt="open in new tab"
-                        aria-hidden="true" >
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>open in new tab</title>
+                  </svg>
                 </button>
 
                 <button class="btn-secondary btn-lg"
                   type="button">
                   .btn-lg
                   <svg  class="svg-square-out"
-                        alt="open in new tab"
-                        aria-hidden="true" >
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>open in new tab</title>
+                  </svg>
                 </button>
 
               </div>
@@ -599,31 +585,34 @@
                 <h4 class="class-name">.btn-clear</h4>
 
                 <button class="btn-clear btn-sm"
-                  type="button">
+                        type="button">
                   .btn-sm
-                    <svg class="svg-chev-r"
-                    alt="right cheveron icon"
-                    aria-hidden="true">
+                  <svg  class="svg-chev-r"
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>right cheveron</title>
+                  </svg>
                 </button>
 
                 <button class="btn-clear btn-md"
-                  type="button">
+                        type="button">
                   .btn-md
-                    <svg class="svg-chev-r"
-                    src="/assets/icons/CaretRight.svg"
-                    alt="right cheveron icon"
-                    aria-hidden="true">
+                  <svg  class="svg-chev-r"
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>right cheveron</title>
+                  </svg>
                 </button>
 
-                <button class="btn-clear btn-lg"
-                  type="button">
+                <button  class="btn-clear btn-lg"
+                         type="button">
                   .btn-lg
-                    <svg class="svg-chev-r"
-                    src="/assets/icons/CaretRight.svg"
-                    alt="right cheveron icon"
-                    aria-hidden="true">
+                  <svg  class="svg-chev-r"
+                        role="graphics-symbol"
+                        aria-hidden="true"  >
+                    <title>right cheveron</title>
+                  </svg>
                 </button>
-
               </div>
 
             </div>
@@ -650,10 +639,10 @@
 
               <img
                 src="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg"
-                sizes="100%"
                 srcset="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg 640w,
                         /assets/bgImg/3d-glass-cube-by-shubham-dhage_1024x1204.jpg 1024w,
                         /assets/bgImg/3d-glass-cube-by-shubham-dhage_1920x2258.jpg 1920w"
+                sizes="600px"
                 alt="3D glass cube"
                 class="panel-img">
             </div>
@@ -668,10 +657,10 @@
 
               <img
                 src="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg"
-                sizes="100%"
                 srcset="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg 640w,
                         /assets/bgImg/3d-glass-slabs-by-nat-watson_1024x683.jpg 1024w,
                         /assets/bgImg/3d-glass-slabs-by-nat-watson_1920x1280.jpg 1920w"
+                sizes="600px"
                 alt="3D light blue glass slabs"
                 class="panel-img">
             </div>
@@ -686,10 +675,10 @@
 
               <img
                 src="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg"
-                sizes="100%"
                 srcset="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg 640w,
                         /assets/bgImg/3d-glass-ring-by-ant-rozetsky_1024x662.jpg 1024w,
                         /assets/bgImg/3d-glass-ring-by-ant-rozetsky_1920x1241.jpg 1920w"
+                sizes="600px"
                 alt="3D glass ring"
                 class="panel-img">
             </div>
@@ -759,7 +748,10 @@
                 target="_blank" >
 
               <svg  class="svg-linkedin"
+                    role="graphics-symbol"
                     aria-hidden="true">
+                <title>LinkedIn logo</title>
+              </svg>
             </a>
 
             <a  class="btn-round-md btn-secondary"
@@ -767,14 +759,20 @@
                 target="_blank" >
 
               <svg  class="svg-github"
+                    role="graphics-symbol"
                     aria-hidden="true">
+                <title>GitHub logo</title>
+              </svg>
             </a>
 
             <a  class="btn-round-md btn-secondary"
                 href="https://www.instagram.com/kris.k.a.y/"
                 target="_blank">
               <svg  class="svg-instagram"
+                    role="graphics-symbol"
                     aria-hidden="true">
+                <title>Instagram logo</title>
+              </svg>
             </a>
 
           </div>
@@ -784,7 +782,7 @@
         <div class="full-w-inset tint-xdark gap-xs grid-c ">
           <div class="stamp">
             <img  class=""
-                  src="/assets/other img/Kris_w_Tetra_862x862.jpg"
+                  src="/assets/other-img/Kris_w_Tetra_862x862.jpg"
                   alt="photo of Kris Kay">
           </div>
 
@@ -800,11 +798,13 @@
               <p class="js-textToCopy text-xstrong title-thick">hello@kris-kay.com</p>
 
               <button  class="js-copyBtn btn-round-sm btn-secondary"
-                       type="button">
+                       type="button"  >
 
                 <svg  class="svg-copy"
-                      alt="copy icon"
-                      aria-hidden="true">
+                      role="graphics-symbol"
+                      aria-hidden="true"  >
+                  <title>copy to clipboard</title>
+                </svg>
               </button>
             </div>
           </div>
