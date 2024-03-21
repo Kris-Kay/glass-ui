@@ -12,12 +12,16 @@
   display: grid;
   margin: var(--nav-h) auto 0 auto;
   max-width: var(--max-w-xl);
-  --clear-tabs: calc( (var(--ui-h-md)) + 7rem + calc(var(--sm) * 2));
+  --clear-tabs: calc( (var(--ui-h-md)) + 8rem + calc(var(--sm) * 2));
   padding: 0 var(--moat) var(--clear-tabs) var(--moat);
 
-  // @include bp.bp(xs) {
-  //   --clear-tabs: calc( (var(--ui-h-md)) + 5rem + calc(var(--sm) * 2));
-  // }
+  @include bp.bp(xs) {
+    --clear-tabs: calc( (var(--ui-h-md)) + 12rem + calc(var(--sm) * 2));
+  }
+
+  @include bp.bp(md) {
+    --clear-tabs: calc( (var(--ui-h-md)) + 8rem + calc(var(--sm) * 2));
+  }
 }
 
 .hero-card-bin {
