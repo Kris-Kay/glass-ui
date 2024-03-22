@@ -45,8 +45,15 @@
   <section class="flex-c">
     <div class="glass-container max-w-sm">
       <div class="card-sm space-lg-3xl glass-3d tint-2xdark">
-        <img src="/assets/tutorial-img/glass-layers-no-text.png"
-          class="max-w-xs m-auto-x"
+        <img class="max-w-xs m-auto-x"
+          fetchpriority="high"
+          width="800"
+          height="730"
+          src="/assets/homeImg/glass-layers-no-text_800x730.png"
+          srcset="/assets/homeImg/glass-layers-no-text_400x365.png 400w,
+                  /assets/homeImg/glass-layers-no-text_800x730.png 800w,
+                  /assets/homeImg/glass-layers-no-text_1024x934.png 1024w"
+          sizes="400px"
           alt="Illustration of glass UI layers">
         <div class="grid gap-2xs">
           <h2 class="title-thin text-3xl text-center ">3D glass UI</h2>
@@ -158,14 +165,18 @@
           </div>
 
           <div class="flex-c">
-            <img
+            <img class="max-w-md radius-md"
+              fetchpriority="low"
+              loading="lazy"
+              width="1024"
+              height="1236"
               src="/assets/homeImg/glass-details_1024x1236.jpg"
               srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
                       /assets/homeImg/glass-details_1024x1236.jpg 1024w,
                       /assets/homeImg/glass-details_1920x2317.jpg 1920w"
               sizes="800px"
               alt="beveled glass CSS details illustration"
-              class="max-w-md radius-md">
+            >
           </div>
 
           <div class="full-w-fill-noBottomMargin tint-3xdark">
@@ -212,10 +223,18 @@
           </div>
 
           <div class="full-w-img">
-            <img
-              src="/assets/homeImg/glass-gpt-code.png"
+            <img class="w-100"
+              fetchpriority="low"
+              loading="lazy"
+              width="1200"
+              height="896"
+              src="/assets/homeImg/glass-gpt-code_1200x896.png"
+              srcset="/assets/homeImg/glass-gpt-code_400x299.png 400w,
+                      /assets/homeImg/glass-gpt-code_800x597.png 800w,
+                      /assets/homeImg/glass-gpt-code_1200x896.png 1200w"
+              sizes="800px"
               alt="Screenshot of ChatGPT's glass code"
-              class="w-100">
+            >
           </div>
 
           <div class="full-w-fill-noYMargin tint-3xdark">
@@ -223,14 +242,18 @@
           </div>
 
           <div class="full-w-img-noBottomMargin">
-            <img
+            <img class="w-100"
+              fetchpriority="low"
+              loading="lazy"
+              width="840"
+              height="840"
               src="/assets/homeImg/gpt4-glass-issues_840x840.jpg"
               srcset="/assets/homeImg/gpt4-glass-issues_640x640.jpg 640w,
                       /assets/homeImg/gpt4-glass-issues_840x840.jpg 840w,
                       /assets/homeImg/gpt4-glass-issues_1280x1280.jpg 1280w"
               sizes="800px"
-              alt="ChatGPT 4 glass CSS issues"
-              class="w-100">
+              alt="ChatGPT glass CSS issues"
+              >
           </div>
         </div>
       </div>
@@ -396,7 +419,7 @@
                   value="option 3"
                   disabled  >
                 <label class="inline-label"
-                  for="r-3"  >
+                  for="r-2"  >
                   Disabled
                 </label>
               </div>
@@ -506,9 +529,12 @@
             <div class="accordion-content card-md space-sm-lg glass-no-bevel is-closed">
               <p class="text-lg">Accordion content</p>
               <div class="flex-c">
-                <img  src="/assets/other-img/hello-bear.gif"
-                  class="max-w-xs "
-                      alt="animated .gif of bear waving hello"  >
+                <img class="max-w-xs"
+                  fetchpriority="low"
+                  width="410"
+                  height="220"
+                  src="/assets/other-img/hello-bear.gif"
+                  alt="animated .gif of bear waving hello"  >
               </div>
               <p>More info goes in here!</p>
             </div>
@@ -630,57 +656,65 @@
           </div>
 
           <div class="full-w-img">
-            <div
+            <div class="panel-img-bin"
               id="panel-4"
               role="tabpanel"
               tabindex="0"
               aria-labelledby="tab-4"
-              class="panel-img-bin">
-
-              <img
+            >
+              <img class="panel-img"
+                loading="lazy"
+                width="640"
+                height="753"
                 src="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg"
                 srcset="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg 640w,
                         /assets/bgImg/3d-glass-cube-by-shubham-dhage_1024x1204.jpg 1024w,
                         /assets/bgImg/3d-glass-cube-by-shubham-dhage_1920x2258.jpg 1920w"
                 sizes="600px"
                 alt="3D glass cube"
-                class="panel-img">
+              >
             </div>
 
-            <div
+            <div class="panel-img-bin"
               id="panel-5"
               role="tabpanel"
               tabindex="0"
               aria-labelledby="tab-5"
-              class="panel-img-bin"
-              hidden>
+              hidden
+            >
 
-              <img
+              <img class="panel-img"
+                fetchpriority="low"
+                width="640"
+                height="427"
                 src="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg"
                 srcset="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg 640w,
-                        /assets/bgImg/3d-glass-slabs-by-nat-watson_1024x683.jpg 1024w,
-                        /assets/bgImg/3d-glass-slabs-by-nat-watson_1920x1280.jpg 1920w"
+                    /assets/bgImg/3d-glass-slabs-by-nat-watson_1024x683.jpg 1024w,
+                    /assets/bgImg/3d-glass-slabs-by-nat-watson_1920x1280.jpg 1920w"
                 sizes="600px"
                 alt="3D light blue glass slabs"
-                class="panel-img">
+              >
             </div>
 
-            <div
+            <div class="panel-img-bin"
               id="panel-6"
               role="tabpanel"
               tabindex="0"
               aria-labelledby="tab-6"
-              class="panel-img-bin"
-              hidden>
+              hidden
+            >
 
-              <img
+              <img class="panel-img"
+                fetchpriority="low"
+                width="640"
+                height="414"
                 src="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg"
                 srcset="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg 640w,
                         /assets/bgImg/3d-glass-ring-by-ant-rozetsky_1024x662.jpg 1024w,
                         /assets/bgImg/3d-glass-ring-by-ant-rozetsky_1920x1241.jpg 1920w"
                 sizes="600px"
                 alt="3D glass ring"
-                class="panel-img">
+              >
             </div>
           </div>
 
@@ -781,9 +815,18 @@
 
         <div class="full-w-inset tint-xdark gap-xs grid-c ">
           <div class="stamp">
-            <img  class=""
-                  src="/assets/other-img/Kris_w_Tetra_862x862.jpg"
-                  alt="photo of Kris Kay">
+            <img
+              fetchpriority="low"
+              loading="lazy"
+              width="360"
+              height="360"
+              src="/assets/other-img/Kris-Kay-photo_360x360.jpg"
+              srcset="/assets/other-img/Kris-Kay-photo_180x180.jpg 180w,
+                      /assets/other-img/Kris-Kay-photo_360x360.jpg 360w,
+                      /assets/other-img/Kris-Kay-photo_540x540.jpg 540w"
+              sizes="180px"
+              alt="photo of Kris Kay"
+            >
           </div>
 
           <p class="no-word-break text-sha-2xl text-center text-md">
