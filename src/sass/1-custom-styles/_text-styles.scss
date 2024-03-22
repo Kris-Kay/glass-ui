@@ -54,7 +54,7 @@ textarea {
 //   @include title-thin;
 //   font-size: var(--text-3xl);
 //   text-shadow: var(--text-sha-3xl);
-//   line-height: 2.05ex;
+//   line-height: 2.05;
 //   color: var(--text-mild);
 //   text-align: center;
 // }
@@ -77,7 +77,7 @@ textarea {
   @include title-thin;
   font-size: var(--text-2xl);
   text-shadow: var(--text-sha-2xl);
-  line-height: 2.1ex;
+  line-height: 2.1;
   color: var(--text-strong);
   text-align: center;
 }
