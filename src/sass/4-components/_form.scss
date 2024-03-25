@@ -5,19 +5,15 @@
 @use "../glass" as glass;
 /* ================================================== */
 
-.input:not(textarea) {
-  line-height: 1;
-}
-
 .text-input-group {
   height: min-content;
   display: grid;
   gap: var(--3xs);
 }
 
-.input-label-bin {
+.input-label-group {
   display: grid;
-  gap: 0.25rem;
+  gap: var(--5xs);
 }
 
 
@@ -26,11 +22,10 @@
 .text-input {
   pointer-events: auto;
   cursor: text;
-  width: 100%;
-  // width: min(400px, 100%);
+  width: min(380px, 100%);
   height: var(--ui-h-lg);
   border-radius: var(--2xs);
-  padding: 0 0.75rem;
+  padding: 0 var(--2xs);
 
   box-shadow: var(--inset-lg);
   background-color: var(--inset-bg-xdeep);
@@ -44,41 +39,42 @@
 
 /* Textarea input */
 /* ================================================== */
-.textarea-wrap {
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
+.textarea-bg {
+  --radius: var(--xs);
+  --padding: var(--2xs);
 
-  @include grid-c;
-  padding: 0.75rem;
-
+  z-index: z(input);
   width: 100%;
   height: fit-content;
+  display: grid;
+  place-items: center;
+  padding: var(--padding);
 
-  @include outer-radius (var(--3xs), 0.75rem);
-
+  border-radius: var(--radius);
   box-shadow: var(--inset-lg);
   background-color: var(--inset-bg-xdeep);
+  pointer-events: none;
 }
 
 .textarea {
-  z-index: 3;
-  inset: 0;
-  pointer-events: auto;
-  cursor: text;
-  overflow: auto;
-  resize: vertical;
-
-  min-height: 150px;
-  max-width: 100%;
   width: 100%;
+  height: 100%;
+  min-height: 100px;
 
   text-align: start;
-  border-radius: var(--2xs);
+  white-space: pre-wrap;
+  cursor: text;
+  pointer-events: auto;
+  resize: vertical;
 
   &::placeholder {
     color: var(--text-base);
     font-size: var(--text-sm);
-    font-weight: $font-weight-md;
+    font-weight: $font-weight-sm;
+  }
+
+  &:focus {
+    border-radius: var(--4xs);
+    outline-offset: calc(var(--padding) + 2px);
   }
 }

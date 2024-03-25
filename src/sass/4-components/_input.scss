@@ -13,18 +13,16 @@
   --rest-hover-bg: var(--inset-bg-xdeep);
   --rest-knob: oklch(var(--neutral-85) / 0.9);
 
-  --active-opacity: 1;
   --active-bg: oklch(var(--primary-70) / 1);
   --active-inset: var(--inset-lg);
-  --active-hover-bg: oklch(var(--primary-65) / 1);
+  --active-hover-bg: oklch(var(--primary-50) / 1);
   --active-knob-sha: var(--sha-sm);
 
-  // --disabled-opacity: 0.9;
-  --disabled-bg: var(--inset-bg-deep);
+  --disabled-bg: var(--inset-bg-xdeep);
   --disabled-checked-bg: oklch(var(--primary-70) / 0.5);
   --disabled-inset: none;
   --disabled-text: var(--text-xmild);
-  --disabled-knob: oklch(var(--neutral-90) / 0.3);
+  --disabled-knob: oklch(var(--neutral-90) / 0.25);
   --disabled-knob-sha: none;
 
   --border: transparent;
@@ -33,7 +31,7 @@
   overflow: hidden;
   cursor: pointer;
   will-change: background-color;
-  transition: background-color $speed-base $smooth-cubic;
+  transition: background-color $speed-fast $smooth-cubic;
 
   &::after {
     @include pseudo;
@@ -74,18 +72,6 @@ input[type='checkbox'].switch {
     --thumb-margin: 3.5px;
     --switch-height: var(--ui-h-sm);
     --switch-width: calc(var(--switch-height) * 1.8);
-
-  // @include bp(xs) {
-  //   --switch-height: 1.8rem;
-  // }
-
-  // @include bp(sm) {
-  //   --switch-height: 1.75rem;
-  // }
-
-  // @include bp(md) {
-  //   --switch-height: 1.75rem;
-  // }
 
   @include input-base;
 
@@ -132,21 +118,6 @@ input[type='checkbox'].switch {
       background-color: var(--disabled-checked-bg);
     }
   }
-
-  // &.switch-sm {
-  //   --thumb-margin: 3.5px;
-  //   --switch-height: 1.75rem;
-  // }
-
-  // &.switch-md {
-  //   --thumb-margin: 3.5px;
-  //   --switch-height: 1.35rem;
-  // }
-
-  // &.switch-lg {
-  //   --thumb-margin: 4px;
-  //   --switch-height:1.5rem;
-  // }
 }
 
 /* Checkbox */
@@ -182,15 +153,35 @@ input[type='checkbox'].checkbox {
   }
 
   &:disabled {
-
     &:checked {
       background-color: var(--disabled-checked-bg);
 
       &::after {
+        width: 55%;
+        height: 30%;
         border: 3px solid var(--disabled-knob);
         border-top: 0;
         border-right: 0;
+        left: 23%;
+        top: 30%;
       }
+    }
+  }
+
+  &:disabled {
+    &::after {
+      z-index: 3;
+      border-radius: 0.05rem;
+      width: 80%;
+      height: 30%;
+      border: 1.5px solid var(--disabled-knob);
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      left: 0%;
+      top: 30%;
+      transform: rotate( -45deg);
+      background-color: transparent;
     }
   }
 }
@@ -203,8 +194,6 @@ input[type='radio'] {
 
   position: relative;
   z-index: 1;
-  // display: grid;
-  // place-items: center;
   width: 1.5rem;
   height: 1.5rem;
   aspect-ratio: 1 / 1;
