@@ -2,8 +2,9 @@
 /* Accordion */
 @use "../custom" as *;
 @use "../glass" as glass;
-@use "card" as card;
 /* ================================================== */
+
+/* Uses card styling */
 
 .accordion-toggle {
   display: flex;
@@ -61,10 +62,10 @@
 }
 
 .accordion-content {
-  z-index: 2;
+  z-index: 2 !important;
   padding-top: var(--5xl);
   margin-top: calc(-1 * var(--4xl));
-  @include glass.glass-filter-xdark;
+  @include glass.glass-filter-dark;
   background-color: var(--tint-3xdark);
   box-shadow: var(--sha-sm);
 

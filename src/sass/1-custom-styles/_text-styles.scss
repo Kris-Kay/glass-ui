@@ -9,9 +9,9 @@
 /* ================================================== */
 @mixin body-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-sm;
+  font-weight: $font-weight-md;
   font-size: var(--text-sm);
-  letter-spacing: $letter-spacing-sm;
+  letter-spacing: $letter-spacing-md;
   line-height: $line-height-sm;
   color: var(--text-base);
 }
@@ -46,19 +46,8 @@ textarea {
 .title-thin { @include title-thin; }
 
 
-
-
-/* Common text styles */
+/* Text styles */
 /* ================================================== */
-// .big-title {
-//   @include title-thin;
-//   font-size: var(--text-3xl);
-//   text-shadow: var(--text-sha-3xl);
-//   line-height: 2.05;
-//   color: var(--text-mild);
-//   text-align: center;
-// }
-
 .very-big-title {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
@@ -117,26 +106,6 @@ textarea {
   }
 }
 
-.code {
-  font-family: $font-family-code;
-  line-height: $line-height-lg;
-}
-
-.text-link {
-  @include body-text;
-  color: var(--link--rest);
-
-  :hover {
-    color: var(--link--hover);
-  }
-
-  :visited {
-    color: var(--link--visit);
-  }
-}
-
-/* Custom text styles */
-/* ================================================== */
 .data-label-xs {
   @include title-thick;
   font-size: var(--text-xs);
@@ -161,7 +130,6 @@ textarea {
 .input-label {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
-  font-size: var(--sm);
   letter-spacing: $letter-spacing-md;
   color: var(--text-xstrong);
   text-shadow: var(--text-sha-sm);
@@ -170,9 +138,32 @@ textarea {
 .input-hint {
   font-weight: $font-weight-sm;
   font-size: var(--text-xs);
-  line-height: 1.1;
-  color: var(--text-mild);
+  line-height: 1;
+  color: var(--text-base);
   text-shadow: var(--text-sha-2xs);
+}
+
+/* Bullet points */
+/* ================================================== */
+.dot {
+  &::before {
+    padding-right: 0.25em;
+    content: "•"
+  }
+}
+
+.check {
+  &::before {
+    padding-right: 0.25em;
+    content: "☐"
+  }
+}
+
+.arrow {
+  &::before {
+    padding-right: 0.25em;
+    content: "➟"
+  }
 }
 
 /* ================================================== */
@@ -214,27 +205,3 @@ textarea {
 }
 
 .no-word-break { word-break: keep-all; }
-
-
-/* Bullet point decorations */
-/* ================================================== */
-.dot {
-  &::before {
-    padding-right: 0.25em;
-    content: "•"
-  }
-}
-
-.check {
-  &::before {
-    padding-right: 0.25em;
-    content: "☐"
-  }
-}
-
-.arrow {
-  &::before {
-    padding-right: 0.25em;
-    content: "➟"
-  }
-}

@@ -26,9 +26,11 @@
                 href="https://github.com/Kris-Kay"
                 target="_blank" >
               GitHub repo
-              <svg  class=" svg-square-out"
-                    role="graphics-symbol"
-                    aria-hidden="true"  >
+              <svg class=" svg-square-out"
+                role="graphics-symbol"
+                aria-hidden="true"
+                focusable="false"
+              >
               </svg>
             </a>
           </div> -->
@@ -43,12 +45,11 @@
 <main class="section-gap">
   <!-- Intro -->
   <section class="flex-c">
-    <div class="glass-container max-w-sm">
+    <div class="container-q max-w-sm">
       <div class="card-sm space-lg-3xl glass-3d tint-2xdark">
         <img class="max-w-xs m-auto-x"
           fetchpriority="high"
-          width="800"
-          height="730"
+
           src="/assets/homeImg/glass-layers-no-text_800x730.png"
           srcset="/assets/homeImg/glass-layers-no-text_400x365.png 400w,
                   /assets/homeImg/glass-layers-no-text_800x730.png 800w,
@@ -65,7 +66,7 @@
 
   <!-- Glass styles  -->
   <section id="styles" class="">
-    <div class="justify-r">
+    <div class="justify-l">
       <h2 class="big-title-bg big-title">Glass styles</h2>
     </div>
 
@@ -98,7 +99,7 @@
           </div>
         </div>
 
-        <div class="glass-container max-w-xs">
+        <div class="container-q max-w-xs">
           <div class="card-xs space-sm-lg glass-3d gradient-xdark">
             <h3 class="card-title">Inset shadows</h3>
 
@@ -150,13 +151,13 @@
 
   <!-- Details -->
   <section id="details" class="">
-    <div class="justify-r">
+    <div class="justify-l">
       <h2 class="big-title big-title-bg">Details</h2>
     </div>
 
     <div class="section-gap grid-c">
 
-      <div class="glass-container max-w-md">
+      <div class="container-q max-w-md">
         <div class="card-md space-sm-3xl glass-3d tint-3xdark">
 
           <div class="grid-c gap-4xs">
@@ -168,8 +169,6 @@
             <img class="max-w-md radius-md"
               fetchpriority="low"
               loading="lazy"
-              width="1024"
-              height="1236"
               src="/assets/homeImg/glass-details_1024x1236.jpg"
               srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
                       /assets/homeImg/glass-details_1024x1236.jpg 1024w,
@@ -214,7 +213,7 @@
         </div>
       </div>
 
-      <div class="glass-container max-w-md">
+      <div class="container-q max-w-md">
         <div class="card-md space-sm-3xl glass-3d tint-3xdark">
 
           <div class="grid-c gap-4xs">
@@ -226,8 +225,6 @@
             <img class="w-100"
               fetchpriority="low"
               loading="lazy"
-              width="1200"
-              height="896"
               src="/assets/homeImg/glass-gpt-code_1200x896.png"
               srcset="/assets/homeImg/glass-gpt-code_400x299.png 400w,
                       /assets/homeImg/glass-gpt-code_800x597.png 800w,
@@ -245,8 +242,6 @@
             <img class="w-100"
               fetchpriority="low"
               loading="lazy"
-              width="840"
-              height="840"
               src="/assets/homeImg/gpt4-glass-issues_840x840.jpg"
               srcset="/assets/homeImg/gpt4-glass-issues_640x640.jpg 640w,
                       /assets/homeImg/gpt4-glass-issues_840x840.jpg 840w,
@@ -263,7 +258,7 @@
 
   <!-- Components -->
   <section id="components" class="">
-    <div class="justify-r">
+    <div class="justify-l">
       <h2 class="big-title-bg big-title">Components</h2>
     </div>
 
@@ -441,58 +436,59 @@
           </div>
         </div>
 
-        <div class="max-w-xs glass-container">
-          <div class="card-xs space-sm-lg glass-3d tint-clear gradient-xdark grid-c">
+        <div class="max-w-sm container-q">
+          <div class="card-sm space-sm-lg glass-3d tint-clear gradient-xdark grid-c">
 
             <h3 class="card-title">Text inputs</h3>
 
-            <div class="text-input-group w-100">
-              <div class="input-label-bin">
-                <label for="t-1" class="input-label">Text input label</label>
+              <div class="text-input-group w-100">
+                <div class="input-label-group">
+                  <label for="t-1" class="input-label">Text input label</label>
 
-                <p id="aria-hint-text" class="input-hint">
-                  Aria hint text
-                </p>
+                  <p id="aria-hint-text" class="input-hint">
+                    Aria hint text
+                  </p>
+                </div>
+
+                <input  class="text-input"
+                  id="t-1"
+                  placeholder="Type in here!"
+                  aria-describedby="aria-hint-text"
+                  name="text-input"
+                  type="text"  >
               </div>
 
-              <input  class="text-input"
-                id="t-1"
-                placeholder="Type in here!"
-                aria-describedby="aria-hint-text"
-                name="text-input"
-                type="text"  >
-            </div>
+              <div class="text-input-group w-100">
+                <div class="input-label-group">
+                  <label  class="input-label"
+                          for="t-2"  >
+                    Textarea label
+                  </label>
 
-            <div class="text-input-group w-100">
-              <div class="input-label-bin">
-                <label  class="input-label"
-                        for="t-2"  >
-                  Textarea label
-                </label>
+                  <p class="input-hint" id="aria-hint-text-id" >
+                    Aria hint text
+                  </p>
+                </div>
 
-                <p class="input-hint" id="aria-hint-text-id" >
-                  Aria hint text
-                </p>
+                <div class="textarea-bg">
+                  <textarea
+                    id="t-2"
+                    class="textarea"
+                    placeholder="Pull lower-right corner to make text box bigger."
+                    aria-describedby="aria-hint-text-id"
+                    name="textarea"></textarea>
+                </div>
               </div>
 
-              <div class="textarea-wrap">
-                <textarea
-                  id="t-2"
-                  class="textarea"
-                  placeholder="Pull lower-right corner to make text box bigger."
-                  aria-describedby="aria-hint-text-id"
-                  name="textarea"></textarea>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
       <!-- Accordion -->
         <div class="grid-c">
-          <div class="js-accordion glass-container max-w-md">
+          <div class="js-accordion container-q max-w-md">
 
-            <div class="tint-dark card-md space-sm-lg glass-3d is-closed">
+            <div class=" tint-dark card-md space-sm-lg glass-3d is-closed">
 
               <div class="accordion-header">
                 <p class="eyebrow">eyebrow text</p>
@@ -504,22 +500,24 @@
               </div>
 
               <div class="js-accordionToggle accordion-toggle is-closed">
-                <button  class="see-more-btn"
-                         type="button">
+                <button  class="see-more-btn" type="button">
                   See more
-                  <svg  class="svg-chev-down"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-chev-down"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>cheveron down</title>
                   </svg>
                 </button>
 
-                <button  class="see-less-btn"
-                         type="button">
+                <button class="see-less-btn" type="button">
                   See less
-                  <svg  class="svg-chev-up"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-chev-up"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>cheveron up</title>
                   </svg>
                 </button>
@@ -531,8 +529,6 @@
               <div class="flex-c">
                 <img class="max-w-xs"
                   fetchpriority="low"
-                  width="410"
-                  height="220"
                   src="/assets/other-img/hello-bear.gif"
                   alt="animated .gif of bear waving hello"  >
               </div>
@@ -543,7 +539,7 @@
         </div>
 
       <!-- Buttons -->
-        <div class="glass-container max-w-xl m-auto-x">
+        <div class="container-q max-w-xl m-auto-x">
           <div class="card-xl space-xl-3xl glass-3d tint-xdark">
 
             <div class="grid-c gap-4xs ">
@@ -578,9 +574,11 @@
                 <button class="btn-secondary btn-sm"
                   type="button">
                   .btn-sm
-                  <svg  class="svg-square-out"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-square-out"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>open in new tab</title>
                   </svg>
                 </button>
@@ -588,9 +586,11 @@
                 <button class="btn-secondary btn-md"
                   type="button">
                   .btn-md
-                  <svg  class="svg-square-out"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-square-out"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>open in new tab</title>
                   </svg>
                 </button>
@@ -599,8 +599,10 @@
                   type="button">
                   .btn-lg
                   <svg  class="svg-square-out"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>open in new tab</title>
                   </svg>
                 </button>
@@ -610,32 +612,35 @@
               <div class="grid-c gap-md">
                 <h4 class="class-name">.btn-clear</h4>
 
-                <button class="btn-clear btn-sm"
-                        type="button">
+                <button class="btn-clear btn-sm" type="button">
                   .btn-sm
-                  <svg  class="svg-chev-r"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-chev-r"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>right cheveron</title>
                   </svg>
                 </button>
 
-                <button class="btn-clear btn-md"
-                        type="button">
+                <button class="btn-clear btn-md" type="button">
                   .btn-md
-                  <svg  class="svg-chev-r"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-chev-r"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>right cheveron</title>
                   </svg>
                 </button>
 
-                <button  class="btn-clear btn-lg"
-                         type="button">
+                <button  class="btn-clear btn-lg" type="button">
                   .btn-lg
-                  <svg  class="svg-chev-r"
-                        role="graphics-symbol"
-                        aria-hidden="true"  >
+                  <svg class="svg-chev-r"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <title>right cheveron</title>
                   </svg>
                 </button>
@@ -647,7 +652,7 @@
         </div>
 
       <!-- Tab menu -->
-      <div class="glass-container max-w-sm m-auto-x">
+      <div class="container-q max-w-sm m-auto-x">
         <div class="card-sm space-sm-lg glass-3d tint-3xdark">
 
           <div class="grid-c gap-3xs">
@@ -664,8 +669,6 @@
             >
               <img class="panel-img"
                 loading="lazy"
-                width="640"
-                height="753"
                 src="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg"
                 srcset="/assets/bgImg/3d-glass-cube-by-shubham-dhage_640x753.jpg 640w,
                         /assets/bgImg/3d-glass-cube-by-shubham-dhage_1024x1204.jpg 1024w,
@@ -685,8 +688,6 @@
 
               <img class="panel-img"
                 fetchpriority="low"
-                width="640"
-                height="427"
                 src="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg"
                 srcset="/assets/bgImg/3d-glass-slabs-by-nat-watson_640x427.jpg 640w,
                     /assets/bgImg/3d-glass-slabs-by-nat-watson_1024x683.jpg 1024w,
@@ -706,8 +707,6 @@
 
               <img class="panel-img"
                 fetchpriority="low"
-                width="640"
-                height="414"
                 src="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg"
                 srcset="/assets/bgImg/3d-glass-ring-by-ant-rozetsky_640x414.jpg 640w,
                         /assets/bgImg/3d-glass-ring-by-ant-rozetsky_1024x662.jpg 1024w,
@@ -761,11 +760,11 @@
 
   <!-- Contact -->
   <section id="contact" class="">
-    <div class="justify-r">
+    <div class="justify-l">
       <h2 class="big-title-bg big-title">Contact</h2>
     </div>
 
-    <div class="glass-container max-w-sm section-gap m-auto-x">
+    <div class="container-q max-w-sm section-gap m-auto-x">
       <div class="card-sm space-sm-lg glass-3d tint-xdark bottom-margin">
 
         <div class="justify-sb gap-md align-items-c  w-100">
@@ -776,39 +775,41 @@
           </div>
 
           <div class="justify-r gap-sm">
-
-            <a  class="btn-round-md btn-secondary"
-                href="https://www.linkedin.com/in/kris-kay/"
-                target="_blank" >
-
-              <svg  class="svg-linkedin"
-                    role="graphics-symbol"
-                    aria-hidden="true">
-                <title>LinkedIn logo</title>
-              </svg>
+            <a class="btn-round-md btn-secondary"
+              href="https://www.linkedin.com/in/kris-kay/"
+              target="_blank"
+              aria-label="LinkedIn logo"
+            >
+              <svg class="svg-linkedin"
+                role="graphics-symbol"
+                aria-hidden="true"
+                focusable="false"
+              > </svg>
             </a>
 
-            <a  class="btn-round-md btn-secondary"
-                href="https://github.com/Kris-Kay"
-                target="_blank" >
-
-              <svg  class="svg-github"
-                    role="graphics-symbol"
-                    aria-hidden="true">
-                <title>GitHub logo</title>
-              </svg>
+            <a class="btn-round-md btn-secondary"
+              href="https://github.com/Kris-Kay"
+              target="_blank"
+              aria-label="GitHub logo"
+            >
+              <svg class="svg-github"
+                role="graphics-symbol"
+                aria-hidden="true"
+                focusable="false"
+              > </svg>
             </a>
 
-            <a  class="btn-round-md btn-secondary"
-                href="https://www.instagram.com/kris.k.a.y/"
-                target="_blank">
-              <svg  class="svg-instagram"
-                    role="graphics-symbol"
-                    aria-hidden="true">
-                <title>Instagram logo</title>
-              </svg>
+            <a class="btn-round-md btn-secondary"
+              href="https://www.instagram.com/kris.k.a.y/"
+              target="_blank"
+              aria-label="Instagram logo"
+            >
+              <svg class="svg-instagram"
+                role="graphics-symbol"
+                aria-hidden="true"
+                focusable="false"
+              > </svg>
             </a>
-
           </div>
 
         </div>
@@ -818,8 +819,6 @@
             <img
               fetchpriority="low"
               loading="lazy"
-              width="360"
-              height="360"
               src="/assets/other-img/Kris-Kay-photo_360x360.jpg"
               srcset="/assets/other-img/Kris-Kay-photo_180x180.jpg 180w,
                       /assets/other-img/Kris-Kay-photo_360x360.jpg 360w,
@@ -840,14 +839,15 @@
             <div class="js-copyWrap flex-c flex-wrap gap-2xs">
               <p class="js-textToCopy text-xstrong title-thick">hello@kris-kay.com</p>
 
-              <button  class="js-copyBtn btn-round-sm btn-secondary"
-                       type="button"  >
-
+              <button class="js-copyBtn btn-round-sm btn-secondary"
+                type="button"
+                aria-label="copy email to clipboard"
+              >
                 <svg  class="svg-copy"
-                      role="graphics-symbol"
-                      aria-hidden="true"  >
-                  <title>copy to clipboard</title>
-                </svg>
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"
+                > </svg>
               </button>
             </div>
           </div>

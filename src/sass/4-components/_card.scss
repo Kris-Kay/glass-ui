@@ -143,9 +143,9 @@
       font-size: var(--text-2xl);
     }
 
-    @include bp(sm) {
-      font-size: var(--text-3xl);
-    }
+    // @include bp(sm) {
+    //   font-size: var(--text-3xl);
+    // }
   }
 }
 
@@ -230,10 +230,18 @@
 .card-title {
   font-family: $font-family-title;
   font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-sm;
+  letter-spacing: $letter-spacing-md;
   text-shadow: var(--text-sha-2xl);
   line-height: 1.1;
   color: var(--text-xstrong);
   text-align: center;
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
+
+    @include bp(xs) {
+      font-size: var(--text-xl);
+    }
+
+    @include bp(sm) {
+      font-size: var(--text-2xl);
+    }
 }
