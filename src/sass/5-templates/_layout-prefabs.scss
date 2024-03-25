@@ -254,15 +254,16 @@
   width: fit-content;
   min-width: 50%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: var(--sm);
   margin-top: var(--nav-h);
   margin-bottom: var(--3xl);
+  z-index: z(nav);
 
   @include glass.glass-3d;
   background-color: var(--tint-clear);
   box-shadow: var(--sha-sm);
-  border-radius: var(--sm) 0 0 var(--sm);
+  border-radius: 0 var(--sm) var(--sm) 0;
 
   @include bp(sm) {
     min-width: 33%;
@@ -277,52 +278,12 @@
   text-shadow: var(--text-sha-3xl);
   line-height: 1;
   color: var(--text-strong);
-  text-align: left;
+  text-align: right;
 
   @include bp(lg) {
     font-size: var(--text-2xl);
   }
 }
-
-// .big-title-bg {
-//   width: 100%;
-//   display: flex;
-//   justify-self: center;
-//   padding: var(--sm);
-//   margin-top: var(--nav-h);
-//   // margin-bottom: 2rem;
-
-//   @include glass.glass-no-bevel;
-//   background-color: var(--tint-clear);
-//   box-shadow: var(--sha-sm);
-
-//   @include bp(sm) {
-//     justify-self: flex-start;
-//     width: calc(100vw - var(--lg));
-//     border-radius: 0 var(--sm) var(--sm) 0;
-//   }
-
-//   // @include bp(sm) {
-//   //   margin-bottom: 6rem;
-//   // }
-
-//   // @include bp(lg) {
-//   //   margin-bottom: 8rem;
-//   // }
-
-//   @include bp(xl) {
-//     width: fit-content;
-//   }
-
-//   & > .big-title {
-//     width: 100%;
-//     text-align: end;
-
-//     @include bp(xl) {
-//       width: 90vw;
-//     }
-//   }
-// }
 
 
 
