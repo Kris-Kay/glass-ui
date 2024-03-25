@@ -54,10 +54,10 @@ html.root-transition *::after {
 /* Focus */
 /* ================================================== */
 :focus {
-  outline: 1px solid oklch(var(--primary-95) / 0.5);
-  outline-offset: 1.5px;
+  outline: 1px solid oklch(var(--primary-95) / 0.6);
+  outline-offset: 2px;
   border-radius: inherit;
-  transition: all $speed-base;
+  transition: all $speed-fast;
 }
 
 ::-moz-focus-inner {
