@@ -41,6 +41,39 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 }
 
 
+
+/* Spotlight */
+/* ================================================== */
+
+.spotlight {
+  position: relative;
+}
+
+.spotlight:hover {
+  --active: 1;
+}
+
+.spotlight:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at
+      calc(var(--x) * 1px)
+      calc(var(--y) * 1px),
+      oklch(var(--neutral-90) / 0.1),
+      oklch(var(--neutral-90) / 0.05),
+      transparent
+      30%);
+  background-attachment: fixed;
+  opacity: var(--active, 0);
+  transition: opacity $speed-slow $smooth-cubic;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+
 /* Color theme change animation */
 /* ================================================== */
 html.root-transition,
