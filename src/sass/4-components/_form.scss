@@ -9,6 +9,7 @@
   height: min-content;
   display: grid;
   gap: var(--3xs);
+  width: min(380px, 100%);
 }
 
 .input-label-group {
@@ -16,19 +17,74 @@
   gap: var(--5xs);
 }
 
-
-/* Text input */
+/* Search input */
 /* ================================================== */
-.text-input {
-  pointer-events: auto;
-  cursor: text;
+.search-input-bg {
+  position: relative;
   width: min(380px, 100%);
   height: var(--ui-h-lg);
   border-radius: var(--2xs);
-  padding: 0 var(--2xs);
+  box-shadow: var(--inset-lg);
+  // background-color: var(--color-gray);
+  background-color:var(--inset-bg-xdeep);
+}
 
+.search-input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  padding: var(--2xs) var(--2xs) var(--2xs) 3rem;
+  pointer-events: auto;
+  cursor: text;
+  background-color: transparent;
+
+  &::placeholder {
+    color: var(--text-base);
+    font-size: var(--text-sm);
+    font-weight: $font-weight-sm;
+  }
+}
+
+.search-input-icon {
+  position: absolute;
+  top: var(--2xs);
+  bottom: var(--2xs);
+  left: var(--2xs);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.3rem;
+  background-color: var(--color-white);
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  pointer-events: none;
+}
+
+/* Text input */
+/* ================================================== */
+.text-input-bg {
+  position: relative;
+  z-index: z(input);
+  width: 100%;
+  height: var(--ui-h-lg);
+  border-radius: var(--2xs);
   box-shadow: var(--inset-lg);
   background-color: var(--inset-bg-xdeep);
+  pointer-events: none;
+}
+
+.text-input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding: 0 var(--2xs);
+  pointer-events: auto;
+  cursor: text;
 
   &::placeholder {
     color: var(--text-base);

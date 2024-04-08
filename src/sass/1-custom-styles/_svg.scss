@@ -9,7 +9,7 @@
 @mixin svg-icon {
   max-width: 100%;
   max-height: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
   mask-repeat: no-repeat;
   mask-size: cover;
   pointer-events: none;
@@ -42,3 +42,5 @@
 .svg-circleHalf { mask: url(/assets/icons/CircleHalf.svg); }
 
 .svg-circleHalfTilt { mask: url(/assets/icons/CircleHalfTilt.svg); }
+
+.svg-magnifying-glass { mask: url(/assets/icons/MagnifyingGlass.svg); }

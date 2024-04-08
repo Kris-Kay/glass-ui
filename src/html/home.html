@@ -20,8 +20,8 @@
             <p class="text-lower text-sha-xl">Created by</p>
             <p class="text-allcap text-bold text-sha-xl">Kris Kay</p>
           </div>
-<!--
-          <div class="justify-r">
+
+          <!-- <div class="justify-r">
             <a  class="btn-primary btn-md"
                 href="https://github.com/Kris-Kay"
                 target="_blank" >
@@ -43,6 +43,7 @@
 <!-- Main -->
 <!-- ================================================== -->
 <main class="section-gap">
+
   <!-- Intro -->
   <section class="flex-c">
     <div class="container-q max-w-sm">
@@ -436,20 +437,39 @@
           </div>
         </div>
 
-        <div class="max-w-sm container-q">
+        <div class="max-w-xs container-q">
           <div class="card-sm space-sm-lg glass-3d tint-clear gradient-xdark grid-c">
 
             <h3 class="card-title">Text inputs</h3>
 
-              <div class="text-input-group w-100">
-                <div class="input-label-group">
-                  <label for="t-1" class="input-label">Text input label</label>
+            <div class="search-input-bg spotlight">
+              <svg class="svg-magnifying-glass search-input-icon"
+                role="graphics-symbol"
+                aria-hidden="true"
+                focusable="false"
+              >
+              </svg>
 
-                  <p id="aria-hint-text" class="input-hint">
-                    Aria hint text
-                  </p>
-                </div>
+              <span class="spotlight-span"></span>
 
+              <input class="search-input"
+                type="search"
+                name="search-input"
+                id="search-input"
+                placeholder="Search..."
+                aria-label="Search">
+            </div>
+
+            <div class="text-input-group">
+              <div class="input-label-group">
+                <label for="t-1" class="input-label">Text input label</label>
+
+                <p id="aria-hint-text" class="input-hint">
+                  Aria hint text
+                </p>
+              </div>
+
+              <div class="text-input-bg spotlight">
                 <input  class="text-input"
                   id="t-1"
                   placeholder="Type in here!"
@@ -457,28 +477,29 @@
                   name="text-input"
                   type="text"  >
               </div>
+            </div>
 
-              <div class="text-input-group w-100">
-                <div class="input-label-group">
-                  <label  class="input-label"
-                          for="t-2"  >
-                    Textarea label
-                  </label>
+            <div class="text-input-group">
+              <div class="input-label-group">
+                <label  class="input-label"
+                        for="t-2"  >
+                  Textarea label
+                </label>
 
-                  <p class="input-hint" id="aria-hint-text-id" >
-                    Aria hint text
-                  </p>
-                </div>
-
-                <div class="textarea-bg">
-                  <textarea
-                    id="t-2"
-                    class="textarea"
-                    placeholder="Pull lower-right corner to make text box bigger."
-                    aria-describedby="aria-hint-text-id"
-                    name="textarea"></textarea>
-                </div>
+                <p class="input-hint" id="aria-hint-text-id" >
+                  Aria hint text
+                </p>
               </div>
+
+              <div class="textarea-bg spotlight">
+                <textarea
+                  id="t-2"
+                  class="textarea"
+                  placeholder="Pull lower-right corner to make text box bigger."
+                  aria-describedby="aria-hint-text-id"
+                  name="textarea"></textarea>
+              </div>
+            </div>
 
           </div>
         </div>
