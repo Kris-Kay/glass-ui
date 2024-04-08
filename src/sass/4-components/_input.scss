@@ -10,12 +10,12 @@
 /* ================================================== */
 @mixin input-base {
   --rest-bg: var(--inset-bg-deep);
-  --rest-hover-bg: var(--inset-bg-xdeep);
+  --rest-hover-bg: var(--tint-3xdark);
   --rest-knob: oklch(var(--neutral-85) / 0.9);
 
   --active-bg: oklch(var(--primary-70) / 1);
   --active-inset: var(--inset-lg);
-  --active-hover-bg: oklch(var(--primary-50) / 1);
+  --active-hover-bg: oklch(var(--primary-60) / 1);
   --active-knob-sha: var(--sha-sm);
 
   --disabled-bg: var(--inset-bg-xdeep);
@@ -28,10 +28,11 @@
   --border: transparent;
   --border-hover: oklch(var(--primary-70) / 0.4);
 
+  z-index: z(input);
   overflow: hidden;
   cursor: pointer;
   will-change: background-color;
-  transition: background-color $speed-fast $smooth-cubic;
+  transition: background-color $speed-xslow $smooth-cubic;
 
   &::after {
     @include pseudo;
@@ -40,7 +41,6 @@
 
   &:hover {
     background-color: var(--rest-hover-bg);
-    overflow: hidden;
   }
 
   &:disabled {
@@ -69,14 +69,13 @@ input[type='checkbox'].switch {
   --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.618));
   --_thumb-margin: var(--thumb-margin, 3px);
 
-    --thumb-margin: 3.5px;
-    --switch-height: var(--ui-h-sm);
-    --switch-width: calc(var(--switch-height) * 1.8);
+  --thumb-margin: 3.5px;
+  --switch-height: var(--ui-h-sm);
+  --switch-width: calc(var(--switch-height) * 1.8);
 
   @include input-base;
 
   position: relative;
-  z-index: 1;
   display: inline-flex;
   width: var(--_switch-width);
   height: var(--_switch-height);
@@ -87,7 +86,7 @@ input[type='checkbox'].switch {
   box-shadow: var(--active-inset);
 
   &::after {
-    z-index: 3;
+    z-index: z(on-input);
     display: block;
     aspect-ratio: 1 / 1;
     margin: var(--_thumb-margin);
@@ -96,8 +95,7 @@ input[type='checkbox'].switch {
     background-color: var(--rest-knob);
     box-shadow: var(--active-knob-sha);
     border-radius: 9999px;
-    transition: margin;
-    transition-duration: inherit;
+    transition: margin $speed-base $smooth-cubic;
   }
 
   &:checked {
@@ -127,7 +125,6 @@ input[type='checkbox'].checkbox {
   @include input-base;
 
   position: relative;
-  z-index: 1;
   display: grid;
   place-content: center;
   width: 1.5rem;
@@ -138,7 +135,7 @@ input[type='checkbox'].checkbox {
 
   &:checked {
     &::after {
-      z-index: 3;
+      z-index: z(on-input);
       border-radius: 0.05rem;
       width: 55%;
       height: 30%;
@@ -170,7 +167,7 @@ input[type='checkbox'].checkbox {
 
   &:disabled {
     &::after {
-      z-index: 3;
+      z-index: z(on-input);
       border-radius: 0.05rem;
       width: 80%;
       height: 30%;
@@ -193,7 +190,6 @@ input[type='radio'] {
   @include input-base;
 
   position: relative;
-  z-index: 1;
   width: 1.5rem;
   height: 1.5rem;
   aspect-ratio: 1 / 1;
@@ -203,7 +199,7 @@ input[type='radio'] {
 
   &:checked {
     &::after {
-      z-index: 3;
+      z-index: z(on-input);
       filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral-10) / 0.5));
       margin: 4px;
       aspect-ratio: 1 / 1;

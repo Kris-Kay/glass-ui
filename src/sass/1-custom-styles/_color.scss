@@ -34,7 +34,7 @@
   --primary-80: 80% 0.13 var(--primary-hue);
   --primary-75: 75% 0.12 var(--primary-hue);
   --primary-70: 70% 0.12 var(--primary-hue);
-  --primary-65: 65% 0.12 var(--primary-hue);
+  --primary-60: 60% 0.12 var(--primary-hue);
   --primary-50: 50% 0.08 var(--primary-hue);
   --primary-25: 25% 0.03 var(--primary-hue);
   --primary-15: 15% 0.025 var(--primary-hue);
@@ -86,6 +86,7 @@
   --color-primary-15: oklch(var(--primary-15) / 1);
   --color-primary-25: oklch(var(--primary-25) / 1);
   --color-primary-50: oklch(var(--primary-50) / 1);
+  --color-primary-65: oklch(var(--primary-60) / 1);
   --color-primary-95: oklch(var(--primary-95) / 1);
   --color-primary-90: oklch(var(--primary-90) / 1);
 
@@ -185,6 +186,7 @@ $colors: (
   "primary-15": var(--color-primary-15),
   "primary-25": var(--color-primary-25),
   "primary-50": var(--color-primary-50),
+  "primary-65": var(--color-primary-65),
   "primary-90": var(--color-primary-90),
   "primary-95": var(--color-primary-95),
 
