@@ -260,7 +260,7 @@
   margin-bottom: var(--3xl);
   z-index: z(nav);
 
-  @include glass.glass-3d;
+  @include glass.glass-e2e;
   background-color: var(--tint-clear);
   box-shadow: var(--sha-sm);
   border-radius: 0 var(--sm) var(--sm) 0;

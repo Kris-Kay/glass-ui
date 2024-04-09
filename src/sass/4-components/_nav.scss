@@ -113,6 +113,7 @@
   display: grid;
   place-items: end center;
 
+  pointer-events: none;
   // @include bp.bp(sm) {
   //   place-items: end start;
   //   padding-left: var(--moat);
@@ -126,7 +127,7 @@
   place-items: center;
   box-shadow: var(--sha-xl);
   @include r.radius("sm");
-  padding: var(--sm) var(--lg);
+  padding: var(--sm);
 
   // @include bp.bp(sm) {
   //   padding: var(--md) var(--lg);

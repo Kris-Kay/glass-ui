@@ -57,7 +57,7 @@
   & > svg {
     @include svg-icon;
     z-index: z(on-btn);
-    height: calc(1.1 * var(--_btn-content-h));
+    height: calc(1.25 * var(--_btn-content-h));
   }
 }
 

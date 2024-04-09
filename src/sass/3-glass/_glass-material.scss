@@ -48,8 +48,8 @@ html {
 }
 
 @mixin glass-filter-light {
-  -webkit-backdrop-filter: blur(var(--blur)) brightness(1.1) saturate(1.2);
-  backdrop-filter:         blur(var(--blur)) brightness(1.1) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--blur)) brightness(1.2) saturate(1.2);
+  backdrop-filter:         blur(var(--blur)) brightness(1.2) saturate(1.2);
 }
 
 /* Noise texture */
@@ -106,7 +106,6 @@ html {
   position: relative;
   overflow: hidden;
   @include glass-filter-base;
-  width: 100%;
 
   &::after {
     @include lh.pseudo;
@@ -143,15 +142,11 @@ html {
 
 
 /* ================================================== */
-/* Container query for glass */
+/* Container query */
 /* ================================================== */
-/* Switches to a flat bevel if edge-to-edge */
-.container-q {
-  container-type: inline-size;
-
-  @container (width > 98vw) {
+  @container (width > 97vw) {
     .glass-3d {
-
+// background-color: green;
       &::after {
         box-shadow: var(--flat-bevel-lg);
       }
@@ -161,4 +156,17 @@ html {
       }
     }
   }
-}
+
+  @container (width < 97vw ) {
+
+    .glass-3d {
+// background-color: blue;
+      &::after {
+        box-shadow: var(--bevel-lg);
+      }
+
+      > .full-w-inset {
+        margin-left: calc(var(--_neg-space) + 0.5px);
+      }
+    }
+  }
