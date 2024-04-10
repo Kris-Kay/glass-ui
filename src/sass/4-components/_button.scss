@@ -176,7 +176,7 @@
   --_btn-bg: var(--btn-bg, white);
   --_btn-text: var(--btn-text, black);
 
-  @include glass.btn-glass;
+  @include glass.glass-3d-sm;
   color: var(--_btn-text);
   background-color: var(--_btn-bg);
 
@@ -201,11 +201,11 @@
   @include btn-skin;
   --btn-bg: oklch(var(--primary-70) / 0.25);
   --btn-text: var(--color-white);
-  @include glass.glass-filter-xvibrant;
+  @include glass.glass-filter(10px, 1, 2.5);
 
   &:hover {
     --btn-bg: oklch(var(--primary-70) / 0.4);
-    @include glass.glass-filter-light;
+    @include glass.glass-filter(10px, 1.25, 1.5);
   }
 }
 
@@ -216,11 +216,11 @@
   @include btn-skin;
   --btn-bg: oklch(var(--primary-25) / 0.35);
   --btn-text: var(--color-white);
-  @include glass.glass-filter-base;
+  @include glass.glass-filter(10px, 0.95, 1.2);
 
   &:hover {
     --btn-bg: oklch(var(--primary-25) / 0.75);
-    @include glass.glass-filter-vibrant;
+    @include glass.glass-filter(10px, 1, 2);
   }
 }
 
@@ -243,7 +243,7 @@
 
   &:hover {
     --btn-bg: oklch(var(--primary-95) / 0.2);
-    @include glass.glass-filter-light;
+    @include glass.glass-filter(10px, 1.25, 1.5);
   }
 }
 .btn-clear { @include btn-clear; }

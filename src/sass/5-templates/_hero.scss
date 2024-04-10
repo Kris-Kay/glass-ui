@@ -72,11 +72,11 @@
 .card-3d-bin {
   position: relative;
   width: 96%;
-  perspective: 1800px;
+  perspective: 2500px;
 
-  @media (width > 2400px) {
-    perspective: 2500px;
-  }
+  // @media (width > 2400px) {
+  //   perspective: 2500px;
+  // }
 }
 
 .card-3d {

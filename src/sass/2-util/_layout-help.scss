@@ -23,6 +23,20 @@
 .h-50vh { min-height: 50vh; }
 .h-200 { min-height: 200px; }
 
+.size-48 {
+  width: 48px;
+  aspect-ratio: 1;
+}
+
+.size-100 { width: min(100%, 100px); }
+.size-200 { width: min(100%, 200px); }
+.size-300 { width: min(100%, 300px); }
+.size-500 { width: min(100%, 500px); }
+.size-600 { width: min(100%, 600px); }
+.size-700 { width: min(100%, 700px); }
+
+
+
 /* Display */
 /* ================================================== */
 .block { display: block; }

@@ -65,7 +65,7 @@
   z-index: 2 !important;
   padding-top: var(--5xl);
   margin-top: calc(-1 * var(--4xl));
-  @include glass.glass-filter-dark;
+  @include glass.glass-filter(80px, 0.25, 1.5);
   background-color: var(--tint-3xdark);
   box-shadow: var(--sha-sm);
 

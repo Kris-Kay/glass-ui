@@ -108,6 +108,12 @@ $sizes: (
 
 /* Spacing variables */
 /* ================================================== */
+  $max-w-xs: 400px;
+  $max-w-sm: 600px;
+  $max-w-md: 800px;
+  $max-w-lg: 960px;
+  $max-w-xl: 1280px;
+
 
 html {
   --moat: 1rem;
@@ -146,6 +152,12 @@ html {
 .max-w-lg { width: min(100%, var(--max-w-lg)); }
 .max-w-xl { width: min(100%, var(--max-w-xl)); }
 
+// .max-w-xs { max-width: var(--max-w-xs); }
+// .max-w-sm { width: min(100%, var(--max-w-sm)); }
+// .max-w-md { width: min(100%, var(--max-w-md)); }
+// .max-w-lg { width: min(100%, var(--max-w-lg)); }
+// .max-w-xl { max-width: 100%; width: var(--max-w-xl); }
+
 /* Moat classes */
 /* ================================================== */
 /* wrap elements to add or remove left-right padding  */
@@ -153,8 +165,8 @@ html {
 @mixin moat {
   width: 100%;
   z-index: z.z("section");
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 }
 
 .moat-all {

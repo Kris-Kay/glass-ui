@@ -38,7 +38,7 @@
   @include outer-radius (var(--tab-radius), var(--padding));
 
   background-color: var(--inset-bg-deep);
-  @include glass.glass-filter-base;
+  @include glass.glass-filter(40px, 0.9, 1.5);
 
   &::before {
     @include pseudo;

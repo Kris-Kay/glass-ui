@@ -39,12 +39,12 @@
   flex-direction: column-reverse;
 }
 
-.justify-row {
+.flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.justify-row-rev {
+.flex-row-rev {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -165,12 +165,14 @@
 /* ================================================== */
 .grid {
   display: grid;
+  width: 100%;
 }
 
 /* grid center x & y */
 @mixin grid-c {
   display: grid;
   place-items: center;
+  width: 100%;
 }
 .grid-c {
   @include grid-c;
@@ -179,6 +181,7 @@
 .grid-content-c {
   display: grid;
   place-content: center;
+  width: 100%;
 }
 
 .grid-12 {
