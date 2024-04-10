@@ -265,23 +265,26 @@
   box-shadow: var(--sha-sm);
   border-radius: 0 var(--sm) var(--sm) 0;
 
+  @include bp(xs) {
+    min-width: 40%;
+  }
+
   @include bp(sm) {
     min-width: 33%;
   }
-
 }
 
 .big-title {
   font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  font-size: var(--text-xl);
+  font-weight: $font-weight-sm;
+  font-size: var(--text-lg);
   text-shadow: var(--text-sha-3xl);
   line-height: 1;
   color: var(--text-strong);
   text-align: right;
 
   @include bp(lg) {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
   }
 }
 
