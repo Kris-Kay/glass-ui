@@ -15,13 +15,25 @@
 .w-100 { width: 100%; }
 
 .w-fit { width: fit-content; }
+.w-fit-max { width: max-content; }
+.w-500 { width: min(100%, 500px); }
+
 
 .h-100vh { min-height: 100vh; }
+.h-100 {
+  height: 100%;
+  min-height: fit-content;
+}
 
 .h-75vh { min-height: 75vh; }
 
 .h-50vh { min-height: 50vh; }
 .h-200 { min-height: 200px; }
+
+.cube-150 {
+  width: 150px;
+  aspect-ratio: 1;
+}
 
 .size-48 {
   width: 48px;

@@ -160,19 +160,21 @@
   align-self: stretch;
 }
 
+.flex-150 {
+  align-self: stretch;
+}
+
 /* ================================================== */
 /* Grid */
 /* ================================================== */
 .grid {
   display: grid;
-  width: 100%;
 }
 
 /* grid center x & y */
 @mixin grid-c {
   display: grid;
   place-items: center;
-  width: 100%;
 }
 .grid-c {
   @include grid-c;
@@ -181,7 +183,6 @@
 .grid-content-c {
   display: grid;
   place-content: center;
-  width: 100%;
 }
 
 .grid-12 {
@@ -201,6 +202,11 @@
 .grid-auto-fit {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-auto-fit-300 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* Properties for Grid Items */

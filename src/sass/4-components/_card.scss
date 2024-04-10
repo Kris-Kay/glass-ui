@@ -23,12 +23,12 @@
     padding: var(--_space);
   }
 
-  & > .full-w-fill {
+  & > .e2e {
     padding: var(--_space);
     margin: 0 var(--_neg-space);
   }
 
-  & > .full-w-fill-noYMargin {
+  & > .no-y-space {
     padding: var(--_space);
     margin: var(--_neg-space);
   }
@@ -46,7 +46,7 @@
     }
   }
 
-  & > .full-w-inset {
+  & > .e2e-inset {
     padding: var(--_space);
     margin-left: calc(var(--_neg-space) + 0.5px);
     margin-right: var(--_neg-space);
@@ -56,14 +56,14 @@
     box-shadow: var(--flat-inset-lg);
   }
 
-  & > .full-w-img {
+  & > .e2e-no-padding{
     display: grid;
     place-self: center;
     margin-left: var(--_neg-space);
     margin-right: var(--_neg-space);
   }
 
-  & > .full-w-img-noBottomMargin {
+  & > .e2e no-bottom-space {
     display: grid;
     place-self: center;
     margin-left: var(--_neg-space);
@@ -93,11 +93,29 @@
   }
 }
 
+@mixin card-q {
+  --_space: var(--space, 1rem);
+  --_neg-space: calc(-1 * var(--_space));
+  z-index: z(card);
+  width: 100%;
+  // height: fit-content;
+  display: grid;
+  place-items: center;
+  gap: var(--_space);
+  padding: var(--_space);
+  box-shadow: var(--sha-sm);
+}
+
+.card-q {
+  @include card-q;
+}
 
 .card-fit {
-  @include card-base;
-  width: fit-content;
-  border-radius: var(--md-lg);
+  @include card-q;
+  width: max-content;
+  // width: fit-content;
+  height: auto;
+  border-radius: var(--md);
 }
 
 .card-2xs {
@@ -117,7 +135,7 @@
   //   --space: var(--sm-md);
   // }
 
-  & > .card-title {
+  & > .card-title-lg {
     @include bp(xs) {
       font-size: var(--text-2xl);
     }
@@ -134,7 +152,7 @@
     @include radius("xl");
   }
 
-  & > .card-title {
+  & > .card-title-lg {
     @include bp(xs) {
       font-size: var(--text-2xl);
     }
@@ -151,7 +169,7 @@
   max-width: var(--max-w-md);
   @include radius("xl");
 
-  & > .card-title {
+  & > .card-title-lg {
 
     @include bp(xs) {
       font-size: var(--text-2xl);
@@ -175,7 +193,7 @@
 
   width: min(100%, var(--max-w-lg));
 
-  & > .card-title {
+  & > .card-title-lg {
     @include bp(xs) {
       font-size: var(--text-2xl);
     }
@@ -203,7 +221,7 @@
   width: min(100%, var(--max-w-xl));
 
 
-  & > .card-title {
+  & > .card-title-lg {
     @include bp(xs) {
       font-size: var(--text-2xl);
     }
@@ -223,199 +241,88 @@
 }
 /* Card items */
 /* ================================================== */
-.card-title-group {
-  // display: grid;
-  // gap: var(--4xs);
+.title-group-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4xs);
 }
 
-.card-title {
+@mixin card-title {
   font-family: $font-family-title;
-  font-weight: $font-weight-sm;
   letter-spacing: $letter-spacing-md;
   line-height: 1.1;
   color: var(--text-xstrong);
   text-align: center;
+}
+
+
+.card-title-lg {
+  @include card-title;
+  font-weight: $font-weight-xs;
   font-size: var(--text-lg);
-  text-shadow: var(--text-sha-2xl);
+  text-shadow: var(--text-sha-xl);
+}
+
+.card-title-md {
+  @include card-title;
+  font-weight: $font-weight-xs;
+  font-size: var(--text-md);
+  text-shadow: var(--text-sha-lg);
 }
 
 .card-subtitle {
-  font-family: $font-family-title;
+  font-family: $font-family-body;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
-  line-height: 1.3;
+  line-height: $line-height-sm;
   text-align: center;
-  color: var(--text-base);
+  color: var(--text-mild);
   text-shadow: var(--text-sha-sm);
-
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
 }
 
-// .full-w-fill {
-//   padding: var(--_space);
-//   margin: 0 var(--_neg-space);
-// }
-
-// .full-w-fill-noYMargin {
-//   padding: var(--_space);
-//   margin: var(--_neg-space);
-// }
-
-// .full-w-fill-noBottomMargin  {
-//   margin-left: var(--_neg-space);
-//   margin-right: var(--_neg-space);
-//   margin-bottom: calc(var(--_neg-space) * 1.618);
-
-//   padding: calc(var(--_space) *1.618) var(--_space);
-
-//   @include bp(sm) {
-//     padding: var(--_space);
-//     margin-bottom: var(--_neg-space);
-//   }
-// }
-
-// .full-w-inset {
-//   --neg-space: calc(-1 * var(--space));
-
-//   width: 100%;
-//   padding: var(--space);
-//   margin-left: calc(var(--neg-space) + 0.5px);
-//   margin-right: var(--neg-space);
-
-//   background-color: var(--inset-bg-xdeep);
-//   box-shadow: var(--flat-inset-lg);
-// }
-
-// .full-w-img {
-//   display: grid;
-//   place-self: center;
-//   margin-left: var(--_neg-space);
-//   margin-right: var(--_neg-space);
-// }
-
-// .full-w-img-noBottomMargin {
-//   display: grid;
-//   place-self: center;
-//   margin-left: var(--_neg-space);
-//   margin-right: var(--_neg-space);
-//   margin-bottom: calc(var(--_neg-space) * 1.618);
-
-//   @include bp(sm) {
-//     margin-bottom: var(--_neg-space);
-//   }
-// }
-
-// .full-w-img-noMargin {
-//   display: grid;
-//   place-self: center;
-//   // margin: var(--_neg-space);
-//   margin-left: var(--_neg-space);
-//   margin-right: var(--_neg-space);
-//   margin-top: var(--_neg-space);
-//   margin-bottom: calc(var(--_neg-space) * 1.618);
-
-//   // padding: calc(var(--_space) *1.618) var(--_space);
-
-//   @include bp(sm) {
-//     padding: var(--_space);
-//     margin-bottom: var(--_neg-space);
-//   }
-// }
 
 
-
-.card-q {
-  --_space: var(--space, 1rem);
-  --_neg-space: calc(-1 * var(--_space));
-  z-index: z(card);
-  width: 100%;
-  height: fit-content;
+@mixin e2e {
+width: calc(100% + var(--_space) * 2);
   display: grid;
-  place-items: center;
-  gap: var(--_space);
+  // place-self: center;
+  margin-left: var(--_neg-space);
+  margin-right: var(--_neg-space);
   padding: var(--_space);
-  box-shadow: var(--sha-sm);
+}
 
-  & > .full-w-fill {
-    padding: var(--_space);
-    margin: 0 var(--_neg-space);
-  }
+.e2e {
+  @include e2e;
+}
 
-  & > .full-w-fill-noYMargin {
-    padding: var(--_space);
-    margin: var(--_neg-space);
-  }
+.e2e-no-padding{
+  @include e2e;
+  padding: 0;
+}
 
-  & > .full-w-fill-noBottomMargin  {
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-    padding: calc(var(--_space) *1.618) var(--_space);
+.e2e-inset {
+  @include e2e;
+  margin-left: calc(var(--_neg-space) + 0.5px);
+  background-color: var(--inset-bg-xdeep);
+  box-shadow: var(--flat-inset-md);
+}
 
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: inherit;
-    border-bottom-left-radius: inherit;
+.no-y-space {
+  margin-top: var(--_neg-space);
+  margin-bottom: var(--_neg-space);
+}
 
-    @include bp(sm) {
-      padding: var(--_space);
-      margin-bottom: var(--_neg-space);
-    }
-  }
+.no-bottom-space {
+  margin-bottom: var(--_neg-space);
+}
 
-  & > .full-w-inset {
-    padding: var(--_space);
-    margin-left: calc(var(--_neg-space) + 0.5px);
-    margin-right: var(--_neg-space);
-    background-color: var(--inset-bg-xdeep);
-    box-shadow: var(--flat-inset-lg);
-  }
-
-  & > .full-w-img {
-    display: grid;
-    place-self: center;
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-  }
-
-  & > .full-w-img-noBottomMargin {
-    display: grid;
-    place-self: center;
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-
-    overflow: hidden;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: inherit;
-    border-bottom-left-radius: inherit;
-
-    @include bp(sm) {
-      margin-bottom: var(--_neg-space);
-    }
-  }
-
-  & > .full-w-img-noMargin {
-    display: grid;
-    place-self: center;
-    // margin: var(--_neg-space);
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-top: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: inherit;
-    border-bottom-left-radius: inherit;
-    // padding: calc(var(--_space) *1.618) var(--_space);
-
-    @include bp(sm) {
-      padding: var(--_space);
-      margin-bottom: var(--_neg-space);
-    }
-  }
+.bottom-radius {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  overflow: hidden;
 }
 
 /* ================================================== */
@@ -428,9 +335,14 @@
     // background-color: rgba(255, 0, 0, 0.5);
   }
 
-  .card-title {
+  .card-title-lg {
     font-size: var(--text-lg);
     text-shadow: var(--text-sha-lg);
+  }
+
+  .card-title-md {
+    font-size: var(--text-md);
+    text-shadow: var(--text-sha-md);
   }
 
   .card-subtitle {
@@ -441,14 +353,19 @@
 
 @container (300px <= width <= 400px) {
   .card-q {
-    @include radius("sm");
+    @include radius("md");
     // --space: var(--md);
     // background-color: rgba(220, 0, 150, 0.5);
   }
 
-  .card-title {
+  .card-title-lg {
     font-size: var(--text-xl);
     text-shadow: var(--text-sha-xl);
+  }
+
+  .card-title-md {
+    font-size: var(--text-lg);
+    text-shadow: var(--text-sha-lg);
   }
 
   .card-subtitle {
@@ -459,14 +376,19 @@
 
 @container (400px < width <= 600px) {
   .card-q {
-    @include radius("md");
+    @include radius("lg");
       // --space: var(--lg);
     // background-color: rgba(252, 227, 5, 0.5);
   }
 
-  .card-title {
-    font-size: var(--text-2xl);
+  .card-title-lg {
+    font-size: var(--text-3xl);
     text-shadow: var(--text-sha-2xl);
+  }
+
+  .card-title-md {
+    font-size: var(--text-xl);
+    text-shadow: var(--text-sha-xl);
   }
 
   .card-subtitle {
@@ -482,9 +404,14 @@
     // background-color: rgba(114, 220, 0, 0.5);
   }
 
-  .card-title {
-    font-size: var(--text-2xl);
-    text-shadow: var(--text-sha-2xl);
+  .card-title-lg {
+    font-size: var(--text-3xl);
+    text-shadow: var(--text-sha-3xl);
+  }
+
+  .card-title-md {
+    font-size: var(--text-xl);
+    text-shadow: var(--text-sha-xl);
   }
 
   .card-subtitle {
@@ -500,9 +427,14 @@
     // background-color: rgba(0, 33, 220, 0.5);
   }
 
-  .card-title {
+  .card-title-lg {
     font-size: var(--text-3xl);
     text-shadow: var(--text-sha-3xl);
+  }
+
+  .card-title-md {
+    font-size: var(--text-2xl);
+    text-shadow: var(--text-sha-2xl);
   }
 
   .card-subtitle {
@@ -512,16 +444,17 @@
   }
 }
 
-  // @container (width >= 96vw) {
-//  .full-w-inset {
-  //       margin-left: var(--card-neg-space);
-  //     }
-  //   }
-  // }
+@container (width >= 99vw) {
+  .e2e-inset {
+    margin-left: var(--_neg-space);
+    // background-color: var(--inset-bg-xdeep);
+    // box-shadow: var(--flat-inset-lg);
+  }
+}
 
 
   // @container (width < 96vw ) {
-  //  .full-w-inset {
+  //  .e2e-inset {
   //       margin-left: calc(var(--card-neg-space) + 0.5px);
   //   }
   // }

@@ -10,13 +10,14 @@
 /* ================================================== */
 @mixin input-base {
   --rest-bg: var(--inset-bg-deep);
+  --rest-inset: var(--inset-lg);
   --rest-hover-bg: var(--tint-3xdark);
   --rest-knob: oklch(var(--neutral-85) / 0.9);
 
   --active-bg: oklch(var(--primary-70) / 1);
-  --active-inset: var(--inset-lg);
+  --active-inset: var(--inset-md);
   --active-hover-bg: oklch(var(--primary-60) / 1);
-  --active-knob-sha: var(--sha-sm);
+  --active-knob-sha: var(--sha-xs);
 
   --disabled-bg: var(--inset-bg-xdeep);
   --disabled-checked-bg: oklch(var(--primary-70) / 0.5);
@@ -65,33 +66,28 @@
 /* Switch */
 /* ================================================== */
 input[type='checkbox'].switch {
-  --_switch-height: var(--switch-height, var(--ui-h-sm));
-  --_switch-width: var(--switch-width, calc(var(--_switch-height) * 1.618));
-  --_thumb-margin: var(--thumb-margin, 3px);
-
-  --thumb-margin: 3.5px;
   --switch-height: var(--ui-h-sm);
   --switch-width: calc(var(--switch-height) * 1.8);
+  --thumb-margin: 3.5px;
 
   @include input-base;
 
   position: relative;
   display: inline-flex;
-  width: var(--_switch-width);
-  height: var(--_switch-height);
-  vertical-align: var(--_thumb-margin);
+  width: var(--switch-width);
+  height: var(--switch-height);
+  vertical-align: var(--thumb-margin);
   align-items: center;
   border-radius: 9999px;
   background-color: var(--rest-bg);
-  box-shadow: var(--active-inset);
+  box-shadow: var(--rest-inset);
 
   &::after {
     z-index: z(on-input);
     display: block;
-    aspect-ratio: 1 / 1;
-    margin: var(--_thumb-margin);
-    height: calc(100% - 2 * var(--_thumb-margin));
-
+    aspect-ratio: 1;
+    margin: var(--thumb-margin);
+    height: calc(100% - (2 * var(--thumb-margin)));
     background-color: var(--rest-knob);
     box-shadow: var(--active-knob-sha);
     border-radius: 9999px;
@@ -101,7 +97,7 @@ input[type='checkbox'].switch {
   &:checked {
 
     &::after {
-      margin-inline-start: calc(var(--_switch-width) - var(--_switch-height) + var(--_thumb-margin));
+      margin-inline-start: calc(var(--switch-width) - var(--switch-height) + var(--thumb-margin));
     }
   }
 
@@ -225,13 +221,14 @@ input[type='radio'] {
 
 /* Input wappers & items */
 /* ================================================== */
-.input-fieldset {
-  display: grid;
-  gap: var(--md);
-}
-
 .input-legend {
   padding-bottom: var(--sm);
+  font-size: var(--text-md);
+}
+
+.input-fieldset {
+  display: grid;
+  gap: var(--sm);
 }
 
 .input-group {
@@ -241,7 +238,7 @@ input[type='radio'] {
 }
 
 .inline-label {
-  width: fit-content;
+font-family: $font-family-body;
   font-weight: $font-weight-md;
   color: var(--text-xstrong);
 }
