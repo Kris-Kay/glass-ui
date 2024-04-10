@@ -199,6 +199,21 @@
 /* ================================================== */
 .btn-primary {
   @include btn-skin;
+  --btn-bg: oklch(var(--primary-70) / 0.5);
+  --btn-text: var(--color-white);
+  @include glass.glass-filter(10px, 1, 2.5);
+
+  &:hover {
+    --btn-bg: oklch(var(--primary-80) / 0.6);
+    @include glass.glass-filter(10px, 1.25, 1.5);
+  }
+}
+
+/* 3D Secondary buttons */
+/* ✨ Config these values ✨ */
+/* ================================================== */
+.btn-secondary {
+  @include btn-skin;
   --btn-bg: oklch(var(--primary-70) / 0.25);
   --btn-text: var(--color-white);
   @include glass.glass-filter(10px, 1, 2.5);
@@ -209,10 +224,10 @@
   }
 }
 
-/* 3D Secondary buttons */
+/* 3D Tertiary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn-secondary {
+.btn-tertiary {
   @include btn-skin;
   --btn-bg: oklch(var(--primary-25) / 0.35);
   --btn-text: var(--color-white);
