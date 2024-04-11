@@ -4,8 +4,6 @@
 @use "../util" as *;
 @use "../glass" as glass;
 /* ================================================== */
-/* card-xs to card-xl  */
-/* fill available space up to max-width values that match their T-shirt size */
 /* have proportional padding & gap values that scale with viewport width */
 /* have conditional border-radius values that turn to 0 if width = = 100vw */
 
@@ -118,171 +116,33 @@
   border-radius: var(--md);
 }
 
-.card-2xs {
-  @include card-base;
-  // --space: var(--sm);
-  max-width: var(--max-w-2xs);
-  @include radius("md-lg");
-}
+.card-space-thin {
+  --space: 6cqw;
 
-.card-xs {
-  @include card-base;
-  // --space: var(--sm);
-  max-width: var(--max-w-xs);
-  @include radius("md-lg");
-
-  // @include bp(sm) {
-  //   --space: var(--sm-md);
-  // }
-
-  & > .card-title-lg {
-    @include bp(xs) {
-      font-size: var(--text-2xl);
-    }
+  @include bp(lg) {
+    --space: 7cqw;
   }
 }
 
-.card-sm {
-  @include card-base;
-  // --space: var(--lg-xl);
-  max-width: var(--max-w-sm);
-  @include radius("lg-xl");
+.card-space-base {
+  --space: 6cqw;
 
-  @include bp(md) {
-    @include radius("xl");
-  }
-
-  & > .card-title-lg {
-    @include bp(xs) {
-      font-size: var(--text-2xl);
-    }
-
-    // @include bp(sm) {
-    //   font-size: var(--text-3xl);
-    // }
+  @include bp(sm) {
+    --space: 7cqw;
   }
 }
 
-.card-md {
-  @include card-base;
-  // --space: var(--xl-2xl);
-  max-width: var(--max-w-md);
-  @include radius("xl");
+.card-space-wide {
+  --space: 8cqw;
 
-  & > .card-title-lg {
-
-    @include bp(xs) {
-      font-size: var(--text-2xl);
-    }
-
-    @include bp(sm) {
-      font-size: var(--text-3xl);
-    }
-
-    @include bp(md) {
-      font-size: 5rem;
-    }
+  @include bp(xs) {
+    --space: 12cqw;
   }
 }
 
-.card-lg {
-  @include card-base;
-  // --space: var(--xl-2xl);
-  max-width: var(--max-w-lg);
-  @include radius("xl");
 
-  width: min(100%, var(--max-w-lg));
-
-  & > .card-title-lg {
-    @include bp(xs) {
-      font-size: var(--text-2xl);
-    }
-
-    @include bp(sm) {
-      font-size: var(--text-3xl);
-    }
-
-    @include bp(md) {
-      font-size: 4.25rem;
-    }
-
-    @include bp(lg) {
-      font-size: 5rem;
-    }
-  }
-}
-
-.card-xl {
-  @include card-base;
-  // --space: var(--xl-2xl);
-  max-width: var(--max-w-xl);
-  @include radius("xl");
-
-  width: min(100%, var(--max-w-xl));
-
-
-  & > .card-title-lg {
-    @include bp(xs) {
-      font-size: var(--text-2xl);
-    }
-
-    @include bp(sm) {
-      font-size: var(--text-3xl);
-    }
-
-    @include bp(md) {
-      font-size: 4.25rem;
-    }
-
-    @include bp(lg) {
-      font-size: 5rem;
-    }
-  }
-}
-/* Card items */
+/* Edge-to-edge classes */
 /* ================================================== */
-.title-group-lg {
-  display: flex;
-  flex-direction: column;
-  gap: var(--4xs);
-}
-
-@mixin card-title {
-  font-family: $font-family-title;
-  letter-spacing: $letter-spacing-md;
-  line-height: 1.2;
-  color: var(--text-xstrong);
-  text-align: center;
-}
-
-
-.card-title-lg {
-  @include card-title;
-  font-weight: $font-weight-xs;
-  font-size: var(--text-lg);
-  text-shadow: var(--text-sha-xl);
-}
-
-.card-title-md {
-  @include card-title;
-  font-weight: $font-weight-xs;
-  font-size: var(--text-md);
-  text-shadow: var(--text-sha-lg);
-}
-
-.card-subtitle {
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  line-height: $line-height-sm;
-  text-align: center;
-  color: var(--text-mild);
-  text-shadow: var(--text-sha-sm);
-  font-size: var(--text-sm);
-}
-
-
-
 @mixin e2e {
 width: calc(100% + var(--_space) * 2);
   display: grid;
@@ -325,130 +185,100 @@ width: calc(100% + var(--_space) * 2);
   overflow: hidden;
 }
 
+/* Card Titles */
 /* ================================================== */
-/* Container query */
+@mixin card-title {
+  font-family: $font-family-title;
+  letter-spacing: $letter-spacing-md;
+  line-height: 1.2;
+  color: var(--text-xstrong);
+  text-align: center;
+}
+
+.card-title-lg {
+  @include card-title;
+  font-weight: $font-weight-xs;
+  text-shadow: var(--text-sha-xl);
+  font-size: var(--text-2xl);
+}
+
+.card-title-md {
+  @include card-title;
+  font-weight: $font-weight-xs;
+  text-shadow: var(--text-sha-lg);
+  font-size: var(--text-xl);
+}
+
+.card-subtitle {
+  font-family: $font-family-body;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-md;
+  text-align: center;
+  color: var(--text-mild);
+  text-shadow: var(--text-sha-sm);
+  font-size: var(--text-sm);
+}
+
+.title-group-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4xs);
+}
+
+
+
+/* Card Container queries */
 /* ================================================== */
-@container (width < 300px) {
+@container (width < 450px) {
   .card-q {
-    @include radius("sm");
-    // --space: var(--sm);
+    @include radius("lg");
     // background-color: rgba(255, 0, 0, 0.5);
-  }
-
-  .card-title-lg {
-    font-size: var(--text-lg);
-    text-shadow: var(--text-sha-lg);
-  }
-
-  .card-title-md {
-    font-size: var(--text-md);
-    text-shadow: var(--text-sha-md);
   }
 
   .card-subtitle {
     font-size: var(--text-xs);
-    text-shadow: var(--text-sha-2xs);
   }
 }
 
-@container (300px <= width <= 400px) {
+@container (width >= 450px) {
   .card-q {
-    @include radius("md");
-    // --space: var(--md);
-    // background-color: rgba(220, 0, 150, 0.5);
+    @include radius("xl");
+    // background-color: rgba(252, 174, 5, 0.5);
   }
 
-  .card-title-lg {
-    font-size: var(--text-2xl);
-    text-shadow: var(--text-sha-xl);
-  }
-
-  .card-title-md {
-    font-size: var(--text-xl);
-    text-shadow: var(--text-sha-lg);
-  }
-
-  .card-subtitle {
-    font-size: var(--text-sm);
-    text-shadow: var(--text-sha-xs);
-  }
+  // .card-subtitle {
+  //   font-size: var(--text-sm);
+  // }
 }
 
-@container (400px < width <= 600px) {
+@container (width >= 600px) {
   .card-q {
     @include radius("lg");
-      // --space: var(--lg);
-    // background-color: rgba(252, 227, 5, 0.5);
-  }
-
-  .card-title-lg {
-    font-size: var(--text-3xl);
-    text-shadow: var(--text-sha-2xl);
-  }
-
-  .card-title-md {
-    font-size: var(--text-xl);
-    text-shadow: var(--text-sha-xl);
+    // background-color: rgba(200, 227, 5, 0.5);
   }
 
   .card-subtitle {
     font-size: var(--text-sm);
-    text-shadow: var(--text-sha-sm);
   }
 }
 
-@container (600px < width < 800px ) {
-  .card-q {
-    @include radius("md");
-    // --space: var(--lg);
-    // background-color: rgba(114, 220, 0, 0.5);
-  }
-
-  .card-title-lg {
-    font-size: var(--text-2xl);
-    text-shadow: var(--text-sha-2xl);
-  }
-
-  .card-title-md {
-    font-size: var(--text-xl);
-    text-shadow: var(--text-sha-xl);
-  }
-
-  .card-subtitle {
-    font-size: var(--text-sm);
-    text-shadow: var(--text-sha-sm);
-  }
-}
-
-@container (width >= 800px ) {
+@container (width >= 800px) {
   .card-q {
     @include radius("lg");
-    // --space: var(--xl);
     // background-color: rgba(0, 33, 220, 0.5);
   }
+}
 
-  .card-title-lg {
-    font-size: var(--text-2xl);
-    text-shadow: var(--text-sha-2xl);
-  }
-
-
-  .card-title-md {
-    font-size: var(--text-2xl);
-    text-shadow: var(--text-sha-2xl);
-  }
-
-  .card-subtitle {
-    font-size: var(--text-sm);
-    text-shadow: var(--text-sha-sm);
-    line-height: 1.5;
+@container (width >= 960px) {
+  .card-q {
+    @include radius("xl");
+    // background-color: rgba(0, 33, 220, 0.5);
   }
 }
 
-@container (width >= 99vw) {
+@container (width >= 97vw) {
   .e2e-inset {
     margin-left: var(--_neg-space);
-    // background-color: var(--inset-bg-xdeep);
-    // box-shadow: var(--flat-inset-lg);
   }
 }

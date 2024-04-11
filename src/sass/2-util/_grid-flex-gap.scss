@@ -160,8 +160,9 @@
   align-self: stretch;
 }
 
-.flex-150 {
-  align-self: stretch;
+.flex-100 {
+  display: flex;
+  flex: 0 1 100px;
 }
 
 /* ================================================== */
