@@ -88,9 +88,9 @@ html.root-transition *::after {
 /* ================================================== */
 :focus {
   outline: 1px solid oklch(var(--primary-95) / 0.6);
-  outline-offset: 2px;
+  outline-offset: 1.5px;
   border-radius: inherit;
-  transition: all $speed-fast;
+  transition: all $speed-base;
 }
 
 ::-moz-focus-inner {

@@ -162,6 +162,12 @@ html {
   @include bp.bp(md) {
     --moat: 2rem;
   }
+
+  @include bp.bp(lg) {
+    --ui-h-sm: 1.875rem; /* 30px */
+    --ui-h-md: 2.5rem; /* 40px */
+    --ui-h-lg: 2.875rem; /* 46px */
+  }
 }
 
 

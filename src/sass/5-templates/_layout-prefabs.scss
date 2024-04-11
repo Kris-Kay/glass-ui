@@ -272,6 +272,10 @@
   @include bp(sm) {
     min-width: 33%;
   }
+
+  @include bp(lg) {
+    min-width: 25%;
+  }
 }
 
 .big-title {

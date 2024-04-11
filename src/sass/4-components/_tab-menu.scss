@@ -21,85 +21,76 @@
 }
 
 .tab-menu {
+  --tab-menu-space: 4px;
+  --tab-radius: 6px;
+
   position: relative;
-  z-index: z(on-nav);
+  z-index: z(nav);
   width: fit-content;
   max-width: 100%;
-  height: var(--ui-h-md);
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: calc(var(--tab-menu-space) * 2);
   margin: 0 auto;
-
-  --tab-radius: 5px;
-  --padding: 4px;
-  padding: var(--padding);
-  @include outer-radius (var(--tab-radius), var(--padding));
-
+  padding: var(--tab-menu-space);
+  @include outer-radius (var(--tab-radius), var(--tab-menu-space));
   background-color: var(--inset-bg-deep);
-  @include glass.glass-filter(40px, 0.9, 1.5);
-
-  &::before {
-    @include pseudo;
-    z-index: -2;
-    box-shadow: var(--inset-lg);
-  }
+  box-shadow: var(--inset-lg);
 
   @include bp(xs) {
-    --tab-radius: 6px;
-    --padding: 4px;
-    gap: 6px;
+    --tab-menu-space: 5px;
+    --tab-radius: 7px;
+  }
+
+  @include bp(sm) {
+    --tab-menu-space: 6px;
+    --tab-radius: 9px;
   }
 
   @include bp(md) {
+    --tab-menu-space: 6px;
     --tab-radius: 8px;
-    --padding: 5px;
-    gap: 7px;
   }
 }
 
-
 [role="tab"] {
-  --content-h: 0.95rem;
+  @include btn.btn-text;
+  @include btn.btn-clear;
 
+  --tab-h: var(--ui-h-sm);
+  --content-h: 0.85rem;
+  --tab-padding: 0 0.85rem;
+
+  z-index: z(on-nav);
   width: max-content;
-  height: 100%;
+  height: var(--tab-h);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0.7rem;
-  overflow: hidden;
+  padding: var(--tab-padding);
   pointer-events: auto;
   cursor: pointer;
-
+  letter-spacing: $letter-spacing-lg;
   font-size: var(--content-h);
   line-height: var(--content-h);
-  @include btn.btn-text;
-  @include btn.btn-clear;
   border-radius: var(--tab-radius);
-  color: var(--color-white);
-  background-color: transparent;
 
   @include bp(xs) {
+    --tab-h: var(--ui-h-md);
     --content-h: 1rem;
-    padding: 0 0.8rem;
+    --tab-padding: 0 1.1rem;
   }
 
   @include bp(sm) {
     --content-h: 1.1rem;
-    padding: 0 0.9rem;
+    --tab-padding: 0 1.3rem;
   }
 
   @include bp(md) {
     --content-h: 1.1rem;
-    padding: 0 1.2rem;
-  }
-
-  &:hover {
-    background-color: var(--primary-80);
-    // background-color: var(--tint-xlight);
-    box-shadow: none;
+    --tab-padding: 0 1.2rem;
   }
 }
 
