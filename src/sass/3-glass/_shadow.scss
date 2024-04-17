@@ -40,11 +40,19 @@ html {
     // 0 0 0.2px oklch(var(--shadow) / 0.08);
 
   --sha-lg:
-    2px 1.5px 3.5px -0.5px oklch(var(--shadow) / 0.03),
-    3px 2.25px 7px -1px oklch(var(--shadow) / 0.08),
+    0 0 0.75px oklch(var(--shadow) / 0.18),
+    1px 1px 1.5px -0.25px oklch(var(--shadow) / 0.05),
+    1.5px 1.5px 2px -1px oklch(var(--shadow) / 0.15),
+    3px 3px 6px -1px oklch(var(--shadow) / 0.1),
     6px 4.5px 10.5px -1.5px oklch(var(--shadow) / 0.13),
     12px 9px 21px -2px oklch(var(--shadow) / 0.18),
     0 0 0.3px oklch(var(--shadow) / 0.13);
+
+    // 2px 1.5px 3.5px -0.5px oklch(var(--shadow) / 0.03),
+    // 3px 2.25px 7px -1px oklch(var(--shadow) / 0.08),
+    // 6px 4.5px 10.5px -1.5px oklch(var(--shadow) / 0.13),
+    // 12px 9px 21px -2px oklch(var(--shadow) / 0.18),
+    // 0 0 0.3px oklch(var(--shadow) / 0.13);
 
   --sha-xl:
     2px 1.5px 3.5px -0.5px oklch(var(--shadow) / 0.03),

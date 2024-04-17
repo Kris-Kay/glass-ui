@@ -123,7 +123,7 @@
   height: fit-content;
   display: grid;
   place-items: center;
-  box-shadow: var(--sha-xl);
+  box-shadow: var(--sha-lg);
   @include r.radius("sm");
   padding: var(--sm);
 

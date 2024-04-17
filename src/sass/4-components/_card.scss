@@ -265,7 +265,7 @@ width: calc(100% + var(--_space) * 2);
 
 @container (width >= 800px) {
   .card-q {
-    @include radius("lg");
+    @include radius("xl");
     // background-color: rgba(0, 33, 220, 0.5);
   }
 }

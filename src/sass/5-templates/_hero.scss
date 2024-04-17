@@ -48,6 +48,7 @@
   border-radius: calc(var(--lg) * 1.15);
   box-shadow: var(--sha-lg);
   padding: var(--space);
+        outline: 1px solid transparent;
 
   @include bp.bp(xs) {
     --space: var(--md);

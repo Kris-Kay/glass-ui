@@ -100,7 +100,7 @@
   --color-gray:    oklch(var(--neutral-50) / 1);
   --color-dark:    oklch(var(--neutral-30) / 1);
   --color-xdark:   oklch(var(--neutral-20) / 1);
-  --color-2xdark:  oklch(var(--neutral-10) / 1);
+  --color-2xdark:  oklch(var(--primary-15) / 1);
   --color-black:   oklch(var(--neutral-5) / 1);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
@@ -113,8 +113,8 @@
   --tint-3xlight: oklch(var(--neutral-95) / 0.4);
   --tint-2xlight: oklch(var(--neutral-95) / 0.3);
   --tint-xlight:  oklch(var(--neutral-95) / 0.2);
-  --tint-light:   oklch(var(--neutral-95) / 0.1);
-  --tint-clear:   oklch(var(--neutral-10) / 0.05);
+  --tint-light:   oklch(var(--neutral-95) / 0.05);
+  --tint-clear:   oklch(var(--neutral-10) / 0.01);
   --tint-dark:    oklch(var(--neutral-10) / 0.1);
   --tint-xdark:   oklch(var(--neutral-10) / 0.2);
   --tint-2xdark:  oklch(var(--neutral-10) / 0.3);
@@ -153,7 +153,7 @@
   --tint-2xlight: oklch(var(--neutral-95) / 0.5);
   --tint-xlight:  oklch(var(--neutral-95) / 0.4);
   --tint-light:   oklch(var(--neutral-95) / 0.3);
-  --tint-clear:   oklch(var(--neutral-10) / 0.2);
+  --tint-clear:   oklch(var(--neutral-10) / 0.05);
   --tint-dark:    oklch(var(--neutral-10) / 0.4);
   --tint-xdark:   oklch(var(--neutral-10) / 0.5);
   --tint-2xdark:  oklch(var(--neutral-10) / 0.6);

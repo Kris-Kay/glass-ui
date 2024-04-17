@@ -78,19 +78,19 @@
   border-radius: var(--tab-radius);
 
   @include bp(xs) {
-    --tab-h: var(--ui-h-md);
     --content-h: 1rem;
-    --tab-padding: 0 1.1rem;
+    --tab-padding: 0 0.9rem;
   }
 
   @include bp(sm) {
+    --tab-h: var(--ui-h-md);
     --content-h: 1.1rem;
     --tab-padding: 0 1.3rem;
   }
 
-  @include bp(md) {
-    --content-h: 1.1rem;
-    --tab-padding: 0 1.2rem;
+  @include bp(lg) {
+    --content-h: 1.15rem;
+    --tab-padding: 0 1.5rem;
   }
 }
 
