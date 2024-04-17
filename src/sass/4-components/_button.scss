@@ -48,7 +48,7 @@
   gap: calc(var(--_btn-x) / 3);
   padding: 0 var(--_btn-x);
   border-radius: var(--_btn-radius);
-  overflow: hidden;
+  // overflow: hidden;
 
   @include btn-text;
   font-size: var(--_btn-content-h);
@@ -70,7 +70,11 @@
   --btn-content-h: 0.75em;
   --btn-x: 1.2em;
   --btn-radius: 9999px;
-  box-shadow: var(--sha-2xs);
+  // box-shadow: var(--sha-2xs);
+
+  &::after {
+    box-shadow: var(--bevel-sm);
+  }
 }
 
 .btn-md {
@@ -79,7 +83,11 @@
   --btn-content-h: 0.85em;
   --btn-x: 1.4em;
   --btn-radius: 9999px;
-  box-shadow: var(--sha-xs);
+  // box-shadow: var(--sha-xs);
+
+  &::after {
+    box-shadow: var(--bevel-md);
+  }
 }
 
 .btn-lg {
@@ -88,7 +96,11 @@
   --btn-content-h: 1.05em;
   --btn-x: 1.6em;
   --btn-radius: 9999px;
-  box-shadow: var(--sha-sm);
+  // box-shadow: var(--sha-sm);
+
+  &::after {
+    box-shadow: var(--bevel-lg);
+  }
 }
 
 /* ================================================== */
@@ -115,6 +127,10 @@
   height: var(--ui-h-sm);
   box-shadow: var(--sha-2xs);
 
+  &::after {
+    box-shadow: var(--bevel-sm);
+  }
+
   & > svg {
     width: calc(var(--ui-h-sm) * 0.56);
     height: calc(var(--ui-h-sm) * 0.56);
@@ -135,6 +151,10 @@
   height: var(--ui-h-md);
   box-shadow: var(--sha-xs);
 
+  &::after {
+    box-shadow: var(--bevel-md);
+  }
+
   & > svg {
     width: calc(var(--ui-h-md) * 0.58);
     height: calc(var(--ui-h-md) * 0.58);
@@ -154,6 +174,10 @@
   width: var(--ui-h-lg);
   height: var(--ui-h-lg);
   box-shadow: var(--sha-sm);
+
+  &::after {
+    box-shadow: var(--bevel-lg);
+  }
 
   & > svg {
     width: calc(var(--ui-h-lg) * 0.56);
@@ -176,7 +200,11 @@
   --_btn-bg: var(--btn-bg, white);
   --_btn-text: var(--btn-text, black);
 
-  @include glass.glass-3d-sm;
+  @include glass.glass-3d-base;
+  &::before {
+    @include glass.noise-sm;
+  }
+
   color: var(--_btn-text);
   background-color: var(--_btn-bg);
 
