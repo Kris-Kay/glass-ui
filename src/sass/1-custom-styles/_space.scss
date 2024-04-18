@@ -153,7 +153,7 @@ html {
   --ui-h-md: 2rem;     /* 32px */
   --ui-h-lg: 2.5rem;   /* 40px */
 
-  @include bp.bp(sm) {
+  @include bp.bp(xs) {
     --ui-h-sm: 1.75rem; /* 28px */
     --ui-h-md: 2.25rem; /* 36px */
     --ui-h-lg: 2.75rem; /* 44px */

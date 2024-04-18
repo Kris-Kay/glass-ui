@@ -6,14 +6,30 @@
 
 /* font-family: */
 /* ================================================== */
+// $font-family-title: ('Jost', 'Arial', sans-serif);
 $font-family-title: ('Poppins', 'Arial', sans-serif);
-$font-family-body: ('Jost', 'Arial', sans-serif);
+$font-family-body: ('Nunito Sans', 'Arial', sans-serif);
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 1000
+
+.body-font {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
 
 /* letter-spacing: */
 /* ================================================== */
+$letter-spacing-2xs: -0.01em;
+$letter-spacing-xs: -0.005em;
 $letter-spacing-sm: 0.01em;
 $letter-spacing-md: 0.03em;
-$letter-spacing-lg: 0.06em;
+$letter-spacing-lg: 0.07em;
 
 /* line-height: */
 /* ================================================== */

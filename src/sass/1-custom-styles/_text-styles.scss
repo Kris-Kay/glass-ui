@@ -11,7 +11,7 @@
   font-family: $font-family-body;
   font-weight: $font-weight-md;
   font-size: var(--text-sm);
-  letter-spacing: $letter-spacing-md;
+  letter-spacing: normal;
   line-height: $line-height-sm;
   color: var(--text-base);
 }
@@ -120,8 +120,8 @@ textarea {
 
 .class-name {
   font-weight: $font-weight-md;
-  font-family: $font-family-title;
-  font-size: var(--text-sm);
+  font-family: $font-family-body;
+  font-size: var(--text-md);
   letter-spacing: $letter-spacing-lg;
   text-shadow: var(--text-sha-sm);
   word-break: keep-all;
