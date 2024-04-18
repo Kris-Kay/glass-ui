@@ -33,46 +33,40 @@
 
 /* Bento grid */
 /* ================================================== */
-.bento-1to3-sm {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.bento-2to3 {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
   gap: var(--md);
 
-  // @include bp(lg) {
-  //   gap: var(--lg);
-  // }
-}
-
-.bento-rect-sm {
-  // min-width: fit-content;
-  // flex: 1;
-  width: 130px;
-  // width: min(300px, 100%);
-  aspect-ratio : 1;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--xl);
-  border-radius: var(--sm);
-  box-shadow: var(--sha-md);
-
   @include bp(xs) {
-    width: 150px;
-    padding: var(--md);
-    border-radius: var(--md);
+    grid-template-columns: repeat(3, minmax(100px, 180px));
+    gap: var(--3xs);
+  }
+
+  @include bp(sm) {
+    gap: var(--2xs);
+  }
+
+  @include bp(md) {
+    gap: var(--xs);
   }
 
   @include bp(lg) {
-    width: 170px;
-    // padding: var(--lg);
-    // border-radius: var(--lg);
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    gap: var(--sm);
   }
 }
 
+.bento-rect-sm {
+  aspect-ratio : 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--md);
+
+  box-shadow: var(--sha-md);
+}
 
 .bento-1to3-md {
   max-width: 100%;
@@ -117,28 +111,25 @@
   }
 }
 
+// .bento-2to3 {
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   place-content: center;
+//   gap: var(--md);
 
+//   @include bp(sm) {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
 
+//   @include bp(md) {
+//     gap: var(--xl);
+//   }
 
-.bento-2to3 {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-content: center;
-  gap: var(--md);
-
-  @include bp(sm) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @include bp(md) {
-    gap: var(--xl);
-  }
-
-  @include bp(lg) {
-    gap: var(--2xl);
-  }
-}
+//   @include bp(lg) {
+//     gap: var(--2xl);
+//   }
+// }
 
 .bento-1to5 {
   width: 100%;
@@ -164,7 +155,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-
 
 .wrap-2 {
   width: 100%;
@@ -201,37 +191,36 @@
 }
 
 
-
 /* Telescope rect glass demo */
-.telescope-rect-bin {
-  touch-action: pan-y;
+// .telescope-rect-bin {
+//   touch-action: pan-y;
 
-  border-radius: var(--xl);
-  // min-width: 288px;
-  // width: 100%;
-  // height: 390px;
+//   border-radius: var(--xl);
+//   min-width: 288px;
+//   width: 100%;
+//   height: 390px;
 
-  // @include bp(xs) {
-  //   height: 450px;
-  //   max-width: var(--max-w-xs);
-  // }
+//   @include bp(xs) {
+//     height: 450px;
+//     max-width:  $bp-xs;
+//   }
 
-  // @include bp(sm) {
-  //   height: 570px;
-  //   max-width: 550px;
-  // }
+//   @include bp(sm) {
+//     height: 570px;
+//     max-width: 550px;
+//   }
 
-  // @include bp(md) {
-  //   height: 600px;
-  //   max-width: 620px;
-  // }
+//   @include bp(md) {
+//     height: 600px;
+//     max-width: 620px;
+//   }
 
 
-  // & > :first-child {
-  //   box-shadow: var(--sha-lg);
-  //   border-radius: inherit;
-  // }
-}
+//   & > :first-child {
+//     box-shadow: var(--sha-lg);
+//     border-radius: inherit;
+//   }
+// }
 
 // .telescope-rect {
 //   min-width: fit-content;
@@ -272,7 +261,7 @@ touch-action: pan-right;
   // padding: 4% 4% 4% 12%;
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
-  background-color: var(--tint-2xdark);
+  background-color: var(--tint-xdark);
   @include glass.glass-no-bevel;
 
   &:active {
