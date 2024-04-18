@@ -21,14 +21,16 @@
 }
 
 .tab-menu {
+  // --tab-menu-h: var(--ui-h-sm);
   --tab-menu-space: 4px;
-  --tab-radius: 6px;
+  --tab-radius: 7px;
 
   position: relative;
   z-index: z(nav);
   width: fit-content;
   max-width: 100%;
-  height: fit-content;
+  min-height: fit-content;
+  height: var(--ui-h-md);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,33 +41,33 @@
   background-color: var(--inset-bg-deep);
   box-shadow: var(--inset-lg);
 
-  @include bp(xs) {
-    --tab-menu-space: 5px;
-    --tab-radius: 7px;
-  }
+  // @include bp(xs) {
+  //   // --tab-menu-h: var(--ui-h-md);
+  //   --tab-menu-space: 5px;
+  //   --tab-radius: 7px;
+  // }
 
-  @include bp(sm) {
-    --tab-menu-space: 6px;
-    --tab-radius: 9px;
-  }
+  // @include bp(sm) {
+  //   --tab-menu-space: 6px;
+  //   --tab-radius: 9px;
+  // }
 
-  @include bp(md) {
-    --tab-menu-space: 6px;
-    --tab-radius: 8px;
-  }
+  // @include bp(md) {
+  //   --tab-menu-space: 6px;
+  //   --tab-radius: 8px;
+  // }
 }
 
 [role="tab"] {
   @include btn.btn-text;
   @include btn.btn-clear;
 
-  --tab-h: var(--ui-h-sm);
-  --content-h: 0.85rem;
-  --tab-padding: 0 0.85rem;
+  --content-h: 0.8rem;
+  --tab-padding: 0 0.7rem;
 
   z-index: z(on-nav);
   width: max-content;
-  height: var(--tab-h);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,15 +84,14 @@
     --tab-padding: 0 0.9rem;
   }
 
-  @include bp(sm) {
-    --tab-h: var(--ui-h-md);
-    --content-h: 1.1rem;
-    --tab-padding: 0 1.3rem;
-  }
+  // @include bp(sm) {
+  //   --content-h: 1.1rem;
+  //   --tab-padding: 0 1.3rem;
+  // }
 
-  @include bp(lg) {
-    --content-h: 1.15rem;
-    --tab-padding: 0 1.5rem;
+  @include bp(xl) {
+    --content-h: 1.1rem;
+    --tab-padding: 0 1.2rem;
   }
 }
 
