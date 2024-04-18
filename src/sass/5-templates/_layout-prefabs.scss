@@ -39,17 +39,20 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--lg);
+  gap: var(--md);
 
-  @include bp(lg) {
-    gap: var(--xl);
-  }
+  // @include bp(lg) {
+  //   gap: var(--lg);
+  // }
 }
 
 .bento-rect-sm {
-  min-width: fit-content;
-  width: min(300px, 100%);
-  height: 100%;
+  // min-width: fit-content;
+  // flex: 1;
+  width: 130px;
+  // width: min(300px, 100%);
+  aspect-ratio : 1;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,11 +60,16 @@
   border-radius: var(--sm);
   box-shadow: var(--sha-md);
 
-  @include bp(sm) {
-    max-width: 180px;
-    aspect-ratio : 1 / 1;
+  @include bp(xs) {
+    width: 150px;
     padding: var(--md);
     border-radius: var(--md);
+  }
+
+  @include bp(lg) {
+    width: 170px;
+    // padding: var(--lg);
+    // border-radius: var(--lg);
   }
 }
 
@@ -196,59 +204,159 @@
 
 /* Telescope rect glass demo */
 .telescope-rect-bin {
+  touch-action: pan-y;
+
   border-radius: var(--xl);
-  min-width: 288px;
-  width: 100%;
-  height: 390px;
+  // min-width: 288px;
+  // width: 100%;
+  // height: 390px;
 
-  @include bp(xs) {
-    height: 450px;
-    max-width: var(--max-w-xs);
-  }
+  // @include bp(xs) {
+  //   height: 450px;
+  //   max-width: var(--max-w-xs);
+  // }
 
-  @include bp(sm) {
-    height: 570px;
-    max-width: 550px;
-  }
+  // @include bp(sm) {
+  //   height: 570px;
+  //   max-width: 550px;
+  // }
 
-  @include bp(md) {
-    height: 600px;
-    max-width: 620px;
-  }
+  // @include bp(md) {
+  //   height: 600px;
+  //   max-width: 620px;
+  // }
 
 
-  & > :first-child {
-    box-shadow: var(--sha-lg);
-    border-radius: inherit;
-  }
+  // & > :first-child {
+  //   box-shadow: var(--sha-lg);
+  //   border-radius: inherit;
+  // }
 }
 
-.telescope-rect {
+// .telescope-rect {
+//   min-width: fit-content;
+//   width: 100%;
+//   overflow: visible;
+//   padding: 4% 4% 4% 11%;
+//   will-change: padding;
+//   transition: padding $smooth-cubic $speed-xfast;
+//   // box-shadow: var(--sha-3xs);
+
+//   @include bp(sm) {
+//     padding: 4% 4% 4% 12%;
+//   }
+
+//   @include bp(lg) {
+//     &:hover {
+//       padding: 4.5%;
+//     }
+//   }
+
+//   & > p {
+//     padding: var(--3xs) ;
+//     pointer-events: none;
+
+//     @include bp(sm) {
+//       padding: var(--2xs) ;
+//     }
+//   }
+// }
+
+
+.tele-rect {
+touch-action: pan-right;
   min-width: fit-content;
   width: 100%;
-  overflow: visible;
-  padding: 6% 4% 4% 8%;
+  overflow: hidden;
+  padding: 8% 12% 4% 4%;
+  // padding: 4% 4% 4% 12%;
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
-  box-shadow: var(--sha-3xs);
+  background-color: var(--tint-2xdark);
+  @include glass.glass-no-bevel;
 
-  @include bp(sm) {
-    padding: 6% 4% 4% 12%;
+  &:active {
+    padding: 8%;
   }
 
-  &:hover {
-    padding: 4.5%;
+  @include bp(lg) {
+
+    &:hover, :focus, :active {
+      padding: 8%;
+    }
   }
 
   & > p {
-    padding: var(--3xs) ;
+// background-color: rgba(255, 192, 203, 0.2);
+    padding: var(--2xs);
     pointer-events: none;
-
-    @include bp(sm) {
-      padding: var(--2xs) ;
-    }
   }
 }
+
+/* tele-rects MAP */
+/* ================================================== */
+// $tele-rects: (
+//   "xs":  var(--bevel-xs),
+//   "sm":  var(--bevel-sm),
+//   "md":  var(--bevel-md),
+//   "lg":  var(--bevel-lg),
+//   "xl":  var(--bevel-xl),
+// );
+
+
+// @mixin tele-rect {
+//   @each $key, $value in $tele-rects {
+//     &-#{$key} {
+//       @include tele-rect-base;
+
+//       &::after {
+//         @include pseudo;
+//         z-index: 3;
+//         // overflow: hidden;
+//         -webkit-transform: translate3d(0,0,0);
+//         transform: translate3d(0,0,0);
+//         box-shadow: $value;
+//       }
+//     }
+//   }
+// }
+
+
+// /* tele-rect classes */
+// .tele-rect {
+//   @include tele-rect;
+// }
+
+
+//  {
+//   min-width: fit-content;
+//   width: 100%;
+//   overflow: visible;
+//   padding: 4% 4% 4% 11%;
+//   will-change: padding;
+//   transition: padding $smooth-cubic $speed-xfast;
+//   // box-shadow: var(--sha-3xs);
+
+//   @include bp(sm) {
+//     padding: 4% 4% 4% 12%;
+//   }
+
+//   @include bp(lg) {
+//     &:hover {
+//       padding: 4.5%;
+//     }
+//   }
+
+//   & > p {
+//     padding: var(--3xs) ;
+//     pointer-events: none;
+
+//     @include bp(sm) {
+//       padding: var(--2xs) ;
+//     }
+//   }
+// }
+
 
 .big-title-bg {
   width: fit-content;
@@ -299,7 +407,7 @@
   aspect-ratio : 1 / 1;
   overflow: hidden;
   border-radius: var(--xs);
-  opacity: 0.8;
+  opacity: 0.85;
   box-shadow: var(--sha-md);
 
   @include bp(xs) {
