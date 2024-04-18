@@ -131,42 +131,9 @@ $sizes: (
   "2xl-3xl": --2xl-3xl,
 );
 
-/* Spacing variables */
+/* Ui height custom properties */
 /* ================================================== */
-  // $w-xs: 450px;
-  // $w-sm: 600px;
-  // $w-md: 800px;
-  // $w-lg: 960px;
-  // $w-xl: 1280px;
-
-  $moat-xs: 1rem;
-  $moat-md: 2rem;
-  $moat-xl: 5rem;
-
-  $w-xs: calc(bp.$bp-xs - ($moat-xs * 2));  /* 328px */
-  $w-sm: calc(bp.$bp-sm - ($moat-xs * 2));  /* 448px */
-  $w-md: calc(bp.$bp-md - ($moat-md * 2));  /* 704px */
-  $w-lg: calc(bp.$bp-lg - ($moat-md * 2));  /* 960px */
-  $w-xl: calc(bp.$bp-xl - ($moat-xl * 2));  /* 1280px */
-
 html {
-  --moat: 1rem;
---moat-xs: 1rem;
---moat-md: 2rem;
---moat-xl: 5rem;
-
-
-  --w-xs: calc(#{bp.$bp-xs} - (#{$moat-xs} * 2));  /* 328px */
-  --w-sm: calc(#{bp.$bp-sm} - (#{$moat-xs} * 2));  /* 448px */
-  --w-md: calc(#{bp.$bp-md} - (#{$moat-md} * 2));  /* 704px */
-  --w-lg: calc(#{bp.$bp-lg} - (#{$moat-md} * 2));  /* 960px */
-  --w-xl: calc(#{bp.$bp-xl} - (#{$moat-xl} * 2));  /* 1280px */
-  // --max-w-xs: 450px;
-  // --max-w-sm: 600px;
-  // --max-w-md: 800px;
-  // --max-w-lg: 960px;
-  // --max-w-xl: 1280px;
-
   --ui-h-sm: 1.625rem; /* 26px */
   --ui-h-md: 2rem;     /* 32px */
   --ui-h-lg: 2.5rem;   /* 40px */
@@ -177,116 +144,153 @@ html {
     --ui-h-lg: 2.75rem; /* 44px */
   }
 
-  @include bp.bp(md) {
-    --moat: 2rem;
-  }
-
   @include bp.bp(lg) {
     --ui-h-sm: 1.875rem; /* 30px */
-    --ui-h-md: 2.5rem; /* 40px */
+    --ui-h-md: 2.5rem;   /* 40px */
     --ui-h-lg: 2.875rem; /* 46px */
-  }
-
-  @include bp.bp(xl) {
-    --moat: 5rem;
   }
 }
 
-
-/* Max width classes */
 /* ================================================== */
-// .w-100px { width: 100px; }
-// .w-200px { width: 200px; }
+/* Moats */
+/* ================================================== */
+/* ℹ️ Add left-right padding starting from the breakpoint that matches the suffix */
+/* e.g. moat-md will add padding from $bp-md and bigger */
+/* 🚨 Moats must be used on the target element's parent! */
+/* ℹ️ Moats center their children */
+/* ℹ️ Moat suffix should to be smaller than or equal to it's child's max width */
+/* e.g. <div class="moat-sm">
+          <div class="w-md"></div>
+        </div> */
 
-// .w-xs { width: var(--w-xs); }
-// .w-sm { width: var(--w-sm); }
-// .w-md { width: var(--w-md); }
-// .w-lg { width: var(--w-lg); }
-// .w-xl { width: var(--w-xl); }
-
-.w-moat { width: $moat-xs; }
-
-.w-xs { width: min(100%, $w-xs); }
-.w-sm { width: min(100%, $w-sm); }
-.w-md { width: min(100%, $w-md); }
-.w-lg { width: min(100%, $w-lg); }
-.w-xl { width: min(100%, $w-xl); }
-
-
-
-
+/* Moat size variables */
+/* ================================================== */
+/* ✨ Config these values ✨ */
+$moat-xs: 1rem; /* used by $bp-xs & $bp-sm & smaller */
+$moat-md: 2rem; /* used by $bp-md & $bp-lg */
+$moat-xl: 5rem; /* used by $bp-xl & bigger */
 
 /* Moat classes */
 /* ================================================== */
-/* wrap elements to add or remove left-right padding  */
-/* adds padding starting from the breakpoint value that match the suffix */
-/* use with w-xs - w-xl as children */
-/* select a moat value that is smaller than the element's max width else it will have no effect */
 @mixin moat {
   // width: 100%;
   z-index: z.z("section");
-  // display: grid;
-  // place-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-background-color: rgba(0, 0, 255, 0.468);
+  display: grid;
+  place-items: center;
 
-&>* {
-background-color: rgba(255, 0, 136, 0.468);
-}
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+// background-color: rgba(0, 0, 255, 0.468);
+
+// &>* {
+// background-color: rgba(255, 0, 136, 0.468);
+// }
 }
 
 .moat-all {
   @include moat;
-  padding: 0 var(--moat);
+  padding-left: $moat-xs;
+  padding-right: $moat-xs;
+
+  @include bp.bp(md) {
+    padding-left: $moat-md;
+    padding-right: $moat-md;
+  }
+
+  @include bp.bp(xl) {
+    padding-left: $moat-xl;
+    padding-right: $moat-xl;
+  }
 }
 
 .moat-xs {
   @include moat;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include bp.bp(xs) {
-    padding: 0 var(--moat);
+    padding-left: $moat-xs;
+    padding-right: $moat-xs;
   }
 }
 
 .moat-sm {
   @include moat;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include bp.bp(sm) {
-    padding: 0 var(--moat);
+    padding-left: $moat-xs;
+    padding-right: $moat-xs;
   }
 }
 
 .moat-md {
   @include moat;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include bp.bp(md) {
-    padding: 0 var(--moat);
+    padding-left: $moat-md;
+    padding-right: $moat-md;
   }
 }
 
 .moat-lg {
   @include moat;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include bp.bp(lg) {
-    padding: 0 var(--moat);
+    padding-left: $moat-md;
+    padding-right: $moat-md;
   }
 }
 
 .moat-xl {
   @include moat;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include bp.bp(xl) {
-    padding: 0 var(--moat);
+    padding-left: $moat-xl;
+    padding-right: $moat-xl;
   }
 }
 
+/* ================================================== */
+/* Width */
+/* ================================================== */
+/* ℹ️ Limit the maximum width of elements */
+/* ℹ️ Fill 100% of parent's width up to suff breakpoint */
+/* ℹ️ Wrap with a moat classe to add left-right padding and center */
+
+/* Width variables */
+/* ================================================== */
+// $w-xs: calc(bp.$bp-xs - ($moat-xs * 2));  /* 328px */
+// $w-sm: calc(bp.$bp-sm - ($moat-xs * 2));  /* 448px */
+// $w-md: calc(bp.$bp-md - ($moat-md * 2));  /* 704px */
+// $w-lg: calc(bp.$bp-lg - ($moat-md * 2));  /* 960px */
+// $w-xl: calc(bp.$bp-xl - ($moat-xl * 2));  /* 1280px */
+
+/* Width classes */
+/* ================================================== */
+// .w-xs { width: min(100%, $w-xs); }
+// .w-sm { width: min(100%, $w-sm); }
+// .w-md { width: min(100%, $w-md); }
+// .w-lg { width: min(100%, $w-lg); }
+// .w-xl { width: min(100%, $w-xl); }
+
+.w-xs { width: min(100%, bp.$bp-xs); }
+.w-sm { width: min(100%, bp.$bp-sm); }
+.w-md { width: min(100%, bp.$bp-md); }
+.w-lg { width: min(100%, bp.$bp-lg); }
+.w-xl { width: min(100%, bp.$bp-xl); }
+
+// .w-100px { width: 100px; }
+// .w-200px { width: 200px; }
 
 /* Spacing */
 /* ================================================== */
