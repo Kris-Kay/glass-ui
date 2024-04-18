@@ -121,10 +121,14 @@ textarea {
 .class-name {
   font-weight: $font-weight-md;
   font-family: $font-family-body;
-  font-size: var(--text-md);
   letter-spacing: $letter-spacing-lg;
   text-shadow: var(--text-sha-sm);
   word-break: keep-all;
+  font-size: var(--text-sm);
+
+  @include bp.bp(sm) {
+    font-size: var(--text-md);
+  }
 }
 
 .input-label {

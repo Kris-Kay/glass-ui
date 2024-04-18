@@ -229,16 +229,16 @@ $saturate-base: 1.2;
 
 @container (width >= 300px) {
   .glass-3d-q {
-    @include glass-3d-sm;
+    @include glass-3d-md;
     // background-color: rgba(255, 255, 0, 0.5);
   }
 
   .glass-flat-q{
-    @include glass-flat-sm;
+    @include glass-flat-md;
   }
 
   .glass-no-bevel {
-    @include glass-3d-sm;
+    @include glass-3d-md;
 
     &::after {
       box-shadow: none;

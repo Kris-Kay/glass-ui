@@ -27,14 +27,19 @@
   @include flex-c;
 }
 
+.flex-column-c {
+  @include flex-c;
+  flex-direction: column;
+}
+
 /* flex-direction: */
 /* ================================================== */
-.flex-col {
+.flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.flex-col-rev {
+.flex-column-rev {
   display: flex;
   flex-direction: column-reverse;
 }

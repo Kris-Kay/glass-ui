@@ -119,6 +119,10 @@
 
 .card-space-thin {
   --space: 6cqw;
+
+  @include bp(lg) {
+    --space: 7cqw;
+  }
 }
 
 .card-space-base {
@@ -130,10 +134,18 @@
 }
 
 .card-space-wide {
-  --space: 8cqw;
+  --space: 10cqw;
 
-  @include bp(xs) {
-    --space: 12cqw;
+  // @include bp(xs) {
+  //   --space: 9cqw;
+  // }
+
+  // @include bp(xl) {
+  //   --space: 10cqw;
+  // }
+
+  @include bp(xl) {
+    --space: 80px;
   }
 }
 

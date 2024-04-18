@@ -11,7 +11,7 @@
   height: fit-content;
   display: grid;
   margin: var(--nav-h) auto 0 auto;
-  max-width: $w-xl;
+  max-width: bp.$bp-xl;
   --clear-tabs: calc( (var(--ui-h-md)) + 8rem + calc(var(--sm) * 2));
   padding: 0 var(--moat) var(--clear-tabs) var(--moat);
 
@@ -33,7 +33,7 @@
   }
 
   @include bp.bp(md) {
-    max-width: $w-xl;
+    max-width: bp.$bp-xl;
   }
 
   @include bp.bp(xl) {

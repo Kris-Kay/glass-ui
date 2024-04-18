@@ -113,11 +113,11 @@
   --tint-3xlight: oklch(var(--neutral-95) / 0.4);
   --tint-2xlight: oklch(var(--neutral-95) / 0.3);
   --tint-xlight:  oklch(var(--neutral-95) / 0.2);
-  --tint-light:   oklch(var(--neutral-95) / 0.05);
+  --tint-light:   oklch(var(--neutral-95) / 0.1);
   --tint-clear:   oklch(var(--neutral-10) / 0.01);
   --tint-dark:    oklch(var(--neutral-10) / 0.1);
-  --tint-xdark:   oklch(var(--neutral-10) / 0.2);
-  --tint-2xdark:  oklch(var(--neutral-10) / 0.3);
+  --tint-xdark:   oklch(var(--neutral-10) / 0.25);
+  --tint-2xdark:  oklch(var(--neutral-10) / 0.4);
   --tint-3xdark:  oklch(var(--neutral-10) / 0.6);
 
   /* Inset bg colors */
@@ -153,11 +153,11 @@
   --tint-2xlight: oklch(var(--neutral-95) / 0.5);
   --tint-xlight:  oklch(var(--neutral-95) / 0.4);
   --tint-light:   oklch(var(--neutral-95) / 0.3);
-  --tint-clear:   oklch(var(--neutral-10) / 0.05);
-  --tint-dark:    oklch(var(--neutral-10) / 0.4);
-  --tint-xdark:   oklch(var(--neutral-10) / 0.5);
+  --tint-clear:   oklch(var(--neutral-10) / 0.01);
+  --tint-dark:    oklch(var(--neutral-10) / 0.2);
+  --tint-xdark:   oklch(var(--neutral-10) / 0.4);
   --tint-2xdark:  oklch(var(--neutral-10) / 0.6);
-  --tint-3xdark:  oklch(var(--neutral-10) / 0.7);
+  --tint-3xdark:  oklch(var(--neutral-10) / 0.8);
 
   /* Inset bg colors */
   /* ================================================== */
