@@ -3,17 +3,6 @@
 @use "../2-util/layout-help" as lh;
 /* ================================================== */
 
-.bevel-demo {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: max-content;
-  border-radius: var(--lg);
-  padding: var(--2xl);
-  color: white;
-  display: grid;
-}
-
 /* Curved bevels */
 /* ================================================== */
   //  top-left specular
@@ -25,44 +14,54 @@
 
 html {
   --bevel-xs:
-  inset 1px 1px 0.5px -1.5px oklch(var(--highlight) / 0.5),
-  inset 1.5px 1.5px 0.75px -2.75px oklch(var(--highlight) / 0.9),
-  inset -1.5px -1.5px 0.75px -2.75px oklch(var(--highlight) / 0.2),
+  inset 1px 1px 0.5px -1.5px oklch(var(--highlight) / 0.7),
+  inset 1.5px 1.5px 0.75px -2.75px oklch(var(--highlight) / 0.5),
+
   inset 0.25px 0.25px 0.5px -0.25px oklch(var(--highlight) / 0.15),
-  inset 0.25px 0.25px 0.25px  oklch(var(--highlight) / 0.05),
+  inset 0.25px 0.25px 0.25px  oklch(var(--highlight) / 0.08),
   inset 0 0 0.25px 0.25px  oklch(var(--highlight) / 0.03);
 
+  // inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
+
   --bevel-sm:
-  inset 1.5px 1.5px 0.75px -2.75px oklch(var(--highlight) / 0.8),
-  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.8),
-  inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
-  inset 0.5px 0.5px 0.5px -0.25px oklch(var(--highlight) / 0.15),
+  inset 1.5px 1.5px 0.75px -2.75px oklch(var(--highlight) / 0.9),
+  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.7),
+
+  inset 0.5px 0.5px 0.5px -0.25px oklch(var(--highlight) / 0.1),
   inset 0.5px 0.5px 0.25px  oklch(var(--highlight) / 0.05),
   inset 0 0 0.25px 0.25px  oklch(var(--highlight) / 0.03);
 
+  // inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
+
+
   --bevel-md:
-  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.9),
-  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.7),
-  inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
+  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.8),
+  inset 2px 2px 1px -3px oklch(var(--highlight) / 0.5),
   inset 1px 1px 1px -0.5px oklch(var(--highlight) / 0.15),
   inset 1px 1px 0.25px  oklch(var(--highlight) / 0.03),
-  inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.02);
+  inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.03);
+
+  // inset -2px -2px 1px -3px oklch(var(--highlight) / 0.1),
 
   --bevel-lg:
   inset 2px 2px 1px -3px oklch(var(--highlight) / 0.8),
   inset 3px 3px 1.5px -4.5px oklch(var(--highlight) / 0.5),
-  inset -3px -3px 1.5px -4.5px oklch(var(--highlight) / 0.1),
   inset 1.25px 1.25px 1.25px -0.75px oklch(var(--highlight) / 0.15),
   inset 1.25px 1.25px 0.25px  oklch(var(--highlight) / 0.03),
-  inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.02);
+  inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.03);
+
+  // inset -3px -3px 1.5px -4.5px oklch(var(--highlight) / 0.1),
+
 
   --bevel-xl:
-    inset 2px 2px 1px -3px oklch(var(--highlight) / 0.9),
-    inset 4px 4px 2px -6px oklch(var(--highlight) / 0.5),
-    inset -4px -4px 2px -6px oklch(var(--highlight) / 0.1),
+    inset 2px 2px 1px -3px oklch(var(--highlight) / 0.8),
+    inset 4px 4px 2px -6px oklch(var(--highlight) / 0.3),
     inset 1.5px 1.5px 1.5px -0.75px oklch(var(--highlight) / 0.15),
     inset 1.5px 1.5px 0.25px  oklch(var(--highlight) / 0.03),
-    inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.02);
+    inset 0 0 0.25px 0.5px  oklch(var(--highlight) / 0.03);
+
+    // inset -4px -4px 2px -6px oklch(var(--highlight) / 0.1),
+
 
 
 /* Flat bevels */
