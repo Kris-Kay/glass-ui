@@ -102,6 +102,7 @@
   gap: var(--_space);
   padding: var(--_space);
   box-shadow: var(--sha-sm);
+  // border-radius: 2cqmax;
 }
 
 .card-q {
@@ -118,10 +119,6 @@
 
 .card-space-thin {
   --space: 6cqw;
-
-  @include bp(lg) {
-    --space: 7cqw;
-  }
 }
 
 .card-space-base {
@@ -190,47 +187,59 @@ width: calc(100% + var(--_space) * 2);
 @mixin card-title {
   font-family: $font-family-title;
   letter-spacing: $letter-spacing-md;
-  line-height: 1.2;
-  color: var(--text-xstrong);
+  // line-height: 1.2;
+  color: var(--text-base);
   text-align: center;
 }
 
 .card-title-lg {
   @include card-title;
-  font-weight: $font-weight-xs;
-  text-shadow: var(--text-sha-xl);
-  font-size: var(--text-2xl);
+  font-weight: $font-weight-sm;
+  text-shadow: var(--text-sha-lg);
+  font-size: var(--text-3xl);
+  line-height: 1;
+// color: red;
 }
 
 .card-title-md {
   @include card-title;
-  font-weight: $font-weight-xs;
-  text-shadow: var(--text-sha-lg);
+  font-weight: $font-weight-md;
+  text-shadow: var(--text-sha-md);
   font-size: var(--text-xl);
+// color: blue;
+}
+
+.card-title-sm {
+  @include card-title;
+  font-weight: $font-weight-md;
+  text-shadow: var(--text-sha-sm);
+  font-size: var(--text-lg);
+// color: purple;
 }
 
 .card-subtitle {
   font-family: $font-family-body;
   font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
+  letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
   text-align: center;
-  color: var(--text-mild);
-  text-shadow: var(--text-sha-sm);
+  color: var(--text-base);
+// color:  green;
+  text-shadow: var(--text-sha-3xs);
   font-size: var(--text-sm);
 }
 
 .title-group-lg {
   display: flex;
   flex-direction: column;
-  gap: var(--4xs);
+  gap: var(--xs);
 }
 
 
 
 /* Card Container queries */
 /* ================================================== */
-@container (width < 450px) {
+@container (width < 300px) {
   .card-q {
     @include radius("lg");
     // background-color: rgba(255, 0, 0, 0.5);
@@ -241,10 +250,21 @@ width: calc(100% + var(--_space) * 2);
   }
 }
 
+@container (width >= 300px) {
+  .card-q {
+    @include radius("lg");
+    // background-color: rgba(255, 255, 0, 0.5);
+  }
+
+  .card-subtitle {
+    font-size: var(--text-xs);
+  }
+}
+
 @container (width >= 450px) {
   .card-q {
-    @include radius("xl");
-    // background-color: rgba(252, 174, 5, 0.5);
+    @include radius("lg");
+    // background-color: rgba(0, 255, 0, 0.5);
   }
 
   // .card-subtitle {
@@ -254,8 +274,8 @@ width: calc(100% + var(--_space) * 2);
 
 @container (width >= 600px) {
   .card-q {
-    @include radius("lg");
-    // background-color: rgba(200, 227, 5, 0.5);
+    @include radius("xl");
+    // background-color: rgba(0, 0, 255, 0.5);
   }
 
   .card-subtitle {
@@ -266,19 +286,31 @@ width: calc(100% + var(--_space) * 2);
 @container (width >= 800px) {
   .card-q {
     @include radius("xl");
-    // background-color: rgba(0, 33, 220, 0.5);
   }
 }
 
 @container (width >= 960px) {
   .card-q {
     @include radius("xl");
-    // background-color: rgba(0, 33, 220, 0.5);
   }
 }
 
-@container (width >= 97vw) {
+@container (width >= 99vw) {
+  .card-q {
+    border-radius: 0;
+    // background-color: rgba(255, 0, 255, 0.5);
+  }
+
   .e2e-inset {
     margin-left: var(--_neg-space);
   }
+}
+
+
+
+
+/* Card-glass container query container */
+/* ================================================== */
+.glass-co {
+  container-type: inline-size;
 }
