@@ -14,7 +14,8 @@
 /* Global nav height */
 /* ================================================== */
 :root {
-  --nav-h: calc(var(--ui-h-md) + (var(--moat) * 2));
+  --nav-padding: 1rem;
+  --nav-h: calc(var(--ui-h-md) + (var(--nav-padding) * 2));
 }
 
 .main-nav-bin {
@@ -22,12 +23,12 @@
   z-index: z.z(nav);
   height: var(--nav-h);
   inset: 0;
-  padding: var(--moat);
+  padding: var(--nav-padding);
 }
 
 .main-nav {
   width: 100%;
-  max-width: bp.$bp-lg;
+  max-width: bp.$bp-xl;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,13 +36,13 @@
   gap: var(--3xs);
   margin: 0 auto;
 
-  @include bp.bp(lg) {
-    max-width: calc(bp.$bp-lg + (var(--ui-h-md) * 2) + 6rem);
-  }
+  // @include bp.bp(lg) {
+  //   max-width: calc(bp.$bp-lg + (var(--ui-h-md) * 2) + 6rem);
+  // }
 
-  @include bp.bp(xl) {
-    max-width: bp.$bp-xl ;
-  }
+  // @include bp.bp(xl) {
+  //   max-width: bp.$bp-xl ;
+  // }
 }
 
 /* Dropdown */
@@ -95,39 +96,4 @@
 
   pointer-events: auto;
   cursor: pointer;
-}
-
-/* Tab menu */
-
-/* ================================================== */
-
-.bottom-tab-menu-bin {
-  position: fixed;
-  z-index: z.z(nav);
-  left: 0;
-  right: 0;
-  bottom: 3rem;
-
-  display: grid;
-  place-items: end center;
-
-  pointer-events: none;
-  // @include bp.bp(sm) {
-  //   place-items: end start;
-  //   padding-left: var(--moat);
-  // }
-}
-
-.bottom-tab-menu {
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  place-items: center;
-  box-shadow: var(--sha-lg);
-  @include r.radius("sm");
-  padding: var(--sm);
-
-  // @include bp.bp(sm) {
-  //   padding: var(--md) var(--lg);
-  // }
 }
