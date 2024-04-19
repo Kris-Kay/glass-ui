@@ -79,7 +79,7 @@
   // @include outer-radius (var(--tab-radius), var(--tab-menu-space));
 border-radius: inherit;
   background-color: var(--inset-bg-deep);
-  box-shadow: var(--inset-lg);
+  box-shadow: var(--inset-md);
 
   // @include bp(xs) {
   //   // --tab-menu-h: var(--ui-h-lg);
