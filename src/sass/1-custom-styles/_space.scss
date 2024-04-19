@@ -136,18 +136,18 @@ $sizes: (
 html {
   --ui-h-sm: 1.625rem; /* 26px */
   --ui-h-md: 2rem;     /* 32px */
-  --ui-h-lg: 2.5rem;   /* 40px */
+  --ui-h-lg: 2.375rem;   /* 38px */
 
   @include bp.bp(xs) {
     --ui-h-sm: 1.75rem; /* 28px */
     --ui-h-md: 2.25rem; /* 36px */
-    --ui-h-lg: 2.75rem; /* 44px */
+    --ui-h-lg: 2.5rem; /* 40px */
   }
 
   @include bp.bp(lg) {
     --ui-h-sm: 1.875rem; /* 30px */
     --ui-h-md: 2.5rem;   /* 40px */
-    --ui-h-lg: 2.875rem; /* 46px */
+    --ui-h-lg: 3rem;    /* 48px */
   }
 }
 

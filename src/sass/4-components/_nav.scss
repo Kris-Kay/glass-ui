@@ -15,7 +15,7 @@
 /* ================================================== */
 :root {
   --nav-padding: 1rem;
-  --nav-h: calc(var(--ui-h-md) + (var(--nav-padding) * 2));
+  --nav-h: calc(var(--ui-h-lg) + (var(--nav-padding) * 2));
 }
 
 .main-nav-bin {
@@ -37,7 +37,7 @@
   margin: 0 auto;
 
   // @include bp.bp(lg) {
-  //   max-width: calc(bp.$bp-lg + (var(--ui-h-md) * 2) + 6rem);
+  //   max-width: calc(bp.$bp-lg + (var(--ui-h-lg) * 2) + 6rem);
   // }
 
   // @include bp.bp(xl) {
@@ -67,7 +67,7 @@
   width: fit-content;
   height: fit-content;
   position: absolute;
-  top: calc(var(--ui-h-md) * 1.3);
+  top: calc(var(--ui-h-lg) * 1.2);
   right: 0;
   padding: var(--sm);
   pointer-events: none;

@@ -9,6 +9,8 @@
 /* Values for backdrop-filter: */
 /* ================================================== */
 /* ✨ Config these values ✨ */
+$blur-2xs: 2px;
+$blur-xs: 3px;
 $blur-sm: 15px;
 $blur-md: 56px;
 $blur-lg: 80px;
@@ -53,7 +55,7 @@ $saturate-base: 1.2;
 
 @mixin noise-rough-lg {
   background-repeat: repeat;
-  background-size: 50px 50px;
+  background-size: 200px 200px;
   background-image: url(/assets/textures/noise-texture-rough-gray-500x500.png);
 }
 

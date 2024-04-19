@@ -20,8 +20,7 @@
   object-position: center;
 }
 
-.tab-menu {
-  // --tab-menu-h: var(--ui-h-sm);
+.tab-menu-bin {
   --tab-menu-space: 4px;
   --tab-radius: 7px;
 
@@ -30,19 +29,60 @@
   width: fit-content;
   max-width: 100%;
   min-height: fit-content;
-  height: var(--ui-h-md);
+  height: var(--ui-h-lg);
+  overflow: hidden;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // gap: calc(var(--tab-menu-space) * 2);
+  // margin: 0 auto;
+  // padding: var(--tab-menu-space);
+  @include outer-radius (var(--tab-radius), var(--tab-menu-space));
+  // background-color: var(--inset-bg-deep);
+  // box-shadow: var(--inset-lg);
+
+  // @include bp(xs) {
+  //   // --tab-menu-h: var(--ui-h-lg);
+  //   --tab-menu-space: 5px;
+  //   --tab-radius: 7px;
+  // }
+
+  // @include bp(sm) {
+  //   --tab-menu-space: 6px;
+  //   --tab-radius: 9px;
+  // }
+
+  @include bp(md) {
+    --tab-menu-space: 5px;
+    --tab-radius: 9px;
+  }
+}
+
+
+
+.tab-menu {
+  // --tab-menu-space: 4px;
+  // --tab-radius: 7px;
+
+  position: relative;
+  // z-index: z(nav);
+  width: fit-content;
+  max-width: 100%;
+  min-height: fit-content;
+  height: var(--ui-h-lg);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: calc(var(--tab-menu-space) * 2);
   margin: 0 auto;
   padding: var(--tab-menu-space);
-  @include outer-radius (var(--tab-radius), var(--tab-menu-space));
+  // @include outer-radius (var(--tab-radius), var(--tab-menu-space));
+border-radius: inherit;
   background-color: var(--inset-bg-deep);
   box-shadow: var(--inset-lg);
 
   // @include bp(xs) {
-  //   // --tab-menu-h: var(--ui-h-md);
+  //   // --tab-menu-h: var(--ui-h-lg);
   //   --tab-menu-space: 5px;
   //   --tab-radius: 7px;
   // }
@@ -53,8 +93,8 @@
   // }
 
   // @include bp(md) {
-  //   --tab-menu-space: 6px;
-  //   --tab-radius: 8px;
+  //   --tab-menu-space: 5px;
+  //   --tab-radius: 9px;
   // }
 }
 
@@ -81,7 +121,7 @@
 
   @include bp(xs) {
     --content-h: 1rem;
-    --tab-padding: 0 0.9rem;
+    --tab-padding: 0 0.95rem;
   }
 
   // @include bp(sm) {
@@ -89,10 +129,15 @@
   //   --tab-padding: 0 1.3rem;
   // }
 
-  @include bp(xl) {
+  @include bp(lg) {
     --content-h: 1.1rem;
-    --tab-padding: 0 1.2rem;
+    --tab-padding: 0 1.8rem;
   }
+
+  // @include bp(xl) {
+  //   --content-h: 1.1rem;
+  //   --tab-padding: 0 1.2rem;
+  // }
 }
 
 [role="tab"][aria-selected="true"] {

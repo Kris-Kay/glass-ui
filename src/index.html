@@ -28,8 +28,8 @@
 <!-- Body -->
 <!-- ========================================== -->
 <body id="top-of-page">
-  <div class="page-bg-bin">
-    <div class="page-bg-panel"
+  <div class="page-bg-bin ">
+    <div class="page-bg-panel page-bg-noise"
       id="panel-1"
       role="tabpanel"
       tabindex="-1"
@@ -49,7 +49,7 @@
       >
     </div>
 
-    <div class="page-bg-panel"
+    <div class="page-bg-panel "
       id="panel-2"
       role="tabpanel"
       tabindex="-1"
@@ -70,7 +70,7 @@
       >
     </div>
 
-    <div class="page-bg-panel"
+    <div class="page-bg-panel page-bg-blur3"
       id="panel-3"
       role="tabpanel"
       tabindex="-1"
@@ -103,7 +103,7 @@
     <nav class="main-nav-bin">
       <div class="main-nav">
         <!-- Theme toggle -->
-        <button class="js-themeToggle btn-round-md btn-secondary"
+        <button class="js-themeToggle btn-round-lg btn-secondary"
           type="button">
 
           <svg class="svg-circleHalf"
@@ -128,41 +128,44 @@
         </button>
 
     <!-- BG Tabs menu -->
-        <div class="js-tabMenu tab-menu glass-3d-md tint-clear"
-          role="tablist"
-          aria-label="Background image tabs"
-          >
-          <button
-            role="tab"
-            aria-selected="true"
-            aria-controls="panel-1"
-            id="tab-1"
-            tabindex="0">
-            Dark
-          </button>
+        <div class="tab-menu-bin">
+          <div class="js-tabMenu tab-menu glass-3d-md tint-clear"
+            role="tablist"
+            aria-label="Background image tabs"
+            >
+            <button
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-1"
+              id="tab-1"
+              tabindex="0">
+              Dark
+            </button>
 
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-2"
-            id="tab-2"
-            tabindex="-1">
-            Light
-          </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-2"
+              id="tab-2"
+              tabindex="-1">
+              Light
+            </button>
 
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-3"
-            id="tab-3"
-            tabindex="-1">
-            Color
-          </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-3"
+              id="tab-3"
+              tabindex="-1">
+              Color
+            </button>
+          </div>
         </div>
+
 
         <!-- Dropdown -->
         <div class="dropdown">
-          <button class="btn-round-md btn-secondary"
+          <button class="btn-round-lg btn-secondary"
             type="button"
             id="js-dropdownToggle">
 
