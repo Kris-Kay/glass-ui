@@ -72,3 +72,17 @@ body {
   color: white;
   display: grid;
 }
+
+.inset-demo-bin {
+  width: 100%;
+  border-radius: var(--xs);
+  overflow: hidden;
+}
+
+.inset-demo {
+  width: 100%;
+  height: fit-content;
+
+  border-radius: inherit;
+  background-color: var(--inset-bg-deep);
+}
