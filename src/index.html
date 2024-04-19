@@ -32,12 +32,11 @@
     <div class="page-bg-panel"
       id="panel-1"
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby="tab-1"
-      hidden
     >
       <img class="page-bg-img"
-        fetchpriority="low"
+        fetchpriority="high"
         width="1024"
         height="1517"
         src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
@@ -53,11 +52,12 @@
     <div class="page-bg-panel"
       id="panel-2"
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby="tab-2"
+      hidden
     >
       <img class="page-bg-img"
-        fetchpriority="high"
+        fetchpriority="low"
         width="1024"
         height="1365"
         src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
@@ -73,7 +73,7 @@
     <div class="page-bg-panel"
       id="panel-3"
       role="tabpanel"
-      tabindex="0"
+      tabindex="-1"
       aria-labelledby="tab-3"
       hidden
     >
@@ -93,6 +93,11 @@
   </div>
 
   <div class="body-grid">
+
+    <!-- Page content -->
+    <!-- ========================================== -->
+    <div id="content" class="content-bin"></div>
+
     <!-- Nav -->
     <!-- ========================================== -->
     <nav class="main-nav-bin">
@@ -123,28 +128,25 @@
         </button>
 
     <!-- BG Tabs menu -->
-    <!-- <div class="bottom-tab-menu-bin"> -->
-      <!-- <div class="bottom-tab-menu glass-3d-md tint-clear"> -->
         <div class="js-tabMenu tab-menu glass-3d-md tint-clear"
           role="tablist"
           aria-label="Background image tabs"
           >
-
           <button
             role="tab"
-            aria-selected="false"
+            aria-selected="true"
             aria-controls="panel-1"
             id="tab-1"
-            tabindex="-1">
+            tabindex="0">
             Dark
           </button>
 
           <button
             role="tab"
-            aria-selected="true"
+            aria-selected="false"
             aria-controls="panel-2"
             id="tab-2"
-            tabindex="0">
+            tabindex="-1">
             Light
           </button>
 
@@ -157,8 +159,6 @@
             Color
           </button>
         </div>
-      <!-- </div> -->
-    <!-- </div> -->
 
         <!-- Dropdown -->
         <div class="dropdown">
@@ -221,48 +221,6 @@
         </div>
       </div>
     </nav>
-
-    <!-- Page content -->
-    <!-- ========================================== -->
-    <div id="content" class="content-bin"></div>
-
-    <!-- BG Tabs menu -->
-    <!-- <div class="bottom-tab-menu-bin">
-      <div class="bottom-tab-menu glass-3d-md tint-clear">
-        <div class="js-tabMenu tab-menu"
-          role="tablist"
-          aria-label="Background image tabs"
-          >
-
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-1"
-            id="tab-1"
-            tabindex="-1">
-            Dark
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="true"
-            aria-controls="panel-2"
-            id="tab-2"
-            tabindex="0">
-            Light
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-3"
-            id="tab-3"
-            tabindex="-1">
-            Color
-          </button>
-        </div>
-      </div>
-    </div> -->
 
   </div>
 
