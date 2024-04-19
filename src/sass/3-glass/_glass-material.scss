@@ -205,10 +205,18 @@ $saturate-base: 1.2;
 
 .glass-no-bevel { @include glass-no-bevel; }
 
+
+/* Card-glass container query container */
+/* ================================================== */
+.glass-co {
+  container-type: inline-size;
+}
+
+
 /* ================================================== */
 /* Container query */
 /* ================================================== */
-@container (width < 300px) {
+@container (width < 360px) {
   .glass-3d-q {
     @include glass-3d-sm;
     // background-color: rgba(255, 0, 0, 0.5);
@@ -227,7 +235,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 300px) {
+@container (width >= 360px) {
   .glass-3d-q {
     @include glass-3d-md;
     // background-color: rgba(255, 255, 0, 0.5);
@@ -246,7 +254,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 450px) {
+@container (width >= 480px) {
   .glass-3d-q {
     @include glass-3d-md;
     // background-color: rgba(0, 255, 0, 0.5);
@@ -265,7 +273,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 600px) {
+@container (width >= 768px) {
   .glass-3d-q {
     @include glass-3d-lg;
     // background-color: rgba(0, 0, 255, 0.5);
@@ -284,15 +292,11 @@ $saturate-base: 1.2;
   }
 }
 
-// @container (width >= 800px) {
+// @container (width >= 1024px) {
 
 // }
 
-// @container (width >= 960px) {
-
-// }
-
-// @container (width >= 1280px) {
+// @container (width >= 1440px) {
 
 // }
 
