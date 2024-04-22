@@ -9,107 +9,72 @@
 /* ✨ Config these values ✨ */
 /* ================================================== */
 @mixin input-base {
-  --rest-bg: var(--inset-bg-deep);
-  --rest-inset: var(--inset-lg);
-  --rest-hover-bg: var(--tint-3xdark);
-  --rest-knob: oklch(var(--neutral-85) / 0.9);
+  --input-h: var(--ui-h-sm);
 
-  --active-bg: oklch(var(--primary-70) / 1);
-  --active-inset: var(--inset-md);
-  --active-hover-bg: oklch(var(--primary-60) / 1);
-  --active-knob-sha: var(--sha-xs);
+  --bg: var(--inset-bg-deep);
+  --bg-hover: var(--tint-2xdark);
+  --inset: var(--inset-sm);
+  --knob: oklch(var(--neutral-85) / 0.9);
+  --knob-sha: var(--sha-xs);
 
-  --disabled-bg: var(--inset-bg-xdeep);
-  --disabled-checked-bg: oklch(var(--primary-70) / 0.5);
-  --disabled-inset: none;
-  --disabled-text: var(--text-xmild);
-  --disabled-knob: oklch(var(--neutral-90) / 0.25);
-  --disabled-knob-sha: none;
+  --bg-checked: oklch(var(--primary-70) / 1);
+  --bg-checked-hover: oklch(var(--primary-60) / 1);
 
-  --border: transparent;
-  --border-hover: oklch(var(--primary-70) / 0.4);
+  --bg-disabled: var(--inset-bg-xdeep);
+  --inset-disabled: none;
+  --knob-disabled: oklch(var(--neutral-90) / 0.25);
+  --knob-disabled-sha: none;
 
+  --bg-disabled-checked: oklch(var(--primary-70) / 0.4);
+
+  position: relative;
   z-index: z(input);
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--bg);
+  box-shadow: var(--inset);
   will-change: background-color;
-  transition: background-color $speed-xslow $smooth-cubic;
+  transition: background-color $speed-slow $smooth-cubic;
 
   &::after {
     @include pseudo;
+    z-index: z(on-input);
     overflow: hidden;
   }
 
-  &:hover {
-    background-color: var(--rest-hover-bg);
+  @media (pointer: fine) {
+    &:hover {
+      background-color: var(--bg-hover);
+    }
+  }
+
+  &:checked {
+    background-color: var(--bg-checked);
+
+    &:hover {
+      background-color: var(--bg-checked-hover);
+    }
   }
 
   &:disabled {
     cursor: not-allowed;
-    background-color: var(--disabled-bg);
-    box-shadow: var(--disabled-inset);
+    background-color: var(--bg-disabled);
+    box-shadow: var(--inset-disabled);
 
     & + label {
       color: var(--text-xmild);
     }
-  }
-
-  &:checked {
-    background-color: var(--active-bg);
-
-    &:hover {
-      background-color: var(--active-hover-bg);
-    }
-  }
-}
-
-/* Switch */
-/* ================================================== */
-input[type='checkbox'].switch {
-  --switch-height: var(--ui-h-sm);
-  --switch-width: calc(var(--switch-height) * 1.8);
-  --thumb-margin: 3.5px;
-
-  @include input-base;
-
-  position: relative;
-  display: inline-flex;
-  width: var(--switch-width);
-  height: var(--switch-height);
-  vertical-align: var(--thumb-margin);
-  align-items: center;
-  border-radius: 9999px;
-  background-color: var(--rest-bg);
-  box-shadow: var(--rest-inset);
-
-  &::after {
-    z-index: z(on-input);
-    display: block;
-    aspect-ratio: 1;
-    margin: var(--thumb-margin);
-    height: calc(100% - (2 * var(--thumb-margin)));
-    background-color: var(--rest-knob);
-    box-shadow: var(--active-knob-sha);
-    border-radius: 9999px;
-    transition: margin $speed-base $smooth-cubic;
-  }
-
-  &:checked {
 
     &::after {
-      margin-inline-start: calc(var(--switch-width) - var(--switch-height) + var(--thumb-margin));
-    }
-  }
-
-  &:disabled {
-
-    &::after {
-      background-color: var(--disabled-knob);
-      box-shadow: var(--disabled-knob-sha);
+      box-shadow: var(--knob-disabled-sha);
     }
 
     &:checked {
-      background-color: var(--disabled-checked-bg);
+      background-color: var(--bg-disabled-checked);
+
+      &::after {
+        box-shadow: var(--knob-disabled-sha);
+      }
     }
   }
 }
@@ -117,42 +82,49 @@ input[type='checkbox'].switch {
 /* Checkbox */
 /* ================================================== */
 input[type='checkbox'].checkbox {
-
   @include input-base;
+  width: var(--input-h);
+  height: var(--input-h);
+  border-radius: 0.5rem;
 
-  position: relative;
-  display: grid;
-  place-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--rest-bg);
-  box-shadow: var(--active-inset);
-  border-radius: 0.25rem;
+    &::after {
+      background-color: transparent;
+      box-shadow: none;
+    }
 
   &:checked {
     &::after {
-      z-index: z(on-input);
       border-radius: 0.05rem;
       width: 55%;
       height: 30%;
-      border: 3px solid var(--rest-knob);
+      border: 2.5px solid var(--knob);
       border-top: 0;
       border-right: 0;
       left: 23%;
-      top: 30%;
+      top: 32%;
       transform: rotate( -45deg);
-      background-color: transparent;
     }
   }
 
   &:disabled {
-    &:checked {
-      background-color: var(--disabled-checked-bg);
+    &::after {
+      border-radius: 0.05rem;
+      width: 80%;
+      height: 30%;
+      border-bottom: 2px solid var(--knob-disabled);
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      left: 0%;
+      top: 30%;
+      transform: rotate( -45deg);
+    }
 
+    &:checked {
       &::after {
         width: 55%;
-        height: 30%;
-        border: 3px solid var(--disabled-knob);
+        height: 32%;
+        border: 2.5px solid var(--knob-disabled);
         border-top: 0;
         border-right: 0;
         left: 23%;
@@ -160,60 +132,74 @@ input[type='checkbox'].checkbox {
       }
     }
   }
+}
+
+/* Switch */
+/* ================================================== */
+input[type='checkbox'].switch {
+  --switch-width: calc(var(--input-h) * 1.8);
+  --thumb-margin: 3.5px;
+
+  @include input-base;
+  display: inline-flex;
+  width: var(--switch-width);
+  height: var(--input-h);
+  align-items: center;
+  border-radius: 99px;
+
+    &::after {
+      display: block;
+      aspect-ratio: 1;
+      margin: var(--thumb-margin);
+      height: calc(100% - (2 * var(--thumb-margin)));
+      background-color: var(--knob);
+      box-shadow: var(--knob-sha);
+      border-radius: 99px;
+      transition: margin $speed-base $smooth-cubic;
+    }
+
+  &:checked {
+    &::after {
+      margin-inline-start: calc(var(--switch-width) - var(--input-h) + var(--thumb-margin));
+    }
+  }
 
   &:disabled {
     &::after {
-      z-index: z(on-input);
-      border-radius: 0.05rem;
-      width: 80%;
-      height: 30%;
-      border: 1.5px solid var(--disabled-knob);
-      border-top: 0;
-      border-right: 0;
-      border-left: 0;
-      left: 0%;
-      top: 30%;
-      transform: rotate( -45deg);
-      background-color: transparent;
+      background-color: var(--knob-disabled);
     }
   }
 }
 
+
 /* Radio button */
 /* ================================================== */
 input[type='radio'] {
-
   @include input-base;
+  width: var(--input-h);
+  height: var(--input-h);
+  aspect-ratio: 1;
+  border-radius: 99px;
 
-  position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
-  aspect-ratio: 1 / 1;
-  background-color: var(--rest-bg);
-  box-shadow: var(--active-inset);
-  border-radius: 9999px;
+    &::after {
+      background-color: transparent;
+      box-shadow: none;
+    }
 
   &:checked {
     &::after {
-      z-index: z(on-input);
-      filter: drop-shadow(0.5px 0.5px 1px oklch(var(--neutral-10) / 0.5));
-      margin: 4px;
-      aspect-ratio: 1 / 1;
-      border-radius: 9999px;
-      background-color: var(--rest-knob);
+      margin: 5px;
+      aspect-ratio: 1;
+      border-radius: 99px;
+      background-color: var(--knob);
+      box-shadow: var(--knob-sha);
     }
   }
 
   &:disabled {
-    &::after {
-      background-color: transparent;
-    }
-
     &:checked {
-      background-color: var(--disabled-checked-bg);
-
       &::after {
-        background-color: var(--disabled-knob);
+        background-color: var(--knob-disabled);
       }
     }
   }
@@ -222,7 +208,7 @@ input[type='radio'] {
 /* Input wappers & items */
 /* ================================================== */
 .input-legend {
-  padding-bottom: var(--sm);
+  padding-bottom: var(--md);
   font-size: var(--text-md);
 }
 
@@ -238,7 +224,7 @@ input[type='radio'] {
 }
 
 .inline-label {
-font-family: $font-family-body;
+  font-family: $font-family-body;
   font-weight: $font-weight-md;
-  color: var(--text-xstrong);
+  color: var(--text-strong);
 }
