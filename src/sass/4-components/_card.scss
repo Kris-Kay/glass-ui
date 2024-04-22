@@ -51,7 +51,7 @@
 
     color: var(--color-3xlight);
     background-color: var(--inset-bg-xdeep);
-    box-shadow: var(--flat-inset-lg);
+    box-shadow: var(--inset-flat-lg);
   }
 
   & > .e2e-no-padding{
@@ -101,8 +101,9 @@
   // place-items: center;
   gap: var(--_space);
   padding: var(--_space);
-  box-shadow: var(--sha-sm);
+  // box-shadow: var(--sha-sm);
   // border-radius: 2cqmax;
+overflow: hidden
 }
 
 .card-q {
@@ -153,7 +154,7 @@
 /* Edge-to-edge classes */
 /* ================================================== */
 @mixin e2e {
-width: calc(100% + var(--_space) * 2);
+  width: calc(100% + var(--_space) * 2);
   display: grid;
   // place-self: center;
   margin-left: var(--_neg-space);
@@ -172,9 +173,11 @@ width: calc(100% + var(--_space) * 2);
 
 .e2e-inset {
   @include e2e;
-  margin-left: calc(var(--_neg-space) + 0.5px);
-  background-color: var(--inset-bg-xdeep);
-  box-shadow: var(--flat-inset-md);
+  // margin-left: var(--_neg-space);
+  margin-left: calc(var(--_neg-space) + 1px);
+  margin-right: var(--_neg-space);
+  background-color: var(--inset-bg-reg);
+  // box-shadow: var(--inset-flat-md);
 }
 
 .no-y-space {
