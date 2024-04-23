@@ -106,6 +106,12 @@ textarea {
   }
 }
 
+@mixin placeholder {
+  color: var(--text-base);
+  font-size: var(--text-sm);
+  font-weight: $font-weight-sm;
+}
+
 .data-label-xs {
   @include title-thick;
   font-size: var(--text-xs);
