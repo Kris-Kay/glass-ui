@@ -84,7 +84,6 @@ html {
 /* Bevel classes */
 /* ================================================== */
 .bevel-xs {
-  -moz-box-shadow: var(--bevel-xs);
   -webkit-box-shadow: var(--bevel-xs);
   box-shadow: var(--bevel-xs);
 }
