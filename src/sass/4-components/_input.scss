@@ -9,7 +9,7 @@
 /* ✨ Config these values ✨ */
 /* ================================================== */
 @mixin input-base {
-  --input-h: var(--ui-h-sm);
+  --input-h: var(--ui-h-xs);
 
   --bg: var(--inset-bg-deep);
   --bg-hover: var(--tint-2xdark);
