@@ -24,40 +24,66 @@
 /* ================================================== */
 /* ✨ Config these values ✨ */
 @mixin btn-text {
-  font-family: $font-family-title;
+  font-family: $font-family-body;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
   text-align: center;
-  text-shadow: var(--text-sha-lg);
+  text-shadow: var(--text-sha-sm);
 }
 
 /* ================================================== */
-/* Button structure setup */
+/* Button structure */
 /* ================================================== */
 @mixin btn-structure {
-  --_btn-h: var(--btn-h, 2rem);
-  --_btn-content-h: var(--btn-content-h, 0.8rem);
-  --_btn-x: var(--btn-x, 0.85em);
-  --_btn-radius: var(--btn-radius, 0.25rem);
+  --_btn-h: var(--btn-h, 2.25rem);
+  --_btn-content-h: var(--btn-content-h, 1rem);
+  --_btn-padding-x: var(--btn-padding-x, 1.5rem);
+  --_btn-padding-top: var(--btn-padding-top, 0);
+  --_btn-padding-bottom: var(--btn-padding-bottom, 0);
+  --_btn-radius: var(--btn-radius, 999px);
 
-  width: fit-content;
-  height: var(--_btn-h);
-  display: flex;
+  z-index: z(btn);
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: calc(var(--_btn-x) / 3);
-  padding: 0 var(--_btn-x);
+  gap: calc(var(--_btn-padding-x) * 0.5);
+  min-width: 12ch;
+  width: fit-content;
+  height: var(--_btn-h);
+  padding-top: 0;
+  padding-right: var(--_btn-padding-x);
+  padding-bottom: 0;
+  padding-left: var(--_btn-padding-x);
   border-radius: var(--_btn-radius);
-  // overflow: hidden;
+  overflow: hidden;
 
-  @include btn-text;
-  font-size: var(--_btn-content-h);
-  line-height: var(--_btn-content-h);
+  & > .btn-text {
+    @include btn-text;
+    font-size: var(--_btn-content-h);
+    line-height: var(--_btn-content-h);
+    padding-top: var(--_btn-padding-top);
+    padding-bottom: var(--_btn-padding-bottom);
+  }
 
   & > svg {
-    @include svg-icon;
     z-index: z(on-btn);
-    height: calc(1.25 * var(--_btn-content-h));
+    height: calc(var(--_btn-content-h) * 1.15);
+    aspect-ratio: 1;
+    // pointer-events: none;
+  }
+
+  &.icon-end {
+    padding-top: 0;
+    padding-right: calc(var(--_btn-padding-x) * 0.8);
+    padding-bottom: 0;
+    padding-left: var(--_btn-padding-x);
+  }
+
+  &.icon-start {
+    padding-top: 0;
+    padding-right: var(--_btn-padding-x);
+    padding-bottom: 0;
+    padding-left: calc(var(--_btn-padding-x) * 0.8);
   }
 }
 
@@ -67,152 +93,133 @@
 .btn-sm {
   @include btn-structure;
   --btn-h: var(--ui-h-sm);
-  --btn-content-h: 0.75em;
-  --btn-x: 1.2em;
-  --btn-radius: 9999px;
-  // box-shadow: var(--sha-2xs);
-
-  &::after {
-    box-shadow: var(--bevel-sm);
-  }
+  --btn-content-h: 0.9rem;
+  // --btn-padding-x: 1.25rem;
+  --btn-padding-x: calc(var(--_btn-h) * 0.5);
+  --btn-padding-top: 0;
+  --btn-padding-bottom: 0;
+  --btn-radius: 999px;
 }
 
 .btn-md {
   @include btn-structure;
   --btn-h: var(--ui-h-md);
-  --btn-content-h: 0.85em;
-  --btn-x: 1.4em;
-  --btn-radius: 9999px;
-  // box-shadow: var(--sha-xs);
-
-  &::after {
-    box-shadow: var(--bevel-md);
-  }
+  --btn-content-h: 1rem;
+  // --btn-padding-x: 1.5rem;
+  --btn-padding-x: calc(var(--_btn-h) * 0.5);
+  --btn-padding-top: 0;
+  --btn-padding-bottom: 0;
+  --btn-radius: 999px;
 }
 
 .btn-lg {
   @include btn-structure;
   --btn-h: var(--ui-h-lg);
-  --btn-content-h: 1.05em;
-  --btn-x: 1.6em;
-  --btn-radius: 9999px;
-  // box-shadow: var(--sha-sm);
+  --btn-content-h: 1.125rem;
+  // --btn-padding-x: 1.75rem;
+  --btn-padding-x: calc(var(--_btn-h) * 0.5);
+  --btn-padding-top: 0;
+  --btn-padding-bottom: 0;
+  --btn-radius: 999px;
+}
 
-  &::after {
-    box-shadow: var(--bevel-lg);
-  }
+.btn-full-w {
+  @include btn-structure;
+  width: 100%;
+  --btn-h: var(--ui-h-xl);
+  --btn-content-h: 1.25rem;
+  // --btn-padding-x: 2rem;
+  --btn-padding-x: calc(var(--_btn-h) * 0.5);
+  --btn-padding-top: 0;
+  --btn-padding-bottom: 0;
+  --btn-radius: var(--2xs);
 }
 
 /* ================================================== */
 /* Round icon button */
 /* ================================================== */
-@mixin btn-round-structure {
+@mixin btn-icon-structure {
+  --_btn-h: var(--btn-h, 2.25rem);
+  --_btn-content-h: var(--btn-content-h, 1rem);
+
   z-index: z(btn);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 9999px;
+  width: var(--_btn-h);
+  height: var(--_btn-h);
+  border-radius: 999px;
+  overflow: hidden;
 
   & > svg {
-    @include svg-icon;
     z-index: z(on-btn);
-    @include btn-svg-transition;
+    height: var(--_btn-content-h);
+    aspect-ratio: 1;
+    // pointer-events: none;
   }
 }
 
-.btn-round-sm {
-  @include btn-round-structure;
-
-  width: var(--ui-h-sm);
-  height: var(--ui-h-sm);
-  box-shadow: var(--sha-2xs);
-
-  &::after {
-    box-shadow: var(--bevel-sm);
-  }
-
-  & > svg {
-    width: calc(var(--ui-h-sm) * 0.56);
-    height: calc(var(--ui-h-sm) * 0.56);
-  }
-
-  &:hover {
-    & > svg {
-      width: calc(var(--ui-h-sm) * 0.59);
-      height: calc(var(--ui-h-sm) * 0.59);
-    }
-  }
+.btn-icon-sm {
+  @include btn-icon-structure;
+  --btn-h: var(--ui-h-sm);
+  --btn-content-h: calc(var(--btn-h) * 0.5);
 }
 
-.btn-round-md {
-  @include btn-round-structure;
+.btn-icon-md {
+  @include btn-icon-structure;
+  --btn-h: var(--ui-h-md);
+  --btn-content-h: calc(var(--btn-h) * 0.5);
 
-  width: var(--ui-h-md);
-  height: var(--ui-h-md);
-  box-shadow: var(--sha-xs);
+  // & > svg {
+  //   width: calc(var(--btn-h) * 0.5);
+  //   height: calc(var(--btn-h) * 0.5);
+  // }
 
-  &::after {
-    box-shadow: var(--bevel-md);
-  }
-
-  & > svg {
-    width: calc(var(--ui-h-md) * 0.58);
-    height: calc(var(--ui-h-md) * 0.58);
-  }
-
-  &:hover {
-    & > svg {
-      width: calc(var(--ui-h-md) * 0.62);
-      height: calc(var(--ui-h-md) * 0.62);
-    }
-  }
+  // &:hover {
+  //   & > svg {
+  //     width: calc(var(--btn-h) * 0.6);
+  //     height: calc(var(--btn-h) * 0.6);
+  //   }
+  // }
 }
 
-.btn-round-lg {
-  @include btn-round-structure;
-
-  width: var(--ui-h-lg);
-  height: var(--ui-h-lg);
-  box-shadow: var(--sha-sm);
-
-  &::after {
-    box-shadow: var(--bevel-lg);
-  }
-
-  & > svg {
-    width: calc(var(--ui-h-lg) * 0.56);
-    height: calc(var(--ui-h-lg) * 0.56);
-  }
-
-  &:hover {
-    & > svg {
-      width: calc(var(--ui-h-lg) * 0.6);
-      height: calc(var(--ui-h-lg) * 0.6);
-    }
-  }
+.btn-icon-lg {
+  @include btn-icon-structure;
+  --btn-h: var(--ui-h-lg);
+  --btn-content-h: calc(var(--btn-h) * 0.5);
 }
 
 /* ================================================== */
-/* Button skin */
+/* Button style */
 /* ================================================== */
-@mixin btn-skin {
-  @include btn-transition;
+@mixin btn-style {
   --_btn-bg: var(--btn-bg, white);
+  // --_btn-filter: var(--btn-filter, white);
   --_btn-text: var(--btn-text, black);
 
-  @include glass.glass-3d-base;
-  &::before {
-    @include glass.noise-sm;
-  }
-
-  color: var(--_btn-text);
+  @include btn-transition;
   background-color: var(--_btn-bg);
+
+  & > .btn-text {
+    color: var(--_btn-text);
+  }
 
   & > svg {
     background-color: var(--_btn-text);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    background-color: var(--_btn-bg);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 2px pink;
+  }
+
+  &:active {
     background-color: var(--_btn-bg);
   }
 
@@ -222,14 +229,15 @@
   }
 }
 
-/* 3D Primary buttons */
+/* 3D glass Primary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn-primary {
-  @include btn-skin;
-  --btn-bg: oklch(var(--primary-70) / 0.5);
+@mixin btn-primary {
+  @include btn-style;
+  @include glass.glass-3d-md;
+  --btn-bg: oklch(var(--primary-75) / 0.4);
   --btn-text: var(--color-white);
-  @include glass.glass-filter(10px, 1, 2.5);
+  @include glass.glass-filter(10px, 0.9, 2.5);
 
   &:hover {
     --btn-bg: oklch(var(--primary-80) / 0.6);
@@ -240,11 +248,12 @@
 /* 3D Secondary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn-secondary {
-  @include btn-skin;
-  --btn-bg: oklch(var(--primary-70) / 0.1);
-  --btn-text: var(--color-white);
-  @include glass.glass-filter(10px, 1, 2.5);
+@mixin btn-secondary {
+  @include btn-style;
+  @include glass.glass-3d-sm;
+  --btn-bg: oklch(var(--primary-15) / 0.2);
+  --btn-text: var(--color-2xlight);
+  @include glass.glass-filter(10px, 0.8, 2.5);
 
   &:hover {
     --btn-bg: oklch(var(--primary-80) / 0.2);
@@ -252,25 +261,51 @@
   }
 }
 
-/* 3D Tertiary buttons */
+/* Tertiary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-.btn-tertiary {
-  @include btn-skin;
-  --btn-bg: oklch(var(--primary-25) / 0.35);
-  --btn-text: var(--color-white);
-  @include glass.glass-filter(10px, 0.95, 1.2);
+@mixin btn-tertiary {
+  @include btn-style;
+  --btn-bg: var(--tint-light);
+  --btn-text: var(--text-strong);
+  @include glass.glass-filter(15px, 1.2, 1.5);
+  // box-shadow: var(--sha-3xs);
 
   &:hover {
-    --btn-bg: oklch(var(--primary-25) / 0.75);
+    --btn-bg: oklch(var(--primary-25) / 0.2);
     @include glass.glass-filter(10px, 1, 2);
   }
 }
 
-/* 2D Clear button */
+/* Outline button */
 /* ✨ Config these values ✨ */
 /* ================================================== */
-@mixin btn-clear {
+@mixin btn-outline {
+  @include btn-style;
+  --btn-text: oklch(var(--primary-95) / 0.7);
+  --btn-bg: transparent;
+
+  // border: 1px solid oklch(var(--primary-95) / 0.4);
+  outline: 1px solid oklch(var(--primary-95) / 0.3);
+  outline-offset: -2px;
+  // backdrop-filter: none;
+  @include glass.glass-filter(15px, 1, 1.2);
+  box-shadow: none;
+
+  & > svg {
+    background-color: var(--btn-text);
+  }
+
+  &:hover {
+    --btn-bg: oklch(var(--primary-95) / 0.2);
+    @include glass.glass-filter(10px, 1.25, 1.5);
+  }
+}
+
+/* 2D ghost button */
+/* ✨ Config these values ✨ */
+/* ================================================== */
+@mixin btn-ghost {
   @include btn-transition;
   --btn-text: var(--color-white);
   --btn-bg: transparent;
@@ -289,4 +324,9 @@
     @include glass.glass-filter(10px, 1.25, 1.5);
   }
 }
-.btn-clear { @include btn-clear; }
+
+.btn-primary { @include btn-primary; }
+.btn-secondary { @include btn-secondary; }
+.btn-tertiary { @include btn-tertiary; }
+.btn-outline { @include btn-outline; }
+.btn-ghost { @include btn-ghost; }

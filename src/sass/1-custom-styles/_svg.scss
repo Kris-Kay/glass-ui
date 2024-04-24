@@ -12,8 +12,6 @@
   mask-repeat: no-repeat;
   mask-size: cover;
   mask-position: center;
-    // margin-left: -5px;
-    // margin-right: -5px;
 }
 
 .svg-cube { mask: url(/assets/icons/CubeTransparent.svg); @include svg-icon; }
@@ -46,10 +44,5 @@
 
 .svg-magnifying-glass {
   mask: url(/assets/icons/MagnifyingGlass.svg);
-  @include svg-icon;
-}
-
-.svg-magnifying-glass-box {
-  mask: url(/assets/icons/MagnifyingGlassBox.svg);
   @include svg-icon;
 }
