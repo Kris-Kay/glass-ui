@@ -29,7 +29,7 @@
   width: fit-content;
   max-width: 100%;
   min-height: fit-content;
-  height: var(--ui-h-lg);
+  height: var(--ui-h-md);
   overflow: hidden;
   // display: flex;
   // justify-content: center;
@@ -69,9 +69,9 @@
   width: fit-content;
   max-width: 100%;
   min-height: fit-content;
-  height: var(--ui-h-lg);
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: calc(var(--tab-menu-space) * 2);
   margin: 0 auto;
@@ -100,7 +100,7 @@ border-radius: inherit;
 
 [role="tab"] {
   @include btn.btn-text;
-  @include btn.btn-clear;
+  @include btn.btn-ghost;
 
   --content-h: 0.8rem;
   --tab-padding: 0 0.7rem;
@@ -121,7 +121,7 @@ border-radius: inherit;
 
   @include bp(xs) {
     --content-h: 1rem;
-    --tab-padding: 0 0.95rem;
+    --tab-padding: 0 0.85rem;
   }
 
   // @include bp(sm) {

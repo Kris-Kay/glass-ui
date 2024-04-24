@@ -15,7 +15,7 @@
 /* ================================================== */
 :root {
   --nav-padding: 1rem;
-  --nav-h: calc(var(--ui-h-lg) + (var(--nav-padding) * 2));
+  --nav-h: calc(var(--ui-h-md) + (var(--nav-padding) * 2));
 }
 
 .main-nav-bin {
