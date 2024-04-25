@@ -16,12 +16,13 @@ $blur-md: 56px;
 $blur-lg: 80px;
 $brightness-base: 1;
 $saturate-base: 1.2;
+$contrat-base: 1.2;
 
 /* Backdrop filter mixin */
 /* ================================================== */
-@mixin glass-filter($blur: 48px, $bright: 1, $satu: 1.2) {
-  -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter:         blur($blur) brightness($bright) saturate($satu);
+@mixin glass-filter($blur: 48px, $bright: 1, $satu: 1.2, $contra: 1.1) {
+  -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu) contrast($contra);
+  backdrop-filter:         blur($blur) brightness($bright) saturate($satu) contrast($contra);
 }
 
 
@@ -113,7 +114,7 @@ $saturate-base: 1.2;
   &::after {
     @include layout.pseudo;
     z-index: 2;
-    box-shadow: var(--bevel-sm);
+    // box-shadow: var(--bevel-sm);
     // overflow: hidden;
   }
 
