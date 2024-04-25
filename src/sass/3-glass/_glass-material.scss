@@ -3,7 +3,7 @@
 @use "sass:map";
 @use "../1-custom-styles/breakpoint" as bp;
 @use "../2-util/mixin" as mix;
-@use "../2-util/layout-help" as lh;
+@use "../2-util/layout-help" as layout;
 /* ================================================== */
 
 /* Values for backdrop-filter: */
@@ -63,20 +63,86 @@ $saturate-base: 1.2;
 /* ================================================== */
 @mixin glass-3d-base {
   position: relative;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  @include glass-filter($blur-md, $brightness-base, $saturate-base);
   // overflow: hidden;
-// background-color: pink;
+
   &::after {
-    @include lh.pseudo;
-    z-index: 3;
+    @include layout.pseudo;
+    z-index: 2;
+    box-shadow: var(--bevel-md);
     // overflow: hidden;
   }
 
   &::before {
-    @include lh.pseudo;
+    @include layout.pseudo;
+    z-index: -2;
+    @include noise-md;
+    // overflow: hidden;
+  }
+}
+
+/* 2D glass */
+/* ================================================== */
+/* Same as 3D glass just without the bevel box-shadow */
+@mixin glass-2d {
+  position: relative;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  @include glass-filter($blur-md, $brightness-base, $saturate-base);
+  // overflow: hidden;
+
+  &::before {
+    @include layout.pseudo;
+    z-index: -2;
+    @include noise-md;
+    // overflow: hidden;
+  }
+}
+
+/* UI glass */
+/* ================================================== */
+/* Same as 3D glass just without the noise texture and filter */
+@mixin glass-ui {
+  position: relative;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  // overflow: hidden;
+
+  &::after {
+    @include layout.pseudo;
+    z-index: 2;
+    box-shadow: var(--bevel-sm);
+    // overflow: hidden;
+  }
+
+  &::before {
+    @include layout.pseudo;
     z-index: -2;
     // overflow: hidden;
   }
 }
+
+// /* 3D glass base */
+// /* ================================================== */
+// @mixin glass-3d-base {
+//   position: relative;
+//   // overflow: hidden;
+// // background-color: pink;
+//   &::after {
+//     @include layout.pseudo;
+//     z-index: 3;
+//     // overflow: hidden;
+//   }
+
+//   &::before {
+//     @include layout.pseudo;
+//     z-index: -2;
+//     @include noise-md;
+//     // overflow: hidden;
+//   }
+// }
 
 /* 3D glass sizes */
 /* ================================================== */
@@ -187,14 +253,14 @@ $saturate-base: 1.2;
   // @include glass-filter(56px, 0.9, 1.25);
 
   // &::after {
-  //   @include lh.pseudo;
+  //   @include layout.pseudo;
   //   z-index: 3;
   //   // overflow: hidden;
   //   box-shadow: var(--bevel-md);
   // }
 
   // &::before {
-  //   @include lh.pseudo;
+  //   @include layout.pseudo;
   //   z-index: -2;
   //   // overflow: hidden;
   //   @include noise-lg;
