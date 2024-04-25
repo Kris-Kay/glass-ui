@@ -15,7 +15,8 @@
 /* ================================================== */
 :root {
   --nav-padding: 1rem;
-  --nav-h: calc(var(--ui-h-md) + (var(--nav-padding) * 2));
+  --nav-item-h: var(--ui-h-md);
+  --nav-h: calc(var(--nav-item-h) + (var(--nav-padding) * 2));
 }
 
 .main-nav-bin {
@@ -43,6 +44,11 @@
   // @include bp.bp(xl) {
   //   max-width: bp.$bp-xl ;
   // }
+}
+
+.nav-item {
+  height: var(--nav-item-h);
+  --btn-h: var(--nav-item-h);
 }
 
 /* Dropdown */
