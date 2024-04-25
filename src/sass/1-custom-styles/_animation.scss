@@ -1,6 +1,7 @@
 /* ================================================== */
 /* Animation custom styles */
 @use "sass:map";
+@use "z-index" as z;
 /* ================================================== */
 
 /* Speeds */
@@ -87,8 +88,11 @@ html.root-transition *::after {
 /* Focus */
 /* ================================================== */
 :focus {
-  outline: 1px solid oklch(var(--primary-95) / 0.6);
-  outline-offset: 1.5px;
+  box-shadow: 0 0 0 1px oklch(var(--primary-15) / 0.12)!important;
+  outline: 1px solid oklch(var(--primary-95) / 0.6)!important;
+  outline-offset: 1.5px!important;
+  overflow: visible;
+  z-index: z.z(focus);
   border-radius: inherit;
   transition: all $speed-base;
 }
