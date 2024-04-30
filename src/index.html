@@ -34,9 +34,10 @@
       role="tabpanel"
       tabindex="-1"
       aria-labelledby="tab-1"
+      hidden
     >
       <img class="page-bg-img"
-        fetchpriority="high"
+        fetchpriority="low"
         width="1024"
         height="1517"
         src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
@@ -75,10 +76,9 @@
       role="tabpanel"
       tabindex="-1"
       aria-labelledby="tab-3"
-      hidden
     >
       <img class="page-bg-img"
-        fetchpriority="low"
+        fetchpriority="high"
         width="1920"
         height="1280"
         src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
@@ -103,7 +103,7 @@
     <nav class="main-nav-bin">
       <div class="main-nav">
         <!-- Theme toggle -->
-        <button class="js-themeToggle btn-icon-md btn-tertiary nav-item"
+        <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
           type="button">
 
           <svg class="svg-circleHalf"
@@ -135,10 +135,10 @@
             >
             <button
               role="tab"
-              aria-selected="true"
+              aria-selected="false"
               aria-controls="panel-1"
               id="tab-1"
-              tabindex="0">
+              tabindex="-1">
               <p class="btn-text">Dark</p>
             </button>
 
@@ -153,19 +153,18 @@
 
             <button
               role="tab"
-              aria-selected="false"
+              aria-selected="true"
               aria-controls="panel-3"
               id="tab-3"
-              tabindex="-1">
+              tabindex="0">
               <p class="btn-text">Color</p>
             </button>
           </div>
         </div>
 
-
         <!-- Dropdown -->
-        <div class="dropdown">
-          <button class="btn-icon-md btn-tertiary nav-item"
+        <div class="dropdown-group">
+          <button class="nav-item btn-icon-md btn-secondary"
             type="button"
             id="js-dropdownToggle">
 
@@ -190,35 +189,32 @@
             </svg>
           </button>
 
-          <div id="js-navDropdown" class="dropdown-bin">
-            <div id="js-dropdown-bg" class="dropdown-bg glass-3d-q tint-clear hidden">
-              <div class="dropdown-item-bin">
+          <div id="js-navDropdown" class="dropdown-bin hidden">
+            <div id="js-dropdown-bg" class="dropdown-bg glass-3d-md tint-clear">
+              <a href="#top-of-page"
+                class="dropdown-item js-dropdownItem btn-md btn-ghost">
+                <p class="btn-text">Intro</p>
+              </a>
 
-                <a href="#top-of-page"
-                  class="dropdown-item js-dropdownItem btn-lg btn-ghost">
-                  Top of page
-                </a>
+              <a href="#styles"
+                class="dropdown-item js-dropdownItem btn-md btn-ghost">
+                <p class="btn-text">Styles</p>
+              </a>
 
-                <a href="#styles"
-                  class="dropdown-item js-dropdownItem btn-lg btn-ghost">
-                  Styles
-                </a>
+              <a href="#details"
+                class="dropdown-item js-dropdownItem btn-md btn-ghost">
+                <p class="btn-text">Details</p>
+              </a>
 
-                <a href="#details"
-                  class="dropdown-item js-dropdownItem btn-lg btn-ghost">
-                  Details
-                </a>
+              <a href="#components"
+                class="dropdown-item js-dropdownItem btn-md btn-ghost">
+                <p class="btn-text">Components</p>
+              </a>
 
-                <a href="#components"
-                  class="dropdown-item js-dropdownItem btn-lg btn-ghost">
-                  Components
-                </a>
-
-                <a href="#contact"
-                  class="dropdown-item js-dropdownItem btn-lg btn-ghost">
-                  Contact
-                </a>
-              </div>
+              <a href="#contact"
+                class="dropdown-item js-dropdownItem btn-md btn-ghost">
+                <p class="btn-text">Contact</p>
+              </a>
             </div>
           </div>
         </div>
@@ -230,7 +226,7 @@
   <!-- Scripts -->
   <!-- ========================================== -->
   <script src="/js/tabMenu.js"></script>
-  <script src="/js/spotlight.js"></script>
+  <!-- <script src="/js/spotlight.js"></script> -->
   <script src="/js/themeToggle.js"></script>
   <script src="/js/dropdown.js"></script>
   <script src="/js/accordion.js"></script>

@@ -1,105 +1,81 @@
 /* ================================================== */
 /* Nav */
+@use "../1-custom-styles/animation" as ani;
 @use "../1-custom-styles/breakpoint" as bp;
-@use "../1-custom-styles/text-config" as text;
 @use "../1-custom-styles/z-index" as z;
 @use "../2-util/radius" as r;
-@use "../glass" as glass;
-@use "button" as btn;
-@use "card" as card;
 /* ================================================== */
-// @use "../custom" as *;
-// @use "../util" as *;
 
-/* Global nav height */
-/* ================================================== */
 :root {
   --nav-padding: 1rem;
   --nav-item-h: var(--ui-h-md);
   --nav-h: calc(var(--nav-item-h) + (var(--nav-padding) * 2));
 }
 
+/* Main nav */
+/* ================================================== */
 .main-nav-bin {
   position: fixed;
   z-index: z.z(nav);
   height: var(--nav-h);
   inset: 0;
   padding: var(--nav-padding);
+  pointer-events: none;
 }
 
 .main-nav {
   width: 100%;
-  max-width: bp.$bp-xl;
+  max-width: bp.$bp-lg;
   display: flex;
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
   gap: var(--3xs);
   margin: 0 auto;
-
-  // @include bp.bp(lg) {
-  //   max-width: calc(bp.$bp-lg + (var(--ui-h-lg) * 2) + 6rem);
-  // }
-
-  // @include bp.bp(xl) {
-  //   max-width: bp.$bp-xl ;
-  // }
 }
 
 .nav-item {
   height: var(--nav-item-h);
-  --btn-h: var(--nav-item-h);
+  pointer-events: auto;
 }
 
 /* Dropdown */
 /* ================================================== */
-.dropdown {
+.dropdown-group { /* holds toggle button and dropdown */
   position: relative;
   width: fit-content;
   height: fit-content;
   pointer-events: none;
-  background-color: transparent;
 }
 
-.dropdown-bin {
+.dropdown-bin { /* prevents ugly bevel overflow and gets toggled in JS */
   width: fit-content;
   height: fit-content;
   pointer-events: none;
+  border-radius: var(--sm);
+  overflow: hidden;
 }
 
-.dropdown-bg {
+.dropdown-bg { /* styles background and is used in JS for close dropdown by clicking outside */
   z-index: z.z(menu);
-  min-width: 200px;
+  display: grid;
+  gap: var(--2xs);
   width: fit-content;
   height: fit-content;
   position: absolute;
-  top: calc(var(--ui-h-lg) * 1.2);
+  top:  calc(var(--nav-item-h) + var(--nav-padding));
   right: 0;
-  padding: var(--sm);
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: var(--sm);
-  box-shadow: var(--sha-xl);
+  padding: var(--2xs);
+  pointer-events: auto;
+  border-radius: inherit;
+  box-shadow: var(--sha-lg);
 }
 
-.dropdown-item-bin {
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  gap: calc(var(--xs) * 0.5);
-  margin: calc(var(--3xs) * -1);
-  pointer-events: none;
-  background-color: transparent;
-}
-
-.dropdown-item {
-  z-index: z.z(on-menu);
+.dropdown-item { /* other styling in html for demo */
   width: 100%;
   min-width: max-content;
-
-  letter-spacing: text.$letter-spacing-md;
-  font-weight: text.$font-weight-md;
-
+  display: flex;
+  justify-content: flex-start;
   pointer-events: auto;
   cursor: pointer;
 }
