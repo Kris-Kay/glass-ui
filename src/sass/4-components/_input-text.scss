@@ -1,0 +1,188 @@
+/* ================================================== */
+/* Forms | Text inputs */
+@use "../custom" as *;
+@use "../util" as *;
+@use "../glass" as glass;
+/* ================================================== */
+
+body {
+  --text-input-height: var(--ui-h-lg);
+  --text-input-maxwidth: 380px;
+  --text-input-padding: var(--3xs);
+  --text-input-radius: var(--3xs);
+  --text-input-inset: var(--inset-md);
+  --text-input-inset-bg: var(--inset-bg-deep);
+}
+
+
+.text-input-group {
+  height: fit-content;
+  width: min(var(--text-input-maxwidth), 100%);
+  display: grid;
+  padding-top: var(--xs);
+
+  & > .text-input-label {
+    padding-bottom: var(--4xs);
+  }
+
+  & > .input-hint {
+    padding-top: var(--5xs);
+  }
+}
+
+.text-input-label {
+  font-family: $font-family-body;
+  font-weight: $font-weight-xl;
+  font-size: var(--text-md);
+  line-height: 1.3;
+
+  color: var(--text-base);
+  text-shadow: var(--text-sha-xs);
+}
+
+.input-hint {
+  font-family: $font-family-body;
+  font-weight: $font-weight-md;
+  font-size: var(--text-xs);
+  line-height: 1.3;
+  color: var(--text-base);
+  text-shadow: var(--text-sha-2xs);
+}
+
+@mixin placeholder {
+  z-index: z(on-input);
+  font-family: $font-family-body;
+  font-weight: $font-weight-md;
+  font-size: var(--text-sm);
+  line-height: 1.3;
+
+  color: var(--text-2xmild);
+}
+
+.text-input-bin {
+  width: min(var(--text-input-maxwidth), 100%);
+  height: fit-content;
+  border-radius: var(--text-input-radius);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@mixin text-input-bg-base {
+  position: relative;
+  z-index: z(input-b4);
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--text-input-padding);
+  background-color:var(--text-input-inset-bg);
+  box-shadow: var(--text-input-inset);
+  border-radius: var(--text-input-radius);
+  pointer-events: none;
+}
+
+@mixin text-input-base {
+  position: absolute;
+  inset: 0;
+  z-index: z(input);
+  width: 100%;
+  background-color: transparent;
+  border-radius: var(--text-input-radius);
+
+  pointer-events: auto;
+  cursor: text;
+
+  &::placeholder {
+    @include placeholder;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:focus {
+    z-index: z(focus)!important;
+    box-shadow:
+      inset 0 0 0 2px oklch(var(--primary-90) / 0.2),
+      inset 0 0 0 1px oklch(var(--primary-90) / 0.3)!important;
+    border-radius: inherit;
+    overflow: hidden;
+    transition: all $speed-base $smooth-cubic;
+  }
+}
+
+
+/* Search input */
+/* ================================================== */
+.search-input-bg {
+  @include text-input-bg-base;
+  height: var(--text-input-height);
+  width:  min(var(--text-input-maxwidth), 100%);
+  padding: 0 var(--text-input-padding);
+  --search-icon-h: calc(var(--text-input-height) - (var(--text-input-padding) * 2));
+  --wrap-icon: calc(var(--search-icon-h) + (var(--text-input-padding) * 2));
+}
+
+.search-input-icon {
+  z-index: z(on-input);
+  height: var(--search-icon-h);
+  width: var(--search-icon-h);
+  aspect-ratio: 1;
+  background-color: var(--text-2xmild);
+}
+
+.search-input {
+  @include text-input-base;
+  height: 100%;
+  padding-left: var(--wrap-icon);
+  padding-right: var(--text-input-padding);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  z-index: z(on-input);
+  height: calc(var(--text-input-height) - (var(--text-input-padding) * 2));
+  aspect-ratio: 1;
+  background: url(/assets/icons/XCircleOutline.svg) no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+  opacity: 0.33;
+  pointer-events: all;
+}
+
+
+/* Text input */
+/* ================================================== */
+.text-input-bg {
+  @include text-input-bg-base;
+  height: var(--text-input-height);
+}
+
+.text-input {
+  @include text-input-base;
+  height: 100%;
+  padding: 0 var(--text-input-padding);
+}
+
+/* Textarea input */
+/* ================================================== */
+.textarea-bg {
+  @include text-input-bg-base;
+  min-height: 150px;
+  height: fit-content;
+}
+
+.textarea {
+  @include text-input-base;
+  height: 100%;
+  padding: var(--text-input-padding);
+  text-align: start;
+  white-space: pre-wrap;
+  resize: vertical;
+}

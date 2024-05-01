@@ -106,11 +106,7 @@ textarea {
   }
 }
 
-@mixin placeholder {
-  color: var(--text-base);
-  font-size: var(--text-sm);
-  font-weight: $font-weight-sm;
-}
+
 
 .data-label-xs {
   @include title-thick;
@@ -137,21 +133,7 @@ textarea {
   }
 }
 
-.input-label {
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  color: var(--text-xstrong);
-  text-shadow: var(--text-sha-sm);
-}
 
-.input-hint {
-  font-weight: $font-weight-sm;
-  font-size: var(--text-xs);
-  line-height: 1;
-  color: var(--text-base);
-  text-shadow: var(--text-sha-2xs);
-}
 
 /* Bullet points */
 /* ================================================== */

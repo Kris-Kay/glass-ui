@@ -43,6 +43,7 @@ $font-weight-xs: 100;
 $font-weight-sm: 200;
 $font-weight-md: 300;
 $font-weight-lg: 400;
+$font-weight-xl: 500;
 
 /* ================================================== */
 /* Fluid typography range */
@@ -50,7 +51,7 @@ $font-weight-lg: 400;
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
   --text-2xs: clamp(0.75rem, 4vw - 1.5rem, 0.8rem);
-  --text-xs: clamp(0.875rem, 4vw - 1rem, 1rem);
+  --text-xs: clamp(0.875rem, 4vw - 1rem, 0.9rem);
   --text-sm: clamp(1rem, 0.13vw + 1rem, 1.125rem);
   --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
   --text-lg: clamp(1.375rem, 1.3vw + 1rem, 1.75rem);
@@ -85,63 +86,63 @@ html {
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.2px 0.2px 0.2px oklch(var(--shadow) / 0.2),
     0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
   --text-sha-2xs:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.25px 0.25px 0.25px oklch(var(--shadow) / 0.2),
     0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
   --text-sha-xs:
-    0.2px 0 0.2px oklch(var(--shadow) / 0.1),
-    0.3px 0.3px 0.3px oklch(var(--shadow) / 0.25),
-    0.25px 0.25px 0.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
-    0 0 0.7em oklch(var(--shadow) / 0.15);
+    0.1px 0.1px oklch(var(--shadow) / 0.3),
+    0.25px 0.25px oklch(var(--shadow) / 0.35),
+    0.02em 0.02em 0.04em oklch(var(--shadow) / 0.2),
+    0 0 0.05em  oklch(var(--shadow) / 0.2),
+    0 0 0.7em oklch(var(--shadow) / 0.2);
 
   --text-sha-sm:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.35px 0.35px 0.35px oklch(var(--shadow) / 0.25),
     0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.15);
 
   --text-sha-md:
     0.2px 0 0.2px oklch(var(--shadow) / 0.1),
     0.4px 0.4px 0.4px oklch(var(--shadow) / 0.25),
     0.5px 0.5px 1px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
   --text-sha-lg:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.45px 0.45px 0.45px oklch(var(--shadow) / 0.25),
     0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
   --text-sha-xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.5px 0.5px 0.5px oklch(var(--shadow) / 0.25),
     0.75px 0.75px 1.5px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
   --text-sha-2xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.55px 0.55px 0.55px oklch(var(--shadow) / 0.25),
     1px 1px 2px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 
   --text-sha-3xl:
     0.25px 0 0.25px oklch(var(--shadow) / 0.1),
     0.6px 0.6px 0.6px oklch(var(--shadow) / 0.25),
     1px 1px 2px oklch(var(--shadow) / 0.1),
-    0 0 0.01em  oklch(var(--shadow) / 0.1),
+    0 0 0.05em  oklch(var(--shadow) / 0.1),
     0 0 0.7em oklch(var(--shadow) / 0.2);
 }
 

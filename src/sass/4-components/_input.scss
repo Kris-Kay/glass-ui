@@ -223,6 +223,14 @@ input[type='radio'] {
   gap: var(--xs);
 }
 
+.input-label {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  color: var(--text-xstrong);
+  text-shadow: var(--text-sha-sm);
+}
+
 .inline-label {
   font-family: $font-family-body;
   font-weight: $font-weight-md;
