@@ -34,7 +34,10 @@
 
 .svg-github { mask: url(/assets/icons/GithubLogo.svg); @include svg-icon; }
 
-.svg-ham { mask: url(/assets/icons/List.svg); @include svg-icon; }
+.svg-ham {
+  mask: url(/assets/icons/List.svg);
+  @include svg-icon;
+}
 
 .svg-x { mask: url(/assets/icons/X.svg); @include svg-icon; }
 
@@ -44,5 +47,15 @@
 
 .svg-magnifying-glass {
   mask: url(/assets/icons/MagnifyingGlass.svg);
+  @include svg-icon;
+}
+
+.svg-xCircle {
+  mask: url(/assets/icons/XCircle.svg);
+  @include svg-icon;
+}
+
+.svg-xCircleOutline {
+  mask: url(/assets/icons/XCircleOutline.svg);
   @include svg-icon;
 }
