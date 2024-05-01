@@ -94,7 +94,7 @@ html.root-transition *::after {
   overflow: visible;
   z-index: z.z(focus);
   border-radius: inherit;
-  transition: all $speed-base;
+  transition: all $speed-base $smooth-cubic;
 }
 
 ::-moz-focus-inner {

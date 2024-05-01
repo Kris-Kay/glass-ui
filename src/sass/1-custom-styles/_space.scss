@@ -23,19 +23,19 @@
 
 
   /* 2px */
-  --5xs: 0.125rem;
+  // --6xs: 0.125rem;
 
   /* 4px */
-  --4xs: 0.25rem;
+  --5xs: 0.25rem;
 
   /* 8px */
-  --3xs: 0.5rem;
+  --4xs: 0.5rem;
 
   /* 12px */
-  --2xs: 0.75rem;
+  --3xs: 0.75rem;
 
-  // /* 14px */
-  // --xs: 0.875rem;
+  /* 14px */
+  --2xs: 0.875rem;
 
   /* 16px */
   --xs: 1rem;
@@ -134,21 +134,36 @@ $sizes: (
 /* Ui height custom properties */
 /* ================================================== */
 html {
-  --ui-h-sm: 1.625rem; /* 26px */
-  --ui-h-md: 2rem;     /* 32px */
-  --ui-h-lg: 2.375rem;   /* 38px */
-
-  @include bp.bp(xs) {
-    --ui-h-sm: 1.75rem; /* 28px */
+  // --ui-h-xs: 1.625rem; /* 26px */
+  // --ui-h-sm: 2rem;    /* 32px */
+  // --ui-h-md: 2.25rem; /* 36px */
+  // --ui-h-lg: 2.5rem;  /* 40px */
+  // --ui-h-xl: 3rem;    /* 48px */
+    --ui-h-xs: 1.75rem; /* 28px */
+    --ui-h-sm: 2rem;    /* 32px */
     --ui-h-md: 2.25rem; /* 36px */
-    --ui-h-lg: 2.5rem; /* 40px */
-  }
+    --ui-h-lg: 2.75rem; /* 44px */
+    --ui-h-xl: 3.25rem; /* 52px */
 
-  @include bp.bp(lg) {
-    --ui-h-sm: 1.875rem; /* 30px */
-    --ui-h-md: 2.5rem;   /* 40px */
-    --ui-h-lg: 3rem;    /* 48px */
-  }
+  // @include bp.bp(xs) {
+  //   --ui-h-xs: 1.75rem; /* 28px */
+  //   --ui-h-sm: 2rem;    /* 32px */
+  //   --ui-h-md: 2.25rem; /* 36px */
+  //   --ui-h-lg: 2.75rem; /* 44px */
+  //   --ui-h-xl: 3.25rem; /* 52px */
+  // }
+
+  // @include bp.bp(lg) {
+  //   --ui-h-sm: 2.25rem; /* 36px */
+  //   --ui-h-md: 2.5rem;   /* 40px */
+  //   --ui-h-lg: 2.75rem;    /* 44px */
+  // }
+
+  // @include bp.bp(xl) {
+  //   --ui-h-sm: 2.125rem; /* 34px */
+  //   --ui-h-md: 2.5rem;   /* 40px */
+  //   --ui-h-lg: 3rem;    /* 48px */
+  // }
 }
 
 /* ================================================== */
@@ -267,30 +282,13 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
 /* ℹ️ Fill 100% of parent's width up to suff breakpoint */
 /* ℹ️ Wrap with a moat classe to add left-right padding and center */
 
-/* Width variables */
-/* ================================================== */
-// $w-xs: calc(bp.$bp-xs - ($moat-xs * 2));  /* 328px */
-// $w-sm: calc(bp.$bp-sm - ($moat-xs * 2));  /* 448px */
-// $w-md: calc(bp.$bp-md - ($moat-md * 2));  /* 704px */
-// $w-lg: calc(bp.$bp-lg - ($moat-md * 2));  /* 960px */
-// $w-xl: calc(bp.$bp-xl - ($moat-xl * 2));  /* 1280px */
-
 /* Width classes */
 /* ================================================== */
-// .w-xs { width: min(100%, $w-xs); }
-// .w-sm { width: min(100%, $w-sm); }
-// .w-md { width: min(100%, $w-md); }
-// .w-lg { width: min(100%, $w-lg); }
-// .w-xl { width: min(100%, $w-xl); }
-
 .w-xs { width: min(100%, bp.$bp-xs); }
 .w-sm { width: min(100%, bp.$bp-sm); }
 .w-md { width: min(100%, bp.$bp-md); }
 .w-lg { width: min(100%, bp.$bp-lg); }
 .w-xl { width: min(100%, bp.$bp-xl); }
-
-// .w-100px { width: 100px; }
-// .w-200px { width: 200px; }
 
 /* Spacing */
 /* ================================================== */

@@ -68,7 +68,7 @@
   --btn-radius: var(--tab-radius);
   --btn-text: var(--color-white);
   --btn-bg: transparent;
-  --btn-hover-bg: var(--tint-2xlight);
+  --btn-state-bg: var(--tint-2xlight);
 
   z-index: z(on-nav);
   backdrop-filter: none;
@@ -98,7 +98,7 @@
 
 [role="tab"][aria-selected="true"] {
   --btn-text: var(--tint-3xdark);
-  --btn-hover-bg: var(--tint-3xlight);
+  --btn-state-bg: var(--tint-3xlight);
 
   &::before {
     opacity: 1;

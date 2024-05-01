@@ -19,7 +19,7 @@ function findAccordions() {
     // console.log($thisContent);
 
     $thisToggle.classList.toggle("is-closed");
-    $thisAccordion.classList.toggle("is-closed");;
+    $thisAccordion.classList.toggle("is-closed");
     $thisContent.classList.toggle("is-closed");
   };
 
