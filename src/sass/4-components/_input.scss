@@ -14,18 +14,18 @@
   --bg: var(--inset-bg-deep);
   --bg-hover: var(--tint-2xdark);
   --inset: var(--inset-sm);
-  --knob: oklch(var(--neutral-85) / 0.9);
+  --knob: hsl(var(--neutral-85) / 0.9);
   --knob-sha: var(--sha-xs);
 
-  --bg-checked: oklch(var(--primary-70) / 1);
-  --bg-checked-hover: oklch(var(--primary-60) / 1);
+  --bg-checked: hsl(var(--primary-70) / 1);
+  --bg-checked-hover: hsl(var(--primary-60) / 1);
 
   --bg-disabled: var(--inset-bg-xdeep);
   --inset-disabled: none;
-  --knob-disabled: oklch(var(--neutral-90) / 0.25);
+  --knob-disabled: hsl(var(--neutral-90) / 0.25);
   --knob-disabled-sha: none;
 
-  --bg-disabled-checked: oklch(var(--primary-70) / 0.4);
+  --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
 
   position: relative;
   z-index: z(input);

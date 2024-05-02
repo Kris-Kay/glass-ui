@@ -6,48 +6,20 @@
 /* ================================================== */
 
 
-
-@mixin hsl-values($map, $colorName) {
-  @each $key, $value in $map {
-    #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
-  }
-}
-
-$lightness: (
-  "98",
-  "95",
-  "93",
-  "90",
-  "85",
-  "80",
-  "75",
-  "70",
-  "65",
-  "60",
-  "55",
-  "50",
-  "45",
-  "40",
-  "30",
-  "25",
-  "15",
-  "10",
-  "5",
-);
-
-
 /* ================================================== */
 /* Default Theme */
 /* ================================================== */
 :root, [data-theme=default] {
-/* Color tokens */
-/* ================================================== */
---primary-h: 190;
---primary-s: 80%;
---neutral-h: 190;
---neutral-s: 10%;
+
+  /* Color tokens */
+  /* ================================================== */
+  --primary-h: 190;
+  --primary-s: 80%;
+  --neutral-h: 190;
+  --neutral-s: 10%;
 
   /* Primary */
+  /* ================================================== */
   // @include hsl-values($lightness, --primary);
   --primary-98: var(--primary-h) var(--primary-s) 98%;
   --primary-95: var(--primary-h) var(--primary-s) 95%;
@@ -70,6 +42,7 @@ $lightness: (
   --primary-5: var(--primary-h) var(--primary-s)   5%;
 
   /* Neutral */
+  /* ================================================== */
   // @include hsl-values($lightness, --neutral);
   --neutral-98: var(--neutral-h) var(--neutral-s) 98%;
   --neutral-95: var(--neutral-h) var(--neutral-s) 95%;
@@ -89,7 +62,7 @@ $lightness: (
   --neutral-25: var(--neutral-h) var(--neutral-s) 25%;
   --neutral-15: var(--neutral-h) var(--neutral-s) 15%;
   --neutral-10: var(--neutral-h) var(--neutral-s) 10%;
-  --neutral-5: var(--neutral-h) var(--neutral-s)   5%;
+  --neutral-5:  var(--neutral-h) var(--neutral-s)  5%;
 
 
   /* Solid colors that do not change with the theme */
@@ -102,7 +75,7 @@ $lightness: (
   --color-dark:    hsl(var(--neutral-30) / 1);
   --color-xdark:   hsl(var(--neutral-20) / 1);
   --color-2xdark:  hsl(var(--primary-15) / 1);
-  --color-black:   hsl(var(--neutral-5) / 1);
+  --color-black:   hsl(var(--neutral-5)  / 1);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
@@ -123,19 +96,19 @@ $lightness: (
 
   /* Inset bg colors */
   /* ================================================== */
-  --inset-bg-reg: hsl(var(--neutral-10) / 0.13);
-  --inset-bg-deep: hsl(var(--neutral-10) / 0.2);
+  --inset-bg-reg:   hsl(var(--neutral-10) / 0.13);
+  --inset-bg-deep:  hsl(var(--neutral-10) / 0.2);
   --inset-bg-xdeep: hsl(var(--neutral-10) / 0.3);
 
   /* Text colors */
   /* ================================================== */
   --text-2xstrong: hsl(var(--neutral-98));
-  --text-xstrong: hsl(var(--neutral-95));
-  --text-strong:  hsl(var(--neutral-93));
-  --text-base:  hsl(var(--neutral-90));
-  --text-mild:  hsl(var(--neutral-85));
-  --text-xmild: hsl(var(--neutral-80));
-  --text-2xmild: hsl(var(--neutral-70));
+  --text-xstrong:  hsl(var(--neutral-95));
+  --text-strong:   hsl(var(--neutral-93));
+  --text-base:     hsl(var(--neutral-90));
+  --text-mild:     hsl(var(--neutral-85));
+  --text-xmild:    hsl(var(--neutral-80));
+  --text-2xmild:   hsl(var(--neutral-70));
 
   /* Other */
   /* ================================================== */
@@ -182,6 +155,35 @@ $lightness: (
 
 /* Color generating mixin */
 /* ================================================== */
+@mixin hsl-values($map, $colorName) {
+  @each $key, $value in $map {
+    #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
+  }
+}
+
+$lightness: (
+  "98",
+  "95",
+  "93",
+  "90",
+  "85",
+  "80",
+  "75",
+  "70",
+  "65",
+  "60",
+  "55",
+  "50",
+  "45",
+  "40",
+  "30",
+  "25",
+  "15",
+  "10",
+  "5",
+);
+
+
 @mixin generate-color-lightness-classes($map, $property, $variablePrefix, $classSplit) {
   @each $key, $value in $map {
     &#{$classSplit}#{$key} {
@@ -198,9 +200,6 @@ $lightness: (
   @include generate-color-lightness-classes($lightness, 'background-color', 'neutral', '-');
 }
 
-.color-red {
-  background-color: var(--color-red);
-}
 
 $colors: (
   "white":   var(--color-white),

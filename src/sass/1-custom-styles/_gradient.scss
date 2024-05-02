@@ -3,42 +3,42 @@
 /* ================================================== */
 .gradient-2xlight {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-90) / 0.8) 0%,
-    oklch(var(--neutral-95) / 0.6) 60%,
-    oklch(var(--neutral-98) / 0.3) 100%);
+    hsl(var(--neutral-90) / 0.8) 0%,
+    hsl(var(--neutral-95) / 0.6) 60%,
+    hsl(var(--neutral-98) / 0.3) 100%);
 }
 
 .gradient-xlight {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-80) / 0.8) 0%,
-    oklch(var(--neutral-90) / 0.6) 60%,
-    oklch(var(--neutral-95) / 0.3) 100%);
+    hsl(var(--neutral-80) / 0.8) 0%,
+    hsl(var(--neutral-90) / 0.6) 60%,
+    hsl(var(--neutral-95) / 0.3) 100%);
 }
 
 .gradient-light {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-60) / 0.8) 0%,
-    oklch(var(--neutral-70) / 0.6) 60%,
-    oklch(var(--neutral-80) / 0.3) 100%);
+    hsl(var(--neutral-60) / 0.8) 0%,
+    hsl(var(--neutral-70) / 0.6) 60%,
+    hsl(var(--neutral-80) / 0.3) 100%);
 }
 
 .gradient-dark {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-40) / 0.8) 0%,
-    oklch(var(--neutral-50) / 0.6) 60%,
-    oklch(var(--neutral-60) / 0.3) 100%);
+    hsl(var(--neutral-40) / 0.8) 0%,
+    hsl(var(--neutral-50) / 0.6) 60%,
+    hsl(var(--neutral-60) / 0.3) 100%);
 }
 
 .gradient-xdark {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-20) / 0.8) 0%,
-    oklch(var(--neutral-30) / 0.6) 60%,
-    oklch(var(--neutral-40) / 0.3) 100%);
+    hsl(var(--neutral-20) / 0.8) 0%,
+    hsl(var(--neutral-30) / 0.6) 60%,
+    hsl(var(--neutral-40) / 0.3) 100%);
 }
 
 .gradient-2xdark {
   background: linear-gradient(to top left,
-    oklch(var(--neutral-5) / 0.8) 0%,
-    oklch(var(--neutral-10) / 0.6) 60%,
-    oklch(var(--neutral-20) / 0.3) 100%);
+    hsl(var(--neutral-5) / 0.8) 0%,
+    hsl(var(--neutral-10) / 0.6) 60%,
+    hsl(var(--neutral-20) / 0.3) 100%);
 }

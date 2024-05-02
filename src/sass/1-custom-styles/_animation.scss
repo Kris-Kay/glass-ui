@@ -62,8 +62,8 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
     radial-gradient(circle at
       calc(var(--x) * 1px)
       calc(var(--y) * 1px),
-      oklch(var(--neutral-90) / 0.1),
-      oklch(var(--neutral-90) / 0.05),
+      hsl(var(--neutral-90) / 0.1),
+      hsl(var(--neutral-90) / 0.05),
       transparent
       30%);
   background-attachment: fixed;
@@ -88,8 +88,8 @@ html.root-transition *::after {
 /* Focus */
 /* ================================================== */
 :focus {
-  box-shadow: 0 0 0 1px oklch(var(--primary-15) / 0.12)!important;
-  outline: 1px solid oklch(var(--primary-95) / 0.6)!important;
+  box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;
+  outline: 1px solid hsl(var(--primary-95) / 0.6)!important;
   outline-offset: 1.5px!important;
   overflow: visible;
   z-index: z.z(focus);

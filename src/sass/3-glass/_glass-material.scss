@@ -2,6 +2,7 @@
 /* Glass */
 @use "sass:map";
 @use "../1-custom-styles/breakpoint" as bp;
+@use "../1-custom-styles/z-index" as z;
 @use "../2-util/mixin" as mix;
 @use "../2-util/layout-help" as layout;
 /* ================================================== */
@@ -16,7 +17,7 @@ $blur-md: 56px;
 $blur-lg: 80px;
 $brightness-base: 1;
 $saturate-base: 1.2;
-$contrat-base: 1.2;
+$contrat-base: 1;
 
 /* Backdrop filter mixin */
 /* ================================================== */
@@ -64,23 +65,18 @@ $contrat-base: 1.2;
 /* ================================================== */
 @mixin glass-3d-base {
   position: relative;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  @include glass-filter($blur-md, $brightness-base, $saturate-base);
-  // overflow: hidden;
+  @include glass-filter($blur-md, $brightness-base, $saturate-base, $contrat-base);
 
   &::after {
     @include layout.pseudo;
-    z-index: 2;
+    z-index: z.z(glass-after);
     box-shadow: var(--bevel-md);
-    // overflow: hidden;
   }
 
   &::before {
     @include layout.pseudo;
-    z-index: -2;
+    z-index: z.z(glass-b4);
     @include noise-md;
-    // overflow: hidden;
   }
 }
 
@@ -89,14 +85,14 @@ $contrat-base: 1.2;
 /* Same as 3D glass just without the bevel box-shadow */
 @mixin glass-2d {
   position: relative;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  @include glass-filter($blur-md, $brightness-base, $saturate-base);
+  // -webkit-transform: translate3d(0,0,0);
+  // transform: translate3d(0,0,0);
+  @include glass-filter($blur-md, $brightness-base, $saturate-base, $contrat-base);
   // overflow: hidden;
 
   &::before {
     @include layout.pseudo;
-    z-index: -2;
+    z-index: z.z(glass-b4);
     @include noise-md;
     // overflow: hidden;
   }
@@ -105,25 +101,25 @@ $contrat-base: 1.2;
 /* UI glass */
 /* ================================================== */
 /* Same as 3D glass just without the noise texture and filter */
-@mixin glass-ui {
-  position: relative;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  // overflow: hidden;
+// @mixin glass-ui {
+//   position: relative;
+//   // -webkit-transform: translate3d(0,0,0);
+//   // transform: translate3d(0,0,0);
+//   // overflow: hidden;
 
-  &::after {
-    @include layout.pseudo;
-    z-index: 2;
-    // box-shadow: var(--bevel-sm);
-    // overflow: hidden;
-  }
+//   &::after {
+//     @include layout.pseudo;
+//     z-index: 2;
+//     // box-shadow: var(--bevel-sm);
+//     // overflow: hidden;
+//   }
 
-  &::before {
-    @include layout.pseudo;
-    z-index: -2;
-    // overflow: hidden;
-  }
-}
+//   &::before {
+//     @include layout.pseudo;
+//     z-index: -2;
+//     // overflow: hidden;
+//   }
+// }
 
 // /* 3D glass base */
 // /* ================================================== */
@@ -154,8 +150,8 @@ $contrat-base: 1.2;
   overflow: hidden;
 // background-color: rgba(255, 110, 236, 0.524);
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--bevel-sm);
   }
 
@@ -170,8 +166,8 @@ $contrat-base: 1.2;
   @include glass-filter($blur-md, $brightness-base, $saturate-base);
 // background-color: rgba(255, 0, 0, 0.54);
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--bevel-md);
   }
 
@@ -185,8 +181,8 @@ $contrat-base: 1.2;
   @include glass-filter($blur-lg, $brightness-base, $saturate-base);
 // background-color: rgba(128, 0, 128, 0.515);
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--bevel-lg);
   }
 
@@ -204,8 +200,8 @@ $contrat-base: 1.2;
   @include glass-3d-sm;
 
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--flat-bevel-sm);
   }
 }
@@ -214,8 +210,8 @@ $contrat-base: 1.2;
   @include glass-3d-md;
 
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--flat-bevel-md);
   }
 }
@@ -224,8 +220,8 @@ $contrat-base: 1.2;
   @include glass-3d-lg;
 
   &::after {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    // -webkit-transform: translate3d(0,0,0);
+    // transform: translate3d(0,0,0);
     box-shadow: var(--flat-bevel-lg);
   }
 }
