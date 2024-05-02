@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!$dropdownBg.contains(e.target) && e.target !== $dropdownToggle ) {
       closeDropdown();
-      console.log('A click!');
     }
   };
 
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeViaEsc = ("keyup", (e) => {
     if (e.key === 'Escape') {
       closeDropdown();
-      console.log('Esc!');
     };
   });
 
