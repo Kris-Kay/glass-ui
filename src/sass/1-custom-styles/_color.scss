@@ -1,107 +1,108 @@
 /* ================================================== */
 /* Colors & Themes */
 @use "sass:map";
+@use "sass:list";
 @use "../2-util/mixin" as mix;
 /* ================================================== */
-/* OKLCH Color Picker & Converter */
-/* https://oklch.com/ */
-/* l = lightness 0%   to 100% */
-/* c = chroma    0    to 0.37 */
-/* h = hue       0deg to 360deg */
 
-/* ================================================== */
-/* Color tokens */
-/* ================================================== */
-/* ✨ Config these values ✨ */
-:root {
-  --primary-hue: 220;
-  --accent-hue: 130;
-  --neutral-hue: 250;
+
+
+@mixin hsl-values($map, $colorName) {
+  @each $key, $value in $map {
+    #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
+  }
 }
+
+$lightness: (
+  "98",
+  "95",
+  "93",
+  "90",
+  "85",
+  "80",
+  "75",
+  "70",
+  "65",
+  "60",
+  "55",
+  "50",
+  "45",
+  "40",
+  "30",
+  "25",
+  "15",
+  "10",
+  "5",
+);
 
 
 /* ================================================== */
 /* Default Theme */
 /* ================================================== */
 :root, [data-theme=default] {
+/* Color tokens */
+/* ================================================== */
+--primary-h: 190;
+--primary-s: 80%;
+--neutral-h: 190;
+--neutral-s: 10%;
 
-  /* Fallback colors */
-  /* ================================================== */
   /* Primary */
-  --primary-95: 95% 0.06 var(--primary-hue);
-  --primary-90: 90% 0.12 var(--primary-hue);
-  --primary-85: 85% 0.14 var(--primary-hue);
-  --primary-80: 80% 0.13 var(--primary-hue);
-  --primary-75: 75% 0.12 var(--primary-hue);
-  --primary-70: 70% 0.12 var(--primary-hue);
-  --primary-60: 60% 0.12 var(--primary-hue);
-  --primary-50: 50% 0.08 var(--primary-hue);
-  --primary-25: 25% 0.03 var(--primary-hue);
-  --primary-15: 15% 0.025 var(--primary-hue);
-
-  /* Accent */
-  --accent-80: 80% 0.12 var(--accent-hue);
-  --accent-70: 70% 0.2 var(--accent-hue);
-  --accent-50: 50% 0.14 var(--accent-hue);
+  // @include hsl-values($lightness, --primary);
+  --primary-98: var(--primary-h) var(--primary-s) 98%;
+  --primary-95: var(--primary-h) var(--primary-s) 95%;
+  --primary-93: var(--primary-h) var(--primary-s) 93%;
+  --primary-90: var(--primary-h) var(--primary-s) 90%;
+  --primary-85: var(--primary-h) var(--primary-s) 85%;
+  --primary-80: var(--primary-h) var(--primary-s) 80%;
+  --primary-75: var(--primary-h) var(--primary-s) 75%;
+  --primary-70: var(--primary-h) var(--primary-s) 70%;
+  --primary-65: var(--primary-h) var(--primary-s) 65%;
+  --primary-60: var(--primary-h) var(--primary-s) 60%;
+  --primary-55: var(--primary-h) var(--primary-s) 55%;
+  --primary-50: var(--primary-h) var(--primary-s) 50%;
+  --primary-45: var(--primary-h) var(--primary-s) 45%;
+  --primary-40: var(--primary-h) var(--primary-s) 40%;
+  --primary-30: var(--primary-h) var(--primary-s) 30%;
+  --primary-25: var(--primary-h) var(--primary-s) 25%;
+  --primary-15: var(--primary-h) var(--primary-s) 15%;
+  --primary-10: var(--primary-h) var(--primary-s) 10%;
+  --primary-5: var(--primary-h) var(--primary-s)   5%;
 
   /* Neutral */
-  --neutral-98: 98% 0.009 var(--neutral-hue);
-  --neutral-95: 95% 0.02 var(--neutral-hue);
-  --neutral-90: 90% 0.03 var(--neutral-hue);
-  --neutral-85: 85% 0.03 var(--neutral-hue);
-  --neutral-80: 80% 0.025 var(--neutral-hue);
-  --neutral-75: 75% 0.025 var(--neutral-hue);
-  --neutral-70: 70% 0.025 var(--neutral-hue);
-  --neutral-60: 60% 0.02 var(--neutral-hue);
-  --neutral-50: 50% 0.02 var(--neutral-hue);
-  --neutral-40: 40% 0.01 var(--neutral-hue);
-  --neutral-30: 30% 0.01 var(--neutral-hue);
-  --neutral-20: 20% 0.02 var(--neutral-hue);
-  --neutral-10: 10% 0.02 var(--neutral-hue);
-  --neutral-5:  5% 0.014 var(--neutral-hue);
+  // @include hsl-values($lightness, --neutral);
+  --neutral-98: var(--neutral-h) var(--neutral-s) 98%;
+  --neutral-95: var(--neutral-h) var(--neutral-s) 95%;
+  --neutral-93: var(--neutral-h) var(--neutral-s) 93%;
+  --neutral-90: var(--neutral-h) var(--neutral-s) 90%;
+  --neutral-85: var(--neutral-h) var(--neutral-s) 85%;
+  --neutral-80: var(--neutral-h) var(--neutral-s) 80%;
+  --neutral-75: var(--neutral-h) var(--neutral-s) 75%;
+  --neutral-70: var(--neutral-h) var(--neutral-s) 70%;
+  --neutral-65: var(--neutral-h) var(--neutral-s) 65%;
+  --neutral-60: var(--neutral-h) var(--neutral-s) 60%;
+  --neutral-55: var(--neutral-h) var(--neutral-s) 55%;
+  --neutral-50: var(--neutral-h) var(--neutral-s) 50%;
+  --neutral-45: var(--neutral-h) var(--neutral-s) 45%;
+  --neutral-40: var(--neutral-h) var(--neutral-s) 40%;
+  --neutral-30: var(--neutral-h) var(--neutral-s) 30%;
+  --neutral-25: var(--neutral-h) var(--neutral-s) 25%;
+  --neutral-15: var(--neutral-h) var(--neutral-s) 15%;
+  --neutral-10: var(--neutral-h) var(--neutral-s) 10%;
+  --neutral-5: var(--neutral-h) var(--neutral-s)   5%;
 
-  @media (color-gamut: p3) {
-  /* P3 color space values go here */
-  /* These will only be visible if both the display and browser support the P3 color space */
-    :root {
-      /* Primary */
-      --primary-95: 95% 0.065 var(--primary-hue);
-      --primary-90: 90% 0.13 var(--primary-hue);
-      --primary-85: 85% 0.15 var(--primary-hue);
-      --primary-80: 80% 0.16 var(--primary-hue);
-      --primary-75: 75% 0.15 var(--primary-hue);
-      --primary-50: 50% 0.1 var(--primary-hue);
-      --primary-25: 25% 0.04 var(--primary-hue);
-      --primary-15: 15% 0.033 var(--primary-hue);
 
-      /* Accent */
-      --accent-80: 80% 0.135 var(--accent-hue);
-      --accent-70: 70% 0.21 var(--accent-hue);
-      --accent-50: 50% 0.16 var(--accent-hue);
-    }
-  }
-
-  /* Solid colors that do not change with theme */
+  /* Solid colors that do not change with the theme */
   /* ================================================== */
-  --color-primary-15: oklch(var(--primary-15) / 1);
-  --color-primary-25: oklch(var(--primary-25) / 1);
-  --color-primary-50: oklch(var(--primary-50) / 1);
-  --color-primary-65: oklch(var(--primary-60) / 1);
-  --color-primary-95: oklch(var(--primary-95) / 1);
-  --color-primary-90: oklch(var(--primary-90) / 1);
-
-  --color-primary: oklch(var(--primary-80) / 1);
-  // --color-primary: oklch(var(--primary-75) / 1);
-  --color-accent:  oklch(var(--accent-70) / 1);
-  --color-white:   oklch(var(--neutral-98) / 1);
-  --color-2xlight: oklch(var(--neutral-90) / 1);
-  --color-xlight:  oklch(var(--neutral-80) / 1);
-  --color-light:   oklch(var(--neutral-70) / 1);
-  --color-gray:    oklch(var(--neutral-50) / 1);
-  --color-dark:    oklch(var(--neutral-30) / 1);
-  --color-xdark:   oklch(var(--neutral-20) / 1);
-  --color-2xdark:  oklch(var(--primary-15) / 1);
-  --color-black:   oklch(var(--neutral-5) / 1);
+  --color-white:   hsl(var(--neutral-98) / 1);
+  --color-2xlight: hsl(var(--neutral-90) / 1);
+  --color-xlight:  hsl(var(--neutral-80) / 1);
+  --color-light:   hsl(var(--neutral-70) / 1);
+  --color-gray:    hsl(var(--neutral-50) / 1);
+  --color-dark:    hsl(var(--neutral-30) / 1);
+  --color-xdark:   hsl(var(--neutral-20) / 1);
+  --color-2xdark:  hsl(var(--primary-15) / 1);
+  --color-black:   hsl(var(--neutral-5) / 1);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
@@ -110,35 +111,35 @@
 
   /* Translucent tints */
   /* ================================================== */
-  --tint-3xlight: oklch(var(--neutral-95) / 0.4);
-  --tint-2xlight: oklch(var(--neutral-95) / 0.3);
-  --tint-xlight:  oklch(var(--neutral-95) / 0.2);
-  --tint-light:   oklch(var(--neutral-95) / 0.1);
-  --tint-clear:   oklch(var(--neutral-10) / 0.01);
-  --tint-dark:    oklch(var(--neutral-10) / 0.1);
-  --tint-xdark:   oklch(var(--neutral-10) / 0.25);
-  --tint-2xdark:  oklch(var(--neutral-10) / 0.4);
-  --tint-3xdark:  oklch(var(--neutral-10) / 0.6);
+  --tint-3xlight: hsl(var(--neutral-95) / 0.4);
+  --tint-2xlight: hsl(var(--neutral-95) / 0.3);
+  --tint-xlight:  hsl(var(--neutral-95) / 0.2);
+  --tint-light:   hsl(var(--neutral-95) / 0.1);
+  --tint-clear:   hsl(var(--neutral-10) / 0.01);
+  --tint-dark:    hsl(var(--neutral-10) / 0.1);
+  --tint-xdark:   hsl(var(--neutral-10) / 0.25);
+  --tint-2xdark:  hsl(var(--neutral-10) / 0.4);
+  --tint-3xdark:  hsl(var(--neutral-10) / 0.6);
 
   /* Inset bg colors */
   /* ================================================== */
-  --inset-bg-reg: oklch(var(--neutral-10) / 0.13);
-  --inset-bg-deep: oklch(var(--neutral-10) / 0.2);
-  --inset-bg-xdeep: oklch(var(--neutral-10) / 0.3);
+  --inset-bg-reg: hsl(var(--neutral-10) / 0.13);
+  --inset-bg-deep: hsl(var(--neutral-10) / 0.2);
+  --inset-bg-xdeep: hsl(var(--neutral-10) / 0.3);
 
   /* Text colors */
   /* ================================================== */
-  --text-xstrong: oklch(var(--neutral-95) / 1);
-  --text-strong:  oklch(var(--neutral-90) / 1);
-  --text-base:  oklch(var(--neutral-85) / 1);
-  --text-mild:  oklch(var(--neutral-80) / 1);
-  --text-xmild: oklch(var(--neutral-75) / 1);
+  --text-2xstrong: hsl(var(--neutral-98));
+  --text-xstrong: hsl(var(--neutral-95));
+  --text-strong:  hsl(var(--neutral-93));
+  --text-base:  hsl(var(--neutral-90));
+  --text-mild:  hsl(var(--neutral-85));
+  --text-xmild: hsl(var(--neutral-80));
+  --text-2xmild: hsl(var(--neutral-70));
 
   /* Other */
   /* ================================================== */
-  --page-bg: oklch(var(--primary-95) / 1);
-  --scrollbar-tumb: oklch(var(--primary-75) / 1);
-  --scrollbar-track: oklch(var(--neutral-80) / 1);
+  --page-bg: var(--primary-95);
 }
 
 
@@ -149,48 +150,59 @@
 
   /* Translucent tints */
   /* ================================================== */
-  --tint-3xlight: oklch(var(--neutral-95) / 0.6);
-  --tint-2xlight: oklch(var(--neutral-95) / 0.5);
-  --tint-xlight:  oklch(var(--neutral-95) / 0.4);
-  --tint-light:   oklch(var(--neutral-95) / 0.3);
-  --tint-clear:   oklch(var(--neutral-10) / 0.01);
-  --tint-dark:    oklch(var(--neutral-10) / 0.2);
-  --tint-xdark:   oklch(var(--neutral-10) / 0.4);
-  --tint-2xdark:  oklch(var(--neutral-10) / 0.6);
-  --tint-3xdark:  oklch(var(--neutral-10) / 0.8);
+  --tint-3xlight: hsl(var(--neutral-95) / 0.6);
+  --tint-2xlight: hsl(var(--neutral-95) / 0.5);
+  --tint-xlight:  hsl(var(--neutral-95) / 0.4);
+  --tint-light:   hsl(var(--neutral-95) / 0.3);
+  --tint-clear:   hsl(var(--neutral-10) / 0.01);
+  --tint-dark:    hsl(var(--neutral-10) / 0.2);
+  --tint-xdark:   hsl(var(--neutral-10) / 0.4);
+  --tint-2xdark:  hsl(var(--neutral-10) / 0.6);
+  --tint-3xdark:  hsl(var(--neutral-10) / 0.8);
 
   /* Inset bg colors */
   /* ================================================== */
-  --inset-bg-reg: oklch(var(--neutral-10) / 0.25);
-  --inset-bg-deep: oklch(var(--neutral-10) / 0.3);
-  --inset-bg-xdeep: oklch(var(--neutral-10) / 0.35);
+  --inset-bg-reg: hsl(var(--neutral-10) / 0.25);
+  --inset-bg-deep: hsl(var(--neutral-10) / 0.3);
+  --inset-bg-xdeep: hsl(var(--neutral-10) / 0.35);
 
   /* Text colors */
   /* ================================================== */
-  --text-xstrong: oklch(var(--neutral-98) / 1);
-  --text-strong:  oklch(var(--neutral-95) / 1);
-  --text-base:  oklch(var(--neutral-90) / 1);
-  --text-mild:  oklch(var(--neutral-85) / 1);
-  --text-xmild: oklch(var(--neutral-80) / 1);
+  --text-xstrong: hsl(var(--neutral-98) / 1);
+  --text-strong:  hsl(var(--neutral-95) / 1);
+  --text-base:  hsl(var(--neutral-90) / 1);
+  --text-mild:  hsl(var(--neutral-85) / 1);
+  --text-xmild: hsl(var(--neutral-80) / 1);
 
   /* Other */
   /* ================================================== */
-  --page-bg: oklch(var(--primary-25) / 1);
+  --page-bg: hsl(var(--primary-25) / 1);
 }
 
 
-/* Solid colors MAP */
+/* Color generating mixin */
 /* ================================================== */
-$colors: (
-  "primary": var(--color-primary),
-  "primary-15": var(--color-primary-15),
-  "primary-25": var(--color-primary-25),
-  "primary-50": var(--color-primary-50),
-  "primary-65": var(--color-primary-65),
-  "primary-90": var(--color-primary-90),
-  "primary-95": var(--color-primary-95),
+@mixin generate-color-lightness-classes($map, $property, $variablePrefix, $classSplit) {
+  @each $key, $value in $map {
+    &#{$classSplit}#{$key} {
+      #{$property}: hsl(var(--#{$variablePrefix}-#{$key}));
+    }
+  }
+}
 
-  "accent":  var(--color-accent),
+.primary {
+  @include generate-color-lightness-classes($lightness, 'background-color', 'primary', '-');
+}
+
+.neutral {
+  @include generate-color-lightness-classes($lightness, 'background-color', 'neutral', '-');
+}
+
+.color-red {
+  background-color: var(--color-red);
+}
+
+$colors: (
   "white":   var(--color-white),
   "2xlight": var(--color-2xlight),
   "xlight":  var(--color-xlight),
@@ -202,7 +214,6 @@ $colors: (
   "black":   var(--color-black),
 );
 
-/* Solid color classes */
 .color {
   @include mix.generate-classes($colors, 'background-color', 'color', '-');
 }
@@ -229,11 +240,13 @@ $tints: (
 /* Text colors MAP */
 /* ================================================== */
 $text-colors: (
+  "2xstrong": var(--text-2xstrong),
   "xstrong": var(--text-xstrong),
   "strong":  var(--text-strong),
   "base":  var(--text-base),
   "mild":  var(--text-mild),
   "xmild": var(--text-xmild),
+  "2xmild": var(--text-2xmild),
 );
 
 /* Text color classes */

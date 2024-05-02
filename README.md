@@ -28,7 +28,6 @@ Includes beveled and inset glass styles whose use is demonstrated through the co
 
 ### Features
 * Customizable design tokens and composable styling classes. *For glass that reflects your branding.*
-* Oklch color theme with fallbacks. *For access to about 50% more colors than sRGB.*
 * Fluid typography and sizing. *For elements that scale with viewport width.*
 
 ### Build with
