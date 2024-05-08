@@ -92,131 +92,127 @@
     </div>
   </div>
 
-  <div class="body-grid">
+  <!-- Page content -->
+  <!-- ========================================== -->
+  <div id="js-content" class="content-area"></div>
 
-    <!-- Page content -->
-    <!-- ========================================== -->
-    <div id="content" class="content-bin"></div>
+  <!-- Nav -->
+  <!-- ========================================== -->
+  <nav class="main-nav-bin">
+    <div class="main-nav">
+      <!-- Theme toggle -->
+      <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
+        type="button">
 
-    <!-- Nav -->
-    <!-- ========================================== -->
-    <nav class="main-nav-bin">
-      <div class="main-nav">
-        <!-- Theme toggle -->
-        <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
-          type="button">
+        <svg class="svg-circleHalf"
+          id="js-light"
+          role="graphics-symbol"
+          aria-labelledby="contrastThemeTitle"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title id="contrastThemeTitle">turn on high contrast theme</title>
+        </svg>
 
-          <svg class="svg-circleHalf"
-            id="js-light"
+        <svg class="svg-circleHalfTilt hidden"
+          id="js-dark"
+          role="graphics-symbol"
+          aria-labelledby="defaultThemeTitle"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <title id="defaultThemeTitle">turn on default theme</title>
+        </svg>
+      </button>
+
+      <!-- Tabs menu -->
+      <div class="tab-menu-bin nav-item">
+        <div class="js-tabMenu tab-menu"
+          role="tablist"
+          aria-label="Background image tabs"
+          >
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-1"
+            id="tab-1"
+            tabindex="-1">
+            <p class="btn-text">Dark</p>
+          </button>
+
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-2"
+            id="tab-2"
+            tabindex="-1">
+            <p class="btn-text">Light</p>
+          </button>
+
+          <button
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-3"
+            id="tab-3"
+            tabindex="0">
+            <p class="btn-text">Color</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dropdown -->
+      <div class="dropdown-group nav-item">
+        <button class="nav-item btn-icon-md btn-secondary"
+          type="button"
+          id="js-dropdownToggle">
+
+          <svg class="svg-ham"
+            id="js-navHam"
             role="graphics-symbol"
-            aria-labelledby="contrastThemeTitle"
+            aria-labelledby="hamTitle"
             aria-hidden="true"
             focusable="false"
           >
-            <title id="contrastThemeTitle">turn on high contrast theme</title>
+            <title id="hamTitle">open menu</title>
           </svg>
 
-          <svg class="svg-circleHalfTilt hidden"
-            id="js-dark"
+          <svg class="svg-x hidden"
+            id="js-navX"
             role="graphics-symbol"
-            aria-labelledby="defaultThemeTitle"
+            aria-labelledby="xTitle"
             aria-hidden="true"
             focusable="false"
           >
-            <title id="defaultThemeTitle">turn on default theme</title>
+            <title id="xTitle">close menu</title>
           </svg>
         </button>
 
-    <!-- BG Tabs menu -->
-        <div class="tab-menu-bin nav-item">
-          <div class="js-tabMenu tab-menu"
-            role="tablist"
-            aria-label="Background image tabs"
-            >
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-1"
-              id="tab-1"
-              tabindex="-1">
-              <p class="btn-text">Dark</p>
-            </button>
+        <div id="js-navDropdown" class="dropdown-bin hidden">
+          <div id="js-dropdown-bg" class="dropdown-bg glass-3d-md tint-clear">
+            <a href="#top-of-page"
+              class="dropdown-item js-dropdownItem btn-md btn-ghost">
+              <p class="btn-text">Intro</p>
+            </a>
 
-            <button
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-2"
-              id="tab-2"
-              tabindex="-1">
-              <p class="btn-text">Light</p>
-            </button>
+            <a href="#demo"
+              class="dropdown-item js-dropdownItem btn-md btn-ghost">
+              <p class="btn-text">Demo</p>
+            </a>
 
-            <button
-              role="tab"
-              aria-selected="true"
-              aria-controls="panel-3"
-              id="tab-3"
-              tabindex="0">
-              <p class="btn-text">Color</p>
-            </button>
-          </div>
-        </div>
+            <a href="#details"
+              class="dropdown-item js-dropdownItem btn-md btn-ghost">
+              <p class="btn-text">Details</p>
+            </a>
 
-        <!-- Dropdown -->
-        <div class="dropdown-group">
-          <button class="nav-item btn-icon-md btn-secondary"
-            type="button"
-            id="js-dropdownToggle">
-
-            <svg class="svg-ham"
-              id="js-navHam"
-              role="graphics-symbol"
-              aria-labelledby="hamTitle"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <title id="hamTitle">open menu</title>
-            </svg>
-
-            <svg class="svg-x hidden"
-              id="js-navX"
-              role="graphics-symbol"
-              aria-labelledby="xTitle"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <title id="xTitle">close menu</title>
-            </svg>
-          </button>
-
-          <div id="js-navDropdown" class="dropdown-bin hidden">
-            <div id="js-dropdown-bg" class="dropdown-bg glass-3d-md tint-clear">
-              <a href="#top-of-page"
-                class="dropdown-item js-dropdownItem btn-md btn-ghost">
-                <p class="btn-text">Intro</p>
-              </a>
-
-              <a href="#demo"
-                class="dropdown-item js-dropdownItem btn-md btn-ghost">
-                <p class="btn-text">Demo</p>
-              </a>
-
-              <a href="#details"
-                class="dropdown-item js-dropdownItem btn-md btn-ghost">
-                <p class="btn-text">Details</p>
-              </a>
-
-              <a href="#contact"
-                class="dropdown-item js-dropdownItem btn-md btn-ghost">
-                <p class="btn-text">Contact</p>
-              </a>
-            </div>
+            <a href="#contact"
+              class="dropdown-item js-dropdownItem btn-md btn-ghost">
+              <p class="btn-text">Contact</p>
+            </a>
           </div>
         </div>
       </div>
-    </nav>
-
-  </div>
+    </div>
+  </nav>
 
   <!-- Scripts -->
   <!-- ========================================== -->

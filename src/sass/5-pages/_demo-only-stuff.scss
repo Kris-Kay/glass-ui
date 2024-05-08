@@ -1,14 +1,11 @@
 /* ================================================== */
 /* Demo only styles */
 @use "../forward-styles/design" as *;
-@use "../2-util/layout" as layout;
-@use "../forward-styles/glass" as glass;
+@use "../2-util/layout";
+@use "../forward-styles/glass";
 /* ================================================== */
 
-body {
-  position: relative;
-}
-
+/* BG img changing manu */
 .page-bg-bin {
   z-index: -10;
   position: fixed;
@@ -47,25 +44,52 @@ body {
   }
 }
 
-.body-grid {
-  max-width: 100vw;
-  min-height: 100vh;
-  height: fit-content;
-  display: grid;
-  // overflow: hidden;
-  pointer-events: auto;
-// background-color: var(--color-2xlight);
-// background-color: var(--color-2xdark);
-  margin-bottom: 10rem;
+
+/* Big titles */
+.big-title-bg {
+  width: fit-content;
+  min-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--sm);
+  // margin-top: var(--nav-h);
+  margin-bottom: var(--3xl);
+  z-index: z(nav);
+
+  @include glass.glass-flat-md;
+  background-color: var(--tint-clear);
+  box-shadow: var(--sha-sm);
+  border-radius: 0 var(--sm) var(--sm) 0;
+
+  @include bp(xs) {
+    min-width: 40%;
+  }
+
+  @include bp(sm) {
+    min-width: 33%;
+  }
+
+  @include bp(lg) {
+    min-width: 25%;
+  }
 }
 
-.content-bin {
-  width: 100%;
-  display: block;
-  height: fit-content;
-  z-index: z(page);
+.big-title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  font-size: var(--text-lg);
+  text-shadow: var(--text-sha-3xl);
+  line-height: 1;
+  color: var(--text-strong);
+  text-align: right;
+
+  @include bp(lg) {
+    font-size: var(--text-xl);
+  }
 }
 
+
+/* Bevel Demo */
 .bevel-demo {
   position: relative;
   // z-index: 2;
@@ -77,6 +101,7 @@ body {
   display: grid;
 }
 
+/* inset Demo */
 .inset-demo-bin {
   width: 100%;
   height: fit-content;
@@ -101,25 +126,7 @@ body {
   // }
 }
 
-.contact-inset-bin {
-  width: 100%;
-  border-radius: var(--sm);
-  overflow: hidden;
-
-}
-
-.contact-inset {
-  display: grid;
-  place-items: center;
-  gap: var(--2xs);
-  width: 100%;
-  height: fit-content;
-  padding: var(--lg);
-  box-shadow: var(--inset-lg);
-  border-radius: inherit;
-  background-color: var(--inset-bg-deep);
-}
-
+/* Button Demo */
 .btn-grid-bin {
   width: 100%;
   max-width: 300px;
@@ -182,6 +189,7 @@ body {
   }
 }
 
+/* Color Demo */
 .color-stack {
   display: grid;
   border-radius: var(--sm);
@@ -193,5 +201,48 @@ body {
     display: flex;
     align-items: center;
     padding: var(--sm);
+  }
+}
+
+
+/* Contact section */
+.contact-inset-bin {
+  width: 100%;
+  border-radius: var(--sm);
+  overflow: hidden;
+
+}
+
+.contact-inset {
+  display: grid;
+  place-items: center;
+  gap: var(--2xs);
+  width: 100%;
+  height: fit-content;
+  padding: var(--lg);
+  box-shadow: var(--inset-lg);
+  border-radius: inherit;
+  background-color: var(--inset-bg-deep);
+}
+
+.stamp {
+  width: 100px;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  opacity: 0.85;
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    border-radius: var(--sm);
+  }
+
+  @include bp(sm) {
+    width: 180px;
+  }
+
+  & > img {
+    width: 100%;
   }
 }

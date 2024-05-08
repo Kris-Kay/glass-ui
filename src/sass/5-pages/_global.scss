@@ -4,3 +4,32 @@
 @use "../2-util/layout" as layout;
 @use "../forward-styles/glass" as glass;
 /* ================================================== */
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content-area {
+  position: relative;
+  z-index: z(page);
+  max-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: grid;
+  padding-top: var(--nav-h);
+  padding-bottom: var(--nav-h);
+  // overflow-x: hidden;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scroll-padding-top: var(--nav-h);
+  pointer-events: auto;
+// background-color: var(--color-3xlight);
+// background-color: var(--color-3xdark);
+}

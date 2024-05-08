@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () =>
 {
 // Select the element where you want to insert the HTML content
-  const container = document.querySelector('#content');
+  const container = document.querySelector('#js-content');
 
   fetch('/html/home.html')
     .then(response => response.text())

@@ -3,41 +3,40 @@
 @use "../forward-styles/design" as *;
 @use "../0-design/breakpoint" as bp;
 @use "../0-design/animation" as ani;
-@use "../3-components/card" as card;
+@use "../3-components/card";
 /* ================================================== */
 
 .hero {
+  width: 100%;
   min-height: calc(100vh - var(--nav-h));
   height: fit-content;
   display: grid;
-  margin: var(--nav-h) auto 0 auto;
-  max-width: bp.$bp-xl;
-  --clear-tabs: calc( (var(--ui-h-md)) + 8rem + calc(var(--sm) * 2));
-  padding: 0 var(--moat) var(--clear-tabs) var(--moat);
-
-  @include bp.bp(xs) {
-    --clear-tabs: calc( (var(--ui-h-md)) + 12rem + calc(var(--sm) * 2));
-  }
+  padding-bottom: var(--nav-h);
+  // padding-left: var(--moat);
+  // padding-right: var(--moat);
 }
 
 .hero-card-bin {
-  max-width: 97%;
+  width: 97%;
   min-height: fit-content;
   height: 100%;
   display: grid;
   place-self: center;
-  place-items: end center;
+  place-items: end start;
+  padding-bottom: var(--nav-h);
 
   @include bp.bp(sm) {
-    place-items: end start;
+    width: 100%;
+    padding-left: min(5%, 3rem);
   }
 
-  @include bp.bp(md) {
-    max-width: bp.$bp-xl;
+  @include bp.bp(lg) {
+    padding-left: 0;
+    max-width: bp.$bp-md;
   }
 
   @include bp.bp(xl) {
-    max-width: bp.$bp-xl ;
+    max-width: bp.$bp-lg;
   }
 }
 
@@ -72,7 +71,7 @@
 
 .card-3d-bin {
   position: relative;
-  width: 96%;
+  width: 97%;
   perspective: 2500px;
 
   // @media (width > 2400px) {
