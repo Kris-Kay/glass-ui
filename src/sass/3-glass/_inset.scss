@@ -20,27 +20,27 @@ html {
   inset -0.5px -0.5px 0.5px -0.25px hsl(var(--highlight) / 0.3),
   inset -0.75px -0.75px 0.25px  hsl(var(--highlight) / 0.1),
   inset 0.5px 0.5px 0.5px -0.5px  hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.3),
-  inset 1px 1px 2px  hsl(var(--shadow) / 0.25),
-  inset 4px 4px 16px -4px hsl(var(--shadow) / 0.1);
+  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
+  inset 1px 1px 2px  hsl(var(--shadow) / 0.2),
+  inset 2px 2px 16px -8px hsl(var(--shadow) / 0.25);
 
 --inset-md:
   inset -2px -2px 1px -3.25px hsl(var(--highlight) / 0.99),
   inset -1px -1px 0.75px -0.75px hsl(var(--highlight) / 0.4),
   inset -1px -1px 0.25px  hsl(var(--highlight) / 0.1),
   inset 0.75px 0.75px 1px -0.25px hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.3),
-  inset 1.25px 1.25px 2px hsl(var(--shadow) / 0.25),
-  inset 4px 4px 16px -4px hsl(var(--shadow) / 0.2);
+  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
+  inset 1.25px 1.25px 2px hsl(var(--shadow) / 0.2),
+  inset 2px 2px 16px -8px hsl(var(--shadow) / 0.25);
 
 --inset-lg:
   inset -2px -2px 1px -3.25px hsl(var(--highlight) / 0.99),
   inset -1.25px -1.25px 1px -0.75px hsl(var(--highlight) / 0.4),
   inset -1.25px -1.25px 0.25px  hsl(var(--highlight) / 0.1),
   inset 0.75px 0.75px 1px -0.25px hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.3),
-  inset 1.5px 1.5px 2.25px hsl(var(--shadow) / 0.25),
-  inset 4px 4px 16px -4px hsl(var(--shadow) / 0.25);
+  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
+  inset 1.5px 1.5px 2.25px hsl(var(--shadow) / 0.2),
+  inset 4px 4px 18px -10px hsl(var(--shadow) / 0.25);
 
 
 /* Flat insets  */
