@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Inputs */
-@use "../custom" as *;
-@use "../util" as *;
-@use "../glass" as glass;
+@use "../forward-styles/design" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/glass" as glass;
 /* ================================================== */
 
 /* Base for switch | checkbox | radio button */

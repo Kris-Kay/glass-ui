@@ -1,10 +1,10 @@
 /* ================================================== */
 /* Glass */
 @use "sass:map";
-@use "../1-custom-styles/breakpoint" as bp;
-@use "../1-custom-styles/z-index" as z;
+@use "../0-design/breakpoint" as bp;
+@use "../0-design/z-index" as z;
 @use "../2-util/mixin" as mix;
-@use "../2-util/layout-help" as layout;
+@use "../2-util/layout" as layout;
 /* ================================================== */
 
 /* Values for backdrop-filter: */

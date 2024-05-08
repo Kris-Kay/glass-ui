@@ -1,9 +1,9 @@
 /* ================================================== */
 /* Above the fold hero section */
-@use "../custom" as *;
-@use "../1-custom-styles/breakpoint" as bp;
-@use "../1-custom-styles/animation" as ani;
-@use "../4-components/card" as card;
+@use "../forward-styles/design" as *;
+@use "../0-design/breakpoint" as bp;
+@use "../0-design/animation" as ani;
+@use "../3-components/card" as card;
 /* ================================================== */
 
 .hero {

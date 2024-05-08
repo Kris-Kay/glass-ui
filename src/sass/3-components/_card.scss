@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Cards */
-@use "../custom" as *;
-@use "../util" as *;
-@use "../glass" as glass;
+@use "../forward-styles/design" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/glass" as glass;
 /* ================================================== */
 /* have proportional padding & gap values that scale with viewport width */
 /* have conditional border-radius values that turn to 0 if width = = 100vw */

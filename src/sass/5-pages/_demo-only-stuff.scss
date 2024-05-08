@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Demo only styles */
-@use "../custom" as *;
-@use "../2-util/layout-help" as layout;
-@use "../glass" as glass;
+@use "../forward-styles/design" as *;
+@use "../2-util/layout" as layout;
+@use "../forward-styles/glass" as glass;
 /* ================================================== */
 
 body {
@@ -115,7 +115,7 @@ body {
   width: 100%;
   height: fit-content;
   padding: var(--lg);
-  box-shadow: var(--inset-md);
+  box-shadow: var(--inset-lg);
   border-radius: inherit;
   background-color: var(--inset-bg-deep);
 }
