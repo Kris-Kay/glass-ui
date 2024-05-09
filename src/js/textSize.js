@@ -1,5 +1,5 @@
 /* ========================================== */
-/*  Fluid typography Scale print out */
+/*  Fluid typography font-size print out */
 /* ========================================== */
 
 let textSizeTimeout = false;
@@ -12,8 +12,6 @@ function textSize() {
   $textArray.forEach((text) => {
     let $size = window.getComputedStyle(text).getPropertyValue('font-size');
     let $parsedSize = parseInt($size);
-    // console.log($size);
-    // console.log($parsedSize);
     let $span = text.parentNode.querySelector("span");
     $span.innerText = `${$parsedSize}px`;
   });
@@ -24,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   timeout = setTimeout(textSize, textSizeDelay);
 });
 
-window.addEventListener("resize", () =>
-{
+window.addEventListener("resize", () => {
   clearTimeout(textSizeTimeout);
   timeout = setTimeout(textSize, textSizeDelay);
 });

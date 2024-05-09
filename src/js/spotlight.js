@@ -1,9 +1,9 @@
 /* ========================================== */
-/* Spotlight effect JS */
+/* Spotlight cursor effect */
 /* ========================================== */
 const spotlightCursor = ({ x, y }) => {
   document.documentElement.style.setProperty('--x', Math.round(x))
   document.documentElement.style.setProperty('--y', Math.round(y))
 }
 
-document.body.addEventListener('pointermove', spotlightCursor)
+document.body.addEventListener('pointermove', spotlightCursor);
