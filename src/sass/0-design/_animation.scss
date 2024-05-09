@@ -19,29 +19,23 @@ $speed-2xfast: 100ms;
 /* ================================================== */
 $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 
-@keyframes slide-down {
+@keyframes fade-in {
   from {
-    transform: translateY(-20%);
-    opacity: 0.25;
+    opacity: 0;
   }
   to {
-    transform: translateY(0%);
     opacity: 1;
   }
 }
 
-@keyframes slide-up {
+@keyframes fade-out {
   from {
-    transform: translateY(0%);
     opacity: 1;
   }
   to {
-    transform: translateY(-20%);
-    opacity: 0.25;
+    opacity: 0;
   }
 }
-
-
 
 /* Spotlight */
 /* ================================================== */
@@ -87,7 +81,7 @@ html.root-transition *::after {
 
 /* Focus */
 /* ================================================== */
-:focus {
+:focus-visible {
   box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;
   outline: 1px solid hsl(var(--primary-95) / 0.6)!important;
   outline-offset: 1.5px!important;

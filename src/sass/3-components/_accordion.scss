@@ -1,19 +1,20 @@
 /* ================================================== */
 /* Accordion */
 @use "../forward-styles/design" as *;
+@use "../2-util/radius" as r;
 @use "../forward-styles/glass";
 @use "../3-components/card";
 /* ================================================== */
 
 /* Shared by both solo and group accordions */
 .accordion-bg {
-  @include card.card-space-thin;
+  --space: var(--spacing-q-sm);
   --accordion-btn-padding: var(--4xs, 0.5rem);
   --accordion-plus-btn-padding: calc(var(--space) + var(--accordion-btn-padding));
   --neg-space: calc(-1 * var(--space));
 
+  @include r.radius("sm");
   display: grid;
-  gap: var(--space);
   padding: var(--space);
   pointer-events: none;
   background-color: var(--tint-dark);
@@ -22,6 +23,7 @@
 }
 
 .accordion-btn {
+  width: 100%;
   z-index: z(btn);
   display: flex;
   align-items: center;
@@ -29,21 +31,9 @@
   gap: var(--sm);
   pointer-events: auto;
   cursor: pointer;
-
-  width: 100%;
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  text-shadow: var(--text-sha-lg);
-  line-height: 1.3;
-  color: var(--text-strong);
-  font-size: var(--text-md);
-  text-align: start;
-
   padding: var(--accordion-btn-padding);
   border-radius: var(--accordion-btn-padding);
   background-color: transparent;
-  //  background-color: var(--tint-light);
 
   &:hover {
     background-color: var(--tint-light);
@@ -66,7 +56,20 @@
   }
 }
 
+//h4
+.accordion-title {
+  text-align: start;
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  text-shadow: var(--text-sha-md);
+  font-size: var(--text-md);
+  line-height: 1.3;
+  color: var(--text-base);
+}
+
 .accordion-icon {
+  display: inline;
   z-index: z(on-btn);
   aspect-ratio: 1;
   pointer-events: none;
@@ -79,51 +82,61 @@
 }
 
 .accordion-content {
-  pointer-events: none;
-  z-index: z(on-card);
+  height: fit-content;
   display: grid;
   gap: var(--space);
   padding: var(--accordion-plus-btn-padding);
-  margin-left: var(--neg-space);
+  margin-top: calc(var(--space) / 2);
   margin-right: var(--neg-space);
   margin-bottom: var(--neg-space);
-  @include glass.glass-filter(80px, 0.7, 1.25);
-  background-color: var(--tint-xdark);
+  margin-left: var(--neg-space);
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--tint-2xdark);
+  opacity: 1;
+  transition: height $speed-base $smooth-cubic,
+              padding $speed-base $smooth-cubic,
+              opacity $speed-base $smooth-cubic;
 
   &.is-closed {
-    display: none;
+    height: 0;
+    padding: 0;
+    opacity: 0;
   }
 }
 
 /* Group accordions */
 .accordion-group {
-    // gap: var(--space);
+  gap: var(--space);
+  @include r.radius("md");
+
   &.accordion-bg {
     padding: 0;
   }
-
-  & > .accordion-header  {
-    // margin-bottom: calc(-1 * var(--xs));
-    padding: var(--accordion-plus-btn-padding) var(--accordion-plus-btn-padding) 0 var(--accordion-plus-btn-padding);
-  }
-
-  // &.accordion-btn {
-  // background-color: red;
-  // }
 }
 
+//h3
 .accordion-header {
   width: 100%;
-  padding: 0 var(--accordion-btn-padding);
-  @include title-thick;
-  font-size: var(--text-xl);
+  padding-top: calc(var(--space) * 2);
+  padding-right:  var(--accordion-plus-btn-padding);
+  padding-bottom: var(--accordion-plus-btn-padding);
+  // padding-bottom: calc(var(--space) / 2);
+  padding-left:  var(--accordion-plus-btn-padding);
+
   text-align: start;
-  //  background-color: var(--tint-light);
+  font-family: $font-family-title;
+  font-weight: $font-weight-lg;
+  letter-spacing: $letter-spacing-md;
+  text-shadow: var(--text-sha-xl);
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: var(--text-xstrong);
 }
 
 .accordion-item {
   display: grid;
-  gap: calc(var(--space) / 2);
   padding: 0 var(--space) var(--space) var(--space);
   pointer-events: none;
+  overflow: hidden;
 }
