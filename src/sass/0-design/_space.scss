@@ -9,22 +9,6 @@
 /* ================================================== */
 /* ✨ Config these values ✨ */
 :root {
-  // /* 4xs: 2px → 4px */
-  // --4xs: clamp(0.125rem, calc(0.21rem + 0.21vw), 0.25rem);
-
-  // /* 3xs: 4px → 8px */
-  // --3xs: clamp(0.25rem, calc(0.21rem + 0.21vw), 0.5rem);
-
-  // /* 2xs: 8px → 12px */
-  // --2xs: clamp(0.5rem, calc(0.42rem + 0.42vw), 0.75rem);
-
-  // /* xs: 12px → 16px */
-  // --xs: clamp(0.75rem, calc(0.63rem + 0.63vw), 1rem);
-
-
-  /* 2px */
-  // --6xs: 0.125rem;
-
   /* 4px */
   --5xs: 0.25rem;
 
@@ -40,29 +24,6 @@
   /* 16px */
   --xs: 1rem;
 
-  // /* 20px */
-  // --md: 1.25rem;
-
-  // /* 24px */
-  // --lg: 1.5rem;
-
-  // /* 28px */
-  // --xl: 1.75rem;
-
-  // /* 32px  */
-  // --2xl: 2rem;
-
-  // /* 48px */
-  // --3xl: 3rem;
-
-  // /* 64px */
-  // --4xl: 4rem;
-
-  // /* 80px */
-  // --5xl: 5rem;
-
-
-
   /* 16px → 24px */
   --sm: clamp(1rem, calc(2vw + 0.5rem), 1.5rem);
 
@@ -75,7 +36,6 @@
   /* 28px → 48px */
   --xl: clamp(1.75rem, calc(2vw + 1.4rem), 3rem);
 
-
   /* 32px → 56px */
   --2xl: clamp(2rem, calc(2vw + 1.6rem), 3.5rem);
 
@@ -87,8 +47,6 @@
 
   /* 80px → 120px */
   --5xl: clamp(5rem, calc(2vw + 4.6rem), 7.5rem);
-
-
 
 
   /* 16px → 32px */
@@ -131,40 +89,41 @@ $sizes: (
   "2xl-3xl": --2xl-3xl,
 );
 
-/* Ui height custom properties */
-/* ================================================== */
+
 html {
-  // --ui-h-xs: 1.625rem; /* 26px */
-  // --ui-h-sm: 2rem;    /* 32px */
-  // --ui-h-md: 2.25rem; /* 36px */
-  // --ui-h-lg: 2.5rem;  /* 40px */
-  // --ui-h-xl: 3rem;    /* 48px */
+/* Container query padding / margin / gap */
+  --space-q-sm: 4.5cqw;
+  --space-q-md: 7cqw;
+  --space-q-lg: 11cqw;
+
+/* Ui height */
     --ui-h-xs: 1.75rem; /* 28px */
     --ui-h-sm: 2rem;    /* 32px */
     --ui-h-md: 2.25rem; /* 36px */
     --ui-h-lg: 2.75rem; /* 44px */
     --ui-h-xl: 3.25rem; /* 52px */
 
-  // @include bp.bp(xs) {
-  //   --ui-h-xs: 1.75rem; /* 28px */
-  //   --ui-h-sm: 2rem;    /* 32px */
-  //   --ui-h-md: 2.25rem; /* 36px */
-  //   --ui-h-lg: 2.75rem; /* 44px */
-  //   --ui-h-xl: 3.25rem; /* 52px */
-  // }
+  @include bp.bp(sm) {
+    --space-q-sm: 4cqw;
+    --space-q-md: 6cqw;
+    --space-q-lg: 10cqw;
 
-  // @include bp.bp(lg) {
-  //   --ui-h-sm: 2.25rem; /* 36px */
-  //   --ui-h-md: 2.5rem;   /* 40px */
-  //   --ui-h-lg: 2.75rem;    /* 44px */
-  // }
+    --ui-h-xs: 1.875rem; /* 30px */
+    --ui-h-sm: 2.125rem; /* 34px */
+    --ui-h-md: 2.375rem; /* 38px */
+    --ui-h-lg: 2.875rem; /* 46px */
+    --ui-h-xl: 3.375rem; /* 54px */
+  }
 
-  // @include bp.bp(xl) {
-  //   --ui-h-sm: 2.125rem; /* 34px */
-  //   --ui-h-md: 2.5rem;   /* 40px */
-  //   --ui-h-lg: 3rem;    /* 48px */
-  // }
+  @include bp.bp(lg) {
+    --ui-h-xs: 2rem;    /* 32px */
+    --ui-h-sm: 2.25rem; /* 36px */
+    --ui-h-md: 2.5rem;  /* 40px */
+    --ui-h-lg: 3rem;    /* 48px */
+    --ui-h-xl: 3.5rem;  /* 56px */
+  }
 }
+
 
 /* ================================================== */
 /* Moats */
@@ -188,20 +147,9 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
 /* Moat classes */
 /* ================================================== */
 @mixin moat {
-  // width: 100%;
   z-index: z.z("section");
   display: grid;
   place-items: center;
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-
-// background-color: rgba(0, 0, 255, 0.468);
-
-// &>* {
-// background-color: rgba(255, 0, 136, 0.468);
-// }
 }
 
 .moat-all {
@@ -275,14 +223,15 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   }
 }
 
+
 /* ================================================== */
 /* Width */
 /* ================================================== */
 /* ℹ️ Limit the maximum width of elements */
-/* ℹ️ Fill 100% of parent's width up to suff breakpoint */
+/* ℹ️ Fill 100% of parent's width up to suffix breakpoint */
 /* ℹ️ Wrap with a moat classe to add left-right padding and center */
 
-/* Width classes */
+/* Breakpoint based max width */
 /* ================================================== */
 .w-xs { width: min(100%, bp.$bp-xs); }
 .w-sm { width: min(100%, bp.$bp-sm); }
@@ -290,235 +239,59 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
 .w-lg { width: min(100%, bp.$bp-lg); }
 .w-xl { width: min(100%, bp.$bp-xl); }
 
+
+/* ================================================== */
 /* Spacing */
 /* ================================================== */
+.page-gap {
+  --section-gap: 8rem;
+  display: grid;
+  gap: var(--section-gap);
+
+  @include bp.bp(xs) {
+    --section-gap: 10rem;
+  }
+
+  @include bp.bp(sm) {
+    --section-gap: 12rem;
+  }
+
+  @include bp.bp(md) {
+    --section-gap: 14rem;
+  }
+
+  @include bp.bp(lg) {
+    --section-gap: 16rem;
+  }
+
+  @include bp.bp(xl) {
+    --section-gap: 18rem;
+  }
+}
+
+
 .section-gap {
   --section-gap: 5rem;
   display: grid;
   gap: var(--section-gap);
 
   @include bp.bp(xs) {
-    --section-gap: 6rem;
-  }
-
-  @include bp.bp(sm) {
-    --section-gap: 7rem;
-  }
-
-  @include bp.bp(md) {
     --section-gap: 8rem;
   }
 
-  @include bp.bp(lg) {
+  @include bp.bp(sm) {
     --section-gap: 9rem;
   }
 
-  @include bp.bp(xl) {
+  @include bp.bp(md) {
     --section-gap: 10rem;
   }
+
+  @include bp.bp(lg) {
+    --section-gap: 11rem;
+  }
+
+  @include bp.bp(xl) {
+    --section-gap: 12rem;
+  }
 }
-
-// @mixin space-sm-lg {
-//   display: grid;
-//   --space: var(--sm);
-
-//   @include bp.bp(xs) {
-//     --space: var(--md);
-//   }
-
-//   @include bp.bp(lg) {
-//     --space: var(--lg);
-//   }
-// }
-
-// @mixin space-md-xl {
-//   display: grid;
-//   --space: var(--md);
-
-//   @include bp.bp(xs) {
-//     --space: var(--lg);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--xl);
-//   }
-// }
-
-// @mixin space-lg-xl {
-//   display: grid;
-//   --space: var(--lg);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl);
-//   }
-// }
-
-// @mixin space-lg-2xl {
-//   display: grid;
-//   --space: var(--lg);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl);
-//   }
-// }
-
-// @mixin space-lg-2xl {
-//   display: grid;
-//   --space: var(--lg);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl);
-//   }
-// }
-
-// @mixin space-lg-3xl {
-//   display: grid;
-//   --space: var(--lg);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl);
-//   }
-
-//   @include bp.bp(md) {
-//     --space: var(--3xl);
-//   }
-// }
-
-// @mixin space-md-3xl {
-//   display: grid;
-//   --space: var(--md);
-
-//   @include bp.bp(xs) {
-//     --space: var(--lg);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(md) {
-//     --space: var(--2xl);
-//   }
-
-//   @include bp.bp(lg) {
-//     --space: var(--3xl);
-//   }
-// }
-
-// .space {
-//   @include space-sm-lg;
-
-//   padding: var(--space);
-//   gap: var(--space);
-//   // gap: calc(var(--space) / 1.618);
-
-//   border-radius: max(0px, min(var(--lg), calc((100vw - 4px - 100%) * 9999))) / var(--lg);
-// }
-
-
-// .space-sm-lg {
-//   display: grid;
-//   --space: var(--sm);
-
-//   @include bp.bp(xs) {
-//     --space: var(--md);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--lg);
-//   }
-// }
-
-
-// .space-md-lg {
-//   display: grid;
-//   --space: var(--md-lg);
-
-//   @include bp.bp(xs) {
-//     --space: var(--lg);
-//   }
-// }
-
-.space-xl {
- --space: var(--xl);
-}
-
-// .space-sm-3xl {
-//   display: grid;
-//   --space: var(--sm);
-
-//   @include bp.bp(sm) {
-//     --space: var(--md);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl-3xl);
-//   }
-
-//   @include bp.bp(md) {
-//     --space: var(--3xl);
-//   }
-// }
-
-// .space-md-2xl {
-//   --space: var(--md);
-
-//   @include bp.bp(xs) {
-//     --space: var(--lg);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(lg) {
-//     --space: var(--2xl);
-//   }
-// }
-
-
-// .space-lg-3xl {
-//   display: grid;
-//   --space: var(--lg-xl);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl-3xl);
-//   }
-
-//   @include bp.bp(md) {
-//     --space: var(--3xl);
-//   }
-// }
-
-// .space-xl-3xl {
-//   display: grid;
-//   --space: var(--xl);
-
-//   @include bp.bp(xs) {
-//     --space: var(--xl-2xl);
-//   }
-
-//   @include bp.bp(sm) {
-//     --space: var(--2xl-3xl);
-//   }
-
-//   @include bp.bp(md) {
-//     --space: var(--3xl);
-//   }
-// }
