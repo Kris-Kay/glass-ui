@@ -11,8 +11,12 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+.body-grid {
+  z-index: z(page);
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  pointer-events: none;
 }
 
 .content-area {
@@ -29,7 +33,48 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior: contain;
   scroll-padding-top: var(--nav-h);
-  pointer-events: auto;
+  pointer-events: none;
 // background-color: var(--color-3xlight);
 // background-color: var(--color-3xdark);
+}
+
+/* BG img changing manu */
+.page-bg-bin {
+  z-index: -10;
+  position: fixed;
+  inset: 0;
+  max-width: 100vw;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  background-color: var(--color-black);
+  clip-path: inset(0);
+  pointer-events: none;
+}
+
+.page-bg-img {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.page-bg-noise {
+  pointer-events: none;
+  &::after {
+    @include layout.pseudo;
+    @include glass.noise-rough-lg;
+  }
+}
+
+.page-bg-blur {
+  pointer-events: none;
+  &::after {
+    @include layout.pseudo;
+    @include glass.glass-filter(glass.$blur-xs, glass.$brightness-base, glass.$saturate-base);
+  }
 }

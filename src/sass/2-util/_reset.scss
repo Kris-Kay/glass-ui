@@ -1,6 +1,13 @@
 /* ================================================== */
 /* Reset */
+// @use "../0-design/z-index" as z;
 /* ================================================== */
+
+html {
+  scroll-behavior: smooth;
+  z-index: z(page);
+}
+
 main,
 article,
 aside,

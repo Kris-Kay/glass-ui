@@ -28,8 +28,9 @@ $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $letter-spacing-2xs: -0.01em;
 $letter-spacing-xs: -0.005em;
 $letter-spacing-sm: 0.01em;
-$letter-spacing-md: 0.03em;
-$letter-spacing-lg: 0.07em;
+$letter-spacing-md: 0.02em;
+$letter-spacing-lg: 0.04em;
+$letter-spacing-xl: 1vw;
 
 /* line-height: */
 /* ================================================== */
@@ -53,9 +54,9 @@ $font-weight-xl: 500;
   --text-2xs: clamp(0.75rem, 4vw - 1.5rem, 0.8rem);
   --text-xs: clamp(0.875rem, 4vw - 1rem, 0.9rem);
   --text-sm: clamp(1rem, 0.13vw + 1rem, 1.125rem);
-  --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  --text-md: clamp(1.125rem, 0.5vw + 1rem, 1.25rem);
   --text-lg: clamp(1.375rem, 1.3vw + 1rem, 1.75rem);
-  --text-xl: clamp(1.5rem, 1.7vw + 1rem, 2.25rem);
+  --text-xl: clamp(1.5rem, 1.7vw + 1rem, 2rem);
   --text-2xl: clamp(2rem, calc(2vw + 1.5rem), 2.75rem);
   --text-3xl: clamp(2.25rem, 3.8vw + 1rem, 3.25rem);
 }

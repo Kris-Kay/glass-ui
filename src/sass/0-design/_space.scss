@@ -150,6 +150,8 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   z-index: z.z("section");
   display: grid;
   place-items: center;
+  pointer-events: auto;
+  z-index: z(section);
 }
 
 .moat-all {
@@ -247,6 +249,8 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   --section-gap: 8rem;
   display: grid;
   gap: var(--section-gap);
+  pointer-events: none;
+  z-index: z(page);
 
   @include bp.bp(xs) {
     --section-gap: 10rem;
@@ -274,6 +278,8 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   --section-gap: 5rem;
   display: grid;
   gap: var(--section-gap);
+  pointer-events: none;
+  z-index: z(section);
 
   @include bp.bp(xs) {
     --section-gap: 8rem;

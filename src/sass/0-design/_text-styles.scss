@@ -12,7 +12,7 @@
   font-weight: $font-weight-md;
   font-size: var(--text-sm);
   letter-spacing: normal;
-  line-height: $line-height-sm;
+  line-height: $line-height-lg;
   color: var(--text-base);
 }
 
@@ -91,19 +91,19 @@ textarea {
 }
 
 .eyebrow {
-  font-family: $font-family-title;
+  font-family: $font-family-body;
   font-weight: $font-weight-md;
   font-size: var(--text-2xs);
-  letter-spacing: $letter-spacing-md;
+  letter-spacing: $letter-spacing-lg;
   line-height: $line-height-sm;
 
-  color: var(--text-mild);
+  color: var(--text-xmild);
   text-transform: uppercase;
-  text-shadow: var(--text-sha-2xs);
+  text-shadow: var(--text-sha-3xs);
 
-  @include bp.bp(lg) {
-    font-size: var(--text-xs);
-  }
+  // @include bp.bp(lg) {
+  //   font-size: var(--text-xs);
+  // }
 }
 
 

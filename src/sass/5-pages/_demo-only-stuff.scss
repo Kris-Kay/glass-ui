@@ -5,44 +5,7 @@
 @use "../forward-styles/glass";
 /* ================================================== */
 
-/* BG img changing manu */
-.page-bg-bin {
-  z-index: -10;
-  position: fixed;
-  inset: 0;
-  max-width: 100vw;
-  width: 100%;
-  height: 100vh;
-  height: 100lvh;
-  background-color: var(--color-black);
-  clip-path: inset(0);
-  pointer-events: none;
-}
 
-.page-bg-img {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100lvh;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none;
-}
-
-.page-bg-noise {
-  &::after {
-    @include layout.pseudo;
-    @include glass.noise-rough-lg;
-  }
-}
-
-.page-bg-blur {
-  &::after {
-    @include layout.pseudo;
-    @include glass.glass-filter(glass.$blur-xs, glass.$brightness-base, glass.$saturate-base);
-  }
-}
 
 
 /* Big titles */
@@ -196,11 +159,11 @@
   overflow: hidden;
 
   > * {
-    width: 100%;
+    width: min(100%, 400px);
     height: fit-content;
     display: flex;
     align-items: center;
-    padding: var(--sm);
+    padding: var(--xs);
   }
 }
 
@@ -246,3 +209,11 @@
     width: 100%;
   }
 }
+
+
+/* UI height */
+.ui-h-xs { height: var(--ui-h-xs);}
+.ui-h-sm { height: var(--ui-h-sm);}
+.ui-h-md { height: var(--ui-h-md);}
+.ui-h-lg { height: var(--ui-h-lg);}
+.ui-h-xl { height: var(--ui-h-xl);}
