@@ -1,0 +1,74 @@
+/* ================================================== */
+/* Dropdown */
+@use "../0-design/interaction" as in;
+@use "../2-util/z-index" as z;
+/* ================================================== */
+
+/* Dropdown */
+/* ================================================== */
+.dropdown-group { /* holds toggle button and dropdown */
+  position: relative;
+  pointer-events: none;
+}
+
+.dropdown-toggle {
+  pointer-events: auto;
+
+  & > .svg-ham {
+    display: none;
+  }
+
+  & > .svg-x {
+    display: inline-block;
+  }
+
+  &.is-closed {
+    & > .svg-ham {
+      display: inline-block;
+    }
+
+    & > .svg-x {
+      display: none;
+    }
+  }
+}
+
+.dropdown {
+  --top-offset: calc(var(--nav-item-h) + var(--nav-padding));
+  --dropdown-h: 0px; /* height value set via dropdown.js */
+
+  position: absolute;
+  z-index: z.z(menu);
+  min-width: 140px;
+  width: fit-content;
+  height: fit-content;
+  top: var(--top-offset);
+  right: 0;
+  display: grid;
+  gap: var(--2xs);
+  padding: var(--2xs);
+  pointer-events: auto;
+  border-radius: var(--2xs);
+  box-shadow: var(--sha-lg);
+
+  will-change: opacity, transform;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity in.$speed-slow in.$smooth-cubic,
+              transform in.$speed-slow in.$smooth-cubic;
+
+  &.is-closed {
+    opacity: 0;
+    transform: translateY(calc(var(--dropdown-h) * 1.25));
+  }
+}
+
+.dropdown-item {
+  z-index: z.z(on-menu);
+  min-width: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  pointer-events: auto;
+  cursor: pointer;
+}

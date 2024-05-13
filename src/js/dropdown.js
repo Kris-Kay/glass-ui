@@ -2,28 +2,27 @@
 /* Open & Close dropdown */
 /* ========================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const $dropdownToggle = document.getElementById("js-dropdownToggle");
-  const $ham = document.getElementById("js-navHam");
-  const $x = document.getElementById("js-navX");
-  const $dropdown = document.getElementById("js-navDropdown");
+  const $ddToggle = document.getElementById("js-dropdownToggle");
+  const $dd = document.getElementById("js-navDropdown");
+  const $ddHeight = $dd.offsetHeight;
 
   const closeDropdown = () => {
-    $ham.classList.remove("hidden");
-    $x.classList.add("hidden");
-    $dropdown.classList.add("hidden");
+    $ddToggle.classList.add("is-closed");
+    $ddToggle.setAttribute("aria-expanded", false);
+    $dd.classList.add("is-closed");
     document.removeEventListener("click", closeViaOutside);
     document.removeEventListener("keyup", closeViaEsc);
   };
 
   const toggleDropdown = () => {
-    let isHidden = $dropdown.classList.contains("hidden");
+    let isClosed = $dd.classList.contains("is-closed");
 
-    if (!isHidden) {
+    if (!isClosed) {
       closeDropdown();
     } else {
-      $ham.classList.add("hidden");
-      $x.classList.remove("hidden");
-      $dropdown.classList.remove("hidden");
+      $ddToggle.classList.remove("is-closed");
+      $ddToggle.setAttribute("aria-expanded", true);
+      $dd.classList.remove("is-closed");
       document.addEventListener("click", closeViaOutside);
       document.addEventListener("keyup", closeViaEsc);
     }
@@ -31,9 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Close dropdown by clicking outside its background
   const closeViaOutside = (e) => {
-    let $dropdownBg = document.getElementById("js-dropdown-bg");
-
-    if (!$dropdownBg.contains(e.target) && e.target !== $dropdownToggle ) {
+    if (!$dd.contains(e.target) && e.target !== $ddToggle ) {
       closeDropdown();
     }
   };
@@ -45,5 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 
-  $dropdownToggle.addEventListener("click", toggleDropdown);
+  $dd.style.setProperty("--dropdown-h", `-${$ddHeight}px`);
+  $ddToggle.addEventListener("click", toggleDropdown);
 });

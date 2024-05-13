@@ -1,0 +1,39 @@
+/* ================================================== */
+/* Nav */
+@use "../0-design/interaction" as in;
+@use "../0-design/breakpoint" as bp;
+@use "../2-util/z-index" as z;
+@use "../2-util/radius" as r;
+/* ================================================== */
+
+:root {
+  --nav-padding: var(--xs);
+  --nav-item-h: var(--ui-h-md);
+  --nav-h: calc(var(--nav-item-h) + (var(--nav-padding) * 2));
+}
+
+/* Main nav */
+/* ================================================== */
+.main-nav-bin {
+  position: fixed;
+  z-index: z.z(nav);
+  height: var(--nav-h);
+  inset: 0;
+  padding: var(--nav-padding);
+  pointer-events: none;
+}
+
+.main-nav {
+  max-width: bp.$bp-xl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--3xs);
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.nav-item {
+  z-index: z.z(on-nav);
+  height: var(--nav-item-h);
+}

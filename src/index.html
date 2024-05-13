@@ -92,14 +92,21 @@
 
 <!-- Body -->
 <!-- ========================================== -->
-<body id="top-of-page" class="body-grid">
+<body id="top-of-page" tabindex="-1" class="body-grid">
 
   <!-- Nav -->
   <!-- ========================================== -->
   <nav class="main-nav-bin">
     <div class="main-nav">
+
+      <img class="nav-item"
+        src="/assets/other-img/3D-glass-UI-logo.svg"
+        role="graphics-symbol"
+        aria-hidden="true"
+        focusable="false" >
+
       <!-- Theme toggle -->
-      <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
+      <!-- <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
         type="button">
 
         <svg class="svg-circleHalf"
@@ -121,7 +128,7 @@
         >
           <title id="defaultThemeTitle">turn on default theme</title>
         </svg>
-      </button>
+      </button> -->
 
       <!-- Tabs menu -->
       <div class="tab-menu-bin nav-item">
@@ -160,55 +167,49 @@
 
       <!-- Dropdown -->
       <div class="dropdown-group nav-item">
-        <button class="nav-item btn-icon-md btn-secondary"
+        <button class="dropdown-toggle btn-icon-md btn-secondary is-closed"
           type="button"
-          id="js-dropdownToggle">
+          id="js-dropdownToggle"
+          aria-expanded="false"  >
 
           <svg class="svg-ham"
             id="js-navHam"
             role="graphics-symbol"
-            aria-labelledby="hamTitle"
             aria-hidden="true"
-            focusable="false"
-          >
-            <title id="hamTitle">open menu</title>
+            focusable="false"  >
           </svg>
 
-          <svg class="svg-x hidden"
+          <svg class="svg-x"
             id="js-navX"
             role="graphics-symbol"
-            aria-labelledby="xTitle"
             aria-hidden="true"
-            focusable="false"
-          >
-            <title id="xTitle">close menu</title>
+            focusable="false"  >
           </svg>
         </button>
 
-        <div id="js-navDropdown" class="dropdown-bin hidden">
-          <div id="js-dropdown-bg" class="dropdown-bg glass-3d-md tint-clear">
-            <a href="#top-of-page"
-              class="dropdown-item js-dropdownItem btn-md btn-ghost">
-              <p class="btn-text">Intro</p>
-            </a>
+        <ul id="js-navDropdown" class="dropdown glass-3d-md tint-clear is-closed">
+          <li><a href="#top-of-page"
+            class="dropdown-item  btn-md btn-ghost">
+            <p class="btn-text">Intro</p>
+          </a></li>
 
-            <a href="#demo"
-              class="dropdown-item js-dropdownItem btn-md btn-ghost">
-              <p class="btn-text">Demo</p>
-            </a>
+          <li><a href="#demo"
+            class="dropdown-item  btn-md btn-ghost">
+            <p class="btn-text">Demo</p>
+          </a></li>
 
-            <a href="#details"
-              class="dropdown-item js-dropdownItem btn-md btn-ghost">
-              <p class="btn-text">Details</p>
-            </a>
+          <li><a href="#details"
+            class="dropdown-item  btn-md btn-ghost">
+            <p class="btn-text">Details</p>
+          </a></li>
 
-            <a href="#contact"
-              class="dropdown-item js-dropdownItem btn-md btn-ghost">
-              <p class="btn-text">Contact</p>
-            </a>
-          </div>
-        </div>
+          <li><a href="#contact"
+            class="dropdown-item  btn-md btn-ghost">
+            <p class="btn-text">Contact</p>
+          </a></li>
+        </ul>
       </div>
+
     </div>
   </nav>
 
