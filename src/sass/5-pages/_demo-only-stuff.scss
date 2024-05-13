@@ -5,6 +5,10 @@
 @use "../forward-styles/glass";
 /* ================================================== */
 
+.svg-xCircleOutline {
+  mask: url(/assets/icons/XCircleOutline.svg);
+  @include svg-icon;
+}
 
 
 

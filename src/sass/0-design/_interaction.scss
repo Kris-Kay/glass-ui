@@ -6,7 +6,6 @@
 
 /* Speeds */
 /* ================================================== */
-/* ✨ Config these values ✨ */
 $speed-2xslow: 750ms;
 $speed-xslow:  500ms;
 $speed-slow:   400ms;
@@ -19,9 +18,17 @@ $speed-2xfast: 100ms;
 /* ================================================== */
 $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 
+/* Color theme change animation */
+/* ================================================== */
+html.root-transition,
+html.root-transition *,
+html.root-transition *::before,
+html.root-transition *::after {
+  transition: all $speed-2xslow !important;
+  transition-delay: 0 !important;
+}
 
-
-/* Spotlight */
+/* Hover spotlight animation */
 /* ================================================== */
 .spotlight {
   position: relative;
@@ -52,17 +59,7 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 }
 
 
-/* Color theme change animation */
-/* ================================================== */
-html.root-transition,
-html.root-transition *,
-html.root-transition *::before,
-html.root-transition *::after {
-  transition: all $speed-2xslow !important;
-  transition-delay: 0 !important;
-}
-
-/* Focus */
+/* Focus-visible */
 /* ================================================== */
 :focus-visible {
   box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;

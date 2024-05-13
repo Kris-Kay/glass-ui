@@ -2,7 +2,7 @@
 /* Above the fold hero section */
 @use "../forward-styles/design" as *;
 @use "../0-design/breakpoint" as bp;
-@use "../0-design/animation" as ani;
+@use "../0-design/interaction" as in;
 @use "../3-components/card";
 /* ================================================== */
 
@@ -82,7 +82,7 @@
 .card-3d {
   backface-visibility: hidden;
   will-change: transform;
-  transition: transform ani.$speed-2xslow ani.$smooth-cubic;
+  transition: transform in.$speed-2xslow in.$smooth-cubic;
 
   transform:
     perspective(2200px)

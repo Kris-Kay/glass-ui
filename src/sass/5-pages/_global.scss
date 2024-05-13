@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Used on all pages */
 @use "../forward-styles/design" as *;
-@use "../2-util/layout" as layout;
+@use "../forward-styles/util" as *;
 @use "../forward-styles/glass" as glass;
 /* ================================================== */
 
@@ -66,7 +66,7 @@
 .page-bg-noise {
   pointer-events: none;
   &::after {
-    @include layout.pseudo;
+    @include pseudo;
     @include glass.noise-rough-lg;
   }
 }
@@ -74,7 +74,7 @@
 .page-bg-blur {
   pointer-events: none;
   &::after {
-    @include layout.pseudo;
+    @include pseudo;
     @include glass.glass-filter(glass.$blur-xs, glass.$brightness-base, glass.$saturate-base);
   }
 }
