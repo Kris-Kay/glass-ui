@@ -3,6 +3,7 @@
 @use "sass:map";
 @use "breakpoint" as bp;
 @use "text-config" as *;
+// @use "../1-glass/shadow" as *;
 /* ================================================== */
 
 /* Body text */
@@ -132,68 +133,3 @@ textarea {
     font-size: var(--text-md);
   }
 }
-
-
-
-/* Bullet points */
-/* ================================================== */
-.dot {
-  &::before {
-    padding-right: 0.25em;
-    content: "•"
-  }
-}
-
-.check {
-  &::before {
-    padding-right: 0.25em;
-    content: "☐"
-  }
-}
-
-.arrow {
-  &::before {
-    padding-right: 0.25em;
-    content: "➟"
-  }
-}
-
-/* ================================================== */
-/* Text helpers */
-/* ================================================== */
-/* text-align: */
-.text-center { text-align: center; }
-.text-left { text-align: start; }
-.text-right { text-align: end; }
-.text-justify { text-align: justify; }
-
-/* text-transform: */
-.text-cap { text-transform: capitalize; }
-.text-allcap { text-transform: uppercase; }
-.text-lower { text-transform: lowercase; }
-
-.text-bold { font-weight: $font-weight-lg; }
-.text-ital { font-style: italic; }
-
-.text-line-through { text-decoration: line-through; }
-.text-underline { text-decoration: underline; }
-
-
-.first-line-bold {
-  &:first-line {
-    font-weight: $font-weight-lg;
-  }
-}
-
-.ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.break-word {
-  overflow-wrap: break-word;
-  min-width: 0;
-}
-
-.no-word-break { word-break: keep-all; }

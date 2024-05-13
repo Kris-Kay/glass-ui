@@ -7,9 +7,10 @@
 
 body {
   --text-input-height: var(--ui-h-lg);
-  --text-input-maxwidth: 380px;
+  --text-input-maxwidth: 370px;
+  --textarea-maxwidth: 500px;
   --text-input-padding: var(--3xs);
-  --text-input-radius: var(--3xs);
+  --text-input-radius: 10px;
   --text-input-inset: var(--inset-md);
   --text-input-inset-bg: var(--inset-bg-deep);
 }
@@ -17,7 +18,7 @@ body {
 
 .text-input-group {
   height: fit-content;
-  width: min(var(--text-input-maxwidth), 100%);
+  width: 100%;
   display: grid;
   padding-top: var(--xs);
 
@@ -172,6 +173,14 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
 /* Textarea input */
 /* ================================================== */
+.textarea-bin {
+  width: min(var(--textarea-maxwidth), 100%);
+  height: fit-content;
+  border-radius: var(--text-input-radius);
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .textarea-bg {
   @include text-input-bg-base;
   min-height: 150px;

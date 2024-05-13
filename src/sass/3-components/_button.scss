@@ -254,7 +254,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     &::before {
       opacity: 0.3;
     }

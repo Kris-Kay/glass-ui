@@ -4,162 +4,35 @@
 @use "../forward-styles/util" as *;
 @use "../forward-styles/glass" as glass;
 /* ================================================== */
-/* have proportional padding & gap values that scale with viewport width */
-/* have conditional border-radius values that turn to 0 if width = = 100vw */
 
-@mixin card-base {
-  --_space: var(--space, 1rem);
-  --_neg-space: calc(-1 * var(--space));
-  z-index: z(card);
-  height: fit-content;
-  display: grid;
-  gap: var(--_space);
-  padding: calc(var(--_space) * 1.618) var(--_space);
-  box-shadow: var(--sha-sm);
-
-  @include bp(sm) {
-    padding: var(--_space);
-  }
-
-  & > .e2e {
-    padding: var(--_space);
-    margin: 0 var(--_neg-space);
-  }
-
-  & > .no-y-space {
-    padding: var(--_space);
-    margin: var(--_neg-space);
-  }
-
-  & > .full-w-fill-noBottomMargin  {
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-
-    padding: calc(var(--_space) *1.618) var(--_space);
-
-    @include bp(sm) {
-      padding: var(--_space);
-      margin-bottom: var(--_neg-space);
-    }
-  }
-
-  & > .e2e-inset {
-    padding: var(--_space);
-    margin-left: calc(var(--_neg-space) + 0.5px);
-    margin-right: var(--_neg-space);
-
-    color: var(--color-3xlight);
-    background-color: var(--inset-bg-xdeep);
-    box-shadow: var(--inset-flat-lg);
-  }
-
-  & > .e2e-no-padding{
-    display: grid;
-    place-self: center;
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-  }
-
-  & > .e2e no-bottom-space {
-    display: grid;
-    place-self: center;
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-
-    @include bp(sm) {
-      margin-bottom: var(--_neg-space);
-    }
-  }
-
-  & > .full-w-img-noMargin {
-    display: grid;
-    place-self: center;
-    // margin: var(--_neg-space);
-    margin-left: var(--_neg-space);
-    margin-right: var(--_neg-space);
-    margin-top: var(--_neg-space);
-    margin-bottom: calc(var(--_neg-space) * 1.618);
-
-    // padding: calc(var(--_space) *1.618) var(--_space);
-
-    @include bp(sm) {
-      padding: var(--_space);
-      margin-bottom: var(--_neg-space);
-    }
-  }
-}
-
+/* Cards with Container queries */
+/* ================================================== */
 @mixin card-q {
   --_space: var(--space, 1rem);
-  --_neg-space: calc(-1 * var(--_space));
+  --neg-space: calc(-1 * var(--_space));
   z-index: z(card);
   width: 100%;
-  // height: fit-content;
   display: grid;
-  // place-items: center;
   gap: var(--_space);
   padding: var(--_space);
-  // box-shadow: var(--sha-sm);
-  // border-radius: 2cqmax;
-overflow: hidden
+  overflow: hidden;
+  pointer-events: auto;
 }
 
 .card-q {
   @include card-q;
 }
 
-.card-fit {
-  @include card-q;
-  width: max-content;
-  // width: fit-content;
-  height: auto;
-  border-radius: var(--md);
-}
-
-.card-space-thin {
-  --space: 6cqw;
-
-  @include bp(lg) {
-    --space: 7cqw;
-  }
-}
-
-.card-space-base {
-  --space: 6cqw;
-
-  @include bp(sm) {
-    --space: 7cqw;
-  }
-}
-
-.card-space-wide {
-  --space: 10cqw;
-
-  // @include bp(xs) {
-  //   --space: 9cqw;
-  // }
-
-  // @include bp(xl) {
-  //   --space: 10cqw;
-  // }
-
-  @include bp(xl) {
-    --space: 80px;
-  }
-}
-
 
 /* Edge-to-edge classes */
 /* ================================================== */
 @mixin e2e {
-  width: calc(100% + var(--_space) * 2);
+  z-index: z(on-card);
+  width: calc(100% + (var(--space) * 2));
   display: grid;
-  // place-self: center;
-  margin-left: var(--_neg-space);
-  margin-right: var(--_neg-space);
-  padding: var(--_space);
+  margin-left: var(--neg-space);
+  margin-right: var(--neg-space);
+  padding: var(--space);
 }
 
 .e2e {
@@ -167,34 +40,37 @@ overflow: hidden
 }
 
 .e2e-no-padding{
-  @include e2e;
   padding: 0;
 }
 
 .e2e-inset {
   @include e2e;
   // margin-left: var(--_neg-space);
-  margin-left: calc(var(--_neg-space) + 1px);
-  margin-right: var(--_neg-space);
+  margin-left: calc(var(--neg-space) + 1px);
+  margin-right: var(--neg-space);
   background-color: var(--inset-bg-reg);
   // box-shadow: var(--inset-flat-md);
 }
 
-.no-y-space {
-  margin-top: var(--_neg-space);
-  margin-bottom: var(--_neg-space);
+.e2e-no-y-space {
+  margin-top: var(--neg-space);
+  margin-bottom: var(--neg-space);
 }
 
-.no-bottom-space {
-  margin-bottom: var(--_neg-space);
+.e2e-no-bottom-space {
+  margin-bottom: var(--neg-space);
 }
 
-.bottom-radius {
+@mixin bottom-radius {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
   overflow: hidden;
+}
+
+.bottom-radius {
+  @include bottom-radius;
 }
 
 /* Card Titles */
@@ -247,17 +123,22 @@ overflow: hidden
 .title-group-lg {
   display: flex;
   flex-direction: column;
-  gap: var(--xs);
+  gap: 0.5em;
+//  background-color: rgba(0, 225, 255, 0.5);
 }
-
 
 
 /* Card Container queries */
 /* ================================================== */
-@container (width < 360px) {
+@container (width < 360px ) {
   .card-q {
-    @include radius("lg");
+    --space: var(--sm);
+    @include radius("sm");
     // background-color: rgba(255, 0, 0, 0.5);
+  }
+
+  .card-title-lg {
+    font-size: var(--text-xl);
   }
 
   .card-subtitle {
@@ -267,20 +148,30 @@ overflow: hidden
 
 @container (width >= 360px) {
   .card-q {
-    @include radius("lg");
-    // background-color: rgba(255, 255, 0, 0.5);
+    --space: var(--md);
+    @include radius("md");
+    // background-color: rgba(255, 170, 0, 0.607);
+  }
+
+  .card-title-lg {
+    font-size: var(--text-2xl);
   }
 
   .card-subtitle {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
   }
 }
 
 @container (width >= 480px) {
   .card-q {
-    @include radius("lg");
+    // --space: var(--md);
+    @include radius("md");
     // background-color: rgba(0, 255, 0, 0.5);
   }
+
+  // .card-title-lg {
+  //   font-size: var(--text-2xl);
+  // }
 
   // .card-subtitle {
   //   font-size: var(--text-sm);
@@ -289,34 +180,167 @@ overflow: hidden
 
 @container (width >= 768px) {
   .card-q {
-    @include radius("xl");
+    --space: var(--lg);
+    @include radius("lg");
     // background-color: rgba(0, 0, 255, 0.5);
   }
 
-  .card-subtitle {
-    font-size: var(--text-sm);
+  .card-title-lg {
+    font-size: var(--text-2xl);
   }
+
+  // .card-subtitle {
+  //   font-size: var(--text-sm);
+  // }
 }
 
 @container (width >= 1024px) {
   .card-q {
-    @include radius("xl");
+    --space: var(--lg);
+    // @include radius("lg");
+    // background-color: rgba(234, 0, 255, 0.5);
+  }
+
+  .title-group-lg {
+    gap: 1em;
+  }
+
+  .card-title-lg {
+    font-size: var(--text-3xl);
+  }
+
+  .card-subtitle {
+    font-size: var(--text-md);
   }
 }
 
-// @container (width >= 1440px) {
-//   .card-q {
+@container (width >= 1440px) {
+  .card-q {
+    --space: var(--xl);
+    @include radius("xl");
+    // background-color: rgba(255, 0, 98, 0.53);
+  }
 
-//   }
-// }
+  // .title-group-lg {
+  //   gap: 1em;
+  // }
+
+  // .card-title-lg {
+  //   font-size: var(--text-3xl);
+  // }
+
+  // .card-subtitle {
+  //   font-size: var(--text-md);
+  // }
+}
 
 @container (width >= 99vw) {
-  .card-q {
-    border-radius: 0;
-    // background-color: rgba(255, 0, 255, 0.5);
-  }
 
   .e2e-inset {
-    margin-left: var(--_neg-space);
+    margin-left: var(--neg-space);
   }
+}
+
+
+/* Reg Cards */
+/* ================================================== */
+@mixin card-base {
+  --_space: var(--space, 1rem);
+  --_neg-space: calc(-1 * var(--space));
+  z-index: z(card);
+  height: fit-content;
+  display: grid;
+  gap: var(--_space);
+  padding: var(--_space);
+
+  @include bp(sm) {
+    padding: var(--_space);
+  }
+
+  // & > .e2e {
+  //   padding: var(--_space);
+  //   margin: 0 var(--_neg-space);
+  // }
+
+  // & > .no-y-space {
+  //   padding: var(--_space);
+  //   margin: var(--_neg-space);
+  // }
+
+  // & > .e2e-no-b-space {
+  //   display: grid;
+  //   place-self: center;
+  //   padding: var(--_space);
+  //   margin-left: var(--_neg-space);
+  //   margin-right: var(--_neg-space);
+  //   margin-bottom: var(--_neg-space);
+  //   margin-top: 0;
+  // }
+
+  // & > .full-w-fill-noBottomMargin  {
+  //   margin-left: var(--_neg-space);
+  //   margin-right: var(--_neg-space);
+  //   margin-bottom: calc(var(--_neg-space) * 1.618);
+
+  //   padding: calc(var(--_space) *1.618) var(--_space);
+
+  //   @include bp(sm) {
+  //     padding: var(--_space);
+  //     margin-bottom: var(--_neg-space);
+  //   }
+  // }
+
+  // & > .e2e-inset {
+  //   padding: var(--_space);
+  //   margin-left: calc(var(--_neg-space) + 0.5px);
+  //   margin-right: var(--_neg-space);
+
+  //   color: var(--color-3xlight);
+  //   background-color: var(--inset-bg-xdeep);
+  //   box-shadow: var(--inset-flat-lg);
+  // }
+
+  // & > .e2e-no-padding{
+  //   display: grid;
+  //   place-self: center;
+  //   margin-left: var(--_neg-space);
+  //   margin-right: var(--_neg-space);
+  // }
+
+  // & > .e2e-no-bottom-space {
+  //   display: grid;
+  //   place-self: center;
+  //   padding: var(--_space);
+  //   margin-left: var(--_neg-space);
+  //   margin-right: var(--_neg-space);
+  //   margin-bottom: var(--_neg-space);
+  // }
+
+  // & > .full-w-img-noMargin {
+  //   display: grid;
+  //   place-self: center;
+  //   // margin: var(--_neg-space);
+  //   margin-left: var(--_neg-space);
+  //   margin-right: var(--_neg-space);
+  //   margin-top: var(--_neg-space);
+  //   margin-bottom: calc(var(--_neg-space) * 1.618);
+
+  //   // padding: calc(var(--_space) *1.618) var(--_space);
+
+  //   @include bp(sm) {
+  //     padding: var(--_space);
+  //     margin-bottom: var(--_neg-space);
+  //   }
+  // }
+}
+
+.card-fit {
+  --space: var(--lg);
+  z-index: z(card);
+  width: max-content;
+  height: fit-content;
+  display: grid;
+  gap: var(--space);
+  padding: var(--space);
+  border-radius: var(--md);
 }

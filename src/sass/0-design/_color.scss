@@ -39,7 +39,7 @@
   --primary-25: var(--primary-h) var(--primary-s) 25%;
   --primary-15: var(--primary-h) var(--primary-s) 15%;
   --primary-10: var(--primary-h) var(--primary-s) 10%;
-  --primary-5: var(--primary-h) var(--primary-s)   5%;
+  --primary-5:  var(--primary-h) var(--primary-s)  5%;
 
   /* Neutral */
   /* ================================================== */
@@ -80,7 +80,6 @@
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
   --shadow: var(--neutral-10);
-  // --shadow: var(--primary-15);
   --highlight: var(--neutral-90);
 
   /* Translucent tints */
@@ -162,6 +161,8 @@
   }
 }
 
+/* HSL lightness values */
+/* ================================================== */
 $lightness: (
   "98",
   "95",

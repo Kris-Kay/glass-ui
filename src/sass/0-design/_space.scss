@@ -2,7 +2,7 @@
 /* Space */
 @use "sass:map";
 @use "breakpoint" as bp;
-@use "z-index" as z;
+@use "../2-util/z-index" as z;
 /* ================================================== */
 
 /* Dynamic T-shirt sizes */

@@ -14,36 +14,75 @@
   mask-position: center;
 }
 
-.svg-cube { mask: url(/assets/icons/CubeTransparent.svg); @include svg-icon; }
+.svg-cube {
+  mask: url(/assets/icons/CubeTransparent.svg);
+  @include svg-icon;
+}
 
-.svg-copy { mask: url(/assets/icons/Copy.svg); @include svg-icon; }
+.svg-copy {
+  mask: url(/assets/icons/Copy.svg);
+  @include svg-icon;
+}
 
-.svg-square-out { mask: url(/assets/icons/SquareOut.svg); @include svg-icon; }
+.svg-square-out {
+  mask: url(/assets/icons/SquareOut.svg);
+  @include svg-icon;
+}
 
-.svg-chev-up { mask: url(/assets/icons/CaretUp.svg); @include svg-icon; }
+.svg-chev-up {
+  mask: url(/assets/icons/CaretUp.svg);
+  @include svg-icon;
+}
 
-.svg-chev-down { mask: url(/assets/icons/CaretDown.svg); @include svg-icon; }
+.svg-chev-down {
+  mask: url(/assets/icons/CaretDown.svg);
+  @include svg-icon;
+}
 
-.svg-chev-l { mask: url(/assets/icons/CaretLeft.svg); @include svg-icon; }
+.svg-chev-l {
+  mask: url(/assets/icons/CaretLeft.svg);
+  @include svg-icon;
+}
 
-.svg-chev-r { mask: url(/assets/icons/CaretRight.svg); @include svg-icon; }
+.svg-chev-r {
+  mask: url(/assets/icons/CaretRight.svg);
+  @include svg-icon;
+}
 
-.svg-linkedin { mask: url(/assets/icons/LinkedinLogo.svg); @include svg-icon; }
+.svg-linkedin {
+  mask: url(/assets/icons/LinkedinLogo.svg);
+  @include svg-icon;
+}
 
-.svg-instagram { mask: url(/assets/icons/InstagramLogo.svg); @include svg-icon; }
+.svg-instagram {
+  mask: url(/assets/icons/InstagramLogo.svg);
+  @include svg-icon;
+}
 
-.svg-github { mask: url(/assets/icons/GithubLogo.svg); @include svg-icon; }
+.svg-github {
+  mask: url(/assets/icons/GithubLogo.svg);
+  @include svg-icon;
+}
 
 .svg-ham {
   mask: url(/assets/icons/List.svg);
   @include svg-icon;
 }
 
-.svg-x { mask: url(/assets/icons/X.svg); @include svg-icon; }
+.svg-x {
+  mask: url(/assets/icons/X.svg);
+  @include svg-icon;
+}
 
-.svg-circleHalf { mask: url(/assets/icons/CircleHalf.svg); @include svg-icon; }
+.svg-circleHalf {
+mask: url(/assets/icons/CircleHalf.svg);
+@include svg-icon;
+}
 
-.svg-circleHalfTilt { mask: url(/assets/icons/CircleHalfTilt.svg); @include svg-icon; }
+.svg-circleHalfTilt {
+mask: url(/assets/icons/CircleHalfTilt.svg);
+@include svg-icon;
+}
 
 .svg-magnifying-glass {
   mask: url(/assets/icons/MagnifyingGlass.svg);

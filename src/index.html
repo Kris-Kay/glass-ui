@@ -25,76 +25,74 @@
   <link rel="icon" href="./assets/other-img/3D-glass-UI-logo-300x300.png" sizes="128x128">
 </head>
 
-<!-- Body -->
-<!-- ========================================== -->
-<body id="top-of-page">
-  <div class="page-bg-bin ">
-    <div class="page-bg-panel page-bg-noise"
-      id="panel-1"
-      role="tabpanel"
-      tabindex="-1"
-      aria-labelledby="tab-1"
-      hidden
+<!-- Fixed background -->
+<div class="page-bg-bin ">
+  <div class="page-bg-panel page-bg-noise"
+    id="panel-1"
+    role="tabpanel"
+    tabindex="-1"
+    aria-labelledby="tab-1"
+    hidden
+  >
+    <img class="page-bg-img"
+      fetchpriority="low"
+      width="1024"
+      height="1517"
+      src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
+      srcset="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_640x948.jpg 640w,
+              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg 1024w,
+              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1920x2844.jpg 1920w,
+              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_2376x3520.jpg 2376w"
+      sizes="100vw"
+      alt="Geometric shapes on a dark background"
     >
-      <img class="page-bg-img"
-        fetchpriority="low"
-        width="1024"
-        height="1517"
-        src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
-        srcset="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_640x948.jpg 640w,
-                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg 1024w,
-                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1920x2844.jpg 1920w,
-                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_2376x3520.jpg 2376w"
-        sizes="100vw"
-        alt="Geometric shapes on a dark background"
-      >
-    </div>
-
-    <div class="page-bg-panel "
-      id="panel-2"
-      role="tabpanel"
-      tabindex="-1"
-      aria-labelledby="tab-2"
-      hidden
-    >
-      <img class="page-bg-img"
-        fetchpriority="low"
-        width="1024"
-        height="1365"
-        src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
-        srcset="/assets/bgImg/monstera-plant-leaves-by-chris-lee_640x853.jpg 640w,
-                /assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg 1024w,
-                /assets/bgImg/monstera-plant-leaves-by-chris-lee_1920x2560.jpg 1920w,
-                /assets/bgImg/monstera-plant-leaves-by-chris-lee_2400x3200.jpg 2400w"
-        sizes="100vw"
-        alt="Big green Monstera plant leaves on a white background"
-      >
-    </div>
-
-    <div class="page-bg-panel page-bg-blur"
-      id="panel-3"
-      role="tabpanel"
-      tabindex="-1"
-      aria-labelledby="tab-3"
-    >
-      <img class="page-bg-img"
-        fetchpriority="high"
-        width="1920"
-        height="1280"
-        src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
-        srcset="/assets/bgImg/sunset-sky-by-gabriel-castles_1024x683.jpg 1024w,
-                /assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg 1920w,
-                /assets/bgImg/sunset-sky-by-gabriel-castles_2400x1600.jpg 2400w,
-                /assets/bgImg/sunset-sky-by-gabriel-castles_3600x2400.jpg 3600w"
-        sizes="100vw"
-        alt="sunset sky with pink and orange clouds"
-      >
-    </div>
   </div>
 
-  <!-- Page content -->
-  <!-- ========================================== -->
-  <div id="js-content" class="content-area"></div>
+  <div class="page-bg-panel "
+    id="panel-2"
+    role="tabpanel"
+    tabindex="-1"
+    aria-labelledby="tab-2"
+    hidden
+  >
+    <img class="page-bg-img"
+      fetchpriority="low"
+      width="1024"
+      height="1365"
+      src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
+      srcset="/assets/bgImg/monstera-plant-leaves-by-chris-lee_640x853.jpg 640w,
+              /assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg 1024w,
+              /assets/bgImg/monstera-plant-leaves-by-chris-lee_1920x2560.jpg 1920w,
+              /assets/bgImg/monstera-plant-leaves-by-chris-lee_2400x3200.jpg 2400w"
+      sizes="100vw"
+      alt="Big green Monstera plant leaves on a white background"
+    >
+  </div>
+
+  <div class="page-bg-panel page-bg-blur"
+    id="panel-3"
+    role="tabpanel"
+    tabindex="-1"
+    aria-labelledby="tab-3"
+  >
+    <img class="page-bg-img"
+      fetchpriority="high"
+      width="1920"
+      height="1280"
+      src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
+      srcset="/assets/bgImg/sunset-sky-by-gabriel-castles_1024x683.jpg 1024w,
+              /assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg 1920w,
+              /assets/bgImg/sunset-sky-by-gabriel-castles_2400x1600.jpg 2400w,
+              /assets/bgImg/sunset-sky-by-gabriel-castles_3600x2400.jpg 3600w"
+      sizes="100vw"
+      alt="sunset sky with pink and orange clouds"
+    >
+  </div>
+</div>
+
+<!-- Body -->
+<!-- ========================================== -->
+<body id="top-of-page" class="body-grid">
 
   <!-- Nav -->
   <!-- ========================================== -->
@@ -136,7 +134,7 @@
             aria-selected="false"
             aria-controls="panel-1"
             id="tab-1"
-            tabindex="-1">
+            tabindex="0">
             <p class="btn-text">Dark</p>
           </button>
 
@@ -145,7 +143,7 @@
             aria-selected="false"
             aria-controls="panel-2"
             id="tab-2"
-            tabindex="-1">
+            tabindex="0">
             <p class="btn-text">Light</p>
           </button>
 
@@ -213,6 +211,11 @@
       </div>
     </div>
   </nav>
+
+  <!-- Page content -->
+  <!-- ========================================== -->
+  <div id="js-content" class="content-area"></div>
+
 
   <!-- Scripts -->
   <!-- ========================================== -->
