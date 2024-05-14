@@ -36,4 +36,9 @@
 .nav-item {
   z-index: z.z(on-nav);
   height: var(--nav-item-h);
+
+  & > svg {
+    width: calc(var(--nav-item-h) * 0.8);
+    height: calc(var(--nav-item-h) * 0.8);
+  }
 }

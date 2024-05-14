@@ -9,6 +9,7 @@
 @mixin svg-icon {
   max-width: 100%;
   max-height: 100%;
+  aspect-ratio: 1;
   mask-repeat: no-repeat;
   mask-size: cover;
   mask-position: center;
@@ -96,5 +97,10 @@ mask: url(/assets/icons/CircleHalfTilt.svg);
 
 .svg-xCircleOutline {
   mask: url(/assets/icons/XCircleOutline.svg);
+  @include svg-icon;
+}
+
+.svg-3d-glass-ui-logo {
+  mask: url(/assets/logos/3D-glass-UI-logo.svg);
   @include svg-icon;
 }
