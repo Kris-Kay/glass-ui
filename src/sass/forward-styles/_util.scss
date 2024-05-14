@@ -4,6 +4,6 @@
 @forward "../2-util/margin-padding";
 @forward "../2-util/mixin";
 @forward "../2-util/radius";
-@forward "../2-util/reset";
+// @forward "../2-util/reset"; /* forwarded first in `styles.scss` */
 @forward "../2-util/text-util";
 @forward "../2-util/z-index";

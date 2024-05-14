@@ -1,26 +1,41 @@
 /* ================================================== */
 /* Reset */
-// @use "../2-util/z-index" as z;
 /* ================================================== */
 
-html {
+/* box-sizing model */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Kill margin with fire */
+* { margin: 0; }
+
+/* Improve text rendering and scroll behaviour */
+body {
   scroll-behavior: smooth;
-  z-index: z(page);
+  -webkit-font-smoothing: antialiased;
 }
 
-main,
-article,
-aside,
-figure,
-footer,
-header,
-nav,
-section,
-details,
-summary {
-  display: block;
+/* Remove list styles */
+ol,
+ul {
+  list-style: none;
 }
 
+/* Prevent text overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Remove padding */
 a,
 ul,
 ol,
@@ -45,15 +60,20 @@ legend,
 pre,
 abbr,
 button,
-body {
-  margin: 0;
+body,
+textarea,
+select {
   padding: 0;
 }
 
-button,
+
+/* Reset interactive elements */
 a,
 input,
-textarea {
+button,
+textarea,
+select {
+  font: inherit;
   background-color: transparent;
   border: 0;
   border-style: none;
@@ -62,26 +82,4 @@ textarea {
   appearance: none;
   cursor: pointer;
   pointer-events: auto;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-fieldset,
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-audio,
-canvas,
-video,
-progress {
-  vertical-align: baseline;
 }
