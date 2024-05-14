@@ -8,16 +8,15 @@
 /* Button transition */
 /* ================================================== */
 /* ✨ Config these values ✨ */
-@mixin btn-transition {
-  will-change: backdrop-filter, background-color;
-  transition: backdrop-filter $speed-fast $smooth-cubic,
-              background-color $speed-fast $smooth-cubic;
+@mixin btn-interaction {
+  will-change: opacity;
+  transition: opacity $speed-slow $smooth-cubic;
 }
 
 @mixin btn-svg-transition {
   will-change: width, height;
-  transition:  width $speed-fast $smooth-cubic,
-               height $speed-fast $smooth-cubic;
+  transition:  width $speed-slow $smooth-cubic,
+               height $speed-slow $smooth-cubic;
 }
 
 /* Button text */
@@ -28,6 +27,8 @@
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
   text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
   text-shadow: var(--text-sha-xs);
   pointer-events: none;
 }
@@ -37,7 +38,7 @@
 /* ================================================== */
 @mixin btn-structure {
   --_btn-h: var(--btn-h, 2.25rem);
-  --_btn-content-h: var(--btn-content-h, 1rem);
+  --_btn-icon-h: var(--btn-icon-h, 1rem);
   --_btn-padding-x: var(--btn-padding-x, 1.5rem);
   --_btn-padding-top: var(--btn-padding-top, 0);
   --_btn-padding-bottom: var(--btn-padding-bottom, 0);
@@ -51,9 +52,9 @@
   align-items: center;
   width: fit-content;
   height: var(--_btn-h);
-  padding-top: 0;
+  padding-top: 0; /* added to .btn-text so svg is not affected */
   padding-right: var(--_btn-padding-x);
-  padding-bottom: 0;
+  padding-bottom: 0; /* added to .btn-text so svg is not affected */
   padding-left: var(--_btn-padding-x);
   gap: var(--_btn-gap);
   border-radius: var(--_btn-radius);
@@ -73,8 +74,8 @@
   & > .btn-text {
     @include btn-text;
     z-index: z(on-btn);
-    font-size: var(--_btn-content-h);
-    line-height: var(--_btn-content-h);
+    font-size: var(--_btn-icon-h);
+    line-height: var(--_btn-icon-h);
     padding-top: var(--_btn-padding-top);
     padding-bottom: var(--_btn-padding-bottom);
     pointer-events: none;
@@ -82,7 +83,7 @@
 
   & > svg {
     z-index: z(on-btn);
-    height: calc(var(--_btn-content-h) * 1.15);
+    height: calc(var(--_btn-icon-h) * 1.15);
     aspect-ratio: 1;
     pointer-events: none;
   }
@@ -108,36 +109,33 @@
 .btn-sm {
   @include btn-structure;
   --btn-h: var(--ui-h-sm);
-  --btn-content-h: 0.9rem;
-  // --btn-padding-x: 1.25rem;
-  --btn-padding-x: calc(var(--_btn-h) * 0.618);
+  --btn-icon-h: 0.9rem;
+  --btn-padding-x: calc(var(--btn-h) * 0.6);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
-  --btn-gap: calc(var(--btn-padding-x) * 0.5);
+  --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 }
 
 .btn-md {
   @include btn-structure;
   --btn-h: var(--ui-h-md);
-  --btn-content-h: 1rem;
-  // --btn-padding-x: 1.5rem;
-  --btn-padding-x: calc(var(--_btn-h) * 0.618);
+  --btn-icon-h: 1rem;
+  --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
-  --btn-gap: calc(var(--btn-padding-x) * 0.5);
+  --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 }
 
 .btn-lg {
   @include btn-structure;
   --btn-h: var(--ui-h-lg);
-  --btn-content-h: 1.125rem;
-  // --btn-padding-x: 1.75rem;
-  --btn-padding-x: calc(var(--_btn-h) * 0.618);
+  --btn-icon-h: 1.125rem;
+  --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
-  --btn-gap: calc(var(--btn-padding-x) * 0.5);
+  --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 }
 
@@ -145,11 +143,11 @@
   @include btn-structure;
   width: 100%;
   --btn-h: var(--ui-h-xl);
-  --btn-content-h: 1.25rem;
-  // --btn-padding-x: 2rem;
-  --btn-padding-x: calc(var(--_btn-h) * 0.5);
+  --btn-icon-h: 1.25rem;
+  --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
+  --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: var(--2xs);
 }
 
@@ -158,7 +156,7 @@
 /* ================================================== */
 @mixin btn-icon-structure {
   --_btn-h: var(--btn-h, 2.25rem);
-  --_btn-content-h: var(--btn-content-h, 1rem);
+  --_btn-icon-h: var(--btn-icon-h, 1rem);
   position: relative;
   z-index: z(btn);
   display: flex;
@@ -182,45 +180,38 @@
 
   & > svg {
     z-index: z(on-btn);
-    height: var(--_btn-content-h);
+    height: var(--_btn-icon-h);
+    width: var(--_btn-icon-h);
     aspect-ratio: 1;
     pointer-events: none;
+    @include btn-svg-transition;
   }
+
+  &:hover {
+    & > svg {
+      width: calc(var(--_btn-icon-h) * 1.1);
+      height: calc(var(--_btn-icon-h) * 1.1);
+    }
+  }
+
 }
 
 .btn-icon-sm {
   @include btn-icon-structure;
   --btn-h: var(--ui-h-sm);
-  --btn-content-h: calc(var(--btn-h) * 0.55);
+  --btn-icon-h: calc(var(--btn-h) * 0.55);
 }
 
 .btn-icon-md {
   @include btn-icon-structure;
   --btn-h: var(--ui-h-md);
-  --btn-content-h: calc(var(--btn-h) * 0.55);
-
-  // & > svg {
-  //   width: calc(var(--btn-h) * 0.5);
-  //   height: calc(var(--btn-h) * 0.5);
-  // }
-
-  // &:hover {
-  //   & > svg {
-  //     width: calc(var(--btn-h) * 0.6);
-  //     height: calc(var(--btn-h) * 0.6);
-  //   }
-  // }
+  --btn-icon-h: calc(var(--btn-h) * 0.55);
 }
 
 .btn-icon-lg {
   @include btn-icon-structure;
   --btn-h: var(--ui-h-lg);
-  --btn-content-h: calc(var(--btn-h) * 0.6);
-}
-
-@mixin btn-interaction {
-  will-change: opacity;
-  transition: opacity $speed-slow $smooth-cubic;
+  --btn-icon-h: calc(var(--btn-h) * 0.55);
 }
 
 /* ================================================== */
@@ -271,7 +262,7 @@
     opacity: 0.5;
 
     &::before {
-      opacity: 0.3;
+      opacity: 0.5;
     }
   }
 
@@ -306,7 +297,6 @@
       opacity: 0.7;
     }
   }
-
 }
 
 /* Primary buttons */
@@ -331,9 +321,13 @@
 @mixin btn-secondary {
   @include btn-style;
   --btn-bg: hsl(var(--primary-15) / 0.2);
-  --btn-state-bg:  hsl(var(--primary-15) / 0.8);
+  --btn-state-bg:  hsl(var(--primary-10) / 0.9);
   --btn-text: var(--text-xstrong);
   --btn-blur: 15px;
+
+  &::after {
+    box-shadow: var(--bevel-sm);
+  }
 }
 
 /* Outline button */
@@ -353,12 +347,10 @@
 /* ================================================== */
 @mixin btn-ghost {
   @include btn-style;
-  // --btn-bg: hsl(var(--primary-98) / 0.4);
   --btn-bg: transparent;
   --btn-state-bg: hsl(var(--primary-95) / 0.7);
   --btn-text: hsl(var(--primary-98) / 1);
   --btn-blur: 15px;
-
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
@@ -367,68 +359,3 @@
 .btn-secondary { @include btn-secondary; }
 .btn-outline { @include btn-outline; }
 .btn-ghost { @include btn-ghost; }
-
-
-// @mixin btn-interaction2 {
-//   will-change: opacity;
-//   transition: opacity $speed-slow $smooth-cubic;
-// }
-
-// @mixin btn-style2 {
-//   --_btn-bg: var(--btn-bg, rgba(255, 255, 255, 0.5));
-//   --_btn-state-bg: var(--btn-state-bg, rgba(236, 92, 9, 1));
-//   --_btn-text: var(--btn-text, black);
-//   --_btn-icon: var(--btn-icon, var(--btn-text));
-
-//   background-color: var(--_btn-bg);
-//   -webkit-backdrop-filter: blur(20px);
-//   backdrop-filter:         blur(20px);
-
-//   &::after {
-//     box-shadow: var(--bevel-lg);
-//   }
-
-//   &::before {
-//     background-color: var(--_btn-state-bg);
-//     opacity: 0;
-//     @include btn-interaction2;
-//   }
-
-//   & > .btn-text {
-//     color: var(--_btn-text);
-//   }
-
-//   & > svg {
-//     background-color: var(--_btn-icon);
-//   }
-
-//   &:hover,
-//   &:focus {
-//     &::before {
-//       opacity: 0.5;
-//     }
-//   }
-
-//   &:active {
-//     &::before {
-//       opacity: 0.7;
-//     }
-//   }
-
-//   &:disabled {
-//     cursor: not-allowed;
-//     opacity: 0.5;
-
-//     &::before {
-//       opacity: 0.2;
-//     }
-//   }
-// }
-
-// .btn-2nd {
-//   @include btn-style2;
-//   --btn-bg: hsl(var(--primary-75) / 0.5);
-//   --btn-state-bg: hsl(var(--primary-15) / 0.9);
-//   --btn-text: hsl(var(--primary-98) / 0.98);
-//   box-shadow: var(--sha-xs);
-// }
