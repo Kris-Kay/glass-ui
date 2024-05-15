@@ -59,22 +59,32 @@ html.root-transition *::after {
 }
 
 
-/* Focus-visible */
+/* Focus */
 /* ================================================== */
-:focus-visible {
-  box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;
-  outline: 1px solid hsl(var(--primary-95) / 0.6)!important;
-  outline-offset: 1.5px!important;
-  overflow: visible;
-  z-index: z.z(focus);
-  border-radius: inherit;
-  transition: all $speed-base $smooth-cubic;
+:focus {
+  outline-color: transparent;
+  outline-style: solid;
 }
 
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
+:focus-visible {
+  box-shadow: 0 0 1px 1px hsl(var(--primary-5) / 0.5),
+              0 0 0 2px hsl(var(--primary-15) / 0.3),
+              inset 0 0 0.33px 2px hsl(var(--primary-95) / 0.3) !important;
+  outline: 1.5px solid hsl(var(--primary-95) / 0.6) !important;
+  outline-offset: 2px !important;
+
+  overflow: visible !important;
+  z-index: z.z(focus);
+  border-radius: inherit;
+  transition: all $speed-base $smooth-cubic;
+}
+
+
 
 /* Fade */
 /* ================================================== */

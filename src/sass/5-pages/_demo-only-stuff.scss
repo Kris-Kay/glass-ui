@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Demo only styles */
 @use "../forward-styles/design" as *;
-@use "../2-util/layout";
+@use "../forward-styles/util" as *;
 @use "../forward-styles/glass";
 /* ================================================== */
 
@@ -221,3 +221,69 @@
 .ui-h-md { height: var(--ui-h-md);}
 .ui-h-lg { height: var(--ui-h-lg);}
 .ui-h-xl { height: var(--ui-h-xl);}
+
+
+
+.a-svg {
+  width: min(100%, 500px);
+  height: min(100%, 500px);
+  aspect-ratio: 1;
+}
+
+
+/* btn demo */
+.btn-hover {
+  pointer-events: none;
+
+  & > .btn-text {
+    color: var(--btn-state-text);
+  }
+
+  & > svg {
+    background-color: var(--btn-state-icon);
+  }
+
+  &::before {
+    opacity: var(--btn-hover);
+  }
+}
+
+.btn-focus {
+  pointer-events: none;
+
+  & > .btn-text {
+    color: var(--btn-state-text);
+  }
+
+  & > svg {
+    background-color: var(--btn-state-icon);
+  }
+
+  &::before {
+    opacity: var(--btn-focus);
+  }
+
+  &::after {
+    box-shadow: 0 0 1px 1px hsl(var(--primary-5) / 0.3),
+                0 0 0 2px hsl(var(--primary-15) / 0.2),
+              inset 0 0 0 1.5px hsl(var(--primary-95) / 0.3) !important;
+    outline: 1.5px solid hsl(var(--primary-95) / 0.6) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+.btn-active {
+  pointer-events: none;
+
+  & > .btn-text {
+    color: var(--btn-state-text);
+  }
+
+  & > svg {
+    background-color: var(--btn-state-icon);
+  }
+
+  &::before {
+    opacity: var(--btn-active);
+  }
+}

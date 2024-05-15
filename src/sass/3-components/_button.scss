@@ -8,12 +8,18 @@
 /* Button transition */
 /* ================================================== */
 /* ✨ Config these values ✨ */
-@mixin btn-interaction {
-  will-change: opacity;
-  transition: opacity $speed-slow $smooth-cubic;
+@mixin btn-transition {
+  will-change: opacity, color;
+  transition: opacity $speed-2xslow $smooth-cubic,
+              color $speed-2xslow $smooth-cubic;
 }
 
 @mixin btn-svg-transition {
+  will-change: background-color;
+  transition: background-color $speed-slow $smooth-cubic;
+}
+
+@mixin btn-icon-svg-transition {
   will-change: width, height;
   transition:  width $speed-slow $smooth-cubic,
                height $speed-slow $smooth-cubic;
@@ -24,12 +30,12 @@
 /* ✨ Config these values ✨ */
 @mixin btn-text {
   font-family: $font-family-body;
-  font-weight: $font-weight-md;
+  font-weight: $font-weight-lg;
   letter-spacing: $letter-spacing-md;
   text-align: center;
   white-space: nowrap;
   text-decoration: none;
-  text-shadow: var(--text-sha-xs);
+  text-shadow: var(--text-sha-sm);
   pointer-events: none;
 }
 
@@ -38,7 +44,7 @@
 /* ================================================== */
 @mixin btn-structure {
   --_btn-h: var(--btn-h, 2.25rem);
-  --_btn-icon-h: var(--btn-icon-h, 1rem);
+  --_btn-content-h: var(--btn-content-h, 1rem);
   --_btn-padding-x: var(--btn-padding-x, 1.5rem);
   --_btn-padding-top: var(--btn-padding-top, 0);
   --_btn-padding-bottom: var(--btn-padding-bottom, 0);
@@ -74,8 +80,8 @@
   & > .btn-text {
     @include btn-text;
     z-index: z(on-btn);
-    font-size: var(--_btn-icon-h);
-    line-height: var(--_btn-icon-h);
+    font-size: var(--_btn-content-h);
+    line-height: var(--_btn-content-h);
     padding-top: var(--_btn-padding-top);
     padding-bottom: var(--_btn-padding-bottom);
     pointer-events: none;
@@ -83,7 +89,7 @@
 
   & > svg {
     z-index: z(on-btn);
-    height: calc(var(--_btn-icon-h) * 1.15);
+    height: calc(var(--_btn-content-h) * 1.15);
     aspect-ratio: 1;
     pointer-events: none;
   }
@@ -109,7 +115,7 @@
 .btn-sm {
   @include btn-structure;
   --btn-h: var(--ui-h-sm);
-  --btn-icon-h: 0.9rem;
+  --btn-content-h: 0.95rem;
   --btn-padding-x: calc(var(--btn-h) * 0.6);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
@@ -120,7 +126,7 @@
 .btn-md {
   @include btn-structure;
   --btn-h: var(--ui-h-md);
-  --btn-icon-h: 1rem;
+  --btn-content-h: 1.15rem;
   --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
@@ -131,7 +137,7 @@
 .btn-lg {
   @include btn-structure;
   --btn-h: var(--ui-h-lg);
-  --btn-icon-h: 1.125rem;
+  --btn-content-h: 1.25rem;
   --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
@@ -143,7 +149,7 @@
   @include btn-structure;
   width: 100%;
   --btn-h: var(--ui-h-xl);
-  --btn-icon-h: 1.25rem;
+  --btn-content-h: 1.25rem;
   --btn-padding-x: calc(var(--btn-h) * 0.7);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
@@ -157,6 +163,7 @@
 @mixin btn-icon-structure {
   --_btn-h: var(--btn-h, 2.25rem);
   --_btn-icon-h: var(--btn-icon-h, 1rem);
+
   position: relative;
   z-index: z(btn);
   display: flex;
@@ -184,7 +191,7 @@
     width: var(--_btn-icon-h);
     aspect-ratio: 1;
     pointer-events: none;
-    @include btn-svg-transition;
+    @include btn-icon-svg-transition;
   }
 
   &:hover {
@@ -196,6 +203,9 @@
 
 }
 
+/* Icon button sizes */
+/* ✨ Config these values ✨ */
+/* ================================================== */
 .btn-icon-sm {
   @include btn-icon-structure;
   --btn-h: var(--ui-h-sm);
@@ -218,101 +228,140 @@
 /* Button style */
 /* ================================================== */
 @mixin btn-style {
-  --_btn-bg: var(--btn-bg, rgba(255, 255, 255, 0.5));
-  --_btn-state-bg: var(--btn-state-bg, green(236, 92, 9, 1));
+  // --_btn-bg: var(--btn-bg, rgba(255, 255, 255, 0.3));
   --_btn-text: var(--btn-text, black);
-  --_btn-icon: var(--btn-icon, var(--btn-text));
-  --_btn-blur: var(--btn-blur, 15px);
+  --_btn-icon: var(--btn-icon, var(--_btn-text));
+  // --_btn-sha: var(--btn-sha, var(--sha-xs));
 
-  background-color: var(--_btn-bg);
-  -webkit-backdrop-filter: blur(var(--_btn-blur));
-  backdrop-filter:         blur(var(--_btn-blur));
-  @include btn-interaction;
-  opacity: 1;
+  --_btn-state-bg: var(--btn-state-bg, rgba(36, 156, 3, 0.9));
+  --_btn-state-text: var(--btn-state-text, var(--_btn-text));
+  --_btn-state-icon: var(--btn-state-icon, var(--_btn-state-text));
+  // --_btn-state-sha: var(--btn-state-sha, var(--sha-sm));
+
+  --_btn-bevel: var(--btn-bevel, none);
+
+  --_btn-blur: var(--btn-blur, 3px);
+  --_btn-brightness: var(--btn-brightness, 1);
+  --_btn-saturate: var(--btn-saturate, 1.2);
+
+  --_btn-rest: var(--btn-rest, 0.1);
+  --_btn-hover: var(--btn-hover, 0.3);
+  --_btn-focus: var(--btn-focus, 0.3);
+  --_btn-active: var(--btn-active, 0.7);
+  --_btn-disabled: var(--btn-disabled, 0.6);
+
+  // background-color: var(--_btn-bg);
+  // box-shadow: var(--_btn-sha);
 
   &::before {
-    @include btn-interaction;
+    @include btn-transition;
     background-color: var(--_btn-state-bg);
-    opacity: 0;
+    opacity: var(--_btn-rest);
+  }
+
+  &::after {
+    @include glass.glass-filter(var(--_btn-blur), var(--_btn-brightness), var(--_btn-saturate));
+    box-shadow: var(--_btn-bevel);
   }
 
   & > .btn-text {
     color: var(--_btn-text);
+    @include btn-transition;
   }
 
   & > svg {
     background-color: var(--_btn-icon);
+    @include btn-svg-transition;
   }
 
-  &:hover,
-  &:focus-visible {
+  &:hover {
+    // box-shadow: var(--_btn-state-sha);
+
+    & > .btn-text {
+      color: var(--_btn-state-text);
+    }
+
+    & > svg {
+      background-color: var(--_btn-state-icon);
+    }
+
     &::before {
-      opacity: 0.3;
+      opacity: var(--_btn-hover);
+    }
+  }
+
+  &:focus-visible {
+    // box-shadow: var(--_btn-state-sha);
+
+    & > .btn-text {
+      color: var(--_btn-state-text);
+    }
+
+    & > svg {
+      background-color: var(--_btn-state-icon);
+    }
+
+    &::before {
+      opacity: var(--_btn-focus);
     }
   }
 
   &:active {
+    // box-shadow: var(--_btn-state-sha);
+
+    & > .btn-text {
+      color: var(--_btn-state-text);
+    }
+
+    & > svg {
+      background-color: var(--_btn-state-icon);
+    }
+
     &::before {
-      opacity: 0.7;
+      opacity: var(--_btn-active);
     }
   }
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: var(--_btn-disabled);
+    background-color: hsl(var(--neutral-10) / 0.1);
 
-    &::before {
-      opacity: 0.5;
-    }
-  }
-
-
-/* demo stuff */
-  &.btn-hover {
-    pointer-events: none;
-
-    &::before {
-      opacity: 0.3;
-    }
-  }
-
-  &.btn-focus {
-    pointer-events: none;
-    box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;
-    outline: 1px solid hsl(var(--primary-95) / 0.6);
-    outline-offset: 1.5px;
-
-    &::before {
-      opacity: 0.3;
-    }
-  }
-
-  &.btn-active {
-    pointer-events: none;
-    box-shadow: 0 0 0 1px hsl(var(--primary-15) / 0.12)!important;
-    outline: 1px solid hsl(var(--primary-95) / 0.6);
-    outline-offset: 1.5px;
-
-    &::before {
-      opacity: 0.7;
-    }
+    // &::after {
+    //   -webkit-backdrop-filter: none;
+    //   backdrop-filter: none;
+    // }
   }
 }
+
+
 
 /* Primary buttons */
 /* ✨ Config these values ✨ */
 /* ================================================== */
 @mixin btn-primary {
+
   @include btn-style;
-  --btn-bg: hsl(var(--primary-70) / 0.9);
-  --btn-state-bg: hsl(var(--primary-15) / 0.9);
-  --btn-text: var(--color-white);
+
+  --btn-text: var(--text-xstrong);
+  --btn-icon: var(--btn-text);
+
+  --btn-state-bg: hsl(var(--primary-10) / 0.9);
+  --btn-state-text: var(--btn-text);
+  --btn-state-icon: var(--btn-state-text);
+
   --btn-blur: 15px;
+  --btn-brightness: 1;
+  --btn-saturate: 2.75;
+
+  --btn-bevel: var(--bevel-md);
   box-shadow: var(--sha-2xs);
 
-  &::after {
-    box-shadow: var(--bevel-lg);
-  }
+  --btn-rest: 0.25;
+  --btn-hover: 0.6;
+  --btn-focus: 0.6;
+  --btn-active: 1;
+  --btn-disabled: 0.6;
 }
 
 /* Secondary buttons */
@@ -320,14 +369,26 @@
 /* ================================================== */
 @mixin btn-secondary {
   @include btn-style;
-  --btn-bg: hsl(var(--primary-15) / 0.2);
-  --btn-state-bg:  hsl(var(--primary-10) / 0.9);
-  --btn-text: var(--text-xstrong);
-  --btn-blur: 15px;
+  // --btn-bg: hsl(var(--primary-15) / 0.05);
+  --btn-text:  var(--text-xstrong);
+  --btn-icon: var(--btn-text);
 
-  &::after {
-    box-shadow: var(--bevel-sm);
-  }
+  --btn-state-bg:  hsl(var(--primary-5) / 0.9);
+  --btn-state-text: var(--btn-text);
+  --btn-state-icon: var(--btn-state-text);
+
+  --btn-blur: 10px;
+  --btn-brightness: 0.8;
+  --btn-saturate: 1.5;
+
+  --btn-bevel: var(--bevel-sm);
+  box-shadow: var(--sha-3xs);
+
+  --btn-rest: 0.1;
+  --btn-hover: 0.5;
+  --btn-focus: 0.5;
+  --btn-active: 0.9;
+  --btn-disabled: 0.6;
 }
 
 /* Outline button */
@@ -335,11 +396,25 @@
 /* ================================================== */
 @mixin btn-outline {
   @include btn-style;
-  --btn-bg: hsl(var(--primary-15) / 0.1);
-  --btn-state-bg: hsl(var(--primary-90) / 0.7);
-  --btn-text: hsl(var(--primary-98) / 1);
-  --btn-blur: 15px;
-  border: 1px solid hsl(var(--primary-98) / 0.5);
+  --btn-text: var(--text-2xstrong);
+  --btn-icon: var(--btn-text);
+
+  --btn-state-bg: hsl(var(--neutral-50) / 0.95);
+  --btn-state-text: var(--btn-text);
+  --btn-state-icon: var(--btn-state-text);
+
+  --btn-bevel: none;
+  outline: 1.5px solid hsl(var(--neutral-95) / 0.6);
+
+  --btn-blur: 10px;
+  --btn-brightness: 0.95;
+  --btn-saturate: 1.1;
+
+  --btn-rest: 0;
+  --btn-hover: 0.5;
+  --btn-focus: 0.5;
+  --btn-active: 0.99;
+  --btn-disabled: 0.6;
 }
 
 /* Ghost button */
@@ -347,15 +422,71 @@
 /* ================================================== */
 @mixin btn-ghost {
   @include btn-style;
-  --btn-bg: transparent;
-  --btn-state-bg: hsl(var(--primary-95) / 0.7);
-  --btn-text: hsl(var(--primary-98) / 1);
-  --btn-blur: 15px;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  // --btn-bg: transparent;
+  --btn-text: var(--text-2xstrong);
+  --btn-icon: var(--btn-text);
+
+  --btn-state-bg: hsl(var(--primary-95) / 0.9);
+  --btn-state-text: hsl(var(--neutral-15) / 1);
+  --btn-state-icon: var(--btn-state-text)
+
+  --btn-bevel: none;
+
+  --btn-blur: 0px;
+  --btn-brightness: 1;
+  --btn-saturate: 1;
+
+  &::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  --btn-rest: 0;
+  --btn-hover: 0.3;
+  --btn-focus: 0.3;
+  --btn-active: 0.8;
+  --btn-disabled: 0.5;
 }
 
 .btn-primary { @include btn-primary; }
 .btn-secondary { @include btn-secondary; }
 .btn-outline { @include btn-outline; }
 .btn-ghost { @include btn-ghost; }
+
+/* New button template */
+/* ✨ Config these values ✨ */
+/* ================================================== */
+@mixin my-new-btn {
+  @include btn-style;
+
+  --btn-text: black;
+  --btn-icon: lightblue;
+
+  --btn-state-bg: black;
+  --btn-state-text: white;
+  --btn-state-icon: lightblue;
+
+  --btn-bevel: var(--bevel-md);
+
+  --btn-blur: 8px;
+  --btn-brightness: 1;
+  --btn-saturate: 1.5;
+
+  --btn-rest: 0.3;
+  --btn-hover: 0.6;
+  --btn-focus: 0.6;
+  --btn-active: 0.9;
+  --btn-disabled: 0.6;
+}
+
+.my-new-btn { @include my-new-btn; }
+
+// <button class="btn-lg icon-end my-new-btn"
+//   type="button">
+//   <p class="btn-text">My new button</p>
+//   <svg class="svg-cube"
+//     role="graphics-symbol"
+//     aria-hidden="true"
+//     focusable="false">
+//   </svg>
+// </button>

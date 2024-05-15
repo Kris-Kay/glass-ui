@@ -13,17 +13,16 @@
 $blur-2xs: 2px;
 $blur-xs: 3px;
 $blur-sm: 15px;
-$blur-md: 56px;
+$blur-md: 64px;
 $blur-lg: 80px;
 $brightness-base: 1;
 $saturate-base: 1.2;
-$contrat-base: 1;
 
 /* Backdrop filter mixin */
 /* ================================================== */
-@mixin glass-filter($blur: 48px, $bright: 1, $satu: 1.2, $contra: 1.1) {
-  -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu) contrast($contra);
-  backdrop-filter:         blur($blur) brightness($bright) saturate($satu) contrast($contra);
+@mixin glass-filter($blur: 48px, $bright: 1, $satu: 1.2) {
+  -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu);
+  backdrop-filter:         blur($blur) brightness($bright) saturate($satu);
 }
 
 
@@ -65,7 +64,7 @@ $contrat-base: 1;
 /* ================================================== */
 @mixin glass-3d-base {
   position: relative;
-  @include glass-filter($blur-md, $brightness-base, $saturate-base, $contrat-base);
+  @include glass-filter($blur-md, $brightness-base, $saturate-base);
 
   &::after {
     @include layout.pseudo;
@@ -87,7 +86,7 @@ $contrat-base: 1;
   position: relative;
   // -webkit-transform: translate3d(0,0,0);
   // transform: translate3d(0,0,0);
-  @include glass-filter($blur-md, $brightness-base, $saturate-base, $contrat-base);
+  @include glass-filter($blur-md, $brightness-base, $saturate-base);
   // overflow: hidden;
 
   &::before {
@@ -180,9 +179,8 @@ $contrat-base: 1;
   @include glass-3d-base;
   @include glass-filter($blur-lg, $brightness-base, $saturate-base);
 // background-color: rgba(128, 0, 128, 0.515);
+
   &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
     box-shadow: var(--bevel-lg);
   }
 
@@ -200,8 +198,6 @@ $contrat-base: 1;
   @include glass-3d-sm;
 
   &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
     box-shadow: var(--flat-bevel-sm);
   }
 }
@@ -210,19 +206,24 @@ $contrat-base: 1;
   @include glass-3d-md;
 
   &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
     box-shadow: var(--flat-bevel-md);
   }
 }
 
 @mixin glass-flat-lg {
-  @include glass-3d-lg;
+  position: relative;
 
   &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
+    @include layout.pseudo;
+    z-index: z.z(glass-after);
     box-shadow: var(--flat-bevel-lg);
+  }
+
+  &::before {
+    @include layout.pseudo;
+    z-index: z.z(glass-b4);
+    @include noise-lg;
+    @include glass-filter($blur-md, $brightness-base, $saturate-base);
   }
 }
 
