@@ -72,8 +72,18 @@ a,
 input,
 button,
 textarea,
+fieldset,
 select {
   font: inherit;
+  margin: 0;
+  padding: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+
   background-color: transparent;
   border: 0;
   border-style: none;

@@ -65,3 +65,7 @@
 .p-y {
   @include  mix.xy-size-modifiers('padding-top', 'padding-bottom');
 }
+
+.p-none {
+  padding: 0;
+}

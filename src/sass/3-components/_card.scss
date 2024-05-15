@@ -5,13 +5,14 @@
 @use "../forward-styles/glass" as glass;
 /* ================================================== */
 
-/* Cards with Container queries */
+/* Card base */
 /* ================================================== */
-@mixin card-q {
+@mixin card-base {
   --_space: var(--space, 1rem);
   --neg-space: calc(-1 * var(--_space));
   z-index: z(card);
-  width: 100%;
+  // width: 100%;
+  height: fit-content;
   display: grid;
   gap: var(--_space);
   padding: var(--_space);
@@ -20,46 +21,50 @@
 }
 
 .card-q {
-  @include card-q;
+  @include card-base;
 }
-
 
 /* Edge-to-edge classes */
 /* ================================================== */
 @mixin e2e {
   z-index: z(on-card);
   width: calc(100% + (var(--space) * 2));
-  display: grid;
   margin-left: var(--neg-space);
   margin-right: var(--neg-space);
   padding: var(--space);
+
+  &.e2e-no-p {
+    padding: 0;
+  }
 }
 
-.e2e {
+.e2e { @include e2e; }
+
+.e2e-no-t {
   @include e2e;
+  margin-top: var(--neg-space);
 }
 
-.e2e-no-padding{
-  padding: 0;
-}
-
-.e2e-inset {
+.e2e-no-b {
   @include e2e;
-  // margin-left: var(--_neg-space);
-  margin-left: calc(var(--neg-space) + 1px);
-  margin-right: var(--neg-space);
-  background-color: var(--inset-bg-reg);
-  // box-shadow: var(--inset-flat-md);
+  margin-bottom: var(--neg-space);
 }
 
-.e2e-no-y-space {
+.e2e-no-y {
+  @include e2e;
   margin-top: var(--neg-space);
   margin-bottom: var(--neg-space);
 }
 
-.e2e-no-bottom-space {
-  margin-bottom: var(--neg-space);
+.e2e-inset {
+  @include e2e;
+  margin-left: calc(var(--neg-space) + 1px);
+  margin-right: var(--neg-space);
+  background-color: var(--inset-bg-deep);
+  box-shadow: var(--inset-flat-md);
 }
+
+
 
 @mixin bottom-radius {
   border-top-left-radius: 0;
@@ -72,6 +77,9 @@
 .bottom-radius {
   @include bottom-radius;
 }
+
+
+
 
 /* Card Titles */
 /* ================================================== */
@@ -120,12 +128,24 @@
   font-size: var(--text-sm);
 }
 
-.title-group-lg {
+.title-group {
+  z-index: z(on-card);
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 //  background-color: rgba(0, 225, 255, 0.5);
 }
+
+.card-img {
+  width: 100%;
+}
+
+.card-img-e2e {
+  @include e2e;
+  padding: 0;
+}
+
+
 
 
 /* Card Container queries */
@@ -201,7 +221,7 @@
     // background-color: rgba(234, 0, 255, 0.5);
   }
 
-  .title-group-lg {
+  .title-group {
     gap: 1em;
   }
 
@@ -221,7 +241,7 @@
     // background-color: rgba(255, 0, 98, 0.53);
   }
 
-  // .title-group-lg {
+  // .title-group {
   //   gap: 1em;
   // }
 
@@ -241,106 +261,28 @@
   }
 }
 
-
-/* Reg Cards */
+/* Cards that fit the width of their content */
 /* ================================================== */
-@mixin card-base {
-  --_space: var(--space, 1rem);
-  --_neg-space: calc(-1 * var(--space));
-  z-index: z(card);
-  height: fit-content;
-  display: grid;
-  gap: var(--_space);
-  padding: var(--_space);
-
-  @include bp(sm) {
-    padding: var(--_space);
-  }
-
-  // & > .e2e {
-  //   padding: var(--_space);
-  //   margin: 0 var(--_neg-space);
-  // }
-
-  // & > .no-y-space {
-  //   padding: var(--_space);
-  //   margin: var(--_neg-space);
-  // }
-
-  // & > .e2e-no-b-space {
-  //   display: grid;
-  //   place-self: center;
-  //   padding: var(--_space);
-  //   margin-left: var(--_neg-space);
-  //   margin-right: var(--_neg-space);
-  //   margin-bottom: var(--_neg-space);
-  //   margin-top: 0;
-  // }
-
-  // & > .full-w-fill-noBottomMargin  {
-  //   margin-left: var(--_neg-space);
-  //   margin-right: var(--_neg-space);
-  //   margin-bottom: calc(var(--_neg-space) * 1.618);
-
-  //   padding: calc(var(--_space) *1.618) var(--_space);
-
-  //   @include bp(sm) {
-  //     padding: var(--_space);
-  //     margin-bottom: var(--_neg-space);
-  //   }
-  // }
-
-  // & > .e2e-inset {
-  //   padding: var(--_space);
-  //   margin-left: calc(var(--_neg-space) + 0.5px);
-  //   margin-right: var(--_neg-space);
-
-  //   color: var(--color-3xlight);
-  //   background-color: var(--inset-bg-xdeep);
-  //   box-shadow: var(--inset-flat-lg);
-  // }
-
-  // & > .e2e-no-padding{
-  //   display: grid;
-  //   place-self: center;
-  //   margin-left: var(--_neg-space);
-  //   margin-right: var(--_neg-space);
-  // }
-
-  // & > .e2e-no-bottom-space {
-  //   display: grid;
-  //   place-self: center;
-  //   padding: var(--_space);
-  //   margin-left: var(--_neg-space);
-  //   margin-right: var(--_neg-space);
-  //   margin-bottom: var(--_neg-space);
-  // }
-
-  // & > .full-w-img-noMargin {
-  //   display: grid;
-  //   place-self: center;
-  //   // margin: var(--_neg-space);
-  //   margin-left: var(--_neg-space);
-  //   margin-right: var(--_neg-space);
-  //   margin-top: var(--_neg-space);
-  //   margin-bottom: calc(var(--_neg-space) * 1.618);
-
-  //   // padding: calc(var(--_space) *1.618) var(--_space);
-
-  //   @include bp(sm) {
-  //     padding: var(--_space);
-  //     margin-bottom: var(--_neg-space);
-  //   }
-  // }
+.card-fit-lg {
+  @include card-base;
+  --space: var(--lg);
+  width: max-content;
+  max-width: 100%;
+  @include radius("md");
 }
 
-.card-fit {
-  --space: var(--lg);
-  z-index: z(card);
+.card-fit-xl {
+  @include card-base;
+  --space: var(--xl);
   width: max-content;
-  height: fit-content;
-  display: grid;
-  gap: var(--space);
-  padding: var(--space);
-  border-radius: var(--md);
+  max-width: 100%;
+  @include radius("md");
+}
+
+.card-fit-3xl {
+  @include card-base;
+  --space: var(--3xl);
+  width: max-content;
+  max-width: 100%;
+  @include radius("lg");
 }
