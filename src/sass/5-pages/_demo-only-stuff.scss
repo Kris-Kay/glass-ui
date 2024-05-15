@@ -5,58 +5,8 @@
 @use "../forward-styles/glass";
 /* ================================================== */
 
-.svg-xCircleOutline {
-  mask: url(/assets/icons/XCircleOutline.svg);
-  @include svg-icon;
-}
-
-
-
-/* Big titles */
-.big-title-bg {
-  width: fit-content;
-  min-width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  padding: var(--sm);
-  // margin-top: var(--nav-h);
-  margin-bottom: var(--3xl);
-  z-index: z(nav);
-
-  @include glass.glass-flat-md;
-  background-color: var(--tint-clear);
-  box-shadow: var(--sha-sm);
-  border-radius: 0 var(--sm) var(--sm) 0;
-
-  @include bp(xs) {
-    min-width: 40%;
-  }
-
-  @include bp(sm) {
-    min-width: 33%;
-  }
-
-  @include bp(lg) {
-    min-width: 25%;
-  }
-}
-
-.big-title {
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  font-size: var(--text-lg);
-  text-shadow: var(--text-sha-3xl);
-  line-height: 1;
-  color: var(--text-strong);
-  text-align: right;
-
-  @include bp(lg) {
-    font-size: var(--text-xl);
-  }
-}
-
-
 /* Bevel Demo */
+/* ================================================== */
 .bevel-demo {
   position: relative;
   // z-index: 2;
@@ -69,6 +19,7 @@
 }
 
 /* inset Demo */
+/* ================================================== */
 .inset-demo-bin {
   width: 100%;
   height: fit-content;
@@ -93,7 +44,77 @@
   // }
 }
 
+
+/* Color Demo */
+/* ================================================== */
+.color-stack {
+  display: grid;
+  border-radius: var(--sm);
+  overflow: hidden;
+
+  > * {
+    width: min(100%, 400px);
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: var(--xs);
+  }
+}
+
+
+/* Contact section */
+/* ================================================== */
+.contact-inset-bin {
+  width: 100%;
+  border-radius: var(--sm);
+  overflow: hidden;
+}
+
+.contact-inset {
+  display: grid;
+  place-items: center;
+  gap: var(--2xs);
+  width: 100%;
+  height: fit-content;
+  padding: var(--lg);
+  box-shadow: var(--inset-lg);
+  border-radius: inherit;
+  background-color: var(--inset-bg-deep);
+}
+
+.stamp {
+  width: 100px;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  opacity: 0.85;
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    border-radius: var(--sm);
+  }
+
+  @include bp(sm) {
+    width: 180px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}
+
+/* UI height */
+/* ================================================== */
+.ui-h-xs { height: var(--ui-h-xs);}
+.ui-h-sm { height: var(--ui-h-sm);}
+.ui-h-md { height: var(--ui-h-md);}
+.ui-h-lg { height: var(--ui-h-lg);}
+.ui-h-xl { height: var(--ui-h-xl);}
+
+
 /* Button Demo */
+/* ================================================== */
 .btn-grid-bin {
   width: 100%;
   max-width: 300px;
@@ -141,6 +162,7 @@
 }
 
 .btn-cell-label {
+  z-index: z(on-card);
   font-family: $font-family-body;
   font-weight: $font-weight-md;
   font-size: var(--text-2xs);
@@ -156,82 +178,6 @@
   }
 }
 
-/* Color Demo */
-.color-stack {
-  display: grid;
-  border-radius: var(--sm);
-  overflow: hidden;
-
-  > * {
-    width: min(100%, 400px);
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    padding: var(--xs);
-  }
-}
-
-
-/* Contact section */
-.contact-inset-bin {
-  width: 100%;
-  border-radius: var(--sm);
-  overflow: hidden;
-
-}
-
-.contact-inset {
-  display: grid;
-  place-items: center;
-  gap: var(--2xs);
-  width: 100%;
-  height: fit-content;
-  padding: var(--lg);
-  box-shadow: var(--inset-lg);
-  border-radius: inherit;
-  background-color: var(--inset-bg-deep);
-}
-
-.stamp {
-  width: 100px;
-  aspect-ratio : 1 / 1;
-  overflow: hidden;
-  border-radius: var(--xs);
-  opacity: 0.85;
-  box-shadow: var(--sha-md);
-
-  @include bp(xs) {
-    width: 150px;
-    border-radius: var(--sm);
-  }
-
-  @include bp(sm) {
-    width: 180px;
-  }
-
-  & > img {
-    width: 100%;
-  }
-}
-
-
-/* UI height */
-.ui-h-xs { height: var(--ui-h-xs);}
-.ui-h-sm { height: var(--ui-h-sm);}
-.ui-h-md { height: var(--ui-h-md);}
-.ui-h-lg { height: var(--ui-h-lg);}
-.ui-h-xl { height: var(--ui-h-xl);}
-
-
-
-.a-svg {
-  width: min(100%, 500px);
-  height: min(100%, 500px);
-  aspect-ratio: 1;
-}
-
-
-/* btn demo */
 .btn-hover {
   pointer-events: none;
 
@@ -285,5 +231,64 @@
 
   &::before {
     opacity: var(--btn-active);
+  }
+}
+
+/* Demo text styles */
+/* ================================================== */
+.class-name {
+  font-family: $font-family-body;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-lg;
+  text-shadow: var(--text-sha-sm);
+  word-break: keep-all;
+  font-size: var(--text-sm);
+
+  @include bp(sm) {
+    font-size: var(--text-md);
+  }
+}
+
+
+/* Big titles */
+.big-title-bg {
+  width: fit-content;
+  min-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--sm);
+  // margin-top: var(--nav-h);
+  margin-bottom: var(--3xl);
+  z-index: z(nav);
+
+  @include glass.glass-flat-md;
+  background-color: var(--tint-clear);
+  box-shadow: var(--sha-sm);
+  border-radius: 0 var(--sm) var(--sm) 0;
+
+  @include bp(xs) {
+    min-width: 40%;
+  }
+
+  @include bp(sm) {
+    min-width: 33%;
+  }
+
+  @include bp(lg) {
+    min-width: 25%;
+  }
+}
+
+.big-title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-sm;
+  font-size: var(--text-lg);
+  text-shadow: var(--text-sha-3xl);
+  line-height: 1;
+  color: var(--text-strong);
+  text-align: right;
+
+  @include bp(lg) {
+    font-size: var(--text-xl);
   }
 }

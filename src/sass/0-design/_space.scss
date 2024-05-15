@@ -91,24 +91,24 @@ $sizes: (
 
 
 html {
-/* Container query padding / margin / gap */
+  /* Container query value for padding / margin / gap */
   --space-q-sm: 4.5cqw;
   --space-q-md: 7cqw;
   --space-q-lg: 11cqw;
 
-/* Ui height */
-    --ui-h-xs: 1.75rem; /* 28px */
-    --ui-h-sm: 2rem;    /* 32px */
-    --ui-h-md: 2.25rem; /* 36px */
-    --ui-h-lg: 2.75rem; /* 44px */
-    --ui-h-xl: 3.25rem; /* 52px */
+  /* Ui height */
+  --ui-h-xs: 1.625rem;/* 26px */
+  --ui-h-sm: 2rem;    /* 32px */
+  --ui-h-md: 2.25rem; /* 36px */
+  --ui-h-lg: 2.75rem; /* 44px */
+  --ui-h-xl: 3.25rem; /* 52px */
 
   @include bp.bp(sm) {
     --space-q-sm: 4cqw;
     --space-q-md: 6cqw;
     --space-q-lg: 10cqw;
 
-    --ui-h-xs: 1.875rem; /* 30px */
+    --ui-h-xs: 1.75rem;  /* 28px */
     --ui-h-sm: 2.125rem; /* 34px */
     --ui-h-md: 2.375rem; /* 38px */
     --ui-h-lg: 2.875rem; /* 46px */
@@ -116,7 +116,6 @@ html {
   }
 
   @include bp.bp(lg) {
-    --ui-h-xs: 2rem;    /* 32px */
     --ui-h-sm: 2.25rem; /* 36px */
     --ui-h-md: 2.5rem;  /* 40px */
     --ui-h-lg: 3rem;    /* 48px */
@@ -151,7 +150,6 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   display: grid;
   place-items: center;
   pointer-events: auto;
-  z-index: z(section);
 }
 
 .moat-all {
@@ -250,7 +248,7 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   display: grid;
   gap: var(--section-gap);
   pointer-events: none;
-  z-index: z(page);
+  z-index: z.z("page");
 
   @include bp.bp(xs) {
     --section-gap: 10rem;
@@ -279,7 +277,7 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
   display: grid;
   gap: var(--section-gap);
   pointer-events: none;
-  z-index: z(section);
+  z-index: z.z(section);
 
   @include bp.bp(xs) {
     --section-gap: 8rem;
