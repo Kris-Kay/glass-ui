@@ -3,27 +3,29 @@
 @use "sass:map";
 @use "breakpoint" as bp;
 @use "text-config" as *;
-// @use "../1-glass/shadow" as *;
 /* ================================================== */
 
 /* Body text */
 /* ================================================== */
-@mixin body-text {
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  font-size: var(--text-sm);
-  letter-spacing: normal;
-  line-height: $line-height-lg;
-  color: var(--text-base);
-}
-
 body,
 p,
 input,
 textarea {
-  @include body-text;
+  font-family: $font-family-body;
+  font-optical-sizing: auto;
+  font-weight: 300; /* Use a value from 200 to 1000 */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+  font-size: var(--text-sm);
+  line-height: $line-height-md;
+  color: var(--text-base);
 }
 
+.text-max-w {
+  max-width: 70ch;
+}
 
 /* Thick titles */
 /* ================================================== */
@@ -86,11 +88,6 @@ textarea {
   font-weight: $font-weight-sm;
 }
 
-.footnote {
-  font-size: var(--text-2xs);
-  font-weight: $font-weight-sm;
-}
-
 .eyebrow {
   font-family: $font-family-body;
   font-weight: $font-weight-md;
@@ -108,28 +105,71 @@ textarea {
 }
 
 
+/* Labels */
+/* ================================================== */
+@mixin label {
+  font-family: $font-family-body;
+  font-weight: $font-weight-xl;
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-sm;
+}
 
-.data-label-xs {
-  @include title-thick;
+.label-xs {
+  // @include title-thick;
+  @include label;
   font-size: var(--text-xs);
   text-shadow: var(--text-sha-xs);
 }
 
-.data-label-sm {
-  @include title-thick;
+.label-sm {
+  // @include title-thick;
+  @include label;
   font-size: var(--text-sm);
   text-shadow: var(--text-sha-sm);
 }
 
-.class-name {
-  font-weight: $font-weight-md;
-  font-family: $font-family-body;
-  letter-spacing: $letter-spacing-lg;
-  text-shadow: var(--text-sha-sm);
-  word-break: keep-all;
-  font-size: var(--text-sm);
 
-  @include bp.bp(sm) {
-    font-size: var(--text-md);
-  }
+
+/* Code fonts */
+/* ================================================== */
+
+// pre code {
+//   display: block;
+//   white-space: pre;
+//   max-width: 100%;
+// }
+
+@mixin code {
+  font-family: $font-family-code;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 400; /* only font-weight available for this font */
+}
+
+.c-comment {
+  @include code;
+  font-style: italic;
+  color: var(--text-xmild);
+}
+
+// .c-class {
+//   color:  oklch(100% var(--accent--ch) / 1);
+// }
+
+// .c-prop {
+//   color: oklch(80% var(--primary--ch) / 1);
+// }
+
+// .c-value {
+//   color: oklch(100% var(--primary--ch) / 1);
+// }
+
+// .c-num {
+//   color: oklch(80% var(--accent--ch) / 1);
+// }
+
+.code-class {
+  @include code;
+  display: inline;
+  color: hsl(var(--primary-50) / 1);
 }

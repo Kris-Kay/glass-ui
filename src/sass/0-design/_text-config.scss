@@ -4,26 +4,13 @@
 @use "../2-util/mixin" as mix;
 /* ================================================== */
 
-/* font-family: */
+/* font-family: ✨ Config these values */
 /* ================================================== */
-// $font-family-title: ('Jost', 'Arial', sans-serif);
 $font-family-title: ('Poppins', 'Arial', sans-serif);
 $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
+$font-family-code: ('Fragment Mono', 'Courier', monospace);
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 1000
-
-.body-font {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
-
-/* letter-spacing: */
+/* letter-spacing: ✨ Config these values */
 /* ================================================== */
 $letter-spacing-2xs: -0.01em;
 $letter-spacing-xs: -0.005em;
@@ -32,22 +19,20 @@ $letter-spacing-md: 0.02em;
 $letter-spacing-lg: 0.04em;
 $letter-spacing-xl: 1vw;
 
-/* line-height: */
+/* line-height: ✨ Config these values */
 /* ================================================== */
-$line-height-sm: calc(0.125rem + 2.15ex + 0.125rem);
-$line-height-md: calc(0.125rem + 2.25ex + 0.125rem);
-$line-height-lg: calc(0.125rem + 2.5ex + 0.125rem);
+$line-height-sm: calc(0.125em + 2.25ex + 0.125em);
+$line-height-md: calc(0.125em + 2.5ex + 0.125em);
+$line-height-lg: calc(0.125em + 2.75ex + 0.125em);
 
-/* font-weight: */
+/* font-weight: ✨ Config these values */
 /* ================================================== */
-$font-weight-xs: 100;
 $font-weight-sm: 200;
 $font-weight-md: 300;
 $font-weight-lg: 400;
 $font-weight-xl: 500;
 
-/* ================================================== */
-/* Fluid typography range */
+/* Fluid font-size: ✨ Config these values */
 /* ================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
@@ -63,6 +48,7 @@ $font-weight-xl: 500;
 
 /* Text size MAP */
 /* ================================================== */
+/* Update if you add/remove fluid font-sizes above */
 $text-sizes: (
   "2xs":  var(--text-2xs),
   "xs":  var(--text-xs),
@@ -74,7 +60,7 @@ $text-sizes: (
   "3xl":  var(--text-3xl),
 );
 
-/* Text size classes */
+/* Generate text size classes */
 .text {
   @include mix.generate-classes($text-sizes, 'font-size', 'text', '-');
 }
