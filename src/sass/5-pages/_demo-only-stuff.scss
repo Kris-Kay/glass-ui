@@ -209,12 +209,11 @@
     opacity: var(--btn-focus);
   }
 
-  &::after {
-    box-shadow: 0 0 1px 1px hsl(var(--primary-5) / 0.3),
-                0 0 0 2px hsl(var(--primary-15) / 0.2),
-              inset 0 0 0 1.5px hsl(var(--primary-95) / 0.3) !important;
-    outline: 1.5px solid hsl(var(--primary-95) / 0.6) !important;
-    outline-offset: 2px !important;
+  &:focus-visible {
+    &::after {
+      // @include focus-inner;
+      @include focus-visible;
+    }
   }
 }
 

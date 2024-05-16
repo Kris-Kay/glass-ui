@@ -177,12 +177,12 @@
 
   &::after {
     @include pseudo;
-    z-index: z(btn-after);
+    // z-index: z(btn-after);
   }
 
   &::before {
     @include pseudo;
-    z-index: z(btn-b4);
+    // z-index: z(btn-b4);
   }
 
   & > svg {
@@ -200,7 +200,6 @@
       height: calc(var(--_btn-icon-h) * 1.1);
     }
   }
-
 }
 
 /* Icon button sizes */
@@ -291,8 +290,6 @@
   }
 
   &:focus-visible {
-    // box-shadow: var(--_btn-state-sha);
-
     & > .btn-text {
       color: var(--_btn-state-text);
     }
@@ -303,6 +300,10 @@
 
     &::before {
       opacity: var(--_btn-focus);
+    }
+
+    &::after {
+      @include focus-visible;
     }
   }
 
