@@ -42,6 +42,17 @@
 <!-- ================================================== -->
 <main class="page-gap">
 
+      <div class="grid-c p-t-5xl">
+        <button  class="btn-secondary btn-lg icon-end" type="button">
+          <p class="btn-text">A button</p>
+          <svg class="svg-chev-r"
+            role="graphics-symbol"
+            aria-hidden="true"
+            focusable="false"  >
+          </svg>
+        </button>
+      </div>
+
 <!-- e2e demo -->
 <!-- <div class="moat-all gap-3xl p-t-5xl">
 
@@ -481,7 +492,7 @@
       </div> -->
 
       <!-- Inputs -->
-      <!-- <div class="grid-c gap-5xl moat-all">
+      <div class="grid-c gap-5xl moat-all">
         <div class="flex-wrap justify-c gap-3xl">
 
             <div class="card-fit-xl glass-3d-md tint-3xdark">
@@ -719,15 +730,49 @@
 
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Accordion -->
       <div class="moat-md">
         <div class="w-md grid gap-2xl">
 
-          <div class="accordion-bg glass-3d-q">
+          <div class="accordion-solo glass-3d-q">
 
             <div class="js-accordion">
+              <h4 class="accordion-btn-wrap">
+                <button class="js-accordion-btn accordion-btn accordion-title is-closed"
+                  type="button"
+                  aria-expanded="false" >
+                  Accordion title
+                  <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"  >
+                  </svg>
+                </button>
+              </h4>
+
+              <div class="js-accordion-content accordion-content is-closed ">
+                <p>Accordion content goes here</p>
+                  <img class="w-sm m-auto-x"
+                    fetchpriority="low"
+                    src="/assets/other-img/hello-bear.gif"
+                    alt="animated .gif of bear waving hello"  >
+
+                  <img class="e2e e2e-no-p"
+                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
+                    alt="">
+
+                  <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+                  </p>
+
+                  <img class="e2e-no-b e2e-no-p "
+                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
+                    alt="">
+              </div>
+            </div>
+
+            <!-- <div class="js-accordion">
               <h4 class="js-accordion-click accordion-click is-closed" >
                 <button class="js-accordion-btn accordion-btn accordion-title is-closed"
                   type="button"
@@ -743,35 +788,31 @@
 
               <div class="js-accordion-content accordion-content is-closed ">
                 <p>Accordion content goes here</p>
-
-                <!-- <div class="flex-c"> -->
-                  <!-- <img class="w-sm m-auto-x"
+                  <img class="w-sm m-auto-x"
                     fetchpriority="low"
                     src="/assets/other-img/hello-bear.gif"
-                    alt="animated .gif of bear waving hello"  > -->
+                    alt="animated .gif of bear waving hello"  >
 
                   <img class="e2e e2e-no-p"
-                    src="/assets/readme-img/3D-glass-UI_card.png"
+                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
                     alt="">
 
                   <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
                   </p>
 
                   <img class="e2e-no-b e2e-no-p "
-                    src="/assets/readme-img/3D-glass-UI_card.png"
+                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
                     alt="">
-
-                <!-- </div> -->
               </div>
-            </div>
+            </div> -->
 
           </div>
 
-          <div class="accordion-bg glass-3d-q">
+          <div class="accordion-multi glass-3d-q">
             <h3 class="accordion-header">Accordion Header</h3>
 
             <div class="js-accordion">
-              <h4 class="js-accordion-click accordion-click is-closed" >
+              <h4 class="accordion-btn-wrap">
                 <button class="js-accordion-btn accordion-btn accordion-title is-closed"
                   type="button"
                   aria-expanded="false" >
@@ -794,7 +835,7 @@
             </div>
 
             <div class="js-accordion">
-              <h4 class="js-accordion-click accordion-click is-closed" >
+              <h4 class="accordion-btn-wrap">
                 <button class="js-accordion-btn accordion-btn accordion-title is-closed"
                   type="button"
                   aria-expanded="false" >
@@ -815,7 +856,7 @@
             </div>
 
             <div class="js-accordion">
-              <h4 class="js-accordion-click accordion-click is-closed" >
+              <h4 class="accordion-btn-wrap">
                 <button class="js-accordion-btn accordion-btn accordion-title is-closed"
                   type="button"
                   aria-expanded="false" >
