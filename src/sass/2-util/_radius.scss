@@ -14,11 +14,12 @@
 
 /* Conditional border-radius */
 /* ================================================== */
+      // border-radius: max(0px, min(var(--#{$key}), calc((100vw - 4px - 100%) * 9999))) / var(--#{$key});
 @mixin radius($key) {
   @if not map-has-key($sizes, $key) {
     @warn "Warning: `#{$key}` is not a valid T-shirt size. Select from: #{$sizes}";
   } @else {
-      border-radius: max(0px, min(var(--#{$key}), calc((100vw - 4px - 100%) * 9999))) / var(--#{$key});
+      border-radius: max(0px, min(var(--#{$key}), calc((97vw - 100%) * 9999))) / var(--#{$key});
       // overflow: hidden;
   }
 }

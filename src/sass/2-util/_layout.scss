@@ -2,14 +2,6 @@
 /* Layout helpers */
 /* ================================================== */
 
-
-/* Generic container query */
-/* ================================================== */
-.container-q {
-  container-type: inline-size;
-}
-
-
 /* width / height */
 /* ================================================== */
 .w-100 { width: 100%; }
@@ -130,4 +122,8 @@
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
+}
+
+.no-pointer {
+  pointer-events: none;
 }

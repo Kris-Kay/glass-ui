@@ -4,9 +4,7 @@
 @use "../2-util/z-index" as z;
 /* ================================================== */
 
-/* Dropdown */
-/* ================================================== */
-.dropdown-group { /* holds toggle button and dropdown */
+.dropdown-group {
   position: relative;
   pointer-events: none;
 }

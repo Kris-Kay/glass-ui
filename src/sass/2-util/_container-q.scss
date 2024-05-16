@@ -1,0 +1,15 @@
+/* ================================================== */
+/* Container queries */
+/* ================================================== */
+
+/* Generic container query */
+/* ================================================== */
+.container-q {
+  container-type: inline-size;
+}
+
+/* Card container query */
+/* ================================================== */
+.card-container-q {
+  container: card / inline-size;
+}

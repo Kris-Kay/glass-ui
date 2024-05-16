@@ -29,22 +29,30 @@ textarea {
 
 /* Thick titles */
 /* ================================================== */
+
 @mixin title-thick {
   font-family: $font-family-title;
-  font-weight: $font-weight-lg;
-  line-height: $line-height-md;
+  line-height: $line-height-sm;
   letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight-lg;
 }
 .title-thick { @include title-thick; }
 
+@mixin title-reg {
+  font-family: $font-family-title;
+  line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight-md;
+}
+.title-reg { @include title-reg; }
 
 /* Thin titles */
 /* ================================================== */
 @mixin title-thin {
   font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  letter-spacing: $letter-spacing-sm;
   line-height: $line-height-md;
+  letter-spacing: $letter-spacing-sm;
+  font-weight: $font-weight-sm;
 }
 .title-thin { @include title-thin; }
 

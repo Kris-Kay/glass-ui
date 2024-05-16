@@ -14,20 +14,11 @@
   pointer-events: none;
   overflow: hidden;
   z-index: z(card);
-
+  width: 100%;
   display: grid;
   background-color: var(--tint-dark);
   border-radius: var(--radius);
   box-shadow: var(--sha-md);
-
-  // transition: box-shadow $speed-base $smooth-cubic;
-  // &:focus-within {
-  //   box-shadow: var(--sha-lg);
-
-  //   & > .accordion-btn {
-  //     background-color: var(--tint-light);
-  //   }
-  // }
 }
 
 .accordion-solo {
@@ -65,12 +56,8 @@
   }
 }
 
-.accordion-btn-wrap {
-  z-index: z(card);
-  pointer-events: none;
-}
-
 .accordion-btn {
+  position: relative;
   pointer-events: auto;
   cursor: pointer;
   z-index: z(on-card);
@@ -82,6 +69,13 @@
   justify-content: space-between;
   gap: var(--sm);
   padding: var(--space);
+
+  @include title-reg;
+  text-align: start;
+  font-size: var(--text-md);
+  text-shadow: var(--text-sha-md);
+  color: var(--text-base);
+
   transition: all $speed-base $smooth-cubic;
 
   &:hover {
@@ -89,7 +83,6 @@
   }
 
   &:focus-visible {
-    // @include focus-inner;
     @include focus-visible;
     background-color: var(--tint-light);
   }
@@ -112,19 +105,6 @@
   line-height: 1;
   color: var(--text-xstrong);
   pointer-events: none;
-}
-
-.accordion-title {
-  // z-index: z(card);
-  text-align: start;
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  text-shadow: var(--text-sha-md);
-  font-size: var(--text-md);
-  line-height: 1.3;
-  color: var(--text-base);
-  // pointer-events: none;
 }
 
 .accordion-icon {
@@ -167,5 +147,12 @@
     // & > * {
     //   display: none;
     // }
+  }
+}
+
+@container card (width >= 97vw) {
+  .accordion-solo,
+  .accordion-multi {
+    --radius: 0;
   }
 }

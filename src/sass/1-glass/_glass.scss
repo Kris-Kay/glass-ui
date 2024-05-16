@@ -282,7 +282,7 @@ $saturate-base: 1.2;
 /* ================================================== */
 /* Container query */
 /* ================================================== */
-@container (width < 360px) {
+@container card (width < 360px) {
   .glass-3d-q {
     @include glass-3d-sm;
     // background-color: rgba(255, 0, 0, 0.5);
@@ -301,7 +301,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 360px) {
+@container card (width >= 360px) {
   .glass-3d-q {
     @include glass-3d-md;
     // background-color: rgba(255, 255, 0, 0.5);
@@ -320,7 +320,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 480px) {
+@container card (width >= 480px) {
   .glass-3d-q {
     @include glass-3d-md;
     // background-color: rgba(0, 255, 0, 0.5);
@@ -339,7 +339,7 @@ $saturate-base: 1.2;
   }
 }
 
-@container (width >= 768px) {
+@container card (width >= 768px) {
   .glass-3d-q {
     @include glass-3d-lg;
     // background-color: rgba(0, 0, 255, 0.5);
@@ -358,15 +358,15 @@ $saturate-base: 1.2;
   }
 }
 
-// @container (width >= 1024px) {
+// @container card (width >= 1024px) {
 
 // }
 
-// @container (width >= 1440px) {
+// @container card (width >= 1440px) {
 
 // }
 
-@container (width >= 99vw) {
+@container card (width >= 97vw) {
   .glass-3d-q {
     @include glass-flat-lg;
     border-radius: 0;

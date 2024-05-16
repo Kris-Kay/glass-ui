@@ -12,6 +12,13 @@
 /* Kill margin with fire */
 * { margin: 0; }
 
+/* prevent reflowing whenever a vertical classic scrollbar is shown/hidden */
+html {
+  width: 100%;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
 /* Improve text rendering and scroll behaviour */
 body {
   scroll-behavior: smooth;
