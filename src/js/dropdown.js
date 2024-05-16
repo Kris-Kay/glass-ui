@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const $ddToggle = document.getElementById("js-dropdownToggle");
   const $dd = document.getElementById("js-navDropdown");
   const $ddHeight = $dd.offsetHeight;
+  const $ddItemArray = Array.from($dd.querySelectorAll(".js-dropdownItem "));
 
   const closeDropdown = () => {
     $ddToggle.classList.add("is-closed");
@@ -12,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     $dd.classList.add("is-closed");
     document.removeEventListener("click", closeViaOutside);
     document.removeEventListener("keyup", closeViaEsc);
+    $ddItemArray.forEach((ddItem) => {
+      ddItem.setAttribute("tabindex", "-1");
+    });
   };
 
   const toggleDropdown = () => {
@@ -25,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
       $dd.classList.remove("is-closed");
       document.addEventListener("click", closeViaOutside);
       document.addEventListener("keyup", closeViaEsc);
+      $ddItemArray.forEach((ddItem) => {
+        ddItem.setAttribute("tabindex", "0");
+      });
     }
   }
 
