@@ -3,8 +3,7 @@
 @use "sass:map";
 /* ================================================== */
 
-/* Breakpoints MAP */
-/* ✨ Config these values ✨ */
+/* Breakpoints MAP ✨ Config these values */
 /* ================================================== */
 $breakpoints: (
   "xs": 22.5rem, /* 360px  and bigger */
@@ -34,3 +33,36 @@ $bp-sm: map.get($breakpoints, sm);
 $bp-md: map.get($breakpoints, md);
 $bp-lg: map.get($breakpoints, lg);
 $bp-xl: map.get($breakpoints, xl);
+
+
+/* ================================================== */
+/* How to use */
+/* ================================================== */
+/* To use in another file add this ⬇︎ to the very top of the document */
+// @use "../0-design/breakpoint" as bp;
+/* Make sure to add bp. to the start of every mixin or variable */
+
+/* 💠 example */
+// .my-class {
+//   padding: 1rem;
+//   max-width: bp.$bp-xl;
+
+//   @include bp.bp(md) {
+//     padding: 2rem;
+//   }
+// }
+
+/* Or */
+/* ================================================== */
+/* Forward all of 0-design with `as *` to skip using prefixes */
+// @use "../forward-styles/design" as *;
+
+/* 💠 example */
+// .my-class {
+//   padding: 1rem;
+//   max-width: $bp-xl;
+
+//   @include bp(md) {
+//     padding: 2rem;
+//   }
+// }
