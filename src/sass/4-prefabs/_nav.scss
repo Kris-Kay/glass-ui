@@ -36,6 +36,8 @@
 .nav-item {
   z-index: z.z(on-nav);
   height: var(--nav-item-h);
+  display: grid;
+  place-items: center;
 
   & > svg {
     width: calc(var(--nav-item-h) * 0.8);
