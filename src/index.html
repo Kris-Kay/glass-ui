@@ -25,204 +25,206 @@
   <link rel="icon" href="/assets/logos/3D-glass-UI-logo_300x300.png" sizes="128x128">
 </head>
 
-<!-- Fixed background -->
-<div class="page-bg-bin ">
-  <div class="page-bg-panel page-bg-noise"
-    id="panel-1"
-    role="tabpanel"
-    tabindex="-1"
-    aria-labelledby="tab-1"
-    hidden
-  >
-    <img class="page-bg-img"
-      fetchpriority="low"
-      width="1024"
-      height="1517"
-      src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
-      srcset="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_640x948.jpg 640w,
-              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg 1024w,
-              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1920x2844.jpg 1920w,
-              /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_2376x3520.jpg 2376w"
-      sizes="100vw"
-      alt="Geometric shapes on a dark background"
-    >
-  </div>
-
-  <div class="page-bg-panel "
-    id="panel-2"
-    role="tabpanel"
-    tabindex="-1"
-    aria-labelledby="tab-2"
-    hidden
-  >
-    <img class="page-bg-img"
-      fetchpriority="low"
-      width="1024"
-      height="1365"
-      src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
-      srcset="/assets/bgImg/monstera-plant-leaves-by-chris-lee_640x853.jpg 640w,
-              /assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg 1024w,
-              /assets/bgImg/monstera-plant-leaves-by-chris-lee_1920x2560.jpg 1920w,
-              /assets/bgImg/monstera-plant-leaves-by-chris-lee_2400x3200.jpg 2400w"
-      sizes="100vw"
-      alt="Big green Monstera plant leaves on a white background"
-    >
-  </div>
-
-  <div class="page-bg-panel page-bg-blur"
-    id="panel-3"
-    role="tabpanel"
-    tabindex="-1"
-    aria-labelledby="tab-3"
-  >
-    <img class="page-bg-img"
-      fetchpriority="high"
-      width="1920"
-      height="1280"
-      src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
-      srcset="/assets/bgImg/sunset-sky-by-gabriel-castles_1024x683.jpg 1024w,
-              /assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg 1920w,
-              /assets/bgImg/sunset-sky-by-gabriel-castles_2400x1600.jpg 2400w,
-              /assets/bgImg/sunset-sky-by-gabriel-castles_3600x2400.jpg 3600w"
-      sizes="100vw"
-      alt="sunset sky with pink and orange clouds"
-    >
-  </div>
-</div>
-
-<!-- Body -->
-<!-- ========================================== -->
-<body id="top-of-page" tabindex="-1" class="body-grid">
-
-  <!-- Nav -->
+<body>
+  <!-- Fixed background -->
   <!-- ========================================== -->
-  <nav class="main-nav-bin">
-    <div class="main-nav">
-
-      <div class="nav-item ">
-        <svg class="svg-3d-glass-ui-logo glass-3d-sm tint-3xlight"
-          role="graphics-symbol"
-          aria-hidden="true"
-          focusable="false">
-        </svg>
-      </div>
-
-      <!-- Theme toggle -->
-      <!-- <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
-        type="button">
-
-        <svg class="svg-circleHalf"
-          id="js-light"
-          role="graphics-symbol"
-          aria-labelledby="contrastThemeTitle"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <title id="contrastThemeTitle">turn on high contrast theme</title>
-        </svg>
-
-        <svg class="svg-circleHalfTilt hidden"
-          id="js-dark"
-          role="graphics-symbol"
-          aria-labelledby="defaultThemeTitle"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <title id="defaultThemeTitle">turn on default theme</title>
-        </svg>
-      </button> -->
-
-      <!-- Tabs menu -->
-      <div class="tab-menu-bin nav-item">
-        <div class="js-tabMenu tab-menu"
-          role="tablist"
-          aria-label="Background image tabs"
-          >
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-1"
-            id="tab-1"
-            tabindex="0">
-            <p class="btn-text">Dark</p>
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="false"
-            aria-controls="panel-2"
-            id="tab-2"
-            tabindex="0">
-            <p class="btn-text">Light</p>
-          </button>
-
-          <button
-            role="tab"
-            aria-selected="true"
-            aria-controls="panel-3"
-            id="tab-3"
-            tabindex="0">
-            <p class="btn-text">Color</p>
-          </button>
-        </div>
-      </div>
-
-      <!-- Dropdown -->
-      <div class="dropdown-group nav-item">
-        <button class="dropdown-toggle btn-icon-md btn-secondary is-closed"
-          type="button"
-          id="js-dropdownToggle"
-          aria-expanded="false"  >
-
-          <svg class="svg-ham"
-            id="js-navHam"
-            role="graphics-symbol"
-            aria-hidden="true"
-            focusable="false"  >
-          </svg>
-
-          <svg class="svg-x"
-            id="js-navX"
-            role="graphics-symbol"
-            aria-hidden="true"
-            focusable="false"  >
-          </svg>
-        </button>
-
-        <ul id="js-navDropdown" class="dropdown glass-3d-md tint-clear is-closed">
-          <li><a href="#top-of-page"
-            class="js-dropdownItem dropdown-item  btn-md btn-ghost"
-            tabindex="-1">
-            <p class="btn-text">Intro</p>
-          </a></li>
-
-          <li><a href="#demo"
-            class="js-dropdownItem dropdown-item  btn-md btn-ghost"
-            tabindex="-1">
-            <p class="btn-text">Demo</p>
-          </a></li>
-
-          <li><a href="#details"
-            class="js-dropdownItem dropdown-item  btn-md btn-ghost"
-            tabindex="-1">
-            <p class="btn-text">Details</p>
-          </a></li>
-
-          <li><a href="#contact"
-            class="js-dropdownItem dropdown-item  btn-md btn-ghost"
-            tabindex="-1">
-            <p class="btn-text">Contact</p>
-          </a></li>
-        </ul>
-      </div>
-
+  <div class="page-bg-bin" tabindex="-1">
+    <div class="page-bg-panel page-bg-noise"
+      id="panel-1"
+      role="tabpanel"
+      tabindex="-1"
+      aria-labelledby="tab-1"
+      hidden
+    >
+      <img class="page-bg-img"
+        fetchpriority="low"
+        width="1024"
+        height="1517"
+        src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
+        srcset="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_640x948.jpg 640w,
+                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg 1024w,
+                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1920x2844.jpg 1920w,
+                /assets/bgImg/3d-geometry-by-amokrane-ait-kaci_2376x3520.jpg 2376w"
+        sizes="100vw"
+        alt="Geometric shapes on a dark background"
+      >
     </div>
-  </nav>
 
-  <!-- Page content -->
-  <!-- ========================================== -->
-  <div id="js-content" class="content-area"></div>
+    <div class="page-bg-panel "
+      id="panel-2"
+      role="tabpanel"
+      tabindex="-1"
+      aria-labelledby="tab-2"
 
+    >
+      <img class="page-bg-img"
+        fetchpriority="low"
+        width="1024"
+        height="1365"
+        src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
+        srcset="/assets/bgImg/monstera-plant-leaves-by-chris-lee_640x853.jpg 640w,
+                /assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg 1024w,
+                /assets/bgImg/monstera-plant-leaves-by-chris-lee_1920x2560.jpg 1920w,
+                /assets/bgImg/monstera-plant-leaves-by-chris-lee_2400x3200.jpg 2400w"
+        sizes="100vw"
+        alt="Big green Monstera plant leaves on a white background"
+      >
+    </div>
+
+    <div class="page-bg-panel page-bg-blur"
+      id="panel-3"
+      role="tabpanel"
+      tabindex="-1"
+      aria-labelledby="tab-3"
+      hidden
+    >
+      <img class="page-bg-img"
+        fetchpriority="high"
+        width="1920"
+        height="1280"
+        src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
+        srcset="/assets/bgImg/sunset-sky-by-gabriel-castles_1024x683.jpg 1024w,
+                /assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg 1920w,
+                /assets/bgImg/sunset-sky-by-gabriel-castles_2400x1600.jpg 2400w,
+                /assets/bgImg/sunset-sky-by-gabriel-castles_3600x2400.jpg 3600w"
+        sizes="100vw"
+        alt="sunset sky with pink and orange clouds"
+      >
+    </div>
+  </div>
+
+  <article id="top-of-page" class="body-grid">
+
+    <!-- Nav -->
+    <!-- ========================================== -->
+    <nav class="main-nav-bin">
+      <div class="main-nav">
+
+        <div class="nav-item ">
+          <svg class="svg-3d-glass-ui-logo glass-3d-sm tint-3xlight"
+            role="graphics-symbol"
+            aria-hidden="true"
+            focusable="false">
+          </svg>
+        </div>
+
+        <!-- Theme toggle -->
+        <!-- <button class="js-themeToggle btn-icon-md btn-secondary nav-item"
+          type="button">
+
+          <svg class="svg-circleHalf"
+            id="js-light"
+            role="graphics-symbol"
+            aria-labelledby="contrastThemeTitle"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <title id="contrastThemeTitle">turn on high contrast theme</title>
+          </svg>
+
+          <svg class="svg-circleHalfTilt hidden"
+            id="js-dark"
+            role="graphics-symbol"
+            aria-labelledby="defaultThemeTitle"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <title id="defaultThemeTitle">turn on default theme</title>
+          </svg>
+        </button> -->
+
+        <!-- Tabs menu -->
+        <div class="tab-menu-bin nav-item">
+          <div class="js-tabMenu tab-menu"
+            role="tablist"
+            aria-label="Background image tabs"
+            >
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-1"
+              id="tab-1"
+              tabindex="0">
+              <p class="btn-text">Dark</p>
+            </button>
+
+            <button
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-2"
+              id="tab-2"
+              tabindex="0">
+              <p class="btn-text">Light</p>
+            </button>
+
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-3"
+              id="tab-3"
+              tabindex="0">
+              <p class="btn-text">Color</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="dropdown-group nav-item">
+          <button class="dropdown-toggle btn-icon-md btn-secondary is-closed"
+            type="button"
+            id="js-dropdownToggle"
+            aria-expanded="false"  >
+
+            <svg class="svg-ham"
+              id="js-navHam"
+              role="graphics-symbol"
+              aria-hidden="true"
+              focusable="false"  >
+            </svg>
+
+            <svg class="svg-x"
+              id="js-navX"
+              role="graphics-symbol"
+              aria-hidden="true"
+              focusable="false"  >
+            </svg>
+          </button>
+
+          <ul id="js-navDropdown" class="dropdown glass-3d-md tint-clear is-closed">
+            <li><a href="#top-of-page"
+              class="js-dropdownItem dropdown-item  btn-md btn-ghost"
+              tabindex="-1">
+              <p class="btn-text">Intro</p>
+            </a></li>
+
+            <li><a href="#demo"
+              class="js-dropdownItem dropdown-item  btn-md btn-ghost"
+              tabindex="-1">
+              <p class="btn-text">Demo</p>
+            </a></li>
+
+            <li><a href="#details"
+              class="js-dropdownItem dropdown-item  btn-md btn-ghost"
+              tabindex="-1">
+              <p class="btn-text">Details</p>
+            </a></li>
+
+            <li><a href="#contact"
+              class="js-dropdownItem dropdown-item  btn-md btn-ghost"
+              tabindex="-1">
+              <p class="btn-text">Contact</p>
+            </a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Page content -->
+    <!-- ========================================== -->
+    <div id="js-content" class="content-area"></div>
+
+  </article>
 
   <!-- Scripts -->
   <!-- ========================================== -->

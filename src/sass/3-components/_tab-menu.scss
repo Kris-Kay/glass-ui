@@ -39,6 +39,7 @@
 
 
 .tab-menu {
+  @include glass.glass-filter(10px, 1, 1.2);
   inset: 0;
   z-index: z(nav);
   width: fit-content;
@@ -53,7 +54,6 @@
   background-color: var(--inset-bg-deep);
   box-shadow: var(--inset-md);
   overflow: hidden;
-  @include glass.glass-2d;
 }
 
 [role="tab"] {
