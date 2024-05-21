@@ -235,16 +235,16 @@ $satu: --satu) {
 }
 
 /* breakpoint lg: 1024px and bigger */
-// @container card (width >= 1024px) {
-//   .glass-3d-q {
-//     @include glass-3d-lg;
-//     background-color: rgba(0, 0, 255, 0.5);
-//   }
+@container card (width >= 1024px) {
+  .glass-3d-q {
+    @include glass-3d-lg;
+    background-color: rgba(0, 0, 255, 0.5);
+  }
 
-//   .glass-flat-q{
-//     @include glass-flat-lg;
-//   }
-// }
+  .glass-flat-q{
+    @include glass-flat-lg;
+  }
+}
 
 /* breakpoint xl: 1440px and bigger */
 // @container card (width >= 1440px) {
@@ -261,8 +261,8 @@ $satu: --satu) {
 //   }
 // }
 
-/* bevel -> flat-bevel if element width is 97vw or bigger */
-@container card (width >= 100vw) {
+/* bevel -> flat-bevel if element width is 99vw or bigger */
+@container card (width >= calc(100vw - 16px)) {
   .glass-3d-q {
     @include glass-flat-md;
     background-color: rgba(255, 0, 136, 0.5);

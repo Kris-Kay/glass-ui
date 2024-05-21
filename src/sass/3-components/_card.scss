@@ -10,9 +10,9 @@
 @mixin card-base {
   --_space: var(--space, 1rem);
   --neg-space: calc(-1 * var(--_space));
-  --_card-radius: var(--card-radius, 1rem);
+  --_card-radius: var(--card-radius, 1.5rem);
   z-index: z(card);
-  width: 100%;
+  // width: 100%;
   position: relative;
   height: fit-content;
   display: grid;
@@ -20,7 +20,7 @@
   padding: var(--_space);
   overflow: hidden;
   pointer-events: auto;
-  border-radius: var(--_card-radius, 1.5rem);
+  border-radius: var(--_card-radius);
 
   & > * {
     z-index: z(on-card);
@@ -304,8 +304,9 @@
   }
 }
 
-/* if width is 97vw or bigger */
-@container card (width >= 100vw) {
+/* Remove border-radius at 100vw or bigger */
+/* the -16px prevents scrollbars from breaking this funtionality */
+@container card (width >= calc(100vw - 16px)) {
   .card-q {
     --card-radius: 0;
     // background-color: rgba(255, 0, 136, 0.5);

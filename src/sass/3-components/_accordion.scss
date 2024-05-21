@@ -142,7 +142,8 @@
   }
 }
 
-@container card (width >= 97vw) {
+
+@container card (width >= calc(100vw - 16px)) {
   .accordion-solo,
   .accordion-multi {
     --radius: 0;
