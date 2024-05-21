@@ -6,6 +6,7 @@
 
 /* font-family: ✨ Config these values */
 /* ================================================== */
+/* ℹ️ Link your fonts in <head> of index.html */
 $font-family-title: ('Poppins', 'Arial', sans-serif);
 $font-family-body: ('Nunito Sans', 'Arial', sans-serif);
 $font-family-code: ('Fragment Mono', 'Courier', monospace);
@@ -21,6 +22,7 @@ $letter-spacing-xl: 1vw;
 
 /* line-height: ✨ Config these values */
 /* ================================================== */
+$line-height-title: calc(0.125em + 1.5ex + 0.125em);
 $line-height-sm: calc(0.125em + 2.25ex + 0.125em);
 $line-height-md: calc(0.125em + 2.5ex + 0.125em);
 $line-height-lg: calc(0.125em + 2.75ex + 0.125em);
@@ -32,7 +34,7 @@ $font-weight-md: 300;
 $font-weight-lg: 400;
 $font-weight-xl: 500;
 
-/* Fluid font-size: ✨ Config these values */
+/* font-size: ✨ Config these values */
 /* ================================================== */
 /* https://modern-fluid-typography.vercel.app/ */
 :root {
@@ -48,7 +50,7 @@ $font-weight-xl: 500;
 
 /* Text size MAP */
 /* ================================================== */
-/* Update if you add/remove fluid font-sizes above */
+/* Update if you add/remove/edit names of fluid font-sizes above */
 $text-sizes: (
   "2xs":  var(--text-2xs),
   "xs":  var(--text-xs),

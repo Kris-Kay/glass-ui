@@ -5,9 +5,9 @@
 @use "../2-util/z-index" as z;
 /* ================================================== */
 
-/* Dynamic T-shirt sizes */
 /* ================================================== */
-/* ✨ Config these values ✨ */
+/* Dynamic T-shirt sizes ✨ Config these values */
+/* ================================================== */
 :root {
   /* 4px */
   --5xs: 0.25rem;
@@ -67,6 +67,7 @@
 
 /* T-shirt Size MAP */
 /* ================================================== */
+/* Update if you add/remove/edit names of fluid sizes above */
 $sizes: (
   "5xs": --5xs,
   "4xs": --4xs,
@@ -90,9 +91,15 @@ $sizes: (
 );
 
 
+/* ================================================== */
+/* Responsive spacing/sizing ✨ Config these values */
+/* ================================================== */
 html {
+  /* Left-right moat */
+  --moat: 1rem;
+
   /* Container query value for padding / margin / gap */
-  --space-q-sm: 4.5cqw;
+  --space-q-sm: 7cqw;
   --space-q-md: 7cqw;
   --space-q-lg: 11cqw;
 
@@ -104,9 +111,11 @@ html {
   --ui-h-xl: 3.25rem; /* 52px */
 
   @include bp.bp(sm) {
-    --space-q-sm: 4cqw;
+    --moat: 2rem;
+
+    --space-q-sm: 7cqw;
     --space-q-md: 6cqw;
-    --space-q-lg: 10cqw;
+    --space-q-lg: min(10cqw, 5rem);
 
     --ui-h-xs: 1.75rem;  /* 28px */
     --ui-h-sm: 2.125rem; /* 34px */
@@ -115,11 +124,19 @@ html {
     --ui-h-xl: 3.375rem; /* 54px */
   }
 
+  @include bp.bp(md) {
+    --moat: 3rem;
+  }
+
   @include bp.bp(lg) {
     --ui-h-sm: 2.25rem; /* 36px */
     --ui-h-md: 2.5rem;  /* 40px */
     --ui-h-lg: 3rem;    /* 48px */
     --ui-h-xl: 3.5rem;  /* 56px */
+  }
+
+  @include bp.bp(xl) {
+    --moat: 5rem;
   }
 }
 
@@ -127,99 +144,71 @@ html {
 /* ================================================== */
 /* Moats */
 /* ================================================== */
-/* ℹ️ Add left-right padding starting from the breakpoint that matches the suffix */
-/* e.g. moat-md will add padding from $bp-md and bigger */
-/* 🚨 Moats must be used on the target element's parent! */
-/* ℹ️ Moats center their children */
-/* ℹ️ Moat suffix should to be smaller than or equal to it's child's max width */
-/* e.g. <div class="moat-sm">
-          <div class="w-md"></div>
-        </div> */
+/* ℹ️ Moats are parent classes that: */
+/* • give their child/children a left-right gutter that adapts to viewport width */
+/* • take up 100% width and center their children using grid */
+/* • add a moat starting from the breakpoint that matches their suffix */
+/* This is useful for things like text with a background that should span edge-to-edge on mobile then become a card at larger screen sizes. */
 
-/* Moat size variables */
-/* ================================================== */
-/* ✨ Config these values ✨ */
-$moat-xs: 1rem; /* used by $bp-xs & $bp-sm & smaller */
-$moat-md: 2rem; /* used by $bp-md & $bp-lg */
-$moat-xl: 5rem; /* used by $bp-xl & bigger */
+/* 💠 example */
+// <div class="moat-sm">
+//   <div class="w-md"></div>
+// </div>
 
-/* Moat classes */
-/* ================================================== */
 @mixin moat {
-  z-index: z.z("section");
   display: grid;
   place-items: center;
-  pointer-events: auto;
 }
 
+/* Adds a moat at every screen size */
 .moat-all {
   @include moat;
-  padding-left: $moat-xs;
-  padding-right: $moat-xs;
-
-  @include bp.bp(md) {
-    padding-left: $moat-md;
-    padding-right: $moat-md;
-  }
-
-  @include bp.bp(xl) {
-    padding-left: $moat-xl;
-    padding-right: $moat-xl;
-  }
+  padding: 0 var(--moat);
 }
 
+/* Adds a moat at xs breakpoint and bigger */
 .moat-xs {
   @include moat;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
   @include bp.bp(xs) {
-    padding-left: $moat-xs;
-    padding-right: $moat-xs;
+    padding: 0 var(--moat);
   }
 }
 
 .moat-sm {
   @include moat;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
   @include bp.bp(sm) {
-    padding-left: $moat-xs;
-    padding-right: $moat-xs;
+    padding: 0 var(--moat);
   }
 }
 
 .moat-md {
   @include moat;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
   @include bp.bp(md) {
-    padding-left: $moat-md;
-    padding-right: $moat-md;
+    padding: 0 var(--moat);
   }
 }
 
 .moat-lg {
   @include moat;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
   @include bp.bp(lg) {
-    padding-left: $moat-md;
-    padding-right: $moat-md;
+    padding: 0 var(--moat);
   }
 }
 
 .moat-xl {
   @include moat;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
   @include bp.bp(xl) {
-    padding-left: $moat-xl;
-    padding-right: $moat-xl;
+    padding: 0 var(--moat);
   }
 }
 
@@ -227,12 +216,8 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
 /* ================================================== */
 /* Width */
 /* ================================================== */
-/* ℹ️ Limit the maximum width of elements */
-/* ℹ️ Fill 100% of parent's width up to suffix breakpoint */
-/* ℹ️ Wrap with a moat classe to add left-right padding and center */
-
-/* Breakpoint based max width */
-/* ================================================== */
+/* ℹ️ .w- classes limit the width of elements to their suffix breakpoint */
+/* e.g. .w-md takes up 100% width at $bp-sm & won't get bigger than the value of $bp-md */
 .w-xs { width: min(100%, bp.$bp-xs); }
 .w-sm { width: min(100%, bp.$bp-sm); }
 .w-md { width: min(100%, bp.$bp-md); }
@@ -241,61 +226,57 @@ $moat-xl: 5rem; /* used by $bp-xl & bigger */
 
 
 /* ================================================== */
-/* Spacing */
+/* Large spacing */
 /* ================================================== */
 .page-gap {
-  --section-gap: 8rem;
+  z-index: z.z(page);
   display: grid;
-  gap: var(--section-gap);
-  pointer-events: none;
-  z-index: z.z("page");
+  gap: 8rem;
+
 
   @include bp.bp(xs) {
-    --section-gap: 10rem;
+    gap: 10rem;
   }
 
   @include bp.bp(sm) {
-    --section-gap: 12rem;
+    gap: 12rem;
   }
 
   @include bp.bp(md) {
-    --section-gap: 14rem;
+    gap: 14rem;
   }
 
   @include bp.bp(lg) {
-    --section-gap: 16rem;
+    gap: 16rem;
   }
 
   @include bp.bp(xl) {
-    --section-gap: 18rem;
+    gap: 18rem;
   }
 }
 
-
 .section-gap {
-  --section-gap: 5rem;
-  display: grid;
-  gap: var(--section-gap);
-  pointer-events: none;
   z-index: z.z(section);
+  display: grid;
+  gap: 5rem;
 
   @include bp.bp(xs) {
-    --section-gap: 8rem;
+    gap: 8rem;
   }
 
   @include bp.bp(sm) {
-    --section-gap: 9rem;
+    gap: 9rem;
   }
 
   @include bp.bp(md) {
-    --section-gap: 10rem;
+    gap: 10rem;
   }
 
   @include bp.bp(lg) {
-    --section-gap: 11rem;
+    gap: 11rem;
   }
 
   @include bp.bp(xl) {
-    --section-gap: 12rem;
+    gap: 12rem;
   }
 }

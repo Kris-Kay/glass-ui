@@ -68,6 +68,10 @@ html {
 
 /* Bevel classes */
 /* ================================================== */
+.bevel-none {
+  box-shadow: 0;
+}
+
 .bevel-xs {
   -webkit-box-shadow: var(--bevel-xs);
   box-shadow: var(--bevel-xs);
@@ -78,9 +82,20 @@ html {
   box-shadow: var(--bevel-sm);
 }
 
-.bevel-md { box-shadow: var(--bevel-md); }
-.bevel-lg { box-shadow: var(--bevel-lg); }
-.bevel-xl { box-shadow: var(--bevel-xl); }
+.bevel-md {
+  -webkit-box-shadow: var(--bevel-md);
+  box-shadow: var(--bevel-md);
+}
+
+.bevel-lg {
+  -webkit-box-shadow: var(--bevel-lg);
+  box-shadow: var(--bevel-lg);
+}
+
+.bevel-xl {
+  -webkit-box-shadow: var(--bevel-xl);
+  box-shadow: var(--bevel-xl);
+}
 
 .flat-bevel-sm { box-shadow: var(--flat-bevel-sm); }
 .flat-bevel-md { box-shadow: var(--flat-bevel-md); }

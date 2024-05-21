@@ -16,7 +16,7 @@
   z-index: z(card);
   width: 100%;
   display: grid;
-  background-color: var(--tint-dark);
+  // background-color: var(--tint-xdark);
   border-radius: var(--radius);
   box-shadow: var(--sha-md);
 }
@@ -135,18 +135,10 @@
               padding $speed-base $smooth-cubic,
               opacity $speed-base $smooth-cubic;
 
-  // & > * {
-  //   display: grid;
-  // }
-
   &.is-closed {
     height: 0;
     padding: 0;
     opacity: 0;
-
-    // & > * {
-    //   display: none;
-    // }
   }
 }
 

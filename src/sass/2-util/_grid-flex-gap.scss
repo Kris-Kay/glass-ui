@@ -175,6 +175,7 @@
 /* ================================================== */
 .grid {
   display: grid;
+  // width: 100%;
 }
 
 /* grid center x & y */
@@ -184,6 +185,7 @@
 }
 .grid-c {
   @include grid-c;
+  // width: 100%;
 }
 
 .grid-content-c {

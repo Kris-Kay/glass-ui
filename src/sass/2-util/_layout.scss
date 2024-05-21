@@ -34,14 +34,14 @@
 
 
 
-.size-100 { width: min(100%, 100px); }
-.size-200 { width: min(100%, 200px); }
-.size-300 { width: min(100%, 300px); }
-.size-400 { width: min(100%, 400px); }
-.size-500 { width: min(100%, 500px); }
-.size-600 { width: min(100%, 600px); }
-.size-700 { width: min(100%, 700px); }
-.size-900 { width: min(100%, 900px); }
+.size-100 { width: min(100%, 100px); aspect-ratio: 1; }
+.size-200 { width: min(100%, 200px); aspect-ratio: 1; }
+.size-300 { width: min(100%, 300px); aspect-ratio: 1; }
+.size-400 { width: min(100%, 400px); aspect-ratio: 1; }
+.size-500 { width: min(100%, 500px); aspect-ratio: 1; }
+.size-600 { width: min(100%, 600px); aspect-ratio: 1; }
+.size-700 { width: min(100%, 700px); aspect-ratio: 1; }
+.size-900 { width: min(100%, 900px); aspect-ratio: 1; }
 
 
 

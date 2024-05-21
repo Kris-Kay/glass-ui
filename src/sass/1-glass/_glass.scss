@@ -7,16 +7,37 @@
 @use "../2-util/z-index" as z;
 /* ================================================== */
 
-/* Values for backdrop-filter: */
 /* ================================================== */
-/* ✨ Config these values ✨ */
-$blur-2xs: 2px;
+/* Noise textures ✨ Config these values */
+/* ================================================== */
+/* Noise texture generator */
+/* https://devsdash.com/tools/noise-texture-generator */
+
+$noise-img: url(/assets/textures/noise-texture-rough-gray-500x500.png);
+
+$noise-sm: 25px;
+$noise-md: 40px;
+$noise-lg: 50px;
+
+
+/* ================================================== */
+/* backdrop-filter: ✨ Config these values */
+/* ================================================== */
 $blur-xs: 3px;
-$blur-sm: 15px;
-$blur-md: 64px;
-$blur-lg: 80px;
-$brightness-base: 1;
-$saturate-base: 1.2;
+$blur-sm: 20px;
+$blur-md: 40px;
+$blur-lg: 60px;
+$blur-xl: 80px;
+
+$bright-mild: 0.9;
+$bright-base: 1;
+$bright-strong: 1.2;
+
+$satu-mild: 0.9;
+$satu-base: 1.2;
+$satu-strong: 1.5;
+$satu-xstrong: 2;
+$satu-2xstrong: 2.5;
 
 /* Backdrop filter mixin */
 /* ================================================== */
@@ -24,356 +45,226 @@ $saturate-base: 1.2;
   -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu);
   backdrop-filter:         blur($blur) brightness($bright) saturate($satu);
 }
+/* 💠 example */
+// .my-class {
+//   @include glass-filter($blur-md, $bright-base, $satu-xstrong);
+// }
 
+/* or */
+// .my-class {
+//   @include glass-filter(20px, 1.2, 1.5);
+// }
 
-/* Noise textures */
+body {
+  --blur: #{$blur-md};
+  --bright: #{$bright-base};
+  --satu: #{$satu-strong};
+}
+
 /* ================================================== */
-/* Noise texture generator */
-/* https://devsdash.com/tools/noise-texture-generator */
-@mixin noise-pink-sm {
-  background-repeat: repeat;
-  background-size: 24px 24px;
-  background-image: url(/assets/textures/noise-texture-pink-100x100.png);
-}
-
-@mixin noise-sm {
-  background-repeat: repeat;
-  background-size: 24px 24px;
-  background-image: url(/assets/textures/noise-texture-both-144x144.png);
-}
-
-@mixin noise-md {
-  background-repeat: repeat;
-  background-size: 50px 50px;
-  background-image: url(/assets/textures/noise-texture-both-300x300.png);
-}
-
-@mixin noise-lg {
-  background-repeat: repeat;
-  background-size: 100px 100px;
-  background-image: url(/assets/textures/noise-texture-both-500x500.png);
-}
-
-@mixin noise-rough-lg {
-  background-repeat: repeat;
-  background-size: 100px 100px;
-  background-image: url(/assets/textures/noise-texture-rough-gray-500x500.png);
-}
-
-/* 3D glass base */
+/* Glass base mixin */
 /* ================================================== */
-@mixin glass-3d-base {
+@mixin glass-base(
+$bevel: --bevel-md,
+$noise-size: $noise-md,
+$blur: --blur,
+$bright: --bright,
+$satu: --satu) {
   position: relative;
-  @include glass-filter($blur-md, $brightness-base, $saturate-base);
+  z-index: z.z(glass);
 
   &::after {
     @include layout.pseudo;
     z-index: z.z(glass-after);
-    box-shadow: var(--bevel-md);
+    box-shadow: var(#{$bevel});
   }
 
   &::before {
     @include layout.pseudo;
     z-index: z.z(glass-b4);
-    @include noise-md;
+    background-repeat: repeat;
+    background-size: #{$noise-size};
+    background-image: $noise-img;
+    @include glass-filter($blur, $bright, $satu);
+  }
+
+  & > * {
+    position: relative;
+    z-index: z.z(on-glass);
   }
 }
 
-/* 2D glass */
+/* 3D glass */
 /* ================================================== */
-/* Same as 3D glass just without the bevel box-shadow */
-@mixin glass-2d {
-  position: relative;
-  // -webkit-transform: translate3d(0,0,0);
-  // transform: translate3d(0,0,0);
-  @include glass-filter($blur-md, $brightness-base, $saturate-base);
-  // overflow: hidden;
-
-  &::before {
-    @include layout.pseudo;
-    z-index: z.z(glass-b4);
-    @include noise-md;
-    // overflow: hidden;
-  }
-}
-
-/* UI glass */
-/* ================================================== */
-/* Same as 3D glass just without the noise texture and filter */
-// @mixin glass-ui {
-//   position: relative;
-//   // -webkit-transform: translate3d(0,0,0);
-//   // transform: translate3d(0,0,0);
-//   // overflow: hidden;
-
-//   &::after {
-//     @include layout.pseudo;
-//     z-index: 2;
-//     // box-shadow: var(--bevel-sm);
-//     // overflow: hidden;
-//   }
-
-//   &::before {
-//     @include layout.pseudo;
-//     z-index: -2;
-//     // overflow: hidden;
-//   }
-// }
-
-// /* 3D glass base */
-// /* ================================================== */
-// @mixin glass-3d-base {
-//   position: relative;
-//   // overflow: hidden;
-// // background-color: pink;
-//   &::after {
-//     @include layout.pseudo;
-//     z-index: 3;
-//     // overflow: hidden;
-//   }
-
-//   &::before {
-//     @include layout.pseudo;
-//     z-index: -2;
-//     @include noise-md;
-//     // overflow: hidden;
-//   }
-// }
-
-/* 3D glass sizes */
-/* ================================================== */
-/* For elements that won't use container queries */
 @mixin glass-3d-sm {
-  @include glass-3d-base;
-  @include glass-filter($blur-sm, $brightness-base, $saturate-base);
-  overflow: hidden;
-// background-color: rgba(255, 110, 236, 0.524);
-  &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
-    box-shadow: var(--bevel-sm);
-  }
-
-  &::before {
-    @include noise-sm;
-    // @include noise-md;
-  }
+  @include glass-base(
+    --bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }
 
 @mixin glass-3d-md {
-  @include glass-3d-base;
-  @include glass-filter($blur-md, $brightness-base, $saturate-base);
-// background-color: rgba(255, 0, 0, 0.54);
-  &::after {
-    // -webkit-transform: translate3d(0,0,0);
-    // transform: translate3d(0,0,0);
-    box-shadow: var(--bevel-md);
-  }
-
-  &::before {
-    @include noise-md;
-  }
+  @include glass-base(
+    --bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }
 
 @mixin glass-3d-lg {
-  @include glass-3d-base;
-  @include glass-filter($blur-lg, $brightness-base, $saturate-base);
-// background-color: rgba(128, 0, 128, 0.515);
-
-  &::after {
-    box-shadow: var(--bevel-lg);
-  }
-
-  &::before {
-    @include noise-lg;
-  }
+  @include glass-base(
+    --bevel-lg,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }
-
-/* Glass with a flat bevel */
-/* ================================================== */
-/* For elements that won't use container queries */
-/* And that have no border-radius or span edge-to-edge */
-/* Prevents a white line down the left edge */
-@mixin glass-flat-sm {
-  @include glass-3d-sm;
-
-  &::after {
-    box-shadow: var(--flat-bevel-sm);
-  }
-}
-
-@mixin glass-flat-md {
-  @include glass-3d-md;
-
-  &::after {
-    box-shadow: var(--flat-bevel-md);
-  }
-}
-
-@mixin glass-flat-lg {
-  position: relative;
-
-  &::after {
-    @include layout.pseudo;
-    z-index: z.z(glass-after);
-    box-shadow: var(--flat-bevel-lg);
-  }
-
-  &::before {
-    @include layout.pseudo;
-    z-index: z.z(glass-b4);
-    @include noise-lg;
-    @include glass-filter($blur-md, $brightness-base, $saturate-base);
-  }
-}
-
-
-/* Glass with NO bevel */
-/* ================================================== */
-@mixin glass-no-bevel {
-
-  @include glass-3d-md;
-
-  &::after {
-    box-shadow: none;
-  }
-}
-
 
 .glass-3d-sm { @include glass-3d-sm; }
 .glass-3d-md { @include glass-3d-md; }
 .glass-3d-lg { @include glass-3d-lg; }
-.glass-3d-q {
-  @include glass-3d-md;
 
-  // position: relative;
-  // // overflow: hidden;
-  // @include glass-filter(56px, 0.9, 1.25);
 
-  // &::after {
-  //   @include layout.pseudo;
-  //   z-index: 3;
-  //   // overflow: hidden;
-  //   box-shadow: var(--bevel-md);
-  // }
-
-  // &::before {
-  //   @include layout.pseudo;
-  //   z-index: -2;
-  //   // overflow: hidden;
-  //   @include noise-lg;
-  // }
+/* Flat glass -> for elements that span edge-to-edge or don't have border-radius */
+/* ================================================== */
+@mixin glass-flat-sm {
+  @include glass-base(
+    --flat-bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }
+
+@mixin glass-flat-md {
+  @include glass-base(
+    --flat-bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
+@mixin glass-flat-lg {
+  @include glass-base(
+    --flat-bevel-lg,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
 .glass-flat-sm { @include glass-flat-sm; }
 .glass-flat-md { @include glass-flat-md; }
 .glass-flat-lg { @include glass-flat-lg; }
-.glass-flat-q{ @include glass-flat-md; }
-
-.glass-no-bevel { @include glass-no-bevel; }
 
 
-/* Card-glass container query container */
+/* 2D glass -> no bevel */
 /* ================================================== */
-.glass-co {
-  container-type: inline-size;
+@mixin glass-2d {
+  @include glass-base(
+    --bevel-none,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }
 
+.glass-2d { @include glass-2d; }
+
 
 /* ================================================== */
-/* Container query */
+/* Glass container queries */
 /* ================================================== */
+/* Use same container as cards -> .card-container-q as parent */
+.glass-3d-q { @include glass-3d-md;}
+.glass-flat-q { @include glass-flat-md; }
+
+/* 360px & smaller */
 @container card (width < 360px) {
   .glass-3d-q {
     @include glass-3d-sm;
-    // background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.5);
   }
 
-  .glass-flat-q{
+  .glass-flat-q {
     @include glass-flat-sm;
-  }
-
-  .glass-no-bevel {
-    @include glass-3d-sm;
-
-    &::after {
-      box-shadow: none;
-    }
   }
 }
 
+/* breakpoint xs: 360px and bigger */
 @container card (width >= 360px) {
   .glass-3d-q {
     @include glass-3d-md;
-    // background-color: rgba(255, 255, 0, 0.5);
+    background-color: rgba(255, 255, 0, 0.5);
   }
 
   .glass-flat-q{
     @include glass-flat-md;
   }
-
-  .glass-no-bevel {
-    @include glass-3d-md;
-
-    &::after {
-      box-shadow: none;
-    }
-  }
 }
 
-@container card (width >= 480px) {
-  .glass-3d-q {
-    @include glass-3d-md;
-    // background-color: rgba(0, 255, 0, 0.5);
-  }
+/* breakpoint sm: 560px and bigger */
+// @container card (width >= 560px) {
+//   .glass-3d-q {
 
-  .glass-flat-q{
-    @include glass-flat-md;
-  }
+//   }
 
-  .glass-no-bevel {
-    @include glass-3d-md;
+//   .glass-flat-q{
 
-    &::after {
-      box-shadow: none;
-    }
-  }
-}
+//   }
 
+//   .glass-2d-q {
+
+//   }
+// }
+
+/* breakpoint md: 768px and bigger */
 @container card (width >= 768px) {
   .glass-3d-q {
     @include glass-3d-lg;
-    // background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgba(0, 255, 255, 0.5);
   }
 
   .glass-flat-q{
     @include glass-flat-lg;
   }
-
-  .glass-no-bevel {
-    @include glass-3d-lg;
-
-    &::after {
-      box-shadow: none;
-    }
-  }
 }
 
+/* breakpoint lg: 1024px and bigger */
 // @container card (width >= 1024px) {
+//   .glass-3d-q {
+//     @include glass-3d-lg;
+//     background-color: rgba(0, 0, 255, 0.5);
+//   }
 
+//   .glass-flat-q{
+//     @include glass-flat-lg;
+//   }
 // }
 
+/* breakpoint xl: 1440px and bigger */
 // @container card (width >= 1440px) {
+//   .glass-3d-q {
 
+//   }
+
+//   .glass-flat-q{
+
+//   }
+
+//   .glass-2d-q {
+
+//   }
 // }
 
-@container card (width >= 97vw) {
+/* bevel -> flat-bevel if element width is 97vw or bigger */
+@container card (width >= 100vw) {
   .glass-3d-q {
-    @include glass-flat-lg;
-    border-radius: 0;
-    // background-color: rgba(255, 0, 255, 0.5);
-
-    &::after {
-      box-shadow: var(--flat-bevel-lg);
-    }
+    @include glass-flat-md;
+    background-color: rgba(255, 0, 136, 0.5);
   }
 }

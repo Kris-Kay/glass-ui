@@ -2,288 +2,167 @@
 <!-- ================================================== -->
 <!-- <header class="hero">
   <div class="card-3d-bin hero-card-bin">
-      <div class="card-3d hero-card glass-3d-q tint-dark">
+    <div class="w-100 justify-r">
+      <a  class="btn-primary btn-md"
+          href="https://github.com/Kris-Kay"
+          target="_blank" >
+        <p class="btn-text">GitHub</p>
+        <svg class=" svg-square-out"
+          role="graphics-symbol"
+          aria-hidden="true"
+          focusable="false"
+        >
+        </svg>
+      </a>
+    </div>
 
-        <div class="grid">
-          <p class="eyebrow">SCSS library</p>
-          <h1 class="card-3d-title">3D Glass UI</h1>
-        </div>
+    <div class="card-3d hero-card glass-3d-q tint-dark">
 
-        <div class="e2e-inset">
-          <p class="first-line-bold card-3d-text">
-            3D glassmorphism materials and components, built with modern CSS.
-          </p>
-        </div>
-
-        <div class="justify-r gap-3xs">
-          <p class="text-lower text-sha-xl">Created by</p>
-          <p class="text-allcap text-bold text-sha-xl">Kris Kay</p>
-        </div>
-
+      <div class="grid">
+        <p class="eyebrow">SCSS library</p>
+        <h1 class="card-3d-title">3D Glass UI</h1>
       </div>
-  </div>
 
-  <div class="justify-r">
-    <a  class="btn-primary btn-md"
-        href="https://github.com/Kris-Kay"
-        target="_blank" >
-      <p class="btn-text">GitHub</p>
-      <svg class=" svg-square-out"
-        role="graphics-symbol"
-        aria-hidden="true"
-        focusable="false"
-      >
-      </svg>
-    </a>
+      <div class="e2e-inset">
+        <p class="first-line-bold card-3d-text">
+          3D glassmorphism materials and components, built with modern CSS.
+        </p>
+      </div>
+
+      <div class="justify-r gap-3xs">
+        <p class="text-lower text-sha-xl">Created by</p>
+        <p class="text-allcap text-bold text-sha-xl">Kris Kay</p>
+      </div>
+
+    </div>
   </div>
 </header> -->
 
 <!-- Main -->
 <!-- ================================================== -->
-<main class="page-gap">
+<main class="page-gap ">
 
-<!-- e2e demo -->
-<!-- <div class="moat-all gap-3xl p-t-5xl">
+  <!-- card-q demo -->
+  <!-- <div class="grid-c gap-xl p-t-5xl">
 
-  <div class="card-container-q w-sm grid-c gap-3xl">
-    <div class="card-q glass-3d-q tint-clear">
+    <div class="card-container-q size-300">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of 300px</p>
+        </div>
 
-      <div class="title-group">
-        <h1 class="card-title-lg">1. Edge to edge</h1>
-        <p class="card-subtitle">Max width sm</p>
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <img class="w-100 radius-xs"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p>This is a basic card with no edge-to-edge elements. A max width of 100% is added to the img via <span class="code-class">.w-100</span> and a border-radius via <span class="code-class">.radius-xs</span>.
-      </p>
-
     </div>
 
-    <div class="card-q glass-3d-q tint-clear">
-      <div class="title-group">
-        <h1 class="card-title-lg">2. Edge to edge</h1>
-        <p class="card-subtitle">Max width sm</p>
+    <div class="card-container-q w-xs">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-xs</p>
+        </div>
+
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p>This card's img spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. It needs the no-padding version because it contains no inner content that needs to be set away from the edge of the card.
-      </p>
     </div>
 
-    <div class="card-q glass-3d-q tint-clear">
-      <div class="title-group">
-        <h1 class="card-title-lg">3. Edge to edge</h1>
-        <p class="card-subtitle">Max width sm</p>
+    <div class="card-container-q w-sm">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-sm</p>
+        </div>
+
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
     </div>
 
-    <div class="card-q glass-3d-q tint-clear">
-      <img class="e2e-no-p e2e-no-t"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
+    <div class="card-container-q w-md">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-md</p>
+        </div>
 
-      <div class="title-group">
-        <h1 class="card-title-lg">4. Edge to edge</h1>
-        <p class="card-subtitle">Max width sm</p>
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <p class="e2e-no-b tint-3xdark"> This img spans edge-to-edge using <span class="code-class">.e2e-no-p</span> and removes the top outer padding via <span class="code-class">.e2e-no-t</span> While the text removes the bottom outer padding via <span class="code-class">.e2e-no-b</span>
-      </p>
-
     </div>
 
-    <div class="card-q glass-3d-q tint-clear">
-      <div class="title-group">
-        <h1 class="card-title-lg">5. Edge to edge</h1>
-        <p class="card-subtitle">Max width sm</p>
+    <div class="card-container-q size-900">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of 900px</p>
+        </div>
+
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <p class="e2e-inset">This card gets an inset look via <span class="code-class"> .e2e-inset </span> This includes the dark background tint, a flat inset shadow with a bottom highlight, removes 1px from the left margin to preserve the cards 3D bevel unless the card's width reachs 99vw.
-      </p>
-
-      <div class="justify-r">
-        <button  class="btn-secondary btn-lg icon-end" type="button">
-          <p class="btn-text">A button</p>
-          <svg class="svg-chev-r"
-            role="graphics-symbol"
-            aria-hidden="true"
-            focusable="false"  >
-          </svg>
-        </button>
-      </div>
-
     </div>
-  </div>
 
-</div> -->
+    <div class="card-container-q w-lg">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-lg</p>
+        </div>
 
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
 
-<!-- card-q demo -->
-<!-- <div class="grid-c gap-xl p-t-5xl">
-
-  <div class="card-container-q size-300">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: 300px</p>
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
     </div>
-  </div>
 
-  <div class="card-container-q w-xs">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: --w-xs</p>
+    <div class="card-container-q w-xl">
+      <div class="card-q glass-3d-q tint-dark">
+        <div class="title-group">
+          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
+          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-xl</p>
+        </div>
+
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        </p>
       </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
     </div>
-  </div>
 
-  <div class="card-container-q size-400">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: 400px</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q w-sm">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: --w-sm</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q size-600">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: 600px</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q w-md">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: --w-md</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q size-900">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: 900px</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q w-lg">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: --w-lg</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-  <div class="card-container-q w-xl">
-    <div class="card-q glass-3d-q tint-dark">
-      <div class="title-group">
-        <h1 class="card-title-lg">Card Container query</h1>
-        <p class="card-subtitle">width: --w-xl</p>
-      </div>
-
-      <img class="e2e e2e-no-p"
-        src="/assets/readme-img/3D-glass-UI_card.png"
-        alt="">
-
-      <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-      </p>
-    </div>
-  </div>
-
-</div> -->
+  </div> -->
 
   <!-- Intro -->
-  <!-- <section class="moat-sm">
+  <!-- <section class="moat-xs">
     <div class="card-container-q w-sm">
-      <div class="card-fit-3xl glass-3d-q tint-3xdark">
+      <div class="card-fit-3xl glass-3d-lg tint-3xdark">
         <div class="grid-c">
           <img class="w-sm"
           fetchpriority="high"
@@ -302,9 +181,11 @@
   </section> -->
 
   <!-- Demo -->
-  <section id="demo" tabindex="-1" class="">
-    <div class="justify-l">
-      <h2 class="big-title-bg big-title">Demo</h2>
+  <section id="demo">
+    <div class="marquee-bin">
+      <div class="marquee">
+        <h2 class="marquee-title">Demo</h2>
+      </div>
     </div>
 
     <div class="section-gap ">
@@ -374,7 +255,7 @@
       </div> -->
 
       <!-- Tab menu -->
-      <!-- <div class="moat-sm">
+      <div class="moat-sm">
         <div class="card-container-q w-sm m-auto-x">
           <div class="card-q glass-3d-q tint-xdark">
 
@@ -478,10 +359,11 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Inputs -->
-      <!-- <div class="grid-c gap-5xl moat-all">
+      <div class="grid-c gap-5xl moat-lg">
+
         <div class="flex-wrap justify-c gap-3xl">
 
             <div class="card-fit-xl glass-3d-md tint-3xdark">
@@ -543,7 +425,7 @@
               </fieldset>
             </div>
 
-            <div class="card-fit-xl glass-3d-q tint-3xdark">
+            <div class="card-fit-xl glass-3d-md tint-3xdark">
               <fieldset class="input-fieldset">
                 <legend class="input-legend input-label">
                   Switchs
@@ -594,7 +476,7 @@
               </fieldset>
             </div>
 
-            <div class="card-fit-xl glass-3d-q tint-3xdark">
+            <div class="card-fit-xl glass-3d-md tint-3xdark">
               <fieldset class="input-fieldset">
                 <legend class="input-legend input-label">Radio buttons</legend>
 
@@ -654,10 +536,18 @@
 
         </div>
 
+      </div>
+
+      <!-- Text inputs -->
+      <div class="grid-c gap-5xl moat-sm">
+
         <div class="card-container-q w-sm">
           <div class="card-q glass-3d-q gradient-xdark grid-c">
 
-            <h3 class="card-title-lg">Text inputs</h3>
+            <div class="title-group">
+              <h3 class="card-title-lg">Text inputs</h3>
+              <p class="card-subtitle">Type in the fields to see interactions</p>
+            </div>
 
             <div class="w-100">
               <div class="text-input-bin ">
@@ -719,7 +609,8 @@
 
           </div>
         </div>
-      </div> -->
+
+      </div>
 
       <!-- Accordion -->
       <div class="moat-md">
@@ -836,9 +727,9 @@
       </div>
 
       <!-- Buttons -->
-      <!-- <div class="moat-lg">
-        <div class="card-container-q w-lg">
-          <div class="card-q glass-3d-q tint-clear ">
+      <div class="moat-xl">
+        <div class="card-container-q w-xl">
+          <div class="card-q glass-3d-q tint-dark ">
             <div class="title-group">
               <h3 class="card-title-lg">Buttons</h3>
               <p class="card-subtitle">Hover and click to see effects.</p>
@@ -1150,141 +1041,148 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
     </div>
+
   </section>
 
   <!-- Details -->
-  <!-- <section id="details" tabindex="-1">
-
-    <div class="justify-l">
-      <h2 class="big-title big-title-bg">Details</h2>
-    </div>
-
-    <div class="moat-md">
-      <div class="card-container-q w-md gap-xl grid-c">
-
-        <div class="accordion-solo glass-3d-q">
-          <div class="js-accordion">
-            <h4>
-              <button class="js-accordion-btn accordion-btn is-closed"
-                type="button"
-                aria-expanded="false"  >
-                How does 3D glass ui differ from other glassmorphism?
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
-                  role="graphics-symbol"
-                  aria-hidden="true"
-                  focusable="false"  >
-                </svg>
-              </button>
-            </h4>
-
-            <div class="js-accordion-content accordion-content is-closed">
-              <div class="title-group p-lg">
-                <h3 class="card-title-md">Key characteristics</h3>
-                <p class="card-subtitle">of next-gen glassmorphism</p>
-              </div>
-
-              <img class="e2e e2e-no-p"
-                fetchpriority="low"
-                loading="lazy"
-                src="/assets/homeImg/glass-details_1024x1236.jpg"
-                srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
-                        /assets/homeImg/glass-details_1024x1236.jpg 1024w,
-                        /assets/homeImg/glass-details_1920x2317.jpg 1920w"
-                sizes="800px"
-                alt="beveled glass CSS details illustration" >
-
-              <div class="e2e-no-y tint-3xdark">
-                <ul class="grid gap-md p-lg">
-                  <li class="text-md dot">
-                    No white outlines!
-                  </li>
-
-                  <li class="text-md dot">
-                    Specular highlights
-                  </li>
-
-                  <li class="text-md dot">
-                    Fine-grained noise textures
-                  </li>
-
-                  <li class="text-md dot">
-                    Large blur radius
-                  </li>
-
-                  <li class="text-md dot">
-                    Bevels fade smoothly into non-existence
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-solo glass-3d-q">
-          <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
-                type="button"
-                aria-expanded="false"  >
-                Can chatGPT4 write this CSS for you?
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
-                  role="graphics-symbol"
-                  aria-hidden="true"
-                  focusable="false"  >
-                </svg>
-              </button>
-            </h4>
-
-            <div class="js-accordion-content accordion-content is-closed">
-              <div class="title-group p-lg">
-                <h3 class="card-title-lg">ChatGPT 4</h3>
-                <p class="card-subtitle">vs 3D glass ui</p>
-              </div>
-
-              <img class="e2e e2e-no-p"
-                fetchpriority="low"
-                loading="lazy"
-                src="/assets/homeImg/glass-gpt-code_1200x896.png"
-                srcset="/assets/homeImg/glass-gpt-code_400x299.png 400w,
-                        /assets/homeImg/glass-gpt-code_800x597.png 800w,
-                        /assets/homeImg/glass-gpt-code_1200x896.png 1200w"
-                sizes="800px"
-                alt="Screenshot of ChatGPT's glass code"
-              >
-
-              <div class="e2e-no-y tint-3xdark">
-                <p class="p-lg">The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight.</p>
-              </div>
-
-
-              <img class="e2e-no-b e2e-no-p"
-                fetchpriority="low"
-                loading="lazy"
-                src="/assets/homeImg/gpt4-glass-issues_840x840.jpg"
-                srcset="/assets/homeImg/gpt4-glass-issues_640x640.jpg 640w,
-                        /assets/homeImg/gpt4-glass-issues_840x840.jpg 840w,
-                        /assets/homeImg/gpt4-glass-issues_1280x1280.jpg 1280w"
-                sizes="800px"
-                alt="ChatGPT glass CSS issues"  >
-
-            </div>
-          </div>
-        </div>
-
+  <section id="details">
+    <div class="marquee-bin">
+      <div class="marquee">
+        <h2 class="marquee-title">Details</h2>
       </div>
     </div>
 
-  </section> -->
+    <div class="moat-md">
+      <div class="card-container-q  w-md ">
+        <div class="grid-c gap-lg">
+
+          <div class="accordion-solo glass-3d-q ">
+            <div class="js-accordion">
+              <h4>
+                <button class="js-accordion-btn accordion-btn is-closed"
+                  type="button"
+                  aria-expanded="false"  >
+                  How does 3D glass ui differ from other glassmorphism?
+                  <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"  >
+                  </svg>
+                </button>
+              </h4>
+
+              <div class="js-accordion-content accordion-content is-closed">
+                <div class="title-group p-lg">
+                  <h3 class="card-title-md">Key characteristics</h3>
+                  <p class="card-subtitle">of next-gen glassmorphism</p>
+                </div>
+
+                <img class="e2e e2e-no-p"
+                  fetchpriority="low"
+                  loading="lazy"
+                  src="/assets/homeImg/glass-details_1024x1236.jpg"
+                  srcset="/assets/homeImg/glass-details_800x965.jpg 800w,
+                          /assets/homeImg/glass-details_1024x1236.jpg 1024w,
+                          /assets/homeImg/glass-details_1920x2317.jpg 1920w"
+                  sizes="800px"
+                  alt="beveled glass CSS details illustration" >
+
+                <div class="e2e-no-y tint-3xdark">
+                  <ul class="grid gap-md p-lg">
+                    <li class="text-md dot">
+                      No white outlines!
+                    </li>
+
+                    <li class="text-md dot">
+                      Specular highlights
+                    </li>
+
+                    <li class="text-md dot">
+                      Fine-grained noise textures
+                    </li>
+
+                    <li class="text-md dot">
+                      Large blur radius
+                    </li>
+
+                    <li class="text-md dot">
+                      Bevels fade smoothly into non-existence
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-solo glass-3d-q">
+            <div class="js-accordion">
+              <h4 class="">
+                <button class="js-accordion-btn accordion-btn is-closed"
+                  type="button"
+                  aria-expanded="false"  >
+                  Can chatGPT4 write this CSS for you?
+                  <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"  >
+                  </svg>
+                </button>
+              </h4>
+
+              <div class="js-accordion-content accordion-content is-closed">
+                <div class="title-group p-lg">
+                  <h3 class="card-title-lg">ChatGPT 4</h3>
+                  <p class="card-subtitle">vs 3D glass ui</p>
+                </div>
+
+                <img class="e2e e2e-no-p"
+                  fetchpriority="low"
+                  loading="lazy"
+                  src="/assets/homeImg/glass-gpt-code_1200x896.png"
+                  srcset="/assets/homeImg/glass-gpt-code_400x299.png 400w,
+                          /assets/homeImg/glass-gpt-code_800x597.png 800w,
+                          /assets/homeImg/glass-gpt-code_1200x896.png 1200w"
+                  sizes="800px"
+                  alt="Screenshot of ChatGPT's glass code"
+                >
+
+                <div class="e2e-no-y tint-3xdark">
+                  <p class="p-lg">The above output is fairly representative of the glassmorphism tutorials currently available online. Not a noise texture or glistening specular highlight in sight.</p>
+                </div>
+
+
+                <img class="e2e-no-b e2e-no-p"
+                  fetchpriority="low"
+                  loading="lazy"
+                  src="/assets/homeImg/gpt4-glass-issues_840x840.jpg"
+                  srcset="/assets/homeImg/gpt4-glass-issues_640x640.jpg 640w,
+                          /assets/homeImg/gpt4-glass-issues_840x840.jpg 840w,
+                          /assets/homeImg/gpt4-glass-issues_1280x1280.jpg 1280w"
+                  sizes="800px"
+                  alt="ChatGPT glass CSS issues"  >
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- Contact -->
-  <!-- <section id="contact" tabindex="-1">
-    <div class="justify-l">
-      <h2 class="big-title-bg big-title">Contact</h2>
+  <section id="contact">
+    <div class="marquee-bin">
+      <div class="marquee">
+        <h2 class="marquee-title">Contact</h2>
+      </div>
     </div>
-    <div class="moat-xs">
+
+    <div class="moat-sm">
       <div class="card-container-q w-sm m-auto-x">
         <div class="card-q glass-3d-q tint-xdark">
 
@@ -1372,5 +1270,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+
+  </section>
+
 </main>

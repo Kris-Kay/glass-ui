@@ -12,7 +12,6 @@ $breakpoints: (
   "lg": 64rem,   /* 1024px and bigger */
   "xl": 90rem,   /* 1440px and bigger */
 );
-/* ================================================== */
 
 /* Breakpoint mixin */
 /* ================================================== */
@@ -40,7 +39,7 @@ $bp-xl: map.get($breakpoints, xl);
 /* ================================================== */
 /* To use in another file add this ⬇︎ to the very top of the document */
 // @use "../0-design/breakpoint" as bp;
-/* Make sure to add bp. to the start of every mixin or variable */
+/* Make sure to add `bp.` to the start of every mixin or variable */
 
 /* 💠 example */
 // .my-class {

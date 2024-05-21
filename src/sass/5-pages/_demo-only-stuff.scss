@@ -2,7 +2,8 @@
 /* Demo only styles */
 @use "../forward-styles/design" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass";
+@use "../forward-styles/glass" as *;
+@use "../3-components/card" as *;
 /* ================================================== */
 
 /* Bevel Demo */
@@ -249,21 +250,27 @@
 }
 
 
-/* Big titles */
-.big-title-bg {
+/* Menu link marquee */
+/* ================================================== */
+.marquee-bin {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.marquee {
   width: fit-content;
   min-width: 50%;
   display: flex;
   justify-content: flex-end;
   padding: var(--sm);
-  // margin-top: var(--nav-h);
   margin-bottom: var(--3xl);
-  z-index: z(nav);
-
-  @include glass.glass-flat-md;
   background-color: var(--tint-clear);
-  box-shadow: var(--sha-sm);
   border-radius: 0 var(--sm) var(--sm) 0;
+  box-shadow: var(--sha-sm);
+
+  @include glass-flat-sm;
 
   @include bp(xs) {
     min-width: 40%;
@@ -278,16 +285,17 @@
   }
 }
 
-.big-title {
-  font-family: $font-family-title;
-  font-weight: $font-weight-sm;
-  font-size: var(--text-lg);
-  text-shadow: var(--text-sha-3xl);
+.marquee-title {
+  @include title-thin;
+  text-align: right;
   line-height: 1;
   color: var(--text-strong);
-  text-align: right;
+
+  text-shadow: var(--text-sha-xl);
+  font-size: var(--text-lg);
 
   @include bp(lg) {
     font-size: var(--text-xl);
+    text-shadow: var(--text-sha-3xl);
   }
 }

@@ -10,14 +10,21 @@
 @mixin card-base {
   --_space: var(--space, 1rem);
   --neg-space: calc(-1 * var(--_space));
+  --_card-radius: var(--card-radius, 1rem);
   z-index: z(card);
-  // width: 100%;
+  width: 100%;
+  position: relative;
   height: fit-content;
   display: grid;
   gap: var(--_space);
   padding: var(--_space);
   overflow: hidden;
   pointer-events: auto;
+  border-radius: var(--_card-radius, 1.5rem);
+
+  & > * {
+    z-index: z(on-card);
+  }
 }
 
 .card-q {
@@ -27,7 +34,7 @@
 /* Edge-to-edge classes */
 /* ================================================== */
 @mixin e2e {
-  z-index: z(on-card);
+  // z-index: z(on-card);
   width: calc(100% + (var(--space) * 2));
   display: grid;
   margin-left: var(--neg-space);
@@ -65,8 +72,6 @@
   box-shadow: var(--inset-flat-md);
 }
 
-
-
 @mixin bottom-radius {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -80,14 +85,12 @@
 }
 
 
-
-
 /* Card Titles */
 /* ================================================== */
 @mixin card-title {
   font-family: $font-family-title;
-  letter-spacing: $letter-spacing-md;
-  // line-height: 1.2;
+  letter-spacing: $letter-spacing-xs;
+  line-height: $line-height-title;
   color: var(--text-base);
   text-align: center;
 }
@@ -97,8 +100,6 @@
   font-weight: $font-weight-sm;
   text-shadow: var(--text-sha-lg);
   font-size: var(--text-3xl);
-  line-height: 1;
-// color: red;
 }
 
 .card-title-md {
@@ -120,17 +121,17 @@
 .card-subtitle {
   font-family: $font-family-body;
   font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-sm;
-  line-height: $line-height-md;
+  letter-spacing: $letter-spacing-xs;
+  line-height: $line-height-sm;
   text-align: center;
-  color: var(--text-base);
+  color: var(--text-mild);
 // color:  green;
   text-shadow: var(--text-sha-3xs);
   font-size: var(--text-sm);
 }
 
 .title-group {
-  z-index: z(on-card);
+  // z-index: z(on-card);
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -146,20 +147,56 @@
   padding: 0;
 }
 
+/* Cards that fit the width of their content */
+/* ================================================== */
+.card-fit-lg {
+  @include card-base;
+  --space: var(--lg);
+  --card-radius: var(--md);
+  max-width: 100%;
+  width: fit-content;
+  // @include radius("md");
+}
 
+.card-fit-xl {
+  @include card-base;
+  --space: var(--xl);
+  --card-radius: var(--md);
+  max-width: 100%;
+  width: fit-content;
+  // @include radius("md");
+}
+
+.card-fit-3xl {
+  @include card-base;
+  --space: var(--3xl);
+  --card-radius: var(--lg);
+  max-width: 100%;
+  width: fit-content;
+  // @include radius("lg");
+}
 
 
 /* Card Container queries */
 /* ================================================== */
+
+/* 360px and smaller */
 @container card (width < 360px ) {
   .card-q {
-    --space: var(--sm);
-    @include radius("sm");
+    // --space: var(--sm);
+    // @include radius("sm");
+
+    --space: 7cqw;
+    --card-radius: 7cqw;
     // background-color: rgba(255, 0, 0, 0.5);
   }
 
+  .title-group {
+    gap: 0.5em;
+  }
+
   .card-title-lg {
-    font-size: var(--text-xl);
+    font-size: 8cqw;
   }
 
   .card-subtitle {
@@ -167,15 +204,23 @@
   }
 }
 
+/* breakpoint xs: 360px and bigger */
 @container card (width >= 360px) {
   .card-q {
-    --space: var(--md);
-    @include radius("md");
-    // background-color: rgba(255, 170, 0, 0.607);
+    // --space: var(--md);
+    // @include radius("md");
+
+    --space: 7cqw;
+    --card-radius: 7cqw;
+    // background-color: rgba(255, 255, 0, 0.5);
+  }
+
+  .title-group {
+    gap: 0.4em;
   }
 
   .card-title-lg {
-    font-size: var(--text-2xl);
+    font-size: 8cqw;
   }
 
   .card-subtitle {
@@ -183,51 +228,38 @@
   }
 }
 
-@container card (width >= 480px) {
+/* breakpoint sm: 560px and bigger */
+@container card (width >= 560px) {
   .card-q {
     // --space: var(--md);
-    @include radius("md");
+    // @include radius("md");
+
+    --card-radius: 6cqw;
     // background-color: rgba(0, 255, 0, 0.5);
   }
 
-  // .card-title-lg {
-  //   font-size: var(--text-2xl);
-  // }
-
-  // .card-subtitle {
-  //   font-size: var(--text-sm);
-  // }
+  .card-title-lg {
+    font-size: 7cqw;
+  }
 }
 
+/* breakpoint md: 768px and bigger */
 @container card (width >= 768px) {
   .card-q {
-    --space: var(--lg);
-    @include radius("lg");
-    // background-color: rgba(0, 0, 255, 0.5);
-  }
-
-  .card-title-lg {
-    font-size: var(--text-2xl);
-  }
-
-  // .card-subtitle {
-  //   font-size: var(--text-sm);
-  // }
-}
-
-@container card (width >= 1024px) {
-  .card-q {
-    --space: var(--lg);
+    // --space: var(--lg);
     // @include radius("lg");
-    // background-color: rgba(234, 0, 255, 0.5);
+
+    --space: 5cqw;
+    --card-radius: 5cqw;
+    // background-color: rgba(0, 255, 255, 0.5);
   }
 
   .title-group {
-    gap: 1em;
+    gap: 0.75em;
   }
 
   .card-title-lg {
-    font-size: var(--text-3xl);
+    font-size: 6cqw;
   }
 
   .card-subtitle {
@@ -235,55 +267,63 @@
   }
 }
 
-@container card (width >= 1440px) {
+/* breakpoint lg: 1024px and bigger */
+@container card (width >= 1024px) {
   .card-q {
-    --space: var(--xl);
-    @include radius("xl");
-    // background-color: rgba(255, 0, 98, 0.53);
+    // --space: var(--lg);
+    // @include radius("lg");
+
+    --space: 5cqw;
+    --card-radius: 4cqw;
+    // background-color: rgba(0, 0, 255, 0.5);
   }
 
-  // .title-group {
-  //   gap: 1em;
-  // }
+  .card-title-lg {
+    font-size: 5cqw;
+  }
 
-  // .card-title-lg {
-  //   font-size: var(--text-3xl);
-  // }
-
-  // .card-subtitle {
-  //   font-size: var(--text-md);
-  // }
 }
 
-@container card (width >= 97vw) {
+/* breakpoint xl: 1440px and bigger */
+@container card (width >= 1440px) {
+  .card-q {
+    // --space: var(--xl);
+    // @include radius("xl");
+
+    // --space: 4cqw;
+    --card-radius: 3.5cqw;
+    // background-color: rgba(255, 0, 255, 0.53);
+  }
+
+  .title-group {
+    gap: 0.5rem;
+  }
+
+  .card-title-lg {
+    font-size: 4.5cqw;
+  }
+}
+
+/* if width is 97vw or bigger */
+@container card (width >= 100vw) {
+  .card-q {
+    --card-radius: 0;
+    // background-color: rgba(255, 0, 136, 0.5);
+  }
+
+  .card-fit-lg {
+    --card-radius: 0;
+  }
+
+  .card-fit-xl {
+    --card-radius: 0;
+  }
+
+  .card-fit-3xl {
+    --card-radius: 0;
+  }
 
   .e2e-inset {
     margin-left: var(--neg-space);
   }
-}
-
-/* Cards that fit the width of their content */
-/* ================================================== */
-.card-fit-lg {
-  @include card-base;
-  --space: var(--lg);
-  width: max-content;
-  max-width: 100%;
-  @include radius("md");
-}
-
-.card-fit-xl {
-  @include card-base;
-  --space: var(--xl);
-  width: max-content;
-  max-width: 100%;
-  @include radius("md");
-}
-
-.card-fit-3xl {
-  @include card-base;
-  --space: var(--3xl);
-  width: max-content;
-  max-width: 100%;
-  @include radius("lg");
 }

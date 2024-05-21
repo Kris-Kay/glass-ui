@@ -1,11 +1,13 @@
 /* ================================================== */
 /* SVGs */
 /* ================================================== */
-/* Credit: Chris Coyier  */
+/* SVG masks that let you change their color via CSS */
+/* Credit: Chris Coyier */
 /* https://css-tricks.com/change-color-of-svg-on-hover/ */
 
-/* SVGs */
-/* ================================================== */
+/* 💠 example */
+// <svg class="svg-github color-2xlight"> </svg>
+
 @mixin svg-icon {
   max-width: 100%;
   max-height: 100%;

@@ -297,7 +297,7 @@ touch-action: pan-y;
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
   background-color: var(--tint-xdark);
-  @include glass.glass-no-bevel;
+  @include glass.glass-2d;
 
   &:active {
     padding: 8%;
