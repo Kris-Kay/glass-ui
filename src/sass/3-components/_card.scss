@@ -176,6 +176,14 @@
   // @include radius("lg");
 }
 
+.card {
+  @include card-base;
+  --space: var(--xl);
+  --card-radius: var(--md);
+  // max-width: 100%;
+  // width: fit-content;
+  // @include radius("md");
+}
 
 /* Card Container queries */
 /* ================================================== */

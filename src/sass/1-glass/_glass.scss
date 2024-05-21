@@ -41,9 +41,9 @@ $satu-2xstrong: 2.5;
 
 /* Backdrop filter mixin */
 /* ================================================== */
-@mixin glass-filter($blur: 48px, $bright: 1, $satu: 1.2) {
-  -webkit-backdrop-filter: blur($blur) brightness($bright) saturate($satu);
-  backdrop-filter:         blur($blur) brightness($bright) saturate($satu);
+@mixin glass-filter($blur-f: 48px, $bright-f: 1, $satu-f: 1.2) {
+  -webkit-backdrop-filter: blur($blur-f) brightness($bright-f) saturate($satu-f);
+  backdrop-filter:         blur($blur-f) brightness($bright-f) saturate($satu-f);
 }
 /* 💠 example */
 // .my-class {
@@ -96,70 +96,51 @@ $satu: --satu) {
 
 /* 3D glass */
 /* ================================================== */
+@mixin glass-3d {
+  @include glass-base(
+    --bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
 @mixin glass-3d-sm {
   @include glass-base(
-    --bevel-md,
-    $noise-md,
+    --bevel-sm,
+    $noise-sm,
     var(--blur),
     var(--bright),
     var(--satu));
 }
 
-@mixin glass-3d-md {
-  @include glass-base(
-    --bevel-md,
-    $noise-md,
-    var(--blur),
-    var(--bright),
-    var(--satu));
-}
-
-@mixin glass-3d-lg {
-  @include glass-base(
-    --bevel-lg,
-    $noise-md,
-    var(--blur),
-    var(--bright),
-    var(--satu));
-}
-
+.glass-3d { @include glass-3d; }
 .glass-3d-sm { @include glass-3d-sm; }
-.glass-3d-md { @include glass-3d-md; }
-.glass-3d-lg { @include glass-3d-lg; }
+// .glass-3d-q { @include glass-3d; }
 
 
 /* Flat glass -> for elements that span edge-to-edge or don't have border-radius */
 /* ================================================== */
+@mixin glass-flat {
+  @include glass-base(
+    --flat-bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
 @mixin glass-flat-sm {
   @include glass-base(
-    --flat-bevel-md,
-    $noise-md,
+    --flat-bevel-sm,
+    $noise-sm,
     var(--blur),
     var(--bright),
     var(--satu));
 }
 
-@mixin glass-flat-md {
-  @include glass-base(
-    --flat-bevel-md,
-    $noise-md,
-    var(--blur),
-    var(--bright),
-    var(--satu));
-}
-
-@mixin glass-flat-lg {
-  @include glass-base(
-    --flat-bevel-lg,
-    $noise-md,
-    var(--blur),
-    var(--bright),
-    var(--satu));
-}
-
+.glass-flat { @include glass-flat; }
 .glass-flat-sm { @include glass-flat-sm; }
-.glass-flat-md { @include glass-flat-md; }
-.glass-flat-lg { @include glass-flat-lg; }
 
 
 /* 2D glass -> no bevel */
@@ -180,32 +161,30 @@ $satu: --satu) {
 /* Glass container queries */
 /* ================================================== */
 /* Use same container as cards -> .card-container-q as parent */
-.glass-3d-q { @include glass-3d-md;}
-.glass-flat-q { @include glass-flat-md; }
 
 /* 360px & smaller */
-@container card (width < 360px) {
-  .glass-3d-q {
-    @include glass-3d-sm;
-    background-color: rgba(255, 0, 0, 0.5);
-  }
+// @container card (width < 360px) {
+//   .glass-3d-q {
+//     @include glass-3d-sm;
+//     // background-color: rgba(255, 0, 0, 0.5);
+//   }
 
-  .glass-flat-q {
-    @include glass-flat-sm;
-  }
-}
+//   .glass-flat-q {
+//     @include glass-flat-sm;
+//   }
+// }
 
 /* breakpoint xs: 360px and bigger */
-@container card (width >= 360px) {
-  .glass-3d-q {
-    @include glass-3d-md;
-    background-color: rgba(255, 255, 0, 0.5);
-  }
+// @container card (width >= 360px) {
+//   .glass-3d-q {
+//     @include glass-3d-md;
+//     // background-color: rgba(255, 255, 0, 0.5);
+//   }
 
-  .glass-flat-q{
-    @include glass-flat-md;
-  }
-}
+//   .glass-flat-q{
+//     @include glass-flat-md;
+//   }
+// }
 
 /* breakpoint sm: 560px and bigger */
 // @container card (width >= 560px) {
@@ -223,28 +202,28 @@ $satu: --satu) {
 // }
 
 /* breakpoint md: 768px and bigger */
-@container card (width >= 768px) {
-  .glass-3d-q {
-    @include glass-3d-lg;
-    background-color: rgba(0, 255, 255, 0.5);
-  }
+// @container card (width >= 768px) {
+//   .glass-3d-q {
+//     @include glass-3d-lg;
+//     // background-color: rgba(0, 255, 255, 0.5);
+//   }
 
-  .glass-flat-q{
-    @include glass-flat-lg;
-  }
-}
+//   .glass-flat-q {
+//     @include glass-flat-lg;
+//   }
+// }
 
 /* breakpoint lg: 1024px and bigger */
-@container card (width >= 1024px) {
-  .glass-3d-q {
-    @include glass-3d-lg;
-    background-color: rgba(0, 0, 255, 0.5);
-  }
+// @container card (width >= 1024px) {
+//   .glass-3d-q {
+//     @include glass-3d-lg;
+//     background-color: rgba(0, 0, 255, 0.5);
+//   }
 
-  .glass-flat-q{
-    @include glass-flat-lg;
-  }
-}
+//   .glass-flat-q{
+//     @include glass-flat-lg;
+//   }
+// }
 
 /* breakpoint xl: 1440px and bigger */
 // @container card (width >= 1440px) {
@@ -263,8 +242,12 @@ $satu: --satu) {
 
 /* bevel -> flat-bevel if element width is 99vw or bigger */
 @container card (width >= calc(100vw - 16px)) {
-  .glass-3d-q {
-    @include glass-flat-md;
+  .glass-3d {
+    @include glass-flat;
     background-color: rgba(255, 0, 136, 0.5);
+  }
+
+  .glass-3d-sm {
+    @include glass-flat-sm;
   }
 }

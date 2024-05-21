@@ -270,7 +270,7 @@
   border-radius: 0 var(--sm) var(--sm) 0;
   box-shadow: var(--sha-sm);
 
-  @include glass-flat-sm;
+  @include glass-flat;
 
   @include bp(xs) {
     min-width: 40%;
@@ -298,4 +298,49 @@
     font-size: var(--text-xl);
     text-shadow: var(--text-sha-3xl);
   }
+}
+
+.glass-bevel-xs {
+  @include glass-base(
+    --bevel-xs,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
+.glass-bevel-sm {
+  @include glass-base(
+    --bevel-sm,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
+.glass-bevel-md {
+  @include glass-base(
+    --bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
+.glass-bevel-lg {
+  @include glass-base(
+    --bevel-lg,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+}
+
+.glass-bevel-xl {
+  @include glass-base(
+    --bevel-xl,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
 }

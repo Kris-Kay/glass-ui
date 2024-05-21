@@ -41,11 +41,11 @@ html {
   inset 0 0 0.25px 0.5px  hsl(var(--highlight) / 0.03);
 
   --bevel-xl:
-    inset 2px 2px 1px -3px hsl(var(--highlight) / 0.8),
-    inset 4px 4px 2px -6px hsl(var(--highlight) / 0.3),
-    inset 1.5px 1.5px 1.5px -0.75px hsl(var(--highlight) / 0.15),
-    inset 1.5px 1.5px 0.25px  hsl(var(--highlight) / 0.03),
-    inset 0 0 0.25px 0.5px  hsl(var(--highlight) / 0.03);
+  inset 2px 2px 1px -3px hsl(var(--highlight) / 0.8),
+  inset 4px 4px 2px -6px hsl(var(--highlight) / 0.3),
+  inset 1.5px 1.5px 1.5px -0.75px hsl(var(--highlight) / 0.15),
+  inset 1.5px 1.5px 0.25px  hsl(var(--highlight) / 0.03),
+  inset 0 0 0.25px 0.5px  hsl(var(--highlight) / 0.03);
 
 
 /* Flat bevels */
@@ -69,7 +69,7 @@ html {
 /* Bevel classes */
 /* ================================================== */
 .bevel-none {
-  box-shadow: 0;
+  box-shadow: none;
 }
 
 .bevel-xs {

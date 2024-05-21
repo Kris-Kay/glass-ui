@@ -288,7 +288,8 @@
 
 
 .tele-rect {
-touch-action: pan-y;
+  display: grid;
+  touch-action: pan-y;
   min-width: fit-content;
   width: 100%;
   overflow: hidden;
@@ -296,8 +297,8 @@ touch-action: pan-y;
   // padding: 4% 4% 4% 12%;
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
-  background-color: var(--tint-xdark);
-  @include glass.glass-2d;
+  background-color: var(--tint-dark);
+  // @include glass.glass-2d;
 
   &:active {
     padding: 8%;
