@@ -1,9 +1,9 @@
 /* ================================================== */
 /* Tab menu */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass" as glass;
-@use "button" as btn;
+@use "button" as *;
 /* ================================================== */
 
 .panel-img-bin {
@@ -39,7 +39,7 @@
 
 
 .tab-menu {
-  @include glass.glass-filter(10px, 1, 1.2);
+  @include glass-filter(10px, 1, 1.2);
   inset: 0;
   z-index: z(nav);
   width: fit-content;
@@ -57,8 +57,8 @@
 }
 
 [role="tab"] {
-  @include btn.btn-structure;
-  @include btn.btn-style;
+  @include btn-structure;
+  @include btn-style;
   --btn-h: 100%;
   --btn-content-h: 0.9rem;
   --btn-padding-x: 0.75rem;

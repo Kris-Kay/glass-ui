@@ -1,9 +1,11 @@
 /* ================================================== */
 /* Text util */
 @use "sass:map";
-@use "../0-design/breakpoint" as bp;
+@use "../0-design/color" as *;
+@use "../0-design/space" as *;
 @use "../0-design/text-config" as *;
 @use "../0-design/text-styles" as *;
+// @use "../forward-styles/design" as *;
 /* ================================================== */
 
 /* text-align: */

@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Text styles */
 @use "sass:map";
-@use "breakpoint" as bp;
+@use "breakpoint" as *;
 @use "text-config" as *;
 /* ================================================== */
 
@@ -68,7 +68,7 @@ textarea {
   color: var(--text-strong);
   text-align: center;
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     font-size: var(--text-2xl);
   }
 }
@@ -107,7 +107,7 @@ textarea {
   text-transform: uppercase;
   text-shadow: var(--text-sha-3xs);
 
-  // @include bp.bp(lg) {
+  // @include bp(lg) {
   //   font-size: var(--text-xs);
   // }
 }

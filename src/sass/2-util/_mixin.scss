@@ -1,6 +1,6 @@
 /* ================================================== */
 /* Mixins */
-@use "../0-design/space" as space;
+@use "../0-design/space" as *;
 /* ================================================== */
 
 /* Generic class generating mixin */
@@ -18,7 +18,7 @@
 /* ================================================== */
 /* Generates .classes using $sizes map */
 @mixin size-modifiers($property) {
-  @each $key, $value in space.$sizes {
+  @each $key, $value in $sizes {
     &-#{$key} {
       #{$property}: var($value);
       @content;
@@ -29,7 +29,7 @@
 /* 2 property size modifier mixin */
 /* ================================================== */
 @mixin xy-size-modifiers($property1, $property2) {
-  @each $key, $value in space.$sizes {
+  @each $key, $value in $sizes {
     &-#{$key} {
       #{$property1}: var($value);
       #{$property2}: var($value);

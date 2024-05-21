@@ -1,7 +1,8 @@
 /* ================================================== */
 /* Dropdown */
-@use "../0-design/interaction" as in;
-@use "../2-util/z-index" as z;
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
 /* ================================================== */
 
 .dropdown-group {
@@ -36,7 +37,7 @@
   --dropdown-h: 0px; /* height value set via dropdown.js */
 
   position: absolute;
-  z-index: z.z(menu);
+  z-index: z(menu);
   min-width: 140px;
   width: fit-content;
   height: fit-content;
@@ -52,8 +53,8 @@
   will-change: opacity, transform;
   opacity: 1;
   transform: translateX(0);
-  transition: opacity in.$speed-slow in.$smooth-cubic,
-              transform in.$speed-slow in.$smooth-cubic;
+  transition: opacity $speed-slow $smooth-cubic,
+              transform $speed-slow $smooth-cubic;
 
   &.is-closed {
     opacity: 0;
@@ -62,7 +63,7 @@
 }
 
 .dropdown-item {
-  z-index: z.z(on-menu);
+  z-index: z(on-menu);
   min-width: max-content;
   width: 100%;
   display: flex;

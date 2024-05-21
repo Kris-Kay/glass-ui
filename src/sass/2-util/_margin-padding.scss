@@ -1,37 +1,37 @@
 /* ================================================== */
 /* Margins & Padding */
-@use "mixin" as mix;
+@use "mixin" as *;
 /* ================================================== */
 
 /* ================================================== */
 /* Margins */
 /* ================================================== */
 .m {
-  @include mix.size-modifiers('margin');
+  @include size-modifiers('margin');
 }
 
 .m-t {
-  @include mix.size-modifiers('margin-top');
+  @include size-modifiers('margin-top');
 }
 
 .m-b {
-  @include mix.size-modifiers('margin-bottom');
+  @include size-modifiers('margin-bottom');
 }
 
 .m-l {
-  @include mix.size-modifiers('margin-left');
+  @include size-modifiers('margin-left');
 }
 
 .m-r {
-  @include mix.size-modifiers('margin-right');
+  @include size-modifiers('margin-right');
 }
 
 .m-x {
-  @include  mix.xy-size-modifiers('margin-right', 'margin-left');
+  @include  xy-size-modifiers('margin-right', 'margin-left');
 }
 
 .m-y {
-  @include  mix.xy-size-modifiers('margin-top', 'margin-bottom');
+  @include  xy-size-modifiers('margin-top', 'margin-bottom');
 }
 
 
@@ -39,31 +39,31 @@
 /* Padding */
 /* ================================================== */
 .p {
-  @include mix.size-modifiers('padding');
+  @include size-modifiers('padding');
 }
 
 .p-t {
-  @include mix.size-modifiers('padding-top');
+  @include size-modifiers('padding-top');
 }
 
 .p-b {
-  @include mix.size-modifiers('padding-bottom');
+  @include size-modifiers('padding-bottom');
 }
 
 .p-l {
-  @include mix.size-modifiers('padding-left');
+  @include size-modifiers('padding-left');
 }
 
 .p-r {
-  @include mix.size-modifiers('padding-right');
+  @include size-modifiers('padding-right');
 }
 
 .p-x {
-  @include  mix.xy-size-modifiers('padding-right', 'padding-left');
+  @include  xy-size-modifiers('padding-right', 'padding-left');
 }
 
 .p-y {
-  @include  mix.xy-size-modifiers('padding-top', 'padding-bottom');
+  @include  xy-size-modifiers('padding-top', 'padding-bottom');
 }
 
 .p-none {

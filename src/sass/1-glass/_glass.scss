@@ -1,10 +1,7 @@
 /* ================================================== */
 /* Glass */
-@use "sass:map";
-@use "../0-design/breakpoint" as bp;
-@use "../2-util/mixin" as mix;
-@use "../2-util/layout" as layout;
-@use "../2-util/z-index" as z;
+@use "../2-util/layout" as *;
+@use "../2-util/z-index" as *;
 /* ================================================== */
 
 /* ================================================== */
@@ -55,6 +52,7 @@ $satu-2xstrong: 2.5;
 //   @include glass-filter(20px, 1.2, 1.5);
 // }
 
+/* Glass filter presets ✨ Config these values */
 body {
   --blur: #{$blur-md};
   --bright: #{$bright-base};
@@ -71,17 +69,17 @@ $blur: --blur,
 $bright: --bright,
 $satu: --satu) {
   position: relative;
-  z-index: z.z(glass);
+  z-index: z(glass);
 
   &::after {
-    @include layout.pseudo;
-    z-index: z.z(glass-after);
+    @include pseudo;
+    z-index: z(glass-after);
     box-shadow: var(#{$bevel});
   }
 
   &::before {
-    @include layout.pseudo;
-    z-index: z.z(glass-b4);
+    @include pseudo;
+    z-index: z(glass-b4);
     background-repeat: repeat;
     background-size: #{$noise-size};
     background-image: $noise-img;
@@ -90,11 +88,11 @@ $satu: --satu) {
 
   & > * {
     position: relative;
-    z-index: z.z(on-glass);
+    z-index: z(on-glass);
   }
 }
 
-/* 3D glass */
+/* 3D glass ✨ Config these values */
 /* ================================================== */
 @mixin glass-3d {
   @include glass-base(
@@ -116,11 +114,11 @@ $satu: --satu) {
 
 .glass-3d { @include glass-3d; }
 .glass-3d-sm { @include glass-3d-sm; }
-// .glass-3d-q { @include glass-3d; }
 
 
-/* Flat glass -> for elements that span edge-to-edge or don't have border-radius */
+/* Flat glass */
 /* ================================================== */
+/* For elements that span edge-to-edge or don't have border-radius */
 @mixin glass-flat {
   @include glass-base(
     --flat-bevel-md,
@@ -160,91 +158,12 @@ $satu: --satu) {
 /* ================================================== */
 /* Glass container queries */
 /* ================================================== */
-/* Use same container as cards -> .card-container-q as parent */
-
-/* 360px & smaller */
-// @container card (width < 360px) {
-//   .glass-3d-q {
-//     @include glass-3d-sm;
-//     // background-color: rgba(255, 0, 0, 0.5);
-//   }
-
-//   .glass-flat-q {
-//     @include glass-flat-sm;
-//   }
-// }
-
-/* breakpoint xs: 360px and bigger */
-// @container card (width >= 360px) {
-//   .glass-3d-q {
-//     @include glass-3d-md;
-//     // background-color: rgba(255, 255, 0, 0.5);
-//   }
-
-//   .glass-flat-q{
-//     @include glass-flat-md;
-//   }
-// }
-
-/* breakpoint sm: 560px and bigger */
-// @container card (width >= 560px) {
-//   .glass-3d-q {
-
-//   }
-
-//   .glass-flat-q{
-
-//   }
-
-//   .glass-2d-q {
-
-//   }
-// }
-
-/* breakpoint md: 768px and bigger */
-// @container card (width >= 768px) {
-//   .glass-3d-q {
-//     @include glass-3d-lg;
-//     // background-color: rgba(0, 255, 255, 0.5);
-//   }
-
-//   .glass-flat-q {
-//     @include glass-flat-lg;
-//   }
-// }
-
-/* breakpoint lg: 1024px and bigger */
-// @container card (width >= 1024px) {
-//   .glass-3d-q {
-//     @include glass-3d-lg;
-//     background-color: rgba(0, 0, 255, 0.5);
-//   }
-
-//   .glass-flat-q{
-//     @include glass-flat-lg;
-//   }
-// }
-
-/* breakpoint xl: 1440px and bigger */
-// @container card (width >= 1440px) {
-//   .glass-3d-q {
-
-//   }
-
-//   .glass-flat-q{
-
-//   }
-
-//   .glass-2d-q {
-
-//   }
-// }
-
-/* bevel -> flat-bevel if element width is 99vw or bigger */
-@container card (width >= calc(100vw - 16px)) {
+/* Switch to a flat-bevel at 100vw or bigger to prevent a white line down the left edge */
+/* the -16px prevents issues with scrollbars cutting into 100vw */
+@container bg (width >= calc(100vw - 16px)) {
   .glass-3d {
     @include glass-flat;
-    background-color: rgba(255, 0, 136, 0.5);
+    // background-color: rgba(255, 0, 136, 0.5);
   }
 
   .glass-3d-sm {

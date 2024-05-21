@@ -1,8 +1,8 @@
 /* ================================================== */
-/* Colors & Themes */
+/* Colors */
 @use "sass:map";
 @use "sass:list";
-@use "../2-util/mixin" as mix;
+@use "../2-util/mixin" as *;
 /* ================================================== */
 
 
@@ -216,7 +216,7 @@ $colors: (
 );
 
 .color {
-  @include mix.generate-classes($colors, 'background-color', 'color', '-');
+  @include generate-classes($colors, 'background-color', 'color', '-');
 }
 
 /* Tints MAP */
@@ -235,7 +235,7 @@ $tints: (
 
 /* Generate .tint- classes */
 .tint {
-  @include mix.generate-classes($tints, 'background-color', 'tint', '-');
+  @include generate-classes($tints, 'background-color', 'tint', '-');
 }
 
 /* Text colors MAP */
@@ -255,6 +255,6 @@ $text-colors: (
 /* `text-color-` classes change with the theme */
 /* `text-` classes are always the same color */
 .text {
-  @include mix.generate-classes($text-colors, 'color', 'text', '-');
-  @include mix.generate-classes($colors, 'color', 'color', '-');
+  @include generate-classes($text-colors, 'color', 'text', '-');
+  @include generate-classes($colors, 'color', 'color', '-');
 }

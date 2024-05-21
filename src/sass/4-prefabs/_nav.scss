@@ -1,9 +1,8 @@
 /* ================================================== */
 /* Nav */
-@use "../0-design/interaction" as in;
-@use "../0-design/breakpoint" as bp;
-@use "../2-util/z-index" as z;
-@use "../2-util/radius" as r;
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
 /* ================================================== */
 
 :root {
@@ -16,7 +15,7 @@
 /* ================================================== */
 .main-nav-bin {
   position: fixed;
-  z-index: z.z(nav);
+  z-index: z(nav);
   height: var(--nav-h);
   inset: 0;
   padding: var(--nav-padding);
@@ -24,7 +23,7 @@
 }
 
 .main-nav {
-  max-width: bp.$bp-xl;
+  max-width: $bp-xl;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +33,7 @@
 }
 
 .nav-item {
-  z-index: z.z(on-nav);
+  z-index: z(on-nav);
   height: var(--nav-item-h);
   display: grid;
   place-items: center;

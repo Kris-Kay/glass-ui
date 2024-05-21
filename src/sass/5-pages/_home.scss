@@ -1,6 +1,8 @@
 /* ================================================== */
 /* Home page */
 @use "../forward-styles/design" as *;
-@use "../2-util/layout" as layout;
-@use "../forward-styles/glass" as glass;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/components" as *;
+@use "../forward-styles/prefabs" as *;
 /* ================================================== */

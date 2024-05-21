@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Space */
 @use "sass:map";
-@use "breakpoint" as bp;
-@use "../2-util/z-index" as z;
+@use "breakpoint" as *;
+@use "../2-util/z-index" as *;
 /* ================================================== */
 
 /* ================================================== */
@@ -110,7 +110,7 @@ html {
   --ui-h-lg: 2.75rem; /* 44px */
   --ui-h-xl: 3.25rem; /* 52px */
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     --moat: 2rem;
 
     --space-q-sm: 7cqw;
@@ -124,18 +124,18 @@ html {
     --ui-h-xl: 3.375rem; /* 54px */
   }
 
-  @include bp.bp(md) {
+  @include bp(md) {
     --moat: 3rem;
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     --ui-h-sm: 2.25rem; /* 36px */
     --ui-h-md: 2.5rem;  /* 40px */
     --ui-h-lg: 3rem;    /* 48px */
     --ui-h-xl: 3.5rem;  /* 56px */
   }
 
-  @include bp.bp(xl) {
+  @include bp(xl) {
     --moat: 5rem;
   }
 }
@@ -171,7 +171,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     padding: 0 var(--moat);
   }
 }
@@ -180,7 +180,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     padding: 0 var(--moat);
   }
 }
@@ -189,7 +189,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp.bp(md) {
+  @include bp(md) {
     padding: 0 var(--moat);
   }
 }
@@ -198,7 +198,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     padding: 0 var(--moat);
   }
 }
@@ -207,7 +207,7 @@ html {
   @include moat;
   padding: 0;
 
-  @include bp.bp(xl) {
+  @include bp(xl) {
     padding: 0 var(--moat);
   }
 }
@@ -218,65 +218,117 @@ html {
 /* ================================================== */
 /* ℹ️ .w- classes limit the width of elements to their suffix breakpoint */
 /* e.g. .w-md takes up 100% width at $bp-sm & won't get bigger than the value of $bp-md */
-.w-xs { width: min(100%, bp.$bp-xs); }
-.w-sm { width: min(100%, bp.$bp-sm); }
-.w-md { width: min(100%, bp.$bp-md); }
-.w-lg { width: min(100%, bp.$bp-lg); }
-.w-xl { width: min(100%, bp.$bp-xl); }
+.w-xs { width: min(100%, $bp-xs); }
+.w-sm { width: min(100%, $bp-sm); }
+.w-md { width: min(100%, $bp-md); }
+.w-lg { width: min(100%, $bp-lg); }
+.w-xl { width: min(100%, $bp-xl); }
 
 
 /* ================================================== */
 /* Large spacing */
 /* ================================================== */
 .page-gap {
-  z-index: z.z(page);
+  z-index: z(page);
   display: grid;
   gap: 8rem;
 
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     gap: 10rem;
   }
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     gap: 12rem;
   }
 
-  @include bp.bp(md) {
+  @include bp(md) {
     gap: 14rem;
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     gap: 16rem;
   }
 
-  @include bp.bp(xl) {
+  @include bp(xl) {
     gap: 18rem;
   }
 }
 
 .section-gap {
-  z-index: z.z(section);
+  z-index: z(section);
   display: grid;
   gap: 5rem;
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     gap: 8rem;
   }
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     gap: 9rem;
   }
 
-  @include bp.bp(md) {
+  @include bp(md) {
     gap: 10rem;
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     gap: 11rem;
   }
 
-  @include bp.bp(xl) {
+  @include bp(xl) {
     gap: 12rem;
+  }
+}
+
+/* Edge-to-edge classes */
+/* ================================================== */
+@mixin e2e {
+  --_space: var(--space, 1rem);
+  --neg-space: calc(-1 * var(--_space));
+  --_neg-space: var(--neg-space, -1rem);
+
+  width: calc(100% + (var(--_space) * 2));
+  display: grid;
+  margin-left: var(--_neg-space);
+  margin-right: var(--_neg-space);
+  padding: var(--_space);
+
+  &.e2e-no-p {
+    padding: 0;
+  }
+}
+
+.e2e { @include e2e; }
+
+.e2e-no-t {
+  @include e2e;
+  margin-top: var(--neg-space);
+}
+
+.e2e-no-b {
+  @include e2e;
+  margin-bottom: var(--neg-space);
+}
+
+.e2e-no-y {
+  @include e2e;
+  margin-top: var(--neg-space);
+  margin-bottom: var(--neg-space);
+}
+
+.e2e-inset {
+  @include e2e;
+  margin-left: calc(var(--neg-space) + 1px);
+  margin-right: var(--neg-space);
+  background-color: var(--inset-bg-deep);
+  box-shadow: var(--inset-flat-md);
+}
+
+/* Remove margin-left offset at 100vw or bigger */
+/* the -16px prevents issues with scrollbars cutting into 100vw */
+@container card (width >= calc(100vw - 16px)) {
+  .e2e-inset {
+    margin-left: var(--neg-space);
   }
 }

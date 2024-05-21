@@ -1,9 +1,9 @@
 /* ================================================== */
 /* Above the fold hero section */
 @use "../forward-styles/design" as *;
-@use "../0-design/breakpoint" as bp;
-@use "../0-design/interaction" as in;
-@use "../3-components/card";
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+@use "../3-components/card" as *;
 /* ================================================== */
 
 .hero {
@@ -25,23 +25,23 @@
   place-items: end start;
   padding-bottom: var(--nav-h);
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     width: 100%;
     padding-left: min(5%, 3rem);
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     padding-left: 0;
-    max-width: bp.$bp-md;
+    max-width: $bp-md;
   }
 
-  @include bp.bp(xl) {
-    max-width: bp.$bp-lg;
+  @include bp(xl) {
+    max-width: $bp-lg;
   }
 }
 
 .hero-card {
-  @include card.card-base;
+  @include card-base;
   --space: calc(var(--sm) * 1.1);
   width: 100%;
   border-radius: calc(var(--lg) * 1.15);
@@ -49,21 +49,21 @@
   padding: var(--space);
         outline: 1px solid transparent;
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     --space: var(--md);
     width: min(100%, 360px);
   }
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     width: clamp(360px, 380px, 400px);
   }
 
-  @include bp.bp(md) {
+  @include bp(md) {
     width: clamp(410px, 430px, 440px);
     --space: calc(var(--md) * 0.95);
   }
 
-  @include bp.bp(lg) {
+  @include bp(lg) {
     width: clamp(440px, 445px, 450px);
     border-radius: calc(var(--lg) * 0.95);
   }
@@ -82,7 +82,7 @@
 .card-3d {
   backface-visibility: hidden;
   will-change: transform;
-  transition: transform in.$speed-2xslow in.$smooth-cubic;
+  transition: transform $speed-2xslow $smooth-cubic;
 
   transform:
     perspective(2200px)
@@ -92,7 +92,7 @@
     translateX(10px)
     translateY(-5%);
 
-  @include bp.bp(xs) {
+  @include bp(xs) {
     transform:
       perspective(2500px)
       rotateY(30deg)
@@ -102,7 +102,7 @@
       translateY(-12%);
   }
 
-  @include bp.bp(sm) {
+  @include bp(sm) {
     transform:
       perspective(3000px)
       rotateY(25deg)
@@ -152,7 +152,7 @@
 .card-3d-text {
   font-size: var(--text-sm);
 
-  @include bp.bp(md) {
+  @include bp(md) {
     font-size: var(--text-md);
   }
 }

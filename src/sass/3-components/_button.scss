@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Buttons */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass" as glass;
 /* ================================================== */
 
 /* Button transition */
@@ -259,7 +259,7 @@
   }
 
   &::after {
-    @include glass.glass-filter(var(--_btn-blur), var(--_btn-brightness), var(--_btn-saturate));
+    @include glass-filter(var(--_btn-blur), var(--_btn-brightness), var(--_btn-saturate));
     box-shadow: var(--_btn-bevel);
   }
 

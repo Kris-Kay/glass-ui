@@ -1,9 +1,8 @@
 /* ================================================== */
 /* Accordion */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass";
-@use "../3-components/card";
 /* ================================================== */
 
 @mixin accordion {
@@ -142,8 +141,9 @@
   }
 }
 
-
-@container card (width >= calc(100vw - 16px)) {
+/* Remove border-radius at 100vw or bigger */
+/* the -16px prevents issues with scrollbars cutting into 100vw */
+@container bg (width >= calc(100vw - 16px)) {
   .accordion-solo,
   .accordion-multi {
     --radius: 0;

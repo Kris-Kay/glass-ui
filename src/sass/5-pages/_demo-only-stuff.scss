@@ -1,9 +1,9 @@
 /* ================================================== */
 /* Demo only styles */
 @use "../forward-styles/design" as *;
-@use "../forward-styles/util" as *;
 @use "../forward-styles/glass" as *;
-@use "../3-components/card" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/components" as *;
 /* ================================================== */
 
 /* Bevel Demo */

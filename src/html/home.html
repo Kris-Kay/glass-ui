@@ -41,15 +41,43 @@
 <!-- Main -->
 <!-- ================================================== -->
 <main class="page-gap ">
+  <div class="moat-xs gap-5xl p-t-5xl">
 
-  <!-- card-q demo -->
-  <!-- <div class="grid-c gap-xl p-t-5xl">
+    <div class="bg-container w-md grid-c gap-3xl">
+      <div class="card-q glass-3d tint-clear">
 
-    <div class="card-container-q size-300">
-      <div class="card-q glass-3d tint-dark">
         <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of 300px</p>
+          <h1 class="card-title-lg">1. Edge to edge</h1>
+          <p class="card-subtitle">Max width sm</p>
+        </div>
+
+        <img class="w-100 radius-xs"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p>This is a basic card with no edge-to-edge elements. A max width of 100% is added to the img via <span class="code-class">.w-100</span> and a border-radius via <span class="code-class">.radius-xs</span>.
+        </p>
+
+      </div>
+
+      <div class="card-q glass-3d tint-clear">
+        <div class="title-group">
+          <h1 class="card-title-lg">2. Edge to edge</h1>
+          <p class="card-subtitle">Max width sm</p>
+        </div>
+
+        <img class="e2e e2e-no-p"
+          src="/assets/readme-img/3D-glass-UI_card.png"
+          alt="">
+
+        <p>This card's img spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. It needs the no-padding version because it contains no inner content that needs to be set away from the edge of the card.
+        </p>
+      </div>
+
+      <div class="card-q glass-3d tint-clear">
+        <div class="title-group">
+          <h1 class="card-title-lg">3. Edge to edge</h1>
+          <p class="card-subtitle">Max width sm</p>
         </div>
 
         <img class="e2e e2e-no-p"
@@ -59,109 +87,50 @@
         <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
         </p>
       </div>
-    </div>
 
-    <div class="card-container-q w-xs">
-      <div class="card-q glass-3d tint-dark">
-        <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-xs</p>
-        </div>
-
-        <img class="e2e e2e-no-p"
+      <div class="card-q glass-3d tint-clear">
+        <img class="e2e-no-p e2e-no-t"
           src="/assets/readme-img/3D-glass-UI_card.png"
           alt="">
 
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-        </p>
-      </div>
-    </div>
-
-    <div class="card-container-q w-sm">
-      <div class="card-q glass-3d tint-dark">
         <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-sm</p>
+          <h1 class="card-title-lg">4. Edge to edge</h1>
+          <p class="card-subtitle">Max width sm</p>
         </div>
 
-        <img class="e2e e2e-no-p"
-          src="/assets/readme-img/3D-glass-UI_card.png"
-          alt="">
-
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        <p class="e2e-no-b tint-3xdark"> This img spans edge-to-edge using <span class="code-class">.e2e-no-p</span> and removes the top outer padding via <span class="code-class">.e2e-no-t</span> While the text removes the bottom outer padding via <span class="code-class">.e2e-no-b</span>
         </p>
-      </div>
-    </div>
 
-    <div class="card-container-q w-md">
-      <div class="card-q glass-3d tint-dark">
+      </div>
+
+      <div class="card-q glass-3d tint-clear">
         <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-md</p>
+          <h1 class="card-title-lg">5. Edge to edge</h1>
+          <p class="card-subtitle">Max width sm</p>
         </div>
 
-        <img class="e2e e2e-no-p"
-          src="/assets/readme-img/3D-glass-UI_card.png"
-          alt="">
-
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
+        <p class="e2e-inset">This card gets an inset look via <span class="code-class"> .e2e-inset </span> This includes the dark background tint, a flat inset shadow with a bottom highlight, removes 1px from the left margin to preserve the cards 3D bevel unless the card's width reachs 99vw.
         </p>
-      </div>
-    </div>
 
-    <div class="card-container-q size-900">
-      <div class="card-q glass-3d tint-dark">
-        <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of 900px</p>
+        <div class="justify-r">
+          <button  class="btn-secondary btn-lg icon-end" type="button">
+            <p class="btn-text">A button</p>
+            <svg class="svg-chev-r"
+              role="graphics-symbol"
+              aria-hidden="true"
+              focusable="false"  >
+            </svg>
+          </button>
         </div>
 
-        <img class="e2e e2e-no-p"
-          src="/assets/readme-img/3D-glass-UI_card.png"
-          alt="">
-
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-        </p>
       </div>
     </div>
 
-    <div class="card-container-q w-lg">
-      <div class="card-q glass-3d tint-dark">
-        <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-lg</p>
-        </div>
-
-        <img class="e2e e2e-no-p"
-          src="/assets/readme-img/3D-glass-UI_card.png"
-          alt="">
-
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-        </p>
-      </div>
-    </div>
-
-    <div class="card-container-q w-xl">
-      <div class="card-q glass-3d tint-dark">
-        <div class="title-group">
-          <h1 class="card-title-lg"> This is a title on a card container query card </h1>
-          <p class="card-subtitle">This is a card subtitle on card with a max width of --w-xl</p>
-        </div>
-
-        <img class="e2e e2e-no-p"
-          src="/assets/readme-img/3D-glass-UI_card.png"
-          alt="">
-
-        <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .e2e-no-p</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-        </p>
-      </div>
-    </div>
-
-  </div> -->
+  </div>
 
   <!-- Intro -->
   <section class="moat-xs">
-    <div class="card-container-q w-sm">
+    <div class="bg-container w-sm">
       <div class="card-fit-3xl glass-3d tint-3xdark">
         <div class="grid-c">
           <img class="w-sm"
@@ -256,7 +225,7 @@
 
       <!-- Tab menu -->
       <div class="moat-sm">
-        <div class="card-container-q w-sm m-auto-x">
+        <div class="bg-container w-sm m-auto-x">
           <div class="card-q glass-3d tint-xdark">
 
             <div class="title-group">
@@ -541,7 +510,7 @@
       <!-- Text inputs -->
       <div class="moat-sm">
 
-        <div class="card-container-q w-sm">
+        <div class="bg-container w-sm">
           <div class="card-q glass-3d gradient-xdark grid-c">
 
             <div class="title-group">
@@ -615,7 +584,7 @@
       <!-- Accordion -->
       <div class="moat-sm">
 
-        <div class="card-container-q w-md grid gap-3xl">
+        <div class="bg-container w-md grid gap-3xl">
 
           <div class="accordion-solo glass-3d">
             <div class="js-accordion">
@@ -728,7 +697,7 @@
 
       <!-- Buttons -->
       <div class="moat-xl">
-        <div class="card-container-q w-xl">
+        <div class="bg-container w-xl">
           <div class="card-q glass-3d tint-dark ">
             <div class="title-group">
               <h3 class="card-title-lg">Buttons</h3>
@@ -1056,7 +1025,7 @@
     </div>
 
     <div class="moat-md">
-      <div class="card-container-q  w-md ">
+      <div class="bg-container  w-md ">
         <div class="grid-c gap-lg">
 
           <div class="accordion-solo glass-3d ">
@@ -1183,7 +1152,7 @@
     </div>
 
     <div class="moat-sm">
-      <div class="card-container-q w-sm m-auto-x">
+      <div class="bg-container w-sm m-auto-x">
         <div class="card-q glass-3d tint-xdark">
 
           <div class="justify-sb gap-md align-items-c  w-100">

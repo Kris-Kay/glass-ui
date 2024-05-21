@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Text */
 @use 'sass:map';
-@use "../2-util/mixin" as mix;
+@use "../2-util/mixin" as *;
 /* ================================================== */
 
 /* font-family: ✨ Config these values */
@@ -64,5 +64,5 @@ $text-sizes: (
 
 /* Generate text size classes */
 .text {
-  @include mix.generate-classes($text-sizes, 'font-size', 'text', '-');
+  @include generate-classes($text-sizes, 'font-size', 'text', '-');
 }

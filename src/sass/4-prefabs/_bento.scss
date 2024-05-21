@@ -1,9 +1,8 @@
 /* ================================================== */
-/* Layout prefabs */
+/* Bento grid */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass" as glass;
-@use "../forward-styles/components" as *;
 /* ================================================== */
 
 .rect-sm {
@@ -298,7 +297,6 @@
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
   background-color: var(--tint-dark);
-  // @include glass.glass-2d;
 
   &:active {
     padding: 8%;

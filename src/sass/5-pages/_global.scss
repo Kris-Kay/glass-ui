@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Used on all pages */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass" as glass;
 /* ================================================== */
 
 
@@ -78,8 +78,8 @@ html {
   pointer-events: none;
   &::after {
     @include pseudo;
-    background-image: glass.$noise-img;
-    background-size: glass.$noise-md;
+    background-image: $noise-img;
+    background-size: $noise-md;
     background-repeat: repeat;
   }
 }
@@ -88,6 +88,6 @@ html {
   pointer-events: none;
   &::after {
     @include pseudo;
-    @include glass.glass-filter(glass.$blur-xs, glass.$bright-base, glass.$satu-base);
+    @include glass-filter($blur-xs, $bright-base, $satu-base);
   }
 }

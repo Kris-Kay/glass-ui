@@ -1,8 +1,8 @@
 /* ================================================== */
 /* Cards */
 @use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
-@use "../forward-styles/glass" as glass;
 /* ================================================== */
 
 /* Card base */
@@ -10,6 +10,7 @@
 @mixin card-base {
   --_space: var(--space, 1rem);
   --neg-space: calc(-1 * var(--_space));
+  --_neg-space: var(--neg-space, -1rem);
   --_card-radius: var(--card-radius, 1.5rem);
   z-index: z(card);
   // width: 100%;
@@ -31,63 +32,47 @@
   @include card-base;
 }
 
-/* Edge-to-edge classes */
+
+
+/* Cards that fit the width of their content */
 /* ================================================== */
-@mixin e2e {
-  // z-index: z(on-card);
-  width: calc(100% + (var(--space) * 2));
+.card-fit-lg {
+  @include card-base;
+  --space: var(--lg);
+  // --card-radius: var(--md);
+  max-width: 100%;
+  width: fit-content;
+  @include radius("md");
+}
+
+.card-fit-xl {
+  @include card-base;
+  --space: var(--xl);
+  // --card-radius: var(--md);
+  max-width: 100%;
+  width: fit-content;
+  @include radius("md");
+}
+
+.card-fit-3xl {
+  @include card-base;
+  --space: var(--3xl);
+  // --card-radius: var(--lg);
+  max-width: 100%;
+  width: fit-content;
+  @include radius("lg");
+}
+
+/* Card children */
+/* ================================================== */
+.title-group {
+  z-index: z(on-card);
   display: grid;
-  margin-left: var(--neg-space);
-  margin-right: var(--neg-space);
-  padding: var(--space);
-
-  &.e2e-no-p {
-    padding: 0;
-  }
+  gap: 0.5em;
 }
 
-.e2e { @include e2e; }
-
-.e2e-no-t {
-  @include e2e;
-  margin-top: var(--neg-space);
-}
-
-.e2e-no-b {
-  @include e2e;
-  margin-bottom: var(--neg-space);
-}
-
-.e2e-no-y {
-  @include e2e;
-  margin-top: var(--neg-space);
-  margin-bottom: var(--neg-space);
-}
-
-.e2e-inset {
-  @include e2e;
-  margin-left: calc(var(--neg-space) + 1px);
-  margin-right: var(--neg-space);
-  background-color: var(--inset-bg-deep);
-  box-shadow: var(--inset-flat-md);
-}
-
-@mixin bottom-radius {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: inherit;
-  border-bottom-left-radius: inherit;
-  overflow: hidden;
-}
-
-.bottom-radius {
-  @include bottom-radius;
-}
-
-
-/* Card Titles */
-/* ================================================== */
 @mixin card-title {
+  z-index: z(on-card);
   font-family: $font-family-title;
   letter-spacing: $letter-spacing-xs;
   line-height: $line-height-title;
@@ -110,86 +95,26 @@
 // color: blue;
 }
 
-.card-title-sm {
-  @include card-title;
-  font-weight: $font-weight-md;
-  text-shadow: var(--text-sha-sm);
-  font-size: var(--text-lg);
-// color: purple;
-}
-
 .card-subtitle {
+  z-index: z(on-card);
   font-family: $font-family-body;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-xs;
   line-height: $line-height-sm;
   text-align: center;
   color: var(--text-mild);
-// color:  green;
   text-shadow: var(--text-sha-3xs);
   font-size: var(--text-sm);
+
+// color:  green;
 }
 
-.title-group {
-  // z-index: z(on-card);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-//  background-color: rgba(0, 225, 255, 0.5);
-}
-
-.card-img {
-  width: 100%;
-}
-
-.card-img-e2e {
-  @include e2e;
-  padding: 0;
-}
-
-/* Cards that fit the width of their content */
-/* ================================================== */
-.card-fit-lg {
-  @include card-base;
-  --space: var(--lg);
-  --card-radius: var(--md);
-  max-width: 100%;
-  width: fit-content;
-  // @include radius("md");
-}
-
-.card-fit-xl {
-  @include card-base;
-  --space: var(--xl);
-  --card-radius: var(--md);
-  max-width: 100%;
-  width: fit-content;
-  // @include radius("md");
-}
-
-.card-fit-3xl {
-  @include card-base;
-  --space: var(--3xl);
-  --card-radius: var(--lg);
-  max-width: 100%;
-  width: fit-content;
-  // @include radius("lg");
-}
-
-.card {
-  @include card-base;
-  --space: var(--xl);
-  --card-radius: var(--md);
-  // max-width: 100%;
-  // width: fit-content;
-  // @include radius("md");
-}
 
 /* Card Container queries */
 /* ================================================== */
 
 /* 360px and smaller */
-@container card (width < 360px ) {
+@container bg (width < 360px ) {
   .card-q {
     // --space: var(--sm);
     // @include radius("sm");
@@ -213,7 +138,7 @@
 }
 
 /* breakpoint xs: 360px and bigger */
-@container card (width >= 360px) {
+@container bg (width >= 360px) {
   .card-q {
     // --space: var(--md);
     // @include radius("md");
@@ -237,7 +162,7 @@
 }
 
 /* breakpoint sm: 560px and bigger */
-@container card (width >= 560px) {
+@container bg (width >= 560px) {
   .card-q {
     // --space: var(--md);
     // @include radius("md");
@@ -252,7 +177,7 @@
 }
 
 /* breakpoint md: 768px and bigger */
-@container card (width >= 768px) {
+@container bg (width >= 768px) {
   .card-q {
     // --space: var(--lg);
     // @include radius("lg");
@@ -276,7 +201,7 @@
 }
 
 /* breakpoint lg: 1024px and bigger */
-@container card (width >= 1024px) {
+@container bg (width >= 1024px) {
   .card-q {
     // --space: var(--lg);
     // @include radius("lg");
@@ -293,7 +218,7 @@
 }
 
 /* breakpoint xl: 1440px and bigger */
-@container card (width >= 1440px) {
+@container bg (width >= 1440px) {
   .card-q {
     // --space: var(--xl);
     // @include radius("xl");
@@ -313,8 +238,8 @@
 }
 
 /* Remove border-radius at 100vw or bigger */
-/* the -16px prevents scrollbars from breaking this funtionality */
-@container card (width >= calc(100vw - 16px)) {
+/* the -16px prevents issues with scrollbar cutting into 100vw */
+@container bg (width >= calc(100vw - 16px)) {
   .card-q {
     --card-radius: 0;
     // background-color: rgba(255, 0, 136, 0.5);
@@ -330,9 +255,5 @@
 
   .card-fit-3xl {
     --card-radius: 0;
-  }
-
-  .e2e-inset {
-    margin-left: var(--neg-space);
   }
 }

@@ -37,31 +37,27 @@ $bp-xl: map.get($breakpoints, xl);
 /* ================================================== */
 /* How to use */
 /* ================================================== */
-/* To use in another file add this ⬇︎ to the very top of the document */
-// @use "../0-design/breakpoint" as bp;
-/* Make sure to add `bp.` to the start of every mixin or variable */
-
-/* 💠 example */
-// .my-class {
-//   padding: 1rem;
-//   max-width: bp.$bp-xl;
-
-//   @include bp.bp(md) {
-//     padding: 2rem;
-//   }
-// }
-
-/* Or */
-/* ================================================== */
-/* Forward all of 0-design with `as *` to skip using prefixes */
+/* add this ⬇︎ to the very top of the document */
 // @use "../forward-styles/design" as *;
 
 /* 💠 example */
 // .my-class {
-//   padding: 1rem;
 //   max-width: $bp-xl;
+//   padding: 1rem;
 
 //   @include bp(md) {
 //     padding: 2rem;
 //   }
 // }
+
+/* ================================================== */
+/* Container queries */
+/* ================================================== */
+
+/* Background container query */
+/* ================================================== */
+/* Used by _card, _accordion, and _glass */
+.bg-container {
+  container: bg / inline-size;
+  width: 100%;
+}

@@ -1,7 +1,7 @@
 /* ================================================== */
 /* Shadows */
 @use "sass:map";
-@use "../2-util/mixin" as mix;
+@use "../2-util/mixin" as *;
 /* ================================================== */
 
 /* Elevation shadows */
@@ -67,7 +67,7 @@ $shadows: (
 );
 
 .sha {
-  @include mix.generate-classes($shadows, 'box-shadow', 'sha', '-');
+  @include generate-classes($shadows, 'box-shadow', 'sha', '-');
 }
 
 
@@ -116,7 +116,7 @@ $overhangs: (
 );
 
 .overhang-sha {
-  @include mix.generate-classes($overhangs, 'box-shadow', 'overhang-sha', '-');
+  @include generate-classes($overhangs, 'box-shadow', 'overhang-sha', '-');
 }
 
 /* ================================================== */
@@ -202,5 +202,5 @@ $text-shadows: (
 );
 
 .text-sha {
-  @include mix.generate-classes($text-shadows, 'text-shadow', 'text-sha', '-');
+  @include generate-classes($text-shadows, 'text-shadow', 'text-sha', '-');
 }

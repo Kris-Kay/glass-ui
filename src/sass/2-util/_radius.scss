@@ -1,16 +1,8 @@
 /* ================================================== */
 /* Border Radius */
 @use "../0-design/space" as *;
-@use "mixin" as mix;
+@use "mixin" as *;
 /* ================================================== */
-
-/* Border radius classes */
-/* ================================================== */
-.radius {
-  @include mix.size-modifiers('border-radius') {
-    // overflow: hidden;
-  }
-}
 
 /* Conditional border-radius */
 /* ================================================== */
@@ -31,4 +23,34 @@
   $br: calc($r - $f);
 
   border-radius: $br;
+}
+
+/* Top or bottom radius */
+/* ================================================== */
+@mixin top-radius {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+}
+
+@mixin bottom-radius {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  overflow: hidden;
+}
+
+.top-radius { @include top-radius; }
+.bottom-radius { @include bottom-radius; }
+
+
+/* Border radius classes */
+/* ================================================== */
+.radius {
+  @include size-modifiers('border-radius') {
+    // overflow: hidden;
+  }
 }
