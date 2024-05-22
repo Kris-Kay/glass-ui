@@ -376,12 +376,8 @@
   will-change: padding;
   transition: padding $smooth-cubic $speed-xfast;
 
-  &:active {
-    padding: 8%;
-  }
-
-  @include bp(lg) {
-    &:hover, :focus, :active {
+  @media (hover: hover) {
+    &:hover {
       padding: 8%;
     }
   }

@@ -75,69 +75,73 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 // </div>
 
 .spotlight {
-  position: relative;
+  @media (hover: hover) {
+    position: relative;
 
-  &:hover {
-    --active: 1;
-  }
+    &:hover {
+      --active: 1;
+    }
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    pointer-events: none;
-    border-radius: inherit;
-    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      pointer-events: none;
+      border-radius: inherit;
+      overflow: hidden;
 
-    background:
-      radial-gradient(
-        circle at
-        calc(var(--x) * 1px)
-        calc(var(--y) * 1px),
-        hsl(var(--neutral-95) / 0.2) 0%,
-        hsl(var(--neutral-95) / 0.15) 10%,
-        hsl(var(--neutral-95) / 0.05) 20%,
-        hsl(var(--neutral-95) / 0.001) 30%,
-        transparent 100%);
-    background-attachment: fixed;
+      background:
+        radial-gradient(
+          circle at
+          calc(var(--x) * 1px)
+          calc(var(--y) * 1px),
+          hsl(var(--neutral-95) / 0.2) 0%,
+          hsl(var(--neutral-95) / 0.15) 10%,
+          hsl(var(--neutral-95) / 0.05) 20%,
+          hsl(var(--neutral-95) / 0.001) 30%,
+          transparent 100%);
+      background-attachment: fixed;
 
-    opacity: var(--active, 0);
-    will-change: opacity;
-    transition: opacity $speed-2xslow $smooth-cubic;
+      opacity: var(--active, 0);
+      will-change: opacity;
+      transition: opacity $speed-2xslow $smooth-cubic;
+    }
   }
 }
 
 /* For CTA buttons or other small elements */
 .mini-spotlight {
-  position: relative;
+  @media (hover: hover) {
+    position: relative;
 
-  &:hover {
-    --active: 1;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-
-    pointer-events: none;
-    border-radius: inherit;
-    overflow: hidden;
-
-    background:
-      radial-gradient(
-        circle at
-        calc(var(--x) * 1px)
-        calc(var(--y) * 1px),
-        hsl(var(--neutral-95) / 0.4) 0%,
-        hsl(var(--neutral-95) / 0.15) 2%,
-        hsl(var(--neutral-95) / 0.05) 5%,
-        hsl(var(--neutral-95) / 0.001) 15%,
-        transparent 100%);
-    background-attachment: fixed;
-
-    opacity: var(--active, 0);
-    will-change: opacity, color;
-    transition: opacity $speed-2xslow $smooth-cubic,
-                color $speed-2xslow $smooth-cubic;
+    &:hover {
+      --active: 1;
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      pointer-events: none;
+      border-radius: inherit;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at
+          calc(var(--x) * 1px)
+          calc(var(--y) * 1px),
+          hsl(var(--neutral-95) / 0.4) 0%,
+          hsl(var(--neutral-95) / 0.15) 2%,
+          hsl(var(--neutral-95) / 0.05) 5%,
+          hsl(var(--neutral-95) / 0.001) 15%,
+          transparent 100%);
+      background-attachment: fixed;
+
+      opacity: var(--active, 0);
+      will-change: opacity, color;
+      transition: opacity $speed-2xslow $smooth-cubic,
+                  color $speed-2xslow $smooth-cubic;
+      }
+  }
 }
