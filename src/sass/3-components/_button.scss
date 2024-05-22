@@ -9,8 +9,8 @@
 /* ================================================== */
 @mixin btn-transition {
   will-change: opacity, color;
-  transition: opacity $speed-2xslow $smooth-cubic,
-              color $speed-2xslow $smooth-cubic;
+  transition: opacity $speed-slow $smooth-cubic,
+              color $speed-slow $smooth-cubic;
 }
 
 @mixin btn-svg-transition {

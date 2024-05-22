@@ -100,7 +100,6 @@ textarea {
 
 .small-title {
   @include title($font-weight-md);
-  z-index: z(on-card);
   text-align: center;
   font-size: var(--text-xl);
   text-shadow: var(--text-sha-md);
@@ -109,7 +108,6 @@ textarea {
 
 .card-subtitle {
   @include body(--text-sm);
-  z-index: z(on-card);
   text-align: center;
   font-size: var(--text-sm);
   letter-spacing: $letter-spacing-xs;

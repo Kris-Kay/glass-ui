@@ -59,39 +59,85 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
   }
 }
 
-/* Hover spotlight animation */
+/* Spotlight cursor effect */
 /* ================================================== */
-// .spotlightBin {
-//   position: relative;
-//   z-index: 99999;
-// pointer-events: auto;
+/* 1. Add `js-spotlightBin` class to parent */
+/* 2. Add `spotlight` or `mini-spotlight` class to child element */
 
-// }
+/* If it dosen't work... */
+/* 1. Make sure the spotlight script is added at the end of <body> */
+// <script src="/js/spotlight.js"></script>
+/* 2. Make sure `findSpotlights()` is called in `loadContent.js` */
+
+/* 💠 example */
+// <div class="js-spotlightBin grid-c">
+//   <div class="spotlight color-xdark ratio-1 w-xs"></div>
+// </div>
 
 .spotlight {
   position: relative;
+
+  &:hover {
+    --active: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at
+        calc(var(--x) * 1px)
+        calc(var(--y) * 1px),
+        hsl(var(--neutral-95) / 0.2) 0%,
+        hsl(var(--neutral-95) / 0.15) 10%,
+        hsl(var(--neutral-95) / 0.05) 20%,
+        hsl(var(--neutral-95) / 0.001) 30%,
+        transparent 100%);
+    background-attachment: fixed;
+
+    opacity: var(--active, 0);
+    will-change: opacity;
+    transition: opacity $speed-2xslow $smooth-cubic;
+  }
 }
 
-.spotlight:hover {
-  --active: 1;
-}
+/* For CTA buttons or other small elements */
+.mini-spotlight {
+  position: relative;
 
-.spotlight:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at
-      calc(var(--x) * 1px)
-      calc(var(--y) * 1px),
-      hsl(var(--neutral-90) / 0.91),
-      hsl(var(--neutral-90) / 0.05),
-      transparent
-      30%);
-  background-attachment: fixed;
-  opacity: var(--active, 0);
-  transition: opacity $speed-slow $smooth-cubic;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: inherit;
+  &:hover {
+    --active: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at
+        calc(var(--x) * 1px)
+        calc(var(--y) * 1px),
+        hsl(var(--neutral-95) / 0.4) 0%,
+        hsl(var(--neutral-95) / 0.15) 2%,
+        hsl(var(--neutral-95) / 0.05) 5%,
+        hsl(var(--neutral-95) / 0.001) 15%,
+        transparent 100%);
+    background-attachment: fixed;
+
+    opacity: var(--active, 0);
+    will-change: opacity, color;
+    transition: opacity $speed-2xslow $smooth-cubic,
+                color $speed-2xslow $smooth-cubic;
+    }
 }
