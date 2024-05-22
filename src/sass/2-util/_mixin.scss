@@ -36,3 +36,21 @@
     }
   }
 }
+
+/* Color generating mixin */
+/* ================================================== */
+@mixin hsl-values($map, $colorName) {
+  @each $key, $value in $map {
+    #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
+  }
+}
+
+/* Color lightness generating mixin */
+/* ================================================== */
+@mixin generate-color-lightness-classes($map, $property, $variablePrefix, $classSplit) {
+  @each $key, $value in $map {
+    &#{$classSplit}#{$key} {
+      #{$property}: hsl(var(--#{$variablePrefix}-#{$key}));
+    }
+  }
+}

@@ -16,15 +16,6 @@ $speed-2xfast: 100ms;
 /* ================================================== */
 $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 
-/* Color theme change animation */
-/* ================================================== */
-html.root-transition,
-html.root-transition *,
-html.root-transition *::before,
-html.root-transition *::after {
-  transition: all $speed-2xslow !important;
-  transition-delay: 0 !important;
-}
 
 /* :focus-visible */
 /* ================================================== */
