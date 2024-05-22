@@ -61,6 +61,13 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 
 /* Hover spotlight animation */
 /* ================================================== */
+// .spotlightBin {
+//   position: relative;
+//   z-index: 99999;
+// pointer-events: auto;
+
+// }
+
 .spotlight {
   position: relative;
 }
@@ -77,7 +84,7 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
     radial-gradient(circle at
       calc(var(--x) * 1px)
       calc(var(--y) * 1px),
-      hsl(var(--neutral-90) / 0.1),
+      hsl(var(--neutral-90) / 0.91),
       hsl(var(--neutral-90) / 0.05),
       transparent
       30%);

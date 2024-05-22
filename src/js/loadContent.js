@@ -4,6 +4,7 @@
 function callFindFunctions() {
   findTabs();
   findAccordions();
+  findSpotlights();
   findCopyBtns();
 }
 
