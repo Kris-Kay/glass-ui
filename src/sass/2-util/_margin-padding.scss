@@ -34,6 +34,14 @@
   @include  xy-size-modifiers('margin-top', 'margin-bottom');
 }
 
+/* Margin left-right auto centering */
+/* ================================================== */
+.m-auto-x {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ================================================== */
 /* Padding */
@@ -66,6 +74,4 @@
   @include  xy-size-modifiers('padding-top', 'padding-bottom');
 }
 
-.p-none {
-  padding: 0;
-}
+.p-0 { padding: 0; }

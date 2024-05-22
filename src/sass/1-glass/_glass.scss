@@ -52,16 +52,19 @@ $satu-2xstrong: 2.5;
 //   @include glass-filter(20px, 1.2, 1.5);
 // }
 
-/* Glass filter presets ✨ Config these values */
+
+/* ================================================== */
+/* Glass base mixin */
+/* ================================================== */
+
+/* Glass filter presets for glass base ✨ Config these values */
+/* ================================================== */
 body {
   --blur: #{$blur-md};
   --bright: #{$bright-base};
   --satu: #{$satu-strong};
 }
 
-/* ================================================== */
-/* Glass base mixin */
-/* ================================================== */
 @mixin glass-base(
 $bevel: --bevel-md,
 $noise-size: $noise-md,

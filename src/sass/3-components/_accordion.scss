@@ -15,7 +15,7 @@
   z-index: z(card);
   width: 100%;
   display: grid;
-  // background-color: var(--tint-xdark);
+  background-color: var(--tint-xdark);
   border-radius: var(--radius);
   box-shadow: var(--sha-md);
 }
@@ -40,7 +40,6 @@
 
   & > :last-child {
     & .accordion-btn[aria-expanded="false"] {
-      //background-color: blue;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: var(--radius);
@@ -51,7 +50,6 @@
     & .accordion-btn[aria-expanded="true"] {
       border-radius: 0;
     }
-
   }
 }
 
@@ -69,13 +67,13 @@
   gap: var(--sm);
   padding: var(--space);
 
-  @include title-reg;
+  @include body(--text-md);
   text-align: start;
-  font-size: var(--text-md);
-  text-shadow: var(--text-sha-md);
   color: var(--text-base);
+  text-shadow: var(--text-sha-md);
 
-  transition: all $speed-base $smooth-cubic;
+  will-change: background-color;
+  transition: background-color $speed-fast $smooth-cubic;
 
   &:hover {
     background-color: var(--tint-light);
@@ -88,6 +86,7 @@
 }
 
 .accordion-header {
+  pointer-events: none;
   z-index: z(on-card);
   width: 100%;
   padding-top: calc(var(--space) * 1.5);
@@ -95,25 +94,17 @@
   padding-bottom: var(--space);
   padding-left: var(--space);
 
-  text-align: start;
-  font-family: $font-family-title;
-  font-weight: $font-weight-lg;
-  letter-spacing: $letter-spacing-md;
-  text-shadow: var(--text-sha-xl);
-  font-size: var(--text-lg);
-  line-height: 1;
-  color: var(--text-xstrong);
-  pointer-events: none;
+  @include title-4(start);
 }
 
 .accordion-icon {
+  pointer-events: none;
   display: inline;
   z-index: -1;
   background-color: var(--color-white);
   height: var(--ui-h-xs);
-  transition: transform $speed-2xslow $smooth-cubic;
   transform: rotate(180deg);
-  pointer-events: none;
+  transition: transform $speed-2xslow $smooth-cubic;
 
   &.is-closed {
     transform: rotate(0deg);

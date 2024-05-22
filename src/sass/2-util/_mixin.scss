@@ -16,7 +16,7 @@
 
 /* Size modifier mixin */
 /* ================================================== */
-/* Generates .classes using $sizes map */
+/* Generates classes using the $sizes map from _space.scss */
 @mixin size-modifiers($property) {
   @each $key, $value in $sizes {
     &-#{$key} {

@@ -2,47 +2,12 @@
 /* Layout helpers */
 /* ================================================== */
 
-/* width / height */
+/* width */
 /* ================================================== */
 .w-100 { width: 100%; }
-
 .w-fit { width: fit-content; }
 .w-fit-max { width: max-content; }
-.w-500 { width: min(100%, 500px); }
-
-
-.h-100vh { min-height: 100vh; }
-.h-100 {
-  height: 100%;
-  min-height: fit-content;
-}
-
-.h-75vh { min-height: 75vh; }
-
-.h-50vh { min-height: 50vh; }
-.h-200 { min-height: 200px; }
-
-.cube-150 {
-  width: 150px;
-  aspect-ratio: 1;
-}
-
-.size-48 {
-  width: 48px;
-  aspect-ratio: 1;
-}
-
-
-
-.size-100 { width: min(100%, 100px); aspect-ratio: 1; }
-.size-200 { width: min(100%, 200px); aspect-ratio: 1; }
-.size-300 { width: min(100%, 300px); aspect-ratio: 1; }
-.size-400 { width: min(100%, 400px); aspect-ratio: 1; }
-.size-500 { width: min(100%, 500px); aspect-ratio: 1; }
-.size-600 { width: min(100%, 600px); aspect-ratio: 1; }
-.size-700 { width: min(100%, 700px); aspect-ratio: 1; }
-.size-900 { width: min(100%, 900px); aspect-ratio: 1; }
-
+.w-fit-min { width: min-content; }
 
 
 /* Display */
@@ -67,21 +32,14 @@
   white-space: nowrap;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
 
-.ratio-1-1 {
-  aspect-ratio: 1 / 1;
-}
+/* Aspect-ratio */
+/* ================================================== */
+.ratio-1-1 { aspect-ratio: 1; }
 
-.ratio-4-3 {
-  aspect-ratio: 4 / 3;
-}
+.ratio-4-3 { aspect-ratio: 4 / 3; }
 
-.ratio-16-9 {
-  aspect-ratio: 16 / 9;
-}
+.ratio-16-9 { aspect-ratio: 16 / 9; }
 
 /* Sidescroll */
 /* ================================================== */
@@ -105,15 +63,6 @@
 .sidescroll { flex: 0 0 auto; }
 
 
-/* Spacing */
-/* ================================================== */
-.m-auto-x {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Other */
 /* ================================================== */
 @mixin pseudo {
@@ -124,6 +73,6 @@
   border-radius: inherit;
 }
 
-.no-pointer {
-  pointer-events: none;
-}
+.no-pointer { pointer-events: none; }
+
+.overflow-hidden { overflow: hidden; }

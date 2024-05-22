@@ -5,9 +5,8 @@
 @use "../forward-styles/util" as *;
 /* ================================================== */
 
-/* Button transition */
+/* Button transitions ✨ Config these values */
 /* ================================================== */
-/* ✨ Config these values ✨ */
 @mixin btn-transition {
   will-change: opacity, color;
   transition: opacity $speed-2xslow $smooth-cubic,
@@ -25,10 +24,10 @@
                height $speed-slow $smooth-cubic;
 }
 
-/* Button text */
+/* Button text ✨ Config these values */
 /* ================================================== */
-/* ✨ Config these values ✨ */
 @mixin btn-text {
+  pointer-events: none;
   font-family: $font-family-body;
   font-weight: $font-weight-lg;
   letter-spacing: $letter-spacing-md;
@@ -36,7 +35,6 @@
   white-space: nowrap;
   text-decoration: none;
   text-shadow: var(--text-sha-sm);
-  pointer-events: none;
 }
 
 /* ================================================== */
@@ -109,8 +107,7 @@
   }
 }
 
-/* Button sizes */
-/* ✨ Config these values ✨ */
+/* Button sizes ✨ Config these values */
 /* ================================================== */
 .btn-sm {
   @include btn-structure;
@@ -158,7 +155,7 @@
 }
 
 /* ================================================== */
-/* Round icon button */
+/* Round icon button structure */
 /* ================================================== */
 @mixin btn-icon-structure {
   --_btn-h: var(--btn-h, 2.25rem);
@@ -202,8 +199,7 @@
   }
 }
 
-/* Icon button sizes */
-/* ✨ Config these values ✨ */
+/* Icon button sizes ✨ Config these values */
 /* ================================================== */
 .btn-icon-sm {
   @include btn-icon-structure;
@@ -227,15 +223,12 @@
 /* Button style */
 /* ================================================== */
 @mixin btn-style {
-  // --_btn-bg: var(--btn-bg, rgba(255, 255, 255, 0.3));
   --_btn-text: var(--btn-text, black);
   --_btn-icon: var(--btn-icon, var(--_btn-text));
-  // --_btn-sha: var(--btn-sha, var(--sha-xs));
 
   --_btn-state-bg: var(--btn-state-bg, rgba(36, 156, 3, 0.9));
   --_btn-state-text: var(--btn-state-text, var(--_btn-text));
   --_btn-state-icon: var(--btn-state-icon, var(--_btn-state-text));
-  // --_btn-state-sha: var(--btn-state-sha, var(--sha-sm));
 
   --_btn-bevel: var(--btn-bevel, none);
 
@@ -248,9 +241,6 @@
   --_btn-focus: var(--btn-focus, 0.3);
   --_btn-active: var(--btn-active, 0.7);
   --_btn-disabled: var(--btn-disabled, 0.6);
-
-  // background-color: var(--_btn-bg);
-  // box-shadow: var(--_btn-sha);
 
   &::before {
     @include btn-transition;
@@ -274,8 +264,6 @@
   }
 
   &:hover {
-    // box-shadow: var(--_btn-state-sha);
-
     & > .btn-text {
       color: var(--_btn-state-text);
     }
@@ -308,8 +296,6 @@
   }
 
   &:active {
-    // box-shadow: var(--_btn-state-sha);
-
     & > .btn-text {
       color: var(--_btn-state-text);
     }
@@ -327,18 +313,11 @@
     cursor: not-allowed;
     opacity: var(--_btn-disabled);
     background-color: hsl(var(--neutral-10) / 0.1);
-
-    // &::after {
-    //   -webkit-backdrop-filter: none;
-    //   backdrop-filter: none;
-    // }
   }
 }
 
 
-
-/* Primary buttons */
-/* ✨ Config these values ✨ */
+/* Primary button ✨ Config these values */
 /* ================================================== */
 @mixin btn-primary {
 
@@ -351,12 +330,12 @@
   --btn-state-text: var(--btn-text);
   --btn-state-icon: var(--btn-state-text);
 
+  --btn-bevel: var(--bevel-md);
+  box-shadow: var(--sha-2xs);
+
   --btn-blur: 15px;
   --btn-brightness: 1;
   --btn-saturate: 2.75;
-
-  --btn-bevel: var(--bevel-md);
-  box-shadow: var(--sha-2xs);
 
   --btn-rest: 0.25;
   --btn-hover: 0.6;
@@ -365,12 +344,12 @@
   --btn-disabled: 0.6;
 }
 
-/* Secondary buttons */
-/* ✨ Config these values ✨ */
+/* Secondary button ✨ Config these values */
 /* ================================================== */
 @mixin btn-secondary {
+
   @include btn-style;
-  // --btn-bg: hsl(var(--primary-15) / 0.05);
+
   --btn-text:  var(--text-xstrong);
   --btn-icon: var(--btn-text);
 
@@ -378,12 +357,12 @@
   --btn-state-text: var(--btn-text);
   --btn-state-icon: var(--btn-state-text);
 
+  --btn-bevel: var(--bevel-sm);
+  box-shadow: var(--sha-3xs);
+
   --btn-blur: 10px;
   --btn-brightness: 0.8;
   --btn-saturate: 1.5;
-
-  --btn-bevel: var(--bevel-sm);
-  box-shadow: var(--sha-3xs);
 
   --btn-rest: 0.1;
   --btn-hover: 0.5;
@@ -392,11 +371,12 @@
   --btn-disabled: 0.6;
 }
 
-/* Outline button */
-/* ✨ Config these values ✨ */
+/* Outline button ✨ Config these values */
 /* ================================================== */
 @mixin btn-outline {
+
   @include btn-style;
+
   --btn-text: var(--text-2xstrong);
   --btn-icon: var(--btn-text);
 
@@ -418,20 +398,21 @@
   --btn-disabled: 0.6;
 }
 
-/* Ghost button */
-/* ✨ Config these values ✨ */
+/* Ghost button ✨ Config these values */
 /* ================================================== */
 @mixin btn-ghost {
+
   @include btn-style;
-  // --btn-bg: transparent;
+
   --btn-text: var(--text-2xstrong);
   --btn-icon: var(--btn-text);
 
   --btn-state-bg: hsl(var(--primary-95) / 0.9);
-  --btn-state-text: hsl(var(--neutral-15) / 1);
-  --btn-state-icon: var(--btn-state-text)
+  --btn-state-text: var(--tint-3xdark);
+  --btn-state-icon: var(--btn-state-text);
 
   --btn-bevel: none;
+  background-color: transparent;
 
   --btn-blur: 0px;
   --btn-brightness: 1;
@@ -454,14 +435,13 @@
 .btn-outline { @include btn-outline; }
 .btn-ghost { @include btn-ghost; }
 
-/* New button template */
-/* ✨ Config these values ✨ */
+/* New button template ✨ Config these values */
 /* ================================================== */
 @mixin my-new-btn {
   @include btn-style;
 
   --btn-text: black;
-  --btn-icon: lightblue;
+  --btn-icon: darkblue;
 
   --btn-state-bg: black;
   --btn-state-text: white;
@@ -482,6 +462,7 @@
 
 .my-new-btn { @include my-new-btn; }
 
+/* 💠 example */
 // <button class="btn-lg icon-end my-new-btn"
 //   type="button">
 //   <p class="btn-text">My new button</p>

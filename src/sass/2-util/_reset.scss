@@ -2,7 +2,7 @@
 /* Reset */
 /* ================================================== */
 
-/* box-sizing model */
+/* Use box-sizing model */
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 /* Kill margin with fire */
 * { margin: 0; }
-// * { outline: 1px solid red; }
+
 
 /* Improve text rendering */
 body {
@@ -87,9 +87,11 @@ select {
   background-color: transparent;
   border: 0;
   border-style: none;
-  // border-radius: 0;
   text-decoration: none;
   appearance: none;
   cursor: pointer;
   pointer-events: auto;
 }
+
+/* debug */
+// * { outline: 1px solid red; }

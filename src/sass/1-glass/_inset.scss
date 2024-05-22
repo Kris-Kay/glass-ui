@@ -75,12 +75,6 @@ html {
   inset 0 16px 16px -17px hsl(var(--shadow) / 0.2);
 }
 
-/* Inset background colors */
-/* ================================================== */
-.inset-bg-reg { background-color: var(--inset-bg-reg); }
-.inset-bg-deep { background-color: var(--inset-bg-deep); }
-.inset-bg-xdeep { background-color: var(--inset-bg-xdeep); }
-
 /* Rounded inset classes */
 /* ================================================== */
 .inset-sm { box-shadow: var(--inset-sm); }
@@ -92,3 +86,9 @@ html {
 .inset-flat-sm { box-shadow: var(--inset-flat-sm); }
 .inset-flat-md { box-shadow: var(--inset-flat-md); }
 .inset-flat-lg { box-shadow: var(--inset-flat-lg); }
+
+/* Inset background colors */
+/* ================================================== */
+.inset-bg-reg { background-color: var(--inset-bg-reg); }
+.inset-bg-deep { background-color: var(--inset-bg-deep); }
+.inset-bg-xdeep { background-color: var(--inset-bg-xdeep); }

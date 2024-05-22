@@ -7,18 +7,22 @@
 
 /* Body text */
 /* ================================================== */
-body,
-p,
-input,
-textarea {
+@mixin body($font-size: --text-sm) {
   font-family: $font-family-body;
+  font-weight: $font-weight-md;
   font-optical-sizing: auto;
-  font-weight: 300; /* Use a value from 200 to 1000 */
   font-style: normal;
   font-variation-settings:
     "wdth" 100,
     "YTLC" 500;
-  font-size: var(--text-sm);
+  font-size: var($font-size);
+}
+
+body,
+p,
+input,
+textarea {
+  @include body(--text-sm);
   line-height: $line-height-md;
   color: var(--text-base);
 }
@@ -27,60 +31,93 @@ textarea {
   max-width: 70ch;
 }
 
-/* Thick titles */
+/* Titles */
 /* ================================================== */
-
-@mixin title-thick {
+@mixin title($weight: $font-weight-md) {
   font-family: $font-family-title;
-  line-height: $line-height-sm;
+  font-weight: $weight;
   letter-spacing: $letter-spacing-sm;
-  font-weight: $font-weight-lg;
+  line-height: $line-height-title;
 }
-.title-thick { @include title-thick; }
 
-@mixin title-reg {
-  font-family: $font-family-title;
-  line-height: $line-height-sm;
-  letter-spacing: $letter-spacing-sm;
-  font-weight: $font-weight-md;
-}
-.title-reg { @include title-reg; }
-
-/* Thin titles */
-/* ================================================== */
-@mixin title-thin {
-  font-family: $font-family-title;
-  line-height: $line-height-md;
-  letter-spacing: $letter-spacing-sm;
-  font-weight: $font-weight-sm;
-}
-.title-thin { @include title-thin; }
+.title-thick { @include title($font-weight-lg); }
+.title-reg { @include title($font-weight-md); }
+.title-thin { @include title($font-weight-sm); }
 
 
 /* Text styles */
 /* ================================================== */
-.very-big-title {
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  font-size: var(--text-xl);
-  text-shadow: var(--text-sha-3xl);
-  line-height: 1;
+//h1
+.title-1 {
+  @include title($font-weight-md);
+  font-size: var(--text-3xl);
+  letter-spacing: $letter-spacing-xs;
+  line-height: $line-height-sm;
+
   color: var(--text-strong);
-  text-align: center;
-
-  @include bp(lg) {
-    font-size: var(--text-2xl);
-  }
-}
-
-.section-title {
-  @include title-thin;
-  font-size: var(--text-2xl);
   text-shadow: var(--text-sha-2xl);
-  line-height: 2.1;
-  color: var(--text-strong);
-  text-align: center;
 }
+
+// marquee-title h2
+@mixin title-2($text-align: start) {
+  @include title($font-weight-lg);
+  font-size: var(--text-xl);
+  letter-spacing: $letter-spacing-md;
+  text-align: $text-align;
+
+  color: var(--text-xstrong);
+  text-shadow: var(--text-sha-2xl);
+}
+
+// card-title-lg h3
+@mixin title-3($text-align: start) {
+  @include title($font-weight-sm);
+  font-size: var(--text-2xl);
+  text-align: $text-align;
+
+  text-shadow: var(--text-sha-lg);
+}
+
+//accordion-header h4
+@mixin title-4($text-align: start) {
+  @include title($font-weight-lg);
+  text-align: $text-align;
+  letter-spacing: $letter-spacing-md;
+  font-size: var(--text-lg);
+
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-xl);
+}
+
+
+@mixin reg-title($text-align: center) {
+  @include title($font-weight-md);
+  font-size: var(--text-xl);
+  text-align: $text-align;
+  color: var(--text-base);
+  text-shadow: var(--text-sha-md);
+}
+
+.small-title {
+  @include title($font-weight-md);
+  z-index: z(on-card);
+  text-align: center;
+  font-size: var(--text-xl);
+  text-shadow: var(--text-sha-md);
+  color: var(--text-base);
+}
+
+.card-subtitle {
+  @include body(--text-sm);
+  z-index: z(on-card);
+  text-align: center;
+  font-size: var(--text-sm);
+  letter-spacing: $letter-spacing-xs;
+  line-height: $line-height-sm;
+  color: var(--text-mild);
+  text-shadow: var(--text-sha-3xs);
+}
+
 
 .subhead {
   font-weight: $font-weight-md;
@@ -112,31 +149,44 @@ textarea {
   // }
 }
 
+.title-3 {
+  @include title-3(center);
+}
 
 /* Labels */
 /* ================================================== */
-@mixin label {
+@mixin label($font-size: --text-sm) {
   font-family: $font-family-body;
   font-weight: $font-weight-xl;
   letter-spacing: $letter-spacing-sm;
+  font-size: var($font-size);
   line-height: $line-height-sm;
 }
 
 .label-xs {
-  // @include title-thick;
-  @include label;
-  font-size: var(--text-xs);
+  @include label(--text-xs);
   text-shadow: var(--text-sha-xs);
 }
 
 .label-sm {
-  // @include title-thick;
-  @include label;
-  font-size: var(--text-sm);
+  @include label(--text-sm);
   text-shadow: var(--text-sha-sm);
 }
 
+.label-md {
+  @include label(--text-md);
+  text-shadow: var(--text-sha-md);
+}
 
+.code-label-md {
+  @include label(--text-sm);
+  font-family: $font-family-code;
+  text-shadow: var(--text-sha-2xs);
+
+  @include bp(sm) {
+    @include label(--text-md);
+  }
+}
 
 /* Code fonts */
 /* ================================================== */

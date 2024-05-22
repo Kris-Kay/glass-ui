@@ -5,14 +5,12 @@
 @use "../forward-styles/util" as *;
 /* ================================================== */
 
-:root {
+body {
   --nav-padding: var(--xs);
   --nav-item-h: var(--ui-h-md);
   --nav-h: calc(var(--nav-item-h) + (var(--nav-padding) * 2));
 }
 
-/* Main nav */
-/* ================================================== */
 .main-nav-bin {
   position: fixed;
   z-index: z(nav);

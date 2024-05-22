@@ -13,7 +13,6 @@
   --_neg-space: var(--neg-space, -1rem);
   --_card-radius: var(--card-radius, 1.5rem);
   z-index: z(card);
-  // width: 100%;
   position: relative;
   height: fit-content;
   display: grid;
@@ -22,42 +21,23 @@
   overflow: hidden;
   pointer-events: auto;
   border-radius: var(--_card-radius);
-
-  & > * {
-    z-index: z(on-card);
-  }
 }
-
-.card-q {
-  @include card-base;
-}
-
+.card { @include card-base; }
 
 
 /* Cards that fit the width of their content */
 /* ================================================== */
-.card-fit-lg {
-  @include card-base;
-  --space: var(--lg);
-  // --card-radius: var(--md);
-  max-width: 100%;
-  width: fit-content;
-  @include radius("md");
-}
-
-.card-fit-xl {
+.card-fit-tight {
   @include card-base;
   --space: var(--xl);
-  // --card-radius: var(--md);
   max-width: 100%;
   width: fit-content;
   @include radius("md");
 }
 
-.card-fit-3xl {
+.card-fit-roomy {
   @include card-base;
   --space: var(--3xl);
-  // --card-radius: var(--lg);
   max-width: 100%;
   width: fit-content;
   @include radius("lg");
@@ -71,42 +51,29 @@
   gap: 0.5em;
 }
 
-@mixin card-title {
-  z-index: z(on-card);
-  font-family: $font-family-title;
-  letter-spacing: $letter-spacing-xs;
-  line-height: $line-height-title;
-  color: var(--text-base);
-  text-align: center;
-}
-
 .card-title-lg {
-  @include card-title;
-  font-weight: $font-weight-sm;
-  text-shadow: var(--text-sha-lg);
-  font-size: var(--text-3xl);
+  @include title-3(center);
+  z-index: z(on-card);
 }
 
 .card-title-md {
-  @include card-title;
-  font-weight: $font-weight-md;
-  text-shadow: var(--text-sha-md);
+  @include title($font-weight-md);
+  z-index: z(on-card);
+  text-align: center;
   font-size: var(--text-xl);
-// color: blue;
+  text-shadow: var(--text-sha-md);
+  color: var(--text-base);
 }
 
 .card-subtitle {
+  @include body(--text-sm);
   z-index: z(on-card);
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
+  text-align: center;
+  font-size: var(--text-sm);
   letter-spacing: $letter-spacing-xs;
   line-height: $line-height-sm;
-  text-align: center;
   color: var(--text-mild);
   text-shadow: var(--text-sha-3xs);
-  font-size: var(--text-sm);
-
-// color:  green;
 }
 
 
@@ -115,13 +82,11 @@
 
 /* 360px and smaller */
 @container bg (width < 360px ) {
-  .card-q {
+  .card {
     // --space: var(--sm);
-    // @include radius("sm");
-
     --space: 7cqw;
+    // @include radius("sm");
     --card-radius: 7cqw;
-    // background-color: rgba(255, 0, 0, 0.5);
   }
 
   .title-group {
@@ -139,13 +104,11 @@
 
 /* breakpoint xs: 360px and bigger */
 @container bg (width >= 360px) {
-  .card-q {
-    // --space: var(--md);
-    // @include radius("md");
-
+  .card {
+    // --space: var(--sm);
     --space: 7cqw;
+    // @include radius("sm");
     --card-radius: 7cqw;
-    // background-color: rgba(255, 255, 0, 0.5);
   }
 
   .title-group {
@@ -163,12 +126,11 @@
 
 /* breakpoint sm: 560px and bigger */
 @container bg (width >= 560px) {
-  .card-q {
+  .card {
     // --space: var(--md);
+    --space: 6cqw;
     // @include radius("md");
-
     --card-radius: 6cqw;
-    // background-color: rgba(0, 255, 0, 0.5);
   }
 
   .card-title-lg {
@@ -178,13 +140,11 @@
 
 /* breakpoint md: 768px and bigger */
 @container bg (width >= 768px) {
-  .card-q {
+  .card {
     // --space: var(--lg);
-    // @include radius("lg");
-
     --space: 5cqw;
+    // @include radius("lg");
     --card-radius: 5cqw;
-    // background-color: rgba(0, 255, 255, 0.5);
   }
 
   .title-group {
@@ -202,13 +162,11 @@
 
 /* breakpoint lg: 1024px and bigger */
 @container bg (width >= 1024px) {
-  .card-q {
+  .card {
     // --space: var(--lg);
+    --space: 4cqw;
     // @include radius("lg");
-
-    --space: 5cqw;
     --card-radius: 4cqw;
-    // background-color: rgba(0, 0, 255, 0.5);
   }
 
   .card-title-lg {
@@ -219,13 +177,11 @@
 
 /* breakpoint xl: 1440px and bigger */
 @container bg (width >= 1440px) {
-  .card-q {
+  .card {
     // --space: var(--xl);
+    --space: 3.5cqw;
     // @include radius("xl");
-
-    // --space: 4cqw;
     --card-radius: 3.5cqw;
-    // background-color: rgba(255, 0, 255, 0.53);
   }
 
   .title-group {
@@ -240,20 +196,10 @@
 /* Remove border-radius at 100vw or bigger */
 /* the -16px prevents issues with scrollbar cutting into 100vw */
 @container bg (width >= calc(100vw - 16px)) {
-  .card-q {
+  .card,
+  .card-fit-tight,
+  .card-fit-roomy {
     --card-radius: 0;
     // background-color: rgba(255, 0, 136, 0.5);
-  }
-
-  .card-fit-lg {
-    --card-radius: 0;
-  }
-
-  .card-fit-xl {
-    --card-radius: 0;
-  }
-
-  .card-fit-3xl {
-    --card-radius: 0;
   }
 }

@@ -280,24 +280,28 @@
     min-width: 33%;
   }
 
-  @include bp(lg) {
-    min-width: 25%;
-  }
+  // @include bp(lg) {
+  //   min-width: 25%;
+  // }
+
+  // @include bp(xl) {
+  //   min-width: 33%;
+  // }
 }
 
 .marquee-title {
-  @include title-thin;
-  text-align: right;
-  line-height: 1;
-  color: var(--text-strong);
+  // @include title($font-weight-sm);
+  // text-align: start;
+  // line-height: 1;
+  // color: var(--text-strong);
+  // font-size: var(--text-lg);
+  // text-shadow: var(--text-sha-xl);
+  @include title-2(end);
 
-  text-shadow: var(--text-sha-xl);
-  font-size: var(--text-lg);
-
-  @include bp(lg) {
-    font-size: var(--text-xl);
-    text-shadow: var(--text-sha-3xl);
-  }
+  // @include bp(lg) {
+  //   font-size: var(--text-xl);
+  //   text-shadow: var(--text-sha-2xl);
+  // }
 }
 
 .glass-bevel-xs {
@@ -343,4 +347,320 @@
     var(--blur),
     var(--bright),
     var(--satu));
+}
+
+
+// moat demo
+.h-200 { min-height: 200px; }
+
+
+.size-100 { width: min(100%, 100px); aspect-ratio: 1; }
+.size-300 { width: min(100%, 300px); aspect-ratio: 1; }
+.size-500 { width: min(100%, 500px); aspect-ratio: 1; }
+.size-600 { width: min(100%, 600px); aspect-ratio: 1; }
+.size-700 { width: min(100%, 700px); aspect-ratio: 1; }
+.size-900 { width: min(100%, 900px); aspect-ratio: 1; }
+
+/* Telescope rect glass bevel demo */
+/* ================================================== */
+.tele-rect {
+  display: grid;
+  touch-action: pan-y;
+  min-width: fit-content;
+  width: 100%;
+  overflow: hidden;
+  padding: 8% 12% 4% 4%;
+  // padding: 4% 4% 4% 12%;
+  background-color: var(--tint-xdark);
+
+  will-change: padding;
+  transition: padding $smooth-cubic $speed-xfast;
+
+  &:active {
+    padding: 8%;
+  }
+
+  @include bp(lg) {
+    &:hover, :focus, :active {
+      padding: 8%;
+    }
+  }
+
+  & > p {
+    padding: var(--2xs);
+    pointer-events: none;
+  }
+}
+
+
+/* 1 to 2 column layout -  tint demo */
+/* ================================================== */
+.col-1to2 {
+  width: 100%;
+  gap: var(--sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &:nth-child(1) {
+    grid-column: 1/2;
+  }
+
+  &:nth-child(2) {
+    grid-column: 1/2;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--md);
+
+    &:nth-child(1) {
+      grid-column: 1/2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 2/3;
+    }
+  }
+
+  @include bp(lg) {
+    gap: var(--xl);
+  }
+}
+
+/* stck 1 - shadows demo */
+/* ================================================== */
+.stack-1 {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  gap: var(--md);
+}
+
+.stack-1-rect {
+  min-width: 200px;
+  width: min(100%, 300px);
+  aspect-ratio : 3 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--sm);
+  border-radius: var(--sm);
+}
+
+
+/* stck 1 to 3 - glass gradients demo */
+/* ================================================== */
+.stack-1to3 {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--lg);
+}
+
+.stack-rect-md {
+  min-width: fit-content;
+  width: min(300px, 100%);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  aspect-ratio : 3 / 1;
+  border-radius: var(--md);
+  padding: var(--lg);
+  box-shadow: var(--sha-md);
+
+  @include bp(sm) {
+    max-height: 125px;
+    justify-content: center;
+    flex: 1;
+    padding: var(--2xl);
+  }
+
+  @include bp(md) {
+    max-height: 150px;
+  }
+}
+
+
+/*  glass tint demo */
+/* ================================================== */
+.glass-bento-2to3 {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: var(--md);
+
+  @include bp(xs) {
+    grid-template-columns: repeat(3, minmax(100px, 180px));
+    gap: var(--3xs);
+  }
+
+  @include bp(sm) {
+    gap: var(--2xs);
+  }
+
+  @include bp(md) {
+    gap: var(--xs);
+  }
+
+  @include bp(lg) {
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    gap: var(--sm);
+  }
+}
+
+/*  Main nav glass logo */
+/* ================================================== */
+.svg-3d-glass-ui-logo {
+  mask: url(/assets/logos/3D-glass-UI-logo.svg);
+  @include svg-icon;
+  @include glass-filter(10px, 0.8, 2);
+}
+
+
+/*  Hero header */
+/* ================================================== */
+.hero-card-bin {
+  width: 97%;
+  min-height: fit-content;
+  height: 100%;
+  display: grid;
+  place-self: center;
+  place-items: end start;
+  padding-bottom: var(--nav-h);
+
+  @include bp(sm) {
+    width: 100%;
+    padding-left: min(5%, 3rem);
+  }
+
+  @include bp(lg) {
+    padding-left: 0;
+    max-width: $bp-md;
+  }
+
+  @include bp(xl) {
+    max-width: $bp-lg;
+  }
+}
+
+.hero-card {
+  @include card-base;
+  --space: calc(var(--sm) * 1.1);
+  width: 100%;
+  border-radius: calc(var(--lg) * 1.15);
+  box-shadow: var(--sha-lg);
+  padding: var(--space);
+        outline: 1px solid transparent;
+
+  @include bp(xs) {
+    --space: var(--md);
+    width: min(100%, 360px);
+  }
+
+  @include bp(sm) {
+    width: clamp(360px, 380px, 400px);
+  }
+
+  @include bp(md) {
+    width: clamp(410px, 430px, 440px);
+    --space: calc(var(--md) * 0.95);
+  }
+
+  @include bp(lg) {
+    width: clamp(440px, 445px, 450px);
+    border-radius: calc(var(--lg) * 0.95);
+  }
+}
+
+.card-3d-bin {
+  position: relative;
+  width: 97%;
+  perspective: 2500px;
+
+  // @media (width > 2400px) {
+  //   perspective: 2500px;
+  // }
+}
+
+.card-3d {
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform $speed-2xslow $smooth-cubic;
+
+  transform:
+    perspective(2200px)
+    rotateY(30deg)
+    rotateX(15deg)
+    rotateZ(-4deg)
+    translateX(10px)
+    translateY(-5%);
+
+  @include bp(xs) {
+    transform:
+      perspective(2500px)
+      rotateY(30deg)
+      rotateX(20deg)
+      rotateZ(-10deg)
+      translateX(25px)
+      translateY(-12%);
+  }
+
+  @include bp(sm) {
+    transform:
+      perspective(3000px)
+      rotateY(25deg)
+      rotateX(20deg)
+      rotateZ(-10deg)
+      translateX(35px)
+      translateY(-10%);
+  }
+
+  &:hover {
+    transform:
+      perspective(1000px)
+      rotateY(0deg)
+      rotateX(0deg)
+      rotateZ(0deg)
+      translateX(0px)
+      translateY(0%);
+  }
+}
+
+.card-3d-title {
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  text-shadow: var(--text-sha-2xl);
+  line-height: 1;
+  color: var(--text-xstrong);
+  font-size: var(--text-lg);
+
+  @include bp(xs) {
+    font-size: calc(var(--text-2xl) * 0.9);
+  }
+
+  @include bp(sm) {
+    font-size: calc(var(--text-2xl) * 0.95);
+  }
+
+  @include bp(md) {
+    font-size: var(--text-2xl);
+  }
+
+  @include bp(lg) {
+    font-size: calc(var(--text-2xl) * 0.9);
+  }
+}
+
+.card-3d-text {
+  font-size: var(--text-sm);
+
+  @include bp(md) {
+    font-size: var(--text-md);
+  }
 }
