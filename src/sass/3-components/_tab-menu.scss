@@ -6,6 +6,10 @@
 @use "button" as *;
 /* ================================================== */
 
+.panel-group {
+
+}
+
 .panel-img-bin {
   width: 100%;
   max-height: 100%;
@@ -24,6 +28,7 @@
   --tab-menu-space: 4px;
   --tab-radius: 7px;
 
+  pointer-events: none;
   position: relative;
   z-index: z(nav);
   width: fit-content;
@@ -36,9 +41,8 @@
   // }
 }
 
-
-
 .tab-menu {
+  pointer-events: none;
   @include glass-filter(10px, 1, 1.2);
   inset: 0;
   z-index: z(nav);
@@ -55,6 +59,7 @@
   box-shadow: var(--inset-md);
   overflow: hidden;
 }
+
 
 [role="tab"] {
   @include btn-structure;

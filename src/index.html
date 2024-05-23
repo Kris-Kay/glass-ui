@@ -28,8 +28,8 @@
 <body>
   <!-- Fixed background -->
   <!-- ========================================== -->
-  <div class="page-bg-bin" tabindex="-1">
-    <div class="page-bg-panel page-bg-noise"
+  <div class="page-bg-bin panel-group">
+    <div class="js-tabpanel page-bg-panel page-bg-noise"
       id="panel-1"
       role="tabpanel"
       tabindex="-1"
@@ -50,7 +50,7 @@
       >
     </div>
 
-    <div class="page-bg-panel "
+    <div class="js-tabpanel page-bg-panel "
       id="panel-2"
       role="tabpanel"
       tabindex="-1"
@@ -71,7 +71,7 @@
       >
     </div>
 
-    <div class="page-bg-panel page-bg-blur"
+    <div class="js-tabpanel page-bg-panel page-bg-blur"
       id="panel-3"
       role="tabpanel"
       tabindex="-1"
@@ -109,13 +109,14 @@
           </svg>
         </div>
 
-        <!-- Tabs menu -->
+        <!-- Tab menu -->
         <div class="tab-menu-bin nav-item">
-          <div class="js-tabMenu tab-menu"
+          <div class="js-tabList tab-menu"
+            id="nav-tab-menu"
             role="tablist"
             aria-label="Background image tabs"
             >
-            <button
+            <button class="js-tab"
               role="tab"
               aria-selected="false"
               aria-controls="panel-1"
@@ -124,7 +125,7 @@
               <p class="btn-text">Dark</p>
             </button>
 
-            <button
+            <button class="js-tab"
               role="tab"
               aria-selected="true"
               aria-controls="panel-2"
@@ -133,7 +134,7 @@
               <p class="btn-text">Light</p>
             </button>
 
-            <button
+            <button class="js-tab"
               role="tab"
               aria-selected="false"
               aria-controls="panel-3"
@@ -204,6 +205,7 @@
 
   <!-- Scripts -->
   <!-- ========================================== -->
+  <!-- <script src="/js/test.js"></script> -->
   <script src="/js/tabMenu.js"></script>
   <script src="/js/spotlight.js"></script>
   <script src="/js/dropdown.js"></script>

@@ -17,7 +17,7 @@ function findTabs() {
   $tabList.addEventListener("keydown", (e) => {
     // Move right
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-      $tabs[$tabFocus].setAttribute("tabindex", -1);
+      // $tabs[$tabFocus].setAttribute("tabindex", -1);
       if (e.key === "ArrowRight") {
         $tabFocus++;
         // If we're at the end, go to the start
@@ -33,16 +33,16 @@ function findTabs() {
         }
       }
 
-      $tabs[$tabFocus].setAttribute("tabindex", 0);
+      // $tabs[$tabFocus].setAttribute("tabindex", 0);
       $tabs[$tabFocus].focus();
     }
   });
 };
 
-document.addEventListener("DOMContentLoaded", () =>
-{
-  findTabs();
-});
+// document.addEventListener("DOMContentLoaded", () =>
+// {
+//   findTabs();
+// });
 
 function changeTabs(e) {
   const $thisTab = e.target;
