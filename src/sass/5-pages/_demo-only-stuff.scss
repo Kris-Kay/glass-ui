@@ -48,6 +48,14 @@
 
 /* Color Demo */
 /* ================================================== */
+.primary {
+  @include generate-color-lightness-classes($lightness, 'background-color', 'primary', '-');
+}
+
+.neutral {
+  @include generate-color-lightness-classes($lightness, 'background-color', 'neutral', '-');
+}
+
 .color-stack {
   display: grid;
   border-radius: var(--sm);

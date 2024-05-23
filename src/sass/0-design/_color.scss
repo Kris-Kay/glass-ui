@@ -9,6 +9,8 @@
 /* Color tokens */
 /* ================================================== */
 :root {
+  /* Hue and saturation values ✨ Config these values */
+  /* ================================================== */
   --primary-h: 190;
   --primary-s: 90%;
   --neutral-h: 205;
@@ -16,46 +18,31 @@
 
   /* Primary */
   /* ================================================== */
-  // @include hsl-values($lightness, --primary);
   --primary-98: var(--primary-h) var(--primary-s) 98%;
   --primary-95: var(--primary-h) var(--primary-s) 95%;
-  --primary-93: var(--primary-h) var(--primary-s) 93%;
   --primary-90: var(--primary-h) var(--primary-s) 90%;
-  --primary-85: var(--primary-h) var(--primary-s) 85%;
   --primary-80: var(--primary-h) var(--primary-s) 80%;
-  --primary-75: var(--primary-h) var(--primary-s) 75%;
   --primary-70: var(--primary-h) var(--primary-s) 70%;
-  --primary-65: var(--primary-h) var(--primary-s) 65%;
   --primary-60: var(--primary-h) var(--primary-s) 60%;
-  --primary-55: var(--primary-h) var(--primary-s) 55%;
   --primary-50: var(--primary-h) var(--primary-s) 50%;
-  --primary-45: var(--primary-h) var(--primary-s) 45%;
   --primary-40: var(--primary-h) var(--primary-s) 40%;
   --primary-30: var(--primary-h) var(--primary-s) 30%;
-  --primary-25: var(--primary-h) var(--primary-s) 25%;
-  --primary-15: var(--primary-h) var(--primary-s) 15%;
+  --primary-20: var(--primary-h) var(--primary-s) 20%;
   --primary-10: var(--primary-h) var(--primary-s) 10%;
   --primary-5:  var(--primary-h) var(--primary-s)  5%;
 
   /* Neutral */
   /* ================================================== */
-  // @include hsl-values($lightness, --neutral);
   --neutral-98: var(--neutral-h) var(--neutral-s) 98%;
   --neutral-95: var(--neutral-h) var(--neutral-s) 95%;
-  --neutral-93: var(--neutral-h) var(--neutral-s) 93%;
   --neutral-90: var(--neutral-h) var(--neutral-s) 90%;
-  --neutral-85: var(--neutral-h) var(--neutral-s) 85%;
   --neutral-80: var(--neutral-h) var(--neutral-s) 80%;
-  --neutral-75: var(--neutral-h) var(--neutral-s) 75%;
   --neutral-70: var(--neutral-h) var(--neutral-s) 70%;
-  --neutral-65: var(--neutral-h) var(--neutral-s) 65%;
   --neutral-60: var(--neutral-h) var(--neutral-s) 60%;
-  --neutral-55: var(--neutral-h) var(--neutral-s) 55%;
   --neutral-50: var(--neutral-h) var(--neutral-s) 50%;
-  --neutral-45: var(--neutral-h) var(--neutral-s) 45%;
   --neutral-40: var(--neutral-h) var(--neutral-s) 40%;
   --neutral-30: var(--neutral-h) var(--neutral-s) 30%;
-  --neutral-25: var(--neutral-h) var(--neutral-s) 25%;
+  --neutral-20: var(--neutral-h) var(--neutral-s) 20%;
   --neutral-15: var(--neutral-h) var(--neutral-s) 15%;
   --neutral-10: var(--neutral-h) var(--neutral-s) 10%;
   --neutral-5:  var(--neutral-h) var(--neutral-s)  5%;
@@ -74,7 +61,7 @@ html {
   --color-gray:    hsl(var(--neutral-50) / 1);
   --color-dark:    hsl(var(--neutral-40) / 1);
   --color-xdark:   hsl(var(--neutral-30) / 1);
-  --color-2xdark:  hsl(var(--neutral-15) / 1);
+  --color-2xdark:  hsl(var(--neutral-20) / 1);
   --color-black:   hsl(var(--neutral-5)  / 1);
 
   /* Translucent tints */
@@ -89,65 +76,31 @@ html {
   --tint-2xdark:  hsl(var(--neutral-10) / 0.4);
   --tint-3xdark:  hsl(var(--neutral-10) / 0.6);
 
-  /* Inset bg colors */
-  /* ================================================== */
-  --inset-bg-reg:   hsl(var(--neutral-10) / 0.13);
-  --inset-bg-deep:  hsl(var(--neutral-10) / 0.2);
-  --inset-bg-xdeep: hsl(var(--neutral-10) / 0.3);
-
   /* Text colors */
   /* ================================================== */
-  --text-2xstrong: hsl(var(--neutral-98));
-  --text-xstrong:  hsl(var(--neutral-95));
-  --text-strong:   hsl(var(--neutral-93));
-  --text-base:     hsl(var(--neutral-90));
-  --text-mild:     hsl(var(--neutral-85));
-  --text-xmild:    hsl(var(--neutral-80));
-  --text-2xmild:   hsl(var(--neutral-70));
+  --text-2xstrong: hsl(var(--neutral-98) / 1);
+  --text-xstrong:  hsl(var(--neutral-95) / 1);
+  --text-strong:   hsl(var(--neutral-90) / 1);
+  --text-base:     hsl(var(--neutral-80) / 1);
+  --text-mild:     hsl(var(--neutral-70) / 1);
+  --text-xmild:    hsl(var(--neutral-60) / 1);
+  --text-2xmild:   hsl(var(--neutral-50) / 1);
+
+  /* Inset bg colors */
+  /* ================================================== */
+  --inset-bg-reg:   hsl(var(--neutral-10) / 0.15);
+  --inset-bg-deep:  hsl(var(--neutral-10) / 0.25);
+  --inset-bg-xdeep: hsl(var(--neutral-10) / 0.35);
 
   /* Box-shadows | Text-shadows | Drop-shadows */
   /* ================================================== */
   --shadow: var(--neutral-10);
   --highlight: var(--neutral-90);
-
-  /* Other */
-  /* ================================================== */
-  --page-bg: var(--primary-95);
 }
 
 
-/* HSL lightness values */
+/* Solid colors MAP */
 /* ================================================== */
-$lightness: (
-  "98",
-  "95",
-  "93",
-  "90",
-  "85",
-  "80",
-  "75",
-  "70",
-  "65",
-  "60",
-  "55",
-  "50",
-  "45",
-  "40",
-  "30",
-  "25",
-  "15",
-  "10",
-  "5",
-);
-
-.primary {
-  @include generate-color-lightness-classes($lightness, 'background-color', 'primary', '-');
-}
-
-.neutral {
-  @include generate-color-lightness-classes($lightness, 'background-color', 'neutral', '-');
-}
-
 $colors: (
   "white":   var(--color-white),
   "2xlight": var(--color-2xlight),
@@ -160,9 +113,11 @@ $colors: (
   "black":   var(--color-black),
 );
 
+/* Generate color classes */
 .color {
   @include generate-classes($colors, 'background-color', 'color', '-');
 }
+
 
 /* Tints MAP */
 /* ================================================== */
@@ -178,27 +133,25 @@ $tints: (
   "3xdark":  var(--tint-3xdark),
 );
 
-/* Generate .tint- classes */
+/* Generate tint classes */
 .tint {
   @include generate-classes($tints, 'background-color', 'tint', '-');
 }
+
 
 /* Text colors MAP */
 /* ================================================== */
 $text-colors: (
   "2xstrong": var(--text-2xstrong),
-  "xstrong": var(--text-xstrong),
-  "strong":  var(--text-strong),
-  "base":  var(--text-base),
-  "mild":  var(--text-mild),
-  "xmild": var(--text-xmild),
-  "2xmild": var(--text-2xmild),
+  "xstrong":  var(--text-xstrong),
+  "strong":   var(--text-strong),
+  "base":     var(--text-base),
+  "mild":     var(--text-mild),
+  "xmild":    var(--text-xmild),
+  "2xmild":   var(--text-2xmild),
 );
 
-/* Text color classes */
-/* ================================================== */
-/* `text-color-` classes change with the theme */
-/* `text-` classes are always the same color */
+/* Generate text color classes */
 .text {
   @include generate-classes($text-colors, 'color', 'text', '-');
   @include generate-classes($colors, 'color', 'color', '-');

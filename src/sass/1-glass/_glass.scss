@@ -21,7 +21,7 @@ $noise-lg: 50px;
 /* backdrop-filter: ✨ Config these values */
 /* ================================================== */
 $blur-xs: 3px;
-$blur-sm: 20px;
+$blur-sm: 10px;
 $blur-md: 40px;
 $blur-lg: 60px;
 $blur-xl: 80px;
@@ -60,7 +60,7 @@ $satu-2xstrong: 2.5;
 /* Glass filter presets for glass base ✨ Config these values */
 /* ================================================== */
 body {
-  --blur: #{$blur-md};
+  --blur: #{$blur-lg};
   --bright: #{$bright-base};
   --satu: #{$satu-strong};
 }

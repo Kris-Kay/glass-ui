@@ -37,13 +37,23 @@
   }
 }
 
-/* Color generating mixin */
+/* HSL lightness values */
 /* ================================================== */
-@mixin hsl-values($map, $colorName) {
-  @each $key, $value in $map {
-    #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
-  }
-}
+$lightness: (
+  "98",
+  "95",
+  "90",
+  "80",
+  "70",
+  "60",
+  "50",
+  "40",
+  "30",
+  "20",
+  "15",
+  "10",
+  "5",
+);
 
 /* Color lightness generating mixin */
 /* ================================================== */
@@ -54,3 +64,15 @@
     }
   }
 }
+
+/* Color generating mixin */
+/* ================================================== */
+// Does not full work! only use to copy vars from public styles.css
+
+// @mixin hsl-values($map, $colorName) {
+//   @each $key, $value in $map {
+//     #{$colorName}-#{$key}: var(#{$colorName}-h) var(#{$colorName}-s) #{$key};
+//   }
+// }
+// @include hsl-values($lightness, --primary);
+// @include hsl-values($lightness, --neutral);
