@@ -11,9 +11,9 @@ function containsSpotlightBin(e) {
   const $thisSpotlightBin = e.target;
 
   if ($thisSpotlightBin.contains(e.target)) {
-    $thisSpotlightBin.addEventListener('pointermove', spotlightCursor);
+    $thisSpotlightBin.addEventListener("mousemove", spotlightCursor);
   } else {
-    $thisSpotlightBin.removeEventListener('pointermove', spotlightCursor);
+    $thisSpotlightBin.removeEventListener("mousemove", spotlightCursor);
   }
 };
 
@@ -21,7 +21,7 @@ function findSpotlights() {
   let $spotlightBinArray = Array.from(document.querySelectorAll(".js-spotlightBin"));
 
   $spotlightBinArray.forEach((spot) => {
-    spot.addEventListener('pointermove', containsSpotlightBin);
+    spot.addEventListener("mousemove", containsSpotlightBin);
   });
 };
 
