@@ -7,20 +7,33 @@
 
 body {
   --text-input-height: var(--ui-h-lg);
-  --text-input-maxwidth: 370px;
-  --textarea-maxwidth: 500px;
+  --text-input-maxwidth: 380px;
   --text-input-padding: var(--3xs);
   --text-input-radius: 12px;
   --text-input-inset: var(--inset-md);
   --text-input-inset-bg: var(--inset-bg-xdeep);
+
+  --textarea-maxwidth: 500px;
+  --textarea-minheight: 150px;
+
+  --placeholder-color: var(--text-mild);
+  --caret-color: hsl(var(--primary-70) / 1);
 }
 
+/* Caret styling */
+/* ================================================== */
+input,
+textarea,
+[contenteditable] {
+  caret-color: var(--caret-color);
+}
 
+/* Text styling */
+/* ================================================== */
 .text-input-group {
   height: fit-content;
   width: 100%;
   display: grid;
-  padding-top: var(--xs);
 
   & > .text-input-label {
     padding-bottom: var(--4xs);
@@ -32,55 +45,48 @@ body {
 }
 
 .text-input-label {
-  font-family: $font-family-body;
-  font-weight: $font-weight-xl;
-
-  font-size: var(--text-md);
-  line-height: 1.3;
-  color: var(--text-base);
-  text-shadow: var(--text-sha-xs);
+  @include title-reg(start, --text-md);
+  line-height: $line-height-title;
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-sm);
 }
 
 .input-hint {
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  font-size: var(--text-xs);
-  line-height: 1.3;
+  @include body(--text-xs);
+  line-height: $line-height-sm;
+  color: var(--text-mild);
+  text-shadow: var(--text-sha-3xs);
+}
+
+@mixin input-text {
+  @include body(--text-sm);
+  z-index: z(on-input);
+  line-height: 1;
+  text-align: start;
   color: var(--text-base);
-  text-shadow: var(--text-sha-2xs);
 }
 
 @mixin placeholder {
-  z-index: z(on-input);
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  font-size: var(--text-sm);
-  line-height: 1.3;
-
-  color: var(--text-2xmild);
+  @include input-text;
+  color: var(--placeholder-color);
 }
 
-.text-input-bin {
-  width: min(var(--text-input-maxwidth), 100%);
-  height: fit-content;
-  border-radius: var(--text-input-radius);
-  overflow: hidden;
-  pointer-events: none;
-}
-
+/* Input base mixins */
+/* ================================================== */
 @mixin text-input-bg-base {
+  pointer-events: none;
   position: relative;
   z-index: z(input-b4);
-  width: 100%;
-  height: fit-content;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: var(--text-input-padding);
+
   background-color:var(--text-input-inset-bg);
   box-shadow: var(--text-input-inset);
   border-radius: var(--text-input-radius);
-  pointer-events: none;
+  overflow: hidden;
 }
 
 @mixin text-input-base {
@@ -88,9 +94,11 @@ body {
   inset: 0;
   z-index: z(input);
   width: 100%;
+  height: 100%;
   background-color: transparent;
   border-radius: var(--text-input-radius);
 
+  @include input-text;
   pointer-events: auto;
   cursor: text;
 
@@ -120,16 +128,16 @@ body {
   height: var(--search-icon-h);
   width: var(--search-icon-h);
   aspect-ratio: 1;
-  background-color: var(--text-2xmild);
+  background-color: var(--placeholder-color);
 }
 
 .search-input {
   @include text-input-base;
-  height: 100%;
   padding-left: var(--wrap-icon);
   padding-right: var(--text-input-padding);
 }
 
+/* Little x that lets you clear what you typed. Not always available */
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   z-index: z(on-input);
@@ -152,35 +160,28 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .text-input-bg {
   @include text-input-bg-base;
   height: var(--text-input-height);
+  width:  min(var(--text-input-maxwidth), 100%);
 }
 
 .text-input {
   @include text-input-base;
-  height: 100%;
   padding: 0 var(--text-input-padding);
 }
 
 /* Textarea input */
 /* ================================================== */
-.textarea-bin {
-  width: min(var(--textarea-maxwidth), 100%);
-  height: fit-content;
-  border-radius: var(--text-input-radius);
-  overflow: hidden;
-  pointer-events: none;
-}
-
 .textarea-bg {
   @include text-input-bg-base;
-  min-height: 150px;
+  width: min(var(--textarea-maxwidth), 100%);
+  min-height: var(--textarea-minheight);
   height: fit-content;
 }
 
 .textarea {
   @include text-input-base;
-  height: 100%;
   padding: var(--text-input-padding);
-  text-align: start;
   white-space: pre-wrap;
+  overflow: auto;
   resize: vertical;
+  line-height: $line-height-md;
 }

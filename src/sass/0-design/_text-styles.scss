@@ -89,6 +89,13 @@ textarea {
   text-shadow: var(--text-sha-xl);
 }
 
+@mixin title-reg($text-align: start, $font-size: --text-md) {
+  @include title($font-weight-md);
+  text-align: $text-align;
+  letter-spacing: $letter-spacing-sm;
+  font-size: var($font-size);
+}
+
 
 @mixin reg-title($text-align: center) {
   @include title($font-weight-md);
