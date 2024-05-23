@@ -49,11 +49,9 @@
   pointer-events: auto;
   border-radius: var(--2xs);
   box-shadow: var(--sha-lg);
-
-  will-change: opacity, transform;
   opacity: 1;
   transform: translateX(0);
-  transition: opacity $speed-slow $smooth-cubic,
+  transition: opacity $speed-fast $smooth-cubic,
               transform $speed-slow $smooth-cubic;
 
   &.is-closed {
