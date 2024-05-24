@@ -52,6 +52,24 @@
 /* ================================================== */
 /* Generates classes using the $sizes map from _space.scss */
 .radius {
+  @include size-modifiers('border-radius');
+}
+
+/* Radius bin */
+/* ================================================== */
+/* This parent calss helps remove janky rendering artifacts that occur in some browsers when inset box-shadow + border-radius are used on the same element.
+The solution though not perfect is to add a parent wrapper that sets the border-radius while the child sets the inset box-shadow */
+.radius-bin {
   @include size-modifiers('border-radius') {
-  }
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+  };
+}
+
+@mixin radius-bin($radius: var(--sm)) {
+  width: 100%;
+  height: fit-content;
+  border-radius: $radius;
+  overflow: hidden;
 }

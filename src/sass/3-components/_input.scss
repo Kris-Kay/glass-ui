@@ -5,8 +5,7 @@
 @use "../forward-styles/util" as *;
 /* ================================================== */
 
-/* Base for switch | checkbox | radio button */
-/* ✨ Config these values ✨ */
+/* Base for switch | checkbox | radio button  ✨ Config these values */
 /* ================================================== */
 @mixin input-base {
   --input-h: var(--ui-h-xs);
@@ -14,7 +13,7 @@
   --bg: var(--inset-bg-deep);
   --bg-hover: var(--tint-2xdark);
   --inset: var(--inset-sm);
-  --knob: hsl(var(--neutral-85) / 0.9);
+  --knob: hsl(var(--neutral-80) / 0.9);
   --knob-sha: var(--sha-xs);
 
   --bg-checked: hsl(var(--primary-70) / 1);
