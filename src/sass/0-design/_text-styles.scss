@@ -27,9 +27,7 @@ textarea {
   color: var(--text-base);
 }
 
-.text-max-w {
-  max-width: 70ch;
-}
+.text-max-w { max-width: 70ch; }
 
 /* Titles */
 /* ================================================== */
@@ -77,6 +75,7 @@ textarea {
 
   text-shadow: var(--text-sha-lg);
 }
+.title-3 { @include title-3(center); }
 
 //accordion-header h4
 @mixin title-4($text-align: start) {
@@ -95,7 +94,6 @@ textarea {
   letter-spacing: $letter-spacing-sm;
   font-size: var($font-size);
 }
-
 
 @mixin reg-title($text-align: center) {
   @include title($font-weight-md);
@@ -123,7 +121,6 @@ textarea {
   text-shadow: var(--text-sha-3xs);
 }
 
-
 .subhead {
   font-weight: $font-weight-md;
   font-size: var(--text-xs);
@@ -131,11 +128,6 @@ textarea {
   line-height: $line-height-md;
   color: var(--text-mild);
   text-shadow: var(--text-sha-2xs);
-}
-
-.caption {
-  font-size: var(--text-xs);
-  font-weight: $font-weight-sm;
 }
 
 .eyebrow {
@@ -148,10 +140,6 @@ textarea {
   color: var(--text-mild);
   text-transform: uppercase;
   text-shadow: var(--text-sha-3xs);
-
-  // @include bp(lg) {
-  //   font-size: var(--text-xs);
-  // }
 }
 
 @mixin super-wide($font-size: var(--text-xs), $maxSpace: 10px ) {
@@ -162,9 +150,6 @@ textarea {
   text-transform: uppercase;
 }
 
-.title-3 {
-  @include title-3(center);
-}
 
 /* Labels */
 /* ================================================== */
@@ -189,58 +174,4 @@ textarea {
 .label-md {
   @include label(--text-md);
   text-shadow: var(--text-sha-md);
-}
-
-.code-label-md {
-  @include label(--text-sm);
-  font-family: $font-family-code;
-  text-shadow: var(--text-sha-2xs);
-
-  @include bp(sm) {
-    @include label(--text-md);
-  }
-}
-
-/* Code fonts */
-/* ================================================== */
-
-// pre code {
-//   display: block;
-//   white-space: pre;
-//   max-width: 100%;
-// }
-
-@mixin code {
-  font-family: $font-family-code;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: 400; /* only font-weight available for this font */
-}
-
-.c-comment {
-  @include code;
-  font-style: italic;
-  color: var(--text-xmild);
-}
-
-// .c-class {
-//   color:  oklch(100% var(--accent--ch) / 1);
-// }
-
-// .c-prop {
-//   color: oklch(80% var(--primary--ch) / 1);
-// }
-
-// .c-value {
-//   color: oklch(100% var(--primary--ch) / 1);
-// }
-
-// .c-num {
-//   color: oklch(80% var(--accent--ch) / 1);
-// }
-
-.code-class {
-  @include code;
-  display: inline;
-  // color: hsl(var(--primary-50) / 1);
 }
