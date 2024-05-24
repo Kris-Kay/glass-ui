@@ -381,49 +381,49 @@
 
 /* Button Demo */
 /* ================================================== */
-.btn-grid-bin {
+.btn-demo-bin {
   width: 100%;
-  max-width: 300px;
-
-  @include bp(sm) {
-    max-width: $bp-sm;
-  }
-
-  @include bp(lg) {
-    max-width: $bp-lg;
-  }
+  max-width: $bp-lg;
+  display: grid;
+  place-items: center;
+  gap: var(--4xl);
 }
 
-.btn-grid {
+.btn-layout {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-evenly;
 
-  width: 100%;
-  row-gap: var(--4xl);
+  margin: var(--xl) 0;
+  row-gap: var(--5xl);
   column-gap: var(--3xl);
 
+  @include bp(xs) {
+    margin: var(--md) 0;
+  }
+
   @include bp(md) {
-    column-gap: var(--lg);
+    margin: 0 0 var(--md) 0;
+    column-gap: var(--3xl);
   }
 
   @include bp(lg) {
-    column-gap: 0;
+    column-gap: var(--2xl);
   }
 }
 
 .btn-col {
   display: grid;
-  gap: var(--sm);
-  width: min(115px, 200px);
+  gap: var(--md);
+  width: min(fit-content, 300px);
 }
 
 .btn-cell {
   display: grid;
-  width: 100%;
-  height: var(--ui-h-md);
-  flex: 2;
+  width: fit-content;
+  height: fit-content;
   place-items: center start;
 }
 
@@ -431,7 +431,7 @@
   z-index: z(on-card);
   font-family: $font-family-body;
   font-weight: $font-weight-md;
-  font-size: var(--text-2xs);
+  font-size: var(--text-xs);
   letter-spacing: $letter-spacing-lg;
   line-height: $line-height-sm;
 
@@ -439,11 +439,13 @@
   text-transform: uppercase;
   text-shadow: var(--text-sha-2xs);
 
-  @include bp(lg) {
-    font-size: var(--text-xs);
-  }
+  // @include bp(lg) {
+  //   font-size: var(--text-xs);
+  // }
 }
 
+
+/* Fake btn states */
 .btn-hover {
   pointer-events: none;
 
