@@ -110,18 +110,19 @@ html {
   --ui-h-lg: 2.75rem; /* 44px */
   --ui-h-xl: 3.25rem; /* 52px */
 
-  @include bp(sm) {
-    --moat: 2rem;
-
-    --space-q-sm: 7cqw;
-    --space-q-md: 6cqw;
-    --space-q-lg: min(10cqw, 5rem);
-
+  @include bp(xs) {
     --ui-h-xs: 1.75rem;  /* 28px */
     --ui-h-sm: 2.125rem; /* 34px */
     --ui-h-md: 2.375rem; /* 38px */
     --ui-h-lg: 2.875rem; /* 46px */
     --ui-h-xl: 3.375rem; /* 54px */
+  }
+
+  @include bp(sm) {
+    --moat: 2rem;
+    --space-q-sm: 7cqw;
+    --space-q-md: 6cqw;
+    --space-q-lg: min(10cqw, 5rem);
   }
 
   @include bp(md) {
@@ -130,7 +131,7 @@ html {
 
   @include bp(lg) {
     --ui-h-sm: 2.25rem; /* 36px */
-    --ui-h-md: 2.5rem;  /* 40px */
+    --ui-h-md: 2.625rem;/* 42px */
     --ui-h-lg: 3rem;    /* 48px */
     --ui-h-xl: 3.5rem;  /* 56px */
   }

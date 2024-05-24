@@ -6,11 +6,8 @@
 @use "button" as *;
 /* ================================================== */
 
-.panel-group {
-
-}
-
-.panel-img-bin {
+.tab-panel {
+  position: relative;
   width: 100%;
   max-height: 100%;
   aspect-ratio : 1;
@@ -26,73 +23,50 @@
 
 .tab-menu-bin {
   --tab-menu-space: 4px;
-  --tab-radius: 7px;
+  --tab-radius: 8px;
 
   pointer-events: none;
+  overflow: hidden;
   position: relative;
   z-index: z(nav);
   width: fit-content;
   height: var(--ui-h-md);
   @include outer-radius(var(--tab-radius), var(--tab-menu-space));
 
-  // @include bp(lg) {
-  //   --tab-menu-space: 5px;
-  //   --tab-radius: 8px;
-  // }
+  @include bp(lg) {
+    --tab-radius: 9px;
+  }
 }
 
 .tab-menu {
   pointer-events: none;
-  @include glass-filter(10px, 1, 1.2);
-  inset: 0;
-  z-index: z(nav);
+
   width: fit-content;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: calc(var(--tab-menu-space) * 2);
-  margin: 0 auto;
+  gap: var(--tab-menu-space);
   padding: var(--tab-menu-space);
+
   border-radius: inherit;
   background-color: var(--inset-bg-deep);
   box-shadow: var(--inset-md);
-  overflow: hidden;
+  @include glass-filter(10px, 0.95, 1.5);
 }
-
 
 [role="tab"] {
   @include btn-structure;
-  @include btn-style;
   --btn-h: 100%;
   --btn-content-h: 0.9rem;
   --btn-padding-x: 0.75rem;
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
-  --btn-gap: var(--tab-menu-space);
   --btn-radius: var(--tab-radius);
-
-  --btn-text: var(--color-white);
-
-  --btn-state-bg: var(--tint-2xlight);
-
-  --btn-rest: 0;
-  --btn-hover: 0.6;
-  --btn-focus: 0.6;
-  --btn-active: 0.9;
-
-  z-index: z(on-nav);
-  box-shadow: none;
-
-  &::after {
-    box-shadow: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
 
   @include bp(xs) {
     --btn-content-h: 1rem;
-    --btn-padding-x: 0.9rem;
+    --btn-padding-x: 1rem;
   }
 
   @include bp(sm) {
@@ -104,15 +78,15 @@
   }
 
   @include bp(lg) {
-    --btn-padding-x: 1.4rem;
+    --btn-content-h: 1.1rem;
+    --btn-padding-x: 1.5rem;
   }
 }
 
 [role="tab"][aria-selected="true"] {
   --btn-text: var(--tint-3xdark);
-  --btn-state-bg: var(--tint-3xlight);
 
   &::before {
-    opacity: 1;
+    opacity: 0.6;
   }
 }

@@ -9,19 +9,19 @@
 /* ================================================== */
 @mixin btn-transition {
   will-change: opacity, color;
-  transition: opacity $speed-slow $smooth-cubic,
-              color $speed-slow $smooth-cubic;
+  transition: opacity $speed-xslow $smooth-cubic,
+              color $speed-xslow $smooth-cubic;
 }
 
 @mixin btn-svg-transition {
   will-change: background-color;
-  transition: background-color $speed-slow $smooth-cubic;
+  transition: background-color $speed-xslow $smooth-cubic;
 }
 
 @mixin btn-icon-svg-transition {
   will-change: width, height;
-  transition:  width $speed-slow $smooth-cubic,
-               height $speed-slow $smooth-cubic;
+  transition:  width $speed-xslow $smooth-cubic,
+               height $speed-xslow $smooth-cubic;
 }
 
 /* Button text ✨ Config these values */
@@ -421,12 +421,13 @@
   &::after {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+    box-shadow: none;
   }
 
   --btn-rest: 0;
-  --btn-hover: 0.3;
-  --btn-focus: 0.3;
-  --btn-active: 0.8;
+  --btn-hover: 0.25;
+  --btn-focus: 0.25;
+  --btn-active: 0.25;
   --btn-disabled: 0.5;
 }
 

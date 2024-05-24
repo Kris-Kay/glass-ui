@@ -3,7 +3,7 @@
 <header class="hero grid-c">
   <div class="card-3d-layout">
 
-    <div class="card-3d glass-3d tint-dark">
+    <div class="card-3d glass-3d tint-xdark">
 
       <div class="grid">
         <p class="eyebrow">SCSS library</p>
@@ -184,7 +184,7 @@
             </div>
 
             <div class="panel-group e2e p-0 ">
-              <div class="js-tabpanel panel-img-bin"
+              <div class="js-tabpanel tab-panel"
                 id="panel-4"
                 role="tabpanel"
                 tabindex="0"
@@ -201,7 +201,7 @@
                 >
               </div>
 
-              <div class="js-tabpanel panel-img-bin"
+              <div class="js-tabpanel tab-panel"
                 id="panel-5"
                 role="tabpanel"
                 tabindex="0"
@@ -220,7 +220,7 @@
                 >
               </div>
 
-              <div class="js-tabpanel panel-img-bin"
+              <div class="js-tabpanel tab-panel"
                 id="panel-6"
                 role="tabpanel"
                 tabindex="0"
@@ -248,7 +248,7 @@
                 role="tablist"
                 aria-label="Background image tabs">
 
-                <button class="js-tab"
+                <button class="js-tab btn-ghost"
                   id="tab-4"
                   role="tab"
                   type="button"
@@ -259,7 +259,7 @@
                   <p class="btn-text"> Tab 1 </p>
                 </button>
 
-                <button class="js-tab"
+                <button class="js-tab btn-ghost"
                   role="tab"
                   aria-selected="false"
                   aria-controls="panel-5"
@@ -269,7 +269,7 @@
                   <p class="btn-text"> Tab 2 </p>
                 </button>
 
-                <button class="js-tab"
+                <button class="js-tab btn-ghost"
                   role="tab"
                   aria-selected="false"
                   aria-controls="panel-6"
@@ -298,6 +298,7 @@
                 <div class="input-group">
                   <input  class="checkbox"
                           type="checkbox"
+                          tabindex="0"
                           id="op-0"
                           name="options"
                           value="option 2" >
@@ -313,6 +314,7 @@
                     id="op-1"
                     name="options"
                     value="option 1"
+                    tabindex="0"
                     checked  >
                   <label class="inline-label"
                     for="op-1"  >
@@ -326,6 +328,7 @@
                     id="op-2"
                     name="options"
                     value="option 3"
+                    tabindex="0"
                     disabled  >
                   <label class="inline-label"
                     for="op-2"  >
@@ -339,6 +342,7 @@
                     id="op-3"
                     name="options"
                     value="option 4"
+                    tabindex="-1"
                     checked disabled  >
                   <label class="inline-label"
                     for="op-3"  >
@@ -357,6 +361,7 @@
                 <div class="input-group">
                   <input class="switch"
                     type="checkbox"
+                    tabindex="0"
                     id="s-0"  >
                   <label class="inline-label"
                     for="s-0"  >
@@ -368,6 +373,7 @@
                   <input class="switch"
                     type="checkbox"
                     id="s-1"
+                    tabindex="0"
                     checked  >
                   <label class="inline-label"
                     for="s-1"  >
@@ -379,6 +385,7 @@
                   <input class="switch"
                     type="checkbox"
                     id="s-2"
+                    tabindex="0"
                     disabled  >
                   <label class="inline-label"
                     for="s-2"  >
@@ -408,6 +415,7 @@
                     type="radio"
                     id="r-0"
                     name="options-r"
+                    tabindex="0"
                     value="option 2"  >
                   <label class="inline-label"
                     for="r-0"  >
@@ -421,6 +429,7 @@
                     id="r-1"
                     name="options-t"
                     value="option 1"
+                    tabindex="0"
                     checked  >
                   <label class="inline-label"
                     for="r-1"  >
@@ -434,6 +443,7 @@
                     id="r-2"
                     name="options-q"
                     value="option 3"
+                    tabindex="0"
                     disabled  >
                   <label class="inline-label"
                     for="r-2"  >
@@ -447,6 +457,7 @@
                     id="r-3"
                     name="options-w"
                     value="option 4"
+                    tabindex="-1"
                     checked disabled  >
                   <label class="inline-label"
                     for="r-3"  >
@@ -553,21 +564,10 @@
 
               <div class="js-accordion-content accordion-content is-closed">
                 <p>Accordion content goes here</p>
-                  <img class="w-sm m-auto-x"
-                    fetchpriority="low"
-                    src="/assets/other-img/hello-bear.gif"
-                    alt="animated .gif of bear waving hello"  >
-
-                  <img class="e2e p-0"
-                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
-                    alt="">
-
-                  <p class="e2e-no-y tint-3xdark">This card's img also spans edge-to-edge using <span class="code-class">.e2e .p-0</span>. While the text gets its dark background via <span class="code-class">.e2e-no-y .tint-3xdark</span>. The no-y-space version of e2e keeps the inner padding for the text but removes the gap above and the outter padding below.
-                  </p>
-
-                  <img class="e2e-no-b p-0 "
-                    src="/assets/homeImg/glass-layers-no-text_800x730.png"
-                    alt="">
+                <img class="w-sm m-auto-x"
+                  fetchpriority="low"
+                  src="/assets/other-img/hello-bear.gif"
+                  alt="animated .gif of bear waving hello"  >
               </div>
             </div>
           </div>
@@ -590,11 +590,7 @@
               </h4>
 
               <div class="js-accordion-content is-closed accordion-content">
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
+                <p>Accordion content goes here!</p>
               </div>
             </div>
 
@@ -613,9 +609,7 @@
               </h4>
 
               <div class="js-accordion-content is-closed accordion-content">
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
+                <p>Accordion content goes here!</p>
               </div>
             </div>
 
@@ -634,8 +628,7 @@
               </h4>
 
               <div class="js-accordion-content accordion-content is-closed">
-                <p>Accordion content goes here</p>
-                <p>Accordion content goes here</p>
+                <p>Accordion content goes here!</p>
               </div>
             </div>
 
