@@ -6,13 +6,3 @@
 @use "../forward-styles/components" as *;
 @use "../forward-styles/prefabs" as *;
 /* ================================================== */
-
-/* Above-the-fold hero header */
-/* ================================================== */
-.hero {
-  width: 100%;
-  min-height: calc(100vh - var(--nav-h));
-  height: fit-content;
-  display: grid;
-  padding-bottom: var(--nav-h);
-}
