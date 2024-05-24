@@ -120,7 +120,7 @@
   transition: transform $speed-slow $smooth-cubic;
 
   transform:
-    perspective(2200px)
+    perspective(1500px)
     rotateY(30deg)
     rotateX(15deg)
     rotateZ(-4deg)
@@ -132,11 +132,11 @@
     width: min(95%, 380px);
 
     transform:
-      perspective(2500px)
+      perspective(1800px)
       rotateY(30deg)
       rotateX(20deg)
       rotateZ(-6deg)
-      translateX(10px)
+      translateX(15px)
       translateY(0px);
   }
 
@@ -144,7 +144,7 @@
     width: 390px;
 
     transform:
-      perspective(3000px)
+      perspective(2500px)
       rotateY(25deg)
       rotateX(20deg)
       rotateZ(-10deg)
@@ -154,12 +154,13 @@
 
   @include bp(md) {
     width: 420px;
-    --space: calc(var(--md) * 0.95);
+    --space: var(--md);
   }
 
   @include bp(lg) {
     width: 450px;
-    border-radius: calc(var(--lg) * 0.9);
+    --space: var(--md);
+    border-radius: var(--lg) ;
   }
 
   @media (hover: hover) {
@@ -180,31 +181,25 @@
 .card-3d-title {
   font-family: $font-family-title;
   font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-sm;
+  letter-spacing: $letter-spacing-md;
   text-shadow: var(--text-sha-2xl);
-  line-height: 1;
-  color: var(--text-xstrong);
-  font-size: var(--text-lg);
+  line-height: 1.15;
+  color: var(--text-strong);
+  font-size: var(--text-xl);
 
   @include bp(xs) {
-    font-size: calc(var(--text-2xl) * 0.9);
-  }
-
-  @include bp(sm) {
     font-size: calc(var(--text-2xl) * 0.95);
   }
 
   @include bp(md) {
     font-size: var(--text-2xl);
   }
-
-  @include bp(lg) {
-    font-size: calc(var(--text-2xl) * 0.9);
-  }
 }
 
 .card-3d-text {
-  font-size: var(--text-xs);
+  @include body(--text-xs);
+  letter-spacing: $letter-spacing-md;
+  text-shadow: var(--text-sha-2xs);
 
   @include bp(xs) {
     font-size: var(--text-sm);
@@ -539,7 +534,7 @@
   aspect-ratio : 1 / 1;
   overflow: hidden;
   border-radius: var(--xs);
-  opacity: 0.85;
+  opacity: 0.9;
   box-shadow: var(--sha-md);
 
   @include bp(xs) {
