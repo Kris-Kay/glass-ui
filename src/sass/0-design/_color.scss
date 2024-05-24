@@ -21,6 +21,7 @@
   --primary-98: var(--primary-h) var(--primary-s) 98%;
   --primary-95: var(--primary-h) var(--primary-s) 95%;
   --primary-90: var(--primary-h) var(--primary-s) 90%;
+  --primary-85: var(--primary-h) var(--primary-s) 85%;
   --primary-80: var(--primary-h) var(--primary-s) 80%;
   --primary-70: var(--primary-h) var(--primary-s) 70%;
   --primary-60: var(--primary-h) var(--primary-s) 60%;
@@ -36,6 +37,7 @@
   --neutral-98: var(--neutral-h) var(--neutral-s) 98%;
   --neutral-95: var(--neutral-h) var(--neutral-s) 95%;
   --neutral-90: var(--neutral-h) var(--neutral-s) 90%;
+  --neutral-85: var(--neutral-h) var(--neutral-s) 85%;
   --neutral-80: var(--neutral-h) var(--neutral-s) 80%;
   --neutral-70: var(--neutral-h) var(--neutral-s) 70%;
   --neutral-60: var(--neutral-h) var(--neutral-s) 60%;
@@ -81,8 +83,8 @@ html {
   --text-2xstrong: hsl(var(--neutral-98) / 1);
   --text-xstrong:  hsl(var(--neutral-95) / 1);
   --text-strong:   hsl(var(--neutral-90) / 1);
-  --text-base:     hsl(var(--neutral-80) / 1);
-  --text-mild:     hsl(var(--neutral-70) / 1);
+  --text-base:     hsl(var(--neutral-85) / 1);
+  --text-mild:     hsl(var(--neutral-80) / 1);
   --text-xmild:    hsl(var(--neutral-60) / 1);
   --text-2xmild:   hsl(var(--neutral-50) / 1);
 

@@ -80,7 +80,7 @@
   }
 
   &:focus-visible {
-    @include focus-visible;
+    @include focus-visible-inner;
     background-color: var(--tint-light);
   }
 }

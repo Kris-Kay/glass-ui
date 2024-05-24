@@ -113,7 +113,7 @@
   @include btn-structure;
   --btn-h: var(--ui-h-sm);
   --btn-content-h: 0.95rem;
-  --btn-padding-x: calc(var(--btn-h) * 0.6);
+  --btn-padding-x: calc(var(--btn-h) * 0.55);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
   --btn-gap: calc(var(--btn-h) * 0.25);
@@ -124,7 +124,7 @@
   @include btn-structure;
   --btn-h: var(--ui-h-md);
   --btn-content-h: 1.15rem;
-  --btn-padding-x: calc(var(--btn-h) * 0.7);
+  --btn-padding-x: calc(var(--btn-h) * 0.6);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
   --btn-gap: calc(var(--btn-h) * 0.25);
@@ -135,7 +135,7 @@
   @include btn-structure;
   --btn-h: var(--ui-h-lg);
   --btn-content-h: 1.25rem;
-  --btn-padding-x: calc(var(--btn-h) * 0.7);
+  --btn-padding-x: calc(var(--btn-h) * 0.65);
   --btn-padding-top: 0;
   --btn-padding-bottom: 0;
   --btn-gap: calc(var(--btn-h) * 0.25);
@@ -291,7 +291,7 @@
     }
 
     &::after {
-      @include focus-visible;
+      @include focus-visible-inner;
     }
   }
 
