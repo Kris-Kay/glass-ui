@@ -154,6 +154,14 @@ textarea {
   // }
 }
 
+@mixin super-wide($font-size: var(--text-xs), $maxSpace: 10px ) {
+  font-family: $font-family-body;
+  font-weight: 600;
+  font-size: $font-size;
+  letter-spacing: min(1vw, $maxSpace);
+  text-transform: uppercase;
+}
+
 .title-3 {
   @include title-3(center);
 }
@@ -234,5 +242,5 @@ textarea {
 .code-class {
   @include code;
   display: inline;
-  color: hsl(var(--primary-50) / 1);
+  // color: hsl(var(--primary-50) / 1);
 }

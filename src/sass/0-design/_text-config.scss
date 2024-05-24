@@ -18,7 +18,7 @@ $letter-spacing-xs: -0.005em;
 $letter-spacing-sm: 0.01em;
 $letter-spacing-md: 0.02em;
 $letter-spacing-lg: 0.04em;
-$letter-spacing-xl: 1vw;
+$letter-spacing-xl: min(1vw, 10px);
 
 /* line-height: ✨ Config these values */
 /* ================================================== */

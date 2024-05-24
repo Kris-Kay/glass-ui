@@ -63,6 +63,11 @@
   @include glass-filter(10px, 0.8, 2.5);
 }
 
+.svg-logo {
+  mask: url(/assets/logos/3D-glass-UI-logo.svg);
+  @include svg-icon;
+}
+
 
 /*  Hero header */
 /* ================================================== */
@@ -310,6 +315,14 @@
 }
 
 /* Telescope rect */
+.tele-rect-bin {
+  height: 450px;
+
+  @include bp(xs) {
+    height: 550px;
+  }
+}
+
 .tele-rect {
   display: grid;
   touch-action: pan-y;
@@ -317,7 +330,6 @@
   width: 100%;
   overflow: hidden;
   padding: 8% 12% 4% 4%;
-  // padding: 4% 4% 4% 12%;
   background-color: var(--tint-xdark);
 
   will-change: padding;
@@ -383,65 +395,73 @@
 /* ================================================== */
 .btn-demo-bin {
   width: 100%;
-  max-width: $bp-lg;
+  max-width: $bp-md;
   display: grid;
   place-items: center;
-  gap: var(--4xl);
+  padding: var(--lg) var(--3xl);
+
+  @include bp(sm) {
+    padding: var(--lg) 0;
+  }
 }
 
 .btn-layout {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  margin: var(--xl) 0;
+  width: 200px;
+  display: grid;
   row-gap: var(--5xl);
   column-gap: var(--3xl);
 
-  @include bp(xs) {
-    margin: var(--md) 0;
+  @include bp(sm) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   @include bp(md) {
-    margin: 0 0 var(--md) 0;
-    column-gap: var(--3xl);
-  }
-
-  @include bp(lg) {
-    column-gap: var(--2xl);
+    column-gap: var(--5xl);
   }
 }
 
 .btn-col {
   display: grid;
   gap: var(--md);
-  width: min(fit-content, 300px);
+  width: 100%;
+  place-items: center start;
+
+  @include bp(xs) {
+    width: fit-content;
+  }
 }
 
-.btn-cell {
+.btn-col-c {
   display: grid;
-  width: fit-content;
-  height: fit-content;
+  gap: var(--md);
+  width: 100%;
   place-items: center start;
+
+  @include bp(xs) {
+    place-items: center;
+    width: fit-content;
+  }
 }
 
 .btn-cell-label {
-  z-index: z(on-card);
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-lg;
+  @include super-wide(var(--text-xs), 10px );
   line-height: $line-height-sm;
+  color: var(--text-base);
+  text-shadow: var(--text-sha-lg);
+  margin-bottom: -10px;
+  width: 100%;
 
-  color: var(--text-mild);
-  text-transform: uppercase;
-  text-shadow: var(--text-sha-2xs);
+  @include bp(sm) {
+    width: fit-content;
+  }
 
-  // @include bp(lg) {
-  //   font-size: var(--text-xs);
-  // }
+  @include bp(lg) {
+    font-size: var(--text-sm);
+  }
 }
 
 

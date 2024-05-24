@@ -17,11 +17,6 @@
   mask-position: center;
 }
 
-.svg-cube {
-  mask: url(/assets/icons/CubeTransparent.svg);
-  @include svg-icon;
-}
-
 .svg-copy {
   mask: url(/assets/icons/Copy.svg);
   @include svg-icon;
