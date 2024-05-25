@@ -45,7 +45,7 @@ textarea,
 }
 
 .text-input-label {
-  @include title-reg(start, --text-md);
+  @include title-md(start, --text-md);
   line-height: $line-height-title;
   color: var(--text-strong);
   text-shadow: var(--text-sha-sm);

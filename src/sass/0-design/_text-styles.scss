@@ -39,13 +39,12 @@ textarea {
 }
 
 .title-thick { @include title($font-weight-lg); }
-.title-reg { @include title($font-weight-md); }
+.title-md { @include title($font-weight-md); }
 .title-thin { @include title($font-weight-sm); }
 
 
 /* Text styles */
 /* ================================================== */
-//h1
 .title-1 {
   @include title($font-weight-md);
   font-size: var(--text-3xl);
@@ -56,7 +55,7 @@ textarea {
   text-shadow: var(--text-sha-2xl);
 }
 
-// marquee-title h2
+
 @mixin title-2($text-align: start) {
   @include title($font-weight-lg);
   font-size: var(--text-xl);
@@ -66,18 +65,18 @@ textarea {
   color: var(--text-strong);
   text-shadow: var(--text-sha-2xl);
 }
+.title-2 { @include title-2(start); }
 
-// card-title-lg h3
+
 @mixin title-3($text-align: start) {
   @include title($font-weight-sm);
   font-size: var(--text-2xl);
   text-align: $text-align;
-
   text-shadow: var(--text-sha-lg);
 }
 .title-3 { @include title-3(center); }
 
-//accordion-header h4
+
 @mixin title-4($text-align: start) {
   @include title($font-weight-lg);
   text-align: $text-align;
@@ -87,48 +86,38 @@ textarea {
   color: var(--text-strong);
   text-shadow: var(--text-sha-xl);
 }
+.title-4 { @include title-4(start); }
 
-@mixin title-reg($text-align: start, $font-size: --text-md) {
+
+@mixin title-md($text-align: start, $font-size: --text-md) {
   @include title($font-weight-md);
   text-align: $text-align;
   letter-spacing: $letter-spacing-sm;
   font-size: var($font-size);
 }
+.title-md { @include title-md(start); }
 
-@mixin reg-title($text-align: center) {
-  @include title($font-weight-md);
-  font-size: var(--text-xl);
-  text-align: $text-align;
-  color: var(--text-base);
-  text-shadow: var(--text-sha-md);
-}
 
-.small-title {
-  @include title($font-weight-md);
-  text-align: center;
-  font-size: var(--text-xl);
-  text-shadow: var(--text-sha-md);
-  color: var(--text-base);
-}
-
-.card-subtitle {
+@mixin subtitle($text-align: start, $font-size: --text-sm) {
   @include body(--text-sm);
-  text-align: center;
-  font-size: var(--text-sm);
+  text-align: $text-align;
+  font-size: var($font-size);
   letter-spacing: $letter-spacing-xs;
   line-height: $line-height-sm;
   color: var(--text-mild);
   text-shadow: var(--text-sha-3xs);
 }
+.subtitle { @include subtitle(center, --text-sm); }
 
-.subhead {
-  font-weight: $font-weight-md;
-  font-size: var(--text-xs);
-  letter-spacing: $letter-spacing-md;
-  line-height: $line-height-md;
-  color: var(--text-mild);
-  text-shadow: var(--text-sha-2xs);
+
+@mixin super-wide($font-size: --text-xs, $maxSpace: 10px ) {
+  font-family: $font-family-body;
+  font-weight: 600;
+  font-size: var($font-size);
+  letter-spacing: min(1vw, $maxSpace);
+  text-transform: uppercase;
 }
+
 
 .eyebrow {
   font-family: $font-family-body;
@@ -140,14 +129,6 @@ textarea {
   color: var(--text-mild);
   text-transform: uppercase;
   text-shadow: var(--text-sha-3xs);
-}
-
-@mixin super-wide($font-size: var(--text-xs), $maxSpace: 10px ) {
-  font-family: $font-family-body;
-  font-weight: 600;
-  font-size: $font-size;
-  letter-spacing: min(1vw, $maxSpace);
-  text-transform: uppercase;
 }
 
 

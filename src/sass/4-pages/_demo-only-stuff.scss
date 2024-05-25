@@ -96,6 +96,7 @@
   }
 
   @include bp(lg) {
+    padding-left: 5rem;
     max-width: $bp-lg;
   }
 
@@ -211,7 +212,7 @@
   text-shadow: var(--text-sha-2xs);
 
   @include bp(xs) {
-    font-size: var(--text-sm);
+    font-size: var(--text-md);
   }
 
   @include bp(sm) {
@@ -399,13 +400,17 @@
 /* ================================================== */
 .btn-demo-bin {
   width: 100%;
-  max-width: $bp-md;
+  max-width: $bp-lg;
   display: grid;
   place-items: center;
   padding: var(--lg) var(--3xl);
 
   @include bp(sm) {
     padding: var(--lg) 0;
+  }
+
+  @include bp(lg) {
+    padding: var(--lg);
   }
 }
 
@@ -452,7 +457,7 @@
 }
 
 .btn-cell-label {
-  @include super-wide(var(--text-xs), 10px );
+  @include super-wide(--text-xs, 10px );
   line-height: $line-height-sm;
   color: var(--text-base);
   text-shadow: var(--text-sha-lg);

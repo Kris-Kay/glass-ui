@@ -3,6 +3,8 @@
 @use "../2-util/layout" as *;
 @use "../2-util/z-index" as *;
 /* ================================================== */
+/* ⚠️ Glass backgrounds stop working at around 2000px width in Firefox! */
+
 
 /* ================================================== */
 /* Noise textures ✨ Config these values */

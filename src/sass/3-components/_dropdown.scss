@@ -8,6 +8,7 @@
 .dropdown-group {
   position: relative;
   pointer-events: none;
+ z-index: z(menu);
 }
 
 .dropdown-toggle {
@@ -45,10 +46,10 @@
   right: 0;
   display: grid;
   gap: var(--2xs);
-  padding: var(--2xs);
+  // padding: var(--2xs);
   pointer-events: auto;
-  border-radius: var(--2xs);
-  box-shadow: var(--sha-lg);
+  border-radius: var(--sm);
+  // box-shadow: var(--sha-lg);
   opacity: 1;
   transform: translateX(0);
   transition: opacity $speed-fast $smooth-cubic,
