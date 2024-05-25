@@ -1,15 +1,15 @@
 # 3D glass UI
-3D glassmorphism materials and components, built with modern CSS.
+3D glassmorphism styles and components, built with modern CSS.
 
 <div align="center" width="100%">
-  <img src="src/assets/readme-img/3D-glass-UI_card.png" width="800">
+  <img src="src/assets/readme-img/3D-glass-ui_card.jpg" width="500">
 </div>
 
 ## Table of contents
 * [Description](#description)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Credits](#credits)
+* [Author](#author)
 * [License](#license)
 
 </br>
@@ -17,18 +17,17 @@
 ## Description
 #### This is an early draft of the 3D glass UI library.
 
-The project is set up as a design system prototyping playground. You can easily configure the design tokens and instantly see the results applied to the [demo site](https://3d-glass-ui.com/).
-Includes beveled and inset glass styles whose use is demonstrated through the components included in this repo.
+This project is set up as a design system prototyping playground. You can easily configure the design tokens and instantly see the results applied to the [demo site](https://3d-glass-ui.com/).
 
 
 <div align="center" width="100%">
-  <img src="src/assets/homeImg/gpt4-glass-issues_1280x1280.jpg" width="600">
   <img src="src/assets/homeImg/glass-details_1024x1236.jpg" width="600">
 </div>
 
 ### Features
 * Customizable design tokens and composable styling classes. *For glass that reflects your branding.*
 * Fluid typography and sizing. *For elements that scale with viewport width.*
+* Container queries. *For truly responsive components.*
 
 ### Build with
 * HTML
@@ -36,30 +35,8 @@ Includes beveled and inset glass styles whose use is demonstrated through the co
 * Vanilla JS
 
 ### Browser compatibility
-##### All the CSS used is supported by the latest desktop and mobile versions of Firefox, Safari, and Chrome.
+#### All the CSS used is supported by the latest desktop and mobile versions of Firefox, Safari, and Chrome.
 If you require legacy browser support please make sure to test! The goal of this project was to create next-gen glassmorphism, therefore backwards compatibility was not a top priority.
-
-</br>
-
-## Screenshots
-
-</br>
-<div align="center" width="100%">
-  <img src="src/assets/readme-img/3D-glass-UI_glass-tints.png" width="800">
-</div>
-
-</br>
-
-<div align="center" width="100%">
-  <img src="src/assets/readme-img/3D-glass-UI_inset-shadows.png" width="800">
-</div>
-
-</br>
-
-
-<div align="center" width="100%">
-  <img src="src/assets/readme-img/3D-glass-UI_tab-menu.png" width="800">
-</div>
 
 </br>
 
@@ -69,7 +46,7 @@ This project uses Stephanie Eckles'
 [Minimum Static Site Setup with Sass](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/)
 
 To get started:
-1. Make sure you have Node, Npm, and Git installed.
+1. Make sure you have Node, and Npm installed.
 2. Install Node modules.
 ```
 npm install
