@@ -1,6 +1,6 @@
 {
-  "name": "glass-ui-scss",
-  "version": "0.1.0",
+  "name": "3d-glass-ui",
+  "version": "1.0.0",
   "description": "3D glass UI SCSS library",
   "main": "/index.html",
   "keywords": [
