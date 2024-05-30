@@ -37,9 +37,7 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 }
 
 :focus {
-  outline: 0;
-  outline-color: transparent;
-  @include focus-visible-inner;
+  outline: 1px solid transparent;
 }
 
 ::-moz-focus-inner {
