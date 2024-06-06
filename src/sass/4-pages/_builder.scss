@@ -1,0 +1,89 @@
+/* ================================================== */
+/* Builder */
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/components" as *;
+/* ================================================== */
+
+// .content-area {
+//   width: 100%;
+//   height: fit-content;
+//   padding: 0 0 var(--5xl) 0;
+
+//   /* for debug */
+//   // background-color: pink;
+//   // background-color: #fff;
+//   // background-color: hsl(var(--neutral-60) / 1);
+//   // background-color: #000;
+// }
+
+.builder-area {
+  width: 100%;
+  max-width: $bp-lg;
+  height: fit-content;
+  min-height: 100lvh;
+  display: grid;
+
+  grid-template-columns: 1fr;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-evenly;
+  // flex-wrap: wrap;
+  gap: var(--5xl);
+  padding: var(--nav-h) 0;
+
+  @include bp(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  @include bp(lg) {
+    grid-template-columns: 8fr 5fr;
+    // gap: 0;
+  }
+
+  @include bp(xl) {
+    grid-template-columns: 1fr 1fr;
+    // gap: 0;
+  }
+}
+
+.builder-glass {
+  max-width: $bp-xs;
+  // width: min(100%, $bp-xs);
+  aspect-ratio: 3 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--5xs);
+  align-items: flex-start;
+  justify-content: flex-end;
+  // place-items: end start;
+  padding: var(--2xl);
+
+
+  @include radius("md");
+
+  @include glass-base(
+    --bevel-md,
+    $noise-md,
+    var(--blur),
+    var(--bright),
+    var(--satu));
+
+  & h1 {
+    width: max-content;
+    line-height: 1;
+  }
+
+
+}
+
+.builder-bin {
+  width: min(100%, $bp-sm);
+
+  & button {
+    width: 100%;
+    min-width: max-content;
+  }
+}
