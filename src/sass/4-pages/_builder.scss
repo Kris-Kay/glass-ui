@@ -6,61 +6,53 @@
 @use "../forward-styles/components" as *;
 /* ================================================== */
 
-// .content-area {
-//   width: 100%;
-//   height: fit-content;
-//   padding: 0 0 var(--5xl) 0;
-
-//   /* for debug */
-//   // background-color: pink;
-//   // background-color: #fff;
-//   // background-color: hsl(var(--neutral-60) / 1);
-//   // background-color: #000;
-// }
-
 .builder-area {
   width: 100%;
   max-width: $bp-lg;
-  height: fit-content;
-  min-height: 100lvh;
-  display: grid;
+  min-height: fit-content;
+  height: 100%;
 
-  grid-template-columns: 1fr;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-evenly;
-  // flex-wrap: wrap;
-  gap: var(--5xl);
-  padding: var(--nav-h) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  padding: var(--nav-h) 0 var(--moat) 0;
 
   @include bp(md) {
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
-  @include bp(lg) {
-    grid-template-columns: 8fr 5fr;
-    // gap: 0;
+    padding: var(--nav-h) var(--moat);
   }
 
   @include bp(xl) {
-    grid-template-columns: 1fr 1fr;
-    // gap: 0;
+    padding: var(--nav-h) 0;
   }
 }
 
-.builder-glass {
+.glass-bin {
+  width: 100%;
+  min-height: fit-content;
+  display: grid;
+  place-items: center;
+  padding: var(--xl) var(--moat);
+
+// background-color: rgba(234, 255, 0, 0.371);
+
+  @include bp(md) {
+    padding: 0;
+    width: auto;
+    flex: 1;
+  }
+}
+
+.glass {
   max-width: $bp-xs;
-  // width: min(100%, $bp-xs);
-  aspect-ratio: 3 / 2;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+
   display: flex;
   flex-direction: column;
-  gap: var(--5xs);
   align-items: flex-start;
   justify-content: flex-end;
-  // place-items: end start;
   padding: var(--2xl);
-
 
   @include radius("md");
 
@@ -71,19 +63,41 @@
     var(--bright),
     var(--satu));
 
+  @include bp(md) {
+    width: 80%;
+    aspect-ratio: 3 / 2;
+  }
+
   & h1 {
     width: max-content;
     line-height: 1;
   }
-
-
 }
 
 .builder-bin {
-  width: min(100%, $bp-sm);
+  width: 100%;
+  min-height: fit-content;
+  display: grid;
+  padding: 0;
 
-  & button {
-    width: 100%;
-    min-width: max-content;
+  // background-color: rgba(0, 128, 255, 0.371);
+
+  @include bp(sm) {
+    padding: 0 var(--moat);
+  }
+
+  @include bp(md) {
+    flex: 1;
+    padding: var(--nav-h) 0 0 0;
+  }
+}
+
+.builder {
+  max-width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+
+  @include bp(sm) {
+    max-width: $bp-xs;
   }
 }

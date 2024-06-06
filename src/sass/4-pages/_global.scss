@@ -31,22 +31,22 @@ body {
   height: fit-content;
 }
 
-// .content-area {
-//   width: 100%;
-//   height: fit-content;
-//   padding: 0 0 var(--5xl) 0;
+.content-area {
+  width: 100%;
+  height: fit-content;
+  // padding: 0 0 var(--5xl) 0;
 
-//   /* for debug */
-//   // background-color: pink;
-//   // background-color: #fff;
-//   // background-color: hsl(var(--neutral-60) / 1);
-//   // background-color: #000;
-// }
+  /* for debug */
+  // background-color: pink;
+  // background-color: #fff;
+  // background-color: hsl(var(--neutral-60) / 1);
+  // background-color: #000;
+}
 
 /* Above-the-fold hero header */
 /* ================================================== */
-// .hero {
-//   width: 100%;
-//   height: 100vh;
-//   min-height: 100lvh;
-// }
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 100lvh;
+}
