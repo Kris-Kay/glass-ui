@@ -11,7 +11,7 @@ function callFindFunctions() {
 function fetchHome() {
   const container = document.querySelector('#js-content');
 
-  fetch('/html/builder.html')
+  fetch('/html/generator.html')
     .then(response => response.text())
 
     .then(html => {
