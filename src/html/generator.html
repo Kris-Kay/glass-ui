@@ -1,51 +1,148 @@
 <!-- 3d glass generator -->
 <!-- ================================================== -->
 <article class="hero grid-c">
-  <div class="builder-area">
+  <div class="generator-area">
 
     <!-- Demo glass -->
     <section class="glass-bin">
       <div class="glass">
-        <div>
+        <!-- <div>
           <p class="eyebrow">SCSS library</p>
           <h1 class="title-2">3D Glass UI</h1>
-        </div>
+        </div> -->
       </div>
     </section>
 
     <!-- Generator -->
-    <section class="builder-bin">
+    <section class="generator-bin">
       <div class=" bg-container w-100">
 
-        <div class="accordion-multi glass-3d builder">
-          <h3 class="accordion-header">Edit glass demo</h3>
+        <div class="accordion-multi glass-3d generator">
+          <h3 class="accordion-header">3d glass generator</h3>
+
+              <!-- <div class="flex gap-xs">
+                <button class="js-switch btn-switch"
+                  id="js-bevelSwitch"
+                  type="button"
+                  role="switch"
+                  tabindex="0"
+                  aria-checked="false">
+                </button>
+
+                <label for="js-bevelSwitch" class="title-md">Bevel</label>
+              </div> -->
+
+              <!-- <div class="input-group">
+                <input id="js-bevelSwitch" class="switch bevel-switch"
+                  role="switch"
+                  aria-checked="false"
+                  value="off"
+                  type="checkbox"
+                  tabindex="0"
+                  id="s-0"  >
+                <label for="s-0" class="title-md" >
+                  Bevel
+                </label>
+              </div> -->
+
+              <!-- <h4 class="" >Bevel</h4> -->
 
           <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
+
+            <div class="js-switchGroup switch-group">
+
+              <!-- Accordion switch -->
+              <div class="flex gap-xs">
+
+                <input class="js-accordionSwitch accordion-switch switch"
+                  id="js-bevelSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-bevelSwitch" >
+                  bevel
+                </label>
+              </div>
+
+              <!-- Accordion btn -->
+              <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
                 type="button"
-                aria-expanded="false" >
-                Bevel
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                aria-expanded="false"
+                >
+
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
                 </svg>
               </button>
-            </h4>
 
-            <div class="js-accordion-content is-closed accordion-content">
+            </div>
+
+            <!-- Content -->
+            <div class="js-accordion-content accordion-content is-closed">
               <p>Accordion content goes here!</p>
             </div>
+
           </div>
 
+
           <div class="js-accordion">
+
+            <div class="js-switchGroup switch-group is-off">
+
+              <!-- Accordion switch -->
+              <div class="flex gap-xs">
+
+                <input class="js-accordionSwitch accordion-switch switch"
+                  id="js-colorSwitch"
+                  type="checkbox"
+                  aria-checked="false"
+                  tabindex="0"
+                >
+
+                <label class="js-switchTitle switch-label"
+                  for="js-colorSwitch" >
+                  color
+                </label>
+              </div>
+
+              <!-- Accordion btn -->
+              <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
+                type="button"
+                aria-expanded="false"
+                disabled >
+
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <!-- Content -->
+            <div class="js-accordion-content accordion-content is-closed">
+              <p>Accordion content goes here!</p>
+            </div>
+
+          </div>
+
+
+
+
+          <!-- <div class="js-accordion">
             <h4 class="">
               <button class="js-accordion-btn accordion-btn is-closed"
                 type="button"
                 aria-expanded="false" >
                 Color
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
@@ -64,7 +161,7 @@
                 type="button"
                 aria-expanded="false" >
                 Elevation shadow
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
@@ -83,7 +180,7 @@
                 type="button"
                 aria-expanded="false" >
                 Noise texture
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
@@ -102,7 +199,7 @@
                 type="button"
                 aria-expanded="false" >
                 backdrop-filter
-                <svg class="js-icon accordion-icon svg-chev-down is-closed"
+                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
@@ -113,7 +210,7 @@
             <div class="js-accordion-content accordion-content is-closed">
               <p>Accordion content goes here!</p>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

@@ -1,12 +1,12 @@
 /* ================================================== */
-/* Builder */
+/* generator */
 @use "../forward-styles/design" as *;
 @use "../forward-styles/glass" as *;
 @use "../forward-styles/util" as *;
 @use "../forward-styles/components" as *;
 /* ================================================== */
 
-.builder-area {
+.generator-area {
   width: 100%;
   max-width: $bp-lg;
   min-height: fit-content;
@@ -74,7 +74,7 @@
   }
 }
 
-.builder-bin {
+.generator-bin {
   width: 100%;
   min-height: fit-content;
   display: grid;
@@ -92,7 +92,7 @@
   }
 }
 
-.builder {
+.generator {
   max-width: 100%;
   height: fit-content;
   margin: 0 auto;
@@ -101,3 +101,174 @@
     max-width: $bp-xs;
   }
 }
+
+
+.switch-group {
+  position: relative;
+  // pointer-events: auto;
+  // cursor: pointer;
+  pointer-events: none;
+  cursor: default;
+  z-index: z(on-card);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sm);
+  padding: var(--space);
+
+  &.is-off {
+    & .switch-label {
+      color: gray;
+    }
+  }
+
+  // will-change: background-color;
+  // transition: background-color $speed-fast $smooth-cubic;
+
+  // &:hover {
+  //   background-color: var(--tint-light);
+  // }
+
+  // &:focus-visible {
+  //   @include focus-visible-inner;
+  //   background-color: var(--tint-light);
+  // }
+}
+
+.switch-label {
+  @include title-md(start);
+  color: blue;
+  pointer-events: none;
+  cursor: default;
+}
+
+.to-switch {
+  cursor: pointer;
+  & > .accordion-icon {
+    background-color: blue;
+  }
+
+  &:disabled {
+    cursor: auto;
+
+    & > .accordion-icon {
+      background-color: transparent;
+    }
+  }
+}
+
+/* Base for switch | checkbox | radio button  ✨ Config these values */
+/* ================================================== */
+// @mixin btn-switch-base {
+//   --input-h: var(--ui-h-xs);
+
+//   --bg: var(--inset-bg-deep);
+//   --bg-hover: var(--tint-2xdark);
+//   --inset: var(--inset-sm);
+//   --knob: hsl(var(--neutral-95) / 1);
+//   --knob-sha: var(--sha-xs);
+
+//   --bg-checked: hsl(var(--primary-50) / 1);
+//   --bg-checked-hover: hsl(var(--primary-30) / 1);
+
+//   --bg-disabled: var(--inset-bg-xdeep);
+//   --inset-disabled: none;
+//   --knob-disabled: hsl(var(--neutral-90) / 0.25);
+//   --knob-disabled-sha: none;
+
+//   --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
+
+//   position: relative;
+//   z-index: z(input);
+//   overflow: hidden;
+//   pointer-events: auto;
+//   cursor: pointer;
+//   background-color: var(--bg);
+//   box-shadow: var(--inset);
+//   will-change: background-color;
+//   transition: background-color $speed-slow $smooth-cubic;
+
+//   &::after {
+//     @include pseudo;
+//     z-index: z(on-input);
+//     overflow: hidden;
+//   }
+
+//   @media (pointer: fine) {
+//     &:hover {
+//       background-color: var(--bg-hover);
+//     }
+//   }
+
+//   & [aria-checked="true"] {
+//     background-color: var(--bg-checked);
+
+//     &:hover {
+//       background-color: var(--bg-checked-hover);
+//     }
+//   }
+
+//   &:focus-visible {
+//     @include focus-visible-outer;
+//   }
+
+//   &:disabled {
+//     cursor: not-allowed;
+//     background-color: var(--bg-disabled);
+//     box-shadow: var(--inset-disabled);
+
+//     & + label {
+//       color: var(--text-xmild);
+//     }
+
+//     &::after {
+//       box-shadow: var(--knob-disabled-sha);
+//     }
+
+//     &:checked {
+//       background-color: var(--bg-disabled-checked);
+
+//       &::after {
+//         box-shadow: var(--knob-disabled-sha);
+//       }
+//     }
+//   }
+// }
+
+// /* Button switch */
+// /* ================================================== */
+// .btn-switch {
+//   --switch-width: calc(var(--input-h) * 1.8);
+//   --thumb-margin: 3.5px;
+
+//   @include btn-switch-base;
+//   display: inline-flex;
+//   width: var(--switch-width);
+//   height: var(--input-h);
+//   align-items: center;
+//   border-radius: 99px;
+
+//     &::after {
+//       display: block;
+//       aspect-ratio: 1;
+//       margin: var(--thumb-margin);
+//       height: calc(100% - (2 * var(--thumb-margin)));
+//       background-color: var(--knob);
+//       box-shadow: var(--knob-sha);
+//       border-radius: 99px;
+//       transition: margin $speed-base $smooth-cubic;
+//     }
+
+//   & [aria-checked="true"] {
+//     &::after {
+//       margin-inline-start: calc(var(--switch-width) - var(--input-h) + var(--thumb-margin));
+//     }
+//   }
+
+//   &:disabled {
+//     &::after {
+//       background-color: var(--knob-disabled);
+//     }
+//   }
+// }
