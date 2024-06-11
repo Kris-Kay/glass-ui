@@ -8,105 +8,134 @@
 
 .generator-area {
   width: 100%;
-  max-width: $bp-lg;
   min-height: fit-content;
+  height: 100vh;
+  height: 100svh;
+  padding: var(--nav-h) 0 0 0;
+  display: grid;
+  place-items: start center;
+}
+
+.generator-layout {
+  width: 100%;
+  min-height: max-content;
   height: 100%;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-  padding: var(--nav-h) 0 var(--moat) 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: start center;
 
-  @include bp(md) {
-    padding: var(--nav-h) var(--moat);
+  @include bp(lg) {
+    grid-template-columns: 1fr auto;
+    padding-top: var(--md);
   }
 
-  @include bp(xl) {
-    padding: var(--nav-h) 0;
+  @include bp(xxl) {
+    max-width: $bp-xl;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
   }
 }
 
+/* Glass  */
 .glass-bin {
   width: 100%;
   min-height: fit-content;
+  height: 50vh;
   display: grid;
   place-items: center;
-  padding: var(--xl) var(--moat);
 
-// background-color: rgba(234, 255, 0, 0.371);
-
-  @include bp(md) {
-    padding: 0;
-    width: auto;
-    flex: 1;
+  @include bp(lg) {
+    height: 100vh;
   }
 }
 
-// .glass {
-//   max-width: $bp-xs;
-//   width: 100%;
-//   aspect-ratio: 2 / 1;
+.glass-tele-rect-bin {
+    width: 100%;
+    padding: 0 var(--moat);
 
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   justify-content: flex-end;
-//   padding: var(--2xl);
+    @include bp(xs) {
+      padding: 0 calc(var(--moat) * 1.5);
+    }
 
-//   @include radius("md");
+    @include bp(sm) {
+      max-width: 380px;
+      padding: 0;
+    }
 
-//   @include glass-base(
-//     --bevel-md,
-//     $noise-md,
-//     var(--blur),
-//     var(--bright),
-//     var(--satu));
+    @include bp(md) {
+      max-width: 400px;
+    }
+}
 
-//   @include bp(md) {
-//     width: 80%;
-//     aspect-ratio: 3 / 2;
-//   }
+.glass-tele-rect {
+  display: grid;
+  touch-action: pan-y;
+  min-width: max-content;
 
-//   & h1 {
-//     width: max-content;
-//     line-height: 1;
-//   }
-// }
-
-.glass-rect {
-  max-width: $bp-xs;
-  width: 100%;
-  aspect-ratio: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: var(--2xl);
-
+  padding: 12% 4% 4% 4%;
+  background-color: var(--tint-xdark);
   @include radius("md");
 
-  // @include bp(md) {
-  //   width: 80%;
-  //   aspect-ratio: 3 / 2;
-  // }
+  will-change: padding;
+  transition: padding $smooth-cubic $speed-base;
 
-  & h1 {
-    width: max-content;
-    line-height: 1;
+  @include bp(xs) {
+    padding: 14% 4% 4% 4%;
+  }
+
+  @include bp(lg) {
+    padding: 16% 4% 4% 8%;
+    @include radius("sm");
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      padding: 4% 4% 10% 8%;
+    }
+  }
+}
+
+.glass-rect {
+  width: max-content;
+  margin: 0 auto;
+
+  & > h1 {
+    word-break: keep-all;
+    pointer-events: none;
+    @include super-wide($font-weight-sm, --text-2xs, 3px);
+    line-height: $line-height-sm;
+    text-align: center;
+    color: var(--text-xmild);
+
+    padding: var(--md) 0 0 0;
+
+    @include bp(xs) {
+      @include super-wide($font-weight-sm, --text-2xs, 5px);
+      padding: var(--xl) 0 0 0;
+    }
+
+    @include bp(sm) {
+      @include super-wide($font-weight-sm, --text-xs, 6px);
+      padding: var(--2xl) 0 var(--xs) 0;
+    }
+
+    @include bp(lg) {
+      @include super-wide($font-weight-sm, --text-xs, 5px);
+      padding: var(--xl) 0 var(--xs) 0;
+    }
   }
 }
 
 .glass-3d-gen {
---color: var(--tint-xdark);
+--color: var(--tint-clear);
 --bevel: var(--bevel-md);
 --noise: var(--noise-gray);
 --shadow: var(--sha-xs);
 --filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
---blur: 40px;
---bright: 0.9;
---satu: 1.25;
+--blur: 36px;
+--bright: 0.99;
+--satu: 1.33;
 
   position: relative;
   // z-index: 4;
@@ -155,43 +184,54 @@
 
 }
 
+/* Generator  */
 .generator-bin {
   min-width: fit-content;
   width: 100%;
+
   min-height: fit-content;
+  height: 100%;
   display: grid;
-  padding: 0;
-
-  // background-color: rgba(0, 128, 255, 0.371);
-
-  @include bp(sm) {
-    padding: 0 var(--moat);
-  }
+  place-items: start center;
 
   @include bp(md) {
-    flex: 1;
-    padding: var(--nav-h) 0 0 0;
+    place-items: start end;
+  }
+
+  @include bp(lg) {
+    place-items: center end;
+  }
+
+  @include bp(xxl) {
+    place-content: center;
   }
 }
 
 .generator {
-  max-width: 100%;
+  // --space: calc(var(--sm) * 1.15);
+  width: 100%;
+  max-width: 400px;
   height: fit-content;
-  margin: 0 auto;
+
+  @include radius("sm");
 
   @include bp(sm) {
-    max-width: $bp-sm;
+    @include radius("md");
+    box-shadow: var(--sha-xl);
+  }
+
+  @include bp(md) {
+    width: fit-content;
+    min-height: fit-content;
+    border-radius: var(--md) 0 0  var(--md);
+  }
+
+  @include bp(xxl) {
+    border-radius: var(--md);
   }
 }
 
-.generator-title {
-  @include title($font-weight-sm);
-  font-size: var(--text-lg);
-  letter-spacing: $letter-spacing-xs;
-  text-align: center;
-  color: var(--text-xstrong);
-  text-shadow: var(--text-sha-2xl);
-}
+//
 
 .switch-group {
   position: relative;
@@ -201,10 +241,15 @@
   cursor: default;
   z-index: z(on-card);
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr var(--ui-h-lg);
   align-items: center;
-  justify-content: space-between;
-  gap: var(--sm);
+  // justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+
+  gap: var(--space);
   padding: var(--space);
 
   &.is-off {
@@ -226,6 +271,15 @@
   // }
 }
 
+.switch-label-group {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--2xs);
+
+}
+
 .switch-label {
   @include title-md(start);
   color: var(--text-strong);
@@ -233,7 +287,11 @@
   cursor: default;
 }
 
-.to-switch {
+.content-toggle {
+    @include btn-icon-structure;
+  --btn-h: var(--ui-h-md);
+  --btn-icon-h: calc(var(--btn-h) * 0.85);
+
   cursor: pointer;
   & > .accordion-icon {
     background-color: var(--text-strong);
@@ -251,6 +309,18 @@
 .slider {
   margin-left: 1rem;
 }
+
+
+// .generator-title {
+//   @include title($font-weight-sm);
+//   font-size: var(--text-lg);
+//   letter-spacing: $letter-spacing-xs;
+//   text-align: center;
+//   color: var(--text-xstrong);
+//   text-shadow: var(--text-sha-2xl);
+// }
+
+
 
 /* Base for switch | checkbox | radio button  ✨ Config these values */
 /* ================================================== */
