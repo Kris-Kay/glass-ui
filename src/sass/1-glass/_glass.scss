@@ -12,6 +12,7 @@
 /* Noise texture generator */
 /* https://devsdash.com/tools/noise-texture-generator */
 
+
 $noise-img: url(/assets/textures/noise-texture-rough-gray-500x500.png);
 
 $noise-sm: 25px;
@@ -65,6 +66,10 @@ body {
   --blur: #{$blur-lg};
   --bright: #{$bright-base};
   --satu: #{$satu-strong};
+
+  --noise-pink: url(/assets/textures/noise-texture-pink-100x100.png);
+  --noise-gray: url(/assets/textures/noise-texture-both-500x500.png);
+  --noise-rough-gray: url(/assets/textures/noise-texture-rough-gray-500x500.png);
 }
 
 @mixin glass-base(
