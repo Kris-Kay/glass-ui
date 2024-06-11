@@ -4,8 +4,9 @@
 function callFindFunctions() {
   findTabs();
   findAccordions();
-  findSpotlights();
-  findCopyBtns();
+  // findSpotlights();
+  // findCopyBtns();
+  initializeGenerator();
 }
 
 function fetchHome() {

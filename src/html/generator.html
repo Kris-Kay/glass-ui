@@ -5,7 +5,7 @@
 
     <!-- Demo glass -->
     <section class="glass-bin">
-      <div class="glass">
+      <div class="glass-rect glass-3d-gen">
         <!-- <div>
           <p class="eyebrow">SCSS library</p>
           <h1 class="title-2">3D Glass UI</h1>
@@ -18,43 +18,16 @@
       <div class=" bg-container w-100">
 
         <div class="accordion-multi glass-3d generator">
-          <h3 class="accordion-header">3d glass generator</h3>
+          <h3 class="accordion-header generator-title">3d glass generator</h3>
 
-              <!-- <div class="flex gap-xs">
-                <button class="js-switch btn-switch"
-                  id="js-bevelSwitch"
-                  type="button"
-                  role="switch"
-                  tabindex="0"
-                  aria-checked="false">
-                </button>
-
-                <label for="js-bevelSwitch" class="title-md">Bevel</label>
-              </div> -->
-
-              <!-- <div class="input-group">
-                <input id="js-bevelSwitch" class="switch bevel-switch"
-                  role="switch"
-                  aria-checked="false"
-                  value="off"
-                  type="checkbox"
-                  tabindex="0"
-                  id="s-0"  >
-                <label for="s-0" class="title-md" >
-                  Bevel
-                </label>
-              </div> -->
-
-              <!-- <h4 class="" >Bevel</h4> -->
-
+          <!-- Bevel -->
           <div class="js-accordion">
 
             <div class="js-switchGroup switch-group">
 
-              <!-- Accordion switch -->
               <div class="flex gap-xs">
 
-                <input class="js-accordionSwitch accordion-switch switch"
+                <input class="js-accordionSwitch  switch"
                   id="js-bevelSwitch"
                   type="checkbox"
                   aria-checked="true"
@@ -84,28 +57,73 @@
             </div>
 
             <!-- Content -->
-            <div class="js-accordion-content accordion-content is-closed">
-              <p>Accordion content goes here!</p>
+            <div class="js-accordionContent accordion-content is-closed">
+
+              <fieldset class="input-fieldset">
+                <!-- <legend class="input-legend input-label">Select a bevel</legend> -->
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-sm"
+                    name="bevels"
+                    tabindex="0"
+                    value="var(--bevel-sm)">
+                  <label class="inline-label"
+                    for="radio-bevel-sm"  >
+                    bevel-sm
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-md"
+                    name="bevels"
+                    value="var(--bevel-md)"
+                    tabindex="0"
+                    checked  >
+                  <label class="inline-label"
+                    for="radio-bevel-md"  >
+                    bevel-md
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-lg"
+                    name="bevels"
+                    value="var(--bevel-lg)"
+                    tabindex="0"
+                      >
+                  <label class="inline-label"
+                    for="radio-bevel-lg"  >
+                    bevel-lg
+                  </label>
+                </div>
+
+              </fieldset>
             </div>
 
           </div>
 
-
+          <!-- Color -->
           <div class="js-accordion">
 
-            <div class="js-switchGroup switch-group is-off">
+            <div class="js-switchGroup switch-group">
 
-              <!-- Accordion switch -->
               <div class="flex gap-xs">
 
-                <input class="js-accordionSwitch accordion-switch switch"
+                <input class="js-accordionSwitch switch"
                   id="js-colorSwitch"
                   type="checkbox"
-                  aria-checked="false"
+                  aria-checked="true"
                   tabindex="0"
+                  checked
                 >
 
-                <label class="js-switchTitle switch-label"
+                <label class="switch-label"
                   for="js-colorSwitch" >
                   color
                 </label>
@@ -115,7 +133,7 @@
               <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
                 type="button"
                 aria-expanded="false"
-                disabled >
+                >
 
                 <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
@@ -127,90 +145,314 @@
             </div>
 
             <!-- Content -->
-            <div class="js-accordion-content accordion-content is-closed">
+            <div class="js-accordionContent accordion-content is-closed">
               <p>Accordion content goes here!</p>
             </div>
 
           </div>
 
-
-
-
-          <!-- <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
-                type="button"
-                aria-expanded="false" >
-                Color
-                <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
-                  role="graphics-symbol"
-                  aria-hidden="true"
-                  focusable="false"  >
-                </svg>
-              </button>
-            </h4>
-
-            <div class="js-accordion-content is-closed accordion-content">
-              <p>Accordion content goes here!</p>
-            </div>
-          </div>
-
+          <!-- Noise -->
           <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
+
+            <div class="js-switchGroup switch-group">
+
+              <div class="flex gap-xs">
+
+                <input class="js-accordionSwitch switch"
+                  id="js-noiseSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-noiseSwitch" >
+                  noise
+                </label>
+              </div>
+
+              <!-- Accordion btn -->
+              <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
                 type="button"
-                aria-expanded="false" >
-                Elevation shadow
+                aria-expanded="false"
+                >
+
                 <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
                 </svg>
               </button>
-            </h4>
 
-            <div class="js-accordion-content accordion-content is-closed">
-              <p>Accordion content goes here!</p>
             </div>
+
+            <!-- Content -->
+            <div class="js-accordionContent accordion-content is-closed">
+               <fieldset class="input-fieldset">
+                <!-- <legend class="input-legend input-label">Select a noise texture</legend> -->
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="noise-gray"
+                    name="noise"
+                    value="var(--noise-gray)"
+                    tabindex="0"
+                    checked>
+                  <label class="inline-label"
+                    for="noise-gray"  >
+                    noise-gray
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="noise-rough-gray"
+                    name="noise"
+                    value="var(--noise-rough-gray)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="noise-rough-gray"  >
+                    noise-rough-gray
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="noise-pink"
+                    name="noise"
+                    value="var(--noise-pink)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="noise-pink"  >
+                    noise-pink
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+
           </div>
 
+          <!-- Shadow -->
           <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
+
+            <div class="js-switchGroup switch-group is-off">
+
+              <div class="flex gap-xs">
+
+                <input class="js-accordionSwitch switch"
+                  id="js-shadowSwitch"
+                  type="checkbox"
+                  aria-checked="false"
+                  tabindex="0"
+                >
+
+                <label class="switch-label"
+                  for="js-shadowSwitch" >
+                  shadow
+                </label>
+              </div>
+
+              <!-- Accordion btn -->
+              <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
                 type="button"
-                aria-expanded="false" >
-                Noise texture
+                aria-expanded="false"
+                disabled
+                >
+
                 <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
                 </svg>
               </button>
-            </h4>
 
-            <div class="js-accordion-content accordion-content is-closed">
-              <p>Accordion content goes here!</p>
             </div>
+
+            <!-- Content -->
+            <div class="js-accordionContent accordion-content is-closed">
+                             <fieldset class="input-fieldset">
+                <!-- <legend class="input-legend input-label">Select a noise texture</legend> -->
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-xs"
+                    name="shadows"
+                    value="var(--sha-xs)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="sha-xs"  >
+                    shadow-xs
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-sm"
+                    name="shadows"
+                    value="var(--sha-sm)"
+                    tabindex="0"
+                    checked>
+                  <label class="inline-label"
+                    for="sha-sm"  >
+                    shadow-sm
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-md"
+                    name="shadows"
+                    value="var(--sha-md)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="sha-md"  >
+                    shadow-md
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-lg"
+                    name="shadows"
+                    value="var(--sha-lg)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="sha-lg"  >
+                    shadow-lg
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-xl"
+                    name="shadows"
+                    value="var(--sha-xl)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label"
+                    for="sha-xl"  >
+                    shadow-xl
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+
           </div>
 
+          <!-- Filters -->
           <div class="js-accordion">
-            <h4 class="">
-              <button class="js-accordion-btn accordion-btn is-closed"
+
+            <div class="js-switchGroup switch-group">
+
+              <div class="flex gap-xs">
+
+                <input class="js-accordionSwitch switch"
+                  id="js-filterSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-filterSwitch">
+                  filter
+                </label>
+              </div>
+
+              <!-- Accordion btn -->
+              <button class="js-toSwitch js-accordion-btn to-switch btn-icon-lg is-closed"
                 type="button"
-                aria-expanded="false" >
-                backdrop-filter
+                aria-expanded="false"
+                >
+
                 <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
                   role="graphics-symbol"
                   aria-hidden="true"
                   focusable="false"  >
                 </svg>
               </button>
-            </h4>
 
-            <div class="js-accordion-content accordion-content is-closed">
-              <p>Accordion content goes here!</p>
             </div>
-          </div> -->
+
+            <!-- Content -->
+            <div class="js-accordionContent accordion-content is-closed">
+              <fieldset class="input-fieldset">
+                <!-- <legend class="input-legend input-label">
+                  Checkboxs
+                </legend> -->
+
+                <div class="input-group">
+                  <input  class="checkbox"
+                          type="checkbox"
+                          tabindex="0"
+                          id="blur-filter"
+                          name="filters"
+                          value="blur-filter"
+                          checked>
+
+                  <label  class="inline-label"
+                          for="blur-filter" >
+                    blur-filter
+                  </label>
+
+                  <input  class="slider"
+                          id="blur-filter-range"
+                          type="range"
+                          name="filter-range"
+                          min="1px" max="80px"
+                          value="40px"
+                          step="4" />
+                </div>
+
+                <div class="input-group">
+                  <input class="checkbox"
+                    type="checkbox"
+                    id="satu-filter"
+                    name="filters"
+                    value="satu-filter"
+                    tabindex="0"
+                    checked  >
+                  <label class="inline-label"
+                    for="satu-filter"  >
+                    saturation
+                  </label>
+                </div>
+
+                <div class="input-group">
+                  <input class="checkbox"
+                    type="checkbox"
+                    id="bright-filter"
+                    name="filters"
+                    value="bright-filter"
+                    tabindex="0"
+                    checked >
+                  <label class="inline-label"
+                    for="bright-filter"  >
+                    brightness
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+
+          </div>
 
         </div>
 
