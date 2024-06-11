@@ -18,10 +18,6 @@ function onSwitchChange(e) {
   const $expanded = $thisToSwitch.getAttribute("aria-expanded") === "true" || false;
   const $thisIcon = $thisToSwitch.querySelector(".js-accordionIcon");
 
-  // console.log($thisSwitch);
-  // console.log($thisSwitchGroup);
-  // console.log($thisToSwitch);
-
   /* If accordion is switched off while expanded -> close it */
   function closeAccordion() {
     if($expanded) {
@@ -32,7 +28,7 @@ function onSwitchChange(e) {
     }
   }
 
-
+/* Switch on/off */
   function toggleSwitch() {
     if ($ariaChecked) {
       $thisSwitchGroup.classList.add("is-off");
@@ -50,12 +46,11 @@ function onSwitchChange(e) {
       // console.log($switchId + " is ON");
     }
   }
-
   toggleSwitch();
 }
 
 
-/* Find what switch was toggled & set its on/off value */
+/* Find what switch was changed & set its layer's on/off value */
 function toggleGlassLayers($id, $isOff) {
   // console.log($id + " is off " + $isOff);
 
@@ -164,40 +159,40 @@ function setFilter($value) {
 
 
 function initializeGenerator() {
+
   document.querySelectorAll(".js-accordionSwitch").forEach(($switch) => {
     $switch.addEventListener("change", onSwitchChange);
   });
 
   $glassGen = document.querySelectorAll(".glass-3d-gen");
+
+  /* Bevels */
   $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
-  $noiseValue = document.querySelector('input[name="noise"]:checked').value;
-  $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
-
   $bevelRadios = document.querySelectorAll('input[name="bevels"]');
-
   $bevelRadios.forEach(($radio) => {
     $radio.addEventListener("change", (event) => {
-      // console.log(`You like ${event.target.value}`);
       setBevel(`${event.target.value}`);
+      // console.log(`Bevel ${event.target.value}`);
     });
   });
 
+  /* Noise */
+  $noiseValue = document.querySelector('input[name="noise"]:checked').value;
   $noiseRadios = document.querySelectorAll('input[name="noise"]');
-
   $noiseRadios.forEach(($radio) => {
     $radio.addEventListener("change", (event) => {
-      // console.log(`You like ${event.target.value}`);
       setNoise(`${event.target.value}`);
+      // console.log(`Noise ${event.target.value}`);
     });
   });
 
-
+/* Shadows*/
+  $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
   $shadowRadios = document.querySelectorAll('input[name="shadows"]');
-
   $shadowRadios.forEach(($radio) => {
     $radio.addEventListener("change", (event) => {
-      // console.log(`You like ${event.target.value}`);
       setShadow(`${event.target.value}`);
+      // console.log(`Shadow ${event.target.value}`);
     });
   });
 

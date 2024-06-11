@@ -1,17 +1,16 @@
 /* ========================================== */
 /* Accordion */
 /* ========================================== */
-
 function toggleAccordion(e) {
-  const $thisBtn = e.target;
-  const $thisAccordion = $thisBtn.parentNode.parentNode;
-  const $expanded = $thisBtn.getAttribute("aria-expanded") === "true" || false;
-  const $thisIcon = $thisBtn.querySelector(".js-icon");
-  const $thisContent = $thisAccordion.querySelector(".js-accordion-content");
+  const $thisToggle = e.target;
+  const $thisAccordion = $thisToggle.parentNode.parentNode;
+  const $expanded = $thisToggle.getAttribute("aria-expanded") === "true" || false;
+  const $thisIcon = $thisToggle.querySelector(".js-accordionIcon");
+  const $thisContent = $thisAccordion.querySelector(".js-accordionContent");
 
   if($thisContent) {
-    $thisBtn.setAttribute("aria-expanded", !$expanded);
-    $thisBtn.classList.toggle("is-closed");
+    $thisToggle.setAttribute("aria-expanded", !$expanded);
+    $thisToggle.classList.toggle("is-closed");
     $thisIcon.classList.toggle("is-closed");
     $thisContent.classList.toggle("is-closed");
   } else {
@@ -19,11 +18,10 @@ function toggleAccordion(e) {
   }
 };
 
-function findAccordions() {
-  let $accordionsArray = Array.from(document.querySelectorAll(".js-accordion-btn"));
 
-  $accordionsArray.forEach((accordion) => {
-    accordion.addEventListener("click", toggleAccordion);
+function findAccordions() {
+  document.querySelectorAll(".js-accordion-btn").forEach((accordionBtn) => {
+    accordionBtn.addEventListener("click", toggleAccordion);
   });
 };
 
