@@ -106,7 +106,7 @@
     max-width: 1200px;
   }
 
-  @media only screen and (min-width: 1700px) {
+  @include bp(xxl) {
     max-width: $bp-xl;
   }
 
@@ -457,7 +457,7 @@
 }
 
 .btn-cell-label {
-  @include super-wide(--text-xs, 10px );
+  @include super-wide($font-weight-md , --text-xs, 10px );
   line-height: $line-height-sm;
   color: var(--text-base);
   text-shadow: var(--text-sha-lg);

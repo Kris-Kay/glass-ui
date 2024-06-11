@@ -114,8 +114,8 @@
   }
 }
 
-/* breakpoint sm: 560px and bigger */
-@container bg (width >= 560px) {
+/* breakpoint sm: 480px and bigger */
+@container bg (width >= 480px) {
   .card {
     --space: 6cqw;
     --card-radius: 6cqw;

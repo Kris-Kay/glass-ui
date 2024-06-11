@@ -21,13 +21,17 @@ html {
 }
 
 .main-nav {
-  max-width: $bp-xl;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--3xs);
   margin: 0 auto;
   pointer-events: none;
+
+  @include bp(xxl) {
+    max-width: $bp-xl;
+  }
 }
 
 .nav-item {
