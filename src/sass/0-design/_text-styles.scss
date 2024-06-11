@@ -110,14 +110,14 @@ textarea {
 .subtitle { @include subtitle(center, --text-sm); }
 
 
-@mixin super-wide($font-size: --text-xs, $maxSpace: 10px ) {
-  font-family: $font-family-body;
-  font-weight: 600;
+@mixin super-wide($weight: $font-weight-md, $font-size: --text-xs, $maxSpace: 10px ) {
+  font-family: $font-family-title;
+  font-weight: $weight;
   font-size: var($font-size);
-  letter-spacing: min(1vw, $maxSpace);
+  letter-spacing: min(3vw, $maxSpace);
   text-transform: uppercase;
 }
-
+.super-wide { @include super-wide($font-weight-sm, --text-xs, 8px); }
 
 .eyebrow {
   font-family: $font-family-body;
