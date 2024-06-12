@@ -53,37 +53,37 @@
   }
 }
 
-// .accordion-btn {
-//   position: relative;
-//   pointer-events: auto;
-//   cursor: pointer;
-//   z-index: z(on-card);
+.accordion-btn {
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: z(on-card);
 
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   gap: var(--sm);
-//   padding: var(--space);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sm);
+  // padding: var(--space);
 
-//   @include body(--text-md);
-//   text-align: start;
-//   color: var(--text-base);
-//   text-shadow: var(--text-sha-md);
+  @include body(--text-md);
+  text-align: start;
+  color: var(--text-base);
+  text-shadow: var(--text-sha-md);
 
-//   will-change: background-color;
-//   transition: background-color $speed-fast $smooth-cubic;
+  will-change: background-color;
+  transition: background-color $speed-fast $smooth-cubic;
 
-//   &:hover {
-//     background-color: var(--tint-light);
-//   }
+  &:hover {
+    background-color: var(--tint-light);
+  }
 
-//   &:focus-visible {
-//     @include focus-visible-inner;
-//     background-color: var(--tint-light);
-//   }
-// }
+  &:focus-visible {
+    @include focus-visible-inner;
+    background-color: var(--tint-light);
+  }
+}
 
 .accordion-header {
   pointer-events: none;
@@ -104,7 +104,7 @@
   background-color: var(--color-white);
   height: var(--ui-h-xs);
   transform: rotate(180deg);
-  transition: transform $speed-2xslow $smooth-cubic;
+  transition: transform $speed-xslow $smooth-cubic;
 
   &.is-closed {
     transform: rotate(0deg);

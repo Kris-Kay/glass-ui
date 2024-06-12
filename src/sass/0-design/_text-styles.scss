@@ -92,7 +92,7 @@ textarea {
 @mixin title-md($text-align: start, $font-size: --text-md) {
   @include title($font-weight-md);
   text-align: $text-align;
-  letter-spacing: $letter-spacing-sm;
+  letter-spacing: $letter-spacing-md;
   font-size: var($font-size);
 }
 .title-md { @include title-md(start); }

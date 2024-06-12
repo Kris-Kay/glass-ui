@@ -5,6 +5,63 @@
 @use "../forward-styles/util" as *;
 @use "../forward-styles/components" as *;
 /* ================================================== */
+.glass-3d-gen {
+--color: var(--tint-clear);
+--bevel: var(--bevel-md);
+--noise: var(--noise-gray);
+--shadow: var(--sha-xs);
+--filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+--blur: 36px;
+--bright: 1;
+--satu: 1.33;
+
+  position: relative;
+  // z-index: 4;
+  z-index: z(glass);
+  box-shadow: var(--shadow);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+
+    // z-index: 5;
+    z-index: z(glass-after);
+    box-shadow: var(--bevel);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+
+    // z-index: 3;
+    z-index: z(glass-b4);
+    background-color: var(--color);
+    background-repeat: repeat;
+    background-size: 40px;
+    background-image: var(--noise);
+
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    // @include glass-filter(var(--blur), var(--bright), var(--satu));
+
+    // -webkit-backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+    // backdrop-filter:         blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
+  }
+
+  & > * {
+    position: relative;
+    // z-index: 6;
+    z-index: z(on-glass);
+  }
+
+}
+
 
 .generator-area {
   width: 100%;
@@ -127,63 +184,6 @@
   }
 }
 
-.glass-3d-gen {
---color: var(--tint-clear);
---bevel: var(--bevel-md);
---noise: var(--noise-gray);
---shadow: var(--sha-xs);
---filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
---blur: 36px;
---bright: 0.99;
---satu: 1.33;
-
-  position: relative;
-  // z-index: 4;
-  z-index: z(glass);
-  box-shadow: var(--shadow);
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-
-    // z-index: 5;
-    z-index: z(glass-after);
-    box-shadow: var(--bevel);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-
-    // z-index: 3;
-    z-index: z(glass-b4);
-    background-color: var(--color);
-    background-repeat: repeat;
-    background-size: 40px;
-    background-image: var(--noise);
-
-    -webkit-backdrop-filter: var(--filter);
-    backdrop-filter: var(--filter);
-    // @include glass-filter(var(--blur), var(--bright), var(--satu));
-
-    // -webkit-backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
-    // backdrop-filter:         blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
-  }
-
-  & > * {
-    position: relative;
-    // z-index: 6;
-    z-index: z(on-glass);
-  }
-
-}
-
 /* Generator  */
 .generator-bin {
   min-width: fit-content;
@@ -208,7 +208,13 @@
 }
 
 .generator {
-  // --space: calc(var(--sm) * 1.15);
+  --space: var(--lg);
+  --space-half: calc(var(--space) * 0.5);
+
+  @include bp(md) {
+    --space: var(--md);
+  }
+
   width: 100%;
   max-width: 400px;
   height: fit-content;
@@ -217,44 +223,48 @@
 
   @include bp(sm) {
     @include radius("md");
-    box-shadow: var(--sha-xl);
   }
 
   @include bp(md) {
-    width: fit-content;
-    min-height: fit-content;
+    width: 400px;
     border-radius: var(--md) 0 0  var(--md);
   }
 
   @include bp(xxl) {
     border-radius: var(--md);
   }
+
+  & .switch-group {
+    padding: var(--space-half) var(--space) var(--space-half) var(--space);
+  }
+
+  & > :first-child .switch-group {
+    padding: var(--space) var(--space) var(--space-half) var(--space);
+  }
+
+  & > :last-child .switch-group {
+    padding: var(--space-half) var(--space) var(--space) var(--space);
+  }
 }
 
-//
+//Switch
+// .switch-accordion {
+
+// }
 
 .switch-group {
   position: relative;
-  // pointer-events: auto;
-  // cursor: pointer;
-  pointer-events: none;
-  cursor: default;
+  pointer-events: auto;
+  cursor: pointer;
   z-index: z(on-card);
 
   display: grid;
-  grid-template-columns: 1fr var(--ui-h-lg);
+  grid-template-columns: auto 1fr;
   align-items: center;
-  // justify-content: space-between;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-
-  gap: var(--space);
-  padding: var(--space);
 
   &.is-off {
     & .switch-label {
-      color: var(--text-xmild);
+      color: var(--text-mild);
     }
   }
 
@@ -276,25 +286,29 @@
   height: fit-content;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--2xs);
-
+  gap: var(--xs);
+  place-items: center start;
 }
 
 .switch-label {
   @include title-md(start);
-  color: var(--text-strong);
+  font-weight: $font-weight-lg;
+  color: var(--text-xstrong);
+  text-shadow: var(--text-sha-xl);
   pointer-events: none;
   cursor: default;
 }
 
 .content-toggle {
-    @include btn-icon-structure;
-  --btn-h: var(--ui-h-md);
-  --btn-icon-h: calc(var(--btn-h) * 0.85);
-
+  display: grid;
+  width: 100%;
+  place-self: center end;
   cursor: pointer;
+
   & > .accordion-icon {
     background-color: var(--text-strong);
+    height: 1.75em;
+    place-self: center end;
   }
 
   &:disabled {
@@ -302,9 +316,49 @@
 
     & > .accordion-icon {
       background-color: transparent;
+      @include btn-svg-transition;
     }
   }
 }
+
+.switch-accordion-content {
+  pointer-events: none;
+  z-index: z(card);
+  display: grid;
+  gap: var(--space);
+  background-color: var(--tint-2xdark);
+
+  height: fit-content;
+  // padding: var(--space);
+  padding: var(--space) var(--space) var(--space) calc(var(--space) * 1.5);
+  opacity: 1;
+  transition: height $speed-base $smooth-cubic,
+              padding $speed-base $smooth-cubic,
+              opacity $speed-base $smooth-cubic;
+
+  & > * {
+    z-index: z(on-card);
+    opacity: 1;
+    transition: height $speed-fast $smooth-cubic,
+                padding $speed-fast $smooth-cubic,
+                opacity $speed-fast $smooth-cubic;
+  }
+
+  &.is-closed {
+    z-index: -1;
+    height: 0;
+    padding: 0;
+    opacity: 0;
+
+    & > * {
+      z-index: -1;
+      height: 0;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+}
+
 
 .slider {
   margin-left: 1rem;
