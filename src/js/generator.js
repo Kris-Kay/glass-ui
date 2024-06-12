@@ -6,6 +6,7 @@ let $glassGen;
 let $bevelValue;
 let $noiseValue;
 let $shadowValue;
+let $colorValue;
 
 function onSwitchChange(e) {
   const $thisSwitch = e.target;
@@ -104,6 +105,16 @@ function setBevel($value) {
 
 /* Colors */
 /* ========================================== */
+function setColorValue($isOff) {
+  if($isOff) {
+    $colorValue = `none`;
+  } else {
+    $colorValue = document.querySelector('input[name="color"]:checked').value;
+  }
+
+  setColor($colorValue);
+}
+
 function setColor($value) {
   $glassGen.forEach(($glass) => {
     $glass.style.setProperty("--color", `${$value}`);
@@ -186,13 +197,23 @@ function initializeGenerator() {
     });
   });
 
-/* Shadows*/
+  /* Shadows*/
   $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
   $shadowRadios = document.querySelectorAll('input[name="shadows"]');
   $shadowRadios.forEach(($radio) => {
     $radio.addEventListener("change", (event) => {
       setShadow(`${event.target.value}`);
       // console.log(`Shadow ${event.target.value}`);
+    });
+  });
+
+  /* Color */
+  $colorValue = document.querySelector('input[name="color"]:checked').value;
+  $colorRadios = document.querySelectorAll('input[name="color"]');
+  $colorRadios.forEach(($radio) => {
+    $radio.addEventListener("change", (event) => {
+      setColor(`${event.target.value}`);
+      // console.log(`Color:  ${event.target.value}`);
     });
   });
 
