@@ -10,14 +10,14 @@
 @mixin input-base {
   --input-h: var(--ui-h-xs);
 
-  --bg: var(--inset-bg-deep);
-  --bg-hover: var(--tint-2xdark);
+  --bg: var(--tint-dark);
+  --bg-hover: var(--tint-xdark);
   --inset: var(--inset-sm);
-  --knob: hsl(var(--neutral-95) / 1);
+  --knob: hsl(var(--neutral-95) / 0.95);
   --knob-sha: var(--sha-xs);
 
-  --bg-checked: hsl(var(--primary-50) / 1);
-  --bg-checked-hover: hsl(var(--primary-30) / 1);
+  --bg-checked: hsl(var(--primary-50) / 0.8);
+  --bg-checked-hover: hsl(var(--primary-40) / 1);
 
   --bg-disabled: var(--inset-bg-xdeep);
   --inset-disabled: none;
@@ -33,6 +33,7 @@
   cursor: pointer;
   background-color: var(--bg);
   box-shadow: var(--inset);
+
   will-change: background-color;
   transition: background-color $speed-slow $smooth-cubic;
 
@@ -85,8 +86,9 @@
 
 /* Checkbox */
 /* ================================================== */
-input[type='checkbox'].checkbox {
+.checkbox {
   @include input-base;
+  min-width: var(--input-h);
   width: var(--input-h);
   height: var(--input-h);
   border-radius: 0.5rem;
@@ -140,7 +142,7 @@ input[type='checkbox'].checkbox {
 
 /* Switch */
 /* ================================================== */
-input[type='checkbox'].switch {
+.switch {
   --switch-width: calc(var(--input-h) * 1.8);
   --thumb-margin: 3.5px;
 
@@ -178,7 +180,7 @@ input[type='checkbox'].switch {
 
 /* Radio button */
 /* ================================================== */
-input[type='radio'] {
+.radio {
   @include input-base;
   width: var(--input-h);
   height: var(--input-h);
@@ -212,7 +214,7 @@ input[type='radio'] {
 /* Input wappers & items */
 /* ================================================== */
 .input-legend {
-  padding-bottom: var(--md);
+  padding-bottom: var(--sm);
   font-size: var(--text-md);
 }
 
@@ -228,6 +230,8 @@ input[type='radio'] {
 }
 
 .input-label {
+  // width: max-content;
+  // word-break: keep-all;
   font-family: $font-family-title;
   font-weight: $font-weight-md;
   letter-spacing: $letter-spacing-md;
@@ -236,7 +240,86 @@ input[type='radio'] {
 }
 
 .inline-label {
+  width: max-content;
+  word-break: keep-all;
   font-family: $font-family-body;
   font-weight: $font-weight-md;
   color: var(--text-strong);
+}
+
+
+
+/* Range */
+/* ================================================== */
+  // --input-h: var(--ui-h-xs);
+
+  // --bg: var(--inset-bg-deep);
+  // --bg-hover: var(--tint-2xdark);
+  // --inset: var(--inset-sm);
+  // --knob: hsl(var(--neutral-95) / 1);
+  // --knob-sha: var(--sha-xs);
+
+  // --bg-checked: hsl(var(--primary-50) / 1);
+  // --bg-checked-hover: hsl(var(--primary-30) / 1);
+
+  // --bg-disabled: var(--inset-bg-xdeep);
+  // --inset-disabled: none;
+  // --knob-disabled: hsl(var(--neutral-90) / 0.25);
+  // --knob-disabled-sha: none;
+
+  // --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
+
+$track-w: 100%;
+$track-h: 0.33em;
+$thumb-d: var(--ui-h-xs);;
+
+@mixin track() {
+	box-sizing: border-box;
+	border: none;
+	width: $track-w;
+  height: $track-h;
+	background: hsl(var(--primary-50) / 1);
+  box-shadow: var(--sha-xs);
+  border-radius: 2px;
+}
+
+@mixin thumb() {
+	box-sizing: border-box;
+	border: none;
+	width: $thumb-d; height: $thumb-d;
+	border-radius: 50%;
+	background: hsl(var(--neutral-95) / 1);
+  box-shadow: var(--sha-sm);
+}
+
+[type='range'] {
+
+  &::-webkit-slider-thumb {
+		-webkit-appearance: none;
+	}
+
+  // outline: solid red 1px;
+	margin: 0;
+	padding: 0;
+	width: $track-w;
+  height: $thumb-d;
+	background: transparent;
+
+	&::-webkit-slider-runnable-track {	@include track }
+
+	&::-moz-range-track { @include track }
+
+	&::-webkit-slider-thumb {
+		margin-top: calc(0.5 * ($track-h - $thumb-d));
+		@include thumb
+	}
+
+	&::-moz-range-thumb { @include thumb }
+
+	// &::-ms-track { @include track }
+	// &::-ms-thumb {
+	// 	margin-top: 0;
+	// 	@include thumb
+	// }
+	// &::-ms-tooltip { display: none }
 }
