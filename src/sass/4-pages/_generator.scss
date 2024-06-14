@@ -5,20 +5,23 @@
 @use "../forward-styles/util" as *;
 @use "../forward-styles/components" as *;
 /* ================================================== */
-.glass-3d-gen {
---color: var(--tint-clear);
---bevel: var(--bevel-md);
---noise: var(--noise-gray);
---shadow: var(--sha-xs);
---filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
---blur: 36px;
---bright: 1;
---satu: 1.33;
 
+#glass-generator {
+  --color-gen: var(--tint-clear);
+  --bevel-gen: var(--bevel-md);
+  --noise-gen: var(--noise-gray);
+  --shadow-gen: var(--sha-xs);
+  --filter-gen: blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen));
+  --blur-gen: 36px;
+  --bright-gen: 1;
+  --satu-gen: 1.33;
+}
+
+.glass-3d-gen {
   position: relative;
   // z-index: 4;
   z-index: z(glass);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-gen);
 
   &::after {
     content: "";
@@ -29,7 +32,7 @@
 
     // z-index: 5;
     z-index: z(glass-after);
-    box-shadow: var(--bevel);
+    box-shadow: var(--bevel-gen);
   }
 
   &::before {
@@ -41,13 +44,13 @@
 
     // z-index: 3;
     z-index: z(glass-b4);
-    background-color: var(--color);
+    background-color: var(--color-gen);
     background-repeat: repeat;
     background-size: 40px;
-    background-image: var(--noise);
+    background-image: var(--noise-gen);
 
-    -webkit-backdrop-filter: var(--filter);
-    backdrop-filter: var(--filter);
+    -webkit-backdrop-filter: var(--filter-gen);
+    backdrop-filter: var(--filter-gen);
     // @include glass-filter(var(--blur), var(--bright), var(--satu));
 
     // -webkit-backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));

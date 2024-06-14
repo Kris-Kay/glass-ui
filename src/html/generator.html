@@ -1,6 +1,6 @@
 <!-- 3d glass generator -->
 <!-- ================================================== -->
-<article class="generator-area">
+<article id="glass-generator" class="generator-area">
   <div class="generator-layout">
 
     <!-- Demo glass -->
@@ -34,12 +34,12 @@
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch  switch"
+              <input class="js-accordionSwitch switch switch-on"
                 id="js-bevelSwitch"
                 type="checkbox"
                 aria-checked="true"
-                tabindex="0"
                 checked
+                tabindex="0"
               >
 
               <label class="switch-label"
@@ -49,7 +49,7 @@
             </div>
 
             <!-- Accordion btn -->
-            <button class="js-toSwitch js-accordion-btn content-toggle is-closed"
+            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
               type="button"
               aria-expanded="false"
               >
@@ -73,9 +73,10 @@
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-sm"
+                  value="var(--bevel-sm)"
                   name="bevels"
                   tabindex="0"
-                  value="var(--bevel-sm)">
+                  checked>
                 <label class="inline-label"
                   for="radio-bevel-sm"  >
                   bevel-sm
@@ -86,10 +87,10 @@
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-md"
-                  name="bevels"
                   value="var(--bevel-md)"
+                  name="bevels"
                   tabindex="0"
-                  checked  >
+                   >
                 <label class="inline-label"
                   for="radio-bevel-md"  >
                   bevel-md
@@ -100,8 +101,8 @@
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-lg"
-                  name="bevels"
                   value="var(--bevel-lg)"
+                  name="bevels"
                   tabindex="0"
                     >
                 <label class="inline-label"
@@ -122,12 +123,12 @@
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch"
+              <input class="js-accordionSwitch switch switch-on"
                 id="js-colorSwitch"
                 type="checkbox"
                 aria-checked="true"
-                tabindex="0"
                 checked
+                tabindex="0"
               >
 
               <label class="switch-label"
@@ -136,8 +137,7 @@
               </label>
             </div>
 
-            <!-- Accordion btn -->
-            <button class="js-toSwitch js-accordion-btn content-toggle is-closed"
+            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
               type="button"
               aria-expanded="false"
               >
@@ -151,7 +151,6 @@
 
           </div>
 
-          <!-- Content -->
           <div class="js-accordionContent switch-accordion-content is-closed">
 
               <div class="input-group">
@@ -234,12 +233,12 @@
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch"
+              <input class="js-accordionSwitch switch switch-on"
                 id="js-noiseSwitch"
                 type="checkbox"
                 aria-checked="true"
-                tabindex="0"
                 checked
+                tabindex="0"
               >
 
               <label class="switch-label"
@@ -248,8 +247,7 @@
               </label>
             </div>
 
-            <!-- Accordion btn -->
-            <button class="js-toSwitch js-accordion-btn content-toggle is-closed"
+            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
               type="button"
               aria-expanded="false"
               >
@@ -263,10 +261,8 @@
 
           </div>
 
-          <!-- Content -->
           <div class="js-accordionContent switch-accordion-content is-closed">
               <fieldset class="input-fieldset">
-              <!-- <legend class="input-legend input-label">Select a noise texture</legend> -->
 
               <div class="input-group">
                 <input class=" radio"
@@ -336,7 +332,7 @@
             </div>
 
             <!-- Accordion btn -->
-            <button class="js-toSwitch js-accordion-btn content-toggle is-closed"
+            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
               type="button"
               aria-expanded="false"
               disabled
@@ -353,8 +349,7 @@
 
           <!-- Content -->
           <div class="js-accordionContent switch-accordion-content is-closed">
-                            <fieldset class="input-fieldset">
-              <!-- <legend class="input-legend input-label">Select a noise texture</legend> -->
+            <fieldset class="input-fieldset">
 
               <div class="input-group">
                 <input class=" radio"
@@ -452,10 +447,10 @@
               </label>
             </div>
 
-            <!-- Accordion btn -->
-            <button class="js-toSwitch js-accordion-btn content-toggle is-closed"
+            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
               type="button"
               aria-expanded="false"
+              disabled
               >
 
               <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
@@ -467,17 +462,16 @@
 
           </div>
 
-          <!-- Content -->
           <div class="js-accordionContent switch-accordion-content is-closed">
             <fieldset class="input-fieldset">
 
               <div class="input-group">
-                <input  class="checkbox"
+                <input  class="checkbox filter-value-switch"
                         type="checkbox"
                         tabindex="0"
                         id="blur-filter"
                         name="filters"
-                        value="blur-filter"
+                        value="var(--blur-gen)"
                         checked>
 
                 <label  class="inline-label"
@@ -489,17 +483,17 @@
                         id="blur-filter-range"
                         type="range"
                         name="filter-range"
-                        min="1px" max="80px"
+                        min="0px" max="80px"
                         value="40px"
                         step="4" />
               </div>
 
               <div class="input-group">
-                <input class="checkbox"
+                <input class="checkbox filter-value-switch"
                   type="checkbox"
                   id="satu-filter"
                   name="filters"
-                  value="satu-filter"
+                  value="var(--satu-gen)"
                   tabindex="0"
                   checked  >
                 <label class="inline-label"
@@ -509,11 +503,11 @@
               </div>
 
               <div class="input-group">
-                <input class="checkbox"
+                <input class="checkbox filter-value-switch"
                   type="checkbox"
                   id="bright-filter"
                   name="filters"
-                  value="bright-filter"
+                  value="var(--bright-gen)"
                   tabindex="0"
                   checked >
                 <label class="inline-label"

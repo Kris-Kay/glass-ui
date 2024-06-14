@@ -1,220 +1,215 @@
 /* ========================================== */
 /* 3d glass generator */
 /* ========================================== */
-
-let $glassGen;
+let $glassGenerator;
 let $bevelValue;
-let $noiseValue;
-let $shadowValue;
 let $colorValue;
-
-function onSwitchChange(e) {
-  const $thisSwitch = e.target;
-  const $thisSwitchParents = $thisSwitch.parentNode.parentNode.parentNode;
-  const $thisSwitchGroup = $thisSwitchParents.querySelector(".js-switchGroup");
-  const $thisToSwitch = $thisSwitchParents.querySelector(".js-toSwitch");
-  const $ariaChecked = $thisSwitch.getAttribute("aria-checked") === "true" || false;
-  const $switchId = $thisSwitch.id;
-  const $thisContent = $thisSwitchParents.querySelector(".js-accordionContent");
-  const $expanded = $thisToSwitch.getAttribute("aria-expanded") === "true" || false;
-  const $thisIcon = $thisToSwitch.querySelector(".js-accordionIcon");
-
-  /* If accordion is switched off while expanded -> close it */
-  function closeAccordion() {
-    if($expanded) {
-      $thisToSwitch.setAttribute("aria-expanded", false);
-      $thisToSwitch.classList.add("is-closed");
-      $thisIcon.classList.add("is-closed");
-      $thisContent.classList.add("is-closed");
-    }
-  }
-
-/* Switch on/off */
-  function toggleSwitch() {
-    if ($ariaChecked) {
-      $thisSwitchGroup.classList.add("is-off");
-      $thisToSwitch.setAttribute("disabled", true);
-      $thisSwitch.ariaChecked = false;
-      closeAccordion();
-      toggleGlassLayers($switchId, true);
-      // console.log($switchId + " is off");
-
-    } else {
-      $thisSwitchGroup.classList.remove("is-off");
-      $thisToSwitch.removeAttribute("disabled");
-      $thisSwitch.ariaChecked = true;
-      toggleGlassLayers($switchId, false);
-      // console.log($switchId + " is ON");
-    }
-  }
-  toggleSwitch();
-}
+let $shadowValue;
+let $noiseValue;
+let $filterValue;
+let $blurValue;
+let $brightValue;
+let $satuValue;
 
 
 /* Find what switch was changed & set its layer's on/off value */
-function toggleGlassLayers($id, $isOff) {
-  // console.log($id + " is off " + $isOff);
+function setGlassValues($id, $isOn) {
+  console.log($id + " is ON " + $isOn);
 
   if($id == "js-bevelSwitch") {
-    setBevelvalue($isOff);
-  }
-
-  if($id == "js-colorSwitch") {
-    if($isOff == true) {
-      setColor(`transparent`);
+    if($isOn) {
+      $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
     } else {
-      setColor(`var(--tint-xdark)`);
+      $bevelValue = `none`;
     }
-  }
 
-  if($id == "js-noiseSwitch") {
-    setNoiseValue($isOff);
+    $glassGenerator.style.setProperty("--bevel-gen", `${$bevelValue}`);
+
+    // console.log("bevel value: " + $bevelValue);
   }
 
   if($id == "js-shadowSwitch") {
-    setShadowValue($isOff);
+    if($isOn) {
+      $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
+    } else {
+      $shadowValue = `none`;
+    }
+
+    $glassGenerator.style.setProperty("--shadow-gen", `${$shadowValue}`);
+
+    // console.log("shadow value: " + $shadowValue);
+  }
+
+  if($id == "js-noiseSwitch") {
+    if($isOn) {
+      $noiseValue = document.querySelector('input[name="noise"]:checked').value;
+    } else {
+      $noiseValue = `none`;
+    }
+
+    $glassGenerator.style.setProperty("--noise-gen", `${$noiseValue}`);
+
+    // console.log("noise value: " + $noiseValue);
+  }
+
+  if($id == "js-colorSwitch") {
+    if($isOn) {
+      $colorValue = document.querySelector('input[name="color"]:checked').value;
+    } else {
+      $colorValue = `none`;
+    }
+
+    $glassGenerator.style.setProperty("--color-gen", `${$colorValue}`);
+
+    // console.log("color value: " + $colorValue);
   }
 
   if($id == "js-filterSwitch") {
-    if($isOff == true) {
-      setFilter(`none`);
+    if($isOn) {
+      $filterValue = `blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen))`;
     } else {
-      setFilter(`blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu))`);
+      $filterValue = `none`;
+      $blurValue = `0px`;
     }
+
+    $glassGenerator.style.setProperty("--filter-gen", `${$filterValue}`);
+
+    // console.log("filter value: " + $filterValue);
+  }
+
+  if($id == "blur-filter") {
+    if($isOn) {
+      $blurValue = document.getElementById('blur-filter-range').value;
+    } else {
+      $blurValue = `0px`;
+    }
+
+    $glassGenerator.style.setProperty("--blur-gen", `${$blurValue}px`);
+
+    console.log("blur value: " + $blurValue);
   }
 }
 
-/* Bevels */
-/* ========================================== */
-function setBevelvalue($isOff) {
-  if($isOff) {
-    $bevelValue = `none`;
+
+function setSwitch($switch, $checked) {
+  let $switchId = $switch.id;
+  let $switchParents = $switch.parentNode.parentNode.parentNode;
+  let $switchGroup = $switchParents.querySelector(".js-switchGroup");
+  let $contentToggle  = $switchParents.querySelector(".js-content-toggle");
+
+// console.log($switch);
+// console.log($switchId + " is checked? " + $checked);
+// console.log($switchId + " is aria checked " + $ariaChecked);
+
+
+  if($checked) {
+    $switch.ariaChecked = "true";
+    $switchGroup.classList.remove("is-off");
+    $contentToggle.removeAttribute("disabled");
+    setGlassValues($switchId, true);
+
+    // console.log($switchId + " is now ON");
+
   } else {
-    $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
+    $switch.ariaChecked = "false";
+    $switchGroup.classList.add("is-off");
+    $contentToggle.setAttribute("disabled", true);
+    setGlassValues($switchId, false);
+
+    // console.log($switchId + " is now OFF");
   }
 
-  setBevel($bevelValue);
 }
 
-function setBevel($value) {
-  $glassGen.forEach(($glass) => {
-    $glass.style.setProperty("--bevel", `${$value}`);
-  });
-  console.log("bevel value: " + $value);
+function onSwitchChange(e) {
+  $switch = e.target;
+  let $checked = $switch.checked;
+  setSwitch($switch, $checked);
 }
-
-/* Colors */
-/* ========================================== */
-function setColorValue($isOff) {
-  if($isOff) {
-    $colorValue = `none`;
-  } else {
-    $colorValue = document.querySelector('input[name="color"]:checked').value;
-  }
-
-  setColor($colorValue);
-}
-
-function setColor($value) {
-  $glassGen.forEach(($glass) => {
-    $glass.style.setProperty("--color", `${$value}`);
-  });
-}
-
-/* Noise */
-/* ========================================== */
-function setNoiseValue($isOff) {
-  if($isOff) {
-    $noiseValue = `none`;
-  } else {
-    $noiseValue = document.querySelector('input[name="noise"]:checked').value;
-  }
-
-  setNoise($noiseValue);
-}
-
-function setNoise($value) {
-  $glassGen.forEach(($glass) => {
-    $glass.style.setProperty("--noise", `${$value}`);
-  });
-
-  console.log("noise value: " + $value);
-}
-
-/* Shadows*/
-/* ========================================== */
-function setShadowValue($isOff) {
-  if($isOff) {
-    $shadowValue = `none`;
-  } else {
-    $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
-  }
-
-  setShadow($shadowValue);
-}
-
-function setShadow($value) {
-  $glassGen.forEach(($glass) => {
-    $glass.style.setProperty("--shadow", `${$value}`);
-  });
-  console.log("shadow value: " + $value);
-}
-
-/* Filters */
-/* ========================================== */
-function setFilter($value) {
-  $glassGen.forEach(($glass) => {
-    $glass.style.setProperty("--filter", `${$value}`);
-  });
-}
-
 
 function initializeGenerator() {
+  $glassGenerator = document.getElementById("glass-generator");
 
+  /* Accordion Switches */
   document.querySelectorAll(".js-accordionSwitch").forEach(($switch) => {
+    let $checked = $switch.checked;
+    setSwitch($switch, $checked);
     $switch.addEventListener("change", onSwitchChange);
   });
 
-  $glassGen = document.querySelectorAll(".glass-3d-gen");
-
   /* Bevels */
-  $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
-  $bevelRadios = document.querySelectorAll('input[name="bevels"]');
-  $bevelRadios.forEach(($radio) => {
-    $radio.addEventListener("change", (event) => {
-      setBevel(`${event.target.value}`);
-      // console.log(`Bevel ${event.target.value}`);
-    });
-  });
-
-  /* Noise */
-  $noiseValue = document.querySelector('input[name="noise"]:checked').value;
-  $noiseRadios = document.querySelectorAll('input[name="noise"]');
-  $noiseRadios.forEach(($radio) => {
-    $radio.addEventListener("change", (event) => {
-      setNoise(`${event.target.value}`);
-      // console.log(`Noise ${event.target.value}`);
+  document.querySelectorAll('input[name="bevels"]').forEach(($radio) => {
+    $radio.addEventListener("change", (e) => {
+      $bevelValue = e.target.value;
+      $glassGenerator.style.setProperty("--bevel-gen", `${e.target.value}`);
+      // console.log(`Bevel: ${e.target.value}`);
     });
   });
 
   /* Shadows*/
-  $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
-  $shadowRadios = document.querySelectorAll('input[name="shadows"]');
-  $shadowRadios.forEach(($radio) => {
-    $radio.addEventListener("change", (event) => {
-      setShadow(`${event.target.value}`);
-      // console.log(`Shadow ${event.target.value}`);
+  document.querySelectorAll('input[name="shadows"]').forEach(($radio) => {
+    $radio.addEventListener("change", (e) => {
+      $shadowValue = e.target.value;
+      $glassGenerator.style.setProperty("--shadow-gen", `${e.target.value}`);
+      // console.log(`Shadow: ${e.target.value}`);
+    });
+  });
+
+  /* Noise */
+  document.querySelectorAll('input[name="noise"]').forEach(($radio) => {
+    $radio.addEventListener("change", (e) => {
+      $noiseValue = e.target.value;
+      $glassGenerator.style.setProperty("--noise-gen", `${e.target.value}`);
+      // console.log(`Noise: ${e.target.value}`);
     });
   });
 
   /* Color */
-  $colorValue = document.querySelector('input[name="color"]:checked').value;
-  $colorRadios = document.querySelectorAll('input[name="color"]');
-  $colorRadios.forEach(($radio) => {
-    $radio.addEventListener("change", (event) => {
-      setColor(`${event.target.value}`);
-      // console.log(`Color:  ${event.target.value}`);
+  document.querySelectorAll('input[name="color"]').forEach(($radio) => {
+    $radio.addEventListener("change", (e) => {
+      $colorValue = e.target.value;
+      $glassGenerator.style.setProperty("--color-gen", `${e.target.value}`);
+      // console.log(`color: ${e.target.value}`);
     });
   });
 
+  /* Filter checkboxes */
+  document.querySelectorAll(".filter-value-switch").forEach(($filterSwitch) => {
+    let $checked = $filterSwitch.checked;
+    let $filterSwitchId = $filterSwitch.id;
+
+    $filterSwitch.addEventListener("change", setGlassValues($filterSwitchId, $checked));
+
+      // $blurValue = document.getElementById('blur-filter-range').value;
+  });
+
 };
+
+
+
+
+
+// Accordion on/off
+  // let $thisIcon = $thisAccBtn.querySelector(".js-accordionIcon");
+  // let $thisContent = $switchParents.querySelector(".js-accordionContent");
+  // let $contentExpanded = $thisAccBtn.ariaExpanded;
+  // let $contentExpanded = $thisAccBtn.getAttribute("aria-expanded") === "true" || false;
+
+// console.log($switchId + " is expanded " + $contentExpanded);
+
+  // function closeAccordion() {
+  //  // $thisAccBtn.setAttribute("aria-expanded", false);
+  //   $thisAccBtn.ariaExpanded = "false"
+  //   $thisAccBtn.classList.add("is-closed");
+  //   $thisIcon.classList.add("is-closed");
+  //   $thisContent.classList.add("is-closed");
+  // }
+
+  // function openAccordion() {
+  // //   $thisAccBtn.setAttribute("aria-expanded", true);
+  //   $thisAccBtn.ariaExpanded = "true"
+
+  //   $thisAccBtn.classList.remove("is-closed");
+  //   $thisIcon.classList.remove("is-closed");
+  //   $thisContent.classList.remove("is-closed");
+//}
