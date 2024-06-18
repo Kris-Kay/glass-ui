@@ -90,9 +90,9 @@
     padding-top: var(--md);
   }
 
-  @include bp(xxl) {
+  @include bp(xl) {
     max-width: $bp-xl;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     place-content: center;
   }
 }
@@ -166,7 +166,7 @@
     @include super-wide($font-weight-sm, --text-2xs, 3px);
     line-height: $line-height-sm;
     text-align: center;
-    color: var(--text-xmild);
+    color: var(--text-mild);
 
     padding: var(--md) 0 0 0;
 
@@ -205,7 +205,7 @@
     place-items: center end;
   }
 
-  @include bp(xxl) {
+  @include bp(xl) {
     place-content: center;
   }
 }
@@ -233,8 +233,8 @@
     border-radius: var(--md) 0 0  var(--md);
   }
 
-  @include bp(xxl) {
-    border-radius: var(--md);
+  @include bp(xl) {
+    border-radius: var(--sm);
   }
 
   & .switch-group {
@@ -250,7 +250,18 @@
   }
 }
 
-//Switch
+
+// .generator-title {
+//   @include title($font-weight-sm);
+//   font-size: var(--text-lg);
+//   letter-spacing: $letter-spacing-xs;
+//   text-align: center;
+//   color: var(--text-xstrong);
+//   text-shadow: var(--text-sha-2xl);
+// }
+
+
+/* Switch  */
 // .switch-accordion {
 
 // }
@@ -332,8 +343,8 @@
   background-color: var(--tint-2xdark);
 
   height: fit-content;
-  // padding: var(--space);
-  padding: var(--space) var(--space) var(--space) calc(var(--space) * 1.5);
+  padding: var(--space);
+  // padding: var(--space) var(--space) var(--space) calc(var(--space) * 1.5);
   opacity: 1;
   transition: height $speed-base $smooth-cubic,
               padding $speed-base $smooth-cubic,
@@ -348,13 +359,13 @@
   }
 
   &.is-closed {
-    z-index: -1;
+    z-index: -20;
     height: 0;
     padding: 0;
     opacity: 0;
 
     & > * {
-      z-index: -1;
+      z-index: -20;
       height: 0;
       padding: 0;
       opacity: 0;
@@ -363,21 +374,7 @@
 }
 
 
-.slider {
-  margin-left: 1rem;
-}
-
-
-// .generator-title {
-//   @include title($font-weight-sm);
-//   font-size: var(--text-lg);
-//   letter-spacing: $letter-spacing-xs;
-//   text-align: center;
-//   color: var(--text-xstrong);
-//   text-shadow: var(--text-sha-2xl);
-// }
-
-
+/////
 
 /* Base for switch | checkbox | radio button  ✨ Config these values */
 /* ================================================== */

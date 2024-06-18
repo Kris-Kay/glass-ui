@@ -117,7 +117,7 @@
         </div>
 
         <!-- Color -->
-        <div class="js-accordion switch-accordion">
+        <!-- <div class="js-accordion switch-accordion">
 
           <div class="js-switchGroup switch-group">
 
@@ -224,10 +224,10 @@
               </div>
           </div>
 
-        </div>
+        </div> -->
 
         <!-- Noise -->
-        <div class="js-accordion switch-accordion">
+        <!-- <div class="js-accordion switch-accordion">
 
           <div class="js-switchGroup switch-group">
 
@@ -309,7 +309,7 @@
             </fieldset>
           </div>
 
-        </div>
+        </div> -->
 
         <!-- Shadow -->
         <div class="js-accordion switch-accordion">
@@ -463,33 +463,79 @@
           </div>
 
           <div class="js-accordionContent switch-accordion-content is-closed">
-            <fieldset class="input-fieldset">
+            <div class="filter-sliders">
 
-              <div class="input-group">
-                <input  class="checkbox filter-value-switch"
-                        type="checkbox"
-                        tabindex="0"
-                        id="blur-filter"
-                        name="filters"
-                        value="var(--blur-gen)"
-                        checked>
+              <div class="filter-input-group">
+                <span class="filter-label-group">
+                  <input  class="checkbox js-filter-value-switch"
+                          type="checkbox"
+                          tabindex="0"
+                          id="blur-filter"
+                          name="filters"
+                          value="var(--blur-gen)"
+                          checked>
 
-                <label  class="inline-label"
-                        for="blur-filter" >
-                  blur-filter
-                </label>
+                  <label  class="inline-label"
+                          for="blur-filter" >
+                    blur
+                  </label>
+                </span>
 
-                <input  class="slider"
-                        id="blur-filter-range"
-                        type="range"
-                        name="filter-range"
-                        min="0px" max="80px"
-                        value="40px"
-                        step="4" />
+                <div class="slider-group">
+                  <input  class="slider-input"
+                          id="blur-slider"
+                          type="range"
+                          name="slider"
+                          min="0"
+                          max="80"
+                          value="40"
+                          step="1"/>
+
+                  <output class="slider-value"
+                          id="blur-slider-value"
+                          name="slider"
+                          for="blur-slider"
+                          aria-live="polite" ></output>
+                </div>
               </div>
 
-              <div class="input-group">
-                <input class="checkbox filter-value-switch"
+              <div class="filter-input-group">
+                <span class="filter-label-group">
+                  <input  class="checkbox js-filter-value-switch"
+                          type="checkbox"
+                          tabindex="0"
+                          id="satu-filter"
+                          name="filters"
+                          value="var(--satu-gen)"
+                          checked>
+
+                  <label  class="inline-label"
+                          for="satu-filter" >
+                    saturation
+                  </label>
+                </span>
+
+                <div class="slider-group">
+                  <input  class="slider-input"
+                          id="satu-slider"
+                          type="range"
+                          name="filter-slider"
+                          min="0.1"
+                          max="3"
+                          value="1.2"
+                          step="0.1"/>
+
+                  <output class="slider-value"
+                          id="satu-slider-value"
+                          name="slider-val"
+                          for="satu-slider"
+                          aria-live="polite" ></output>
+                </div>
+              </div>
+
+
+              <!-- <div class="input-group">
+                <input class="checkbox js-filter-value-switch"
                   type="checkbox"
                   id="satu-filter"
                   name="filters"
@@ -503,7 +549,7 @@
               </div>
 
               <div class="input-group">
-                <input class="checkbox filter-value-switch"
+                <input class="checkbox js-filter-value-switch"
                   type="checkbox"
                   id="bright-filter"
                   name="filters"
@@ -514,9 +560,9 @@
                   for="bright-filter"  >
                   brightness
                 </label>
-              </div>
+              </div> -->
 
-            </fieldset>
+            </div>
           </div>
 
         </div>

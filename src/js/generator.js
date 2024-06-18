@@ -12,6 +12,36 @@ let $brightValue;
 let $satuValue;
 
 
+function findSliderGroups() {
+  const $allSliderGroups = document.querySelectorAll(".slider-group");
+
+  $allSliderGroups.forEach($group => {
+    const $sliderInput = $group.querySelector(".slider-input");
+    const $sliderValue = $group.querySelector(".slider-value");
+
+    setSliderValue($sliderInput, $sliderValue);
+
+    $sliderInput.addEventListener("input", () => {
+      setSliderValue($sliderInput, $sliderValue);
+    });
+  });
+}
+
+
+function setSliderValue($sliderInput, $sliderValue) {
+  const $sliderW = $sliderInput.offsetWidth;
+  const $valueW = $sliderValue.offsetWidth;
+  const $val = $sliderInput.value;
+  const $min = $sliderInput.min ? $sliderInput.min : 0;
+  const $max = $sliderInput.max ? $sliderInput.max : 100;
+  const $deciVal = Number(($val - $min) / ($max - $min));
+  const $place = Math.round($deciVal * ($sliderW - $valueW));
+
+  $sliderValue.style.left = `${$place}px`;
+  $sliderValue.innerHTML = $val;
+}
+
+
 /* Find what switch was changed & set its layer's on/off value */
 function setGlassValues($id, $isOn) {
   console.log($id + " is ON " + $isOn);
@@ -79,7 +109,7 @@ function setGlassValues($id, $isOn) {
 
   if($id == "blur-filter") {
     if($isOn) {
-      $blurValue = document.getElementById('blur-filter-range').value;
+      $blurValue = document.getElementById('blur-slider').value;
     } else {
       $blurValue = `0px`;
     }
@@ -174,17 +204,64 @@ function initializeGenerator() {
   });
 
   /* Filter checkboxes */
-  document.querySelectorAll(".filter-value-switch").forEach(($filterSwitch) => {
+  document.querySelectorAll(".js-filter-value-switch").forEach(($filterSwitch) => {
     let $checked = $filterSwitch.checked;
     let $filterSwitchId = $filterSwitch.id;
 
+    setGlassValues($filterSwitchId, $checked);
     $filterSwitch.addEventListener("change", setGlassValues($filterSwitchId, $checked));
 
       // $blurValue = document.getElementById('blur-filter-range').value;
   });
 
+  findSliderGroups();
+
+  // document.onreadystatechange = () => {
+  //   if (document.readyState === "complete") {
+
+  //   }
+  // };
 };
 
+
+
+
+
+
+
+
+/////////
+// Range Slider Properties.
+// Fill : The trailing color that you see when you drag the slider.
+// background : Default Range Slider Background
+// const sliderProps = {
+// 	fill: "#0B1EDF",
+// 	background: "rgba(255, 255, 255, 0.214)",
+// };
+
+// // Selecting the Range Slider container which will effect the LENGTH property of the password.
+// const slider = document.querySelector(".range__slider");
+
+// // Text which will show the value of the range slider.
+// const sliderValue = document.querySelector(".length__title");
+
+// // Using Event Listener to apply the fill and also change the value of the text.
+// slider.querySelector("input").addEventListener("input", event => {
+// 	sliderValue.setAttribute("data-length", event.target.value);
+// 	applyFill(event.target);
+// });
+// // Selecting the range input and passing it in the applyFill func.
+// applyFill(slider.querySelector("input"));
+// // This function is responsible to create the trailing color and setting the fill.
+// function applyFill(slider) {
+// 	const percentage = (100 * (slider.value - slider.min)) / (slider.max - slider.min);
+// 	const bg = `linear-gradient(90deg, ${sliderProps.fill} ${percentage}%, ${sliderProps.background} ${percentage +
+// 			0.1}%)`;
+// 	slider.style.background = bg;
+// 	sliderValue.setAttribute("data-length", slider.value);
+// }
+
+///////
 
 
 
