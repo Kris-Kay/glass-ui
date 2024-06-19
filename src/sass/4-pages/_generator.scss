@@ -11,10 +11,12 @@
   --bevel-gen: var(--bevel-md);
   --noise-gen: var(--noise-gray);
   --shadow-gen: var(--sha-xs);
+
+  --blur-gen: 16px;
+  --bright-gen: 0.5;
+  --satu-gen: 2;
+
   --filter-gen: blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen));
-  --blur-gen: 36px;
-  --bright-gen: 1;
-  --satu-gen: 1.33;
 }
 
 .glass-3d-gen {
@@ -51,10 +53,6 @@
 
     -webkit-backdrop-filter: var(--filter-gen);
     backdrop-filter: var(--filter-gen);
-    // @include glass-filter(var(--blur), var(--bright), var(--satu));
-
-    // -webkit-backdrop-filter: blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
-    // backdrop-filter:         blur(var(--blur)) brightness(var(--bright)) saturate(var(--satu));
   }
 
   & > * {
@@ -65,35 +63,37 @@
 
 }
 
-
 .generator-area {
+  position: relative;
   width: 100%;
-  min-height: fit-content;
-  height: 100vh;
-  height: 100svh;
-  padding: var(--nav-h) 0 0 0;
-  display: grid;
+  height: 100%;
+  padding: var(--nav-h) 0;
   place-items: start center;
+
+  @include bp(lg) {
+    height: 100vh;
+    // padding: var(--5xl) 0 0 0;
+    padding: var(--5xl) 0 var(--2xl) 0;
+  }
+
+  // @include bp(xl) {
+  //   padding: var(--5xl) 0 var(--2xl) 0;
+  // }
 }
 
 .generator-layout {
   width: 100%;
-  min-height: max-content;
-  height: 100%;
-
   display: grid;
   grid-template-columns: 1fr;
-  place-content: start center;
 
   @include bp(lg) {
     grid-template-columns: 1fr auto;
-    padding-top: var(--md);
+    height: 100%;
   }
 
   @include bp(xl) {
     max-width: $bp-xl;
     grid-template-columns: 2fr 1fr;
-    place-content: center;
   }
 }
 
@@ -106,7 +106,7 @@
   place-items: center;
 
   @include bp(lg) {
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -189,10 +189,7 @@
 
 /* Generator  */
 .generator-bin {
-  min-width: fit-content;
   width: 100%;
-
-  min-height: fit-content;
   height: 100%;
   display: grid;
   place-items: start center;
@@ -202,11 +199,20 @@
   }
 
   @include bp(lg) {
-    place-items: center end;
+    border-radius: var(--md) 0 0 var(--md);
+    place-content: center end;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   @include bp(xl) {
-    place-content: center;
+    width: fit-content;
+    border-radius: var(--md);
   }
 }
 
@@ -234,31 +240,21 @@
   }
 
   @include bp(xl) {
-    border-radius: var(--sm);
+    border-radius: var(--md);
   }
 
-  & .switch-group {
+  & .switch-accordion-controls {
     padding: var(--space-half) var(--space) var(--space-half) var(--space);
   }
 
-  & > :first-child .switch-group {
+  & > :first-child .switch-accordion-controls {
     padding: var(--space) var(--space) var(--space-half) var(--space);
   }
 
-  & > :last-child .switch-group {
+  & > :last-child .switch-accordion-controls {
     padding: var(--space-half) var(--space) var(--space) var(--space);
   }
 }
-
-
-// .generator-title {
-//   @include title($font-weight-sm);
-//   font-size: var(--text-lg);
-//   letter-spacing: $letter-spacing-xs;
-//   text-align: center;
-//   color: var(--text-xstrong);
-//   text-shadow: var(--text-sha-2xl);
-// }
 
 
 /* Switch  */
@@ -266,7 +262,7 @@
 
 // }
 
-.switch-group {
+.switch-accordion-controls {
   position: relative;
   pointer-events: auto;
   cursor: pointer;
@@ -296,8 +292,6 @@
 }
 
 .switch-label-group {
-  width: 100%;
-  height: fit-content;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--xs);
@@ -339,12 +333,11 @@
   pointer-events: none;
   z-index: z(card);
   display: grid;
-  gap: var(--space);
+  gap: var(--md);
   background-color: var(--tint-2xdark);
 
   height: fit-content;
   padding: var(--space);
-  // padding: var(--space) var(--space) var(--space) calc(var(--space) * 1.5);
   opacity: 1;
   transition: height $speed-base $smooth-cubic,
               padding $speed-base $smooth-cubic,
@@ -374,119 +367,40 @@
 }
 
 
-/////
-
-/* Base for switch | checkbox | radio button  ✨ Config these values */
+/* Backdrop-filter  */
 /* ================================================== */
-// @mixin btn-switch-base {
-//   --input-h: var(--ui-h-xs);
+.filters-grid {
+  display: grid;
+  gap: var(--md);
+}
 
-//   --bg: var(--inset-bg-deep);
-//   --bg-hover: var(--tint-2xdark);
-//   --inset: var(--inset-sm);
-//   --knob: hsl(var(--neutral-95) / 1);
-//   --knob-sha: var(--sha-xs);
+.filter-function-controls {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: var(--2xs);
+  place-items: end start;
 
-//   --bg-checked: hsl(var(--primary-50) / 1);
-//   --bg-checked-hover: hsl(var(--primary-30) / 1);
+// outline: 1px solid pink;
 
-//   --bg-disabled: var(--inset-bg-xdeep);
-//   --inset-disabled: none;
-//   --knob-disabled: hsl(var(--neutral-90) / 0.25);
-//   --knob-disabled-sha: none;
+  @include bp(md) {
+    grid-template-columns: 135px 1fr;
+  }
 
-//   --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
+  & .slider-w-display {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-//   position: relative;
-//   z-index: z(input);
-//   overflow: hidden;
-//   pointer-events: auto;
-//   cursor: pointer;
-//   background-color: var(--bg);
-//   box-shadow: var(--inset);
-//   will-change: background-color;
-//   transition: background-color $speed-slow $smooth-cubic;
+  &.is-off {
+    & .slider-w-display {
+      opacity: 0.4;
+      pointer-events: none;
+    }
 
-//   &::after {
-//     @include pseudo;
-//     z-index: z(on-input);
-//     overflow: hidden;
-//   }
-
-//   @media (pointer: fine) {
-//     &:hover {
-//       background-color: var(--bg-hover);
-//     }
-//   }
-
-//   & [aria-checked="true"] {
-//     background-color: var(--bg-checked);
-
-//     &:hover {
-//       background-color: var(--bg-checked-hover);
-//     }
-//   }
-
-//   &:focus-visible {
-//     @include focus-visible-outer;
-//   }
-
-//   &:disabled {
-//     cursor: not-allowed;
-//     background-color: var(--bg-disabled);
-//     box-shadow: var(--inset-disabled);
-
-//     & + label {
-//       color: var(--text-xmild);
-//     }
-
-//     &::after {
-//       box-shadow: var(--knob-disabled-sha);
-//     }
-
-//     &:checked {
-//       background-color: var(--bg-disabled-checked);
-
-//       &::after {
-//         box-shadow: var(--knob-disabled-sha);
-//       }
-//     }
-//   }
-// }
-
-// /* Button switch */
-// /* ================================================== */
-// .btn-switch {
-//   --switch-width: calc(var(--input-h) * 1.8);
-//   --thumb-margin: 3.5px;
-
-//   @include btn-switch-base;
-//   display: inline-flex;
-//   width: var(--switch-width);
-//   height: var(--input-h);
-//   align-items: center;
-//   border-radius: 99px;
-
-//     &::after {
-//       display: block;
-//       aspect-ratio: 1;
-//       margin: var(--thumb-margin);
-//       height: calc(100% - (2 * var(--thumb-margin)));
-//       background-color: var(--knob);
-//       box-shadow: var(--knob-sha);
-//       border-radius: 99px;
-//       transition: margin $speed-base $smooth-cubic;
-//     }
-
-//   & [aria-checked="true"] {
-//     &::after {
-//       margin-inline-start: calc(var(--switch-width) - var(--input-h) + var(--thumb-margin));
-//     }
-//   }
-
-//   &:disabled {
-//     &::after {
-//       background-color: var(--knob-disabled);
-//     }
-//   }
-// }
+    & label {
+      color: var(--text-xmild);
+    }
+  }
+}
