@@ -156,3 +156,35 @@ textarea {
   @include label(--text-md);
   text-shadow: var(--text-sha-md);
 }
+
+/* Inline Labels */
+/* ================================================== */
+.inline-label-layout-3xs {
+  display: flex;
+  align-items: center;
+  gap: var(--3xs);
+}
+
+@mixin inline-label($font-size: --text-sm, $line-height: $line-height-sm) {
+  font-family: $font-family-body;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-sm;
+  font-size: var($font-size);
+  line-height: $line-height;
+}
+
+.inline-label-sm {
+  width: max-content;
+  word-break: keep-all;
+  @include inline-label(--text-sm, 1);
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-2xs);
+}
+
+.inline-label-md {
+  width: max-content;
+  word-break: keep-all;
+  @include inline-label(--text-md, 1);
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-xs);
+}
