@@ -25,16 +25,16 @@
     <!-- Generator -->
     <section class="generator-bin">
 
+
       <div class="accordion-multi generator glass-3d-gen">
 
         <!-- Bevel -->
-        <div class="js-accordion switch-accordion">
-
-          <div class="js-switchGroup switch-group">
+        <div class="js-switch-accordion switch-accordion is-closed">
+          <div class="js-switchAccordionControls switch-accordion-controls">
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch switch-on"
+              <input class="js-accordionSwitch switch "
                 id="js-bevelSwitch"
                 type="checkbox"
                 aria-checked="true"
@@ -48,13 +48,12 @@
               </label>
             </div>
 
-            <!-- Accordion btn -->
-            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
+            <button class="js-switchAccordionBtn  switch-accordion-btn"
               type="button"
               aria-expanded="false"
               >
 
-              <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+              <svg class="switch-accordion-icon svg-chev-down"
                 role="graphics-symbol"
                 aria-hidden="true"
                 focusable="false"  >
@@ -63,13 +62,11 @@
 
           </div>
 
-          <!-- Content -->
-          <div class="js-accordionContent switch-accordion-content is-closed">
+          <div class="switch-accordion-content">
 
             <fieldset class="input-fieldset">
-              <!-- <legend class="input-legend input-label">Select a bevel</legend> -->
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-sm"
@@ -77,13 +74,13 @@
                   name="bevels"
                   tabindex="0"
                   checked>
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="radio-bevel-sm"  >
                   bevel-sm
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-md"
@@ -91,13 +88,13 @@
                   name="bevels"
                   tabindex="0"
                    >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="radio-bevel-md"  >
                   bevel-md
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="radio-bevel-lg"
@@ -105,7 +102,7 @@
                   name="bevels"
                   tabindex="0"
                     >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="radio-bevel-lg"  >
                   bevel-lg
                 </label>
@@ -113,17 +110,16 @@
 
             </fieldset>
           </div>
-
         </div>
 
         <!-- Color -->
-        <!-- <div class="js-accordion switch-accordion">
+        <div class="js-switch-accordion switch-accordion is-closed">
 
-          <div class="js-switchGroup switch-group">
+          <div class="js-switchAccordionControls switch-accordion-controls">
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch switch-on"
+              <input class="js-accordionSwitch switch "
                 id="js-colorSwitch"
                 type="checkbox"
                 aria-checked="true"
@@ -137,12 +133,12 @@
               </label>
             </div>
 
-            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
+            <button class="js-switchAccordionBtn  switch-accordion-btn "
               type="button"
               aria-expanded="false"
               >
 
-              <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+              <svg class="switch-accordion-icon svg-chev-down "
                 role="graphics-symbol"
                 aria-hidden="true"
                 focusable="false"  >
@@ -151,9 +147,9 @@
 
           </div>
 
-          <div class="js-accordionContent switch-accordion-content is-closed">
+          <div class="switch-accordion-content ">
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="tint-3xdark"
@@ -161,13 +157,13 @@
                   value="var(--tint-3xdark)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="tint-3xdark"  >
                   tint-3xdark
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="tint-2xdark"
@@ -175,13 +171,13 @@
                   value="var(--tint-2xdark)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="tint-2xdark"  >
                   tint-2xdark
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="tint-xdark"
@@ -189,13 +185,13 @@
                   value="var(--tint-xdark)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="tint-xdark"  >
                   tint-xdark
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="tint-dark"
@@ -203,13 +199,13 @@
                   value="var(--tint-dark)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="tint-dark"  >
                   tint-dark
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="tint-clear"
@@ -217,28 +213,28 @@
                   value="var(--tint-clear)"
                   tabindex="0"
                   checked>
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="tint-clear"  >
                   tint-clear
                 </label>
               </div>
           </div>
 
-        </div> -->
+        </div>
 
         <!-- Noise -->
-        <!-- <div class="js-accordion switch-accordion">
+        <div class="js-switch-accordion switch-accordion is-closed">
 
-          <div class="js-switchGroup switch-group">
+          <div class="js-switchAccordionControls switch-accordion-controls">
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch switch-on"
+              <input class="js-accordionSwitch switch "
                 id="js-noiseSwitch"
                 type="checkbox"
                 aria-checked="true"
-                checked
                 tabindex="0"
+                checked
               >
 
               <label class="switch-label"
@@ -247,12 +243,12 @@
               </label>
             </div>
 
-            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
+            <button class="js-switchAccordionBtn  switch-accordion-btn "
               type="button"
               aria-expanded="false"
               >
 
-              <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+              <svg class="switch-accordion-icon svg-chev-down "
                 role="graphics-symbol"
                 aria-hidden="true"
                 focusable="false"  >
@@ -261,10 +257,10 @@
 
           </div>
 
-          <div class="js-accordionContent switch-accordion-content is-closed">
+          <div class="switch-accordion-content ">
               <fieldset class="input-fieldset">
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="noise-gray"
@@ -272,13 +268,13 @@
                   value="var(--noise-gray)"
                   tabindex="0"
                   checked>
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="noise-gray"  >
                   noise-gray
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="noise-rough-gray"
@@ -286,13 +282,13 @@
                   value="var(--noise-rough-gray)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="noise-rough-gray"  >
                   noise-rough-gray
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="noise-pink"
@@ -300,7 +296,7 @@
                   value="var(--noise-pink)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="noise-pink"  >
                   noise-pink
                 </label>
@@ -309,14 +305,12 @@
             </fieldset>
           </div>
 
-        </div> -->
+        </div>
 
         <!-- Shadow -->
-        <div class="js-accordion switch-accordion">
-
-          <div class="js-switchGroup switch-group is-off">
-
-            <div class="switch-label-group">
+        <div class="js-switch-accordion switch-accordion is-closed">
+          <div class="js-switchAccordionControls switch-accordion-controls">
+            <div class="switch-label-group is-off">
 
               <input class="js-accordionSwitch switch"
                 id="js-shadowSwitch"
@@ -331,14 +325,13 @@
               </label>
             </div>
 
-            <!-- Accordion btn -->
-            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
+            <button class="js-switchAccordionBtn  switch-accordion-btn "
               type="button"
               aria-expanded="false"
               disabled
               >
 
-              <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+              <svg class="switch-accordion-icon svg-chev-down "
                 role="graphics-symbol"
                 aria-hidden="true"
                 focusable="false"  >
@@ -347,11 +340,10 @@
 
           </div>
 
-          <!-- Content -->
-          <div class="js-accordionContent switch-accordion-content is-closed">
+          <div class="switch-accordion-content ">
             <fieldset class="input-fieldset">
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="sha-xs"
@@ -359,13 +351,13 @@
                   value="var(--sha-xs)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="sha-xs"  >
                   shadow-xs
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="sha-sm"
@@ -373,13 +365,13 @@
                   value="var(--sha-sm)"
                   tabindex="0"
                   checked>
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="sha-sm"  >
                   shadow-sm
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="sha-md"
@@ -387,13 +379,13 @@
                   value="var(--sha-md)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="sha-md"  >
                   shadow-md
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="sha-lg"
@@ -401,13 +393,13 @@
                   value="var(--sha-lg)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="sha-lg"  >
                   shadow-lg
                 </label>
               </div>
 
-              <div class="input-group">
+              <div class="inline-label-layout-3xs">
                 <input class=" radio"
                   type="radio"
                   id="sha-xl"
@@ -415,7 +407,7 @@
                   value="var(--sha-xl)"
                   tabindex="0"
                   >
-                <label class="inline-label"
+                <label class="inline-label-sm"
                   for="sha-xl"  >
                   shadow-xl
                 </label>
@@ -423,17 +415,16 @@
 
             </fieldset>
           </div>
-
         </div>
 
-        <!-- Filters -->
-        <div class="js-accordion switch-accordion">
+        <!-- Backdrop-filter -->
+        <div class="js-switch-accordion switch-accordion is-closed">
 
-          <div class="js-switchGroup switch-group">
+          <div class="js-switchAccordionControls switch-accordion-controls">
 
             <div class="switch-label-group">
 
-              <input class="js-accordionSwitch switch"
+              <input class="js-accordionSwitch switch "
                 id="js-filterSwitch"
                 type="checkbox"
                 aria-checked="true"
@@ -443,17 +434,16 @@
 
               <label class="switch-label"
                 for="js-filterSwitch">
-                filter
+                backdrop-filter
               </label>
             </div>
 
-            <button class="js-accordion-btn js-content-toggle content-toggle is-closed"
+            <button class="js-switchAccordionBtn switch-accordion-btn"
               type="button"
               aria-expanded="false"
-              disabled
               >
 
-              <svg class="js-accordionIcon accordion-icon svg-chev-down is-closed"
+              <svg class="switch-accordion-icon svg-chev-down"
                 role="graphics-symbol"
                 aria-hidden="true"
                 focusable="false"  >
@@ -462,109 +452,108 @@
 
           </div>
 
-          <div class="js-accordionContent switch-accordion-content is-closed">
-            <div class="filter-sliders">
+          <div class="switch-accordion-content">
 
-              <div class="filter-input-group">
-                <span class="filter-label-group">
-                  <input  class="checkbox js-filter-value-switch"
+              <!-- Blur -->
+              <div class=" filter-function-controls">
+                <span class="inline-label-layout-3xs">
+                  <input  class="checkbox js-filter-value-checkbox"
+                          id="blur-checkbox"
                           type="checkbox"
                           tabindex="0"
-                          id="blur-filter"
-                          name="filters"
-                          value="var(--blur-gen)"
+                          aria-checked="true"
                           checked>
 
-                  <label  class="inline-label"
-                          for="blur-filter" >
+                  <label  class="inline-label-md"
+                          for="blur-checkbox" >
                     blur
                   </label>
                 </span>
 
-                <div class="slider-group">
-                  <input  class="slider-input"
+                <div  class="js-slider-w-display slider-w-display" >
+                  <input  class="js-slider-ui slider-ui"
                           id="blur-slider"
                           type="range"
-                          name="slider"
                           min="0"
                           max="80"
                           value="40"
-                          step="1"/>
+                          step="1"  />
 
-                  <output class="slider-value"
-                          id="blur-slider-value"
-                          name="slider"
+                  <output class="js-value-display value-display"
+                          data-length='40'
                           for="blur-slider"
-                          aria-live="polite" ></output>
+                          aria-live="polite" >
+                  </output>
                 </div>
               </div>
 
-              <div class="filter-input-group">
-                <span class="filter-label-group">
-                  <input  class="checkbox js-filter-value-switch"
+              <!-- Bright -->
+              <div class=" filter-function-controls is-off">
+                <span class="inline-label-layout-3xs">
+                  <input  class="checkbox js-filter-value-checkbox"
+                          id="bright-checkbox"
                           type="checkbox"
                           tabindex="0"
-                          id="satu-filter"
-                          name="filters"
-                          value="var(--satu-gen)"
+                          aria-checked="false"
+                          >
+
+                  <label  class="inline-label-md"
+                          for="bright-checkbox" >
+                    brightness
+                  </label>
+                </span>
+
+                <div  class="js-slider-w-display slider-w-display" >
+                  <input  class="js-slider-ui slider-ui"
+                          id="brigh-slider"
+                          type="range"
+                          min="0.1"
+                          max="2"
+                          value="1"
+                          step="0.1"  />
+
+                  <output class="js-value-display value-display"
+                          data-length='20'
+                          for="bright-slider"
+                          aria-live="polite" >
+                  </output>
+                </div>
+              </div>
+
+              <!-- Satu -->
+              <div class=" filter-function-controls">
+                <span class="inline-label-layout-3xs">
+                  <input  class="checkbox js-filter-value-checkbox"
+                          id="satu-checkbox"
+                          type="checkbox"
+                          tabindex="0"
+                          aria-checked="true"
                           checked>
 
-                  <label  class="inline-label"
-                          for="satu-filter" >
+                  <label  class="inline-label-md"
+                          for="satu-checkbox" >
                     saturation
                   </label>
                 </span>
 
-                <div class="slider-group">
-                  <input  class="slider-input"
+                <div  class="js-slider-w-display slider-w-display" >
+                  <input  class="js-slider-ui slider-ui"
                           id="satu-slider"
                           type="range"
-                          name="filter-slider"
                           min="0.1"
                           max="3"
-                          value="1.2"
-                          step="0.1"/>
+                          value="1.5"
+                          step="0.1"  />
 
-                  <output class="slider-value"
-                          id="satu-slider-value"
-                          name="slider-val"
+                  <output class="js-value-display value-display"
+                          data-length='20'
                           for="satu-slider"
-                          aria-live="polite" ></output>
+                          aria-live="polite" >
+                  </output>
                 </div>
               </div>
 
-
-              <!-- <div class="input-group">
-                <input class="checkbox js-filter-value-switch"
-                  type="checkbox"
-                  id="satu-filter"
-                  name="filters"
-                  value="var(--satu-gen)"
-                  tabindex="0"
-                  checked  >
-                <label class="inline-label"
-                  for="satu-filter"  >
-                  saturation
-                </label>
-              </div>
-
-              <div class="input-group">
-                <input class="checkbox js-filter-value-switch"
-                  type="checkbox"
-                  id="bright-filter"
-                  name="filters"
-                  value="var(--bright-gen)"
-                  tabindex="0"
-                  checked >
-                <label class="inline-label"
-                  for="bright-filter"  >
-                  brightness
-                </label>
-              </div> -->
-
-            </div>
           </div>
-
         </div>
 
       </div>

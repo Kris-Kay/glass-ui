@@ -3,7 +3,8 @@
 /* ========================================== */
 function callFindFunctions() {
   findTabs();
-  findAccordions();
+  // findAccordions();
+  initSliders();
   // findSpotlights();
   // findCopyBtns();
   initializeGenerator();

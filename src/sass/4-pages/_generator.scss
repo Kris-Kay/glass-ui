@@ -217,66 +217,59 @@
 }
 
 .generator {
-  --space: var(--lg);
-  --space-half: calc(var(--space) * 0.5);
-
-  @include bp(md) {
-    --space: var(--md);
-  }
+  --space: var(--sm);
 
   width: 100%;
   max-width: 400px;
   height: fit-content;
-
   @include radius("sm");
+
+  @include bp(xs) {
+    --space: var(--md);
+  }
 
   @include bp(sm) {
     @include radius("md");
   }
 
   @include bp(md) {
+    --space: var(--sm);
     width: 400px;
     border-radius: var(--md) 0 0  var(--md);
+
+  // --space-half: calc(var(--space) * 0.5);
+    // & .switch-accordion-controls {
+    //   padding: var(--space-half) var(--space) var(--space-half) var(--space);
+    // }
+
+    // & > :first-child .switch-accordion-controls {
+    //   padding: var(--space) var(--space) var(--space-half) var(--space);
+    // }
+
+    // & > :last-child .switch-accordion-controls {
+    //   padding: var(--space-half) var(--space) var(--space) var(--space);
+    //   outline: 1px solid rgb(192, 193, 255);
+    // }
   }
 
   @include bp(xl) {
     border-radius: var(--md);
   }
-
-  & .switch-accordion-controls {
-    padding: var(--space-half) var(--space) var(--space-half) var(--space);
-  }
-
-  & > :first-child .switch-accordion-controls {
-    padding: var(--space) var(--space) var(--space-half) var(--space);
-  }
-
-  & > :last-child .switch-accordion-controls {
-    padding: var(--space-half) var(--space) var(--space) var(--space);
-  }
 }
 
 
 /* Switch  */
-// .switch-accordion {
-
-// }
 
 .switch-accordion-controls {
   position: relative;
-  pointer-events: auto;
-  cursor: pointer;
+  pointer-events: none;
+  cursor: default;
   z-index: z(on-card);
 
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-
-  &.is-off {
-    & .switch-label {
-      color: var(--text-mild);
-    }
-  }
+  padding: var(--space);
 
   // will-change: background-color;
   // transition: background-color $speed-fast $smooth-cubic;
@@ -296,6 +289,15 @@
   grid-template-columns: auto 1fr;
   gap: var(--xs);
   place-items: center start;
+  pointer-events: none;
+  cursor: default;
+  // outline: 1px solid pink;
+
+  &.is-off {
+    & .switch-label {
+      color: var(--text-xmild);
+    }
+  }
 }
 
 .switch-label {
@@ -307,22 +309,30 @@
   cursor: default;
 }
 
-.content-toggle {
+
+.switch-accordion-icon {
+  pointer-events: none;
+  z-index: -1;
+  display: inline;
+  height: 1.75em;
+  place-self: center end;
+
+  background-color: var(--text-strong);
+  transform: rotate(180deg);
+  transition: transform $speed-xslow $smooth-cubic;
+}
+
+.switch-accordion-btn {
   display: grid;
   width: 100%;
   place-self: center end;
   cursor: pointer;
-
-  & > .accordion-icon {
-    background-color: var(--text-strong);
-    height: 1.75em;
-    place-self: center end;
-  }
+  pointer-events: auto;
 
   &:disabled {
     cursor: auto;
 
-    & > .accordion-icon {
+    & > .switch-accordion-icon {
       background-color: transparent;
       @include btn-svg-transition;
     }
@@ -351,21 +361,44 @@
                 opacity $speed-fast $smooth-cubic;
   }
 
-  &.is-closed {
-    z-index: -20;
-    height: 0;
-    padding: 0;
-    opacity: 0;
+  // &.is-closed {
+  //   z-index: -20;
+  //   height: 0;
+  //   padding: 0;
+  //   opacity: 0;
 
-    & > * {
+  //   & > * {
+  //     z-index: -20;
+  //     height: 0;
+  //     padding: 0;
+  //     opacity: 0;
+  //   }
+  // }
+}
+
+/* Switch accordion */
+.switch-accordion {
+
+  &.is-closed {
+    & .switch-accordion-content {
       z-index: -20;
       height: 0;
       padding: 0;
       opacity: 0;
+
+      & > * {
+        z-index: -20;
+        height: 0;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+
+    .switch-accordion-icon {
+      transform: rotate(0deg);
     }
   }
 }
-
 
 /* Backdrop-filter  */
 /* ================================================== */

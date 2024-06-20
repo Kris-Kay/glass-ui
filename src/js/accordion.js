@@ -8,20 +8,15 @@ function toggleAccordion(e) {
   const $thisIcon = $thisToggle.querySelector(".js-accordionIcon");
   const $thisContent = $thisAccordion.querySelector(".js-accordionContent");
 
-  if($thisContent) {
-    $thisToggle.setAttribute("aria-expanded", !$expanded);
-    $thisToggle.classList.toggle("is-closed");
-    $thisIcon.classList.toggle("is-closed");
-    $thisContent.classList.toggle("is-closed");
-  } else {
-    console.log("Accordion content not found.");
-  }
+  $thisToggle.setAttribute("aria-expanded", !$expanded);
+  $thisToggle.classList.toggle("is-closed");
+  $thisIcon.classList.toggle("is-closed");
+  $thisContent.classList.toggle("is-closed");
 };
 
-
 function findAccordions() {
-  document.querySelectorAll(".js-accordion-btn").forEach((accordionBtn) => {
-    accordionBtn.addEventListener("click", toggleAccordion);
+  document.querySelectorAll(".js-accordionBtn").forEach(($accordionBtn) => {
+    $accordionBtn.addEventListener("click", toggleAccordion);
   });
 };
 
