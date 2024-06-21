@@ -69,9 +69,9 @@ input[type="range"]:disabled {
   box-shadow: var(--knob-sha);
   transition: background-color $speed-slow $smooth-cubic;
 
-  &:hover {
-    background-color: $thumb-hover-color;
-  }
+  // &:hover {
+  //   background-color: $thumb-hover-color;
+  // }
 }
 
 .slider-ui {
@@ -120,12 +120,10 @@ input[type="range"]:disabled {
 .value-display {
   position: absolute;
   top: 0;
-  /* left: is set by slider.js */
   height: $thumb-h;
   min-width: $thumb-h;
   width: fit-content;
-  padding: 0.1em;
-  aspect-ratio: 1;
+  padding: 0 4px;
   display: grid;
   place-items: center;
 

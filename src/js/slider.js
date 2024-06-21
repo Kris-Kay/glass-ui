@@ -25,8 +25,10 @@ function initSliders() {
     const $sliderW = $slider.offsetWidth;
     const $displayW = $display.offsetWidth;
     const $where = Math.round(($percent / 100) * ($sliderW - $displayW));
-
     const $gradient = `linear-gradient(90deg, ${$progressColor} ${$percent}%, ${$bgcolor} ${$percent + 0.1}%)`;
+
+    // console.log($slider.id + " w: " + $sliderW);
+    // console.log("display " +  $displayW);
 
     $slider.style.background = $gradient;
     $display.setAttribute("data-length", $slider.value);
