@@ -17,106 +17,105 @@ let $satuValue;
 /* Find what switch was changed & set its layer's on/off value */
 function setGlassValues($id, $isOn) {
   // console.log($id + " is ON " + $isOn);
-  console.log(" setGlassValues ");
 
-  // if($id == "js-bevelSwitch") {
-  //   if($isOn) {
-  //     $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
-  //   } else {
-  //     $bevelValue = `none`;
-  //   }
+  if($id == "js-bevelSwitch") {
+    if($isOn) {
+      $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
+    } else {
+      $bevelValue = `none`;
+    }
 
-  //   $glassGenerator.style.setProperty("--bevel-gen", `${$bevelValue}`);
+    $glassGenerator.style.setProperty("--bevel-gen", `${$bevelValue}`);
 
-  //   // console.log("bevel value: " + $bevelValue);
-  // }
+    // console.log("bevel value: " + $bevelValue);
+  }
 
-  // if($id == "js-shadowSwitch") {
-  //   if($isOn) {
-  //     $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
-  //   } else {
-  //     $shadowValue = `none`;
-  //   }
+  if($id == "js-shadowSwitch") {
+    if($isOn) {
+      $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
+    } else {
+      $shadowValue = `none`;
+    }
 
-  //   $glassGenerator.style.setProperty("--shadow-gen", `${$shadowValue}`);
+    $glassGenerator.style.setProperty("--shadow-gen", `${$shadowValue}`);
 
-  //   // console.log("shadow value: " + $shadowValue);
-  // }
+    // console.log("shadow value: " + $shadowValue);
+  }
 
-  // if($id == "js-noiseSwitch") {
-  //   if($isOn) {
-  //     $noiseValue = document.querySelector('input[name="noise"]:checked').value;
-  //   } else {
-  //     $noiseValue = `none`;
-  //   }
+  if($id == "js-noiseSwitch") {
+    if($isOn) {
+      $noiseValue = document.querySelector('input[name="noise"]:checked').value;
+    } else {
+      $noiseValue = `none`;
+    }
 
-  //   $glassGenerator.style.setProperty("--noise-gen", `${$noiseValue}`);
+    $glassGenerator.style.setProperty("--noise-gen", `${$noiseValue}`);
 
-  //   // console.log("noise value: " + $noiseValue);
-  // }
+    // console.log("noise value: " + $noiseValue);
+  }
 
-  // if($id == "js-colorSwitch") {
-  //   if($isOn) {
-  //     $colorValue = document.querySelector('input[name="color"]:checked').value;
-  //   } else {
-  //     $colorValue = `none`;
-  //   }
+  if($id == "js-colorSwitch") {
+    if($isOn) {
+      $colorValue = document.querySelector('input[name="color"]:checked').value;
+    } else {
+      $colorValue = `none`;
+    }
 
-  //   $glassGenerator.style.setProperty("--color-gen", `${$colorValue}`);
+    $glassGenerator.style.setProperty("--color-gen", `${$colorValue}`);
 
-  //   // console.log("color value: " + $colorValue);
-  // }
+    // console.log("color value: " + $colorValue);
+  }
 
-  // if($id == "js-filterSwitch") {
-  //   if($isOn) {
-  //     $filterValue = `blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen))`;
-  //   } else {
-  //     $filterValue = `none`;
-  //     $blurValue = `0px`;
-  //     $brightValue = `1`;
-  //     $satuValue = `1`;
-  //   }
+  if($id == "js-filterSwitch") {
+    if($isOn) {
+      $filterValue = `blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen))`;
+    } else {
+      $filterValue = `none`;
+      // $blurValue = `0px`;
+      // $brightValue = `1`;
+      // $satuValue = `1`;
+    }
 
-  //   $glassGenerator.style.setProperty("--filter-gen", `${$filterValue}`);
+    $glassGenerator.style.setProperty("--filter-gen", `${$filterValue}`);
 
-  //   console.log("filter value: " + $filterValue);
-  // }
+    // console.log("filter value: " + $filterValue);
+  }
 
-  // if($id == "blur-checkbox") {
-  //   if($isOn) {
-  //     $blurValue = document.getElementById('blur-slider').value;
-  //   } else {
-  //     $blurValue = `0`;
-  //   }
+  if($id == "blur-checkbox") {
+    if($isOn) {
+      $blurValue = document.getElementById('blur-slider').value;
+    } else {
+      $blurValue = `0px`;
+    }
 
-  //   $glassGenerator.style.setProperty("--blur-gen", `${$blurValue}px`);
+    $glassGenerator.style.setProperty("--blur-gen", `${$blurValue}px`);
 
-  //   console.log("blur value: " + $blurValue);
-  // }
+    // console.log("blur value: " + $blurValue);
+  }
 
-  // if($id == "bright-checkbox") {
-  //   if($isOn) {
-  //     // $brightValue = document.getElementById('bright-slider').value;
-  //   } else {
-  //     $brightValue = `1`;
-  //   }
+  if($id == "bright-checkbox") {
+    if($isOn) {
+      $brightValue = document.getElementById('bright-slider').value;
+    } else {
+      $brightValue = `1`;
+    }
 
-  //   $glassGenerator.style.setProperty("--bright-gen", `${$brightValue}`);
+    $glassGenerator.style.setProperty("--bright-gen", `${$brightValue}`);
 
-  //   console.log("bright value: " + $brightValue);
-  // }
+    // console.log("bright value: " + $brightValue);
+  }
 
-  // if($id == "satu-checkbox") {
-  //   if($isOn) {
-  //     $satuValue = document.getElementById('satu-slider').value;
-  //   } else {
-  //     $satuValue = `1`;
-  //   }
+  if($id == "satu-checkbox") {
+    if($isOn) {
+      $satuValue = document.getElementById('satu-slider').value;
+    } else {
+      $satuValue = `1`;
+    }
 
-  //   $glassGenerator.style.setProperty("--satu-gen", `${$satuValue}`);
+    $glassGenerator.style.setProperty("--satu-gen", `${$satuValue}`);
 
-  //   console.log("satu value: " + $satuValue);
-  // }
+    // console.log("satu value: " + $satuValue);
+  }
 
   // else {
   //   if(!$id || $id === null || $id === undefined) {
@@ -149,6 +148,7 @@ function accordionOnOff($switch, $checked) {
     $accordion.classList.remove("is-closed");
     $accordionBtn.setAttribute("aria-expanded", true);
     $accordionBtn.removeAttribute("disabled");
+    // initSliders();
   };
 
   if(!$checked) {
@@ -221,21 +221,6 @@ function onCheckChange(e) {
 
 function initializeGenerator() {
   $glassGenerator = document.getElementById("glass-generator");
- // $glass = document.querySelectorAll(".glass-3d-gen");
-
-
-// let $bevelValue;
-// let $colorValue;
-// let $shadowValue;
-// let $noiseValue;
-    // $filterValue;
-
-    // $blurValue = document.getElementById("blur-slider").value;
-// let $brightValue;
-// let $satuValue;
-
-
-  // findSliderGroups();
 
   /* On/Off */
   /* ========================================== */
@@ -298,51 +283,26 @@ function initializeGenerator() {
   });
 
 
-  /* Filter */
-
-
+  /* Filters */
+  /* ========================================== */
   /* Blur */
-  // document.getElementById("blur-slider").addEventListener("change", (e) => {
-  //   // $blurValue = e.target.value;
-  //   $glassGenerator.style.setProperty("--blur-gen", `${e.target.value}`);
-  //   console.log(`blur: ${e.target.value}`);
-  // });
+  document.getElementById("blur-slider").addEventListener("change", (e) => {
+    $blurValue = `${e.target.value}px`;
+    $glassGenerator.style.setProperty("--blur-gen", `${e.target.value}px`);
+    // console.log(`blur: ${e.target.value}`);
+  });
 
+  /* Bright */
+  document.getElementById("bright-slider").addEventListener("change", (e) => {
+    $brightValue = e.target.value;
+    $glassGenerator.style.setProperty("--bright-gen", `${e.target.value}`);
+    // console.log(`bright: ${e.target.value}`);
+  });
+
+  /* Satu */
+  document.getElementById("satu-slider").addEventListener("change", (e) => {
+    $satuValue = e.target.value;
+    $glassGenerator.style.setProperty("--satu-gen", `${e.target.value}`);
+    // console.log(`satu: ${e.target.value}`);
+  });
 };
-
-
-  // document.onreadystatechange = () => {
-  //   if (document.readyState === "complete") {
-
-  //   }
-  // };
-
-
-
-
-
-
-  // function setSliderValue($slider, $display) {
-//   const $sliderW = $slider.offsetWidth;
-//   const $displayW = $display.offsetWidth;
-//   const $val = $slider.value;
-//   const $min = $slider.min ? $slider.min : 0;
-//   const $max = $slider.max ? $slider.max : 100;
-//   const $deciVal = Number(($val - $min) / ($max - $min));
-//   const $progress = Math.round($deciVal * ($sliderW - $displayW));
-
-//   // console.log($slider.id + " " + $val + " val");
-
-//   $display.style.left = `${$progress}px`;
-//   $display.innerHTML = $val;
-// }
-
-  /* Filter sliders */
-  // document.querySelectorAll(".js-slider-w-display").forEach(($sliderDisplay) => {
-  //   const $slider = $sliderDisplay.querySelector(".js-slider-ui");
-  //   const $display = $sliderDisplay.querySelector(".js-value-display");
-
-  //   setSliderValue($slider, $display);
-
-  //   $slider.addEventListener("input", setSliderValue($slider, $display));
-  // });

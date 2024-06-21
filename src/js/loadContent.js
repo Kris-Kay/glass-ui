@@ -4,10 +4,10 @@
 function callFindFunctions() {
   findTabs();
   // findAccordions();
-  initSliders();
   // findSpotlights();
   // findCopyBtns();
   initializeGenerator();
+  initSliders();
 }
 
 function fetchHome() {
