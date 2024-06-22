@@ -8,6 +8,7 @@ function callFindFunctions() {
   // findCopyBtns();
   initializeGenerator();
   initSliders();
+  initColorPicker();
 }
 
 function fetchHome() {
