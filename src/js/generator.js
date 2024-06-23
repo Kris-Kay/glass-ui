@@ -56,12 +56,14 @@ function setGlassValues($id, $isOn) {
 
   if($id == "js-colorSwitch") {
     if($isOn) {
-      $colorValue = document.querySelector('input[name="color"]:checked').value;
+      $glassGenerator.style.setProperty("--color-gen", `var(--color-hsla)`);
+      // $colorValue = document.querySelector('input[name="color"]:checked').value;
     } else {
-      $colorValue = `none`;
+      // $colorValue = `none`;
+      $glassGenerator.style.setProperty("--color-gen", `transparent`);
     }
 
-    $glassGenerator.style.setProperty("--color-gen", `${$colorValue}`);
+    // $glassGenerator.style.setProperty("--color-gen", `${$colorValue}`);
 
     // console.log("color value: " + $colorValue);
   }
@@ -274,11 +276,17 @@ function initializeGenerator() {
   });
 
   /* Color */
-  document.querySelectorAll('input[name="color"]').forEach(($radio) => {
-    $radio.addEventListener("change", (e) => {
-      $colorValue = e.target.value;
-      $glassGenerator.style.setProperty("--color-gen", `${e.target.value}`);
-      // console.log(`color: ${e.target.value}`);
+
+  const $colorPicker = document.getElementById("picker");
+  let $computed = window.getComputedStyle(document.body)
+  let $hsla = $computed.getPropertyValue("--color-hsla");
+  $colorValue = $hsla;
+  $glassGenerator.style.setProperty("--color-gen", `${$hsla}`);
+  // console.log("hsla: " + $hsla);
+
+  $colorPicker.querySelectorAll('input[name="colorSlider"]').forEach(($slider) => {
+    $slider.addEventListener("input", () => {
+      $glassGenerator.style.setProperty("--color-gen", `var(--color-hsla)`);
     });
   });
 

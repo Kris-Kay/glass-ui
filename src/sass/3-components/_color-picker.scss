@@ -5,15 +5,11 @@
 @use "../forward-styles/util" as *;
 /* ================================================== */
 
-.color-picker-layout {
-  --color-now: hsl(var(--neutral-95) / 0.2);
-
-  --color-h: 193;
-  --color-l: 46;
-  --color-s: 86;
-  --color-a: 0.7;
-
-  // --color-hsl: hsl(var(--color-h) var(--color-s) var(--color-l));
+body {
+  --color-h: 205;
+  --color-l: 10;
+  --color-s: 20;
+  --color-a: 0.2;
 
   --color-s0: hsl(var(--color-h) 0% var(--color-l));
   --color-s100: hsl(var(--color-h) 100% var(--color-l));
@@ -28,8 +24,10 @@
   --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
 
   --swatch-text-color: red;
-///
+}
 
+
+.color-picker-layout {
   --max-w: 350px;
   --track-w: 100%;
   --track-h: var(--ui-h-md);
@@ -76,13 +74,6 @@
     --track-h: var(--ui-h-sm);
   }
 }
-
-// #colorNow {
-//   width: 100%;
-//   height: 2rem;
-//   // background-color: var(--color-now);
-//   background-color: var(--color-hsl);
-// }
 
 
 .thick-slider-group {

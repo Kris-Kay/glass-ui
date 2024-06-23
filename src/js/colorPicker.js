@@ -14,12 +14,12 @@ function initColorPicker() {
 
 
   function setInitialValues() {
-    /* get color picker's computed style to access its CSS --vars */
-    let $computedPicker = getComputedStyle($colorPicker);
-    let $hVal = $computedPicker.getPropertyValue("--color-h");
-    let $lVal = $computedPicker.getPropertyValue("--color-l");
-    let $sVal = $computedPicker.getPropertyValue("--color-s");
-    let $aVal = $computedPicker.getPropertyValue("--color-a");
+    /* get body's computed style to access its CSS --vars */
+    let $computed = window.getComputedStyle(document.body);
+    let $hVal = $computed.getPropertyValue("--color-h");
+    let $lVal = $computed.getPropertyValue("--color-l");
+    let $sVal = $computed.getPropertyValue("--color-s");
+    let $aVal = $computed.getPropertyValue("--color-a");
 
     /* use --vars to set initial slider values */
     $hSlider.value = $hVal;
@@ -28,8 +28,8 @@ function initColorPicker() {
     $aSlider.value = $aVal;
 
     /* reset the saturation and lightness --vars with a `%` or Safari will throw a fit */
-    $colorPicker.style.setProperty("--color-l", `${$lVal}%`);
-    $colorPicker.style.setProperty("--color-s", `${$sVal}%`);
+    document.body.style.setProperty("--color-l", `${$lVal}%`);
+    document.body.style.setProperty("--color-s", `${$sVal}%`);
 
     /* update HTML value display & its text color */
     setTextColor();
@@ -49,16 +49,16 @@ function initColorPicker() {
 
     /* find the slider that changed and update the corresponding --var to its value */
     if($sliderId === "hsl-h") {
-      $colorPicker.style.setProperty("--color-h", `${$slider.value}`);
+      document.body.style.setProperty("--color-h", `${$slider.value}`);
 
     } else if($sliderId === "hsl-l") {
-      $colorPicker.style.setProperty("--color-l", `${$slider.value}%`);
+      document.body.style.setProperty("--color-l", `${$slider.value}%`);
 
     } else if($sliderId === "hsl-s") {
-      $colorPicker.style.setProperty("--color-s", `${$slider.value}%`);
+      document.body.style.setProperty("--color-s", `${$slider.value}%`);
 
     } else if($sliderId === "hsl-a") {
-      $colorPicker.style.setProperty("--color-a", `${$slider.value}`);
+      document.body.style.setProperty("--color-a", `${$slider.value}`);
     }
 
     /* update HTML display to reflect new color */
@@ -70,9 +70,9 @@ function initColorPicker() {
   /* make text color contrast against swatch color */
   function setTextColor() {
     if($lSlider.value > 42) {
-      $colorPicker.style.setProperty("--swatch-text-color", "#000");
+      document.body.style.setProperty("--swatch-text-color", "#000");
     } else {
-      $colorPicker.style.setProperty("--swatch-text-color", "#fff");
+      document.body.style.setProperty("--swatch-text-color", "#fff");
     }
   }
 

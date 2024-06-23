@@ -6,9 +6,10 @@ function callFindFunctions() {
   // findAccordions();
   // findSpotlights();
   // findCopyBtns();
-  initializeGenerator();
+
   initSliders();
   initColorPicker();
+  initializeGenerator();
 }
 
 function fetchHome() {
