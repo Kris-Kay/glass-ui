@@ -31,14 +31,14 @@ function initColorPicker() {
     document.body.style.setProperty("--color-l", `${$lVal}%`);
     document.body.style.setProperty("--color-s", `${$sVal}%`);
 
-    /* update HTML value display & its text color */
-    setTextColor();
-    $colorSwatch.innerHTML = createColorHTML();
-
     /* give sliders an event listener */
     $colorPicker.querySelectorAll('.js-colorSlider').forEach(($slider) => {
       $slider.addEventListener("input", handleSliderChange);
     });
+
+    /* update HTML value display & its text color */
+    $colorSwatch.innerHTML = createColorHTML();
+    setTextColor();
   }
   setInitialValues();
 
@@ -70,9 +70,9 @@ function initColorPicker() {
   /* make text color contrast against swatch color */
   function setTextColor() {
     if($lSlider.value > 42) {
-      document.body.style.setProperty("--swatch-text-color", "#000");
+      document.body.style.setProperty("--swatch-text-color", "205 20% 10%");
     } else {
-      document.body.style.setProperty("--swatch-text-color", "#fff");
+      document.body.style.setProperty("--swatch-text-color", "205 20% 90%");
     }
   }
 
