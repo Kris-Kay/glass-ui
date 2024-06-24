@@ -294,21 +294,21 @@ function initializeGenerator() {
   /* Filters */
   /* ========================================== */
   /* Blur */
-  document.getElementById("blur-slider").addEventListener("change", (e) => {
+  document.getElementById("blur-slider").addEventListener("input", (e) => {
     $blurValue = `${e.target.value}px`;
     $glassGenerator.style.setProperty("--blur-gen", `${e.target.value}px`);
     // console.log(`blur: ${e.target.value}`);
   });
 
   /* Bright */
-  document.getElementById("bright-slider").addEventListener("change", (e) => {
+  document.getElementById("bright-slider").addEventListener("input", (e) => {
     $brightValue = e.target.value;
     $glassGenerator.style.setProperty("--bright-gen", `${e.target.value}`);
     // console.log(`bright: ${e.target.value}`);
   });
 
   /* Satu */
-  document.getElementById("satu-slider").addEventListener("change", (e) => {
+  document.getElementById("satu-slider").addEventListener("input", (e) => {
     $satuValue = e.target.value;
     $glassGenerator.style.setProperty("--satu-gen", `${e.target.value}`);
     // console.log(`satu: ${e.target.value}`);

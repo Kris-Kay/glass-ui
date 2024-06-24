@@ -16,6 +16,7 @@ $progress-color: var(--bg-checked);
 
 input[type="range"]:active {
   cursor: grabbing;
+  // cursor: pointer;
 }
 
 input[type="range"]:disabled {
@@ -31,6 +32,7 @@ input[type="range"]:disabled {
 }
 
 .slider-w-display {
+  pointer-events: auto;
   position: relative;
   width: $track-w;
   height: calc(2.25 * $thumb-h);
