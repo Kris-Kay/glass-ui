@@ -5,10 +5,10 @@ function callFindFunctions() {
   findTabs();
   // findAccordions();
   // findSpotlights();
-  // findCopyBtns();
 
   initSliders();
   initColorPicker();
+  findCopyBtns();
   initializeGenerator();
 }
 

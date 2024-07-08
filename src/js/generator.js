@@ -1,7 +1,7 @@
 /* ========================================== */
 /* 3d glass generator */
 /* ========================================== */
-let colorTimeout;
+let colorUpdateTimeout;
 
 
 let $computedGlass;
@@ -196,25 +196,22 @@ function setOnOffValue($id, $isOn) {
 }
 
 
-/* set Switch */
+/* on slider input update color */
 /* ========================================== */
-function setSwitch($switch, $switchBool) {
-  let $switchId = $switch.id;
-  let $switchParent = $switch.parentNode;
+function updateColor() {
+  clearTimeout(colorUpdateTimeout);
 
-  if($switchBool) {
-    $switch.ariaChecked = "true";
-    $switchParent.classList.remove("is-off");
-    setOnOffValue($switchId, true);
-    // console.log($switchId + " is now ON");
+  colorUpdateTimeout = setTimeout(() => {
+    $colorSet = $computedGlass.getPropertyValue("--color-hsla");
+    $colorValue = $colorSet;
+    document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
+    displayComputedStyle();
 
-  } else {
-    $switch.ariaChecked = "false";
-    $switchParent.classList.add("is-off");
-    setOnOffValue($switchId, false);
-    // console.log($switchId + " is now OFF");
-  }
+    // console.log("get --color-hsla set --color-glass3d: " + $colorSet);
+
+  }, 102);
 }
+
 
 
 /* set Filter */
@@ -242,6 +239,27 @@ function setFilter($check, $checkBool) {
 }
 
 
+/* on check change */
+/* ========================================== */
+function onCheckChange(e) {
+  let $check = e.target;
+  let $checkBool = $check.checked;
+  setFilter($check, $checkBool);
+}
+
+
+/* show/hide accordion content */
+/* ========================================== */
+function toggleAccordionContent(e) {
+  const $accordionBtn = e.target;
+  // const $expanded = $accordionBtn.getAttribute("aria-expanded") === "true" || false;
+  const $accordion = $accordionBtn.parentNode.parentNode;
+
+  $accordion.classList.toggle("is-closed");
+  // $accordionBtn.setAttribute("aria-expanded", !$expanded);
+};
+
+
 /* accordion disable/enable */
 /* ========================================== */
 /* not part of setSwitch() so as not to open all content on load */
@@ -265,16 +283,25 @@ function accordionOnOff($switch, $switchBool) {
 }
 
 
-/* show/hide accordion content */
+/* set Switch */
 /* ========================================== */
-function toggleAccordionContent(e) {
-  const $accordionBtn = e.target;
-  // const $expanded = $accordionBtn.getAttribute("aria-expanded") === "true" || false;
-  const $accordion = $accordionBtn.parentNode.parentNode;
+function setSwitch($switch, $switchBool) {
+  let $switchId = $switch.id;
+  let $switchParent = $switch.parentNode;
 
-  $accordion.classList.toggle("is-closed");
-  // $accordionBtn.setAttribute("aria-expanded", !$expanded);
-};
+  if($switchBool) {
+    $switch.ariaChecked = "true";
+    $switchParent.classList.remove("is-off");
+    setOnOffValue($switchId, true);
+    // console.log($switchId + " is now ON");
+
+  } else {
+    $switch.ariaChecked = "false";
+    $switchParent.classList.add("is-off");
+    setOnOffValue($switchId, false);
+    // console.log($switchId + " is now OFF");
+  }
+}
 
 
 /* on switch change */
@@ -284,30 +311,6 @@ function onSwitchChange(e) {
   let $switchBool = $switch.checked;
   setSwitch($switch, $switchBool);
   accordionOnOff($switch, $switchBool);
-}
-
-
-/* on check change */
-/* ========================================== */
-function onCheckChange(e) {
-  let $check = e.target;
-  let $checkBool = $check.checked;
-  setFilter($check, $checkBool);
-}
-
-/* on slider input update color */
-/* ========================================== */
-function updateColor() {
-  clearTimeout(colorTimeout);
-
-  colorTimeout = setTimeout(() => {
-    $colorSet = $computedGlass.getPropertyValue("--color-hsla");
-    $colorValue = $colorSet;
-    document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
-    displayComputedStyle();
-
-    console.log("$colorSet: " + $colorSet);
-  }, 50);
 }
 
 
