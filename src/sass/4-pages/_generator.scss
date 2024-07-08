@@ -6,51 +6,34 @@
 @use "../forward-styles/components" as *;
 /* ================================================== */
 
-html {
-  height: max-content;
-  overflow-y: scroll;
-
-  @media (min-height: 566px) {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-}
-
-
 /* ================================================== */
 /* Demo Glass  */
 /* ================================================== */
-#glass-generator-vars {
+body {
   /* main element */
-  --color-gen: hsa( 190 60% 40% / 0.7);
-  --shadow-gen: var(--sha-xs);
+  --color-glass3d: var(--color-hsla);
+  --shadow-glass3d: var(--sha-xs);
 
   /* ::after */
-  --bevel-gen: var(--bevel-lg);
+  --bevel-glass3d: var(--bevel-md);
 
-    /* ::before */
-  --texture-gen: var(--canvas);
-  --texture-size-gen: var(--texture-md);
-  --blur-gen: 20px;
-  --bright-gen: 0.5;
-  --satu-gen: 2;
-  --filter-gen: blur(var(--blur-gen)) brightness(var(--bright-gen)) saturate(var(--satu-gen));
+  /* ::before */
+  --noise-glass3d: var(--noise-gray);
+  --blur-glass3d: 30;
+  --bright-glass3d: 1.1;
+  --satu-glass3d: 1.5;
+  --filter-glass3d: blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d));
 }
 
 .glass-3d-gen {
   position: relative;
-  z-index: 4;
-  // z-index: z(glass);
+  z-index: z(glass);
 
   /* BG color */
-  background-color: var(--color-gen);
+  background-color: var(--color-glass3d);
 
   /* Shadow */
-  box-shadow: var(--shadow-gen);
+  box-shadow: var(--shadow-glass3d);
 
   &::after {
     content: "";
@@ -59,12 +42,10 @@ html {
     pointer-events: none;
     border-radius: inherit;
     // overflow: hidden;
-    z-index: 5;
-    // z-index: z(glass-after);
+    z-index: z(glass-after);
 
     /* Bevel */
-    box-shadow: var(--bevel-gen);
-    // box-shadow: inset 1px 1px 0 hsl(var(--highlight) / 0.9);
+    box-shadow: var(--bevel-glass3d);
   }
 
   &::before {
@@ -74,26 +55,24 @@ html {
     pointer-events: none;
     border-radius: inherit;
     // overflow: hidden;
-    z-index: 3;
-    // z-index: z(glass-b4);
+    z-index: z(glass-b4);
 
     /* backdrop-filter */
-    -webkit-backdrop-filter: var(--filter-gen);
-    backdrop-filter: var(--filter-gen);
+    -webkit-backdrop-filter: var(--filter-glass3d);
+    backdrop-filter: var(--filter-glass3d);
 
-
-    // background-color: var(--color-gen);
+    // background-color: var(--color-glass3d);
 
     /* texture */
-    background-image: var(--texture-gen);
+    background-image: var(--noise-glass3d);
     background-size: 100px;
     background-repeat: repeat;
   }
 
   & > * {
     position: relative;
-    z-index: 6;
-    // z-index: z(on-glass);
+    // z-index: 6;
+    z-index: z(on-glass);
   }
 }
 
@@ -108,10 +87,6 @@ html {
   width: 100%;
   height: 100vh;
   height: 100svh;
-
-  // @media (max-height: 565px) {
-  //   height: auto;
-  // }
 }
 
 .generator-page-layout {
@@ -128,7 +103,7 @@ html {
 
   @include bp(sm) {
     --glass-h: 350px;
-    --gen-w: 450px;
+    --gen-w: calc(#{$bp-sm} - var(--moat));
   }
 
   @include bp(md) {
@@ -175,7 +150,8 @@ html {
   // background-color: rgba(15, 185, 18, 0.25);
   // outline: solid 2px green;
 
-  position: fixed;
+  position: absolute;
+  // position: fixed;
   top: var(--nav-offset);
   width: 100%;
   height: var(--glass-h);
@@ -198,7 +174,7 @@ html {
 }
 
 .glass-tele-rect {
-  // pointer-events: none;
+  pointer-events: none;
 
   width: max-content;
   height: max-content;
@@ -219,7 +195,7 @@ html {
 // background-color: rgba(15, 125, 185, 0.25);
 // outline: solid 2px blue;
 
-  // pointer-events: none;
+  pointer-events: none;
   z-index: 3;
 
   width: min(100%, 430px);
@@ -230,8 +206,6 @@ html {
   place-content: center;
 
   & > :first-child {
-    // outline: 1px solid red;
-
     pointer-events: auto;
     cursor: pointer;
 
@@ -252,19 +226,6 @@ html {
         }
       }
     }
-
-
-    // & > :first-child {
-    //   width: max-content;
-    //   outline: 1px solid blue;
-
-    //   & > :first-child {
-    //     width: max-content;
-    //     outline: 1px solid green;
-    //   }
-
-    // }
-
   }
 }
 
@@ -334,15 +295,18 @@ html {
   overflow: hidden;
   pointer-events: none;
 
-  position: fixed;
+  position: absolute;
+  // position: fixed;
   top: var(--glass-offset);
-
+  // bottom: 0;
   width: 100%;
   height: calc(100vh - var(--glass-offset));
   height: calc(100svh - var(--glass-offset));
 
   @include bp(lg) {
     height: calc(100vh -  var(--nav-offset));
+    // bottom: 0;
+    // top: 0;
     top: var(--nav-offset);
     right: 0;
     padding-top: 4rem;
@@ -391,7 +355,7 @@ html {
   z-index: 7;
   width: 100%;
   max-width: var(--gen-w);
-  min-height: 100%;
+  min-height: fit-content;
   padding-bottom: var(--3xl);
   @include radius("md");
 
@@ -404,13 +368,14 @@ html {
 
   & > :first-child .switch-accordion-controls {
     padding: var(--space) var(--space) var(--space-half) var(--space);
-    // background-color: rgba(255, 0, 255, 0.25);
   }
 
-  & > :last-child {
-    padding: var(--space);
-    background-color: rgba(13, 0, 255, 0.25);
-  }
+  // & > :last-child {
+  //   padding: var(--space-half) var(--space) var(--space) var(--space);
+  // }
+  // & > :last-child {
+  //   padding: var(--space);
+  // }
 
   @include bp(xs) {
     --space: var(--lg);
@@ -425,7 +390,7 @@ html {
     border-radius: var(--md) 0 0 0;
   }
 
-  // @include bp(md) {
+    // @include bp(md) {
   //   // --space: var(--sm);
   //   --space-half: calc(var(--space) * 0.5);
 
@@ -453,79 +418,32 @@ html {
 /* ================================================== */
 /* Copy code  */
 /* ================================================== */
-.code-display-layout {
-      outline: 2px solid yellow;
-    // background-color: rgba(255, 255, 0, 0.25);
-
-  // position: relative;
-  width: 100%;
-  height: 250px;
-  padding: var(--space);
-
-  // @include bp(lg) {
-
-  // }
-}
-
 .code-display-bg {
-  position: relative;
-  // position: fixed;
-  overflow: hidden;
-
   width: 100%;
   height: 100%;
   display: grid;
-  place-items: start end;
+
+  place-items: start;
   gap: var(--space);
-  padding: var(--space);
-  background-color: var(--tint-2xdark);
+  overflow-x: scroll;
 
-    // scrollbar-width: none;
-    // -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
-    // &::-webkit-scrollbar {
-    //   display: none;
-    // }
-
-  // display: flex;
-  // justify-content: flex-end;
-
-  // @include bp(lg) {
-  //   display: block;
-
-  //   // position: relative;
-  //   width: 100%;
-  //   height: 200px;
-  //   // height: max-content;
-  //   padding: 2rem;
-
-  //   border-radius: 1.5rem;
-
-  //   place-items: start center;
-
-  //   scrollbar-width: none;
-  //   // -ms-overflow-style: none;
-
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  // }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .code-display-text {
   z-index: 8;
   display: block;
   width: 100%;
-  white-space: pre-wrap;
+  white-space: pre;
   @include code;
   color: var(--text-strong);
   pointer-events: auto;
 }
-
-.code-copy-btn {
-}
-
-
 
 
 /* ================================================== */
@@ -610,11 +528,12 @@ html {
 }
 
 .switch-accordion-content {
-  // pointer-events: none;
+  pointer-events: none;
+
   z-index: z(card);
   display: grid;
   gap: var(--md);
-  background-color: var(--tint-2xdark);
+  background-color: var(--tint-3xdark);
 
   height: fit-content;
   padding: var(--space);
@@ -648,7 +567,7 @@ html {
 
 .switch-accordion {
   width: 100%;
-  height: auto;
+  height: fit-content;
 
   &.is-closed {
     & .switch-accordion-content {

@@ -1,50 +1,24 @@
 <!-- 3d glass generator -->
 <!-- ================================================== -->
-<div hidden>
-    <div class="glass-3d-gen" id="glassCodeSource"></div>
-</div>
-
 <article id="glass-generator-vars" class="generator-viewport">
   <div class="generator-page-layout">
 
     <!-- Demo glass -->
-      <div class="glass-layout">
-        <div class="glass-tele-group">
+    <section class="glass-layout">
 
+      <div class="glass-tele-group">
+        <div class="glass-tele-rect glass-3d-gen">
           <div class="glass-tele-rect glass-3d-gen">
             <div class="glass-tele-rect glass-3d-gen">
-              <div class="glass-tele-rect glass-3d-gen">
-                <div class="glass-gen-card">
-                  <h1 class="glass-gen-title">3d glass generator</h1>
-                </div>
+              <div class="glass-gen-card">
+                <h1 class="glass-gen-title">3d glass generator</h1>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-    <!-- Copy code -->
-    <!-- <section class="code-display-layout">
-      <div class="code-display-bg">
-
-        <div class="js-copyWrap">
-          <p class="js-textToCopy code-display-text" id="codeDisplay" contenteditable="true"></p>
-
-          <button class="js-copyBtn code-copy-btn btn-icon-md btn-secondary"
-            type="button"
-            aria-label="copy code to clipboard"
-          >
-            <svg  class="svg-copy"
-              role="graphics-symbol"
-              aria-hidden="true"
-              focusable="false"
-            > </svg>
-          </button>
-        </div>
-
-      </div>
-    </section> -->
+    </section>
 
     <!-- Generator controls -->
     <section class="generator-layout">
@@ -99,7 +73,7 @@
                     checked>
                   <label class="inline-label-sm"
                     for="radio-bevel-sm"  >
-                    bevel-sm
+                    small bevel
                   </label>
                 </div>
 
@@ -113,7 +87,7 @@
                     >
                   <label class="inline-label-sm"
                     for="radio-bevel-md"  >
-                    bevel-md
+                    medium bevel
                   </label>
                 </div>
 
@@ -127,7 +101,7 @@
                       >
                   <label class="inline-label-sm"
                     for="radio-bevel-lg"  >
-                    bevel-lg
+                    large bevel
                   </label>
                 </div>
 
@@ -146,8 +120,8 @@
                   id="js-colorSwitch"
                   type="checkbox"
                   aria-checked="true"
-                  checked
                   tabindex="0"
+                  checked
                 >
 
                 <label class="switch-label"
@@ -172,7 +146,7 @@
 
             <div class="switch-accordion-content ">
 
-              <div class="color-picker-layout" id="picker">
+              <div class="color-picker-layout" id="js-colorPicker">
 
                 <div  class="thick-slider-group" >
                   <label class="thick-slider-label"
@@ -182,7 +156,6 @@
 
                   <input  class="thick-slider-ui js-colorSlider"
                     id="hsl-h"
-                    name="colorSlider"
                     type="range"
                     min="1"
                     step="1"
@@ -197,7 +170,6 @@
 
                   <input  class="thick-slider-ui js-colorSlider"
                     id="hsl-s"
-                    name="colorSlider"
                     type="range"
                     min="0"
                     step="1"
@@ -212,7 +184,6 @@
 
                   <input  class="thick-slider-ui js-colorSlider"
                     id="hsl-l"
-                    name="colorSlider"
                     type="range"
                     min="0"
                     step="1"
@@ -227,10 +198,9 @@
 
                   <input  class="thick-slider-ui js-colorSlider"
                     id="hsl-a"
-                    name="colorSlider"
                     type="range"
                     min="0"
-                    step="0.05"
+                    step="0.02"
                     max="1"  />
                 </div>
 
@@ -278,22 +248,7 @@
             </div>
 
             <div class="switch-accordion-content ">
-                <fieldset class="input-fieldset">
-
-                <p class="eyebrow">noise</p>
-
-                <div class="inline-label-layout-3xs" id="noise-dark">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--noise-dark)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="noise-dark"  >
-                    noise-dark
-                  </label>
-                </div>
+              <fieldset class="input-fieldset">
 
                 <div class="inline-label-layout-3xs" id="noise-light">
                   <input class=" radio"
@@ -304,7 +259,7 @@
                     >
                   <label class="inline-label-sm"
                     for="noise-light"  >
-                    noise-light
+                    light
                   </label>
                 </div>
 
@@ -317,94 +272,39 @@
                     checked>
                   <label class="inline-label-sm"
                     for="noise-gray"  >
-                    noise-gray
+                    gray
                   </label>
                 </div>
 
-
-                <p class="eyebrow">material</p>
-                <div class="inline-label-layout-3xs" id="brushed-steel">
+                <div class="inline-label-layout-3xs" id="noise-dark">
                   <input class=" radio"
                     type="radio"
                     name="noise"
-                    value="var(--brushed-steel)"
+                    value="var(--noise-dark)"
                     tabindex="0"
                     >
                   <label class="inline-label-sm"
-                    for="brushed-steel"  >
-                    brushed-steel
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs" id="canvas">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--canvas)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="canvas"  >
-                    canvas
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs" id="rice-paper">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--rice-paper)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="rice-paper"  >
-                    rice-paper
-                  </label>
-                </div>
-
-
-                <p class="eyebrow">fun</p>
-
-                <div class="inline-label-layout-3xs" id="pixelated">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--pixelated)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="pixelated"  >
-                    pixelated
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs" id="woven">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--woven)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="woven"  >
-                    woven
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs" id="arches">
-                  <input class=" radio"
-                    type="radio"
-                    name="noise"
-                    value="var(--arches)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="arches"  >
-                    arches
+                    for="noise-dark"  >
+                    dark
                   </label>
                 </div>
 
               </fieldset>
+
+              <!-- <div class="text-input-group gap-2xs">
+                <label for="t-1" class="text-input-label-sm">Texture size</label>
+
+                  <div class="text-input-bg spotlight">
+                    <input class="text-input"
+                      id="t-1"
+                      placeholder="This is placeholder text"
+                      name="text-input"
+                      type="text"
+                      tabindex="0" >
+                  </div>
+
+              </div> -->
+
             </div>
 
           </div>
@@ -444,6 +344,20 @@
 
             <div class="switch-accordion-content ">
               <fieldset class="input-fieldset">
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-2xs"
+                    name="shadows"
+                    value="var(--sha-2xs)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="sha-2xs"  >
+                    shadow-2xs
+                  </label>
+                </div>
 
                 <div class="inline-label-layout-3xs">
                   <input class=" radio"
@@ -501,20 +415,6 @@
                   </label>
                 </div>
 
-                <div class="inline-label-layout-3xs">
-                  <input class=" radio"
-                    type="radio"
-                    id="sha-xl"
-                    name="shadows"
-                    value="var(--sha-xl)"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="sha-xl"  >
-                    shadow-xl
-                  </label>
-                </div>
-
               </fieldset>
             </div>
           </div>
@@ -559,7 +459,7 @@
                 <!-- Blur -->
                 <div class=" filter-controls-layout">
                   <span class="filter-label-layout">
-                    <input  class="checkbox js-filter-value-checkbox"
+                    <input  class="checkbox js-filter-checkbox"
                             id="blur-checkbox"
                             type="checkbox"
                             tabindex="0"
@@ -576,13 +476,14 @@
                     <input  class="js-slider-ui slider-ui"
                             id="blur-slider"
                             type="range"
+                            name="filterSlider"
                             min="0"
                             max="80"
-                            value="20"
+                            value="30"
                             step="1"  />
 
                     <output class="js-value-display value-display"
-                            data-length='40'
+                            data-length='30'
                             for="blur-slider"
                             aria-live="polite" >
                     </output>
@@ -592,7 +493,7 @@
                 <!-- Bright -->
                 <div class=" filter-controls-layout is-off">
                   <span class="filter-label-layout">
-                    <input  class="checkbox js-filter-value-checkbox"
+                    <input  class="checkbox js-filter-checkbox"
                             id="bright-checkbox"
                             type="checkbox"
                             tabindex="0"
@@ -609,13 +510,15 @@
                     <input  class="js-slider-ui slider-ui"
                             id="bright-slider"
                             type="range"
+                            name="filterSlider"
                             min="0.1"
                             max="1.9"
                             value="1"
-                            step="0.1"  />
+                            step="0.01"
+                            disabled />
 
                     <output class="js-value-display value-display"
-                            data-length='20'
+                            data-length='1'
                             for="bright-slider"
                             aria-live="polite" >
                     </output>
@@ -625,7 +528,7 @@
                 <!-- Satu -->
                 <div class=" filter-controls-layout">
                   <span class="filter-label-layout">
-                    <input  class="checkbox js-filter-value-checkbox"
+                    <input  class="checkbox js-filter-checkbox"
                             id="satu-checkbox"
                             type="checkbox"
                             tabindex="0"
@@ -642,13 +545,14 @@
                     <input  class="js-slider-ui slider-ui"
                             id="satu-slider"
                             type="range"
-                            min="0.1"
+                            name="filterSlider"
+                            min="0"
                             max="3"
                             value="1.5"
                             step="0.1"  />
 
                     <output class="js-value-display value-display"
-                            data-length='20'
+                            data-length='1.5'
                             for="satu-slider"
                             aria-live="polite" >
                     </output>
@@ -658,24 +562,17 @@
             </div>
           </div>
 
+          <!-- Copy code -->
           <div class="switch-accordion">
             <div class=" switch-accordion-controls">
 
               <div class="switch-label-group">
-
-                <!-- <input class="switch "
-                  type="checkbox"
-                  aria-checked="true"
-                  checked
-                  tabindex="0"
-                > -->
-
                 <label class="switch-label" >
-                  code
+                  Code
                 </label>
               </div>
 
-              <!-- <button class="js-switchAccordionBtn  switch-accordion-btn"
+              <button class="js-switchAccordionBtn  switch-accordion-btn"
                 type="button"
                 aria-expanded="false"
                 >
@@ -685,79 +582,14 @@
                   aria-hidden="true"
                   focusable="false"  >
                 </svg>
-              </button> -->
+              </button>
 
             </div>
 
-            <!-- <div class="switch-accordion-content">
-
-              <fieldset class="input-fieldset">
-
-                <div class="inline-label-layout-3xs">
-                  <input class=" radio"
-                    type="radio"
-                    id="radio-bevel-sm"
-                    value="var(--bevel-sm)"
-                    name="bevels"
-                    tabindex="0"
-                    checked>
-                  <label class="inline-label-sm"
-                    for="radio-bevel-sm"  >
-                    bevel-sm
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs">
-                  <input class=" radio"
-                    type="radio"
-                    id="radio-bevel-md"
-                    value="var(--bevel-md)"
-                    name="bevels"
-                    tabindex="0"
-                    >
-                  <label class="inline-label-sm"
-                    for="radio-bevel-md"  >
-                    bevel-md
-                  </label>
-                </div>
-
-                <div class="inline-label-layout-3xs">
-                  <input class=" radio"
-                    type="radio"
-                    id="radio-bevel-lg"
-                    value="var(--bevel-lg)"
-                    name="bevels"
-                    tabindex="0"
-                      >
-                  <label class="inline-label-sm"
-                    for="radio-bevel-lg"  >
-                    bevel-lg
-                  </label>
-                </div>
-
-              </fieldset>
-            </div> -->
-          </div>
-
-          <!-- Copy code -->
-          <!-- <section class="code-display-layout"> -->
-            <!-- <div class="code-display-bg"> -->
-
+            <div class="switch-accordion-content">
               <div class="js-copyWrap code-display-bg">
-                <!-- <button class="js-copyBtn code-copy-btn btn-md btn-secondary"
-                  type="button"
-                  aria-label="copy code to clipboard"  >
 
-                  <svg  class="svg-copy"
-                    role="graphics-symbol"
-                    aria-hidden="true"
-                    focusable="false"
-                  > </svg>
-
-                  <p class="btn-text">Copy CSS</p>
-                </button> -->
-
-                <p class="js-textToCopy code-display-text" id="codeDisplay" contenteditable="true"></p>
+                <p class="js-textToCopy code-display-text" id="codeDisplay"></p>
 
                 <button class="js-copyBtn code-copy-btn btn-md btn-secondary"
                   type="button"
@@ -771,35 +603,12 @@
 
                   <p class="btn-text">Copy CSS</p>
                 </button>
-              </div>
 
-            <!-- </div> -->
-          <!-- </section> -->
+              </div>
+            </div>
+          </div>
 
         </div>
-
-        <!-- <div class="code-display-layout">
-          <div class="code-display-bg">
-
-            <div class="js-copyWrap">
-              <button class="js-copyBtn code-copy-btn btn-md btn-secondary"
-                type="button"
-                aria-label="copy code to clipboard"
-              >
-                <svg  class="svg-copy"
-                  role="graphics-symbol"
-                  aria-hidden="true"
-                  focusable="false"
-                > </svg>
-                <p class="btn-text">Copy CSS</p>
-              </button>
-
-              <p class="js-textToCopy code-display-text" id="codeDisplay" contenteditable="true"></p>
-            </div>
-
-          </div>
-        </div> -->
-
       </div>
     </section>
 
