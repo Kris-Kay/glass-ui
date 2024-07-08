@@ -6,10 +6,10 @@
 /* ================================================== */
 
 body {
-  --color-h: 205;
-  --color-l: 10;
-  --color-s: 20;
-  --color-a: 0.2;
+  --color-h: 190;
+  --color-l: 60;
+  --color-s: 40;
+  --color-a: 0.05;
 
   --color-s0: hsl(var(--color-h) 0% var(--color-l));
   --color-s100: hsl(var(--color-h) 100% var(--color-l));
@@ -72,7 +72,8 @@ body {
   @include title-md(start);
   font-weight: $font-weight-lg;
   line-height: 1;
-  color: hsla(var(--swatch-text-color) / 1);
+  color: var(--text-strong);
+  // color: hsla(var(--swatch-text-color) / 1);
   text-shadow: var(--text-sha-xl);
 }
 
@@ -212,6 +213,7 @@ body {
 /* Color swatch */
 /* ================================================== */
 .color-swatch {
+  position: relative;
   border-radius: 0.8rem;
   height: 5rem;
   text-align: right;

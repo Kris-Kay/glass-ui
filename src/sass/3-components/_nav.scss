@@ -30,7 +30,7 @@ html {
   pointer-events: none;
 
   @include bp(xxl) {
-    max-width: $bp-xl;
+    max-width: $bp-2xl;
   }
 }
 

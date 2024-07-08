@@ -51,6 +51,13 @@ textarea,
   text-shadow: var(--text-sha-sm);
 }
 
+.text-input-label-sm {
+  @include title-md(start, --text-sm);
+  line-height: $line-height-title;
+  color: var(--text-base);
+  text-shadow: var(--text-sha-sm);
+}
+
 .input-hint {
   @include body(--text-xs);
   line-height: $line-height-sm;

@@ -3,21 +3,26 @@
 @use "../2-util/layout" as *;
 @use "../2-util/z-index" as *;
 /* ================================================== */
-/* ⚠️ Glass backgrounds stop working at around 2000px width in Firefox! */
+/* ⚠️ Glass backgrounds stop working at around 2000px viewport width in Firefox! */
 
 
 /* ================================================== */
-/* Noise textures ✨ Config these values */
+/* Textures ✨ Config these values */
 /* ================================================== */
-/* Noise texture generator */
-/* https://devsdash.com/tools/noise-texture-generator */
+/* free transparent textures */
+/* https://www.transparenttextures.com/ */
+body {
+  --noise-light: url("https://www.transparenttextures.com/patterns/fabric-1-light.png");
+  --noise-gray: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+  --noise-dark: url("https://www.transparenttextures.com/patterns/black-orchid.png");
+}
 
-
-$noise-img: url(/assets/textures/noise-texture-rough-gray-500x500.png);
+$noise-img: var(--noise-gray);
 
 $noise-sm: 25px;
 $noise-md: 40px;
 $noise-lg: 50px;
+$noise-xl: 100px;
 
 
 /* ================================================== */
@@ -55,6 +60,12 @@ $satu-2xstrong: 2.5;
 //   @include glass-filter(20px, 1.2, 1.5);
 // }
 
+body {
+  --blur: #{$blur-lg};
+  --bright: #{$bright-base};
+  --satu: #{$satu-strong};
+}
+
 
 /* ================================================== */
 /* Glass base mixin */
@@ -62,16 +73,6 @@ $satu-2xstrong: 2.5;
 
 /* Glass filter presets for glass base ✨ Config these values */
 /* ================================================== */
-body {
-  --blur: #{$blur-lg};
-  --bright: #{$bright-base};
-  --satu: #{$satu-strong};
-
-  --noise-pink: url(/assets/textures/noise-texture-pink-100x100.png);
-  --noise-gray: url(/assets/textures/noise-texture-both-500x500.png);
-  --noise-rough-gray: url(/assets/textures/noise-texture-rough-gray-500x500.png);
-}
-
 @mixin glass-base(
 $bevel: --bevel-md,
 $noise-size: $noise-md,
@@ -92,6 +93,7 @@ $satu: --satu) {
     z-index: z(glass-b4);
     background-repeat: repeat;
     background-size: #{$noise-size};
+    // background-image: var(--noise-gray);
     background-image: $noise-img;
     @include glass-filter($blur, $bright, $satu);
   }
@@ -173,7 +175,6 @@ $satu: --satu) {
 @container bg (width >= calc(100vw - 16px)) {
   .glass-3d {
     @include glass-flat;
-    // background-color: rgba(255, 0, 136, 0.5);
   }
 
   .glass-3d-sm {
