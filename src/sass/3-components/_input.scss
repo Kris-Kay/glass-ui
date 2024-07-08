@@ -5,19 +5,41 @@
 @use "../forward-styles/util" as *;
 /* ================================================== */
 
-/* Base for switch | checkbox | radio button  ✨ Config these values */
+/* Input related items */
 /* ================================================== */
-@mixin input-base {
+.input-legend {
+  padding-bottom: var(--sm);
+  font-size: var(--text-md);
+  // width: max-content;
+  // word-break: keep-all;
+  font-family: $font-family-title;
+  font-weight: $font-weight-md;
+  letter-spacing: $letter-spacing-md;
+  color: var(--text-xstrong);
+  text-shadow: var(--text-sha-sm);
+}
+
+.input-fieldset {
+  display: grid;
+  gap: var(--sm);
+}
+
+/* Input theme for switch | checkbox | radio button | slider ✨ Config these values */
+/* ================================================== */
+body {
   --input-h: var(--ui-h-xs);
 
-  --bg: var(--inset-bg-deep);
-  --bg-hover: var(--tint-2xdark);
+  --bg: var(--tint-dark);
+  --bg-hover: var(--tint-xdark);
+
   --inset: var(--inset-sm);
-  --knob: hsl(var(--neutral-95) / 1);
+
+  --knob: hsl(var(--neutral-95) / 0.95);
+  --knob-hover: hsl(var(--neutral-90) / 0.85);
   --knob-sha: var(--sha-xs);
 
-  --bg-checked: hsl(var(--primary-50) / 1);
-  --bg-checked-hover: hsl(var(--primary-30) / 1);
+  --bg-checked: hsl(var(--primary-50) / 0.7);
+  --bg-checked-hover: hsl(var(--primary-40) / 1);
 
   --bg-disabled: var(--inset-bg-xdeep);
   --inset-disabled: none;
@@ -25,7 +47,11 @@
   --knob-disabled-sha: none;
 
   --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
+}
 
+/* Base for switch | checkbox | radio button   */
+/* ================================================== */
+@mixin input-base {
   position: relative;
   z-index: z(input);
   overflow: hidden;
@@ -33,6 +59,7 @@
   cursor: pointer;
   background-color: var(--bg);
   box-shadow: var(--inset);
+
   will-change: background-color;
   transition: background-color $speed-slow $smooth-cubic;
 
@@ -85,16 +112,17 @@
 
 /* Checkbox */
 /* ================================================== */
-input[type='checkbox'].checkbox {
+.checkbox {
   @include input-base;
+  min-width: var(--input-h);
   width: var(--input-h);
   height: var(--input-h);
-  border-radius: 0.5rem;
+  border-radius: var(--5xs);
 
-    &::after {
-      background-color: transparent;
-      box-shadow: none;
-    }
+  &::after {
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   &:checked {
     &::after {
@@ -140,7 +168,7 @@ input[type='checkbox'].checkbox {
 
 /* Switch */
 /* ================================================== */
-input[type='checkbox'].switch {
+.switch {
   --switch-width: calc(var(--input-h) * 1.8);
   --thumb-margin: 3.5px;
 
@@ -175,10 +203,9 @@ input[type='checkbox'].switch {
   }
 }
 
-
 /* Radio button */
 /* ================================================== */
-input[type='radio'] {
+.radio {
   @include input-base;
   width: var(--input-h);
   height: var(--input-h);
@@ -207,36 +234,4 @@ input[type='radio'] {
       }
     }
   }
-}
-
-/* Input wappers & items */
-/* ================================================== */
-.input-legend {
-  padding-bottom: var(--md);
-  font-size: var(--text-md);
-}
-
-.input-fieldset {
-  display: grid;
-  gap: var(--sm);
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  gap: var(--xs);
-}
-
-.input-label {
-  font-family: $font-family-title;
-  font-weight: $font-weight-md;
-  letter-spacing: $letter-spacing-md;
-  color: var(--text-xstrong);
-  text-shadow: var(--text-sha-sm);
-}
-
-.inline-label {
-  font-family: $font-family-body;
-  font-weight: $font-weight-md;
-  color: var(--text-strong);
 }

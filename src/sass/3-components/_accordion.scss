@@ -65,7 +65,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--sm);
-  padding: var(--space);
+  // padding: var(--space);
 
   @include body(--text-md);
   text-align: start;
@@ -94,7 +94,7 @@
   padding-bottom: var(--space);
   padding-left: var(--space);
 
-  @include title-4(start);
+  // @include title-4(start);
 }
 
 .accordion-icon {
@@ -104,7 +104,7 @@
   background-color: var(--color-white);
   height: var(--ui-h-xs);
   transform: rotate(180deg);
-  transition: transform $speed-2xslow $smooth-cubic;
+  transition: transform $speed-xslow $smooth-cubic;
 
   &.is-closed {
     transform: rotate(0deg);
@@ -126,6 +126,7 @@
               opacity $speed-base $smooth-cubic;
 
   &.is-closed {
+    z-index: -20;
     height: 0;
     padding: 0;
     opacity: 0;

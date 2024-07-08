@@ -1,0 +1,238 @@
+/* ================================================== */
+/* HSL Color Picker */
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+/* ================================================== */
+
+body {
+  --color-h: 190;
+  --color-l: 60;
+  --color-s: 40;
+  --color-a: 0.05;
+
+  --color-s0: hsl(var(--color-h) 0% var(--color-l));
+  --color-s100: hsl(var(--color-h) 100% var(--color-l));
+
+  --color-l0: hsl(var(--color-h) var(--color-s) 0%);
+  --color-l50: hsl(var(--color-h) var(--color-s) 50%);
+  --color-l100: hsl(var(--color-h) var(--color-s) 100%);
+
+  --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
+  --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
+
+  --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
+
+  --swatch-text-color: 205 20% 90%;
+}
+
+.color-picker-layout {
+  --track-w: 100%;
+  --track-h: var(--ui-h-md);
+  --track-sha: var(--inset-md);
+  --track-gap: 0.5rem;
+  --track-gap-half: calc(var(--track-gap) * 0.5);
+
+  --thumb-h: calc(var(--track-h) - var(--track-gap));
+  --thumb-radius: 8px;
+  --thumb-color: transparent;
+  --thumb-sha:
+    inset 0 0 0 1px hsla(var(--swatch-text-color) / 0.4),
+    inset 0 0 0.2px 2px hsla(var(--swatch-text-color) / 0.2),
+    inset 0 0 0 2.5px hsla(var(--highlight) / 0.3),
+    0 0 0.2px hsl(var(--shadow) / 0.2),
+    0 0 0.5px hsl(var(--shadow) / 0.3),
+    0.2px 0.2px 1px hsl(var(--shadow) / 0.5),
+    1px 1px 4px -1px hsl(var(--shadow) / 0.3);
+
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  gap: var(--xl);
+  background-color: transparent;
+
+  @include bp(md) {
+    --track-h: var(--ui-h-sm);
+    gap: var(--lg);
+  }
+}
+
+.thick-slider-group {
+  width: 100%;
+  height: var(--track-h);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20px 1fr;
+  gap: var(--3xs);
+  background-color: transparent;
+}
+
+.thick-slider-label {
+  width: 20px;
+  @include title-md(start);
+  font-weight: $font-weight-lg;
+  line-height: 1;
+  color: var(--text-strong);
+  // color: hsla(var(--swatch-text-color) / 1);
+  text-shadow: var(--text-sha-xl);
+}
+
+@mixin thick-track() {
+  appearance: none;
+  pointer-events: auto;
+  cursor: pointer;
+  width: var(--track-w);
+  height: var(--track-h);
+  margin: 0;
+  padding: 0;
+  border: none;
+  @include outer-radius(var(--thumb-radius), var(--track-gap-half));
+}
+
+@mixin thick-thumb() {
+  appearance: none;
+  pointer-events: auto;
+  cursor: pointer;
+  width: var(--thumb-h);
+  height: var(--thumb-h);
+  border: none;
+  border-radius: var(--thumb-radius);
+  background-color: var(--thumb-color);
+  box-shadow: var(--thumb-sha);
+  transition: all $speed-fast $smooth-cubic;
+}
+
+.thick-slider-ui {
+  appearance: none;
+  -webkit-appearance: none;
+
+  pointer-events: auto;
+  cursor: pointer;
+  width: var(--track-w);
+  height: var(--track-h);
+
+  display: grid;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  overflow: hidden;
+
+  @include outer-radius(var(--thumb-radius), var(--track-gap-half));
+  color: inherit;
+  box-shadow: var(--track-sha);
+
+  // background-origin: content-box;
+  // background-origin: border-box;
+  background-repeat: no-repeat;
+  transition: all $speed-fast $smooth-cubic;
+
+
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    @include thick-track;
+    padding: var(--track-gap-half);
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include thick-thumb;
+  }
+
+  &::-moz-range-track {
+    @include thick-track;
+  }
+
+  &::-moz-range-progress {
+    appearance: none;
+    pointer-events: auto;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &::-moz-range-thumb {
+    @include thick-thumb;
+  }
+
+  // &::-ms-track { @include thick-track; }
+  // &::-ms-thumb {
+  // 	margin-top: 0;
+  // 	@include thick-thumb;
+  // }
+  // &::-ms-tooltip { display: none; }
+}
+
+
+/* Color slider gradients */
+/* ================================================== */
+#hsl-h {
+  background-image: linear-gradient(
+    to right,
+    #F00,
+    #FF0,
+    #0F0,
+    #0FF,
+    #00F,
+    #F0F,
+    #F00
+  );
+}
+
+#hsl-s {
+  background-image: linear-gradient(
+    to right,
+    var(--color-s0),
+    var(--color-s100)
+  );
+}
+
+#hsl-l {
+  background-image: linear-gradient(
+    to right,
+    var(--color-l0),
+    var(--color-l50),
+    var(--color-l100)
+  );
+}
+
+#hsl-a {
+  background-image: linear-gradient(
+    to right,
+    var(--color-a0),
+    var(--color-a100)
+  );
+}
+
+
+/* Color swatch */
+/* ================================================== */
+.color-swatch {
+  position: relative;
+  border-radius: 0.8rem;
+  height: 5rem;
+  text-align: right;
+  padding: 1.5rem 1rem 1rem 1rem;
+  width: 100%;
+  display: grid;
+  place-items: end;
+  background-color: var(--color-hsla);
+  box-shadow: var(--sha-lg);
+
+  & p {
+    font-size: var(--text-sm);
+    font-weight: 300;
+    line-height: 1;
+    text-shadow: var(--sha-md);
+    letter-spacing: $letter-spacing-lg;
+  }
+
+  & #text-color {
+    color: hsla(var(--swatch-text-color) / 1);
+  }
+}

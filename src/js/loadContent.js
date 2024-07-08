@@ -3,15 +3,19 @@
 /* ========================================== */
 function callFindFunctions() {
   findTabs();
-  findAccordions();
-  findSpotlights();
+  // findAccordions();
+  // findSpotlights();
+
+  initSliders();
+  initColorPicker();
   findCopyBtns();
+  initializeGenerator();
 }
 
 function fetchHome() {
   const container = document.querySelector('#js-content');
 
-  fetch('/html/home.html')
+  fetch('/html/generator.html')
     .then(response => response.text())
 
     .then(html => {

@@ -1,0 +1,616 @@
+<!-- 3d glass generator -->
+<!-- ================================================== -->
+<article id="glass-generator-vars" class="generator-viewport">
+  <div class="generator-page-layout">
+
+    <!-- Demo glass -->
+    <section class="glass-layout">
+
+      <div class="glass-tele-group">
+        <div class="glass-tele-rect glass-3d-gen">
+          <div class="glass-tele-rect glass-3d-gen">
+            <div class="glass-tele-rect glass-3d-gen">
+              <div class="glass-gen-card">
+                <h1 class="glass-gen-title">3d glass generator</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Generator controls -->
+    <section class="generator-layout">
+      <div class="generator-scroll">
+        <div class="accordion-multi generator-accordion glass-3d-gen">
+
+          <!-- Bevel -->
+          <div class="js-switch-accordion switch-accordion is-closed">
+            <div class="js-switchAccordionControls switch-accordion-controls">
+
+              <div class="switch-label-group">
+
+                <input class="js-accordionSwitch switch "
+                  id="js-bevelSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  checked
+                  tabindex="0"
+                >
+
+                <label class="switch-label"
+                  for="js-bevelSwitch" >
+                  bevel
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn  switch-accordion-btn"
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down"
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content">
+
+              <fieldset class="input-fieldset">
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-sm"
+                    value="var(--bevel-sm)"
+                    name="bevels"
+                    tabindex="0"
+                    checked>
+                  <label class="inline-label-sm"
+                    for="radio-bevel-sm"  >
+                    small bevel
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-md"
+                    value="var(--bevel-md)"
+                    name="bevels"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="radio-bevel-md"  >
+                    medium bevel
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="radio-bevel-lg"
+                    value="var(--bevel-lg)"
+                    name="bevels"
+                    tabindex="0"
+                      >
+                  <label class="inline-label-sm"
+                    for="radio-bevel-lg"  >
+                    large bevel
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- Color -->
+          <div class="js-switch-accordion switch-accordion is-closed">
+
+            <div class="js-switchAccordionControls switch-accordion-controls">
+
+              <div class="switch-label-group">
+
+                <input class="js-accordionSwitch switch "
+                  id="js-colorSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-colorSwitch" >
+                  color
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn  switch-accordion-btn "
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down "
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content ">
+
+              <div class="color-picker-layout" id="js-colorPicker">
+
+                <div  class="thick-slider-group" >
+                  <label class="thick-slider-label"
+                    for="hsl-h" >
+                    H
+                  </label>
+
+                  <input  class="thick-slider-ui js-colorSlider"
+                    id="hsl-h"
+                    type="range"
+                    min="1"
+                    step="1"
+                    max="360"  />
+                </div>
+
+                <div  class="thick-slider-group" >
+                  <label class="thick-slider-label"
+                    for="hsl-s" >
+                    S
+                  </label>
+
+                  <input  class="thick-slider-ui js-colorSlider"
+                    id="hsl-s"
+                    type="range"
+                    min="0"
+                    step="1"
+                    max="100"  />
+                </div>
+
+                <div  class="thick-slider-group" >
+                  <label class="thick-slider-label"
+                    for="hsl-l" >
+                    L
+                  </label>
+
+                  <input  class="thick-slider-ui js-colorSlider"
+                    id="hsl-l"
+                    type="range"
+                    min="0"
+                    step="1"
+                    max="100"  />
+                </div>
+
+                <div  class="thick-slider-group" >
+                  <label class="thick-slider-label"
+                    for="hsl-a" >
+                    A
+                  </label>
+
+                  <input  class="thick-slider-ui js-colorSlider"
+                    id="hsl-a"
+                    type="range"
+                    min="0"
+                    step="0.02"
+                    max="1"  />
+                </div>
+
+                <div class="color-swatch" id="colorSwatch"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Noise -->
+          <div class="js-switch-accordion switch-accordion is-closed">
+
+            <div class="js-switchAccordionControls switch-accordion-controls">
+
+              <div class="switch-label-group">
+
+                <input class="js-accordionSwitch switch "
+                  id="js-noiseSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-noiseSwitch" >
+                  noise
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn  switch-accordion-btn "
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down "
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content ">
+              <fieldset class="input-fieldset">
+
+                <div class="inline-label-layout-3xs" id="noise-light">
+                  <input class=" radio"
+                    type="radio"
+                    name="noise"
+                    value="var(--noise-light)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="noise-light"  >
+                    light
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs" id="noise-gray">
+                  <input class=" radio"
+                    type="radio"
+                    name="noise"
+                    value="var(--noise-gray)"
+                    tabindex="0"
+                    checked>
+                  <label class="inline-label-sm"
+                    for="noise-gray"  >
+                    gray
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs" id="noise-dark">
+                  <input class=" radio"
+                    type="radio"
+                    name="noise"
+                    value="var(--noise-dark)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="noise-dark"  >
+                    dark
+                  </label>
+                </div>
+
+              </fieldset>
+
+              <!-- <div class="text-input-group gap-2xs">
+                <label for="t-1" class="text-input-label-sm">Texture size</label>
+
+                  <div class="text-input-bg spotlight">
+                    <input class="text-input"
+                      id="t-1"
+                      placeholder="This is placeholder text"
+                      name="text-input"
+                      type="text"
+                      tabindex="0" >
+                  </div>
+
+              </div> -->
+
+            </div>
+
+          </div>
+
+          <!-- Shadow -->
+          <div class="js-switch-accordion switch-accordion is-closed">
+            <div class="js-switchAccordionControls switch-accordion-controls">
+              <div class="switch-label-group">
+
+                <input class="js-accordionSwitch switch"
+                  id="js-shadowSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-shadowSwitch" >
+                  shadow
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn  switch-accordion-btn "
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down "
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content ">
+              <fieldset class="input-fieldset">
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-2xs"
+                    name="shadows"
+                    value="var(--sha-2xs)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="sha-2xs"  >
+                    shadow-2xs
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-xs"
+                    name="shadows"
+                    value="var(--sha-xs)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="sha-xs"  >
+                    shadow-xs
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-sm"
+                    name="shadows"
+                    value="var(--sha-sm)"
+                    tabindex="0"
+                    checked>
+                  <label class="inline-label-sm"
+                    for="sha-sm"  >
+                    shadow-sm
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-md"
+                    name="shadows"
+                    value="var(--sha-md)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="sha-md"  >
+                    shadow-md
+                  </label>
+                </div>
+
+                <div class="inline-label-layout-3xs">
+                  <input class=" radio"
+                    type="radio"
+                    id="sha-lg"
+                    name="shadows"
+                    value="var(--sha-lg)"
+                    tabindex="0"
+                    >
+                  <label class="inline-label-sm"
+                    for="sha-lg"  >
+                    shadow-lg
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- Backdrop-filter -->
+          <div class="js-switch-accordion switch-accordion is-closed">
+
+            <div class="js-switchAccordionControls switch-accordion-controls">
+
+              <div class="switch-label-group">
+
+                <input class="js-accordionSwitch switch "
+                  id="js-filterSwitch"
+                  type="checkbox"
+                  aria-checked="true"
+                  tabindex="0"
+                  checked
+                >
+
+                <label class="switch-label"
+                  for="js-filterSwitch">
+                  backdrop-filter
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn switch-accordion-btn"
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down"
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content">
+
+                <!-- Blur -->
+                <div class=" filter-controls-layout">
+                  <span class="filter-label-layout">
+                    <input  class="checkbox js-filter-checkbox"
+                            id="blur-checkbox"
+                            type="checkbox"
+                            tabindex="0"
+                            aria-checked="true"
+                            checked>
+
+                    <label  class=""
+                            for="blur-checkbox" >
+                      blur
+                    </label>
+                  </span>
+
+                  <div  class="js-slider-w-display slider-w-display" >
+                    <input  class="js-slider-ui slider-ui"
+                            id="blur-slider"
+                            type="range"
+                            name="filterSlider"
+                            min="0"
+                            max="80"
+                            value="30"
+                            step="1"  />
+
+                    <output class="js-value-display value-display"
+                            data-length='30'
+                            for="blur-slider"
+                            aria-live="polite" >
+                    </output>
+                  </div>
+                </div>
+
+                <!-- Bright -->
+                <div class=" filter-controls-layout is-off">
+                  <span class="filter-label-layout">
+                    <input  class="checkbox js-filter-checkbox"
+                            id="bright-checkbox"
+                            type="checkbox"
+                            tabindex="0"
+                            aria-checked="false"
+                            >
+
+                    <label  class=""
+                            for="bright-checkbox" >
+                      brightness
+                    </label>
+                  </span>
+
+                  <div  class="js-slider-w-display slider-w-display" >
+                    <input  class="js-slider-ui slider-ui"
+                            id="bright-slider"
+                            type="range"
+                            name="filterSlider"
+                            min="0.1"
+                            max="1.9"
+                            value="1"
+                            step="0.01"
+                            disabled />
+
+                    <output class="js-value-display value-display"
+                            data-length='1'
+                            for="bright-slider"
+                            aria-live="polite" >
+                    </output>
+                  </div>
+                </div>
+
+                <!-- Satu -->
+                <div class=" filter-controls-layout">
+                  <span class="filter-label-layout">
+                    <input  class="checkbox js-filter-checkbox"
+                            id="satu-checkbox"
+                            type="checkbox"
+                            tabindex="0"
+                            aria-checked="true"
+                            checked>
+
+                    <label  class=""
+                            for="satu-checkbox" >
+                      saturation
+                    </label>
+                  </span>
+
+                  <div  class="js-slider-w-display slider-w-display" >
+                    <input  class="js-slider-ui slider-ui"
+                            id="satu-slider"
+                            type="range"
+                            name="filterSlider"
+                            min="0"
+                            max="3"
+                            value="1.5"
+                            step="0.1"  />
+
+                    <output class="js-value-display value-display"
+                            data-length='1.5'
+                            for="satu-slider"
+                            aria-live="polite" >
+                    </output>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+
+          <!-- Copy code -->
+          <div class="switch-accordion">
+            <div class=" switch-accordion-controls">
+
+              <div class="switch-label-group">
+                <label class="switch-label" >
+                  Code
+                </label>
+              </div>
+
+              <button class="js-switchAccordionBtn  switch-accordion-btn"
+                type="button"
+                aria-expanded="false"
+                >
+
+                <svg class="switch-accordion-icon svg-chev-down"
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"  >
+                </svg>
+              </button>
+
+            </div>
+
+            <div class="switch-accordion-content">
+              <div class="js-copyWrap code-display-bg">
+
+                <p class="js-textToCopy code-display-text" id="codeDisplay"></p>
+
+                <button class="js-copyBtn code-copy-btn btn-md btn-secondary"
+                  type="button"
+                  aria-label="copy code to clipboard"  >
+
+                  <svg  class="svg-copy"
+                    role="graphics-symbol"
+                    aria-hidden="true"
+                    focusable="false"
+                  > </svg>
+
+                  <p class="btn-text">Copy CSS</p>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</article>

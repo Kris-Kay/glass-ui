@@ -34,10 +34,10 @@
       role="tabpanel"
       tabindex="-1"
       aria-labelledby="tab-1"
-      hidden
+
     >
       <img class="page-bg-img"
-        fetchpriority="low"
+        fetchpriority="high"
         width="1024"
         height="1517"
         src="/assets/bgImg/3d-geometry-by-amokrane-ait-kaci_1024x1517.jpeg"
@@ -55,10 +55,11 @@
       role="tabpanel"
       tabindex="-1"
       aria-labelledby="tab-2"
-
+      hidden
     >
       <img class="page-bg-img"
-        fetchpriority="low"
+        fetchpriority="high"
+        loading="lazy"
         width="1024"
         height="1365"
         src="/assets/bgImg/monstera-plant-leaves-by-chris-lee_1024x1365.jpeg"
@@ -71,7 +72,7 @@
       >
     </div>
 
-    <div class="js-tabpanel page-bg-panel page-bg-blur"
+    <div class="js-tabpanel page-bg-panel"
       id="panel-3"
       role="tabpanel"
       tabindex="-1"
@@ -80,6 +81,7 @@
     >
       <img class="page-bg-img"
         fetchpriority="high"
+        loading="lazy"
         width="1920"
         height="1280"
         src="/assets/bgImg/sunset-sky-by-gabriel-castles_1920x1280.jpg"
@@ -118,7 +120,7 @@
             >
             <button class="js-tab btn-ghost"
               role="tab"
-              aria-selected="false"
+              aria-selected="true"
               aria-controls="panel-1"
               id="tab-1"
               tabindex="0">
@@ -127,7 +129,7 @@
 
             <button class="js-tab btn-ghost"
               role="tab"
-              aria-selected="true"
+              aria-selected="false"
               aria-controls="panel-2"
               id="tab-2"
               tabindex="0">
@@ -168,22 +170,11 @@
           </button>
 
           <ul id="js-navDropdown" class="dropdown is-closed">
-            <li><a href="#top-of-page"
-              class="js-dropdownItem dropdown-item  btn-md btn-secondary"
-              tabindex="-1">
-              <p class="btn-text">Intro</p>
-            </a></li>
 
             <li><a href="#glass"
               class="js-dropdownItem dropdown-item  btn-md btn-secondary"
               tabindex="-1">
               <p class="btn-text">Glass</p>
-            </a></li>
-
-            <li><a href="#components"
-              class="js-dropdownItem dropdown-item  btn-md btn-secondary"
-              tabindex="-1">
-              <p class="btn-text">Components</p>
             </a></li>
 
             <li><a href="#about"
@@ -197,6 +188,21 @@
               tabindex="-1">
               <p class="btn-text">Contact</p>
             </a></li>
+
+            <li class="js-spotlightBin">
+              <a  class="btn-primary btn-lg mini-spotlight"
+                  href="https://github.com/3D-glass-UI/glass-ui"
+                  target="_blank" >
+                <p class="btn-text">GitHub repo</p>
+                <svg class=" svg-square-out"
+                  role="graphics-symbol"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                </svg>
+              </a>
+            </li>
+
           </ul>
         </div>
 
@@ -212,10 +218,14 @@
   <!-- Scripts -->
   <!-- ========================================== -->
   <script src="/js/tabMenu.js"></script>
-  <script src="/js/spotlight.js"></script>
+  <!-- <script src="/js/spotlight.js"></script> -->
   <script src="/js/dropdown.js"></script>
-  <script src="/js/accordion.js"></script>
+  <script src="/js/slider.js"></script>
+  <script src="/js/colorPicker.js"></script>
+  <!-- <script src="/js/accordion.js"></script> -->
+  <script src="/js/generator.js"></script>
   <script src="/js/copyToClipboard.js"></script>
+  <!-- <script src="/js/switch.js"></script> -->
   <script src="/js/loadContent.js"></script>
 
   <!-- Firebase -->

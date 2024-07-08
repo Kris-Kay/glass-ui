@@ -40,7 +40,7 @@
   pointer-events: none;
   &::after {
     @include pseudo;
-    background-image: $noise-img;
+    background-image: url(/assets/textures/noise-gray_500x500.png);
     background-size: $noise-md;
     background-repeat: repeat;
   }
@@ -106,7 +106,7 @@
     max-width: 1200px;
   }
 
-  @media only screen and (min-width: 1700px) {
+  @include bp(xxl) {
     max-width: $bp-xl;
   }
 
@@ -457,7 +457,7 @@
 }
 
 .btn-cell-label {
-  @include super-wide(--text-xs, 10px );
+  @include super-wide($font-weight-md , --text-xs, 10px );
   line-height: $line-height-sm;
   color: var(--text-base);
   text-shadow: var(--text-sha-lg);
@@ -590,48 +590,4 @@
   @include bp(sm) {
     @include label(--text-md);
   }
-}
-
-/* Code fonts */
-/* ================================================== */
-
-// pre code {
-//   display: block;
-//   white-space: pre;
-//   max-width: 100%;
-// }
-
-@mixin code {
-  font-family: $font-family-code;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: 400; /* only font-weight available for this font */
-}
-
-.c-comment {
-  @include code;
-  font-style: italic;
-  color: var(--text-xmild);
-}
-
-// .c-class {
-//   color:  oklch(100% var(--accent--ch) / 1);
-// }
-
-// .c-prop {
-//   color: oklch(80% var(--primary--ch) / 1);
-// }
-
-// .c-value {
-//   color: oklch(100% var(--primary--ch) / 1);
-// }
-
-// .c-num {
-//   color: oklch(80% var(--accent--ch) / 1);
-// }
-
-.code-class {
-  @include code;
-  display: inline;
-  // color: hsl(var(--primary-50) / 1);
 }

@@ -57,7 +57,7 @@
 
   &.is-closed {
     opacity: 0;
-    transform: translateY(calc(var(--dropdown-h) * 1.25));
+    transform: translateY(calc(var(--dropdown-h) * 1.5));
   }
 }
 
