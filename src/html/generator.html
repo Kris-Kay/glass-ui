@@ -4,52 +4,67 @@
   <div class="generator-page-layout">
 
     <!-- Demo glass -->
-    <section class="glass-layout">
+    <!-- <section class="glass-layout">
+      <div class="repositionable" id="mydiv">
 
-      <div class="glass-tele-group">
-        <div class="glass-tele-rect glass-3d-gen">
+        <div class="glass-tele-group">
           <div class="glass-tele-rect glass-3d-gen">
             <div class="glass-tele-rect glass-3d-gen">
-              <div class="glass-gen-card">
-                <h1 class="glass-gen-title">3d glass generator</h1>
+              <div class="glass-tele-rect glass-3d-gen">
+                <div class="glass-gen-card">
+                  <h1 class="glass-gen-title">3d glass generator</h1>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
+    </section> -->
+
+    <section class="glass-layout">
+      <div class="repositionable" id="mydiv">
+
+        <div class="glass-tele-group">
+          <div class="glass-tele-rect glass-3d-gen">
+            <div class="glass-tele-rect glass-3d-gen">
+              <div class="glass-tele-rect glass-3d-gen">
+                <div class="glass-gen-card">
+                  <h1 class="glass-gen-title">3d glass generator</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- Generator controls -->
     <section class="generator-layout">
-      <div class="generator-scroll">
+
+      <div class="generator-scroll " >
         <div class="accordion-multi generator-accordion glass-3d-gen">
 
           <!-- Bevel -->
           <div class="js-switch-accordion switch-accordion is-closed">
             <div class="js-switchAccordionControls switch-accordion-controls">
 
-              <div class="switch-label-group">
+              <input class="js-accordionSwitch switch accordion-switch"
+                id="js-bevelSwitch"
+                type="checkbox"
+                aria-checked="true"
+                checked
+                tabindex="0"
+              >
 
-                <input class="js-accordionSwitch switch "
-                  id="js-bevelSwitch"
-                  type="checkbox"
-                  aria-checked="true"
-                  checked
-                  tabindex="0"
-                >
-
-                <label class="switch-label"
-                  for="js-bevelSwitch" >
-                  bevel
-                </label>
-              </div>
-
-              <button class="js-accordionBtn switch-accordion-btn"
+              <button class="js-accordionBtn switch-accordion-toggle"
                 type="button"
                 aria-expanded="false"
                 >
-
+                <p class="accordion-label" >
+                  bevel
+                </p>
                 <svg class="switch-accordion-icon svg-chev-down"
                   role="graphics-symbol"
                   aria-hidden="true"
@@ -114,27 +129,20 @@
 
             <div class="js-switchAccordionControls switch-accordion-controls">
 
-              <div class="switch-label-group">
-
-                <input class="js-accordionSwitch switch "
+                <input class="js-accordionSwitch switch accordion-switch"
                   id="js-colorSwitch"
                   type="checkbox"
                   aria-checked="true"
                   tabindex="0"
-                  checked
-                >
+                  checked  >
 
-                <label class="switch-label"
-                  for="js-colorSwitch" >
-                  color
-                </label>
-              </div>
-
-              <button class="js-accordionBtn  switch-accordion-btn "
+              <button class="js-accordionBtn  switch-accordion-toggle "
                 type="button"
                 aria-expanded="false"
                 >
-
+                <p class="accordion-label" >
+                  color
+                </p>
                 <svg class="switch-accordion-icon svg-chev-down "
                   role="graphics-symbol"
                   aria-hidden="true"
@@ -217,26 +225,21 @@
 
             <div class="js-switchAccordionControls switch-accordion-controls">
 
-              <div class="switch-label-group">
+              <input class="js-accordionSwitch switch accordion-switch"
+                id="js-noiseSwitch"
+                type="checkbox"
+                aria-checked="true"
+                tabindex="0"
+                checked  >
 
-                <input class="js-accordionSwitch switch "
-                  id="js-noiseSwitch"
-                  type="checkbox"
-                  aria-checked="true"
-                  tabindex="0"
-                  checked
-                >
-
-                <label class="switch-label"
-                  for="js-noiseSwitch" >
-                  noise
-                </label>
-              </div>
-
-              <button class="js-accordionBtn  switch-accordion-btn "
+              <button class="js-accordionBtn  switch-accordion-toggle "
                 type="button"
                 aria-expanded="false"
                 >
+
+                <p class="accordion-label" >
+                  noise
+                </p>
 
                 <svg class="switch-accordion-icon svg-chev-down "
                   role="graphics-symbol"
@@ -312,26 +315,23 @@
           <!-- Shadow -->
           <div class="js-switch-accordion switch-accordion is-closed">
             <div class="js-switchAccordionControls switch-accordion-controls">
-              <div class="switch-label-group">
 
-                <input class="js-accordionSwitch switch"
-                  id="js-shadowSwitch"
-                  type="checkbox"
-                  aria-checked="true"
-                  tabindex="0"
-                  checked
-                >
+              <input class="js-accordionSwitch switch accordion-switch"
+                id="js-shadowSwitch"
+                type="checkbox"
+                aria-checked="true"
+                tabindex="0"
+                checked  >
 
-                <label class="switch-label"
-                  for="js-shadowSwitch" >
-                  shadow
-                </label>
-              </div>
 
-              <button class="js-accordionBtn  switch-accordion-btn "
+              <button class="js-accordionBtn  switch-accordion-toggle "
                 type="button"
                 aria-expanded="false"
                 >
+
+                <p class="accordion-label" >
+                  shadow
+                </p>
 
                 <svg class="switch-accordion-icon svg-chev-down "
                   role="graphics-symbol"
@@ -421,29 +421,23 @@
 
           <!-- Backdrop-filter -->
           <div class="js-switch-accordion switch-accordion is-closed">
-
             <div class="js-switchAccordionControls switch-accordion-controls">
 
-              <div class="switch-label-group">
+              <input class="js-accordionSwitch switch accordion-switch"
+                id="js-filterSwitch"
+                type="checkbox"
+                aria-checked="true"
+                tabindex="0"
+                checked  >
 
-                <input class="js-accordionSwitch switch "
-                  id="js-filterSwitch"
-                  type="checkbox"
-                  aria-checked="true"
-                  tabindex="0"
-                  checked
-                >
-
-                <label class="switch-label"
-                  for="js-filterSwitch">
-                  backdrop-filter
-                </label>
-              </div>
-
-              <button class="js-accordionBtn switch-accordion-btn"
+              <button class="js-accordionBtn switch-accordion-toggle"
                 type="button"
                 aria-expanded="false"
                 >
+
+                <p class="accordion-label" >
+                  filter
+                </p>
 
                 <svg class="switch-accordion-icon svg-chev-down"
                   role="graphics-symbol"
@@ -565,17 +559,15 @@
           <!-- Copy code -->
           <div class="switch-accordion">
             <div class=" switch-accordion-controls">
+              <div aria-hidden="true" focusable="false" ></div>
 
-              <div class="switch-label-group">
-                <label class="switch-label" >
-                  Code
-                </label>
-              </div>
-
-              <button class="js-accordionBtn  switch-accordion-btn"
+              <button class="js-accordionBtn  switch-accordion-toggle"
                 type="button"
-                aria-expanded="false"
-                >
+                aria-expanded="false" >
+
+                <p class="accordion-label " >
+                  code
+                </p>
 
                 <svg class="switch-accordion-icon svg-chev-down"
                   role="graphics-symbol"
@@ -591,7 +583,7 @@
 
                 <p class="js-textToCopy code-display-text" id="codeDisplay"></p>
 
-                <button class="js-copyBtn code-copy-btn btn-md btn-secondary"
+                <button class="js-copyBtn code-copy-btn btn-md btn-primary"
                   type="button"
                   aria-label="copy code to clipboard"  >
 
