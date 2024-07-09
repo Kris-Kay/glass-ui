@@ -3,11 +3,8 @@
 /* ========================================== */
 let colorUpdateTimeout;
 
-
 let $computedGlass;
 
-/* ...Value: current value  */
-/* ...Set: saved last set value  */
 let $colorSet;
 let $colorValue;
 
@@ -248,38 +245,23 @@ function onCheckChange(e) {
 }
 
 
-/* show/hide accordion content */
-/* ========================================== */
-function toggleAccordionContent(e) {
-  const $accordionBtn = e.target;
-  // const $expanded = $accordionBtn.getAttribute("aria-expanded") === "true" || false;
-  const $accordion = $accordionBtn.parentNode.parentNode;
-
-  $accordion.classList.toggle("is-closed");
-  // $accordionBtn.setAttribute("aria-expanded", !$expanded);
-};
-
-
 /* accordion disable/enable */
 /* ========================================== */
-/* not part of setSwitch() so as not to open all content on load */
 function accordionOnOff($switch, $switchBool) {
   const $accordion = $switch.parentNode.parentNode.parentNode;
-  const $accordionBtn = $accordion.querySelector(".js-switchAccordionBtn");
+  const $accordionBtn = $accordion.querySelector(".js-accordionBtn");
 
   if($switchBool) {
     $accordion.classList.remove("is-closed");
-    // $accordionBtn.setAttribute("aria-expanded", true);
+    $accordionBtn.setAttribute("aria-expanded", true);
     $accordionBtn.removeAttribute("disabled");
   };
 
   if(!$switchBool) {
     $accordion.classList.add("is-closed");
-    // $accordionBtn.setAttribute("aria-expanded", false);
+    $accordionBtn.setAttribute("aria-expanded", false);
     $accordionBtn.setAttribute("disabled", true);
   };
-
-  // console.log($switch.id + " " + $switchBool);
 }
 
 
@@ -336,13 +318,6 @@ function initializeGenerator() {
     let $switchBool = $switch.checked;
     setSwitch($switch, $switchBool);
     $switch.addEventListener("change", onSwitchChange);
-  });
-
-
-  /* Chevron event listener */
-  /* ========================================== */
-  document.querySelectorAll(".js-switchAccordionBtn").forEach(($btn) => {
-    $btn.addEventListener("click", toggleAccordionContent);
   });
 
 

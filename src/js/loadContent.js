@@ -3,7 +3,7 @@
 /* ========================================== */
 function callFindFunctions() {
   findTabs();
-  // findAccordions();
+  findAccordions();
   // findSpotlights();
 
   initSliders();
