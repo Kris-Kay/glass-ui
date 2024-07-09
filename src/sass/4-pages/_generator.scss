@@ -153,26 +153,6 @@ body {
   place-self: start center;
 }
 
-// .repositionable {
-//   pointer-events: none;
-//   z-index: z(section);
-//   width: fit-content;
-//   height: fit-content;
-// // outline: solid 2px rgb(255, 0, 111);
-
-//   @include bp(lg) {
-//     // z-index: 30;
-//     margin: auto;
-//     position: absolute;
-//     left: 15%;
-//     // right: 50%;
-//     // top: 50%;
-//     bottom: 25%;
-
-//     // background-color: rgba(66, 185, 15, 0.25);
-//   }
-// }
-
 .glass-tele-group {
 // outline: solid 2px blue;
 
@@ -348,9 +328,7 @@ body {
   }
 }
 
-
 .generator-accordion {
-  // outline: 2px solid rgb(36, 109, 0);
 // background-color: rgba(255, 0, 255, 0.25);
 
   position: absolute;
@@ -360,7 +338,6 @@ body {
   height: fit-content;
   padding: 0 0 var(--3xl) 0;
   @include radius("md");
-// overflow: hidden;
   --space: var(--md);
   --space-half: calc(var(--space) * 0.66);
 
@@ -387,18 +364,19 @@ body {
   @include bp(lg) {
     --space: var(--md);
      border-radius: var(--md);
-      padding: 0 0 var(--md) 0;
+    padding: 0 0 var(--2xl) 0;
   }
 
   @include bp(xl) {
     @include radius("md");
-
+    padding: 0 0 var(--xl) 0;
   }
 }
 
 .switch-accordion {
   z-index: 5;
   width: 100%;
+  max-width: var(--gen-w);
   height: fit-content;
 
   & .switch-accordion-content {
@@ -449,23 +427,12 @@ body {
   grid-template-columns: auto 1fr;
   align-items: center;
   padding: var(--space);
-
-  // will-change: background-color;
-  // transition: background-color $speed-fast $smooth-cubic;
-
-  // &:hover {
-  //   background-color: var(--tint-light);
-  // }
-
-  // &:focus-visible {
-  //   @include focus-visible-inner;
-  //   background-color: var(--tint-light);
-  // }
 }
 
 .switch-accordion-content {
   pointer-events: none;
-
+  width: 100%;
+  max-width: var(--gen-w);
   display: grid;
   gap: var(--md);
   background-color: var(--tint-3xdark);
@@ -534,50 +501,8 @@ body {
 }
 
 /* ================================================== */
-/* other styles */
+/* checkbox */
 /* ================================================== */
-/* checkbox/label + small slider */
-.filter-controls-layout {
-  width: 100%;
-  max-width: 100%;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: 112px 165px;
-  gap: var(--2xs);
-  align-items: end;
-  justify-content: center;
-
-  @include bp(xs) {
-    grid-template-columns: 112px 190px;
-  }
-
-  @include bp(sm) {
-    gap: var(--xs);
-    grid-template-columns: 115px 230px;
-  }
-
-  @include bp(md) {
-    grid-template-columns: 135px 250px;
-  }
-
-  & .slider-w-display {
-    width: 100%;
-    opacity: 1;
-    justify-self: end;
-  }
-
-  &.is-off {
-    & .slider-w-display {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    & label {
-      color: var(--text-xmild);
-    }
-  }
-}
-
 /* checkbox + label */
 .filter-label-layout {
   display: flex;
@@ -600,6 +525,53 @@ body {
     }
   }
 }
+
+/* checkbox/label + small slider */
+.filter-controls-layout {
+  width: 100%;
+  max-width: var(--gen-w);
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  // grid-template-columns: 112px 165px;
+  gap: var(--2xs);
+  align-items: end;
+  justify-content: center;
+
+  @include bp(xs) {
+    grid-template-columns: 112px 1fr;
+    // grid-template-columns: 112px 190px;
+  }
+
+  @include bp(sm) {
+    gap: var(--xs);
+    grid-template-columns: 115px 1fr;
+    // grid-template-columns: 115px 230px;
+  }
+
+  @include bp(md) {
+    grid-template-columns: 135px 1fr;
+    // grid-template-columns: 135px 250px;
+  }
+
+  & .slider-w-display {
+    width: 100%;
+    opacity: 1;
+    justify-self: end;
+  }
+
+  &.is-off {
+    & .slider-w-display {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    & label {
+      color: var(--text-xmild);
+    }
+  }
+}
+
 
 /* ================================================== */
 /* Copy code  */
@@ -640,3 +612,26 @@ body {
     z-index: 20;
   }
 }
+
+/* ================================================== */
+/* other styles */
+/* ================================================== */
+// .repositionable {
+//   pointer-events: none;
+//   z-index: z(section);
+//   width: fit-content;
+//   height: fit-content;
+// // outline: solid 2px rgb(255, 0, 111);
+
+//   @include bp(lg) {
+//     // z-index: 30;
+//     margin: auto;
+//     position: absolute;
+//     left: 15%;
+//     // right: 50%;
+//     // top: 50%;
+//     bottom: 25%;
+
+//     // background-color: rgba(66, 185, 15, 0.25);
+//   }
+// }
