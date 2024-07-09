@@ -1,0 +1,134 @@
+/* ================================================== */
+/* Contact page */
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/components" as *;
+/* ================================================== */
+
+.contact-viewport {
+  pointer-events: none;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  // height: fit-content;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--nav-h) + 2rem) 0;
+}
+
+.contact-layout {
+  width: 100%;
+  height: 100%;
+  min-height: fit-content;
+  display: grid;
+  place-items: center;
+}
+
+
+.stamp {
+  width: 100px;
+  aspect-ratio : 1 / 1;
+  overflow: hidden;
+  border-radius: var(--xs);
+  opacity: 0.9;
+  box-shadow: var(--sha-md);
+
+  @include bp(xs) {
+    width: 150px;
+    border-radius: var(--sm);
+  }
+
+  @include bp(sm) {
+    width: 180px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.vocation {
+// no-word-break text-sha-xl text-center
+  @include title($font-weight-sm);
+  font-size: var(--text-xs);
+  text-align: center;
+  text-shadow: var(--text-sha-lg);
+  line-height: $line-height-md;
+  word-break: keep-all;
+  letter-spacing: $letter-spacing-md;
+  width: 100%;
+}
+
+
+.contact-inset {
+  display: grid;
+  place-items: center end;
+  gap: var(--3xs);
+  width: 100%;
+  height: fit-content;
+  padding: var(--md);
+  box-shadow: var(--inset-lg);
+  border-radius: inherit;
+  background-color: var(--inset-bg-deep);
+
+  @include bp(xl) {
+    gap: var(--4xs);
+  }
+}
+
+.tagline-layout-r {
+  width: fit-content;
+  display: grid;
+  place-items: center end;
+
+}
+
+
+.tagline-big {
+  pointer-events: none;
+  font-family: $font-family-title;
+  line-height: $line-height-title;
+  font-size: var(--text-xl);
+  font-weight: $font-weight-lg;
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-2xl);
+
+  @include bp(xl) {
+    font-size: var(--text-lg);
+  }
+}
+
+.text-via {
+  @include super-wide($font-weight-sm, --text-2xs, 8px);
+  // outline: 1px solid red;
+  text-align: end;
+  width: fit-content;
+}
+
+.email-btn-layout {
+  max-width: 100%;
+  display: grid;
+  place-items: center end;
+  grid-template-columns: 1fr auto;
+  gap: var(--3xs);
+}
+
+.email-link {
+  @include super-wide($font-weight-sm, --text-2xs, 3px);
+  text-align: end;
+  color: var(--color-primary-2xlight);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-shadow: var(--text-sha-sm);
+
+  @include bp(xs) {
+    @include super-wide($font-weight-sm, --text-2xs, 5px);
+  }
+
+  @include bp(sm) {
+    @include super-wide($font-weight-sm, --text-2xs, 8px);
+  }
+}

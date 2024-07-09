@@ -531,39 +531,8 @@
 
 /* Contact section */
 /* ================================================== */
-.contact-inset {
-  display: grid;
-  place-items: center;
-  gap: var(--2xs);
-  width: 100%;
-  height: fit-content;
-  padding: var(--lg);
-  box-shadow: var(--inset-lg);
-  border-radius: inherit;
-  background-color: var(--inset-bg-deep);
-}
 
-.stamp {
-  width: 100px;
-  aspect-ratio : 1 / 1;
-  overflow: hidden;
-  border-radius: var(--xs);
-  opacity: 0.9;
-  box-shadow: var(--sha-md);
 
-  @include bp(xs) {
-    width: 150px;
-    border-radius: var(--sm);
-  }
-
-  @include bp(sm) {
-    width: 180px;
-  }
-
-  & > img {
-    width: 100%;
-  }
-}
 
 
 /* Demo text styles */
