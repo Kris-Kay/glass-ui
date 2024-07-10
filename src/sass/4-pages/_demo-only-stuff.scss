@@ -36,24 +36,15 @@
   object-position: center;
 }
 
-.page-bg-noise {
+.dark-bg {
   pointer-events: none;
   &::after {
+    z-index: 0;
     @include pseudo;
-    background-image: url(/assets/textures/noise-gray_500x500.png);
-    background-size: $noise-md;
-    background-repeat: repeat;
+    -webkit-backdrop-filter: brightness(0.75) saturate(1.2);
+    backdrop-filter:         brightness(0.75) saturate(1.2);
   }
 }
-
-.page-bg-blur {
-  pointer-events: none;
-  &::after {
-    @include pseudo;
-    @include glass-filter($blur-xs, $bright-base, $satu-base);
-  }
-}
-
 
 /*  Main nav glass logo */
 /* ================================================== */
