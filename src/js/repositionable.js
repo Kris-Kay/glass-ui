@@ -19,7 +19,6 @@ function dragElement(ele)
   addTouchToMouse(ele);
   ele.onmousedown = dragMouseDown;
 
-console.log("hihhihhiiiiiii");
   function dragMouseDown(e)
   {
     e = e || window.event;

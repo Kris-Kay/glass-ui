@@ -25,4 +25,4 @@ function findSpotlights() {
   });
 };
 
-/* findSpotlights() is called in loadContent.js */
+/* findSpotlights() is called in fetchContent.js */
