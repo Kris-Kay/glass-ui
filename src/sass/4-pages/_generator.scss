@@ -339,18 +339,18 @@ body {
   padding: 0 0 var(--3xl) 0;
   @include radius("md");
   --space: var(--md);
-  --space-half: calc(var(--space) * 0.66);
+  --space-smol: calc(var(--space) * 0.66);
 
   & .switch-accordion-controls {
-    padding: var(--space-half) var(--space) var(--space-half) var(--space);
+    padding: var(--space-smol) var(--space) var(--space-smol) var(--space);
   }
 
   & > :first-child .switch-accordion-controls {
-    padding: var(--space) var(--space) var(--space-half) var(--space);
+    padding: var(--space) var(--space) var(--space-smol) var(--space);
   }
 
   & > :last-child .switch-accordion-controls {
-    padding: var(--space-half) var(--space) var(--space-half) var(--space);
+    padding: var(--space-smol) var(--space) var(--space-smol) var(--space);
   }
 
   @include bp(xs) {

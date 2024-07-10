@@ -73,3 +73,7 @@ The solution though not perfect is to add a parent wrapper that sets the border-
   border-radius: $radius;
   overflow: hidden;
 }
+
+.radius-0 {
+  border-radius: 0;
+}

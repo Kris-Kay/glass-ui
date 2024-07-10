@@ -30,6 +30,7 @@
 
 .stamp {
   width: 100px;
+
   aspect-ratio : 1 / 1;
   overflow: hidden;
   border-radius: var(--xs);
@@ -42,7 +43,13 @@
   }
 
   @include bp(sm) {
+    width: 170px;
+    border-radius: var(--md);
+  }
+
+  @include bp(lg) {
     width: 180px;
+    border-radius: var(--sm);
   }
 
   & > img {
@@ -71,7 +78,7 @@
   height: fit-content;
   padding: var(--md);
   box-shadow: var(--inset-lg);
-  border-radius: inherit;
+  border-radius: var(--sm);
   background-color: var(--inset-bg-deep);
 
   @include bp(xl) {

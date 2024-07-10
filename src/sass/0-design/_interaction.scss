@@ -76,7 +76,7 @@ $smooth-cubic: cubic-bezier(0.46, 0.43, 0.1, 0.99);
 /* If it dosen't work... */
 /* 1. Make sure the spotlight script is added at the end of <body> */
 // <script src="/js/spotlight.js"></script>
-/* 2. Make sure `findSpotlights()` is called in `loadContent.js` */
+/* 2. Make sure `findSpotlights()` is called in `fetchContent.js` */
 
 /* 💠 example */
 // <div class="js-spotlightBin grid-c">
