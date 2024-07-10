@@ -8,6 +8,7 @@
 @mixin accordion {
   --space: var(--sm);
   --neg-space: calc(-1 * var(--space));
+  --space-smol: calc(var(--space) * 0.66);
   --radius: var(--sm);
 
   pointer-events: none;
@@ -32,6 +33,16 @@
 
   & .accordion-btn[aria-expanded="false"] {
     border-radius: var(--radius);
+  }
+
+
+  // @include bp(md) {
+  //   --radius: var(--sm);
+  // }
+
+  @include bp(md) {
+    --space: var(--md);
+    --radius: var(--sm);
   }
 }
 
@@ -65,7 +76,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--sm);
-  // padding: var(--space);
+  padding: var(--space);
 
   @include body(--text-md);
   text-align: start;
@@ -89,12 +100,50 @@
   pointer-events: none;
   z-index: z(on-card);
   width: 100%;
-  padding-top: calc(var(--space) * 1.5);
-  padding-right: var(--space);
-  padding-bottom: var(--space);
-  padding-left: var(--space);
+  // padding-top: calc(var(--space) * 1.5);
+  // padding-right: var(--space);
+  // padding-bottom: var(--space);
+  // padding-left: var(--space);
+
 
   // @include title-4(start);
+
+    & .accordion-content {
+    z-index: 6;
+    height: fit-content;
+    padding: var(--space);
+    opacity: 1;
+    transition: height $speed-base $smooth-cubic,
+                padding $speed-base $smooth-cubic,
+                opacity $speed-base $smooth-cubic;
+
+    & * {
+      opacity: 1;
+      transition: height $speed-fast $smooth-cubic,
+                  padding $speed-fast $smooth-cubic,
+                  opacity $speed-fast $smooth-cubic;
+    }
+  }
+
+  &.is-closed {
+    & .accordion-content {
+      z-index: -20;
+      height: 0;
+      padding: 0;
+      opacity: 0;
+
+      & * {
+        z-index: -20;
+        height: 0;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+
+    .accordion-icon {
+      transform: rotate(0deg);
+    }
+  }
 }
 
 .accordion-icon {
@@ -106,31 +155,33 @@
   transform: rotate(180deg);
   transition: transform $speed-xslow $smooth-cubic;
 
-  &.is-closed {
-    transform: rotate(0deg);
-  }
+  // &.is-closed {
+  //   transform: rotate(0deg);
+  // }
 }
 
 .accordion-content {
   pointer-events: none;
   z-index: z(card);
+  width: 100%;
+  height: fit-content;
   display: grid;
   gap: var(--space);
   background-color: var(--tint-3xdark);
 
-  height: fit-content;
-  padding: var(--space);
-  opacity: 1;
-  transition: height $speed-base $smooth-cubic,
-              padding $speed-base $smooth-cubic,
-              opacity $speed-base $smooth-cubic;
+  // height: fit-content;
+  // padding: var(--space);
+  // opacity: 1;
+  // transition: height $speed-base $smooth-cubic,
+  //             padding $speed-base $smooth-cubic,
+  //             opacity $speed-base $smooth-cubic;
 
-  &.is-closed {
-    z-index: -20;
-    height: 0;
-    padding: 0;
-    opacity: 0;
-  }
+  // &.is-closed {
+  //   z-index: -20;
+  //   height: 0;
+  //   padding: 0;
+  //   opacity: 0;
+  // }
 }
 
 /* Remove border-radius at 100vw or bigger */

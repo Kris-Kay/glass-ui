@@ -17,4 +17,4 @@ function findSwitches() {
   });
 };
 
-/* findSwitches() is called in loadContent.js */
+/* findSwitches() is called in fetchContent.js */

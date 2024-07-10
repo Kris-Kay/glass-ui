@@ -18,15 +18,14 @@ let $lSlider;
 let $sSlider;
 let $aSlider;
 
-/* make text color contrast against swatch color */
+
 function textColorContrast() {
-  if($lSlider.value > 60) {
+  if($lSlider.value > 50 && $aSlider.value > 0.4) {
     document.body.style.setProperty("--swatch-text-color", "205 20% 10%");
   } else {
     document.body.style.setProperty("--swatch-text-color", "205 20% 90%");
   }
 }
-
 
 function handleSliderChange(e) {
   clearTimeout(colorSliderTimeout);

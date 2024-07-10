@@ -1,0 +1,96 @@
+/* ================================================== */
+/* About page */
+@use "../forward-styles/design" as *;
+@use "../forward-styles/glass" as *;
+@use "../forward-styles/util" as *;
+@use "../forward-styles/components" as *;
+/* ================================================== */
+
+.about-viewport {
+  pointer-events: none;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: start center;
+  padding: var(--nav-h) 0 0 0;
+}
+
+.about-layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  gap: var(--5xl);
+  padding: var(--5xl) 0;
+
+  @include bp(md) {
+    max-width: $bp-xl;
+    padding: var(--5xl) var(--moat);
+  }
+
+  @include bp(xl) {
+    max-width: $bp-xl;
+    padding: var(--5xl) var(--moat);
+  }
+}
+
+.about-text-bg {
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  @include bp(lg) {
+    place-items: start;
+  }
+}
+
+.tagline-md-layout {
+  display: grid;
+  place-items: center end;
+  padding: var(--2xl) var(--moat);
+  background-color: var(--tint-3xdark);
+
+  @include bp(md) {
+    padding: var(--3xl) var(--moat);
+  }
+
+  @include bp(lg) {
+    padding: var(--2xl) var(--moat);
+  }
+}
+
+.tagline-md {
+  pointer-events: none;
+  @include title-md(end);
+  font-size: var(--text-sm);
+  font-weight: $font-weight-lg;
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-sm);
+  letter-spacing: $letter-spacing-md;
+  line-height: $line-height-md;
+  max-width: 420px;
+
+  @include bp(sm) {
+    font-size: var(--text-lg);
+    max-width: 500px;
+  }
+}
+
+.tagline-thin-sm {
+  pointer-events: none;
+  @include title-md(center);
+  font-size: var(--text-xs);
+  font-weight: $font-weight-sm;
+  color: var(--text-strong);
+  text-shadow: var(--text-sha-sm);
+  letter-spacing: $letter-spacing-sm;
+  line-height: $line-height-md;
+
+  @include bp(sm) {
+    font-size: var(--text-sm);
+    letter-spacing: $letter-spacing-md;
+  }
+}

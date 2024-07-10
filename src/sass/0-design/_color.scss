@@ -66,6 +66,13 @@ html {
   --color-2xdark:  hsl(var(--neutral-20) / 1);
   --color-black:   hsl(var(--neutral-5)  / 1);
 
+  --color-primary-2xlight:   hsl(var(--primary-80) / 1);
+  --color-primary-xlight:   hsl(var(--primary-70) / 1);
+  --color-primary-light:   hsl(var(--primary-60) / 1);
+  --color-primary-base:   hsl(var(--primary-50) / 1);
+  --color-primary-dark:   hsl(var(--primary-40) / 1);
+  --color-primary-xdark:   hsl(var(--primary-30) / 1);
+
   /* Translucent tints */
   /* ================================================== */
   --tint-3xlight: hsl(var(--neutral-95) / 0.4);
