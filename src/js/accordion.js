@@ -6,6 +6,8 @@ function toggleAccordion(e) {
   const $thisAccordion = $thisToggle.parentNode.parentNode;
   const $expanded = $thisToggle.getAttribute("aria-expanded") === "true" || false;
 
+console.log("$thisAccordion: " + $thisAccordion.id);
+
   $thisToggle.setAttribute("aria-expanded", !$expanded);
   $thisAccordion.classList.toggle("is-closed");
 };
@@ -16,4 +18,4 @@ function findAccordions() {
   });
 };
 
-/* findAccordions() is called in loadContent.js */
+/* findAccordions() is called in fetchContent.js */
