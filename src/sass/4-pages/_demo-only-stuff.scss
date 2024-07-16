@@ -36,15 +36,15 @@
   object-position: center;
 }
 
-.dark-bg {
-  pointer-events: none;
-  &::after {
-    z-index: 0;
-    @include pseudo;
-    -webkit-backdrop-filter: brightness(0.75) saturate(1.2);
-    backdrop-filter:         brightness(0.75) saturate(1.2);
-  }
-}
+// .dark-bg {
+//   pointer-events: none;
+//   &::after {
+//     z-index: 0;
+//     @include pseudo;
+//     -webkit-backdrop-filter: brightness(0.75) saturate(1.2);
+//     backdrop-filter:         brightness(0.75) saturate(1.2);
+//   }
+// }
 
 /*  Main nav glass logo */
 /* ================================================== */
@@ -308,39 +308,6 @@
     var(--blur),
     var(--bright),
     var(--satu));
-}
-
-/* Telescope rect */
-.tele-rect-bin {
-  height: 450px;
-
-  @include bp(xs) {
-    height: 550px;
-  }
-}
-
-.tele-rect {
-  display: grid;
-  touch-action: pan-y;
-  min-width: fit-content;
-  width: 100%;
-  overflow: hidden;
-  padding: 8% 12% 4% 4%;
-  background-color: var(--tint-xdark);
-
-  will-change: padding;
-  transition: padding $smooth-cubic $speed-xfast;
-
-  @media (hover: hover) {
-    &:hover {
-      padding: 8%;
-    }
-  }
-
-  & > p {
-    padding: var(--2xs);
-    pointer-events: none;
-  }
 }
 
 
