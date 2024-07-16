@@ -13,10 +13,16 @@ function copyToClipboard(e) {
 }
 
 function findCopyBtns() {
+<<<<<<< Updated upstream
   let $copyBtnsArray = Array.from(document.querySelectorAll(".js-copyBtn"));
 
   $copyBtnsArray.forEach((btn) => {
     btn.addEventListener("click", copyToClipboard);
+=======
+  document.querySelectorAll(".js-copyBtn").forEach(($btn) => {
+    $btn.addEventListener("click", copyToClipboard);
+      // console.log("btn: " + $btn);
+>>>>>>> Stashed changes
   });
 };
 
