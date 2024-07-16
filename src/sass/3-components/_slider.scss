@@ -9,7 +9,6 @@ $track-w: 100%;
 $track-h: 0.5em;
 $thumb-h: var(--ui-h-xs);
 $thumb-color: hsl(var(--neutral-85) / 1);
-$thumb-hover-color: hsl(var(--neutral-98) / 1);
 $track-color: var(--inset-bg-deep);
 $track-radius: 3px;
 $progress-color: var(--bg-checked);
@@ -70,10 +69,6 @@ input[type="range"]:disabled {
   background-color: $thumb-color;
   box-shadow: var(--knob-sha);
   transition: background-color $speed-slow $smooth-cubic;
-
-  // &:hover {
-  //   background-color: $thumb-hover-color;
-  // }
 }
 
 .slider-ui {
