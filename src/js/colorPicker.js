@@ -1,85 +1,35 @@
 /* ========================================== */
 /* HSL Color Picker */
 /* ========================================== */
-let colorSliderTimeout;
-
-let $colorPicker;
-let $colorSwatch;
-
-let $computed;
-
-// let $hVal;
-// let $lVal;
-// let $sVal;
-// let $aVal;
-
-let $hsla;
+"use strict";
 
 let $hSlider;
 let $lSlider;
 let $sSlider;
 let $aSlider;
+let $h;
+let $l;
+let $s;
+let $a;
+let $hsla;
+let $colorSwatch;
 
-let $hSliderVal = 190;
-let $lSliderVal = 70;
-let $sSliderVal = 90;
-let $aSliderVal = 0.1;
-
-let $hVal = '190';
-let $lVal = '70%';
-let $sVal = '90%';
-let $aVal = '0.1';
-
-
+/* update text color to make sure it contrasts with new color */
 function textColorContrast() {
-  if($lSlider.value > 50 && $aSlider.value > 0.4) {
+  if($l > 50 && $a > 0.4) {
     document.body.style.setProperty("--swatch-text-color", "205 20% 10%");
+    // console.log("dark text");
   } else {
     document.body.style.setProperty("--swatch-text-color", "205 20% 90%");
+    // console.log("light text");
   }
 }
 
-function handleSliderChange(e) {
-  clearTimeout(colorSliderTimeout);
-
-  colorSliderTimeout = setTimeout(() => {
-    let $slider = e.target;
-    let $sliderId = $slider.id;
-
-    /* find the slider that changed and update the corresponding --var to its value */
-    if($sliderId === "hsl-h") {
-      document.body.style.setProperty("--color-h", `${$slider.value}`);
-
-    } else if($sliderId === "hsl-l") {
-      document.body.style.setProperty("--color-l", `${$slider.value}%`);
-
-    } else if($sliderId === "hsl-s") {
-      document.body.style.setProperty("--color-s", `${$slider.value}%`);
-
-    } else if($sliderId === "hsl-a") {
-      document.body.style.setProperty("--color-a", `${$slider.value}`);
-    }
-
-    /* update HTML display to reflect new color */
-    /* update text color to make sure it contrasts with new color */
-    textColorContrast();
-    $colorSwatch.innerHTML = createColorHTML();
-
-    console.log("$slider id: " + $slider.id);
-  }, 100);
-}
-
-
-/* join slider values into hsl() string */
-/* syntax example: hsl(360 50% 50% / 0.5) */
+/* join slider values into hsla() string */
+/* syntax example: hsla(360 50% 50% / 0.5) */
 function getHSLAString() {
-  let $h = document.getElementById("hsl-h").value;
-  let $l = document.getElementById("hsl-l").value;
-  let $s = document.getElementById("hsl-s").value;
-  let $a = document.getElementById("hsl-a").value;
-
-  let $hsla =
-      "hsl( " + [
+  $hsla =
+      "hsla( " + [
       $h,
       $s + "%",
       $l + "%"
@@ -88,7 +38,11 @@ function getHSLAString() {
       $a
       + " )";
 
-  // console.log("colorPicker.js " + $hsla);
+
+  /* messy but needed for generator */
+  document.body.style.setProperty("--color-glass3d", `${$hsla}`);
+  // console.log("colorPicker.js: " + $hsla);
+
   return $hsla;
 }
 
@@ -101,19 +55,55 @@ function createColorHTML() {
   ].join("");
 }
 
+function handleSliderChange(e) {
+  let $slider = e.target;
+  let $sliderId = $slider.id;
+
+  /* find the slider that changed and update the corresponding --var to its value */
+  if($sliderId === "hsl-h") {
+    $h = $hSlider.value;
+    document.body.style.setProperty("--color-h", `${$h}`);
+
+  } else if($sliderId === "hsl-l") {
+    $l = $lSlider.value;
+    document.body.style.setProperty("--color-l", `${$l}%`);
+    textColorContrast();
+
+  } else if($sliderId === "hsl-s") {
+    $s = $sSlider.value;
+    document.body.style.setProperty("--color-s", `${$s}%`);
+
+  } else if($sliderId === "hsl-a") {
+    $a = $aSlider.value;
+    document.body.style.setProperty("--color-a", `${$a}`);
+    textColorContrast();
+  }
+
+  /* update HTML display to reflect new color */
+  $colorSwatch.innerHTML = createColorHTML();
+
+  // console.log("$slider id: " + $sliderId);
+}
+
+/* add event listener to sliders */
+function addSliderListener() {
+  let $sliders = document.querySelectorAll('.js-colorSlider');
+
+  $sliders.forEach(($slider) => {
+    $slider.addEventListener("input", handleSliderChange, {
+      capture : true,
+    });
+  });
+}
 
 function initColorPicker() {
-  /* get body's computed style to access its CSS --vars */
-  $computed = window.getComputedStyle(document.body);
+  /* initial color values */
+  $h = 190;
+  $l = 70;
+  $s = 90;
+  $a = 0.1;
 
-  $colorPicker = document.getElementById("js-colorPicker");
   $colorSwatch = document.getElementById("colorSwatch");
-
- /* set initial color values */
-  document.body.style.setProperty("--color-h", `${$hVal}`);
-  document.body.style.setProperty("--color-l", `${$lVal}`);
-  document.body.style.setProperty("--color-s", `${$sVal}`);
-  document.body.style.setProperty("--color-a", `${$aVal}`);
 
  /* init sliders */
   $hSlider = document.getElementById("hsl-h");
@@ -122,87 +112,18 @@ function initColorPicker() {
   $aSlider = document.getElementById("hsl-a");
 
   /* set initial slider values */
-  $hSlider.value = $hSliderVal;
-  $lSlider.value = $lSliderVal;
-  $sSlider.value = $sSliderVal;
-  $aSlider.value = $aSliderVal;
+  $hSlider.value = $h;
+  $lSlider.value = $l;
+  $sSlider.value = $s;
+  $aSlider.value = $a;
 
+ /* set initial color values */
+  document.body.style.setProperty("--color-h", `${$h}`);
+  document.body.style.setProperty("--color-l", `${$l}%`);
+  document.body.style.setProperty("--color-s", `${$s}%`);
+  document.body.style.setProperty("--color-a", `${$a}`);
 
-  /* give sliders an event listener */
-  $colorPicker.querySelectorAll('.js-colorSlider').forEach(($slider) => {
-    $slider.addEventListener("input", handleSliderChange);
-  });
-
-  /* update HTML value display & its text color */
-  $colorSwatch.innerHTML = createColorHTML();
+  addSliderListener();
   textColorContrast();
+  $colorSwatch.innerHTML = createColorHTML();
 }
-
-
-
-  // function setInitialValues() {
-  //   $colorPicker = document.getElementById("js-colorPicker");
-  //   $colorSwatch = document.getElementById("colorSwatch");
-
-  //   /* get body's computed style to access its CSS --vars */
-  //   $computed = window.getComputedStyle(document.body);
-
-  //   $hVal = $computed.getPropertyValue("--color-h");
-  //   $lVal = $computed.getPropertyValue("--color-l");
-  //   $sVal = $computed.getPropertyValue("--color-s");
-  //   $aVal = $computed.getPropertyValue("--color-a");
-
-  //   $hSlider = document.getElementById("hsl-h");
-  //   $lSlider = document.getElementById("hsl-l");
-  //   $sSlider = document.getElementById("hsl-s");
-  //   $aSlider = document.getElementById("hsl-a");
-
-  //   /* use --vars to set initial slider values */
-  //   $hSlider.value = $hVal;
-  //   $lSlider.value = $lVal;
-  //   $sSlider.value = $sVal;
-  //   $aSlider.value = $aVal;
-
-  //   /* reset the saturation and lightness --vars with a `%` or Safari will throw a fit */
-  //   document.body.style.setProperty("--color-h", `${$hVal}`);
-  //   document.body.style.setProperty("--color-l", `${$lVal}%`);
-  //   document.body.style.setProperty("--color-s", `${$sVal}%`);
-  //   document.body.style.setProperty("--color-a", `${$aVal}`);
-
-  //   /* give sliders an event listener */
-  //   $colorPicker.querySelectorAll('.js-colorSlider').forEach(($slider) => {
-  //     $slider.addEventListener("input", handleSliderChange);
-  //   });
-
-  //   /* update HTML value display & its text color */
-  //   $colorSwatch.innerHTML = createColorHTML();
-  //   textColorContrast();
-  // }
-  // setInitialValues();
-
-
-   // $hVal = $computed.getPropertyValue("--color-h");
-  // $lVal = $computed.getPropertyValue("--color-l");
-  // $sVal = $computed.getPropertyValue("--color-s");
-  // $aVal = $computed.getPropertyValue("--color-a");
-
-  // $hSlider = document.getElementById("hsl-h");
-  // $lSlider = document.getElementById("hsl-l");
-  // $sSlider = document.getElementById("hsl-s");
-  // $aSlider = document.getElementById("hsl-a");
-
-  // /* use --vars to set initial slider values */
-  // $hSlider.value = $hVal;
-  // $lSlider.value = $lVal;
-  // $sSlider.value = $sVal;
-  // $aSlider.value = $aVal;
-
-  // $hVal = $computed.getPropertyValue("--color-h");
-  // $lVal = $computed.getPropertyValue("--color-l");
-  // $sVal = $computed.getPropertyValue("--color-s");
-  // $aVal = $computed.getPropertyValue("--color-a");
-
-  // document.body.style.setProperty("--color-h", `${$hVal}`);
-  // document.body.style.setProperty("--color-l", `${$lVal}`);
-  // document.body.style.setProperty("--color-s", `${$sVal}`);
-  // document.body.style.setProperty("--color-a", `${$aVal}`);
