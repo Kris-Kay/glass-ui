@@ -244,16 +244,29 @@ function onCheckChange(e) {
   setFilter($check, $checkBool);
 }
 
+/* on chevron click */
+/* ========================================== */
+function toggleAccordion(e) {
+  let $thisToggle = e.target;
+  let $thisAccordion = $thisToggle.parentNode.parentNode;
+  let $expanded = $thisToggle.getAttribute("aria-expanded") === "true" || false;
+
+  $thisAccordion.classList.toggle("is-closed");
+  $thisToggle.setAttribute("aria-expanded", !$expanded);
+
+  console.log("toggle $thisAccordion: " + $thisAccordion.id);
+  console.log("$expanded: " + $expanded);
+};
 
 /* accordion disable/enable */
 /* ========================================== */
 function accordionOnOff($switch, $switchBool) {
-  const $accordion = $switch.parentNode.parentNode.parentNode;
+  const $accordion = $switch.parentNode.parentNode;
   const $accordionBtn = $accordion.querySelector(".js-accordionBtn");
 
   if($switchBool) {
-    $accordion.classList.remove("is-closed");
-    $accordionBtn.setAttribute("aria-expanded", true);
+    // $accordion.classList.remove("is-closed");
+    // $accordionBtn.setAttribute("aria-expanded", true);
     $accordionBtn.removeAttribute("disabled");
   };
 
@@ -273,13 +286,13 @@ function setSwitch($switch, $switchBool) {
 
   if($switchBool) {
     $switch.ariaChecked = "true";
-    $switchParent.classList.remove("is-off");
+    // $switchParent.classList.remove("is-off");
     setOnOffValue($switchId, true);
     // console.log($switchId + " is now ON");
 
   } else {
     $switch.ariaChecked = "false";
-    $switchParent.classList.add("is-off");
+    // $switchParent.classList.add("is-off");
     setOnOffValue($switchId, false);
     // console.log($switchId + " is now OFF");
   }
@@ -310,7 +323,11 @@ function initializeGenerator() {
   $brightSet = document.getElementById('bright-slider').value;
   $satuSet = document.getElementById('satu-slider').value;
 
-
+  /* accordionBtn event listener */
+  /* ========================================== */
+  document.querySelectorAll(".js-accordionBtn").forEach(($accordionBtn) => {
+    $accordionBtn.addEventListener("click", toggleAccordion);
+  });
 
   /* Switch event listener */
   /* ========================================== */

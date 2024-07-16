@@ -15,12 +15,12 @@ function fetchHome() {
     .then(html => {
       $contentArea.innerHTML = html;
       findTabs();
-      findAccordions();
+      // findAccordions();
       initSliders();
+      initColorPicker();
       findSpotlights();
       findCopyBtns();
       initializeGenerator();
-      initColorPicker();
     })
 
     .catch(error => console.error(error.message));
