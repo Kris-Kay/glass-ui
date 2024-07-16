@@ -282,27 +282,27 @@ html {
 .e2e { @include e2e; }
 
 .e2e-no-t {
-  @include e2e;
   margin-top: var(--neg-space);
+  @include e2e;
 }
 
 .e2e-no-b {
-  @include e2e;
   margin-bottom: var(--neg-space);
+  @include e2e;
 }
 
 .e2e-no-y {
-  @include e2e;
   margin-top: var(--neg-space);
   margin-bottom: var(--neg-space);
+  @include e2e;
 }
 
 .e2e-inset {
-  @include e2e;
   margin-left: calc(var(--neg-space) + 1px);
   margin-right: var(--neg-space);
   background-color: var(--inset-bg-deep);
   box-shadow: var(--inset-flat-md);
+  @include e2e;
 }
 
 /* Remove margin-left offset at 100vw or bigger */

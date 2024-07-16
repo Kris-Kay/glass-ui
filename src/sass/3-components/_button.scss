@@ -66,23 +66,23 @@
   cursor: pointer;
 
   &::after {
-    @include pseudo;
     z-index: z(btn-after);
+    @include pseudo;
   }
 
   &::before {
-    @include pseudo;
     z-index: z(btn-b4);
+    @include pseudo;
   }
 
   & > .btn-text {
-    @include btn-text;
     z-index: z(on-btn);
     font-size: var(--_btn-content-h);
     line-height: var(--_btn-content-h);
     padding-top: var(--_btn-padding-top);
     padding-bottom: var(--_btn-padding-bottom);
     pointer-events: none;
+    @include btn-text;
   }
 
   & > svg {
@@ -110,7 +110,6 @@
 /* Button sizes ✨ Config these values */
 /* ================================================== */
 .btn-sm {
-  @include btn-structure;
   --btn-h: var(--ui-h-sm);
   --btn-content-h: 0.9rem;
   --btn-padding-x: calc(var(--btn-h) * 0.55);
@@ -119,13 +118,14 @@
   --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 
+  @include btn-structure;
+
   @include bp(xs) {
     --btn-content-h: 0.95rem;
   }
 }
 
 .btn-md {
-  @include btn-structure;
   --btn-h: var(--ui-h-md);
   --btn-content-h: 0.95rem;
   --btn-padding-x: calc(var(--btn-h) * 0.6);
@@ -134,13 +134,14 @@
   --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 
+  @include btn-structure;
+
   @include bp(xs) {
     --btn-content-h: 1.15rem;
   }
 }
 
 .btn-lg {
-  @include btn-structure;
   --btn-h: var(--ui-h-lg);
   --btn-content-h: 1rem;
   --btn-padding-x: calc(var(--btn-h) * 0.65);
@@ -149,13 +150,14 @@
   --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: 999px;
 
+  @include btn-structure;
+
   @include bp(xs) {
     --btn-content-h: 1.25rem;
   }
 }
 
 .btn-full-w {
-  @include btn-structure;
   width: 100%;
   --btn-h: var(--ui-h-xl);
   --btn-content-h: 1.25rem;
@@ -164,6 +166,8 @@
   --btn-padding-bottom: 0;
   --btn-gap: calc(var(--btn-h) * 0.25);
   --btn-radius: var(--2xs);
+
+  @include btn-structure;
 }
 
 /* ================================================== */
@@ -214,21 +218,21 @@
 /* Icon button sizes ✨ Config these values */
 /* ================================================== */
 .btn-icon-sm {
-  @include btn-icon-structure;
   --btn-h: var(--ui-h-sm);
   --btn-icon-h: calc(var(--btn-h) * 0.55);
+  @include btn-icon-structure;
 }
 
 .btn-icon-md {
-  @include btn-icon-structure;
   --btn-h: var(--ui-h-md);
   --btn-icon-h: calc(var(--btn-h) * 0.55);
+  @include btn-icon-structure;
 }
 
 .btn-icon-lg {
-  @include btn-icon-structure;
   --btn-h: var(--ui-h-lg);
   --btn-icon-h: calc(var(--btn-h) * 0.55);
+  @include btn-icon-structure;
 }
 
 /* ================================================== */
@@ -255,14 +259,14 @@
   --_btn-disabled: var(--btn-disabled, 0.6);
 
   &::before {
-    @include btn-transition;
     background-color: var(--_btn-state-bg);
     opacity: var(--_btn-rest);
+    @include btn-transition;
   }
 
   &::after {
-    @include glass-filter(var(--_btn-blur), var(--_btn-brightness), var(--_btn-saturate));
     box-shadow: var(--_btn-bevel);
+    @include glass-filter(var(--_btn-blur), var(--_btn-brightness), var(--_btn-saturate));
   }
 
   & > .btn-text {
@@ -324,7 +328,7 @@
   &:disabled {
     cursor: not-allowed;
     opacity: var(--_btn-disabled);
-    background-color: hsl(var(--neutral-10) / 0.1);
+    background-color: hsla(var(--neutral-10) / 0.1);
   }
 }
 
@@ -332,13 +336,10 @@
 /* Primary button ✨ Config these values */
 /* ================================================== */
 @mixin btn-primary {
-
-  @include btn-style;
-
   --btn-text: var(--text-xstrong);
   --btn-icon: var(--btn-text);
 
-  --btn-state-bg: hsl(var(--primary-10) / 0.9);
+  --btn-state-bg: hsla(var(--primary-10) / 0.9);
   --btn-state-text: var(--btn-text);
   --btn-state-icon: var(--btn-state-text);
 
@@ -354,18 +355,17 @@
   --btn-focus: 0.6;
   --btn-active: 1;
   --btn-disabled: 0.6;
+
+  @include btn-style;
 }
 
 /* Secondary button ✨ Config these values */
 /* ================================================== */
 @mixin btn-secondary {
-
-  @include btn-style;
-
   --btn-text:  var(--text-xstrong);
   --btn-icon: var(--btn-text);
 
-  --btn-state-bg:  hsl(var(--primary-5) / 0.9);
+  --btn-state-bg:  hsla(var(--primary-5) / 0.9);
   --btn-state-text: var(--btn-text);
   --btn-state-icon: var(--btn-state-text);
 
@@ -381,6 +381,8 @@
   --btn-focus: 0.5;
   --btn-active: 0.9;
   --btn-disabled: 0.6;
+
+  @include btn-style;
 }
 
 /* Outline button ✨ Config these values */
@@ -392,12 +394,12 @@
   --btn-text: var(--text-2xstrong);
   --btn-icon: var(--btn-text);
 
-  --btn-state-bg: hsl(var(--neutral-50) / 0.95);
+  --btn-state-bg: hsla(var(--neutral-50) / 0.95);
   --btn-state-text: var(--btn-text);
   --btn-state-icon: var(--btn-state-text);
 
   --btn-bevel: none;
-  outline: 1.5px solid hsl(var(--neutral-95) / 0.6);
+  outline: 1.5px solid hsla(var(--neutral-95) / 0.6);
 
   --btn-blur: 10px;
   --btn-brightness: 0.95;
@@ -419,7 +421,7 @@
   --btn-text: var(--text-2xstrong);
   --btn-icon: var(--btn-text);
 
-  --btn-state-bg: hsl(var(--primary-95) / 0.9);
+  --btn-state-bg: hsla(var(--primary-95) / 0.9);
   --btn-state-text: var(--tint-3xdark);
   --btn-state-icon: var(--btn-state-text);
 
