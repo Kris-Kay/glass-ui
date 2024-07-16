@@ -4,37 +4,22 @@
   <div class="generator-page-layout">
 
     <!-- Demo glass -->
-    <!-- <section class="glass-layout">
-      <div class="repositionable" id="mydiv">
-
-        <div class="glass-tele-group">
-          <div class="glass-tele-rect glass-3d-gen">
-            <div class="glass-tele-rect glass-3d-gen">
-              <div class="glass-tele-rect glass-3d-gen">
-                <div class="glass-gen-card">
-                  <h1 class="glass-gen-title">3d glass generator</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section> -->
-
     <section class="glass-layout">
-      <div class="glass-tele-group">
-        <div class="glass-tele-rect glass-3d-gen">
-          <div class="glass-tele-rect glass-3d-gen">
-            <div class="glass-tele-rect glass-3d-gen">
-              <div class="glass-gen-card">
-                <h1 class="glass-gen-title">3d glass generator</h1>
-              </div>
+      <div class="tele-rect-bin">
+
+        <div class="tele-rect glass-3d-gen">
+          <div class="tele-rect glass-3d-gen">
+            <div class="tele-rect glass-3d-gen">
+
+              <h1 class="glass-gen-title">3d glass generator</h1>
+
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
 
     <!-- Generator controls -->
     <section class="switch-accordion-layout">
@@ -43,7 +28,7 @@
         <div class="accordion-multi switch-accordion-bg glass-3d-gen">
 
           <!-- Bevel -->
-          <div class="js-switch-accordion-drawer switch-accordion-drawer ">
+          <div class="js-switch-accordion-drawer switch-accordion-drawer " id="bevel-acc">
             <div class="js-switchAccordionControls switch-accordion-controls">
 
               <input class="js-accordionSwitch switch accordion-switch"
@@ -56,9 +41,9 @@
 
               <button class="js-accordionBtn switch-accordion-toggle"
                 type="button"
-                aria-expanded="false"
+                aria-expanded="true"
                 >
-                <p class="accordion-label" >
+                <p class="switch-accordion-label" >
                   bevel
                 </p>
                 <svg class="switch-accordion-icon svg-chev-down"
@@ -121,22 +106,22 @@
           </div>
 
           <!-- Color -->
-          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed">
+          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed" id="color-acc">
 
             <div class="js-switchAccordionControls switch-accordion-controls">
 
-                <input class="js-accordionSwitch switch accordion-switch"
-                  id="js-colorSwitch"
-                  type="checkbox"
-                  aria-checked="true"
-                  tabindex="0"
-                  checked  >
+              <input class="js-accordionSwitch switch accordion-switch"
+                id="js-colorSwitch"
+                type="checkbox"
+                aria-checked="true"
+                tabindex="0"
+                checked  >
 
               <button class="js-accordionBtn  switch-accordion-toggle "
                 type="button"
                 aria-expanded="false"
                 >
-                <p class="accordion-label" >
+                <p class="switch-accordion-label" >
                   color
                 </p>
                 <svg class="switch-accordion-icon svg-chev-down "
@@ -203,6 +188,7 @@
                   <input  class="thick-slider-ui js-colorSlider"
                     id="hsl-a"
                     type="range"
+                    value=""0.1"
                     min="0"
                     step="0.02"
                     max="1"  />
@@ -217,7 +203,7 @@
           </div>
 
           <!-- Noise -->
-          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed">
+          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed" id="noise-acc">
 
             <div class="js-switchAccordionControls switch-accordion-controls">
 
@@ -233,7 +219,7 @@
                 aria-expanded="false"
                 >
 
-                <p class="accordion-label" >
+                <p class="switch-accordion-label" >
                   noise
                 </p>
 
@@ -309,7 +295,7 @@
           </div>
 
           <!-- Shadow -->
-          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed">
+          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed" id="shadow-acc">
             <div class="js-switchAccordionControls switch-accordion-controls">
 
               <input class="js-accordionSwitch switch accordion-switch"
@@ -325,7 +311,7 @@
                 aria-expanded="false"
                 >
 
-                <p class="accordion-label" >
+                <p class="switch-accordion-label" >
                   shadow
                 </p>
 
@@ -416,7 +402,7 @@
           </div>
 
           <!-- Backdrop-filter -->
-          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed">
+          <div class="js-switch-accordion-drawer switch-accordion-drawer is-closed" id="filter-acc">
             <div class="js-switchAccordionControls switch-accordion-controls">
 
               <input class="js-accordionSwitch switch accordion-switch"
@@ -431,7 +417,7 @@
                 aria-expanded="false"
                 >
 
-                <p class="accordion-label" >
+                <p class="switch-accordion-label" >
                   filter
                 </p>
 
@@ -553,7 +539,7 @@
           </div>
 
           <!-- Copy code -->
-          <div class="switch-accordion-drawer is-closed">
+          <div class="switch-accordion-drawer is-closed" id="copy-acc">
             <div class=" switch-accordion-controls">
               <div aria-hidden="true" focusable="false" ></div>
 
@@ -561,7 +547,7 @@
                 type="button"
                 aria-expanded="false" >
 
-                <p class="accordion-label " >
+                <p class="switch-accordion-label " >
                   code
                 </p>
 

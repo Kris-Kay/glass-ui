@@ -5,6 +5,11 @@
 @use "../forward-styles/util" as *;
 @use "../forward-styles/components" as *;
 /* ================================================== */
+
+
+/* ================================================== */
+/* Page  */
+/* ================================================== */
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -14,12 +19,30 @@ html {
   }
 }
 
-/* ================================================== */
-/* Demo Glass  */
-/* ================================================== */
 body {
+  --color-h: 190;
+  --color-l: 70%;
+  --color-s: 90%;
+  --color-a: 0.1;
+
+  --color-s0: hsl(var(--color-h) 0% var(--color-l));
+  --color-s100: hsl(var(--color-h) 100% var(--color-l));
+
+  --color-l0: hsl(var(--color-h) var(--color-s) 0%);
+  --color-l50: hsl(var(--color-h) var(--color-s) 50%);
+  --color-l100: hsl(var(--color-h) var(--color-s) 100%);
+
+  --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
+  --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
+
+  --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
+
+  --swatch-text-color: 205 20% 90%;
+
+
   /* main element */
-  --color-glass3d: var(--color-hsla);
+  --color-glass3d:  var(--color-hsla);
+
   --shadow-glass3d: var(--sha-xs);
 
   /* ::after */
@@ -36,6 +59,7 @@ body {
 .glass-3d-gen {
   position: relative;
   z-index: z(glass);
+  border-radius: inherit;
 
   /* BG color */
   background-color: var(--color-glass3d);
@@ -80,35 +104,26 @@ body {
   // }
 }
 
-
-/* ================================================== */
-/* Page layout  */
-/* ================================================== */
-.generator-viewport {
-  pointer-events: none;
-  z-index: 1;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100svh;
-}
-
 .generator-page-layout {
 // background-color: rgba(0, 0, 255, 0.25);
 
   --gen-w: 100%;
+
+  z-index: 1;
   position: fixed;
   inset: 0;
+
   width: 100%;
   height: 100%;
-  z-index: z(page);
+
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1.5fr 2fr;
+
   padding: var(--nav-h) 0 0 0;
 
   @include bp(xs) {
-    grid-template-rows: 1.5fr 2fr;
+    grid-template-rows: 1.75fr 2fr;
   }
 
   @include bp(sm) {
@@ -144,101 +159,106 @@ body {
 /* Glass layout */
 /* ================================================== */
 .glass-layout {
-  // background-color: rgba(35, 15, 185, 0.15);
-  z-index: z(section);
-  top: calc(var(--nav-item-h) + var(--nav-padding));
-  width: 100%;
-  height: 100%;
+  // background-color: rgba(35, 15, 185, 0.25);
+
+  z-index: 2;
+  pointer-events: none;
 
   display: grid;
   place-items: center;
-  place-content: center;
-  place-self: start center;
-}
+  padding: 0 var(--moat);
 
-.glass-tele-rect {
-  pointer-events: none;
-
-  width: 100%;
-  height: 100%;
-
-  min-width: max-content;
-  min-height: max-content;
-
-  padding: 12% 4% 3% 4%;
-
-  @include radius("md");
+  @include bp(xs) {
+    padding: 1.5rem;
+  }
 
   @include bp(md) {
-    @include radius("sm");
-    padding: 12% 6% 4% 6%;
+    padding: 0;
   }
 
-  @media (height < 565px) {
-    padding: 6% 3% 3% 3%;
-  }
-
-  @media (height < 450px) {
-    padding: 4% 2% 2% 2%;
-  }
-}
-
-.glass-tele-group {
-// outline: solid 2px blue;
-  // background-color: rgba(185, 86, 15, 0.4);
-
-  pointer-events: none;
-  z-index: 3;
-  width: clamp( min(100%, 100px), 300px, 400px);
-  min-width: fit-content;
-  min-height: fit-content;
-
-  display: grid;
-  place-items: center;
-  place-content: center;
-
-  //   & > .glass-tele-rect {
-  //     outline: solid 2px red;
-  //     pointer-events: auto;
-  //     cursor: pointer;
-
-  //     will-change: padding;
-  //     transition: padding $smooth-cubic $speed-2xslow;
-
-  //     @media (hover: hover) {
-  //       &:hover {
-  //         transition: padding $smooth-cubic $speed-2xslow;
-  //         padding: 10% 6% 6% 6%;
-  //         outline: solid 2px orange;
-
-  //         & > .glass-tele-rect {
-  //           padding: 8% 5% 8% 6%;
-  //           // transition: padding $smooth-cubic $speed-2xslow;
-  //           outline: solid 2px green;
-  //         }
-  //       }
-  //     }
-
+  // @include bp(lg) {
+  //   // padding: 10% 0;
   // }
 }
 
-.glass-gen-card {
-  pointer-events: none;
+.tele-rect-bin {
+// outline: solid 2px blue;
 
-  width: max-content;
-  height: auto;
-  aspect-ratio: 3 / 1;
+  pointer-events: none;
+  z-index: 3;
+
+  width: 100%;
+  min-width: max-content;
+  height: 100%;
 
   display: grid;
+  place-items: center;
+
+
+  max-width: clamp( min(100%, 100px), 420px, 500px);
+}
+
+.tele-rect {
+  pointer-events: auto;
+  cursor: pointer;
+
+  min-width: max-content;
+  width: 100%;
+
+  @include radius("md");
+
+  @include bp(lg) {
+    @include radius("sm");
+  }
+
+  padding: 8% 12% 4% 4%;
+  will-change: padding;
+  transition: padding $smooth-cubic $speed-xfast;
+
+  @media (hover: hover) {
+    &:hover {
+      padding: 8%;
+    }
+  }
+}
+
+.glass-gen-title {
+  // outline: solid 1px red;
+
+  z-index: 5;
+  pointer-events: none;
+  position: relative;
+  width: max-content;
+
+  aspect-ratio: 2.5 / 1;
+  display: grid;
   place-items: end center;
-  padding: 1rem;
+
+  padding: 0.75rem;
+
+  @include super-wide($font-weight-sm, --text-2xs, 2px);
+  line-height: $line-height-md;
+  word-break: keep-all;
+  text-align: center;
+  color: var(--text-mild);
+  text-shadow: var(--text-sha-xl);
+
+  @include bp(xs) {
+    @include super-wide($font-weight-sm, --text-2xs, 3px);
+  }
+
+  @include bp(sm) {
+    padding: 1rem;
+    @include super-wide($font-weight-sm, --text-xs, 4px);
+  }
 
   @include bp(md) {
-    aspect-ratio: 2.75 / 1;
+    aspect-ratio: 2.2 / 1;
+    padding: 1.25rem;
   }
 
   @include bp(xl) {
-    aspect-ratio: 2.5 / 1;
+    @include super-wide($font-weight-sm, --text-xs, 5px);
   }
 
   @media (height < 565px) {
@@ -247,32 +267,6 @@ body {
   }
 }
 
-.glass-gen-title {
-  z-index: 7;
-  pointer-events: none;
-
-  width: max-content;
-  height: fit-content;
-
-  @include super-wide($font-weight-sm, --text-2xs, 3px);
-  line-height: 1;
-  word-break: keep-all;
-  text-align: center;
-  color: var(--text-mild);
-  text-shadow: var(--text-sha-xl);
-
-  @include bp(xs) {
-    @include super-wide($font-weight-sm, --text-2xs, 4px);
-  }
-
-  @include bp(sm) {
-    @include super-wide($font-weight-sm, --text-xs, 5px);
-  }
-
-  @include bp(xl) {
-    @include super-wide($font-weight-sm, --text-xs, 8px);
-  }
-}
 
 /* ================================================== */
 /* Generator  */
@@ -310,7 +304,7 @@ body {
   display: grid;
 
 /* Scroll */
-  overflow-y: scroll;
+  overflow: scroll;
   overscroll-behavior: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -325,7 +319,7 @@ body {
   @include bp(lg) {
     --space: var(--lg);
     border-radius: var(--md);
-          height: 90%;
+    height: 90%;
   }
 
   @include bp(xl) {
@@ -443,46 +437,11 @@ body {
 
 /*  switch accordion toggle */
 /* ================================================== */
-.switch-accordion-toggle {
-  z-index: 8;
-  width: 100%;
-
-  cursor: pointer;
-  pointer-events: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &:hover {
-    & .accordion-label {
-      color: var(--text-2xstrong);
-    }
-
-    & > .switch-accordion-icon {
-      background-color: var(--text-2xstrong);
-      transition: background-color $speed-base $smooth-cubic;
-    }
-  }
-
-  &:disabled {
-    cursor: auto;
-
-    & .accordion-label {
-      color: var(--text-mild);
-    }
-
-    & > .switch-accordion-icon {
-      background-color: transparent;
-      @include btn-svg-transition;
-    }
-  }
-}
-
-.accordion-label {
+.switch-accordion-label {
   pointer-events: none;
   @include title-md(start);
   font-weight: $font-weight-lg;
-  color: var(--text-strong);
+  color: var(--text-base);
   text-shadow: var(--text-sha-xl);
   transition:  color $speed-base $smooth-cubic;
 }
@@ -494,9 +453,44 @@ body {
   height: 1.75em;
   place-self: center end;
 
-  background-color: var(--text-strong);
+  background-color: var(--text-base);
   transform: rotate(180deg);
-  transition: transform $speed-xslow $smooth-cubic;
+  transition: transform $speed-base $smooth-cubic,
+              background-color $speed-base $smooth-cubic;
+}
+
+.switch-accordion-toggle {
+  z-index: 8;
+  width: 100%;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    & > .switch-accordion-label {
+      color: var(--text-2xstrong);
+    }
+
+    & > .switch-accordion-icon {
+      background-color: var(--text-2xstrong);
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
+
+    & > .switch-accordion-label {
+      color: var(--text-mild);
+    }
+
+    & > .switch-accordion-icon {
+      background-color: transparent;
+    }
+  }
 }
 
 .accordion-switch {
