@@ -5,8 +5,13 @@ function toggleAccordion(e) {
   const $thisToggle = e.target;
   const $thisAccordion = $thisToggle.parentNode.parentNode;
   const $expanded = $thisToggle.getAttribute("aria-expanded") === "true" || false;
+<<<<<<< Updated upstream
   const $thisIcon = $thisToggle.querySelector(".js-accordionIcon");
   const $thisContent = $thisAccordion.querySelector(".js-accordionContent");
+=======
+
+  // console.log("$thisAccordion: " + $thisAccordion.id);
+>>>>>>> Stashed changes
 
   $thisToggle.setAttribute("aria-expanded", !$expanded);
   $thisToggle.classList.toggle("is-closed");
