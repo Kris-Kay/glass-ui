@@ -34,19 +34,19 @@ body {
 
   --inset: var(--inset-sm);
 
-  --knob: hsl(var(--neutral-95) / 0.95);
-  --knob-hover: hsl(var(--neutral-90) / 0.85);
+  --knob: hsla(var(--neutral-95) / 0.95);
+  --knob-hover: hsla(var(--neutral-90) / 0.85);
   --knob-sha: var(--sha-xs);
 
-  --bg-checked: hsl(var(--primary-50) / 0.7);
-  --bg-checked-hover: hsl(var(--primary-40) / 1);
+  --bg-checked: hsla(var(--primary-50) / 0.7);
+  --bg-checked-hover: hsla(var(--primary-40) / 1);
 
   --bg-disabled: var(--inset-bg-xdeep);
   --inset-disabled: none;
-  --knob-disabled: hsl(var(--neutral-90) / 0.25);
+  --knob-disabled: hsla(var(--neutral-90) / 0.25);
   --knob-disabled-sha: none;
 
-  --bg-disabled-checked: hsl(var(--primary-70) / 0.4);
+  --bg-disabled-checked: hsla(var(--primary-70) / 0.4);
 }
 
 /* Base for switch | checkbox | radio button   */

@@ -25,23 +25,23 @@ body {
   // --color-s: 90%;
   // --color-a: 0.1;
 
-  // --color-s0: hsl(var(--color-h) 0% var(--color-l));
-  // --color-s100: hsl(var(--color-h) 100% var(--color-l));
+  // --color-s0: hsla(var(--color-h) 0% var(--color-l));
+  // --color-s100: hsla(var(--color-h) 100% var(--color-l));
 
-  // --color-l0: hsl(var(--color-h) var(--color-s) 0%);
-  // --color-l50: hsl(var(--color-h) var(--color-s) 50%);
-  // --color-l100: hsl(var(--color-h) var(--color-s) 100%);
+  // --color-l0: hsla(var(--color-h) var(--color-s) 0%);
+  // --color-l50: hsla(var(--color-h) var(--color-s) 50%);
+  // --color-l100: hsla(var(--color-h) var(--color-s) 100%);
 
-  // --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
-  // --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
+  // --color-a0: hsla(var(--color-h) var(--color-s) var(--color-l) / 0 );
+  // --color-a100: hsla(var(--color-h) var(--color-s) var(--color-l) / 1 );
 
-  // --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
+  // --color-hsla: hsla(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
 
   // --swatch-text-color: 205 20% 90%;
 
 
   /* main element */
-  --color-glass3d:  var(--color-hsla);
+  --color-glass3d:  hsla(190, 90%, 60%, 0.1);
 
   --shadow-glass3d: var(--sha-xs);
 
@@ -53,7 +53,9 @@ body {
   --blur-glass3d: 30;
   --bright-glass3d: 1.1;
   --satu-glass3d: 1.5;
-  --filter-glass3d: blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d));
+  --filter-glass3d: saturate(var(--satu-glass3d));
+  // --filter-glass3d: blur(20px) saturate(var(--satu-glass3d));
+  // --filter-glass3d: blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d));
 }
 
 .glass-3d-gen {
@@ -240,7 +242,8 @@ body {
   line-height: $line-height-md;
   word-break: keep-all;
   text-align: center;
-  color: var(--text-mild);
+  // color: var(--text-mild);
+  color: hsla(var(--swatch-text-color) / 1);
   text-shadow: var(--text-sha-xl);
 
   @include bp(xs) {

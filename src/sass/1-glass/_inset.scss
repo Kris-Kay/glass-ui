@@ -14,31 +14,31 @@ html {
 //  top-left blur xl sha
 
 --inset-sm:
-  inset -2px -2px 1px -3.25px hsl(var(--highlight) / 0.99),
-  inset -0.5px -0.5px 0.5px -0.25px hsl(var(--highlight) / 0.3),
-  inset -0.75px -0.75px 0.25px  hsl(var(--highlight) / 0.1),
-  inset 0.5px 0.5px 0.5px -0.5px  hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
-  inset 1px 1px 2px  hsl(var(--shadow) / 0.2),
-  inset 2px 2px 16px -8px hsl(var(--shadow) / 0.25);
+  inset -2px -2px 1px -3.25px hsla(var(--highlight) / 0.99),
+  inset -0.5px -0.5px 0.5px -0.25px hsla(var(--highlight) / 0.3),
+  inset -0.75px -0.75px 0.25px  hsla(var(--highlight) / 0.1),
+  inset 0.5px 0.5px 0.5px -0.5px  hsla(var(--shadow) / 0.1),
+  inset 0.25px 0.25px 1.25px hsla(var(--shadow) / 0.2),
+  inset 1px 1px 2px  hsla(var(--shadow) / 0.2),
+  inset 2px 2px 16px -8px hsla(var(--shadow) / 0.25);
 
 --inset-md:
-  inset -2px -2px 1px -3.25px hsl(var(--highlight) / 0.99),
-  inset -1px -1px 0.75px -0.75px hsl(var(--highlight) / 0.4),
-  inset -1px -1px 0.25px  hsl(var(--highlight) / 0.1),
-  inset 0.75px 0.75px 1px -0.25px hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
-  inset 1.25px 1.25px 2px hsl(var(--shadow) / 0.2),
-  inset 2px 2px 16px -8px hsl(var(--shadow) / 0.25);
+  inset -2px -2px 1px -3.25px hsla(var(--highlight) / 0.99),
+  inset -1px -1px 0.75px -0.75px hsla(var(--highlight) / 0.4),
+  inset -1px -1px 0.25px  hsla(var(--highlight) / 0.1),
+  inset 0.75px 0.75px 1px -0.25px hsla(var(--shadow) / 0.1),
+  inset 0.25px 0.25px 1.25px hsla(var(--shadow) / 0.2),
+  inset 1.25px 1.25px 2px hsla(var(--shadow) / 0.2),
+  inset 2px 2px 16px -8px hsla(var(--shadow) / 0.25);
 
 --inset-lg:
-  inset -2px -2px 1px -3.25px hsl(var(--highlight) / 0.99),
-  inset -1.25px -1.25px 1px -0.75px hsl(var(--highlight) / 0.4),
-  inset -1.25px -1.25px 0.25px  hsl(var(--highlight) / 0.1),
-  inset 0.75px 0.75px 1px -0.25px hsl(var(--shadow) / 0.1),
-  inset 0.25px 0.25px 1.25px hsl(var(--shadow) / 0.2),
-  inset 1.5px 1.5px 2.25px hsl(var(--shadow) / 0.2),
-  inset 4px 4px 18px -10px hsl(var(--shadow) / 0.25);
+  inset -2px -2px 1px -3.25px hsla(var(--highlight) / 0.99),
+  inset -1.25px -1.25px 1px -0.75px hsla(var(--highlight) / 0.4),
+  inset -1.25px -1.25px 0.25px  hsla(var(--highlight) / 0.1),
+  inset 0.75px 0.75px 1px -0.25px hsla(var(--shadow) / 0.1),
+  inset 0.25px 0.25px 1.25px hsla(var(--shadow) / 0.2),
+  inset 1.5px 1.5px 2.25px hsla(var(--shadow) / 0.2),
+  inset 4px 4px 18px -10px hsla(var(--shadow) / 0.25);
 
 
 /* Flat insets  */
@@ -51,28 +51,28 @@ html {
 //  top lg sha
 
 --inset-flat-sm:
-  inset 0 -0.75px 0.75px -0.8px hsl(var(--highlight) / 0.4),
-  inset 0 -0.75px 0.25px -0.25px hsl(var(--highlight) / 0.15),
-  inset 0 0.5px 0.5px -0.55px hsl(var(--shadow) / 0.1),
-  inset 0 1.5px 1.5px -1.55px  hsl(var(--shadow) / 0.2),
-  inset 0 2px 2px -2.25px hsl(var(--shadow) / 0.35),
-  inset 0 12px 12px -13px hsl(var(--shadow) / 0.2);
+  inset 0 -0.75px 0.75px -0.8px hsla(var(--highlight) / 0.4),
+  inset 0 -0.75px 0.25px -0.25px hsla(var(--highlight) / 0.15),
+  inset 0 0.5px 0.5px -0.55px hsla(var(--shadow) / 0.1),
+  inset 0 1.5px 1.5px -1.55px  hsla(var(--shadow) / 0.2),
+  inset 0 2px 2px -2.25px hsla(var(--shadow) / 0.35),
+  inset 0 12px 12px -13px hsla(var(--shadow) / 0.2);
 
 --inset-flat-md:
-  inset 0 -1px 1px -1.05px hsl(var(--highlight) / 0.4),
-  inset 0 -1px 0.25px -0.25px hsl(var(--highlight) / 0.15),
-  inset 0 0.5px 0.5px -0.55px hsl(var(--shadow) / 0.1),
-  inset 0 2px 2px -2.25px hsl(var(--shadow) / 0.25),
-  inset 0 3px 3px -3.25px hsl(var(--shadow) / 0.35),
-  inset 0 14px 14px -15px hsl(var(--shadow) / 0.2);
+  inset 0 -1px 1px -1.05px hsla(var(--highlight) / 0.4),
+  inset 0 -1px 0.25px -0.25px hsla(var(--highlight) / 0.15),
+  inset 0 0.5px 0.5px -0.55px hsla(var(--shadow) / 0.1),
+  inset 0 2px 2px -2.25px hsla(var(--shadow) / 0.25),
+  inset 0 3px 3px -3.25px hsla(var(--shadow) / 0.35),
+  inset 0 14px 14px -15px hsla(var(--shadow) / 0.2);
 
 --inset-flat-lg:
-  inset 0 -1.5px 1.5px -1.55px hsl(var(--highlight) / 0.4),
-  inset 0 -1.5px 0.25px -0.25px hsl(var(--highlight) / 0.15),
-  inset 0 0.5px 0.5px -0.55px hsl(var(--shadow) / 0.15),
-  inset 0 2.5px 2.5px -2.75px hsl(var(--shadow) / 0.25),
-  inset 0 4px 4px -4.25px hsl(var(--shadow) / 0.35),
-  inset 0 16px 16px -17px hsl(var(--shadow) / 0.2);
+  inset 0 -1.5px 1.5px -1.55px hsla(var(--highlight) / 0.4),
+  inset 0 -1.5px 0.25px -0.25px hsla(var(--highlight) / 0.15),
+  inset 0 0.5px 0.5px -0.55px hsla(var(--shadow) / 0.15),
+  inset 0 2.5px 2.5px -2.75px hsla(var(--shadow) / 0.25),
+  inset 0 4px 4px -4.25px hsla(var(--shadow) / 0.35),
+  inset 0 16px 16px -17px hsla(var(--shadow) / 0.2);
 }
 
 /* Rounded inset classes */
