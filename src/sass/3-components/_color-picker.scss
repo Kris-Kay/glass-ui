@@ -7,9 +7,9 @@
 
 body {
   --color-h: 190;
-  --color-l: 60;
-  --color-s: 40;
-  --color-a: 0.05;
+  --color-l: 30%;
+  --color-s: 90%;
+  --color-a: 0.1;
 
   --color-s0: hsl(var(--color-h) 0% var(--color-l));
   --color-s100: hsl(var(--color-h) 100% var(--color-l));

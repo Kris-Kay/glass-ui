@@ -8,15 +8,27 @@ let $colorSwatch;
 
 let $computed;
 
-let $hVal;
-let $lVal;
-let $sVal;
-let $aVal;
+// let $hVal;
+// let $lVal;
+// let $sVal;
+// let $aVal;
+
+let $hsla;
 
 let $hSlider;
 let $lSlider;
 let $sSlider;
 let $aSlider;
+
+let $hSliderVal = 190;
+let $lSliderVal = 70;
+let $sSliderVal = 90;
+let $aSliderVal = 0.1;
+
+let $hVal = '190';
+let $lVal = '70%';
+let $sVal = '90%';
+let $aVal = '0.1';
 
 
 function textColorContrast() {
@@ -91,43 +103,41 @@ function createColorHTML() {
 
 
 function initColorPicker() {
+  /* get body's computed style to access its CSS --vars */
+  $computed = window.getComputedStyle(document.body);
 
-    $colorPicker = document.getElementById("js-colorPicker");
-    $colorSwatch = document.getElementById("colorSwatch");
+  $colorPicker = document.getElementById("js-colorPicker");
+  $colorSwatch = document.getElementById("colorSwatch");
 
-    /* get body's computed style to access its CSS --vars */
-    $computed = window.getComputedStyle(document.body);
+ /* set initial color values */
+  document.body.style.setProperty("--color-h", `${$hVal}`);
+  document.body.style.setProperty("--color-l", `${$lVal}`);
+  document.body.style.setProperty("--color-s", `${$sVal}`);
+  document.body.style.setProperty("--color-a", `${$aVal}`);
 
-    $hVal = $computed.getPropertyValue("--color-h");
-    $lVal = $computed.getPropertyValue("--color-l");
-    $sVal = $computed.getPropertyValue("--color-s");
-    $aVal = $computed.getPropertyValue("--color-a");
+ /* init sliders */
+  $hSlider = document.getElementById("hsl-h");
+  $lSlider = document.getElementById("hsl-l");
+  $sSlider = document.getElementById("hsl-s");
+  $aSlider = document.getElementById("hsl-a");
 
-    $hSlider = document.getElementById("hsl-h");
-    $lSlider = document.getElementById("hsl-l");
-    $sSlider = document.getElementById("hsl-s");
-    $aSlider = document.getElementById("hsl-a");
+  /* set initial slider values */
+  $hSlider.value = $hSliderVal;
+  $lSlider.value = $lSliderVal;
+  $sSlider.value = $sSliderVal;
+  $aSlider.value = $aSliderVal;
 
-    /* use --vars to set initial slider values */
-    $hSlider.value = $hVal;
-    $lSlider.value = $lVal;
-    $sSlider.value = $sVal;
-    $aSlider.value = $aVal;
 
-    /* reset the saturation and lightness --vars with a `%` or Safari will throw a fit */
-    document.body.style.setProperty("--color-h", `${$hVal}`);
-    document.body.style.setProperty("--color-l", `${$lVal}%`);
-    document.body.style.setProperty("--color-s", `${$sVal}%`);
-    document.body.style.setProperty("--color-a", `${$aVal}`);
+  /* give sliders an event listener */
+  $colorPicker.querySelectorAll('.js-colorSlider').forEach(($slider) => {
+    $slider.addEventListener("input", handleSliderChange);
+  });
 
-    /* give sliders an event listener */
-    $colorPicker.querySelectorAll('.js-colorSlider').forEach(($slider) => {
-      $slider.addEventListener("input", handleSliderChange);
-    });
+  /* update HTML value display & its text color */
+  $colorSwatch.innerHTML = createColorHTML();
+  textColorContrast();
+}
 
-    /* update HTML value display & its text color */
-    $colorSwatch.innerHTML = createColorHTML();
-    textColorContrast();
 
 
   // function setInitialValues() {
@@ -170,4 +180,29 @@ function initColorPicker() {
   // }
   // setInitialValues();
 
-}
+
+   // $hVal = $computed.getPropertyValue("--color-h");
+  // $lVal = $computed.getPropertyValue("--color-l");
+  // $sVal = $computed.getPropertyValue("--color-s");
+  // $aVal = $computed.getPropertyValue("--color-a");
+
+  // $hSlider = document.getElementById("hsl-h");
+  // $lSlider = document.getElementById("hsl-l");
+  // $sSlider = document.getElementById("hsl-s");
+  // $aSlider = document.getElementById("hsl-a");
+
+  // /* use --vars to set initial slider values */
+  // $hSlider.value = $hVal;
+  // $lSlider.value = $lVal;
+  // $sSlider.value = $sVal;
+  // $aSlider.value = $aVal;
+
+  // $hVal = $computed.getPropertyValue("--color-h");
+  // $lVal = $computed.getPropertyValue("--color-l");
+  // $sVal = $computed.getPropertyValue("--color-s");
+  // $aVal = $computed.getPropertyValue("--color-a");
+
+  // document.body.style.setProperty("--color-h", `${$hVal}`);
+  // document.body.style.setProperty("--color-l", `${$lVal}`);
+  // document.body.style.setProperty("--color-s", `${$sVal}`);
+  // document.body.style.setProperty("--color-a", `${$aVal}`);

@@ -20,24 +20,24 @@ html {
 }
 
 body {
-  --color-h: 190;
-  --color-l: 70%;
-  --color-s: 90%;
-  --color-a: 0.1;
+  // --color-h: 190;
+  // --color-l: 70%;
+  // --color-s: 90%;
+  // --color-a: 0.1;
 
-  --color-s0: hsl(var(--color-h) 0% var(--color-l));
-  --color-s100: hsl(var(--color-h) 100% var(--color-l));
+  // --color-s0: hsl(var(--color-h) 0% var(--color-l));
+  // --color-s100: hsl(var(--color-h) 100% var(--color-l));
 
-  --color-l0: hsl(var(--color-h) var(--color-s) 0%);
-  --color-l50: hsl(var(--color-h) var(--color-s) 50%);
-  --color-l100: hsl(var(--color-h) var(--color-s) 100%);
+  // --color-l0: hsl(var(--color-h) var(--color-s) 0%);
+  // --color-l50: hsl(var(--color-h) var(--color-s) 50%);
+  // --color-l100: hsl(var(--color-h) var(--color-s) 100%);
 
-  --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
-  --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
+  // --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
+  // --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
 
-  --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
+  // --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
 
-  --swatch-text-color: 205 20% 90%;
+  // --swatch-text-color: 205 20% 90%;
 
 
   /* main element */
@@ -236,7 +236,7 @@ body {
 
   padding: 0.75rem;
 
-  @include super-wide($font-weight-sm, --text-2xs, 2px);
+  @include super-wide($font-weight-sm, --text-2xs, 1px);
   line-height: $line-height-md;
   word-break: keep-all;
   text-align: center;
