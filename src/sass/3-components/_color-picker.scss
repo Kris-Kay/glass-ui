@@ -11,19 +11,19 @@ body {
   --color-s: 90%;
   --color-a: 0.1;
 
-  --color-s0: hsl(var(--color-h) 0% var(--color-l));
-  --color-s100: hsl(var(--color-h) 100% var(--color-l));
+  --color-s0: hsla(var(--color-h) 0% var(--color-l));
+  --color-s100: hsla(var(--color-h) 100% var(--color-l));
 
-  --color-l0: hsl(var(--color-h) var(--color-s) 0%);
-  --color-l50: hsl(var(--color-h) var(--color-s) 50%);
-  --color-l100: hsl(var(--color-h) var(--color-s) 100%);
+  --color-l0: hsla(var(--color-h) var(--color-s) 0%);
+  --color-l50: hsla(var(--color-h) var(--color-s) 50%);
+  --color-l100: hsla(var(--color-h) var(--color-s) 100%);
 
-  --color-a0: hsl(var(--color-h) var(--color-s) var(--color-l) / 0 );
-  --color-a100: hsl(var(--color-h) var(--color-s) var(--color-l) / 1 );
+  --color-a0: hsla(var(--color-h) var(--color-s) var(--color-l) / 0 );
+  --color-a100: hsla(var(--color-h) var(--color-s) var(--color-l) / 1 );
 
-  --color-hsla: hsl(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
+  --color-hsla: hsla(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
 
-  --swatch-text-color: 205 20% 90%;
+  --swatch-text-color: 190 20% 90%;
 }
 
 .color-picker-layout {
@@ -40,10 +40,10 @@ body {
     inset 0 0 0 1px hsla(var(--swatch-text-color) / 0.4),
     inset 0 0 0.2px 2px hsla(var(--swatch-text-color) / 0.2),
     inset 0 0 0 2.5px hsla(var(--highlight) / 0.3),
-    0 0 0.2px hsl(var(--shadow) / 0.2),
-    0 0 0.5px hsl(var(--shadow) / 0.3),
-    0.2px 0.2px 1px hsl(var(--shadow) / 0.5),
-    1px 1px 4px -1px hsl(var(--shadow) / 0.3);
+    0 0 0.2px hsla(var(--shadow) / 0.2),
+    0 0 0.5px hsla(var(--shadow) / 0.3),
+    0.2px 0.2px 1px hsla(var(--shadow) / 0.5),
+    1px 1px 4px -1px hsla(var(--shadow) / 0.3);
 
   width: 100%;
   height: fit-content;
@@ -69,12 +69,11 @@ body {
 
 .thick-slider-label {
   width: 20px;
-  @include title-md(start);
   font-weight: $font-weight-lg;
   line-height: 1;
   color: var(--text-strong);
-  // color: hsla(var(--swatch-text-color) / 1);
   text-shadow: var(--text-sha-xl);
+  @include title-md(start);
 }
 
 @mixin thick-track() {
@@ -99,7 +98,6 @@ body {
   border-radius: var(--thumb-radius);
   background-color: var(--thumb-color);
   box-shadow: var(--thumb-sha);
-  transition: all $speed-fast $smooth-cubic;
 }
 
 .thick-slider-ui {
@@ -120,20 +118,18 @@ body {
   border: none;
   overflow: hidden;
 
-  @include outer-radius(var(--thumb-radius), var(--track-gap-half));
-  color: inherit;
   box-shadow: var(--track-sha);
 
   // background-origin: content-box;
   // background-origin: border-box;
   background-repeat: no-repeat;
-  transition: all $speed-fast $smooth-cubic;
 
+  @include outer-radius(var(--thumb-radius), var(--track-gap-half));
 
   &::-webkit-slider-runnable-track {
     -webkit-appearance: none;
-    @include thick-track;
     padding: var(--track-gap-half);
+    @include thick-track;
   }
 
   &::-webkit-slider-thumb {

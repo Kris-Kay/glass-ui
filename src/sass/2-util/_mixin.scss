@@ -61,7 +61,7 @@ $lightness: (
 @mixin generate-color-lightness-classes($map, $property, $variablePrefix, $classSplit) {
   @each $key, $value in $map {
     &#{$classSplit}#{$key} {
-      #{$property}: hsl(var(--#{$variablePrefix}-#{$key}));
+      #{$property}: hsla(var(--#{$variablePrefix}-#{$key}));
     }
   }
 }
