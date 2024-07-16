@@ -12,6 +12,17 @@
 /* Kill margin with fire */
 * { margin: 0; }
 
+html {
+  // width: 100%;
+  // height: fit-content;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+
+  scrollbar-gutter: stable;
+  // overscroll-behavior: contain;
+}
 
 /* Improve text rendering */
 body {
