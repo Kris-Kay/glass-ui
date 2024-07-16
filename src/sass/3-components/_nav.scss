@@ -29,8 +29,8 @@ html {
   margin: 0 auto;
   pointer-events: none;
 
-  @include bp(xxl) {
-    max-width: $bp-2xl;
+  @include bp(xl) {
+    max-width: $bp-xl;
   }
 }
 
