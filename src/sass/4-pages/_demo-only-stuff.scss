@@ -6,6 +6,15 @@
 @use "../forward-styles/components" as *;
 /* ================================================== */
 
+.content-area {
+/* debug */
+  // background-color: pink;
+  // background-color: #fff;
+  // background-color: hsl(var(--neutral-60) / 1);
+  // background-color: #000;
+}
+
+
 /* Fixed background panel */
 /* ================================================== */
 /* Controled by nav's tab menu */
@@ -320,37 +329,37 @@
 }
 
 /* Telescope rect */
-.tele-rect-bin {
-  height: 450px;
+// .tele-rect-bin {
+//   height: 450px;
 
-  @include bp(xs) {
-    height: 550px;
-  }
-}
+//   @include bp(xs) {
+//     height: 550px;
+//   }
+// }
 
-.tele-rect {
-  display: grid;
-  touch-action: pan-y;
-  min-width: fit-content;
-  width: 100%;
-  overflow: hidden;
-  padding: 8% 12% 4% 4%;
-  background-color: var(--tint-xdark);
+// .tele-rect {
+//   display: grid;
+//   touch-action: pan-y;
+//   min-width: fit-content;
+//   width: 100%;
+//   overflow: hidden;
+//   padding: 8% 12% 4% 4%;
+//   background-color: var(--tint-xdark);
 
-  will-change: padding;
-  transition: padding $smooth-cubic $speed-xfast;
+//   will-change: padding;
+//   transition: padding $smooth-cubic $speed-xfast;
 
-  @media (hover: hover) {
-    &:hover {
-      padding: 8%;
-    }
-  }
+//   @media (hover: hover) {
+//     &:hover {
+//       padding: 8%;
+//     }
+//   }
 
-  & > p {
-    padding: var(--2xs);
-    pointer-events: none;
-  }
-}
+//   & > p {
+//     padding: var(--2xs);
+//     pointer-events: none;
+//   }
+// }
 
 
 /* Glass inset Demo */
@@ -590,4 +599,13 @@
   @include bp(sm) {
     @include label(--text-md);
   }
+}
+
+
+/* Above-the-fold hero header */
+/* ================================================== */
+.hero {
+  display: block;
+  height: 100vh;
+  min-height: 100lvh;
 }
