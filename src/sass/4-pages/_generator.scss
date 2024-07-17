@@ -20,28 +20,10 @@ html {
 }
 
 body {
-  // --color-h: 190;
-  // --color-l: 70%;
-  // --color-s: 90%;
-  // --color-a: 0.1;
-
-  // --color-s0: hsla(var(--color-h) 0% var(--color-l));
-  // --color-s100: hsla(var(--color-h) 100% var(--color-l));
-
-  // --color-l0: hsla(var(--color-h) var(--color-s) 0%);
-  // --color-l50: hsla(var(--color-h) var(--color-s) 50%);
-  // --color-l100: hsla(var(--color-h) var(--color-s) 100%);
-
-  // --color-a0: hsla(var(--color-h) var(--color-s) var(--color-l) / 0 );
-  // --color-a100: hsla(var(--color-h) var(--color-s) var(--color-l) / 1 );
-
-  // --color-hsla: hsla(var(--color-h) var(--color-s) var(--color-l) / var(--color-a));
-
-  // --swatch-text-color: 205 20% 90%;
-
 
   /* main element */
-  --color-glass3d:  hsla(190, 90%, 60%, 0.1);
+  // --color-glass3d:  hsla(190, 90%, 60%, 0.1);
+  --color-glass3d: var(--color-hsla);
 
   --shadow-glass3d: var(--sha-xs);
 
@@ -50,12 +32,11 @@ body {
 
   /* ::before */
   --noise-glass3d: var(--noise-gray);
-  --blur-glass3d: 30;
-  --bright-glass3d: 1.1;
-  --satu-glass3d: 1.5;
-  --filter-glass3d: saturate(var(--satu-glass3d));
-  // --filter-glass3d: blur(20px) saturate(var(--satu-glass3d));
-  // --filter-glass3d: blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d));
+
+  --blur-glass3d: 12;
+  --bright-glass3d: 1.7;
+  --satu-glass3d: 0.5;
+  --filter-glass3d: blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d));
 }
 
 .glass-3d-gen {
@@ -177,10 +158,6 @@ body {
   @include bp(md) {
     padding: 0;
   }
-
-  // @include bp(lg) {
-  //   // padding: 10% 0;
-  // }
 }
 
 .tele-rect-bin {
@@ -196,7 +173,6 @@ body {
   display: grid;
   place-items: center;
 
-
   max-width: clamp( min(100%, 100px), 420px, 500px);
 }
 
@@ -207,15 +183,16 @@ body {
   min-width: max-content;
   width: 100%;
 
+  padding: 8% 12% 4% 4%;
+  will-change: padding;
+  transition: padding $speed-xslow $smooth-cubic ;
+  // transform: translateZ(0);
+
   @include radius("md");
 
   @include bp(lg) {
     @include radius("sm");
   }
-
-  padding: 8% 12% 4% 4%;
-  will-change: padding;
-  transition: padding $smooth-cubic $speed-xfast;
 
   @media (hover: hover) {
     &:hover {
@@ -238,13 +215,12 @@ body {
 
   padding: 0.75rem;
 
-  @include super-wide($font-weight-sm, --text-2xs, 1px);
   line-height: $line-height-md;
   word-break: keep-all;
   text-align: center;
-  // color: var(--text-mild);
   color: hsla(var(--swatch-text-color) / 1);
   text-shadow: var(--text-sha-xl);
+  @include super-wide($font-weight-sm, --text-2xs, 1px);
 
   @include bp(xs) {
     @include super-wide($font-weight-sm, --text-2xs, 3px);
@@ -441,12 +417,16 @@ body {
 /*  switch accordion toggle */
 /* ================================================== */
 .switch-accordion-label {
-  pointer-events: none;
   @include title-md(start);
-  font-weight: $font-weight-lg;
-  color: var(--text-base);
-  text-shadow: var(--text-sha-xl);
-  transition:  color $speed-base $smooth-cubic;
+
+  & {
+    pointer-events: none;
+    font-weight: $font-weight-lg;
+    color: var(--text-base);
+    text-shadow: var(--text-sha-xl);
+    transition:  color $speed-xslow $smooth-cubic;
+    font-size: 1.3em;
+  }
 }
 
 .switch-accordion-icon {
@@ -458,8 +438,8 @@ body {
 
   background-color: var(--text-base);
   transform: rotate(180deg);
-  transition: transform $speed-base $smooth-cubic,
-              background-color $speed-base $smooth-cubic;
+  transition: transform $speed-xslow $smooth-cubic,
+              background-color $speed-xslow $smooth-cubic;
 }
 
 .switch-accordion-toggle {
@@ -487,7 +467,7 @@ body {
     cursor: auto;
 
     & > .switch-accordion-label {
-      color: var(--text-mild);
+      color: var(--text-xmild);
     }
 
     & > .switch-accordion-icon {
@@ -574,6 +554,7 @@ body {
 /* ================================================== */
 .code-display-bg {
   width: 100%;
+  min-height: fit-content;
   height: 100%;
   display: grid;
 
@@ -591,9 +572,11 @@ body {
 }
 
 .code-display-text {
-  z-index: 8;
+  z-index: 19;
   display: block;
   width: 100%;
+  min-height: fit-content;
+  height: 100%;
   white-space: pre;
   @include code;
   color: var(--text-strong);

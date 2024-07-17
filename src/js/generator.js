@@ -1,59 +1,376 @@
 /* ========================================== */
 /* 3d glass generator */
 /* ========================================== */
-let colorUpdateTimeout;
+let $glassCodeSource;
 
-let $computedGlass;
-
-let $colorSet;
-let $colorValue;
-
-let $bevelSet;
 let $bevelValue;
+let $bevelLastSet;
 
-let $noiseSet;
+let $colorValue;
+let $colorLastSet;
+
 let $noiseValue;
+let $noiseLastSet;
 
-let $shadowSet;
 let $shadowValue;
+let $shadowLastSet;
 
+let $blurValue;
+let $blurLastSet;
+let $brightValue;
+let $brightLastSet;
+let $satuValue;
+let $satuLastSet;
 let $filterValue;
 
-let $blurSet;
-let $blurValue;
+let $codeDisplay;
 
-let $brightSet;
-let $brightValue;
-
-let $satuSet;
-let $satuValue;
-
-
-
-/* display code */
 /* ========================================== */
-function displayComputedStyle() {
-  const $codeDisplay = document.getElementById('codeDisplay');
+/* set on/off values */
+/* ========================================== */
+function setOnOffValue($input, $isOn) {
+  let $id = $input.id;
+
+  /* bevel */
+  /* ========================================== */
+  if($id === "js-bevelSwitch") {
+    // console.log($isOn);
+    // console.log($bevelLastSet);
+    $bevelValue = $isOn ? $bevelLastSet : `0 0 0`;
+    document.body.style.setProperty("--bevel-glass3d", `${$bevelValue}`);
+
+  }
+
+  /* color */
+  /* ========================================== */
+  if($id === "js-colorSwitch") {
+    $colorValue = $isOn ? $colorLastSet : `transparent`;
+    document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
+
+    // console.log("on/off color value: " + $colorValue);
+  }
+
+  /* noise */
+  /* ========================================== */
+  if($id === "js-noiseSwitch") {
+    $noiseValue = $isOn ? $noiseLastSet : `none`;
+    document.body.style.setProperty("--noise-glass3d", `${$noiseValue}`);
+
+    // console.log("noise value: " + $noiseValue);
+  }
+
+  /* shadow */
+  /* ========================================== */
+  if($id === "js-shadowSwitch") {
+    $shadowValue = $isOn ? $shadowLastSet : `none`;
+    document.body.style.setProperty("--shadow-glass3d", `${$shadowValue}`);
+  }
+
+  /* blur */
+  if($id === "blur-checkbox") {
+    $blurValue = $isOn ? $blurLastSet : `0`;
+    document.body.style.setProperty("--blur-glass3d", `${$blurValue}px`);
+
+    console.log("blur value: " + $blurValue);
+  }
+
+  /* bright */
+  if($id === "bright-checkbox") {
+    $brightValue = $isOn ? $brightLastSet : `1`;
+    document.body.style.setProperty("--bright-glass3d", `${$brightValue}`);
+
+    // console.log("bright value: " + $brightValue);
+  }
+
+  /* satu */
+  if($id === "satu-checkbox") {
+    $satuValue = $isOn ? $satuLastSet : `1`;
+    document.body.style.setProperty("--satu-glass3d", `${$satuValue}`);
+
+    // console.log("satu value: " + $satuValue);
+  }
+
+    /* filter */
+  /* ========================================== */
+  if($id === "js-filterSwitch") {
+
+    if($isOn) {
+      $blurValue = $blurLastSet;
+      $brightValue = $brightLastSet;
+      $satuValue = $satuLastSet;
+
+      $filterValue = `blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d))`;
+
+    } else {
+      // $filterValue = `blur(0px) brightness(1) saturate(1)`;
+      $filterValue = `none`;
+    }
+
+    document.body.style.setProperty("--filter-glass3d", `${$filterValue}`);
+    // console.log("$filterValue: " + $filterValue);
+  }
+
+  displayCss();
+}
+
+
+/* ========================================== */
+/* Bevel */
+/* ========================================== */
+/* on bevel radio change to new value (not on/off) */
+function onBevelChange(event) {
+  $bevelValue = event.target.value;
+  $bevelLastSet = $bevelValue;
+  document.body.style.setProperty("--bevel-glass3d", `${$bevelValue}`);
+  displayCss();
+
+  // console.log("$bevelLastSet: " + $bevelLastSet);
+}
+
+/* add bevel radio event listener */
+function addBevelEvent() {
+  let $bevels = document.querySelectorAll('input[name="bevels"]');
+  $bevels.forEach(($bevel) => {
+    $bevel.addEventListener("change", onBevelChange);
+  });
+}
+
+
+/* ========================================== */
+/* Color sliders */
+/* ========================================== */
+/* on color slider input to new value (not on/off) */
+function onColorSliderChange() {
+  $colorValue = getHSLAString();
+  $colorLastSet = $colorValue;
+  document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
+  displayCss();
+
+  // console.log("$colorValue: " + $colorValue);
+}
+
+/* add color slider event listener */
+function addColorSliderEvent() {
+  let $colorSliders = document.querySelectorAll('.js-colorSlider');
+  $colorSliders.forEach(($slider) => {
+    $slider.addEventListener("change", onColorSliderChange);
+  });
+}
+
+
+/* ========================================== */
+/* Noise */
+/* ========================================== */
+/* on noise radio change to new value (not on/off) */
+function onNoiseChange(event) {
+  $noiseValue = event.target.value;
+  $noiseLastSet = $noiseValue;
+  document.body.style.setProperty("--noise-glass3d", `${$noiseValue}`);
+  displayCss();
+
+  // console.log("$noiseValue: " + $noiseValue);
+}
+
+/* add noise radio event listener */
+function addNoiseEvent() {
+  let $noises = document.querySelectorAll('input[name="noise"]');
+  $noises.forEach(($noise) => {
+    $noise.addEventListener("change", onNoiseChange);
+  });
+}
+
+
+/* ========================================== */
+/* Shadows */
+/* ========================================== */
+/* on shadow radio change to new value (not on/off) */
+function onShadowChange(event) {
+  $shadowValue = event.target.value;
+  $shadowLastSet = $shadowValue;
+  document.body.style.setProperty("--shadow-glass3d", `${$shadowValue}`);
+  displayCss();
+}
+
+/* add shadow radio event listener */
+function addShadowEvent() {
+  let $shadows = document.querySelectorAll('input[name="shadows"]');
+  $shadows.forEach(($shadow) => {
+    $shadow.addEventListener("change", onShadowChange);
+  });
+}
+
+
+/* ========================================== */
+/* Filter sliders */
+/* ========================================== */
+function onFilterSliderChange(event) {
+  let $slider = event.target;
+  let $id = $slider.id;
+
+  console.log("$filter slider: " + $id + " " + $slider.value);
+
+  /* find the slider that changed and update the corresponding --var to its value */
+  if($id  === "blur-slider") {
+    $blurValue = $slider.value;
+    $blurLastSet = $blurValue;
+    document.body.style.setProperty("--blur-glass3d", `${$blurValue}px`);
+
+  } else if($id  === "bright-slider") {
+    $brightValue = $slider.value;
+    $brightLastSet = $brightValue;
+    document.body.style.setProperty("--bright-glass3d", `${$brightValue}`);
+
+  } else if($id  === "satu-slider") {
+    $satuValue = $slider.value;
+    $satuLastSet = $satuValue;
+    document.body.style.setProperty("--satu-glass3d", `${$satuValue}`);
+  }
+
+  displayCss();
+}
+
+/* add filter slider event listener */
+function addFilterSliderEvent() {
+  let $filterSliders = document.querySelectorAll('.js-slider-ui');
+
+  $filterSliders.forEach(($fSlider) => {
+    $fSlider.addEventListener("input", onFilterSliderChange);
+  });
+}
+
+
+/* ========================================== */
+/* Filter checkboxes */
+/* ========================================== */
+function onCheckChange(event) {
+  let $check = event.target;
+  let $isOn = $check.checked;
+
+  let $filterControls = $check.parentNode.parentNode;
+  let $filterSlider = $filterControls.querySelector(".js-slider-ui");
+
+  if($isOn) {
+    $check.ariaChecked = "true";
+    $filterControls.classList.remove("is-off");
+    $filterSlider.removeAttribute("disabled");
+    // setOnOffValue($check, true);
+
+  } else {
+    $check.ariaChecked = "false";
+    $filterControls.classList.add("is-off");
+    $filterSlider.setAttribute("disabled", true);
+    // setOnOffValue($check, false);
+  }
+  setOnOffValue($check, $isOn);
+}
+
+
+/* add event listener to checkboxes */
+function addFilterCheckEvent() {
+  let $checkboxes = document.querySelectorAll(".js-filter-checkbox");
+
+  $checkboxes.forEach(($check) => {
+    $check.addEventListener("change", onCheckChange);
+  });
+}
+
+/* ========================================== */
+/* Accordions */
+/* ========================================== */
+/* on accordion toggle */
+function onAccordionToggle(event) {
+  let $toggle = event.target;
+  let $accordion = $toggle.parentNode.parentNode;
+  let $expanded = $toggle.getAttribute("aria-expanded") === "true" || false;
+
+  $accordion.classList.toggle("is-closed");
+  $toggle.setAttribute("aria-expanded", !$expanded);
+
+  // console.log("toggle $accordion: " + $accordion.id);
+  // console.log("$expanded: " + !$expanded);
+}
+
+/* add accordion chevron event listener */
+function addAccordionBtnEvent() {
+  let $accordionBtns = document.querySelectorAll(".js-accordionBtn");
+
+  $accordionBtns.forEach(($btn) => {
+    $btn.addEventListener("click", onAccordionToggle);
+  });
+}
+
+/* switch accordion on/off */
+function accordionOnOff($switch, $isOn) {
+  const $accordion = $switch.parentNode.parentNode;
+  const $accordionBtn = $accordion.querySelector(".js-accordionBtn");
+
+  if($isOn) {
+    // $accordion.classList.remove("is-closed");
+    // $accordionBtn.setAttribute("aria-expanded", true);
+    $accordionBtn.removeAttribute("disabled");
+  } else {
+    $accordion.classList.add("is-closed");
+    $accordionBtn.setAttribute("aria-expanded", false);
+    $accordionBtn.setAttribute("disabled", true);
+  };
+}
+
+
+/* ========================================== */
+/* Switches */
+/* ========================================== */
+/* on switch change */
+function onSwitchChange(event) {
+  let $switch = event.target;
+  let $isOn = $switch.checked;
+  setOnOffValue($switch, $isOn);
+  accordionOnOff($switch, $isOn);
+
+  // console.log($switch.id + " is on: " + $isOn);
+}
+
+/* add switch event listener */
+function addSwitchEvent() {
+  let $switches = document.querySelectorAll(".js-accordionSwitch");
+
+  $switches.forEach(($switch) => {
+    // let $isOn = $switch.checked;
+    // accordionOnOff($switch, $isOn);
+    $switch.addEventListener("change", onSwitchChange);
+
+    // console.log("add $switches " + $switch.id + " " + $isOn);
+  });
+}
+
+
+/* ========================================== */
+/* Display code */
+/* ========================================== */
+function displayCss() {
+  let $computedGlass = window.getComputedStyle($glassCodeSource); // [object CSS2Properties]
+  // let $computedGlassB4 = window.getComputedStyle($glassCodeSource, ':before'); // ::before
+  let $computedGlassAfter = window.getComputedStyle($glassCodeSource, ':after'); // ::after
+
+  let $bevelComp = $computedGlassAfter.getPropertyValue('box-shadow');
+  let $colorString = getHSLAString();
+  let $noiseURL = document.querySelector('input[name="noise"]:checked').getAttribute("noise-url");
+  let $shadowComp = $computedGlass.getPropertyValue('box-shadow');
+
+  // console.log("$bevelComp: " + $bevelComp );
+  // console.log("$noiseURL: " + $noiseURL );
 
   $codeDisplay.textContent =
     `.glass-3d { \n` +
 
-    `  /* main element */ \n` +
-    `  --color-glass3d: ${$colorValue}; \n` +
+    `  /* glass --vars */ \n` +
+    `  --color-glass3d: ${$colorString}; \n` +
     `  --shadow-glass3d: \n` +
-    `    ${$shadowValue}; \n` +
-
-    `\n` +
-
-    `  /* ::after */ \n` +
+    `    ${$shadowComp}; \n` +
     `  --bevel-glass3d: \n` +
-    `  ${$bevelValue}; \n` +
+    `  ${$bevelComp}; \n` +
 
-    `\n` +
-
-    `  /* ::before */ \n` +
-    `  --noise-glass3d: ${$noiseValue}; \n` +
-    `  --blur-glass3d: ${$blurValue}; \n` +
+    `  --noise-glass3d: ${$noiseURL}; \n` +
+    `  --blur-glass3d: ${$blurValue}px; \n` +
     `  --bright-glass3d: ${$brightValue}; \n` +
     `  --satu-glass3d: ${$satuValue}; \n` +
     `  --filter-glass3d: ${$filterValue}; \n` +
@@ -107,334 +424,52 @@ function displayComputedStyle() {
     `}\n`
     ;
 
-    // console.log(`code display updated`);
-}
-
-
-/* set on/off values */
-/* ========================================== */
-function setOnOffValue($id, $isOn) {
-
-  /* bevel */
-  /* ========================================== */
-  if($id == "js-bevelSwitch") {
-    $bevelValue = $isOn ? $bevelSet : `none`;
-    document.body.style.setProperty("--bevel-glass3d", `${$bevelValue}`);
-  }
-
-  /* color */
-  /* ========================================== */
-  if($id == "js-colorSwitch") {
-    $colorValue = $isOn ? $colorSet : `transparent`;
-    document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
-
-    // console.log("on/off color set: " + $colorSet);
-    // console.log("on/off color value: " + $colorValue);
-  }
-
-  /* noise */
-  /* ========================================== */
-  if($id == "js-noiseSwitch") {
-    $noiseValue = $isOn ? $noiseSet : `none`;
-    document.body.style.setProperty("--noise-glass3d", `${$noiseValue}`);
-
-    // console.log("noise value: " + $noiseValue);
-  }
-
-  /* shadow */
-  /* ========================================== */
-  if($id === "js-shadowSwitch") {
-    $shadowValue = $isOn ? $shadowSet : `none`;
-    document.body.style.setProperty("--shadow-glass3d", `${$shadowValue}`);
-  }
-
-  /* filter */
-  /* ========================================== */
-  if($id == "js-filterSwitch") {
-
-    if($isOn) {
-      $filterValue = `blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d))`;
-
-      $blurValue = $blurSet;
-      $brightValue = $brightSet;
-      $satuValue = $satuSet;
-
-    } else {
-      $filterValue = `none`;
-    }
-
-    document.body.style.setProperty("--filter-glass3d", `${$filterValue}`);
-  }
-
-  if($id == "blur-checkbox") {
-    $blurValue = $isOn ? $blurSet : `0`;
-    document.body.style.setProperty("--blur-glass3d", `${$blurValue}px`);
-
-    // console.log("blur value: " + $blurValue);
-  }
-
-  if($id == "bright-checkbox") {
-    $brightValue = $isOn ? $brightSet : `1`;
-    document.body.style.setProperty("--bright-glass3d", `${$brightValue}`);
-
-    // console.log("bright value: " + $brightValue);
-    // console.log("bright set: " + $brightSet);
-  }
-
-  if($id == "satu-checkbox") {
-    $satuValue = $isOn ? $satuSet : `1`;
-    document.body.style.setProperty("--satu-glass3d", `${$satuValue}`);
-
-    // console.log("satu value: " + $satuValue);
-    // console.log("satu set: " + $satuSet);
-  }
-
-  displayComputedStyle();
-}
-
-
-/* on slider input update color */
-/* ========================================== */
-function updateColor() {
-  clearTimeout(colorUpdateTimeout);
-
-  colorUpdateTimeout = setTimeout(() => {
-    $colorSet = $computedGlass.getPropertyValue("--color-hsla");
-    $colorValue = $colorSet;
-    document.body.style.setProperty("--color-glass3d", `${$colorValue}`);
-    displayComputedStyle();
-
-    // console.log("get --color-hsla set --color-glass3d: " + $colorSet);
-
-  }, 102);
-}
-
-
-
-/* set Filter */
-/* ========================================== */
-function setFilter($check, $checkBool) {
-  let $checkId = $check.id;
-  let $filterControls = $check.parentNode.parentNode;
-  let $filterSlider = $filterControls.querySelector(".js-slider-ui");
-
-  if($checkBool) {
-    $check.ariaChecked = "true";
-    $filterControls.classList.remove("is-off");
-    $filterSlider.removeAttribute("disabled");
-    setOnOffValue($checkId, true);
-
-    // console.log($checkId + " is now ON");
-
-  } else {
-    $check.ariaChecked = "false";
-    $filterControls.classList.add("is-off");
-    $filterSlider.setAttribute("disabled", true);
-    setOnOffValue($checkId, false);
-    // console.log($checkId + " is now off");
-  }
-}
-
-
-/* on check change */
-/* ========================================== */
-function onCheckChange(e) {
-  let $check = e.target;
-  let $checkBool = $check.checked;
-  setFilter($check, $checkBool);
-}
-
-/* on chevron click */
-/* ========================================== */
-function toggleAccordion(e) {
-  let $thisToggle = e.target;
-  let $thisAccordion = $thisToggle.parentNode.parentNode;
-  let $expanded = $thisToggle.getAttribute("aria-expanded") === "true" || false;
-
-  $thisAccordion.classList.toggle("is-closed");
-  $thisToggle.setAttribute("aria-expanded", !$expanded);
-
-  console.log("toggle $thisAccordion: " + $thisAccordion.id);
-  console.log("$expanded: " + $expanded);
-};
-
-/* accordion disable/enable */
-/* ========================================== */
-function accordionOnOff($switch, $switchBool) {
-  const $accordion = $switch.parentNode.parentNode;
-  const $accordionBtn = $accordion.querySelector(".js-accordionBtn");
-
-  if($switchBool) {
-    // $accordion.classList.remove("is-closed");
-    // $accordionBtn.setAttribute("aria-expanded", true);
-    $accordionBtn.removeAttribute("disabled");
-  };
-
-  if(!$switchBool) {
-    $accordion.classList.add("is-closed");
-    $accordionBtn.setAttribute("aria-expanded", false);
-    $accordionBtn.setAttribute("disabled", true);
-  };
-}
-
-
-/* set Switch */
-/* ========================================== */
-function setSwitch($switch, $switchBool) {
-  let $switchId = $switch.id;
-  let $switchParent = $switch.parentNode;
-
-  if($switchBool) {
-    $switch.ariaChecked = "true";
-    // $switchParent.classList.remove("is-off");
-    setOnOffValue($switchId, true);
-    // console.log($switchId + " is now ON");
-
-  } else {
-    $switch.ariaChecked = "false";
-    // $switchParent.classList.add("is-off");
-    setOnOffValue($switchId, false);
-    // console.log($switchId + " is now OFF");
-  }
-}
-
-
-/* on switch change */
-/* ========================================== */
-function onSwitchChange(e) {
-  let $switch = e.target;
-  let $switchBool = $switch.checked;
-  setSwitch($switch, $switchBool);
-  accordionOnOff($switch, $switchBool);
+    console.log(`code display updated`);
+    // console.log("$codeDisplay text: " + $codeDisplay.textContent);
 }
 
 
 /* initialize */
 /* ========================================== */
 function initializeGenerator() {
+  $glassCodeSource = document.getElementById("js-glassCodeSouce");
 
-  $computedGlass = window.getComputedStyle(document.body);
-  $colorSet = $computedGlass.getPropertyValue("--color-hsla");
+  $bevelValue = document.querySelector('input[name="bevels"]:checked').value;
+  $bevelLastSet = $bevelValue;
 
-  $bevelSet = document.querySelector('input[name="bevels"]:checked').value;
-  $noiseSet = document.querySelector('input[name="noise"]:checked').value;
-  $shadowSet = document.querySelector('input[name="shadows"]:checked').value;
-  $blurSet = document.getElementById('blur-slider').value;
-  $brightSet = document.getElementById('bright-slider').value;
-  $satuSet = document.getElementById('satu-slider').value;
+  $colorValue =  'hsla(190, 90%, 60%, 0.1)';
+  $colorLastSet = $colorValue;
 
-  /* accordionBtn event listener */
-  /* ========================================== */
-  document.querySelectorAll(".js-accordionBtn").forEach(($accordionBtn) => {
-    $accordionBtn.addEventListener("click", toggleAccordion);
-  });
+  $noiseValue = document.querySelector('input[name="noise"]:checked').value;
+  $noiseLastSet = $noiseValue;
 
-  /* Switch event listener */
-  /* ========================================== */
-  document.querySelectorAll(".js-accordionSwitch").forEach(($switch) => {
-    let $switchBool = $switch.checked;
-    setSwitch($switch, $switchBool);
-    $switch.addEventListener("change", onSwitchChange);
-  });
+  $shadowValue = document.querySelector('input[name="shadows"]:checked').value;
+  $shadowLastSet = $shadowValue;
 
+  $blurValue = document.getElementById('blur-slider').value;
+  $blurLastSet = $blurValue;
+  document.body.style.setProperty("--blur-glass3d", `${$blurValue}px`);
 
-  /* Filter checkbox event listener */
-  /* ========================================== */
-  document.querySelectorAll(".js-filter-checkbox").forEach(($check) => {
-    let $filterBool = $check.checked;
-    setFilter($check, $filterBool);
-    $check.addEventListener("change", onCheckChange);
-  });
+  $brightValue = document.getElementById('bright-slider').value;
+  $brightLastSet = $brightValue;
+  document.body.style.setProperty("--bright-glass3d", `${$brightValue}`);
 
+  $satuValue = document.getElementById('satu-slider').value;
+  $satuLastSet = $satuValue;
+  document.body.style.setProperty("--satu-glass3d", `${$satuValue}`);
 
-  /* Bevel radio event listener */
-  /* ========================================== */
-  document.querySelectorAll('input[name="bevels"]').forEach(($radio) => {
-    $radio.addEventListener("change", (e) => {
-      $bevelSet = e.target.value;
-      $bevelValue = $bevelSet;
-      document.body.style.setProperty("--bevel-glass3d", `${$bevelValue}`);
-      displayComputedStyle();
+  $filterValue = 'blur(var(--blur-glass3d)) brightness(var(--bright-glass3d)) saturate(var(--satu-glass3d))';
 
-      // console.log("new bevel Value: " + $bevelValue);
-    });
-  });
+  $codeDisplay = document.getElementById('codeDisplay');
 
+  addBevelEvent();
+  addColorSliderEvent();
+  addNoiseEvent();
+  addShadowEvent();
+  addFilterCheckEvent();
+  addFilterSliderEvent();
 
-  /* Color slider event listener */
-  /* ========================================== */
-  document.getElementById("js-colorPicker").querySelectorAll('.js-colorSlider').forEach(($slider) => {
-    $slider.addEventListener("input", () => {
-      updateColor();
-    });
-  });
-
-
-
-  /* Noise radio event listener */
-  /* ========================================== */
-  document.querySelectorAll('input[name="noise"]').forEach(($radio) => {
-    $radio.addEventListener("change", (e) => {
-      $noiseSet = e.target.value;
-      $noiseValue = $noiseSet;
-      document.body.style.setProperty("--noise-glass3d", `${$noiseValue}`);
-      displayComputedStyle();
-
-      // console.log("new noise value: " + $noiseValue);
-    });
-  });
-
-
-  /* Shadow radio event listener */
-  /* ========================================== */
-  document.querySelectorAll('input[name="shadows"]').forEach(($radio) => {
-    $radio.addEventListener("change", (e) => {
-      $shadowSet = e.target.value;
-      $shadowValue = $shadowSet;
-      document.body.style.setProperty("--shadow-glass3d", `${$shadowValue}`);
-      displayComputedStyle();
-
-      // console.log("new shadow Value: " + $shadowValue);
-    });
-  });
-
-
-  /* Blur slider event listener */
-  /* ========================================== */
-  document.getElementById("blur-slider").addEventListener("input", (e) => {
-    $blurSet = e.target.value;
-    $blurValue = $blurSet;
-    document.body.style.setProperty("--blur-glass3d", `${$blurValue}px`);
-    displayComputedStyle();
-
-    // console.log("blur: " +  $blurValue);
-  });
-
-
-  /* Bright slider event listener */
-  /* ========================================== */
-  document.getElementById("bright-slider").addEventListener("input", (e) => {
-    $brightSet = e.target.value;
-    $brightValue = $brightSet;
-    document.body.style.setProperty("--bright-glass3d", `${$brightValue}`);
-    displayComputedStyle();
-
-    // console.log("bright: " +  $brightValue);
-  });
-
-
-  /* Satu slider event listener */
-  /* ========================================== */
-  document.getElementById("satu-slider").addEventListener("input", (e) => {
-    $satuSet = e.target.value;
-    $satuValue = $satuSet;
-    document.body.style.setProperty("--satu-glass3d", `${$satuValue}`);
-    displayComputedStyle();
-
-    // console.log("satu: " +  $satuValue);
-  });
-
-
-  /* Display Code */
-  displayComputedStyle();
+  addAccordionBtnEvent();
+  addSwitchEvent();
+  displayCss();
 };
